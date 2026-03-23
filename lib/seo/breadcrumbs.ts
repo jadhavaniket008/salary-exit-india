@@ -1,4 +1,5 @@
 import { ROUTES } from "@/lib/routes";
+import { getSiteOrigin } from "@/lib/seo/site-origin";
 
 export type BreadcrumbItem = {
   /** Display label */
@@ -26,8 +27,7 @@ export function toBreadcrumbJsonLd(items: BreadcrumbItem[]) {
 }
 
 function absolutePathToUrl(path: string): string {
-  const base =
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "http://localhost:3000";
+  const base = getSiteOrigin().origin.replace(/\/$/, "");
   return `${base}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
