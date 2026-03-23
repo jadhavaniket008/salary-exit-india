@@ -1,0 +1,74 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`worked example ↔ engine contract > CTC → in-hand (CTC_WORKED_EXAMPLE_INPUT) 1`] = `
+{
+  "employeePfMonthly": 1800,
+  "estimatedTotalTaxAnnual": 226200,
+  "grossMonthly": 150000,
+  "inHandMonthly": 129141.66666666666,
+  "tdsMonthly": 18850,
+}
+`;
+
+exports[`worked example ↔ engine contract > EPF (EPF_WORKED_EXAMPLE_INPUT) with default ceiling 1`] = `
+{
+  "employeeContributionMonthly": 1800,
+  "employerContributionMonthly": 1800,
+  "totalEpfMonthly": 3600,
+}
+`;
+
+exports[`worked example ↔ engine contract > Gratuity (GRATUITY_WORKED_EXAMPLE_INPUT) 1`] = `
+{
+  "exemptGratuityEstimate": 403846.1538461538,
+  "gratuityAmount": 403846.1538461538,
+  "taxableGratuityEstimate": 0,
+}
+`;
+
+exports[`worked example ↔ engine contract > HRA (HRA_WORKED_EXAMPLE_INPUT) 1`] = `
+{
+  "exemptionAnnual": 220000,
+  "testRentMinus10Percent": 220000,
+  "testSalaryPercentCap": 400000,
+}
+`;
+
+exports[`worked example ↔ engine contract > Leave encashment (LEAVE_WORKED_EXAMPLE_INPUT) 1`] = `
+{
+  "dailyRate": 2000,
+  "encashmentAmount": 16000,
+}
+`;
+
+exports[`worked example ↔ engine contract > Notice buyout (NOTICE_WORKED_EXAMPLE_INPUT) 1`] = `
+{
+  "buyoutAmount": 130645.16129032258,
+  "dailyRate": 2903.2258064516127,
+  "daysInMonth": 31,
+}
+`;
+
+exports[`worked example ↔ engine contract > Salary breakdown (SALARY_WORKED_EXAMPLE_INPUT) 1`] = `
+{
+  "estimatedInHandMonthly": 80466.66666666667,
+  "taxableIncomeAnnual": 1125000,
+  "totalTaxAnnual": 81900,
+}
+`;
+
+exports[`worked example ↔ engine contract > Salary hike (SALARY_HIKE_WORKED_EXAMPLE_INPUT) 1`] = `
+{
+  "absoluteIncreaseAnnual": 240000,
+  "percentIncrease": 20,
+}
+`;
+
+exports[`worked example ↔ engine contract > Tax regime comparison (TAX_REGIME_WORKED_EXAMPLE_INPUT) 1`] = `
+{
+  "lower": "new",
+  "newTax": 226200,
+  "oldTax": 241800,
+  "savings": 15600,
+}
+`;
