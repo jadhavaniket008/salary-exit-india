@@ -9,5 +9,7 @@ declare global {
       event: string,
       options?: { props?: Record<string, string | number | boolean> }
     ) => void;
+    /** Populated by AdSense after `ThirdPartyRootScripts` loads `adsbygoogle.js`. */
+    adsbygoogle?: unknown[];
   }
 }

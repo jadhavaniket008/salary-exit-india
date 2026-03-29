@@ -9,6 +9,8 @@ import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { getSiteOrigin } from "@/lib/seo/site-origin";
 import { defaultSiteSeo } from "@/lib/site";
+import { JsonLd } from "@/components/content/JsonLd";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/seo/structured-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +41,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50">
+        <JsonLd data={websiteJsonLd()} />
+        <JsonLd data={organizationJsonLd()} />
         <SiteHeader />
         {children}
         <SiteFooter />

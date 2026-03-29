@@ -31,6 +31,7 @@ export function buildPageMetadata(
     openGraph: {
       title,
       description,
+      ...(canonical ? { url: canonical } : {}),
       type: "website",
       siteName,
       locale: seo.locale ?? "en_IN",
@@ -42,6 +43,7 @@ export function buildPageMetadata(
       card: "summary_large_image",
       title,
       description,
+      ...(seo.ogImage ? { images: [seo.ogImage] } : {}),
     },
     robots: seo.noIndex ? { index: false, follow: false } : undefined,
   };
