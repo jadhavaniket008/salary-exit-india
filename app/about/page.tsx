@@ -45,7 +45,7 @@ export default function AboutPage() {
 
       <h2>What the calculators do</h2>
       <p>
-        Each tool runs on shared logic in <code className="text-xs">lib/calculators</code> (TypeScript, with
+        Each tool runs on the same core calculation layer (TypeScript, with
         tests): you supply inputs, the engine applies published formulas and config (e.g. slabs for the
         configured financial year, PF rules, heuristics for lifestyle spend on the{" "}
         <Link href={ROUTES.salaryRealityCheck}>Salary Reality Check</Link>). Results are labeled as estimates

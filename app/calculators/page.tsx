@@ -35,9 +35,7 @@ export default function CalculatorsHubPage() {
             Calculators
           </h1>
           <p className="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Each page uses the same pure calculation functions from{" "}
-            <code className="text-xs text-zinc-800 dark:text-zinc-200">lib/calculators</code>{" "}
-            with explicit assumptions, validation, and estimate labeling.
+            Each page uses the same core calculation code with explicit assumptions, validation, and estimate labeling.
           </p>
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
             Prefer reading first? Start with the{" "}

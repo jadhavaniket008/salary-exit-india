@@ -20,7 +20,7 @@ export default function MethodologyPage() {
   return (
     <LegalPageLayout
       title="Methodology"
-      intro="SalaryExit uses a single TypeScript calculation layer (lib/calculators) with tests. This page explains what is exact arithmetic, what is modeled, and what is out of scope — not legal or tax filing advice."
+      intro="SalaryExit uses a single TypeScript calculation layer with automated tests. This page explains what is exact arithmetic, what is modeled, and what is out of scope — not legal or tax filing advice."
       breadcrumbs={legalBreadcrumbs("Methodology", ROUTES.methodology)}
     >
       <FreshnessBadges className="mb-4" />
@@ -69,8 +69,8 @@ export default function MethodologyPage() {
 
       <h2>Where to read formula details</h2>
       <p>
-        In the project repository, see <code className="text-xs">lib/calculators/FORMULAS.md</code> and{" "}
-        <code className="text-xs">docs/FORMULA_AUDIT.md</code> for a calculator-by-calculator audit (exact vs estimated).
+        Contributors can find deeper formula notes and a calculator-by-calculator audit (exact vs estimated) in the
+        project repository alongside the code. On this site, the sections above summarize what visitors should rely on.
       </p>
 
       <h2>Updates</h2>

@@ -136,8 +136,8 @@ export default function Home() {
                 Popular salary landing pages
               </h2>
               <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                Generated from <code className="text-xs">lib/content/lpa-pages.config.ts</code> — add rows to
-                scale to many pages without duplicating templates.
+                Built from a single catalogue of LPA scenarios so we can add more bands without duplicating page
+                templates.
               </p>
               <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                 {popularLpa.map((p) => (

@@ -67,8 +67,8 @@ export default function SalaryGuidesHubPage() {
             Popular in-hand salary pages
           </h2>
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
-            Scenario-based estimates with explicit assumptions — expand coverage by adding rows to{" "}
-            <code className="text-xs">lib/content/lpa-pages.config.ts</code>.
+            Scenario-based estimates with explicit assumptions — we expand coverage by adding new LPA scenarios to our
+            content catalogue as we publish them.
           </p>
           <ul className="grid gap-2 sm:grid-cols-2">
             {popularLpa.map((p) => (
@@ -96,8 +96,7 @@ export default function SalaryGuidesHubPage() {
             <Link href={ROUTES.salaryRealityCheck} className="font-medium underline">
               Salary Reality Check
             </Link>
-            . Add more rows in{" "}
-            <code className="text-xs">lib/content/salary-enough-pages.config.ts</code>.
+            . More city and salary combinations are added over time as we publish them.
           </p>
           <ul className="grid gap-2 sm:grid-cols-2">
             {SALARY_ENOUGH_PAGES.map((p) => (

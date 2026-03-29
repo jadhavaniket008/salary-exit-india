@@ -19,8 +19,8 @@ export function HomeHeroSection() {
         SalaryExit India: calculators built to show their assumptions
       </h1>
       <p className="max-w-xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-        We connect <strong>transparent estimates</strong> (a tested engine in{" "}
-        <code className="text-xs">lib/calculators</code>) with <strong>plain-English guides</strong> so you can
+        We connect <strong>transparent estimates</strong> (a shared, tested calculation engine) with{" "}
+        <strong>plain-English guides</strong> so you can
         reason about CTC, in-hand pay, tax regimes, and exit scenarios — without mistaking a blog for tax filing
         advice.
       </p>
