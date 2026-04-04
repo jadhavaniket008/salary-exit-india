@@ -15,6 +15,7 @@ import {
   ValidationSummary,
   WorkedExample,
 } from "@/components/calculators";
+import { CalculatorSalaryEnoughSpotlight } from "@/components/content/CalculatorSalaryEnoughSpotlight";
 import { trackCalculatorUse } from "@/lib/analytics/client";
 import { compareTaxRegimes, TAX_REGIME_WORKED_EXAMPLE_INPUT } from "@/lib/calculators/tax-regime-comparison";
 import { DEFAULT_TAX_SETTINGS } from "@/lib/config";
@@ -113,9 +114,27 @@ export function TaxRegimeCalculatorClient() {
   return (
     <CalculatorPageLayout
       slug="taxRegime"
-      title="Old vs new tax regime comparison"
-      intro="This compares estimated annual income tax + cess under the old and new regimes for salaried gross income. It is not tax filing advice and does not include surcharge."
+      title="Compare old vs new income tax (India salaried)"
+      intro="See which regime likely leaves more annual cash after income tax + cess for the same gross — old side can include PF in 80C, other 80C, and HRA exemption you type in. This is a planning estimate only: no surcharge, no proofs, no Form 16 match."
     >
+      <section
+        aria-labelledby="tax-reality-check-heading"
+        className="space-y-3 rounded-2xl border border-indigo-200/90 bg-indigo-50/50 p-4 dark:border-indigo-900/40 dark:bg-indigo-950/30"
+      >
+        <h2 id="tax-reality-check-heading" className="text-base font-semibold text-indigo-950 dark:text-indigo-100">
+          Reality check
+        </h2>
+        <p className="text-sm leading-relaxed text-indigo-950/90 dark:text-indigo-100/90">
+          Most people don’t feel “tax regime” in the abstract — they feel rent, EMIs, and whether anything is left at month-end. This screen only answers{" "}
+          <strong>which regime taxes your salary harder in our simplified model</strong>. If old regime wins here but you hate collecting proofs, that’s a real-life cost this math ignores.
+        </p>
+        <p className="text-sm leading-relaxed text-indigo-950/90 dark:text-indigo-100/90">
+          New regime often looks clean until you remember you’re not modeling full HRA, home loan, or NPS the way your CA would. Use the result as a directional nudge, then talk to someone qualified before locking declarations for the year.
+        </p>
+      </section>
+
+      <CalculatorSalaryEnoughSpotlight variant="tax" />
+
       <div className="rounded-xl border border-red-200 bg-red-50/70 p-4 text-sm text-red-950 dark:border-red-900/50 dark:bg-red-950/30 dark:text-red-100">
         <p className="font-semibold">Not tax filing advice</p>
         <p className="mt-1">

@@ -43,6 +43,7 @@ export default function WhatIsGratuityGuidePage() {
       faq={faq}
       lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
       lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
+      guideCluster={{ hub: "jobSwitch", segment: "what-is-gratuity" }}
     >
       <WhatIsGratuityBody />
     </GuideArticleShell>

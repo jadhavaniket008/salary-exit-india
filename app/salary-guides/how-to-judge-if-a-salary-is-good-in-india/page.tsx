@@ -48,6 +48,7 @@ export default function HowToJudgeSalaryGoodIndiaPage() {
       faq={faq}
       lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
       lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
+      guideCluster={{ hub: "salary", segment: "how-to-judge-if-a-salary-is-good-in-india" }}
     >
       <JudgeSalaryGoodIndiaBody />
     </GuideArticleShell>

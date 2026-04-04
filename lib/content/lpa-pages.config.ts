@@ -20,6 +20,8 @@ export type LpaLandingPageConfig = {
   angleParagraph: string;
   /** Band-specific bullets: pay patterns, regime, metro context — avoid repeating across LPA pages */
   bandInsights: string[];
+  /** Optional human interpretation — not a repeat of the breakdown table */
+  realityCheckParagraphs?: string[];
 };
 
 const PT_ANNUAL = 2_500;
@@ -133,10 +135,15 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "18-lpa-in-hand-salary",
     lpa: 18,
     seo: {
-      title: "₹18 LPA in-hand India — tax, PF & monthly estimate",
+      title: "₹18 LPA: in-hand after tax, PF & rent (2026)",
       description:
-        "₹18 lakh gross: monthly take-home under new regime + PF wage assumption. Links to full calculators and regime comparison for serious planning (not filing advice).",
-      keywords: ["18 LPA in hand", "18 lakh CTC take home India", "18 LPA monthly hand"],
+        "₹18 lakh gross in India: estimated monthly in-hand after tax, PF, and a PT placeholder — then see how far that cash goes with rent using our city “enough salary?” pages (not filing advice).",
+      keywords: [
+        "18 LPA in hand",
+        "18 lakh CTC take home India",
+        "18 LPA monthly hand",
+        "18 lpa salary after tax india",
+      ],
     },
     scenario: baseScenario(18),
     scenarioNotes: ["₹18 LPA is interpreted as ₹18,00,000 gross per year."],
@@ -147,6 +154,11 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "Home loan principal/80C and NPS tier-2 style choices are not individually modeled; the salary breakdown calculator is better for itemized old-regime playbooks.",
       "If you are cross-offering between Bangalore and a tier-2 city, equal gross does not mean equal lifestyle — stress-test rent as a separate line item.",
       "Variable pay as a high fraction of CTC reduces predictability of monthly in-hand — align on what hits payroll monthly.",
+    ],
+    realityCheckParagraphs: [
+      "₹18 LPA is the band where recruiters still say “good package,” but your bank app might disagree until you see rent. The table above is only tax mechanics — it does not judge whether you can afford a city. Most people at this gross are one rent decision away from either comfortable savings or constant anxiety.",
+      "This page assumes a clean salaried story (gross in, PF out, TDS spread). Real life adds joining bonuses, stock, medical, parents, or a partner with no income. If any of that is you, treat the in-hand line as a starting point, not a verdict.",
+      "If your real question is “Can I live well on this in Bangalore / Mumbai / Pune?”, open a city scenario next — same engine, but with rent and lifestyle in the same picture.",
     ],
   },
   {

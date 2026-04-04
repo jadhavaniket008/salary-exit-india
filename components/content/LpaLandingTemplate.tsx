@@ -7,6 +7,7 @@ import { FaqSection } from "@/components/calculators/FaqSection";
 import { DisclaimerBlock } from "@/components/calculators/DisclaimerBlock";
 import { computeCtcToInHand } from "@/lib/calculators/ctc-to-inhand";
 import { getAdjacentLpa, type LpaLandingPageConfig } from "@/lib/content/lpa-pages.config";
+import { getLpaBandGuideDeepLinks } from "@/lib/content/lpa-band-guide-links";
 import { getSalaryEnoughSpotlightForLpa } from "@/lib/content/salary-enough-pages.config";
 import { InHandBreakdownBars } from "@/components/charts/InHandBreakdownBars";
 import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
@@ -28,6 +29,7 @@ export function LpaLandingTemplate({ config }: Props) {
   const path = lpaLandingPath(config.slug);
   const adjacent = getAdjacentLpa(config.slug);
   const salaryEnoughSpotlight = getSalaryEnoughSpotlightForLpa(config.lpa, 3);
+  const bandGuides = getLpaBandGuideDeepLinks(config.lpa);
 
   const breadcrumbs: BreadcrumbItem[] = [
     { label: "Home", href: ROUTES.home },
@@ -77,6 +79,22 @@ export function LpaLandingTemplate({ config }: Props) {
               <MethodologyLink />
             </div>
           </header>
+
+          {config.realityCheckParagraphs && config.realityCheckParagraphs.length > 0 ? (
+            <section
+              aria-labelledby="lpa-reality-check-heading"
+              className="space-y-3 rounded-2xl border border-sky-200/90 bg-sky-50/60 p-5 dark:border-sky-900/40 dark:bg-sky-950/25"
+            >
+              <h2 id="lpa-reality-check-heading" className="text-lg font-semibold text-sky-950 dark:text-sky-100">
+                Reality check
+              </h2>
+              {config.realityCheckParagraphs.map((para, i) => (
+                <p key={i} className="text-sm leading-relaxed text-sky-950/90 dark:text-sky-100/90">
+                  {para}
+                </p>
+              ))}
+            </section>
+          ) : null}
 
           <AdSlot position="below-hero" label="Advertisement" />
 
@@ -269,6 +287,25 @@ export function LpaLandingTemplate({ config }: Props) {
                   </Link>
                 </li>
               ) : null}
+            </ul>
+          </section>
+
+          <section className="rounded-xl border border-blue-200/80 bg-blue-50/40 p-4 dark:border-blue-900/35 dark:bg-blue-950/20">
+            <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
+              Guides that match ₹{config.lpa}L offers
+            </h2>
+            <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+              Picked by band so similar LPA pages don’t all push the exact same reading order.
+            </p>
+            <ul className="mt-3 space-y-3 text-sm text-zinc-700 dark:text-zinc-300">
+              {bandGuides.map((g) => (
+                <li key={g.href}>
+                  <Link className="font-medium text-zinc-900 underline dark:text-zinc-100" href={g.href}>
+                    {g.label}
+                  </Link>
+                  <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">{g.hint}</p>
+                </li>
+              ))}
             </ul>
           </section>
 

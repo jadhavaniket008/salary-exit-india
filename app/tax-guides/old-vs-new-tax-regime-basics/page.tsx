@@ -43,6 +43,7 @@ export default function OldVsNewTaxRegimeBasicsPage() {
       faq={faq}
       lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
       lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
+      guideCluster={{ hub: "tax", segment: "old-vs-new-tax-regime-basics" }}
     >
       <OldVsNewRegimeBody />
     </GuideArticleShell>

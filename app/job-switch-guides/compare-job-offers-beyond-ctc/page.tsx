@@ -43,6 +43,7 @@ export default function CompareOffersGuidePage() {
       faq={faq}
       lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
       lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
+      guideCluster={{ hub: "jobSwitch", segment: "compare-job-offers-beyond-ctc" }}
     >
       <CompareOffersBody />
     </GuideArticleShell>

@@ -15,6 +15,7 @@ import {
   ValidationSummary,
   WorkedExample,
 } from "@/components/calculators";
+import { CalculatorSalaryEnoughSpotlight } from "@/components/content/CalculatorSalaryEnoughSpotlight";
 import { SalaryRealityShareBlock } from "@/components/calculators/SalaryRealityShareBlock";
 import {
   DEFAULT_BASIC_DA_SHARE_OF_GROSS,
@@ -207,6 +208,23 @@ export function SalaryRealityCheckCalculatorClient({
             This is a <strong>decision assistant</strong>: compare whether an offer leaves meaningful savings after a
             transparent spend model. Defaults are visible and editable so nothing feels like a black box.
           </p>
+
+          <section
+            aria-labelledby="sr-reality-check-heading"
+            className="space-y-3 rounded-2xl border border-teal-200/90 bg-teal-50/50 p-4 dark:border-teal-900/40 dark:bg-teal-950/30"
+          >
+            <h2 id="sr-reality-check-heading" className="text-base font-semibold text-teal-950 dark:text-teal-100">
+              Reality check
+            </h2>
+            <p className="text-sm leading-relaxed text-teal-950/90 dark:text-teal-100/90">
+              CTC is a headline; <strong>rent is usually the villain</strong> in Indian metros. This tool doesn’t judge your choices — it shows, under editable defaults, whether there’s any cushion left after tax/PF and a lifestyle-shaped month. If the verdict feels harsh, the fix is often ₹5–15k rent or one lifestyle tier, not a lecture.
+            </p>
+            <p className="text-sm leading-relaxed text-teal-950/90 dark:text-teal-100/90">
+              It works best when you’re comparing two offers, two cities, or “can I afford this lease?” It does <strong>not</strong> replace a budget with your actual card statements — override every expense line until it feels like your life, not ours.
+            </p>
+          </section>
+
+          <CalculatorSalaryEnoughSpotlight variant="reality" />
 
           <RequiredInputsCallout
             items={[
@@ -590,8 +608,8 @@ export function SalaryRealityCheckCalculatorClient({
   ) : (
     <CalculatorPageLayout
       slug="salaryRealityCheck"
-      title="Salary Reality Check"
-      intro="Turn CTC into estimated in-hand using the same tax engine as our CTC calculator, then stress-test it against rent and a lifestyle-shaped monthly spend model. Built for job and city decisions — not budgeting precision."
+      title="Salary Reality Check — rent vs savings left"
+      intro="Paste your CTC (as gross for tax), your rent, and a lifestyle tier — we estimate in-hand after tax/PF, stack a transparent month of non-rent spend, and show what’s left to save. Built for offers and city trade-offs; not a substitute for your bank statement or tax filing."
     >
       {main}
     </CalculatorPageLayout>

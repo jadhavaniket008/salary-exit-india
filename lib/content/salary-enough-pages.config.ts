@@ -47,6 +47,11 @@ export type SalaryEnoughPageConfig = {
   /** Explicit single-earner vs household caveat */
   soloVsFamilyCaveat: string;
   faq: { question: string; answer: string }[];
+  /**
+   * Optional plain-English “Reality check” — interpretation of what the scenario *feels* like.
+   * Must not duplicate the template’s numeric snapshot block.
+   */
+  realityCheckParagraphs?: string[];
 };
 
 export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
@@ -640,20 +645,22 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "moderate",
     answerKind: "depends",
     seo: {
-      title: "Is ₹15 LPA good in Bangalore? Rent pressure vs moderate spend (check)",
+      title: "₹15 LPA Bangalore: enough, ₹30k rent (2026)",
       description:
-        "₹15 lakh CTC in Bengaluru: ₹30k rent scenario, estimated in-hand, and Salary Reality Check — edit rent to match your corridor.",
+        "Honest Bengaluru scenario: ₹15 lakh gross → in-hand after tax/PF, ₹30k rent, moderate spend, and what’s left to save. Adjust rent and tier in the embedded Salary Reality Check.",
       keywords: [
+        "is 15 lpa enough in bangalore",
         "is 15 lpa good in bangalore",
         "15 lakh salary bangalore",
         "15 LPA Bangalore rent",
         "Bengaluru 15 LPA enough",
+        "15 lpa bangalore solo rent",
       ],
     },
     answerHeadline:
-      "Often tight for solo renters in central pockets — workable with sharing, outer areas, or a disciplined moderate tier.",
+      "On this model, often tight for solo renters in pricey corridors — workable with sharing, outer areas, or a lean moderate lifestyle.",
     leadParagraph:
-      "Fifteen LPA is a crowded band in Bengaluru hiring — many people land here between campus and first switch. We stress-test ₹30,000/month rent against moderate lifestyle spend; that rent is plausible for a compact solo or shared 2BHK in several corridors, but not for every pincode fantasy.",
+      "If you’re asking whether ₹15 LPA is “enough” in Bengaluru, the straight answer is: it depends almost entirely on rent and whether you’ll share a flat or commute from farther out. Fifteen LPA is a crowded campus-to-first-switch band — we stress-test ₹30,000/month rent with moderate spend so you can see cash flow after tax and PF, not vibes.",
     whyParagraph:
       "Bengaluru punishes distance: the same gross feels different in a PG near work vs a solo flat with a long cab ride. This page won’t validate your Instagram feed — it shows whether modeled cash flow closes after PF, tax, and our spend bands.",
     typicalSpendNotes: [
@@ -694,6 +701,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
         answer:
           "Open our Hyderabad ₹15L page — same gross, different rent anchor and city notes.",
       },
+    ],
+    realityCheckParagraphs: [
+      "On ₹15 LPA in Bengaluru, you’re not “poor” on paper — you’re just living in a city where one ambitious lease can erase the whole story. The numbers above are blunt on purpose: they show what’s left when rent is fixed at ₹30k and life is “moderate,” not Instagram.",
+      "This usually works emotionally for people who can tolerate roommates, a longer commute, or a smaller footprint — and breaks for anyone who wants a premium solo flat near work plus a heavy going-out budget on the same gross.",
+      "If you have EMIs, parents to support, or a partner without income, don’t argue with the model — raise rent or lifestyle in the embed until it matches your household. That’s the only honest use of this page.",
     ],
   },
   {
@@ -770,10 +782,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "moderate",
     answerKind: "depends",
     seo: {
-      title: "Is ₹20 LPA good in Mumbai? Rent reality vs in-hand (honest model)",
+      title: "₹20 LPA Mumbai: enough after high rent? (2026)",
       description:
-        "₹20 lakh CTC in Mumbai: high-rent scenario, Salary Reality Check with editable rent and spend — see if anything is left after the city premium.",
+        "₹20 lakh gross, Mumbai: in-hand after tax/PF vs ₹42k rent and moderate spend — real savings line, fully editable. One scenario, not your broker’s pitch.",
       keywords: [
+        "is 20 lpa enough in mumbai",
         "is 20 lpa good in mumbai",
         "20 lakh salary mumbai",
         "20 LPA Mumbai rent",
@@ -783,7 +796,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     answerHeadline:
       "Often tight: Mumbai rent eats gross faster than most inland cities — sharing or outer suburbs helps; solo premium pockets hurt.",
     leadParagraph:
-      "Twenty LPA sounds strong until you line up a ₹42,000/month rent — plausible for a compact solo or shared flat in several connected suburbs, still shy of posh island premiums. We pair that with moderate lifestyle spend so you can see where the money actually goes after tax and PF.",
+      "Twenty LPA sounds strong on LinkedIn until you price Mumbai rent. We line up ₹42,000/month — plausible for many connected suburbs in a compact or shared setup, not for every sea-facing dream — then show where salary goes after tax, PF, and moderate day-to-day spend.",
     whyParagraph:
       "Mumbai isn’t “India average” — it’s a different rent game. This page doesn’t shame your choices; it shows how little discretionary survives when fixed rent is high and gross is only ₹20L. Drop rent in the tool if your broker can do better.",
     typicalSpendNotes: [
@@ -824,6 +837,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
         answer:
           "That’s life planning, not tax math — we only show cash flow under stated assumptions.",
       },
+    ],
+    realityCheckParagraphs: [
+      "Mumbai at ₹20 LPA is the definition of “good salary, expensive life.” You can absolutely survive — many do — but the city doesn’t forgive vanity rent. The ₹42k anchor is there to stop magical thinking: if your actual quote is higher, the squeeze is real, not a spreadsheet bug.",
+      "This scenario fits sharers, outer-suburb commuters, or dual-income couples who split the roof. It fights you if you want island-adjacent solo space, a big car note, and weekend trips — something has to give.",
+      "Train-and-bus life saves more than this sheet can price; cab-heavy life costs more than one “commute” line. Use the embed to mirror how you actually move, not how you wish you did.",
     ],
   },
   {

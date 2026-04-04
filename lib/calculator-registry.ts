@@ -26,10 +26,16 @@ export const CALCULATOR_REGISTRY: Record<CalculatorSlug, CalculatorDefinition> =
     label: "Salary Reality Check",
     shortLabel: "Reality check",
     seo: {
-      title: "Salary Reality Check — CTC, rent & lifestyle savings (India)",
+      title: "Salary Reality Check — rent vs savings left",
       description:
-        "Estimate in-hand from CTC, subtract rent and lifestyle-based monthly spend, and see savings ratio and a clear verdict. Decision assistant — not a budget app.",
-      keywords: [...baseKeywords, "salary savings India", "CTC rent calculator", "monthly savings estimate"],
+        "India salaried: estimated in-hand after tax/PF from CTC, minus rent and realistic monthly spend bands — see real savings left and a plain verdict. Not a budget app or filing tool.",
+      keywords: [
+        ...baseKeywords,
+        "salary savings India",
+        "CTC rent calculator",
+        "monthly savings after rent India",
+        "real savings from salary",
+      ],
     },
     related: ["ctcToInHand", "offerComparison", "salary"],
   },
@@ -65,10 +71,16 @@ export const CALCULATOR_REGISTRY: Record<CalculatorSlug, CalculatorDefinition> =
     label: "Old vs new tax regime",
     shortLabel: "Tax regime",
     seo: {
-      title: "Old vs new tax regime comparison (India)",
+      title: "Compare old vs new income tax (India salaried)",
       description:
-        "Compare estimated income tax under old and new regimes for salaried income. Simplified Section 87A; not a substitute for filing.",
-      keywords: [...baseKeywords, "115BAC", "old regime", "new regime"],
+        "Side-by-side estimated tax after standard deduction: old regime (80C/HRA you enter) vs new regime — see which leaves more cash after tax. Simplified 87A; surcharge not modeled; not for filing.",
+      keywords: [
+        ...baseKeywords,
+        "115BAC",
+        "old regime",
+        "new regime",
+        "old vs new tax which is better salaried",
+      ],
     },
     related: ["salary", "hra", "ctcToInHand"],
   },

@@ -176,6 +176,22 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
             </p>
           </section>
 
+          {config.realityCheckParagraphs && config.realityCheckParagraphs.length > 0 ? (
+            <section
+              aria-labelledby="reality-check-heading"
+              className="space-y-3 rounded-2xl border border-violet-200/90 bg-violet-50/50 p-5 dark:border-violet-900/40 dark:bg-violet-950/25"
+            >
+              <h2 id="reality-check-heading" className="text-lg font-semibold text-violet-950 dark:text-violet-100">
+                Reality check
+              </h2>
+              {config.realityCheckParagraphs.map((para, i) => (
+                <p key={i} className="text-sm leading-relaxed text-violet-950/95 dark:text-violet-100/90">
+                  {para}
+                </p>
+              ))}
+            </section>
+          ) : null}
+
           <AdSlot position="below-hero" label="Advertisement" />
 
           <section aria-labelledby="who-heading" className="space-y-3">

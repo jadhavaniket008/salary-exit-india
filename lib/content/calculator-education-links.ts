@@ -24,6 +24,7 @@ export const EDUCATION_LINKS_BY_CALCULATOR: Record<
 > = {
   salaryRealityCheck: pick(
     { hub: "salary", segment: "what-affects-in-hand-salary" },
+    { hub: "salary", segment: "how-rent-changes-your-monthly-savings" },
     { hub: "jobSwitch", segment: "compare-job-offers-beyond-ctc" }
   ),
   salary: pick(
@@ -34,7 +35,10 @@ export const EDUCATION_LINKS_BY_CALCULATOR: Record<
     { hub: "salary", segment: "what-affects-in-hand-salary" },
     { hub: "salary", segment: "salary-structure-in-india" }
   ),
-  taxRegime: pick({ hub: "tax", segment: "old-vs-new-tax-regime-basics" }),
+  taxRegime: pick(
+    { hub: "tax", segment: "old-vs-new-tax-regime-basics" },
+    { hub: "salary", segment: "what-affects-in-hand-salary" }
+  ),
   hra: pick({ hub: "tax", segment: "old-vs-new-tax-regime-basics" }),
   gratuity: pick({ hub: "jobSwitch", segment: "what-is-gratuity" }),
   leaveEncashment: pick({ hub: "jobSwitch", segment: "compare-job-offers-beyond-ctc" }),

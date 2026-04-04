@@ -43,6 +43,7 @@ export default function SalaryStructureIndiaPage() {
       faq={faq}
       lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
       lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
+      guideCluster={{ hub: "salary", segment: "salary-structure-in-india" }}
     >
       <SalaryStructureIndiaBody />
     </GuideArticleShell>

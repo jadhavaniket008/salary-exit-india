@@ -43,6 +43,7 @@ export default function HowMuchSalaryBangalorePage() {
       faq={faq}
       lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
       lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
+      guideCluster={{ hub: "salary", segment: "how-much-salary-you-need-in-bangalore" }}
     >
       <HowMuchSalaryBangaloreBody />
     </GuideArticleShell>
