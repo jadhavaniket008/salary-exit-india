@@ -3,10 +3,10 @@
 exports[`worked example ↔ engine contract > CTC → in-hand (CTC_WORKED_EXAMPLE_INPUT) 1`] = `
 {
   "employeePfMonthly": 1800,
-  "estimatedTotalTaxAnnual": 226200,
+  "estimatedTotalTaxAnnual": 150800,
   "grossMonthly": 150000,
-  "inHandMonthly": 129141.66666666666,
-  "tdsMonthly": 18850,
+  "inHandMonthly": 135425,
+  "tdsMonthly": 12566.666666666666,
 }
 `;
 
@@ -51,9 +51,9 @@ exports[`worked example ↔ engine contract > Notice buyout (NOTICE_WORKED_EXAMP
 
 exports[`worked example ↔ engine contract > Salary breakdown (SALARY_WORKED_EXAMPLE_INPUT) 1`] = `
 {
-  "estimatedInHandMonthly": 80466.66666666667,
+  "estimatedInHandMonthly": 87291.66666666667,
   "taxableIncomeAnnual": 1125000,
-  "totalTaxAnnual": 81900,
+  "totalTaxAnnual": 0,
 }
 `;
 
@@ -67,8 +67,8 @@ exports[`worked example ↔ engine contract > Salary hike (SALARY_HIKE_WORKED_EX
 exports[`worked example ↔ engine contract > Tax regime comparison (TAX_REGIME_WORKED_EXAMPLE_INPUT) 1`] = `
 {
   "lower": "new",
-  "newTax": 226200,
+  "newTax": 150800,
   "oldTax": 241800,
-  "savings": 15600,
+  "savings": 91000,
 }
 `;

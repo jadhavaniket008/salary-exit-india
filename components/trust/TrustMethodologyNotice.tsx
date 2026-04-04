@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { ROUTES } from "@/lib/routes";
-import { ENGINE_FY_LABEL, SITE_CONTENT_LAST_UPDATED } from "@/lib/config/site-freshness";
+import {
+  CALCULATIONS_POLICY_SYNC_LINE,
+  ENGINE_FY_LABEL,
+  SITE_CONTENT_LAST_UPDATED,
+} from "@/lib/config/site-freshness";
 
 type Props = {
   /** default = bordered callout; compact = one paragraph for sidebars/heroes */
@@ -15,7 +19,7 @@ type Props = {
 export function TrustMethodologyNotice({ variant = "default", className = "" }: Props) {
   const meta = (
     <span className="text-zinc-500 dark:text-zinc-500">
-      {ENGINE_FY_LABEL}. Site content last reviewed: {SITE_CONTENT_LAST_UPDATED}.
+      {ENGINE_FY_LABEL}. Site content last reviewed: {SITE_CONTENT_LAST_UPDATED}. {CALCULATIONS_POLICY_SYNC_LINE}
     </span>
   );
 

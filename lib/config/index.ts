@@ -1,7 +1,9 @@
 export {
   DEFAULT_FINANCIAL_YEAR,
   FY2024_25,
+  FY2025_26,
   type FinancialYearConfig,
+  type FinancialYearId,
   type TaxSlab,
 } from "./financial-year";
 export { DEFAULT_PF_ASSUMPTIONS, type PfAssumptions } from "./pf";

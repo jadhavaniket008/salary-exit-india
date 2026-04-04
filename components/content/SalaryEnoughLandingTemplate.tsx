@@ -9,7 +9,11 @@ import { Container, Section } from "@/components/ui";
 import { computeSalaryRealityCheck } from "@/lib/calculators/salary-reality-check";
 import { DEFAULT_BASIC_DA_SHARE_OF_GROSS } from "@/lib/config/salary-reality-heuristics";
 import { faqPageJsonLd } from "@/lib/jsonld";
-import type { SalaryEnoughPageConfig } from "@/lib/content/salary-enough-pages.config";
+import {
+  getRelatedSalaryEnoughPages,
+  type SalaryEnoughAnswerKind,
+  type SalaryEnoughPageConfig,
+} from "@/lib/content/salary-enough-pages.config";
 import { getLpaLandingPageConfig } from "@/lib/content/lpa-pages.config";
 import { formatInr } from "@/lib/format-inr";
 import { TrustMethodologyNotice } from "@/components/trust/TrustMethodologyNotice";
@@ -44,8 +48,39 @@ function answerLabel(kind: SalaryEnoughPageConfig["answerKind"]): string {
   }
 }
 
+const GLANCE_TYPICAL_FOR: Record<SalaryEnoughAnswerKind, string[]> = {
+  yes: [
+    "Single earner or couple where modeled spend matches a moderate lifestyle",
+    "Building savings or an emergency buffer if real spend stays near this tier",
+  ],
+  no: [
+    "After lowering rent or lifestyle tier in the calculator to match your lease",
+    "Dual-income households where a partner covers major fixed costs",
+  ],
+  depends: [
+    "Shared housing, lower rent than this anchor, or a disciplined moderate tier",
+    "Single earners who track discretionary spend and avoid large hidden EMIs",
+  ],
+};
+
+const GLANCE_TIGHT_IF: Record<SalaryEnoughAnswerKind, string[]> = {
+  yes: [
+    "Premium housing or premium lifestyle tier on the same gross",
+    "Supporting parents, school fees, or big EMIs on one salary without slack",
+  ],
+  no: [
+    "Solo flat at this rent on one income without cutting tier or rent",
+    "Family medical costs or childcare not reflected in the default model",
+  ],
+  depends: [
+    "Solo 1BHK in an expensive corridor at this rent line",
+    "Household costs outside the model (medical, childcare, heavy loans)",
+  ],
+};
+
 export function SalaryEnoughLandingTemplate({ config }: Props) {
   const path = salaryEnoughPath(config.slug);
+  const relatedEnoughPages = getRelatedSalaryEnoughPages(config.slug, 3);
   const preview = computeSalaryRealityCheck({
     annualCtc: config.annualCtc,
     monthlyRent: config.monthlyRent,
@@ -90,6 +125,56 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
             <p className="text-lg font-medium text-zinc-800 dark:text-zinc-200">{config.answerHeadline}</p>
             <p className="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">{config.leadParagraph}</p>
           </header>
+
+          <section
+            aria-labelledby="real-numbers-heading"
+            className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
+          >
+            <h2 id="real-numbers-heading" className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+              Real numbers for this scenario
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+              At <strong>₹{config.lpa} LPA</strong> gross in <strong>{config.city.name}</strong>, with{" "}
+              <strong>{formatInr(config.monthlyRent)}/month</strong> rent, <strong className="capitalize">{config.lifestyle}</strong>{" "}
+              lifestyle, new tax regime, and the same PF assumptions as the calculator below:
+            </p>
+            <ul className="mt-3 space-y-2 text-sm text-zinc-800 dark:text-zinc-200">
+              <li>
+                <span className="font-medium text-zinc-900 dark:text-zinc-50">Est. in-hand:</span>{" "}
+                ~{formatInr(preview.inHandMonthly)}/month
+              </li>
+              <li>
+                <span className="font-medium text-zinc-900 dark:text-zinc-50">Rent (this page):</span>{" "}
+                {formatInr(config.monthlyRent)}/month
+              </li>
+              <li>
+                <span className="font-medium text-zinc-900 dark:text-zinc-50">Est. savings after modeled spend:</span>{" "}
+                ~{formatInr(preview.monthlySavings)}/month — <em>{preview.verdictTitle}</em>
+              </li>
+            </ul>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <div>
+                <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Often workable for</h3>
+                <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
+                  {GLANCE_TYPICAL_FOR[config.answerKind].map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Often tight if</h3>
+                <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
+                  {GLANCE_TIGHT_IF[config.answerKind].map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-zinc-500 dark:text-zinc-400">
+              Figures come from the same engine as the embedded calculator — not your payslip. Adjust rent and tier below
+              to match your life.
+            </p>
+          </section>
 
           <AdSlot position="below-hero" label="Advertisement" />
 
@@ -291,6 +376,26 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
                 );
               })}
             </ul>
+            {relatedEnoughPages.length > 0 ? (
+              <>
+                <p className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+                  More “is this salary enough?” pages
+                </p>
+                <ul className="mb-4 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+                  {relatedEnoughPages.map((p) => (
+                    <li key={p.slug}>
+                      <Link
+                        className="font-medium text-zinc-900 underline dark:text-zinc-100"
+                        href={salaryEnoughPath(p.slug)}
+                      >
+                        {p.seo.title}
+                      </Link>
+                      <span className="text-zinc-500 dark:text-zinc-400"> — {p.city.name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
             <p className="text-sm font-medium text-zinc-800 dark:text-zinc-200">Guides that pair with this check</p>
             <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
               <li>

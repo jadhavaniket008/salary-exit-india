@@ -3,7 +3,11 @@ import Link from "next/link";
 import { LegalPageLayout, legalBreadcrumbs } from "@/components/legal/LegalPageLayout";
 import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { ENGINE_FY_LABEL, SITE_CONTENT_LAST_UPDATED } from "@/lib/config/site-freshness";
+import {
+  CALCULATIONS_POLICY_SYNC_LINE,
+  ENGINE_FY_LABEL,
+  SITE_CONTENT_LAST_UPDATED,
+} from "@/lib/config/site-freshness";
 import { ROUTES } from "@/lib/routes";
 
 export const metadata: Metadata = buildPageMetadata(
@@ -30,6 +34,10 @@ export default function MethodologyPage() {
         Income tax slabs, standard deductions, and simplified Section 87A rebates follow the configured financial year
         ({ENGINE_FY_LABEL}). Values are defined in code and should be reviewed after each Union Budget.{" "}
         <strong>Surcharge</strong> and <strong>marginal relief</strong> are not modeled.
+      </p>
+      <p className="rounded-lg border border-emerald-200/80 bg-emerald-50/70 p-3 text-sm text-emerald-950 dark:border-emerald-900/40 dark:bg-emerald-950/30 dark:text-emerald-50">
+        <strong className="font-semibold">Policy sync for visitors:</strong> {CALCULATIONS_POLICY_SYNC_LINE} Content and
+        methodology copy last reviewed: <strong>{SITE_CONTENT_LAST_UPDATED}</strong>.
       </p>
 
       <h2>What is “exact” in math terms</h2>

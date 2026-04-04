@@ -73,7 +73,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "10-lpa-in-hand-salary",
     lpa: 10,
     seo: {
-      title: "₹10 LPA in-hand salary — India estimate with PF & tax split",
+      title: "₹10 LPA in-hand India — tax, PF & monthly estimate",
       description:
         "₹10,00,000 gross: monthly in-hand estimate under new regime defaults, ₹2,500 PT placeholder, and PF from a 45% Basic+DA assumption. Not a payslip — tune the CTC tool for your employer.",
       keywords: ["10 LPA in hand", "10 lakh salary take home", "CTC 10 LPA India", "10 LPA monthly net"],
@@ -93,7 +93,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "12-lpa-in-hand-salary",
     lpa: 12,
     seo: {
-      title: "₹12 LPA take-home calculator page — India (new regime baseline)",
+      title: "₹12 LPA in-hand India — tax, PF & monthly estimate",
       description:
         "₹12 lakh gross salary: estimated monthly in-hand, employee PF, TDS spread, and FY slabs in code. Compare old vs new regime if deductions matter for you.",
       keywords: ["12 LPA in hand", "12 lakh CTC take home", "12 LPA monthly salary hand"],
@@ -133,7 +133,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "18-lpa-in-hand-salary",
     lpa: 18,
     seo: {
-      title: "₹18 LPA gross to in-hand — India salary estimate (auditable assumptions)",
+      title: "₹18 LPA in-hand India — tax, PF & monthly estimate",
       description:
         "₹18 lakh gross: monthly take-home under new regime + PF wage assumption. Links to full calculators and regime comparison for serious planning (not filing advice).",
       keywords: ["18 LPA in hand", "18 lakh CTC take home India", "18 LPA monthly hand"],
@@ -153,7 +153,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "20-lpa-in-hand-salary",
     lpa: 20,
     seo: {
-      title: "₹20 LPA take-home salary India — monthly estimate & breakdown",
+      title: "₹20 LPA in-hand India — tax, PF & monthly estimate",
       description:
         "₹20,00,000 gross: see PF, PT placeholder, and TDS spread as monthly lines. Verify professional tax for your state; results are educational estimates.",
       keywords: ["20 LPA in hand", "20 lakh salary take home", "20 LPA net pay India"],

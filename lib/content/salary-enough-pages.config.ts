@@ -115,6 +115,71 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     ],
   },
   {
+    slug: "is-12-lpa-good-in-bangalore",
+    lpa: 12,
+    annualCtc: 12_00_000,
+    city: { id: "bangalore", name: "Bengaluru", metro: true },
+    monthlyRent: 27_000,
+    lifestyle: "moderate",
+    answerKind: "depends",
+    seo: {
+      title: "Is ₹12 LPA good in Bangalore? Rent vs in-hand reality check",
+      description:
+        "₹12 lakh CTC in Bengaluru: ₹27k rent scenario, estimated in-hand and savings — pre-filled Salary Reality Check you can edit for your lease and lifestyle.",
+      keywords: [
+        "is 12 lpa good in bangalore",
+        "12 lakh salary bangalore enough",
+        "12 LPA Bengaluru rent",
+        "is 12 lpa enough in bangalore",
+      ],
+    },
+    answerHeadline:
+      "Often workable with roommates or a modest solo setup — tight if you anchor on premium corridors or solo 1BHK asks.",
+    leadParagraph:
+      "Twelve LPA sits between early-career ₹10L bands and the more comfortable ₹15L+ stretch in Bengaluru. We anchor rent at ₹27,000/month — plausible for shared housing or a compact unit in many areas, but not for every “walk to office” fantasy.",
+    whyParagraph:
+      "Tax and PF still bite at ₹12L gross; rent is the swing line. If your real rent is lower, savings jump quickly — if it’s higher, the same gross stops feeling “good” fast. Use the embedded tool to paste your actual rent and tier.",
+    typicalSpendNotes: [
+      "₹27k rent + moderate tier assumes EMIs and big medical aren’t silently stacked on the same payslip.",
+      "Metro commute in the model is heavier than a small town — matches many Bengaluru commutes.",
+      "Variable pay as a large share of CTC makes monthly in-hand less predictable than this single scenario.",
+    ],
+    relatedLpaSlugs: ["12-lpa-in-hand-salary", "10-lpa-in-hand-salary", "15-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Campus hires and early switches evaluating Bengaluru offers, or anyone comparing ₹12L here vs another city — especially if you can optimize rent or don’t need a solo premium flat.",
+    whenEnoughVsNot:
+      "Enough when rent stays near this anchor (or lower) and spend stays moderate. Breaks when you need premium housing, are the sole earner for a household with school fees, or stack large loans on the same gross.",
+    majorTradeoffs: [
+      "PG/shared vs solo: same CTC, totally different monthly pressure.",
+      "Core micro-markets vs commute: rent drops with distance — time cost isn’t priced in rupees here.",
+      "Premium lifestyle tier in the tool erodes savings faster than most tax tweaks at this band.",
+    ],
+    cityRealityNotes: [
+      "Two neighbourhoods with the same label on a map can rent ₹5k apart — verify listings, not vibes.",
+      "Brokerage + deposit can compress month-one cash even when recurring rent looks fine.",
+      "Hybrid work can make outer-ring rent viable — model your real office days, not 2019 norms.",
+    ],
+    soloVsFamilyCaveat:
+      "Built around one earner’s moderate footprint. Dependents, school fees, or supporting parents need higher gross or lower rent — reflect that in the embed.",
+    faq: [
+      {
+        question: "Is ₹12 LPA enough in Bangalore for a fresher?",
+        answer:
+          "Often yes with shared housing and moderate spend; less so if you target a solo flat in an expensive corridor. Tune rent in the calculator to your actual hunt.",
+      },
+      {
+        question: "How does ₹12 LPA compare to ₹15 LPA in Bengaluru?",
+        answer:
+          "Open our ₹15 LPA Bengaluru page — same city notes, higher gross and a ₹30k rent illustration.",
+      },
+      {
+        question: "Should I use this for tax filing?",
+        answer:
+          "No. Planning and education only — use Form 16 and a qualified professional for filing.",
+      },
+    ],
+  },
+  {
     slug: "is-15-lpa-good-in-pune",
     lpa: 15,
     annualCtc: 15_00_000,
@@ -957,6 +1022,396 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     ],
   },
   {
+    slug: "is-12-lpa-good-in-chennai",
+    lpa: 12,
+    annualCtc: 12_00_000,
+    city: { id: "chennai", name: "Chennai", metro: true },
+    monthlyRent: 16_000,
+    lifestyle: "moderate",
+    answerKind: "depends",
+    seo: {
+      title: "Is ₹12 LPA good in Chennai? Rent, commute & savings reality check",
+      description:
+        "₹12 lakh CTC in Chennai: OMR/Velachery-style rent anchor, estimated in-hand vs moderate spend — editable Salary Reality Check for your actual lease.",
+      keywords: [
+        "is 12 lpa good in chennai",
+        "12 lakh salary chennai enough",
+        "12 LPA Chennai rent",
+        "Chennai IT salary 12 LPA",
+      ],
+    },
+    answerHeadline:
+      "Often workable for singles and sharers on moderate tier — tight if you target premium gated communities near IT corridors alone.",
+    leadParagraph:
+      "Chennai is a major IT and auto hub with strong fresher and mid-level hiring. We anchor ₹16,000/month rent — think shared 2BHK or a compact unit in several growth corridors — then stack the same moderate lifestyle model used across SalaryExit so you can compare cities honestly.",
+    whyParagraph:
+      "Coastal humidity and flood-prone pockets are real, but the money question here is still rent vs in-hand. If your listing is higher, paste it into the embed; if you live with family and pay zero rent, drop rent and re-read savings.",
+    typicalSpendNotes: [
+      "₹16k won’t match every OMR tower quote — raise rent if your shortlist is pricier.",
+      "Company buses and suburban rail change commute cash — discretionary is the first dial after rent.",
+      "North Chennai vs south Chennai isn’t one rental market — treat this as one illustrated pin.",
+    ],
+    relatedLpaSlugs: ["12-lpa-in-hand-salary", "10-lpa-in-hand-salary", "15-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "IT services, product, and manufacturing engineers comparing Chennai offers with Bengaluru or Hyderabad — especially sharers and early-career renters.",
+    whenEnoughVsNot:
+      "Enough when rent stays near this anchor and lifestyle stays moderate. Breaks when you pair high fixed rent with premium tier spend or large EMIs on one salary.",
+    majorTradeoffs: [
+      "OMR proximity vs city-side culture — rent and time both move.",
+      "Car + fuel vs metro/bus — not every employer runs a free shuttle.",
+      "School zone later vs rent today — plan liquidity, not only EMI.",
+    ],
+    cityRealityNotes: [
+      "Monsoon flooding risk varies by micro-market — rent isn’t the only due diligence.",
+      "Power-cut patterns differ by area; society maintenance can stack on base rent.",
+      "Language and schooling choices can shift household spend outside this model.",
+    ],
+    soloVsFamilyCaveat:
+      "Built around one earner’s moderate footprint. Dependents and international-school fees need their own budget lines in the tool.",
+    faq: [
+      {
+        question: "Is ₹12 LPA enough in Chennai for a fresher?",
+        answer:
+          "Often yes with shared housing; solo premium flats may need a higher gross or lower tier — tune rent in the embed.",
+      },
+      {
+        question: "How does Chennai compare to Bangalore at ₹12 LPA?",
+        answer:
+          "Open our Bengaluru ₹12L page side by side — same engine, different rent anchors and city notes.",
+      },
+      {
+        question: "Is this tax filing advice?",
+        answer:
+          "No. Educational planning only — use Form 16 and a qualified professional for filing.",
+      },
+    ],
+  },
+  {
+    slug: "is-15-lpa-good-in-chennai",
+    lpa: 15,
+    annualCtc: 15_00_000,
+    city: { id: "chennai", name: "Chennai", metro: true },
+    monthlyRent: 22_000,
+    lifestyle: "moderate",
+    answerKind: "depends",
+    seo: {
+      title: "Is ₹15 LPA good in Chennai? Mid-level salary vs city rent",
+      description:
+        "₹15 lakh CTC in Chennai: ₹22k rent illustration, in-hand and modeled savings — Salary Reality Check pre-filled, fully editable.",
+      keywords: [
+        "is 15 lpa good in chennai",
+        "15 lakh salary chennai",
+        "15 LPA Chennai enough",
+        "Chennai salary 15 LPA savings",
+      ],
+    },
+    answerHeadline:
+      "Usually more breathing room than ₹12L at similar rent discipline — still not ‘rich’ if you chase large solo flats plus car EMIs.",
+    leadParagraph:
+      "Fifteen LPA is a crowded band for Chennai IT and GCC roles. We use ₹22,000/month rent as a pragmatic solo-or-small-family anchor in several popular corridors — not every sea-view listing, but not a PG either.",
+    whyParagraph:
+      "At ₹15L gross, tax and PF still matter, but rent remains the fastest lever. If you’re cross-shopping Hyderabad or Pune, compare pages at the same gross rather than vibes alone.",
+    typicalSpendNotes: [
+      "₹22k targets many mid-corridor 1–2BHK asks — verify your society bill stack.",
+      "If variable pay is a big slice of CTC, treat in-hand as directional.",
+      "Premium tier in the tool burns savings faster than small tax tweaks here.",
+    ],
+    relatedLpaSlugs: ["15-lpa-in-hand-salary", "12-lpa-in-hand-salary", "18-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Mid-level ICs and tech leads benchmarking Chennai against other metros, or locals renegotiating after a promotion.",
+    whenEnoughVsNot:
+      "Enough on paper when rent and tier stay honest. Tight when rent mimics Mumbai quotes or household costs jump (school, care, loans).",
+    majorTradeoffs: [
+      "Closer office vs quieter suburb — rent and hours both shift.",
+      "International school later vs affordable rent now — model explicitly.",
+      "Switching to premium lifestyle tier to match peers — expensive habit at ₹15L.",
+    ],
+    cityRealityNotes: [
+      "GCC and captive hiring can compress pay bands — compare offer structure, not only LPA.",
+      "Traffic peaks are predictable — time cost isn’t rupees in this sheet.",
+      "Coastal weather and maintenance can surprise new tenants — keep a buffer.",
+    ],
+    soloVsFamilyCaveat:
+      "Works for one moderate earner or a couple with lean fixed costs. Big school fees on one ₹15L need lower rent or a second income — reflect in the embed.",
+    faq: [
+      {
+        question: "Is ₹15 LPA a good salary in Chennai in 2026?",
+        answer:
+          "Nationally it’s solid; locally it still depends on rent and household — use this page’s scenario then edit every line.",
+      },
+      {
+        question: "Should I pick old or new tax regime?",
+        answer:
+          "This page uses the new regime baseline. Compare explicitly with our tax regime calculator if deductions matter.",
+      },
+      {
+        question: "Does SalaryExit model surcharge?",
+        answer:
+          "No — read methodology; validate high-income tax with a professional.",
+      },
+    ],
+  },
+  {
+    slug: "is-12-lpa-good-in-kolkata",
+    lpa: 12,
+    annualCtc: 12_00_000,
+    city: { id: "kolkata", name: "Kolkata", metro: true },
+    monthlyRent: 14_000,
+    lifestyle: "moderate",
+    answerKind: "depends",
+    seo: {
+      title: "Is ₹12 LPA good in Kolkata? Rent & in-hand on ₹12 lakh gross",
+      description:
+        "₹12 lakh CTC in Kolkata: moderate rent anchor vs modeled spend — Salary Reality Check with city-typical assumptions you can replace.",
+      keywords: [
+        "is 12 lpa good in kolkata",
+        "12 lakh salary kolkata",
+        "12 LPA Kolkata enough",
+        "Kolkata IT salary living cost",
+      ],
+    },
+    answerHeadline:
+      "Often workable on moderate tier if rent stays sensible — less brutal than Mumbai/Bengaluru at the same gross, but not automatic comfort.",
+    leadParagraph:
+      "Kolkata’s rental gradient is wide: Salt Lake and select new-town pockets can pinch, while many corridors stay gentler than larger metros. We anchor ₹14,000/month rent — plausible for shared or compact setups — then run the standard moderate spend model.",
+    whyParagraph:
+      "We don’t model pujo-season splurges or club memberships — discretionary is a generic band. If your real life is leaner or louder, move the tier and rent until the story matches you.",
+    typicalSpendNotes: [
+      "₹14k may be low for some premium towers — raise rent if your hunt says so.",
+      "Metro expansion keeps reshaping relative rents — verify listings.",
+      "Family help with housing changes everything — set rent to zero in the tool if that’s you.",
+    ],
+    relatedLpaSlugs: ["12-lpa-in-hand-salary", "10-lpa-in-hand-salary", "15-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Early and mid-career folks in IT, analytics, and services comparing Kolkata with NCR or Pune — especially renters without family housing support.",
+    whenEnoughVsNot:
+      "Enough when rent is controlled and spend stays moderate. Tight when you chase large solo flats in premium pins plus heavy EMIs.",
+    majorTradeoffs: [
+      "Salt Lake convenience vs farther rent — same city, different maths.",
+      "Car ownership vs metro — parking and fuel hit discretionary.",
+      "School choice later vs rent today — plan cash, not only CTC.",
+    ],
+    cityRealityNotes: [
+      "Humidity and maintenance can be non-trivial — not every rupee is rent.",
+      "Some corridors commute toward Sector V or CBD — time cost is real.",
+      "Builder quality varies — cheap rent can be expensive in repairs.",
+    ],
+    soloVsFamilyCaveat:
+      "Assumes one earner’s moderate footprint. Joint families with pooled expenses should still tune rent and tier to match reality.",
+    faq: [
+      {
+        question: "Is ₹12 LPA enough in Kolkata for a single person?",
+        answer:
+          "Often yes with moderate rent; use the embed with your actual lease and lifestyle.",
+      },
+      {
+        question: "How does Kolkata compare to Bangalore?",
+        answer:
+          "Compare our Bengaluru pages at the same gross — rent anchors differ more than tax trivia.",
+      },
+      {
+        question: "Is professional tax exact for West Bengal?",
+        answer:
+          "We use a default annual placeholder — align with your state in the CTC tool if needed.",
+      },
+    ],
+  },
+  {
+    slug: "is-15-lpa-good-in-kolkata",
+    lpa: 15,
+    annualCtc: 15_00_000,
+    city: { id: "kolkata", name: "Kolkata", metro: true },
+    monthlyRent: 18_000,
+    lifestyle: "moderate",
+    answerKind: "depends",
+    seo: {
+      title: "Is ₹15 LPA good in Kolkata? Salary vs rent & savings model",
+      description:
+        "₹15 lakh CTC in Kolkata: ₹18k rent scenario, estimated in-hand and savings — transparent assumptions, editable calculator.",
+      keywords: [
+        "is 15 lpa good in kolkata",
+        "15 lakh salary kolkata",
+        "15 LPA Kolkata living",
+        "Kolkata salary enough",
+      ],
+    },
+    answerHeadline:
+      "Comfortable on paper for many singles and couples at moderate tier — still check real rent quotes before celebrating.",
+    leadParagraph:
+      "At fifteen LPA, Kolkata often leaves more slack than the same nominal gross in a handful of super-prime metros — if rent behaves. We use ₹18,000/month as a mid-market rental anchor, then apply the same expense heuristics as other cities for apples-to-apples comparison.",
+    whyParagraph:
+      "If you’re paid in a global hub salary discussion but live in Kolkata, context matters. If you’re paid Kolkata rates but want Mumbai lifestyle, the calculator will say no — honestly.",
+    typicalSpendNotes: [
+      "₹18k won’t cover every new-town luxury listing — adjust upward if needed.",
+      "Premium tier in the tool is the fastest way to see ‘where did savings go?’",
+      "Bonuses and variable pay aren’t modeled month-by-month.",
+    ],
+    relatedLpaSlugs: ["15-lpa-in-hand-salary", "12-lpa-in-hand-salary", "18-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Mid-level professionals evaluating Kolkata against remote or relocation offers — or locals upgrading flat size after a hike.",
+    whenEnoughVsNot:
+      "Enough when rent and tier stay aligned with this illustration. Not enough when fixed costs silently include school fees, care, and loans beyond the model.",
+    majorTradeoffs: [
+      "New-town amenities vs older-city charm — rent and commute both differ.",
+      "Owning vs renting — maintenance isn’t in these monthly lines.",
+      "Lifestyle creep vs savings rate — the tool makes the trade visible.",
+    ],
+    cityRealityNotes: [
+      "Relative affordability vs other metros isn’t static — verify today’s listings.",
+      "Some employers cluster in specific hubs — don’t assume city-average rent.",
+      "Weather and maintenance bills can nudge real spend — keep a buffer.",
+    ],
+    soloVsFamilyCaveat:
+      "If you’re the sole earner for kids’ fees and EMIs, raise rent/tier until the embed matches your household — one size never fits all.",
+    faq: [
+      {
+        question: "Is ₹15 LPA a high salary in Kolkata?",
+        answer:
+          "It’s strong locally; comfort still depends on rent, loans, and dependents — model them explicitly.",
+      },
+      {
+        question: "Does this include HRA exemption?",
+        answer:
+          "This flow uses gross → in-hand + lifestyle heuristics, not payslip HRA proofs — use the HRA calculator for exemption math.",
+      },
+      {
+        question: "Can I trust this for visa or loan paperwork?",
+        answer:
+          "No — it’s planning education, not certified income proof.",
+      },
+    ],
+  },
+  {
+    slug: "is-15-lpa-good-in-gurgaon",
+    lpa: 15,
+    annualCtc: 15_00_000,
+    city: { id: "gurgaon", name: "Gurugram (NCR)", metro: true },
+    monthlyRent: 28_000,
+    lifestyle: "moderate",
+    answerKind: "depends",
+    seo: {
+      title: "Is ₹15 LPA good in Gurgaon? NCR rent vs ₹15 lakh CTC",
+      description:
+        "₹15 lakh CTC in Gurugram: higher rent anchor than many cities, Salary Reality Check with editable rent and tier — compare to Noida pages.",
+      keywords: [
+        "is 15 lpa good in gurgaon",
+        "15 lakh salary gurgaon",
+        "15 LPA Gurugram enough",
+        "Gurgaon salary rent",
+      ],
+    },
+    answerHeadline:
+      "Tight for solo premium corridors — workable with roommates, slightly outer sectors, or disciplined moderate spend.",
+    leadParagraph:
+      "Gurugram competes with Mumbai and Bengaluru on headline rents for many pockets. We anchor ₹28,000/month — plausible for a compact solo or shared setup in several sectors, not every Cyber City-adjacent tower — then run the same moderate lifestyle model.",
+    whyParagraph:
+      "NCR is one job market with many rental micro-markets. If you actually pay ₹40k+ base rent on ₹15L gross, the embed will show stress fast — that’s the point.",
+    typicalSpendNotes: [
+      "Society charges and power backup can stack — mentally add to rent if needed.",
+      "Delhi-side commute can mean tolls and cabs — discretionary is the first flex.",
+      "If employer provides housing support, lower rent in the tool to match.",
+    ],
+    relatedLpaSlugs: ["15-lpa-in-hand-salary", "12-lpa-in-hand-salary", "18-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Consulting, tech, and corporate roles based on Golf Course Road / Cyber City / Udyog Vihar comparing offers with Noida or Bengaluru.",
+    whenEnoughVsNot:
+      "Enough when rent stays near this anchor or lower, and tier stays moderate. Breaks when rent chases trophy addresses or EMIs stack on one salary.",
+    majorTradeoffs: [
+      "Sector proximity vs rent — Gurgaon rewards compromise or roommates.",
+      "Car-first life vs metro — both show up in monthly cash.",
+      "Premium lifestyle tier vs savings — try the dial before switching jobs.",
+    ],
+    cityRealityNotes: [
+      "AQI seasons can change transport choices — not modeled as rupees here.",
+      "Brokerage and lock-in clauses matter for cash flow month one.",
+      "Some teams are hybrid — outer sectors can work if office days are few.",
+    ],
+    soloVsFamilyCaveat:
+      "School fees and help at home can dominate NCR budgets — one ₹15L earner should model household lines explicitly in the embed.",
+    faq: [
+      {
+        question: "Is ₹15 LPA enough in Gurgaon vs Noida?",
+        answer:
+          "Compare our Noida pages at the same gross — match rent to your actual shortlist in each city.",
+      },
+      {
+        question: "Why is rent higher than Kolkata or Chennai?",
+        answer:
+          "Illustrative anchors reflect typical listing bands; your quote wins — paste it into the calculator.",
+      },
+      {
+        question: "Is tax modeled for FY 2025-26?",
+        answer:
+          "Yes for new-regime slabs in code — see methodology for limits and surcharges not modeled.",
+      },
+    ],
+  },
+  {
+    slug: "is-15-lpa-good-in-ahmedabad",
+    lpa: 15,
+    annualCtc: 15_00_000,
+    city: { id: "ahmedabad", name: "Ahmedabad", metro: false },
+    monthlyRent: 15_000,
+    lifestyle: "moderate",
+    answerKind: "depends",
+    seo: {
+      title: "Is ₹15 LPA good in Ahmedabad? Rent & savings on ₹15 lakh gross",
+      description:
+        "₹15 lakh CTC in Ahmedabad: moderate rent anchor vs modeled spend — Salary Reality Check for manufacturing, IT, and startup roles.",
+      keywords: [
+        "is 15 lpa good in ahmedabad",
+        "15 lakh salary ahmedabad",
+        "15 LPA Ahmedabad enough",
+        "Ahmedabad cost of living salary",
+      ],
+    },
+    answerHeadline:
+      "Often more comfortable than the same gross in several larger metros — if rent stays near this anchor and lifestyle stays moderate.",
+    leadParagraph:
+      "Ahmedabad mixes manufacturing depth with a growing IT and startup scene. We use ₹15,000/month rent as a practical illustration for many shared or compact setups — not every premium riverfront listing.",
+    whyParagraph:
+      "Metro flag is off here to avoid overstating default commute cash vs Mumbai-style metros — if your commute is long and cab-heavy, nudge discretionary in the embed.",
+    typicalSpendNotes: [
+      "₹15k may be tight for some new-town gated asks — raise rent if that’s your market.",
+      "Car ownership is common — fuel and parking can eat discretionary.",
+      "Joint family housing with low rent changes the picture — set rent to match reality.",
+    ],
+    relatedLpaSlugs: ["15-lpa-in-hand-salary", "12-lpa-in-hand-salary", "18-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Professionals in IT parks, industrials, and startups comparing Ahmedabad with Pune or Hyderabad on real cash flow.",
+    whenEnoughVsNot:
+      "Enough when rent and tier stay aligned with this page. Tight when you import Mumbai lifestyle expectations on local gross.",
+    majorTradeoffs: [
+      "SG Highway convenience vs farther rent — same city, different cash left.",
+      "Bigger flat vs bigger SIP — visible in the savings line.",
+      "Premium tier for dining/travel — fast way to lose slack at ₹15L.",
+    ],
+    cityRealityNotes: [
+      "Heat and power backup norms differ by society — maintenance varies.",
+      "Some roles are still manufacturing-shift oriented — variable pay patterns differ.",
+      "Weekend travel spend can creep — discretionary is generic until you edit.",
+    ],
+    soloVsFamilyCaveat:
+      "If parents or kids change household burn, reflect higher rent or tier — the default is one moderate earner’s footprint.",
+    faq: [
+      {
+        question: "Is ₹15 LPA a good salary in Ahmedabad?",
+        answer:
+          "For many renters it’s solid; verify with your actual rent and loan load in the tool.",
+      },
+      {
+        question: "How does Ahmedabad compare to Bangalore?",
+        answer:
+          "Open Bengaluru pages at the same gross — rent anchors usually differ more than headline LPA.",
+      },
+      {
+        question: "Does this include Gujarat professional tax?",
+        answer:
+          "We use a generic PT placeholder like other pages — tune in the full CTC calculator if needed.",
+      },
+    ],
+  },
+  {
     slug: "is-10-lpa-enough-for-family-in-pune",
     lpa: 10,
     annualCtc: 10_00_000,
@@ -1096,4 +1551,27 @@ export function getSalaryEnoughPageConfig(slug: string): SalaryEnoughPageConfig 
 
 export function getAllSalaryEnoughSlugs(): string[] {
   return SALARY_ENOUGH_PAGES.map((p) => p.slug);
+}
+
+/** Internal linking: same city first, then other cities (stable array order). */
+export function getRelatedSalaryEnoughPages(
+  currentSlug: string,
+  limit: number
+): SalaryEnoughPageConfig[] {
+  const current = bySlug.get(currentSlug);
+  const others = SALARY_ENOUGH_PAGES.filter((p) => p.slug !== currentSlug);
+  if (limit <= 0) return [];
+  if (!current) return others.slice(0, limit);
+  const sameCity = others.filter((p) => p.city.id === current.city.id);
+  const otherCities = others.filter((p) => p.city.id !== current.city.id);
+  return [...sameCity, ...otherCities].slice(0, limit);
+}
+
+/** For LPA band pages: closest gross band first for relevant “is it enough?” links. */
+export function getSalaryEnoughSpotlightForLpa(lpa: number, limit: number): SalaryEnoughPageConfig[] {
+  if (limit <= 0) return [];
+  const scored = [...SALARY_ENOUGH_PAGES]
+    .map((p) => ({ p, d: Math.abs(p.lpa - lpa) }))
+    .sort((a, b) => a.d - b.d || a.p.slug.localeCompare(b.p.slug));
+  return scored.slice(0, limit).map((x) => x.p);
 }

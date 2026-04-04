@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { FY2024_25 } from "@/lib/config/financial-year";
+import { FY2024_25, FY2025_26 } from "@/lib/config/financial-year";
 import { estimateAnnualIncomeTax } from "@/lib/calculators/annual-tax";
 
 describe("estimateAnnualIncomeTax", () => {
@@ -19,5 +19,12 @@ describe("estimateAnnualIncomeTax", () => {
     expect(out.taxableIncomeAnnual).toBe(
       20_00_000 - FY2024_25.standardDeductionOldRegime - 150_000
     );
+  });
+
+  it("FY2025_26 new regime: ₹12.75L gross → ₹12L taxable → zero tax after rebate", () => {
+    const gross = 1_200_000 + FY2025_26.standardDeductionNewRegime;
+    const out = estimateAnnualIncomeTax("new", gross, 0, FY2025_26);
+    expect(out.taxableIncomeAnnual).toBe(1_200_000);
+    expect(out.totalTaxAnnual).toBe(0);
   });
 });

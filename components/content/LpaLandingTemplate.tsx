@@ -7,6 +7,7 @@ import { FaqSection } from "@/components/calculators/FaqSection";
 import { DisclaimerBlock } from "@/components/calculators/DisclaimerBlock";
 import { computeCtcToInHand } from "@/lib/calculators/ctc-to-inhand";
 import { getAdjacentLpa, type LpaLandingPageConfig } from "@/lib/content/lpa-pages.config";
+import { getSalaryEnoughSpotlightForLpa } from "@/lib/content/salary-enough-pages.config";
 import { InHandBreakdownBars } from "@/components/charts/InHandBreakdownBars";
 import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
 import { MethodologyLink } from "@/components/trust/MethodologyLink";
@@ -14,7 +15,7 @@ import { TrustMethodologyNotice } from "@/components/trust/TrustMethodologyNotic
 import { faqPageJsonLd } from "@/lib/jsonld";
 import { formatInr } from "@/lib/format-inr";
 import { ROUTES } from "@/lib/routes";
-import { lpaLandingPath } from "@/lib/routes/landing-routes";
+import { lpaLandingPath, salaryEnoughPath } from "@/lib/routes/landing-routes";
 import type { BreadcrumbItem } from "@/lib/seo/breadcrumbs";
 import type { FaqItem } from "@/types/faq";
 
@@ -26,6 +27,7 @@ export function LpaLandingTemplate({ config }: Props) {
   const result = computeCtcToInHand(config.scenario);
   const path = lpaLandingPath(config.slug);
   const adjacent = getAdjacentLpa(config.slug);
+  const salaryEnoughSpotlight = getSalaryEnoughSpotlightForLpa(config.lpa, 3);
 
   const breadcrumbs: BreadcrumbItem[] = [
     { label: "Home", href: ROUTES.home },
@@ -222,6 +224,23 @@ export function LpaLandingTemplate({ config }: Props) {
                 — when you’re choosing between employers, not just cities.
               </li>
             </ul>
+            {salaryEnoughSpotlight.length > 0 ? (
+              <div className="mt-4 border-t border-zinc-200 pt-4 dark:border-zinc-800">
+                <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                  City “enough salary?” checks near ₹{config.lpa} LPA
+                </h3>
+                <ul className="mt-2 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+                  {salaryEnoughSpotlight.map((p) => (
+                    <li key={p.slug}>
+                      <Link className="font-medium underline" href={salaryEnoughPath(p.slug)}>
+                        {p.seo.title}
+                      </Link>
+                      <span className="text-zinc-500 dark:text-zinc-400"> — {p.city.name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
           </section>
 
           <section className="rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">

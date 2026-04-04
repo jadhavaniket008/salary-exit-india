@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { FY2024_25 } from "@/lib/config/financial-year";
+import { FY2024_25, FY2025_26 } from "@/lib/config/financial-year";
 import {
   addCess,
   progressiveTax,
@@ -56,5 +56,23 @@ describe("cess and totalTaxWithCess", () => {
   it("adds 4% cess", () => {
     expect(addCess(10_000, FY2024_25)).toBe(400);
     expect(totalTaxWithCess(10_000, FY2024_25)).toBe(10_400);
+  });
+});
+
+describe("FY2025_26 new regime slabs", () => {
+  it("computes progressive tax for ₹15L taxable (no rebate)", () => {
+    // 0–4L:0 + 4–8L:5% of 4L=20k + 8–12L:10% of 4L=40k + 12–15L:15% of 3L=45k => 105k
+    expect(progressiveTax(1_500_000, FY2025_26.newRegimeSlabs)).toBe(105_000);
+  });
+
+  it("rebates full tax when taxable within ₹12L under new regime", () => {
+    const taxBefore = progressiveTax(1_200_000, FY2025_26.newRegimeSlabs);
+    expect(taxBefore).toBe(60_000);
+    expect(rebate87ANewRegime(1_200_000, taxBefore, FY2025_26)).toBe(60_000);
+  });
+
+  it("does not rebate above ₹12L taxable", () => {
+    const taxBefore = progressiveTax(1_200_001, FY2025_26.newRegimeSlabs);
+    expect(rebate87ANewRegime(1_200_001, taxBefore, FY2025_26)).toBe(0);
   });
 });
