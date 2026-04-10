@@ -25,6 +25,13 @@ function ensureHttpsForPublicHosts(url: URL): URL {
   return upgraded;
 }
 
+/**
+ * Production apex host for this site. If env is mistakenly set to apex, we still emit
+ * www in sitemaps, robots Host, and metadata so crawlers see one canonical host.
+ */
+const PRODUCTION_APEX_HOSTNAME = "salaryexit.in";
+const PRODUCTION_CANONICAL_ORIGIN = "https://www.salaryexit.in";
+
 export function getSiteOrigin(): URL {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   let resolved: URL;
@@ -38,5 +45,10 @@ export function getSiteOrigin(): URL {
       resolved = new URL("http://localhost:3000");
     }
   }
-  return ensureHttpsForPublicHosts(resolved);
+  let out = ensureHttpsForPublicHosts(resolved);
+  // Align apex → www for the live domain (matches Vercel primary host + NEXT_PUBLIC_SITE_URL).
+  if (out.hostname === PRODUCTION_APEX_HOSTNAME) {
+    out = new URL(PRODUCTION_CANONICAL_ORIGIN);
+  }
+  return out;
 }

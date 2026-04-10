@@ -21,9 +21,29 @@ function legacyLandingRedirects(): { source: string; destination: string; perman
   return [...lpa, ...enough];
 }
 
+/**
+ * Send apex → www so `/robots.txt`, `/sitemap.xml`, etc. resolve on one host even if
+ * the Vercel project’s domain redirect is off or cached oddly. Safe with www canonical.
+ */
+function apexToWwwProduction(): {
+  source: string;
+  has: { type: "host"; value: string }[];
+  destination: string;
+  permanent: boolean;
+}[] {
+  return [
+    {
+      source: "/:path*",
+      has: [{ type: "host", value: "salaryexit.in" }],
+      destination: "https://www.salaryexit.in/:path*",
+      permanent: true,
+    },
+  ];
+}
+
 const nextConfig: NextConfig = {
   async redirects() {
-    return [...legacyLandingRedirects()];
+    return [...legacyLandingRedirects(), ...apexToWwwProduction()];
   },
 };
 
