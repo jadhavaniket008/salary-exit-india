@@ -6,6 +6,7 @@ import { lpaLandingPath, salaryEnoughPath } from "@/lib/routes/landing-routes";
 import { GUIDE_ARTICLES, guideArticlePath } from "@/lib/content/guides-registry";
 import { ROUTES } from "@/lib/routes";
 import { getSiteOrigin } from "@/lib/seo/site-origin";
+import { SITE_CONTENT_LAST_UPDATED_ISO } from "@/lib/config/site-freshness";
 
 function url(path: string): string {
   const base = getSiteOrigin().origin.replace(/\/$/, "");
@@ -14,6 +15,7 @@ function url(path: string): string {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date(`${SITE_CONTENT_LAST_UPDATED_ISO}T00:00:00.000Z`);
   const staticPaths = [
     ROUTES.home,
     ROUTES.calculators,
@@ -36,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return unique.map((path) => ({
     url: url(path),
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: "weekly",
     priority: path === ROUTES.home ? 1 : 0.7,
   }));

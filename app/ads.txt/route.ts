@@ -11,12 +11,17 @@ export function GET() {
   const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID?.trim();
   if (!client?.startsWith("ca-pub-")) {
     return new NextResponse(
-      "# NEXT_PUBLIC_ADSENSE_CLIENT_ID not set or invalid (expected ca-pub-…).\n",
+      [
+        "# AdSense publisher ID is not configured yet.",
+        "# Set NEXT_PUBLIC_ADSENSE_CLIENT_ID=ca-pub-XXXXXXXXXXXXXXXX in production.",
+        "# Example format once approved:",
+        "# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0",
+        "",
+      ].join("\n"),
       {
-        status: 404,
         headers: {
           "Content-Type": "text/plain; charset=utf-8",
-          "Cache-Control": "no-store",
+          "Cache-Control": "public, max-age=300, s-maxage=300",
         },
       }
     );

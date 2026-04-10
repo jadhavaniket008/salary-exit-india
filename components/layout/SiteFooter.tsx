@@ -29,7 +29,13 @@ export function SiteFooter() {
             Methodology
           </Link>
           <Link href={ROUTES.salaryGuides} className="text-zinc-700 hover:underline dark:text-zinc-300">
-            Guides
+            Salary guides
+          </Link>
+          <Link href={ROUTES.taxGuides} className="text-zinc-700 hover:underline dark:text-zinc-300">
+            Tax guides
+          </Link>
+          <Link href={ROUTES.jobSwitchGuides} className="text-zinc-700 hover:underline dark:text-zinc-300">
+            Job switch guides
           </Link>
           {legal.map((item) => (
             <Link

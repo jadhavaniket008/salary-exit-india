@@ -3,6 +3,7 @@ import { ROUTES } from "@/lib/routes";
 
 const links = [
   { href: ROUTES.calculators, label: "Calculators" },
+  { href: ROUTES.methodology, label: "Methodology" },
   { href: ROUTES.salaryGuides, label: "Salary guides" },
   { href: ROUTES.taxGuides, label: "Tax guides" },
   { href: ROUTES.jobSwitchGuides, label: "Job switch" },
