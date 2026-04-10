@@ -23,16 +23,7 @@ function legacyLandingRedirects(): { source: string; destination: string; perman
 
 const nextConfig: NextConfig = {
   async redirects() {
-    return [
-      ...legacyLandingRedirects(),
-      // If www is added in Vercel, send traffic to the apex domain (matches NEXT_PUBLIC_SITE_URL).
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.salaryexit.in" }],
-        destination: "https://salaryexit.in/:path*",
-        permanent: true,
-      },
-    ];
+    return [...legacyLandingRedirects()];
   },
 };
 
