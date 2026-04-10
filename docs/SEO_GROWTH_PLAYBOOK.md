@@ -10,8 +10,8 @@ That usually means Google **knows the URLs** (often from your sitemap) but **has
 
 Still fix anything that makes Google’s job harder:
 
-- **Use `https://` everywhere in env**: In Vercel, set `NEXT_PUBLIC_SITE_URL=https://salaryexit.in` (not `http://`). The sitemap and canonical tags are built from this value; `http://` URLs in GSC almost always mean the env var (or an old deploy) used HTTP.
-- **Redeploy** after changing env vars, then in GSC → **Sitemaps**, resubmit `https://salaryexit.in/sitemap.xml`.
+- **Use `https://` everywhere in env**: In Vercel, set `NEXT_PUBLIC_SITE_URL=https://www.salaryexit.in` (not `http://`). The sitemap and canonical tags are built from this value; `http://` URLs in GSC almost always mean the env var (or an old deploy) used HTTP.
+- **Redeploy** after changing env vars, then in GSC → **Sitemaps**, resubmit `https://www.salaryexit.in/sitemap.xml`.
 - **URL Inspection**: request indexing for your homepage + a handful of high-value pages (don’t spam; quota is limited).
 - **Internal links**: strong navigation + contextual links help discovery and perceived usefulness.
 - **Differentiate programmatic pages**: city/LPA pages need clearly unique sections (not boilerplate), or Google may deprioritize crawling them.
@@ -20,7 +20,7 @@ Still fix anything that makes Google’s job harder:
 
 If PSI says Chrome UX Report has **no data**, the site is usually **too new or too low-traffic** for field metrics. Use the **lab** (“Diagnose performance issues”) section for actionable audits; Search Console CWV fills in later as traffic grows. See [PageSpeed Insights](https://pagespeed.web.dev/).
 
-- **Search Console (domain property)**: verify + submit `https://salaryexit.in/sitemap.xml`.
+- **Search Console (domain property)**: verify + submit `https://www.salaryexit.in/sitemap.xml`.
 - **Indexing sanity checks**:
   - Confirm `robots.txt` allows crawling.
   - Use URL Inspection for homepage + 5–10 “money pages” (top calculators + top guides).

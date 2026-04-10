@@ -1,6 +1,6 @@
 /**
  * Canonical site origin for metadataBase, sitemap, and robots.
- * Production: set NEXT_PUBLIC_SITE_URL to your primary host (e.g. https://salaryexit.in).
+ * Production: set NEXT_PUBLIC_SITE_URL to your primary host (e.g. https://www.salaryexit.in).
  * On Vercel without that var, falls back to VERCEL_URL so previews still get absolute URLs.
  */
 function isLocalDevHost(hostname: string): boolean {
@@ -14,7 +14,7 @@ function isLocalDevHost(hostname: string): boolean {
 
 /**
  * Sitemaps, canonicals, and JSON-LD must use https for real domains. If `NEXT_PUBLIC_SITE_URL`
- * is mistakenly set to `http://salaryexit.in`, Google Search Console will list `http://` URLs
+ * is mistakenly set to `http://www.salaryexit.in`, Google Search Console will list `http://` URLs
  * as “Discovered” and may delay indexing.
  */
 function ensureHttpsForPublicHosts(url: URL): URL {
