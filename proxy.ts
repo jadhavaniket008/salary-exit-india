@@ -21,7 +21,7 @@ function hostsFromSiteUrl(): Set<string> {
   }
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   try {
     const httpsCanonicalHosts = hostsFromSiteUrl();
     if (httpsCanonicalHosts.size === 0) {
