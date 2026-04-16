@@ -37,8 +37,8 @@ export function articleJsonLd(options: {
       "@type": "WebPage",
       "@id": absoluteUrl(options.urlPath),
     },
-    datePublished: options.datePublished ?? "2025-03-22",
-    dateModified: options.dateModified ?? options.datePublished ?? "2025-03-22",
+    datePublished: options.datePublished ?? "2026-03-15",
+    dateModified: options.dateModified ?? options.datePublished ?? "2026-03-15",
     author: {
       "@type": "Organization",
       name: "SalaryExit India",

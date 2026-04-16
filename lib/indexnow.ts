@@ -33,7 +33,9 @@ export function buildIndexNowPayload(urls: string[]): IndexNowSubmitPayload | nu
     .map((u) => {
       try {
         const parsed = new URL(u);
-        if (parsed.hostname !== host && parsed.hostname !== `www.${host}`) {
+        const apexHost = host.startsWith("www.") ? host.slice(4) : host;
+        const wwwHost = host.startsWith("www.") ? host : `www.${host}`;
+        if (parsed.hostname !== apexHost && parsed.hostname !== wwwHost) {
           throw new Error(`URL hostname must match ${host}: ${u}`);
         }
         parsed.protocol = "https:";

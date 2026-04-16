@@ -1,5 +1,5 @@
 /**
- * Long-tail “₹X LPA in-hand” landing pages — single source of truth.
+ * Long-tail "₹X LPA in-hand" landing pages — single source of truth.
  * Add rows here to scale to 50+ pages without duplicating route files.
  */
 
@@ -48,9 +48,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "8-lpa-in-hand-salary",
     lpa: 8,
     seo: {
-      title: "₹8 LPA take-home in India — monthly in-hand estimate (FY engine)",
+      title: "8 LPA In-Hand Salary: ₹64,600/month (FY 2025-26)",
       description:
-        "₹8,00,000 gross/year: see estimated monthly in-hand, PF, professional tax placeholder, and TDS spread. Adjust inputs in the CTC→in-hand calculator for your state and payslip.",
+        "₹64,600/month in-hand on ₹8 LPA gross — zero income tax (Section 87A rebate, FY 2025-26). Employee PF included. Adjust Basic+DA and state PT in the CTC calculator.",
       keywords: [
         "8 LPA in hand",
         "800000 salary in hand",
@@ -75,9 +75,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "10-lpa-in-hand-salary",
     lpa: 10,
     seo: {
-      title: "₹10 LPA in-hand India — tax, PF & monthly estimate",
+      title: "10 LPA In-Hand Salary: ₹81,300/month (FY 2025-26)",
       description:
-        "₹10,00,000 gross: monthly in-hand estimate under new regime defaults, ₹2,500 PT placeholder, and PF from a 45% Basic+DA assumption. Not a payslip — tune the CTC tool for your employer.",
+        "₹81,300/month in-hand on ₹10 LPA gross — zero income tax (Section 87A rebate, FY 2025-26). Tune Basic+DA and state PT for your exact take-home.",
       keywords: ["10 LPA in hand", "10 lakh salary take home", "CTC 10 LPA India", "10 LPA monthly net"],
     },
     scenario: baseScenario(10),
@@ -95,9 +95,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "12-lpa-in-hand-salary",
     lpa: 12,
     seo: {
-      title: "₹12 LPA in-hand India — tax, PF & monthly estimate",
+      title: "12 LPA In-Hand: ₹98,000/month, Zero Tax (FY 2025-26)",
       description:
-        "₹12 lakh gross salary: estimated monthly in-hand, employee PF, TDS spread, and FY slabs in code. Compare old vs new regime if deductions matter for you.",
+        "₹98,000/month in-hand on ₹12 LPA gross — zero income tax under Section 87A (FY 2025-26). Compare old vs new regime if you claim HRA or 80C deductions.",
       keywords: ["12 LPA in hand", "12 lakh CTC take home", "12 LPA monthly salary hand"],
     },
     scenario: baseScenario(12),
@@ -115,9 +115,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "15-lpa-in-hand-salary",
     lpa: 15,
     seo: {
-      title: "₹15 LPA in-hand estimate India — tax, PF & PT explained",
+      title: "15 LPA In-Hand Salary: ₹1,14,900/month (FY 2025-26)",
       description:
-        "₹15,00,000 gross/year: transparent monthly breakdown with SalaryExit’s FY model. Surcharge not included — see methodology for limits.",
+        "₹1,14,900/month in-hand on ₹15 LPA gross (new regime, FY 2025-26). Tax kicks in above the ₹12L rebate limit — see monthly PF, TDS, and PT breakdown.",
       keywords: ["15 LPA in hand", "15 lakh salary monthly", "15 LPA net salary India"],
     },
     scenario: baseScenario(15),
@@ -135,9 +135,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "18-lpa-in-hand-salary",
     lpa: 18,
     seo: {
-      title: "₹18 LPA: in-hand after tax, PF & rent (2026)",
+      title: "18 LPA In-Hand Salary: ₹1,35,400/month (FY 2025-26)",
       description:
-        "₹18 lakh gross in India: estimated monthly in-hand after tax, PF, and a PT placeholder — then see how far that cash goes with rent using our city “enough salary?” pages (not filing advice).",
+        "₹1,35,400/month in-hand on ₹18 LPA gross (new regime, FY 2025-26). Transparent monthly TDS, PF, and PT breakdown. Not a payslip — tune inputs for your employer.",
       keywords: [
         "18 LPA in hand",
         "18 lakh CTC take home India",
@@ -165,9 +165,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "20-lpa-in-hand-salary",
     lpa: 20,
     seo: {
-      title: "₹20 LPA in-hand India — tax, PF & monthly estimate",
+      title: "20 LPA In-Hand Salary: ₹1,48,600/month (FY 2025-26)",
       description:
-        "₹20,00,000 gross: see PF, PT placeholder, and TDS spread as monthly lines. Verify professional tax for your state; results are educational estimates.",
+        "₹1,48,600/month in-hand on ₹20 LPA gross (new regime, FY 2025-26). Monthly TDS, PF, and PT breakdown. Surcharge not modeled — treat as directional estimate.",
       keywords: ["20 LPA in hand", "20 lakh salary take home", "20 LPA net pay India"],
     },
     scenario: baseScenario(20),
@@ -185,9 +185,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "25-lpa-in-hand-salary",
     lpa: 25,
     seo: {
-      title: "₹25 LPA in-hand India — high-level monthly cash estimate",
+      title: "25 LPA In-Hand Salary: ₹1,79,700/month (FY 2025-26)",
       description:
-        "₹25 lakh gross salary: estimated in-hand with SalaryExit defaults. No surcharge in engine — read methodology before comparing to Form 16.",
+        "₹1,79,700/month in-hand on ₹25 LPA gross (new regime, FY 2025-26). Transparent PF and TDS breakdown. Surcharge not modeled — directional planning only.",
       keywords: ["25 LPA in hand", "25 lakh CTC monthly in hand", "25 LPA net salary"],
     },
     scenario: baseScenario(25),
@@ -205,9 +205,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "30-lpa-in-hand-salary",
     lpa: 30,
     seo: {
-      title: "₹30 LPA gross to monthly in-hand — India (no surcharge modeled)",
+      title: "30 LPA In-Hand Salary: ₹2,08,300/month (FY 2025-26)",
       description:
-        "₹30,00,000 gross: monthly in-hand estimate; high-income surcharge and complex pay are out of scope. Use for directional planning, not tax filing.",
+        "₹2,08,300/month in-hand on ₹30 LPA gross (new regime, FY 2025-26). Directional estimate — surcharge and perquisites out of scope. Validate with Form 16.",
       keywords: ["30 LPA in hand", "30 lakh salary take home India", "30 LPA monthly net"],
     },
     scenario: baseScenario(30),
@@ -222,6 +222,29 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "RSU/ESOP and large bonuses can dominate effective tax rate — annualize carefully before comparing to “LPA”.",
       "Metro housing and schooling may dominate cash flow; use this in-hand as one input to a full budget, not the whole story.",
       "For filing and advance tax, rely on Form 16, AIS, and a CA — not long-tail LPA pages.",
+    ],
+  },
+  {
+    slug: "35-lpa-in-hand-salary",
+    lpa: 35,
+    seo: {
+      title: "35 LPA In-Hand Salary: ₹2,37,000/month (FY 2025-26)",
+      description:
+        "₹2,37,000/month in-hand on ₹35 LPA gross (new regime, FY 2025-26). Directional estimate — surcharge not modeled. Validate with Form 16 and a CA.",
+      keywords: ["35 LPA in hand", "35 lakh salary take home India", "35 LPA monthly net"],
+    },
+    scenario: baseScenario(35),
+    scenarioNotes: [
+      "₹35 LPA is interpreted as ₹35,00,000 gross per year.",
+      "Surcharge and high-income nuances are not modeled in the engine used here.",
+    ],
+    angleParagraph:
+      "At thirty-five LPA gross, surcharge and perquisite taxation are real considerations that SalaryExit’s simplified engine does not capture. Use this page to understand the shape of your deductions (PF, PT, TDS spread) as directional context, not a payslip prediction.",
+    bandInsights: [
+      "₹35L gross is well into surcharge territory for many taxpayers — this model may meaningfully understate actual tax vs Form 16.",
+      "RSU vesting, large annual bonuses, and joining pay can push effective tax rate further — annualise carefully before comparing to “LPA”.",
+      "At this band, PF wage definition and structure (Basic vs allowances) can shift in-hand by several thousand rupees monthly — ask HR for a pay breakdown.",
+      "For advance tax planning and filing, rely on Form 16, AIS, and a CA — not long-tail LPA pages.",
     ],
   },
 ];

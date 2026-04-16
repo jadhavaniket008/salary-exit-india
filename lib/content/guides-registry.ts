@@ -18,8 +18,8 @@ export type GuideArticleMeta = {
 };
 
 /** Display on guide pages when content was last substantively revised */
-export const GUIDE_CONTENT_AS_OF_DATE = "22 March 2025";
-export const GUIDE_CONTENT_AS_OF_ISO = "2025-03-22";
+export const GUIDE_CONTENT_AS_OF_DATE = "15 March 2026";
+export const GUIDE_CONTENT_AS_OF_ISO = "2026-03-15";
 
 export const GUIDE_HUBS: Record<
   GuideHubId,
