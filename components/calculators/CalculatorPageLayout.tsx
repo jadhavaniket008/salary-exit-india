@@ -9,6 +9,7 @@ import { CalculatorAccuracyCard } from "@/components/trust/CalculatorAccuracyCar
 import { CalculatorEstimateCaveats } from "@/components/trust/CalculatorEstimateCaveats";
 import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
 import { MethodologyLink } from "@/components/trust/MethodologyLink";
+import { CalculatorEditorial } from "@/components/calculators/CalculatorEditorial";
 
 type Props = {
   slug: CalculatorSlug;
@@ -52,6 +53,7 @@ export function CalculatorPageLayout({
               <AdSlot position="before-footer" label="Advertisement" />
               <div className="space-y-8 border-t border-zinc-200 pt-10 dark:border-zinc-800">
                 <CalculatorEstimateCaveats slug={slug} />
+                <CalculatorEditorial slug={slug} />
                 <CalculatorEducationLinks slug={slug} />
                 <RelatedCalculators currentSlug={slug} />
                 <DisclaimerBlock />
