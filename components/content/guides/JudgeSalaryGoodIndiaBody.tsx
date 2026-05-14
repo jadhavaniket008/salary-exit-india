@@ -9,37 +9,77 @@ export function JudgeSalaryGoodIndiaBody() {
   return (
     <ArticleProse>
       <p>
-        “Good salary” is not a single number on the internet. In practice, it means your{" "}
-        <strong>in-hand cash</strong> (after PF, tax, and other deductions) leaves enough room after{" "}
-        <strong>non-negotiables</strong> (rent, loan EMIs, family obligations) and your{" "}
-        <strong>savings target</strong>. Everything else — title, CTC, peer gossip — is noise until you
-        translate the offer into monthly rupees.
+        &quot;Is ₹20 LPA a good salary?&quot; is one of the most searched questions on Indian finance forums —
+        and it cannot be answered without knowing your city, rent, household size, loan obligations, and what
+        you consider &quot;enough.&quot; The number means very different things to a single professional in
+        Hyderabad sharing a flat versus a family of three in Mumbai paying ₹45,000 rent. This guide gives you
+        a repeatable framework rather than a number.
       </p>
 
-      <h2 id="start-in-hand">1) Start from in-hand, not CTC</h2>
+      <h2 id="start-in-hand">Step 1: Convert CTC to monthly in-hand first</h2>
       <p>
-        Two people with the same CTC can have different take-home because of PF wage, tax regime, professional
-        tax, and how variable pay is structured. Before you judge an offer, put both sides through the same{" "}
-        <Link href={ROUTES.ctcToInHandCalculator}>CTC → in-hand</Link> assumptions.
+        The most common mistake is comparing salaries at CTC level. Two ₹20 LPA offers can produce
+        meaningfully different monthly cash if one has a higher PF wage, a different tax regime, or more
+        variable pay. Before deciding whether a salary is &quot;good,&quot; compute the monthly in-hand for
+        your specific offer structure.
+      </p>
+      <p>
+        At ₹20 LPA gross in FY 2025-26 (new regime, typical PF structure), monthly in-hand is roughly
+        ₹1,45,000–₹1,55,000 depending on PF wage and state PT. At ₹15 LPA, roughly ₹1,10,000–₹1,20,000.
+        At ₹10 LPA, roughly ₹78,000–₹85,000. These are ballpark estimates — use the{" "}
+        <Link href={ROUTES.ctcToInHandCalculator}>CTC to in-hand calculator</Link> with your specific
+        inputs for the actual number.
       </p>
 
-      <h2 id="fixed-costs">2) Stack fixed costs in the right order</h2>
+      <h2 id="fixed-costs">Step 2: Stack your fixed costs against in-hand</h2>
       <p>
-        Rent and EMIs are usually paid from post-tax cash. If you move cities, rent often moves more than tax
-        does — so “₹5 LPA more gross” can disappear into a deposit and a higher lease. Read{" "}
-        <Link href={`${ROUTES.salaryGuides}/how-rent-changes-your-monthly-savings`}>
-          how rent changes your monthly savings
-        </Link>{" "}
-        for the intuition, then use the{" "}
-        <Link href={ROUTES.salaryRealityCheck}>Salary Reality Check</Link> with your actual rent and lifestyle
-        tier.
+        Fixed costs come off the top before anything else is discretionary. List them explicitly:
+      </p>
+      <ul>
+        <li>
+          <strong>Rent (or home loan EMI):</strong> The single largest fixed cost for most. In Bengaluru,
+          a 1BHK in a reasonable corridor costs ₹18,000–₹28,000/month. In Mumbai, the same can be
+          ₹30,000–₹50,000. In Pune, ₹12,000–₹22,000. Rent does not scale with income — it scales with
+          the city and the specific corridor.
+        </li>
+        <li>
+          <strong>Existing loan EMIs:</strong> Education loans, vehicle EMIs, or any other fixed monthly
+          obligation. These reduce the discretionary pool just as much as rent.
+        </li>
+        <li>
+          <strong>Family financial obligations:</strong> Supporting parents, school fees, or household
+          expenses for a dependent spouse. These are often the most overlooked in &quot;good salary&quot;
+          discussions on social media.
+        </li>
+      </ul>
+      <p>
+        The residual after fixed costs is what you actually have for food, transport, discretionary spend,
+        and savings. A salary that looks comfortable at the CTC level can feel very tight after rent and EMIs.
       </p>
 
-      <h2 id="city">3) Make the city explicit</h2>
+      <h2 id="savings-target">Step 3: Define a savings target first, not last</h2>
       <p>
-        The same gross feels different in Bangalore, Pune, Mumbai, or Noida because the rental market is
-        different — not because “tier-1” is magic. Our salary-enough pages fix one transparent scenario each
-        (rent + tier + metro commute band) so you can compare stories, not vibes:
+        Most budgeting advice says &quot;save what&apos;s left.&quot; That produces near-zero savings for
+        most people. A better approach: decide a savings rate first (a commonly referenced target in India is
+        20–25% of take-home for medium-term goals, plus whatever EPF contributes), then see if your in-hand
+        minus fixed costs minus that savings target leaves enough for living.
+      </p>
+      <p>
+        If the math does not work, the answer to &quot;is this a good salary?&quot; is: not yet, for this
+        city and household. That is useful information — it tells you what needs to change (higher gross,
+        lower rent, fewer EMIs, or a different city).
+      </p>
+
+      <h2 id="city-matters">Step 4: Make the city completely explicit</h2>
+      <p>
+        The same gross salary does not produce the same financial freedom in different cities because rent
+        is a fixed rupee amount, not a percentage of income. A ₹15,000/month rent difference between
+        Hyderabad and Mumbai does not change your CTC — but it changes your monthly savings by ₹15,000.
+        After a year, that is ₹1.8L difference in savings on the same gross.
+      </p>
+      <p>
+        Our salary-enough scenario pages fix one rent and lifestyle combination per city and income level
+        so you can evaluate the real budget story:
       </p>
       <ul>
         <li>
@@ -47,48 +87,63 @@ export function JudgeSalaryGoodIndiaBody() {
           mid-junior band, higher rent anchor.
         </li>
         <li>
-          <Link href={enough("is-20-lpa-good-in-pune")}>Is ₹20 LPA good in Pune?</Link> — more room on paper
-          than many Mumbai rents at the same gross.
+          <Link href={enough("is-20-lpa-good-in-pune")}>Is ₹20 LPA good in Pune?</Link> — more room
+          than Mumbai at the same gross for most rent brackets.
         </li>
         <li>
-          <Link href={enough("is-20-lpa-good-in-mumbai")}>Is ₹20 LPA good in Mumbai?</Link> — rent-heavy
-          stress test.
+          <Link href={enough("is-20-lpa-good-in-mumbai")}>Is ₹20 LPA good in Mumbai?</Link> —
+          rent-heavy stress test.
+        </li>
+        <li>
+          <Link href={enough("is-20-lpa-enough-for-family-in-bangalore")}>
+            ₹20 LPA, family spend in Bengaluru
+          </Link>{" "}
+          — premium tier + rent; honest squeeze for one earner with dependents.
         </li>
       </ul>
+
+      <h2 id="variable-pay">Step 5: Price variable pay and ESOPs conservatively</h2>
       <p>
-        Browse the full list on the{" "}
-        <Link href={`${ROUTES.salaryGuides}#enough-heading`}>salary guides hub</Link>.
+        Variable pay — performance bonuses, incentives, commissions — is real money only when it is paid.
+        A ₹3L annual variable at 80% average payout is ₹2.4L, not ₹3L. At a startup with uncertain
+        financials, variable may be ₹0. For planning purposes, model variable at 60–70% of target for
+        established companies, and at 0–30% for early-stage startups. ESOPs should not be modeled as
+        monthly income at all until they vest and you have a realistic liquidity event.
+      </p>
+      <p>
+        When comparing two offers with different fixed vs variable splits, use the{" "}
+        <Link href={ROUTES.offerComparisonCalculator}>offer comparison calculator</Link> to model
+        conservative and optimistic cases for each.
       </p>
 
-      <h2 id="household">4) Match the household, not the meme</h2>
+      <h2 id="career-growth">Step 6: Factor the career trajectory, not just current cash</h2>
       <p>
-        Singles sharing a flat, couples with one earner, and parents paying school fees are three different
-        budgets. If you are comparing yourself to someone on LinkedIn, you rarely know their rent, loan, or
-        second income. Use scenarios that match <em>your</em> lease and dependents — for example{" "}
-        <Link href={enough("is-20-lpa-enough-for-family-in-bangalore")}>
-          family-shaped spend in Bengaluru
-        </Link>{" "}
-        when that is the question you are actually asking.
+        A salary that feels slightly short today can be &quot;good&quot; if it is at a company or role
+        that produces 25% increments annually or opens doors to significantly higher-paying opportunities
+        in 2–3 years. A salary that looks comfortable today at a stagnant company may feel bad in 3 years
+        when market rates have moved on. This is the hardest dimension to quantify, but salary is not just
+        a number on a payslip — it is also a position in your career arc.
+      </p>
+      <p>
+        A practical test: what does the ₹+3 LPA version of you look like 24 months from now, and is
+        this role on that path? If yes, the cash gap may be acceptable. If no, the gap needs to be
+        compensated in present value.
       </p>
 
-      <h2 id="variable">5) Price variable pay honestly</h2>
+      <h2 id="verdict">The four-item verdict</h2>
       <p>
-        Stock, bonus, and sales incentives can be real money — or fiction. For planning, treat uncertain
-        variable as upside, not rent money. When you compare two offers,{" "}
-        <Link href={ROUTES.offerComparisonCalculator}>offer comparison</Link> helps if you feed it conservative
-        numbers, not best-case stories.
+        A salary is &quot;good for you&quot; when you can name and accept these four numbers:
       </p>
-
-      <h2 id="verdict">6) A simple verdict you can defend</h2>
+      <ol>
+        <li>Monthly in-hand after PF and taxes.</li>
+        <li>Monthly rent (or EMI) and other fixed obligations.</li>
+        <li>A savings line you are willing to commit to each month.</li>
+        <li>What remains for discretionary spending — and whether you can live on that comfortably.</li>
+      </ol>
       <p>
-        A salary is “good” when you can name: (a) estimated monthly in-hand, (b) rent or EMI, (c) other fixed
-        costs, (d) a savings line you are willing to keep. If you cannot fill those four, fix the model before
-        you fix the job.
-      </p>
-      <p>
-        Deeper structure:{" "}
-        <Link href={`${ROUTES.salaryGuides}/salary-structure-in-india`}>salary structure in India</Link> ·{" "}
-        <Link href={`${ROUTES.salaryGuides}/what-affects-in-hand-salary`}>what affects in-hand pay</Link>.
+        If you cannot fill all four, fix the model before you accept or reject the job. Start with the{" "}
+        <Link href={ROUTES.salaryRealityCheck}>Salary Reality Check</Link> — it takes these four inputs
+        and returns a clear budget breakdown.
       </p>
     </ArticleProse>
   );

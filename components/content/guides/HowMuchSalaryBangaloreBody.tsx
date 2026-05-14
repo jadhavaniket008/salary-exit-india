@@ -9,82 +9,118 @@ export function HowMuchSalaryBangaloreBody() {
   return (
     <ArticleProse>
       <p>
-        There is <strong>no honest single LPA</strong> that works for everyone in Bengaluru. What matters is
-        whether <em>your</em> gross, after tax and PF, covers <em>your</em> rent, household costs, and the
-        savings rate you want. The city’s job market publishes wide bands — your lease and commute pin you to
-        a much narrower story.
+        &quot;You need at least ₹X LPA to live comfortably in Bangalore&quot; — this framing is everywhere
+        and almost entirely useless. The number depends on where exactly in Bangalore you plan to live,
+        whether you are renting solo or sharing, what your loan obligations are, and what you consider
+        &quot;comfortable.&quot; This guide gives you a way to compute the answer for your specific
+        situation instead of relying on someone else&apos;s vague benchmark.
       </p>
 
-      <h2 id="why-no-number">Why “you need ₹X LPA” posts mislead</h2>
+      <h2 id="ctc-to-inhand-first">Always translate CTC to monthly in-hand first</h2>
       <p>
-        Headline numbers ignore PF wage, tax regime, variable pay mix, and whether you are paying school fees
-        or a home loan. Two people on ₹20 LPA can have different lives because one pays ₹18,000 rent with a
-        roommate and the other pays ₹45,000 solo near work. Start with{" "}
-        <Link href={ROUTES.ctcToInHandCalculator}>in-hand from CTC</Link>, then layer rent.
+        Bangalore rent is paid in rupees per month, not in LPA. A ₹20 LPA offer does not deposit
+        ₹1,66,667 each month — it typically deposits ₹1,40,000–₹1,55,000 after employee PF and TDS,
+        depending on your PF wage, tax regime, and professional tax. Before you decide whether any
+        gross is &quot;enough&quot; for Bangalore, convert it to an in-hand figure you can stack against
+        monthly costs. Use the{" "}
+        <Link href={ROUTES.ctcToInHandCalculator}>CTC to in-hand calculator</Link> with your specific
+        offer structure.
       </p>
 
-      <h2 id="rent-first">What usually dominates: rent, then tier</h2>
+      <h2 id="rent-corridors">Bangalore&apos;s rent corridors: the same LPA feels different by location</h2>
       <p>
-        In most budgets, rent is the largest lever you can name before you open a spreadsheet. Our{" "}
-        <Link href={ROUTES.salaryRealityCheck}>Salary Reality Check</Link> treats rent as an input and models
-        groceries, commute, utilities, and discretionary by lifestyle tier (basic / moderate / premium) — see{" "}
-        <Link href={ROUTES.methodology}>methodology</Link> for what those tiers mean in rupees.
-      </p>
-
-      <h2 id="scenario-pages">Stress-test with Bengaluru scenario pages</h2>
-      <p>
-        These pages each fix one rent + tier + metro commute assumption so you can compare “what if” without
-        generic cost-of-living articles:
+        Bangalore is not one rental market. Approximate 2025 rent ranges for 1BHK (fully furnished,
+        solo occupant):
       </p>
       <ul>
         <li>
-          <Link href={enough("is-10-lpa-good-in-bangalore")}>₹10 LPA</Link> — early-career; often tight for
-          solo core-corridor rent.
+          <strong>Whitefield, Electronic City (outer east/south tech corridors):</strong> ₹14,000–₹22,000.
+          Lower rent but long commutes if your office is in central Bangalore or north.
         </li>
         <li>
-          <Link href={enough("is-15-lpa-good-in-bangalore")}>₹15 LPA</Link> — common junior/mid band; rent anchor
-          set higher than ₹10L page.
+          <strong>Marathahalli, Sarjapur, HSR Layout:</strong> ₹18,000–₹28,000. Mid-range; popular
+          with IT employees. Better commute balance for east/south offices.
         </li>
         <li>
-          <Link href={enough("is-20-lpa-enough-in-bangalore")}>₹20 LPA (enough?)</Link> — different framing from
-          “good”; read the default rent.
+          <strong>Indiranagar, Koramangala, Banaswadi:</strong> ₹22,000–₹38,000. Premium locations
+          close to restaurants, social infrastructure. Higher rent for lifestyle access.
         </li>
         <li>
-          <Link href={enough("is-25-lpa-good-in-bangalore")}>₹25 LPA</Link> — stress-tested with a higher rent
-          default.
-        </li>
-        <li>
-          <Link href={enough("is-20-lpa-enough-for-family-in-bangalore")}>₹20 LPA, family-shaped spend</Link> —
-          premium tier + rent; honest squeeze for one earner.
+          <strong>Yelahanka, Hennur, Thanisandra (north):</strong> ₹12,000–₹20,000. Significantly
+          cheaper but far from most IT clusters.
         </li>
       </ul>
       <p>
-        Every page embeds the same calculator — change rent and tier to your actual hunt.
+        The corridor you choose — driven by your office location and lifestyle preference — determines
+        your rent more than your salary does. Model with your actual rent, not a city average.
       </p>
 
-      <h2 id="compare-offers">If you are choosing between cities</h2>
+      <h2 id="at-10-lpa">What ₹10 LPA looks like in Bangalore</h2>
       <p>
-        Do not compare CTC across cities without moving rent. Use the same in-hand methodology for each offer,
-        then plug local rent.{" "}
+        Monthly in-hand on ₹10 LPA gross (new regime, FY 2025-26): roughly ₹78,000–₹85,000. At outer
+        corridor rent of ₹16,000, you have ~₹62,000–₹69,000 left for food, transport, utilities, and
+        savings. If you are a first-jobber saving ₹15,000–₹20,000/month, this math works — but leaves
+        little slack. A solo flat in Koramangala at ₹28,000 rent changes the picture entirely: only
+        ₹50,000–₹57,000 for everything else. Sharing a flat or staying in a PG significantly
+        improves savings at this band.
+      </p>
+      <p>
+        Explore: <Link href={enough("is-10-lpa-good-in-bangalore")}>Is ₹10 LPA good in Bangalore?</Link>
+      </p>
+
+      <h2 id="at-15-lpa">What ₹15 LPA looks like in Bangalore</h2>
+      <p>
+        Monthly in-hand on ₹15 LPA gross: roughly ₹1,12,000–₹1,20,000. At ₹20,000 rent, approximately
+        ₹92,000–₹100,000 left. A moderate lifestyle (groceries ~₹8,000, transport ~₹5,000, utilities
+        ~₹3,000, discretionary ~₹15,000) totals about ₹31,000 — leaving ₹60,000–₹70,000 for savings,
+        EMIs, or upgrades. This is the range where solo living in mid-tier Bangalore corridors becomes
+        financially feasible without stress.
+      </p>
+      <p>
+        Explore: <Link href={enough("is-15-lpa-good-in-bangalore")}>Is ₹15 LPA good in Bangalore?</Link>
+      </p>
+
+      <h2 id="at-20-lpa">What ₹20 LPA looks like in Bangalore</h2>
+      <p>
+        Monthly in-hand on ₹20 LPA: roughly ₹1,45,000–₹1,55,000. At ₹25,000 rent for a quality 1BHK,
+        roughly ₹1,20,000–₹1,30,000 left. With moderate lifestyle spend, savings potential is
+        ₹70,000–₹90,000/month depending on how much discretionary spend you allow. This is
+        &quot;comfortable solo&quot; territory in most Bangalore corridors — though families or those
+        with significant loan EMIs will find it tighter.
+      </p>
+      <p>
+        Explore:{" "}
+        <Link href={enough("is-20-lpa-enough-in-bangalore")}>Is ₹20 LPA enough in Bangalore?</Link>
+      </p>
+
+      <h2 id="commute-factor">The commute factor: Bangalore&apos;s hidden cost</h2>
+      <p>
+        Traffic in Bangalore is a real financial variable. A longer commute means either higher transport
+        costs (cab aggregators for long distances) or more time lost. Many employees end up paying
+        ₹5,000–₹12,000/month in commute costs if they choose distant lower-rent corridors. A simple test:
+        if a cheaper flat saves ₹8,000/month on rent but costs ₹6,000/month more in cabs, the real
+        saving is only ₹2,000. Run the full numbers, not just the rent line.
+      </p>
+
+      <h2 id="comparing-cities">Comparing Bangalore to other cities</h2>
+      <p>
+        Bangalore&apos;s rent is typically lower than Mumbai at equivalent quality, roughly comparable
+        to premium Pune, and higher than Hyderabad or Chennai in similar-quality corridors. If you have
+        offers in multiple cities, compare in-hand minus realistic rent for each — not headline CTC.
+        A ₹20 LPA offer in Hyderabad with ₹14,000 rent may leave more monthly savings than a ₹22 LPA
+        offer in Bangalore with ₹24,000 rent.
+      </p>
+      <p>
+        The{" "}
         <Link href={`${ROUTES.jobSwitchGuides}/compare-job-offers-beyond-ctc`}>
-          Compare job offers beyond CTC
+          compare job offers beyond CTC
         </Link>{" "}
-        walks through that checklist.
+        guide walks through a city-adjusted offer comparison. For the Salary Reality Check with your
+        actual Bangalore rent:{" "}
+        <Link href={ROUTES.salaryRealityCheck}>Salary Reality Check</Link>. See{" "}
+        <Link href={enough("is-25-lpa-good-in-bangalore")}>Is ₹25 LPA good in Bangalore?</Link> for
+        a higher-band worked example with a more premium rent assumption.
       </p>
-
-      <h2 id="related">Related reading</h2>
-      <ul>
-        <li>
-          <Link href={`${ROUTES.salaryGuides}/how-to-judge-if-a-salary-is-good-in-india`}>
-            How to judge if a salary is good in India
-          </Link>
-        </li>
-        <li>
-          <Link href={`${ROUTES.salaryGuides}/how-rent-changes-your-monthly-savings`}>
-            How rent changes monthly savings
-          </Link>
-        </li>
-      </ul>
     </ArticleProse>
   );
 }
