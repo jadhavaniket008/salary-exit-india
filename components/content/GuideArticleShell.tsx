@@ -69,6 +69,8 @@ export function GuideArticleShell({
           headline: title,
           description,
           urlPath,
+          datePublished: lastUpdatedIso,
+          dateModified: lastUpdatedIso,
         })}
       />
       {faqLd ? <JsonLd data={faqPageJsonLd(faqLd)} /> : null}

@@ -43,10 +43,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# keep graph outputs, skip heavy/local-only files
+# graphify: keep the human-readable report; ignore raw graph data and stray outputs
+graphify-out/graph.json
 graphify-out/cache/
 graphify-out/manifest.json
 graphify-out/cost.json
+lib/content/graphify-out/
 
 # local agent + scratch
 .claude/

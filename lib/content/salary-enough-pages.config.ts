@@ -118,6 +118,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "No. It’s a planning and decision view. Use Form 16, AIS, and a qualified professional for filing.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹10 LPA, Bengaluru’s new-regime take-home is approximately ₹82,000–₹85,000/month. After ₹28,000 rent and moderate lifestyle spend, the savings line is thin — near zero or marginally positive for a solo renter. The model does not flatter: this gross in this city at this rent leaves very little buffer for unexpected costs, and any lifestyle upgrade to even a mild premium tier produces a negative month. The numbers are not broken — they are honest about how difficult a solo ₹28k lease is at ₹10 LPA gross.",
+      "Bengaluru’s rental corridors near ₹10 LPA employment hubs — Whitefield, Electronic City, Outer Ring Road IT parks — frequently quote ₹25k–₹35k for a 1BHK in mid-tier societies. The ₹28k anchor is not an outlier; it is the realistic floor for a private solo flat in many of these areas. The common workaround is a shared flat, which halves the individual rent line and changes the savings story entirely — but shared leases require a known and stable co-tenant, which is non-trivial to arrange quickly when relocating to a new city. Factor search time, deposit advance, and brokerage into your move-in liquidity separately.",
+      "This page is most useful if you are evaluating whether to accept a ₹10 LPA Bengaluru offer early in your career, or deciding whether to hold for a higher gross before relocating. The model’s answer is: doable with sharing and discipline, tight without. If the role has clear ₹14L–₹18L growth in two to three years, the early compromise may be worth it. If the gross is likely to plateau near this band for an extended period, the math supports either a lower-rent city or a higher offer floor as a starting condition.",
+    ],
   },
   {
     slug: "is-12-lpa-good-in-bangalore",
@@ -153,7 +158,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     whoThisWorksFor:
       "Campus hires and early switches evaluating Bengaluru offers, or anyone comparing ₹12L here vs another city — especially if you can optimize rent or don’t need a solo premium flat.",
     whenEnoughVsNot:
-      "Enough when rent stays near this anchor (or lower) and spend stays moderate. Breaks when you need premium housing, are the sole earner for a household with school fees, or stack large loans on the same gross.",
+      "Looks enough on this model when two people share the ₹27k anchor (bringing individual cost to ₹13k–₹14k) or when your real rent comes in below ₹22k. The move-in cash trap — brokerage plus 2–3 months deposit often requires ₹80k–₹108k upfront on a ₹92k take-home — hits before the first month's rent does. Breaks the moment you require solo occupancy in a core Bengaluru corridor at ₹27k+ while carrying any outstanding loan on the same gross.",
     majorTradeoffs: [
       "PG/shared vs solo: same CTC, totally different monthly pressure.",
       "Core micro-markets vs commute: rent drops with distance — time cost isn’t priced in rupees here.",
@@ -182,6 +187,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
         answer:
           "No. Planning and education only — use Form 16 and a qualified professional for filing.",
       },
+    ],
+    realityCheckParagraphs: [
+      "At ₹12 LPA, Bengaluru's new-regime take-home is approximately ₹92,000–₹95,000/month. After ₹27,000 rent and moderate lifestyle spend, savings land near ₹8,000–₹18,000/month for a single earner — marginally positive but fragile. The buffer evaporates with one large unexpected expense, and any upgrade toward premium discretionary spend produces a near-zero month. The model is calibrated at the lower-middle of the solo-rent range for this city; your actual listing determines which side of this estimate you land on.",
+      "Bengaluru's move-in cash requirement is where ₹12 LPA first feels real. Standard brokerage of one month's rent (₹27,000) plus a two-to-three month deposit means ₹81,000–₹108,000 required before first month's payslip. On a ₹92,000 take-home arriving from zero savings in a new city, assembling that corpus takes three to four months of deferred spending or family support. Many ₹12 LPA earners manage this via prior savings or a family bridge; if you are starting from scratch, budget the liquidity gap separately and do not underestimate it.",
+      "This page is most useful if you are comparing a ₹12 LPA Bengaluru offer with another city or trying to understand the roommate-vs-solo trade-off. With a known co-tenant, the rent line halves and savings roughly double — the model is structurally different on shared rent. The 'depends' verdict means exactly this: with a ₹13k–₹14k individual rent share, ₹12 LPA in Bengaluru is fine; for a solo ₹27k lease, it is tight and leaves almost no margin for goal-based savings.",
     ],
   },
   {
@@ -247,6 +257,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "Match gross, regime, and lifestyle tier, then change only rent and metro — you’ll see how much rent drives the verdict.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹15 LPA, Pune’s new-regime take-home is approximately ₹1,05,000–₹1,08,000/month. After ₹20,000 rent and moderate lifestyle spend, modeled savings sit near ₹25,000–₹32,000/month for a single earner. That is meaningfully stronger than Bengaluru at the same gross and similar rent — Pune’s lower rent floor is a real financial advantage at this band, not just a city-folklore claim.",
+      "Pune’s micro-market bifurcation is the variable that most affects whether this model’s answer is your answer. The Hinjewadi-Baner-Wakad-Kothrud belt — where most IT jobs cluster — keeps decent 1BHK rents in the ₹17k–₹24k range, and the ₹20k anchor in this model is realistic for that corridor. The inner-city premium zone (Koregaon Park, Kalyani Nagar, Viman Nagar) quotes ₹30k–₹45k for comparable quality. Where you rent determines your version of ‘is ₹15 LPA enough in Pune’ more than the gross itself — if your job is in Hinjewadi, renting in Koregaon Park for the lifestyle is a ₹12k–₹20k monthly penalty with no cash-flow benefit.",
+      "This page is most useful for people evaluating a ₹15 LPA Pune offer against a Bengaluru or Hyderabad counter-offer at the same gross, or for professionals benchmarking Pune before their first or second switch. At this band, Pune’s numbers compare favourably on paper. The question the model cannot answer is long-term career trajectory — Bengaluru’s product company density creates more optionality at senior IC levels, but at ₹15 LPA and earlier career stages, Pune’s employer market is broad enough that it is not a material constraint.",
+    ],
   },
   {
     slug: "is-20-lpa-enough-in-bangalore",
@@ -308,8 +323,13 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "Can I use this for an offer negotiation?",
         answer:
-          "Use it as a directional story: “At this gross, rent X and lifestyle Y leaves me roughly Z.” It’s not a payslip.",
+          "Use it as a directional story: \u201CAt this gross, rent X and lifestyle Y leaves me roughly Z.\u201D It’s not a payslip.",
       },
+    ],
+    realityCheckParagraphs: [
+      "At ₹20 LPA, Bengaluru’s new-regime take-home is approximately ₹1,37,000–₹1,42,000/month. After ₹35,000 rent and moderate lifestyle spend, modeled savings sit near ₹30,000–₹42,000/month for a single earner. That is a meaningful surplus — materially more than ₹15 LPA at similar rent, and enough for visible progress toward financial goals if spend stays disciplined.",
+      "At ₹20 LPA, Bengaluru lifestyle inflation is the primary risk rather than the rent itself. People at this gross often cohabit social circles with ₹30L–₹40L peers — restaurant norms, weekend travel expectations, and living standards differ, and ‘moderate’ in this model can feel like ‘basic’ in practice. The embedded calculator makes this visible: switch to premium tier and see how much the savings number drops. The rent line and the tier are both choices; the model prices them honestly so the decision is made consciously rather than by drift.",
+      "This page is most useful for ICs at mid-senior levels evaluating a Bengaluru offer before negotiating or accepting. At ₹20 LPA with ₹35k rent, the verdict is genuinely positive — savings exist and goals are reachable. The three decisions that most commonly erode this: adding a car EMI (₹12k–₹18k/month fixed), upgrading to premium lifestyle (₹15k–₹25k higher than moderate), or upgrading rent to ₹50k+ for a better address. All three are visible in the embedded tool before you sign a lease or take delivery on a vehicle."
     ],
   },
   {
@@ -372,8 +392,13 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "What if I’m saving for a house down payment?",
         answer:
-          "Treat this as monthly cash after modeled spend. You can add a mental “savings goal” by lowering discretionary in the tool to see what’s left.",
+          "Treat this as monthly cash after modeled spend. You can add a mental “savings goal” by lowering discretionary in the tool to see what’s left."
       },
+    ],
+    realityCheckParagraphs: [
+      "At ₹25 LPA, Hyderabad’s new-regime take-home is approximately ₹1,68,000–₹1,72,000/month. After ₹28,000 rent and moderate lifestyle spend, modeled savings sit near ₹55,000–₹68,000/month for a single earner. That is one of the strongest savings positions on this site at ₹25 LPA, reflecting Hyderabad’s genuine rent advantage relative to Bengaluru or Mumbai at this gross.",
+      "Hyderabad’s employer shuttle network is a meaningful financial differentiator at ₹25 LPA. Large tech and GCC campuses in HITEC City, Raheja Mindspace, and the Financial District run free or subsidised buses from major residential hubs — Kondapur, Madhapur, Manikonda. If your employer covers commute, the model’s metro-band estimate overstates your actual transport spend by ₹3,000–₹6,000/month. At ₹25 LPA this is a secondary variable — not the primary driver — but it is worth confirming before finalising a budget.",
+      "This page is most useful for experienced professionals cross-shopping Hyderabad against Bengaluru or Pune at a similar gross, or for those returning from abroad and benchmarking rupee cost of living. At ₹25 LPA in Hyderabad, the savings picture is clearly positive without heroic discipline. What the model cannot answer is whether ₹25 LPA is the right market benchmark for your role in Hyderabad’s GCC or product ecosystem — for that, cross-reference Levels.fyi or Glassdoor for your specific company and stack before accepting."
     ],
   },
   {
@@ -440,6 +465,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "In-hand uses the new regime by default in the embed. Flip regime there if your deduction mix is different.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹12 LPA, Hyderabad's new-regime take-home is approximately ₹92,000–₹95,000/month. After ₹22,000 rent and moderate lifestyle spend, modeled savings sit near ₹12,000–₹22,000/month for a single earner. The model is positive but thinner than it looks because Hyderabad's IT corridor rents have risen: ₹22k is at the lower end of what a decent solo flat in Madhapur or Kondapur costs in 2025–26, and many early-career professionals share a flat specifically because the ₹22k anchor is hard to hit solo in those micro-markets.",
+      "Hyderabad's Gachibowli-Madhapur-Kondapur belt is where most ₹12 LPA IT and GCC roles are physically located, and it is also where rent appreciation has been most aggressive in recent years. A ₹22k anchor was realistic for much of 2022–23; by 2025–26, solo listings in those corridors frequently quote ₹25k–₹32k for a 1BHK. If your role is in the older HITEC City edge or a company that runs shuttles from Manikonda or Narsingi, you may still reach the ₹22k anchor — but verify before banking on it. The rent field in the embedded calculator is the first dial to change if your shortlist reads higher.",
+      "This page is most useful for early-career hires comparing a Hyderabad offer with Bengaluru or Pune options at the same gross. Hyderabad's structural rent advantage at ₹12 LPA is real but smaller than many people assume once you price the Gachibowli belt accurately. The model is honest at the ₹22k anchor; if your actual shortlist starts at ₹27k, adjust the rent input and re-read the savings line before forming a view on whether the offer is viable.",
+    ],
   },
   {
     slug: "is-15-lpa-good-in-hyderabad",
@@ -505,6 +535,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "EMIs aren’t modeled. If you add a car loan, lower discretionary or rent in the calculator to see what breaks first.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹15 LPA, Hyderabad’s new-regime take-home is approximately ₹1,05,000–₹1,08,000/month. After deducting ₹24,000 in rent and moderate lifestyle spend, modeled savings sit in the ₹18,000–₹25,000/month range for a disciplined single earner. That is a real surplus — but only if rent stays at the ₹24k anchor. Bump rent to ₹35k for a premium society flat in Gachibowli or Jubilee Hills, and the surplus nearly halves. The model is honest at the stated rent; the challenge is finding that rent in the IT corridor without significant compromise on flat quality.",
+      "Hyderabad’s employer shuttle network is a genuine financial differentiator at this gross. Several large IT campuses in HITEC City, Raheja Mindspace, and the Financial District run free or subsidised buses from major residential hubs — Kondapur, Madhapur, Manikonda. If your employer operates one of these routes, your commute cost drops from ₹3,000–₹6,000/month to near zero. This single variable can shift monthly savings by more than a full tax regime switch. The calculator’s default commute band does not account for employer shuttles — verify before comparing city models or accepting an offer.",
+      "This page is most useful if you are answering one decision: is ₹15 LPA enough to rent a reasonable flat in Hyderabad and still save? The answer is yes, if you stay in the ₹20k–₹28k rent corridor and avoid car EMIs on top. It does not help you judge if ₹15 LPA is a fair market offer for your experience level in Hyderabad’s GCC or product ecosystem — for that, cross-check role-specific salary bands on Levels.fyi or Glassdoor before negotiating. The cash-flow picture is clear; the market benchmarking question requires a different source.",
+    ],
   },
   {
     slug: "is-18-lpa-good-in-pune",
@@ -540,7 +575,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     whoThisWorksFor:
       "Mid-level ICs and tech leads who’ve outgrown ₹12–15L bands but aren’t yet negotiating ₹25L+ — especially if you’re weighing Pune stability vs a metro move.",
     whenEnoughVsNot:
-      "Enough when rent stays disciplined and lifestyle doesn’t mimic a higher gross. Not enough when you size a flat for a future family you don’t yet fund, or when EMIs stack on top of this rent.",
+      "At ₹18 LPA with a ₹22k anchor, most Kharadi and Baner outskirt listings fit. The hidden pressure is Hinjewadi: a Hinjewadi office on ₹18 LPA often forces a ₹27k–₹32k flat within 5 km versus a ₹28–₹35k cab bill per month, making the proximity premium financially comparable — but on a gross that cannot easily absorb both rent and a car loan. Breaks when you graduate the rent anchor to match peers earning ₹25–₹30L, or when two EMIs (vehicle plus personal) quietly consume what looked like savings on this sheet.",
     majorTradeoffs: [
       "Hinjewadi length vs Kharadi buzz: different rent and different fatigue.",
       "Buying vs renting: EMI vs deposit isn’t modeled — don’t confuse this rent line with home loan math.",
@@ -569,6 +604,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
         answer:
           "Compare scenarios: raise gross in the tool and see how much savings move — then decide if the switch cost is worth it.",
       },
+    ],
+    realityCheckParagraphs: [
+      "At ₹18 LPA, Pune's new-regime take-home is approximately ₹1,23,000–₹1,27,000/month. After ₹24,000 rent and moderate lifestyle spend, modeled savings sit near ₹28,000–₹38,000/month for a single earner. That is a workable position — better than Bengaluru at similar rent, though not as wide as Hyderabad where the ₹22k–₹24k rent band anchors lower.",
+      "Pune at ₹18 LPA has a specific tension around vehicle ownership. Unlike Bengaluru or Mumbai where metro connectivity is a genuine alternative for much of the IT belt, Pune's metro is still expanding and large employment zones — Hinjewadi Phase 2–3, Magarpatta, and Kharadi — are not uniformly connected. Car or two-wheeler ownership is common among mid-level professionals, and the combined fuel, maintenance, and insurance cost runs ₹5,000–₹10,000/month for a car — costs that sit in 'discretionary' in this model but feel non-discretionary in practice. If you own a vehicle, mentally shift ₹5k–₹8k from optional to fixed before reading the savings line.",
+      "This page is most useful for mid-level professionals deciding between Pune stability and a Bengaluru offer at similar gross, or for people who have outgrown the ₹12L–₹15L band and want a clear picture of what ₹18 LPA feels like in Pune's rental market. The ₹24k rent anchor is honest for shared 2BHKs in Baner, Pashan, and Wakad — it is on the aggressive side for solo living in Koregaon Park or Kalyani Nagar. The 'depends' verdict is accurate: it depends primarily on whether you can rent at or below the anchor and avoid stacking a large vehicle EMI on top.",
     ],
   },
   {
@@ -605,7 +645,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     whoThisWorksFor:
       "Senior ICs and small-team leads who want Pune’s pace without Mumbai’s rent sticker shock — or remote workers optimizing for quality of life.",
     whenEnoughVsNot:
-      "Usually enough on this model for moderate spend. Breaks when rent chases Mumbai, or when discretionary scales with peer pressure instead of payslip.",
+      "At ₹20 LPA and ₹25k rent, Pune's moderate lifestyle tier genuinely leaves room — Pune's restaurant and commute costs run 30–40% below Mumbai for comparable quality. The trap is the peer-salary effect: Pune IT campuses mix ₹20L and ₹35L earners on the same team, and the visible lifestyle gap (car, weekend trips, flat in Koregaon Park) causes discretionary to drift upward without a payslip change. It stops being enough when the ₹25k anchor quietly becomes ₹35k to match a building where neighbours earn ₹15L more.",
     majorTradeoffs: [
       "Closer office vs quieter neighbourhood: rent vs commute time.",
       "International school later vs affordable rent now: don’t lock rent you can’t exit.",
@@ -634,6 +674,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
         answer:
           "Try premium tier in the embed — you’ll see how fast savings vanish.",
       },
+    ],
+    realityCheckParagraphs: [
+      "At ₹20 LPA, Pune’s new-regime take-home is approximately ₹1,37,000–₹1,42,000/month. After ₹28,000 rent and moderate lifestyle spend, modeled savings sit near ₹38,000–₹50,000/month for a single earner. That is one of the stronger savings outcomes on this site at ₹20 LPA — the combination of a solid gross and Pune’s rent floor produces genuine headroom that the same gross struggles to deliver in Bengaluru at equivalent rent.",
+      "Pune’s rent elasticity is the city-specific variable that most improves this scenario relative to Bengaluru. While Bengaluru’s desirable IT corridors price ₹35k–₹55k for comparable flats, Pune’s mid-senior professional zone — Baner, Aundh, Kothrud, Wakad — keeps 2BHK rents in the ₹22k–₹32k range for decent quality. The ₹28k anchor in this model reflects the upper end of that band for a solo lease. If you negotiate a ₹24k or ₹25k lease instead, monthly savings increase by ₹3,000–₹4,000 directly — a meaningful difference over a year.",
+      "This page is most useful for senior ICs and leads comparing a ₹20 LPA Pune offer to Bengaluru packages at the same or slightly higher gross, or for remote workers considering Pune as a base for a better monthly savings rate. The ‘yes’ verdict is earned at this gross and rent combination. The main risks to that verdict: upgrading lifestyle to premium without a gross upgrade (reduces savings by ₹15k–₹25k), adding a car EMI (₹12k–₹18k/month), or chasing rent in the Koregaon Park belt (adds ₹10k–₹20k to fixed costs). Use the embedded calculator to run each scenario before committing.",
     ],
   },
   {
@@ -772,6 +817,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "We model annual gross as one number. If bonus is uncertain, don’t bank it into rent.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹25 LPA, Bengaluru’s new-regime take-home is approximately ₹1,68,000–₹1,72,000/month. After ₹40,000 rent and moderate lifestyle spend, modeled savings sit near ₹35,000–₹48,000/month. The ₹40k rent anchor is a deliberate stress test — if your actual lease is closer to ₹28k–₹32k, the surplus is materially higher. The model assumes you are renting a decent solo or small-family flat in a mid-tier corridor, not a budget PG or a premium tower.",
+      "Bengaluru at ₹25 LPA has a rent segmentation problem: the same gross on two different rent lines produces radically different financial outcomes. Premium tower clusters near Whitefield, Sarjapur Road, and ORR frequently quote ₹45k–₹65k for 2BHKs with amenities, while older stock or slightly outer pockets can be ₹28k–₹35k for comparable floor area. The ₹40k anchor is already at the high end of sensible choices for this gross. The financial risk at ₹25 LPA is not affordability — it is the tendency to anchor rent to peer social circles rather than to the savings goals the gross actually supports.",
+      "This page is most useful for senior ICs and tech leads benchmarking a Bengaluru package before negotiating or deciding between offers. At ₹25 LPA, Bengaluru works financially — the ‘yes’ verdict is defensible at ₹40k rent and moderate spend. The three decisions that most commonly erode it: upgrading rent to ORR prestige buildings (adds ₹8k–₹20k to fixed costs), adding a car EMI (₹12k–₹18k/month), or drifting to premium lifestyle spend (₹15k–₹25k higher than moderate). All three are visible in the embedded calculator before you commit.",
+    ],
   },
   {
     slug: "is-20-lpa-good-in-mumbai",
@@ -908,6 +958,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "School fees vary wildly — this page doesn’t itemize them; increase discretionary or add a manual buffer.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹30 LPA, estimated take-home under simplified new-regime assumptions is approximately ₹1,95,000–₹2,05,000/month — note that surcharge begins to apply at this gross level, making the effective rate more complex than this model captures. After ₹52,000 rent and moderate lifestyle spend, modeled savings sit near ₹40,000–₹55,000/month for a single earner. That range is positive but compresses rapidly with a second earner, family spend, or any upgrade to premium lifestyle — and Mumbai’s social context makes ‘moderate’ harder to sustain at ₹30 LPA than the tier label implies.",
+      "Mumbai’s train versus cab cost differential is the most location-dependent financial variable at ₹30 LPA. A professional living in Thane or Navi Mumbai with a BKC or Bandra Kurla office, commuting by local train, spends ₹800–₹1,500/month on commute. The same professional taking daily Ola or Uber because their Andheri flat requires it spends ₹5,000–₹10,000/month. This is not a quality-of-life judgment — it is a monthly cash variable that the model’s generic metro-band line cannot capture accurately. Where you sleep and how you commute changes the savings outcome by more than most salary negotiations.",
+      "This page is most useful for senior professionals benchmarking a ₹30 LPA Mumbai offer against Bengaluru or Pune packages, or evaluating a promotion that brings gross into this range. At ₹30 LPA, Mumbai becomes financially viable rather than just famous for being hard. The ₹52k rent anchor captures a decent mid-suburb lifestyle — not island-adjacent luxury, but not a distant outer commute either. The ‘depends’ verdict reflects the real story: it depends on whether you choose train-accessible rent or cab-dependent premium corridors, and whether lifestyle tracks peer circles at this gross or is deliberately managed.",
+    ],
   },
   {
     slug: "is-12-lpa-good-in-noida",
@@ -943,7 +998,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     whoThisWorksFor:
       "Early-career folks in IT, media, or shared services based in Noida / Greater Noida comparing offers with Gurugram or Delhi.",
     whenEnoughVsNot:
-      "Enough when rent stays controlled and tier stays moderate. Tight when you chase large solo flats plus car EMIs on the same gross.",
+      "At ₹12 LPA with a ₹15k anchor, sectors 62, 63, and 78 in Noida deliver workable 1BHKs where shared living drops individual cost further. The constraint missing from the model is transport: Sector 135/150 IT parks sit beyond the last metro station, making a cab or car a de-facto fixed cost of ₹4k–₹8k per month that competes directly with the savings column. It stops working when you pick a ₹20k+ flat in a premium Expressway society to eliminate the commute bill and then also finance the car that was meant to replace the cab.",
     majorTradeoffs: [
       "Sector 62 convenience vs Greater Noida rent — different clocks, different rents.",
       "Delhi office vs Noida sleep: tolls and time aren’t fully priced here.",
@@ -972,6 +1027,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
         answer:
           "Not universally — compare our city pages at the same gross rather than trusting acronyms.",
       },
+    ],
+    realityCheckParagraphs: [
+      "At ₹12 LPA, Noida's new-regime take-home is approximately ₹92,000–₹95,000/month. After ₹20,000 rent and moderate lifestyle spend, modeled savings sit near ₹12,000–₹22,000/month for a single earner in Noida — positive but thin. The model holds if your office is in Noida Sector 62, Sector 125, or the expressway belt and your rent is genuinely near the ₹20k anchor. Both conditions are specific: Noida's expressway sectors have pushed some listings well above ₹20k, and many professionals with Noida addresses actually commute cross-city.",
+      "Noida's distinctive financial challenge at ₹12 LPA is the cross-NCR commute cost. Greater Noida and Noida expressway sectors host growing IT and GCC employers, but many ₹12 LPA professionals commute to Gurugram, South Delhi, or central Delhi offices because NCR functions as one unified job market despite administrative boundaries. A Sector 62 Noida office to Sector 62 home is straightforward and low-cost. A Cyber City Gurugram office to Noida Sector 100 home can mean ₹6,000–₹10,000/month in Uber and cab spend plus two to three hours daily. The ₹20k rent anchor assumes your office and home are both in Noida's eastern or expressway belt — if that is not your situation, adjust commute significantly in the calculator before reading the verdict.",
+      "This page is most useful for early-career professionals comparing a Noida-based offer with Bengaluru or Pune alternatives at the same gross, or for people with personal reasons to stay in NCR who want to understand the cash-flow reality at ₹12 LPA. The model is honest: ₹12 LPA works in Noida at ₹20k rent with no cross-city commute and no car EMI. It does not work well if you add both — use the embed to test your actual rent quote and commute cost estimate before forming a view.",
     ],
   },
   {
@@ -1038,6 +1098,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "Compare our Bengaluru pages at similar gross — money isn’t only nominal salary.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹18 LPA, estimated take-home under the new tax regime runs approximately ₹1,22,000–₹1,26,000/month. Against a ₹26,000 rent anchor and moderate spend, modeled savings land near ₹25,000–₹32,000/month for a single earner without outstanding loans. That margin exists — but it is more fragile than it looks in Noida specifically, because the city prices its best residential sectors at ₹35k–₹50k for a decent 2BHK, and the ₹26k anchor only holds in older sectors or shared arrangements in mid-range societies.",
+      "Noida’s hidden cost at ₹18 LPA is not rent — it is cross-city commute. If your office is in Gurugram’s Cyber City or Golf Course Road belt and you live in Noida sectors 50–137, the daily logistics are punishing: either 1.5–2 hours each way by metro with a line change, or ₹5,000–₹8,000/month in cab and toll spend if you drive. NCR looks like one job market but moves like three separate cities. The ₹26k rent anchor assumes your office is in Noida, Greater Noida, or the expressway belt — if it is not, add the real commute cost to the calculator before trusting the savings line.",
+      "This model works best for mid-level professionals whose office is in Sector 62, Sector 125, or the Greater Noida expressway corridor, renting in comparable sectors, and not carrying a car loan or school fees simultaneously. If that matches your profile, ₹18 LPA is genuinely workable in Noida — not lavish, but stable with visible savings. If you are commuting cross-city or managing a household with school-age children on one salary, treat this scenario as a starting point in the calculator, not a verdict. Raise rent, add school fees as a custom expense, and see what the savings line shows before deciding.",
+    ],
   },
   {
     slug: "is-12-lpa-good-in-chennai",
@@ -1073,7 +1138,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     whoThisWorksFor:
       "IT services, product, and manufacturing engineers comparing Chennai offers with Bengaluru or Hyderabad — especially sharers and early-career renters.",
     whenEnoughVsNot:
-      "Enough when rent stays near this anchor and lifestyle stays moderate. Breaks when you pair high fixed rent with premium tier spend or large EMIs on one salary.",
+      "At ₹12 LPA with a ₹15k anchor, Velachery, Sholinganallur, and Perungudi listings are genuinely available — Chennai runs 20–25% cheaper than equivalent Bengaluru neighbourhoods for the same flat quality. The city-specific squeeze is OMR traffic: an office beyond Perungudi forces either a 1.5–2 hr daily commute or a ₹4k–₹6k per month fuel bill to live close, and neither cost appears in this model. It breaks when a car loan lands on top of ₹15k rent — base hatchback EMI typically ₹7k–₹10k — shrinking what the sheet shows as a healthy savings surplus.",
     majorTradeoffs: [
       "OMR proximity vs city-side culture — rent and time both move.",
       "Car + fuel vs metro/bus — not every employer runs a free shuttle.",
@@ -1102,6 +1167,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
         answer:
           "No. Educational planning only — use Form 16 and a qualified professional for filing.",
       },
+    ],
+    realityCheckParagraphs: [
+      "At ₹12 LPA, Chennai's new-regime take-home is approximately ₹92,000–₹95,000/month. After ₹16,000 rent and moderate lifestyle spend, modeled savings sit near ₹20,000–₹30,000/month for a single earner. That is a better savings position than Bengaluru or Hyderabad at the same gross and reflects Chennai's genuine rent advantage in the OMR-Velachery-Sholinganallur belt — the corridor where most IT and GCC professionals at this gross rent.",
+      "Chennai's GCC and IT services market has a pay compression dynamic that matters specifically at ₹12 LPA. Many mid-sized GCC roles in Chennai pay ₹10L–₹15L for profiles that command ₹15L–₹20L in Bengaluru or Hyderabad for equivalent technical depth. Chennai's lower rent partially compensates for this compression, and the lifestyle spend culture in IT belts is generally less aggressive than Bengaluru's startup-adjacent social norms — which benefits savings rates even when the gross looks similar. The practical implication: a ₹12 LPA Chennai offer versus a ₹14 LPA Bengaluru offer may produce comparable or slightly better net monthly savings, but the long-term gross growth trajectory in Chennai's GCC market is a separate question to verify.",
+      "This page is most useful for campus hires evaluating their first Chennai IT offer, or for professionals comparing Chennai to another city at the same gross. The ₹16k rent anchor is realistic for OMR-Perungudi, shared setups in Velachery, or parts of Sholinganallur. Where it breaks: Adyar, Besant Nagar, or T.Nagar residential markets quote ₹24k–₹35k for comparable flats, bringing a different city experience but a materially different savings line. Verify your specific shortlist before treating this model's answer as your answer.",
     ],
   },
   {
@@ -1168,6 +1238,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "No — read methodology; validate high-income tax with a professional.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹15 LPA, Chennai's new-regime take-home sits near ₹1,05,000–₹1,08,000/month. Against the ₹22,000 rent anchor modeled here — realistic for a decent 1BHK in Perungudi, Sholinganallur, or parts of Velachery — modeled savings for a single earner with moderate lifestyle spend come out to roughly ₹20,000–₹28,000/month. That range is achievable but sensitive to micro-market: the corridor between Sholinganallur and OMR hub is cheaper than Adyar or Mylapore, and your actual rent shortlist will determine which side of this estimate you land on.",
+      "Chennai's GCC and captive hiring market has a specific dynamic that affects how ₹15 LPA reads locally. Many GCC roles in Chennai pay in a compressed band — ₹12L–₹18L for profiles that would command ₹20L–₹25L in Bengaluru or Hyderabad for equivalent work. The city's lower rent partially compensates for this compression, but not fully at senior IC levels. For roles in traditional manufacturing or BFSI, the peer lifestyle reference point also differs — discretionary spend culture is less aggressive than Bengaluru's startup belt, which benefits savings rates in practice even when the gross looks similar.",
+      "This page is most useful if you are deciding between a Chennai GCC or IT offer and another metro offer at similar gross, or renegotiating within a Chennai role and want a clear cash-flow picture. The ₹22k rent anchor is honest for much of the OMR and Perungudi belt. Where it breaks is when you prioritise Adyar, Besant Nagar, or T.Nagar for location quality — those markets regularly quote ₹30k–₹40k for a comparable flat, and at ₹15 LPA that shift materially compresses savings. Model your actual shortlist before forming a view.",
+    ],
   },
   {
     slug: "is-12-lpa-good-in-kolkata",
@@ -1203,7 +1278,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     whoThisWorksFor:
       "Early and mid-career folks in IT, analytics, and services comparing Kolkata with NCR or Pune — especially renters without family housing support.",
     whenEnoughVsNot:
-      "Enough when rent is controlled and spend stays moderate. Tight when you chase large solo flats in premium pins plus heavy EMIs.",
+      "At ₹12 LPA with a ₹12k anchor, Salt Lake Sector V and New Town give a genuine 1BHK with money left over — Kolkata is structurally the most affordable major IT metro, with dining and commute costs running 35–45% below Bengaluru comparables. The real question is opportunity cost, not comfort: the same gross leaves more in-hand here than in Bengaluru, but a cross-city offer at ₹18L may net similar savings after higher rent. It breaks financially only when ₹8k+ EMIs stack onto this rent, which converts a comfortable model into a stressed one.",
     majorTradeoffs: [
       "Salt Lake convenience vs farther rent — same city, different maths.",
       "Car ownership vs metro — parking and fuel hit discretionary.",
@@ -1233,6 +1308,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "We use a default annual placeholder — align with your state in the CTC tool if needed.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹12 LPA, Kolkata's new-regime take-home is approximately ₹92,000–₹95,000/month. After ₹14,000 rent and moderate lifestyle spend, modeled savings sit near ₹25,000–₹35,000/month for a single earner. That is the strongest savings position among all ₹12 LPA city pages on this site, reflecting Kolkata's materially lower rent floor compared to every other IT metro in this content set.",
+      "The city-specific constraint at ₹12 LPA in Kolkata is job market depth, not affordability. Kolkata's IT employer base is narrower than Bengaluru, Hyderabad, or Pune — dominated by large IT services companies whose salary bands often compress at the ₹10L–₹18L range. At ₹12 LPA, you are at a reasonable mid-junior position for a Kolkata-based role, but the path to ₹18L–₹22L in three years requires either strong internal growth, a transition to a product or GCC role (a smaller market here), or a relocation. The savings advantage Kolkata provides is real — it is easier to sustain a high savings rate here than in any comparable IT city — but it is easier to sustain than to grow gross quickly from this base.",
+      "This page is most useful for people with strong personal or family reasons to be in Kolkata who want a clear cash-flow picture at ₹12 LPA, or for those returning from a higher-cost metro and benchmarking what the transition looks like financially. The math is clearly positive: ₹12 LPA in Kolkata with ₹14k rent and moderate spend is savings-positive in a way most other cities at this gross are not. What the model cannot tell you is whether the career growth trade-off justifies staying versus the option of a higher gross elsewhere — that decision requires benchmarking your specific role against Bengaluru or Hyderabad market rates.",
+    ],
   },
   {
     slug: "is-15-lpa-good-in-kolkata",
@@ -1258,7 +1338,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     leadParagraph:
       "At fifteen LPA, Kolkata often leaves more slack than the same nominal gross in a handful of super-prime metros — if rent behaves. We use ₹18,000/month as a mid-market rental anchor, then apply the same expense heuristics as other cities for apples-to-apples comparison.",
     whyParagraph:
-      "If you’re paid in a global hub salary discussion but live in Kolkata, context matters. If you’re paid Kolkata rates but want Mumbai lifestyle, the calculator will say no — honestly.",
+      "At ₹15 LPA, Kolkata sits in a different cost class from most of India’s large IT cities. The ₹18,000/month rent anchor here is not conservative — it reflects what a respectable 2BHK in Salt Lake, New Town Phase 1, or Rajarhat actually costs for mid-market renters in 2025–26. What the headline number hides is a structural tension: Kolkata’s cost structure accommodates ₹15L comfortably, but the IT job market at this gross is thinner than Bengaluru, Hyderabad, or Pune. The comfort the numbers suggest is real, but it comes with a narrower employer bench.",
     typicalSpendNotes: [
       "₹18k won’t cover every new-town luxury listing — adjust upward if needed.",
       "Premium tier in the tool is the fastest way to see ‘where did savings go?’",
@@ -1298,6 +1378,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "No — it’s planning education, not certified income proof.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹15 LPA, Kolkata’s new-regime take-home is approximately ₹1,05,000–₹1,08,000/month. Against a ₹18,000 rent in Salt Lake or Rajarhat — the corridor where most IT professionals in the city rent — modeled savings for a single earner land near ₹28,000–₹36,000/month on moderate spend. That surplus is materially higher than what the same gross produces in Bengaluru (where comparable rent runs ₹25k–₹40k) or Hyderabad (₹20k–₹30k). The numbers are not inflated — Kolkata genuinely goes further at this gross.",
+      "The city-specific constraint at ₹15 LPA is not affordability — it is job market depth. Kolkata’s IT employer base is dominated by service companies with salary bands that often compress at senior IC levels. If you are a product engineer or specialist expecting ₹20L–₹25L growth in three years, Kolkata’s market may not have enough competing offers to support that trajectory. The comfort of ₹15 LPA in this city is real, but it is easier to sustain than to grow from here, unless your employer has a remote-compatible role structure.",
+      "This page is most useful if you are deciding to return to Kolkata from a higher-cost metro, evaluating a local offer against a remote position, or planning a period of higher savings before a life event. The math supports it clearly — ₹15 LPA in Kolkata with disciplined rent is a savings-positive scenario. What the page cannot tell you is whether the career trade-off is worth it. If staying in Kolkata means staying at ₹15 LPA for three years instead of growing to ₹22L in another city, the savings advantage inverts over time.",
+    ],
   },
   {
     slug: "is-15-lpa-good-in-gurgaon",
@@ -1323,7 +1408,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     leadParagraph:
       "Gurugram competes with Mumbai and Bengaluru on headline rents for many pockets. We anchor ₹28,000/month — plausible for a compact solo or shared setup in several sectors, not every Cyber City-adjacent tower — then run the same moderate lifestyle model.",
     whyParagraph:
-      "NCR is one job market with many rental micro-markets. If you actually pay ₹40k+ base rent on ₹15L gross, the embed will show stress fast — that’s the point.",
+      "Gurugram is the most rent-expensive NCR node modeled on this site. The ₹28,000/month anchor here represents a compact 1BHK in sectors 47–57 or a shared 2BHK near Golf Course Extension — not a premium tower. The financial pressure at ₹15 LPA comes not from rent alone but from the car-first infrastructure: Gurugram’s public transport does not reach every office cluster, and cab or fuel spend of ₹4,000–₹7,000/month is common for roles in Udyog Vihar or Manesar. That commute overhead is the variable most likely to collapse the savings line before rent does.",
     typicalSpendNotes: [
       "Society charges and power backup can stack — mentally add to rent if needed.",
       "Delhi-side commute can mean tolls and cabs — discretionary is the first flex.",
@@ -1363,6 +1448,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "Yes for new-regime slabs in code — see methodology for limits and surcharges not modeled.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹15 LPA in Gurugram, new-regime take-home is approximately ₹1,05,000–₹1,08,000/month. Against ₹28,000 rent and moderate-tier lifestyle spend, modeled savings sit near ₹12,000–₹20,000/month for a single earner. That is a narrower margin than most cities on this site at the same gross — Gurugram's rent anchor is higher than Hyderabad, Chennai, or Kolkata, and the lifestyle peer pressure in sectors like Sector 50 or DLF Phase corridors can push discretionary spend higher than the model assumes. The numbers are technically positive, but the buffer is thin.",
+      "Gurugram's office clusters are physically scattered in a way that makes commute cost highly variable. A role at Cyber City or Udyog Vihar can be reached cheaply by metro from DLF Phase areas; a role at Manesar Industrial or far NH-48 sectors requires either a car or expensive cabs. The ₹28k rent anchor assumes your office is accessible without a car — if it is not, add ₹5,000–₹8,000/month to the commute line in the calculator. At ₹15 LPA, a car EMI stacked on top of that commute overhead makes the scenario financially precarious, not merely tight.",
+      "This page is most useful if you are evaluating a Gurugram offer in consulting, BFSI, or tech and want a clear-eyed view before accepting. The model is honest: ₹15 LPA in Gurugram works for singles who negotiate rent below the ₹28k anchor, use the metro where possible, and avoid car ownership in the first year. It does not work if you are comparing this to a Bengaluru or Hyderabad offer at the same gross and assuming Gurugram will be cheaper — it will not be. If a higher gross is negotiable, the math changes meaningfully between ₹15L and ₹18L in this city.",
+    ],
   },
   {
     slug: "is-15-lpa-good-in-ahmedabad",
@@ -1388,7 +1478,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     leadParagraph:
       "Ahmedabad mixes manufacturing depth with a growing IT and startup scene. We use ₹15,000/month rent as a practical illustration for many shared or compact setups — not every premium riverfront listing.",
     whyParagraph:
-      "Metro flag is off here to avoid overstating default commute cash vs Mumbai-style metros — if your commute is long and cab-heavy, nudge discretionary in the embed.",
+      "Ahmedabad's cost structure at ₹15 LPA sits between the affordable tier of Kolkata and the mid-cost tier of Pune. The ₹15,000/month rent anchor reflects actual market rates for a decent 1BHK in the SG Highway corridor or Satellite — the belt where most IT and corporate professionals in the city rent. What differentiates Ahmedabad from a pure affordability story is car dependency: the city has limited metro coverage across its main employment zones, and if your role is in GIFT City or the Changodar industrial belt rather than SG Highway, daily commute by cab or personal vehicle adds ₹3,000–₹6,000/month that this model's metro-off flag does not fully capture.",
     typicalSpendNotes: [
       "₹15k may be tight for some new-town gated asks — raise rent if that’s your market.",
       "Car ownership is common — fuel and parking can eat discretionary.",
@@ -1427,6 +1517,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
         answer:
           "We use a generic PT placeholder like other pages — tune in the full CTC calculator if needed.",
       },
+    ],
+    realityCheckParagraphs: [
+      "At ₹15 LPA, estimated take-home under the new tax regime is approximately ₹1,05,000–₹1,08,000/month. Against the ₹15,000 rent anchor — realistic for SG Highway corridor, Prahlad Nagar, or Bopal in 2025–26 for shared or compact solo arrangements — modeled savings for a single earner on moderate spend come out near ₹30,000–₹38,000/month. That is one of the stronger savings positions on this site at ₹15 LPA, reflecting Ahmedabad's genuine cost advantage over the larger IT metros. The surplus is real for renters in the right micro-markets.",
+      "The city-specific variable to watch at ₹15 LPA in Ahmedabad is the GIFT City premium. GIFT City employment has grown rapidly in BFSI and fintech, and roles there often pay in line with Hyderabad or Pune bands. However, the GIFT City micromarket itself has premium rental pricing — ₹25k–₹35k for 1BHKs — that is out of step with the rest of Ahmedabad. If your offer is GIFT City based, the ₹15k rent anchor in this model does not reflect your actual options unless you commute from Gandhinagar or farther western suburbs. Adjust the rent field before reading the savings line.",
+      "This page is most directly useful for professionals comparing an Ahmedabad offer against a Pune or Hyderabad counter-offer at similar gross, or evaluating a lateral move back to the city. At ₹15 LPA, Ahmedabad produces more modeled savings than both those cities at the same number — the rent advantage is that significant. The trade-off the calculator cannot show you is employer bench depth and career growth velocity. Ahmedabad's IT and startup market has grown but remains narrower than Bengaluru or Pune for mid-senior IC transitions. If growth trajectory matters more than current savings rate, that calculus should drive the decision alongside this page's cash-flow picture.",
     ],
   },
   {
@@ -1493,6 +1588,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "Add their in-hand mentally or run two Salary Reality Checks — this sheet models one gross.",
       },
     ],
+    realityCheckParagraphs: [
+      "At ₹10 LPA, Pune's new-regime take-home is approximately ₹82,000–₹85,000/month. With premium-tier lifestyle spend and ₹22,000 rent, modeled savings are near zero or negative for most single-earner families. The model does not produce a comfortable surplus on these inputs — that is the intended honest outcome of this scenario, not a calculation error. Running this scenario with premium tier is deliberate: families typically spend above the 'moderate' band on groceries, healthcare buffers, and children's essentials.",
+      "The family-specific constraint at ₹10 LPA in Pune is school fee exposure. Pune has a competitive English-medium school market, and fees for a reasonable option range from ₹40,000–₹1.5 lakh per year depending on the institution. Even the lower end of that range — approximately ₹3,300/month — is not an itemized line in this model's premium discretionary bucket. For a family with one or more school-age children, actual monthly cash demand exceeds what the premium tier reflects, and the ₹22k rent is already compressing the margin before school fees appear. Add an EMI, and the scenario is actively negative.",
+      "This page is most useful for single-income households stress-testing whether Pune is viable on ₹10 LPA before committing to a lease, school enrollment, or relocation. The model's honest answer is: not without significant compromises. The compromises that shift the math: very low or zero rent via family support, a working partner, an employer with strong insurance and perks, or a more affordable school option. Use the embedded calculator with your actual rent quote, set premium tier, and mentally add your school fee estimate — that is your real monthly picture, not this page's headline.",
+    ],
   },
   {
     slug: "is-20-lpa-enough-for-family-in-bangalore",
@@ -1557,6 +1657,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
         answer:
           "That page uses moderate tier and ₹35k rent — this one models heavier household spend.",
       },
+    ],
+    realityCheckParagraphs: [
+      "At ₹20 LPA, Bengaluru's new-regime take-home is approximately ₹1,37,000–₹1,42,000/month. Against ₹38,000 rent and premium lifestyle spend, modeled savings sit near ₹12,000–₹22,000/month — a narrow margin that can disappear entirely with one large unexpected expense or a school fee structure the model does not itemize. The surplus is technically positive in the default scenario but fragile in practice for a family-shaped household.",
+      "Bengaluru's school-and-rent interaction is the family-specific constraint that makes this scenario harder than the headline numbers suggest. The city's mid-to-high quality English-medium schools are geographically concentrated in a few corridors — Whitefield, JP Nagar, Koramangala, Indiranagar — and families often anchor their rental choice to school catchment areas. A school in Koramangala or JP Nagar typically means ₹38k–₹52k rent in nearby residential options, already at or beyond the ₹38k anchor in this model. The school fees for a reasonably good option run ₹60,000–₹2 lakh per year, which is ₹5,000–₹16,000/month above what the premium tier captures. Stack both, and ₹20 LPA on one salary can produce near-zero monthly savings despite what looks like a solid gross.",
+      "This page is most useful for families considering whether one ₹20 LPA salary can carry a Bengaluru household. The honest answer is: it can, but only with deliberate trade-offs. Lower rent in outer ORR or Whitefield (₹28k–₹32k), a more affordable school, or a second income each materially change the outcome. The most practical use of the embedded calculator: enter your actual rent quote, set lifestyle to premium, and manually estimate your school fee as a monthly number added to expenses — see what the savings line shows before you commit to a lease and enrollment simultaneously.",
     ],
   },
 ];

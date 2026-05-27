@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/content/JsonLd";
 import { Container, Section } from "@/components/ui";
 import { computeSalaryRealityCheck } from "@/lib/calculators/salary-reality-check";
 import { DEFAULT_BASIC_DA_SHARE_OF_GROSS } from "@/lib/config/salary-reality-heuristics";
-import { faqPageJsonLd } from "@/lib/jsonld";
+import { articleJsonLd, faqPageJsonLd } from "@/lib/jsonld";
 import {
   getRelatedSalaryEnoughPages,
   type SalaryEnoughAnswerKind,
@@ -16,6 +16,8 @@ import {
 } from "@/lib/content/salary-enough-pages.config";
 import { getLpaLandingPageConfig } from "@/lib/content/lpa-pages.config";
 import { formatInr } from "@/lib/format-inr";
+import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
+import { MethodologyLink } from "@/components/trust/MethodologyLink";
 import { TrustMethodologyNotice } from "@/components/trust/TrustMethodologyNotice";
 import { ROUTES } from "@/lib/routes";
 import { lpaLandingPath, salaryEnoughPath } from "@/lib/routes/landing-routes";
@@ -107,6 +109,7 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
 
   return (
     <div className="flex flex-1 flex-col">
+      <JsonLd data={articleJsonLd({ headline: config.seo.title, description: config.seo.description, urlPath: path })} />
       <JsonLd data={faqPageJsonLd(faq.map((f) => ({ question: f.question, answer: f.answer })))} />
 
       <Section className="pt-6 sm:pt-10">
@@ -124,6 +127,10 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
             </h1>
             <p className="text-lg font-medium text-zinc-800 dark:text-zinc-200">{config.answerHeadline}</p>
             <p className="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">{config.leadParagraph}</p>
+            <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+              <FreshnessBadges />
+              <MethodologyLink />
+            </div>
           </header>
 
           <section

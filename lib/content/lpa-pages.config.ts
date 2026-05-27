@@ -5,6 +5,7 @@
 
 import type { CtcToInHandInput } from "@/types/salary";
 import type { SeoPageMetadata } from "@/types/seo";
+import type { FaqItem } from "@/types/faq";
 
 export type LpaLandingPageConfig = {
   /** Path segment for /lpa/[slug] (canonical), e.g. 8-lpa-in-hand-salary */
@@ -18,6 +19,8 @@ export type LpaLandingPageConfig = {
   scenarioNotes: string[];
   /** Unique body copy to reduce thin/duplicate LPA pages */
   angleParagraph: string;
+  /** Per-entry FAQ items — prepended before generic band FAQs in the template */
+  faq?: FaqItem[];
   /** Band-specific bullets: pay patterns, regime, metro context — avoid repeating across LPA pages */
   bandInsights: string[];
   /** Optional human interpretation — not a repeat of the breakdown table */
@@ -75,6 +78,23 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "At this income band, PF deductions (roughly ₹3,600–4,000/month depending on your Basic+DA) are proportionally significant. Choosing to contribute more via VPF reduces in-hand further but builds a tax-efficient retirement corpus. If your employer has no PF (exempted establishment or contractual role), your in-hand will be higher but you will need to manage retirement savings separately.",
       "Income tax at ₹8 LPA gross under the new regime is effectively zero after the Section 87A rebate (FY 2025-26) — so TDS should be minimal or nil if your employer has set it up correctly. If you are seeing unexpected TDS at this level, check whether your employer has your regime declaration on file.",
     ],
+    faq: [
+      {
+        question: "Why is there no income tax deduction at ₹8 LPA?",
+        answer:
+          "At ₹8L gross under the new regime, the Section 87A rebate of ₹25,000 covers the full income tax liability for FY 2025-26 — effective tax is nil. Your TDS should be minimal or zero if your employer has your regime declaration on file.",
+      },
+      {
+        question: "How can I increase my in-hand at ₹8 LPA?",
+        answer:
+          "The main levers are PF wage definition (if your Basic+DA is lower, PF deduction is lower) and professional tax (varies by state — some charge less than the ₹2,500 placeholder here). Income tax is already nil at this gross under the new regime, so there is no tax saving available there.",
+      },
+      {
+        question: "What career stage typically earns ₹8 LPA in India?",
+        answer:
+          "₹8 LPA is common for engineers with 1–3 years of experience, junior analysts, or early-career finance and ops professionals in metro cities. In tier-2 cities it can represent a senior or lead role. Because effective income tax is nil at this band, the full gross conversion to in-hand depends only on PF and state professional tax.",
+      },
+    ],
   },
   {
     slug: "10-lpa-in-hand-salary",
@@ -99,6 +119,23 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "Ten LPA is the most commonly searched salary band in India — it represents a first significant job milestone for many and a comparison anchor for early-career switches. The illustrated in-hand above assumes a clean new-regime setup with no itemized deductions. Under the Section 87A rebate structure for FY 2025-26, income tax at this gross is nil, so the deductions you see are PF and professional tax only.",
       "If your actual Basic+DA is higher than 45% of gross (the assumed split here), your PF deduction will be higher and your in-hand slightly lower. If your employer uses a PF wage cap, the deduction will be lower. Use the CTC-to-in-hand calculator and enter your payslip’s Basic+DA for a number that matches your specific situation rather than this band illustration.",
       "The question people at ₹10 LPA most often ask is not about tax — it is about rent. This page shows gross-to-in-hand mechanics only. For a realistic monthly budget picture (rent, commute, lifestyle spend, and what is left), use the Salary Reality Check with your actual city and rent figure.",
+    ],
+    faq: [
+      {
+        question: "Is ₹10 LPA still tax-free under the new regime for FY 2025-26?",
+        answer:
+          "Yes — the Section 87A rebate of ₹25,000 covers the full income tax liability at ₹10L gross. Effective income tax is nil, so the deductions you see here are PF and professional tax only. Confirm your employer has your regime choice recorded to avoid unnecessary TDS.",
+      },
+      {
+        question: "How much of my ₹10 LPA in-hand should go toward rent?",
+        answer:
+          "A widely used guideline is 30–35% of net monthly income. At the illustrated in-hand of roughly ₹81,000/month, that suggests ₹24k–₹28k — though the right number depends on your city and savings goals. Use the Salary Reality Check to see what remains after a specific rent figure.",
+      },
+      {
+        question: "How much does my employer contribute to EPF at ₹10 LPA?",
+        answer:
+          "Employer PF matches your 12% employee contribution on Basic+DA. At a 45% Basic assumption on ₹10L gross, that is roughly ₹3,600–₹4,500/month going into your EPF account from the employer side. This amount is part of your CTC but not part of in-hand — it builds your retirement corpus and is accessible after employment ends, subject to withdrawal rules.",
+      },
     ],
   },
   {
@@ -125,6 +162,23 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "If you are comparing a ₹12 LPA offer at two companies, check whether both have similar PF wage definitions. A company with Basic at 35% of gross has employee PF of roughly ₹5,040/month; a company with Basic at 50% has employee PF of roughly ₹7,200/month. The same headline gross produces nearly ₹2,000/month difference in monthly cash — which adds up to ₹24,000 over a year.",
       "At ₹12 LPA, the regime comparison (old vs new) may start to become relevant if you pay significant rent and can claim a substantial HRA exemption, or if you make maximum 80C investments. Use the tax regime calculator with your actual inputs before instructing your employer on TDS treatment.",
     ],
+    faq: [
+      {
+        question: "At ₹12 LPA, which tax regime is better — old or new?",
+        answer:
+          "At ₹12L gross under the new regime, income tax is zero (Section 87A rebate). The old regime can beat the new regime only if your deductions (HRA + 80C + NPS) are large enough — but since new-regime tax is already nil here, the old regime rarely helps unless you have significant exemptions that reduce taxable income below ₹5L.",
+      },
+      {
+        question: "Why does Basic+DA split matter for my ₹12 LPA take-home?",
+        answer:
+          "Employee PF is 12% of Basic+DA. A company setting Basic at 50% of gross deducts roughly ₹7,200/month in PF; one at 35% deducts roughly ₹5,040/month. On the same ₹12L CTC, that is a ₹2,160/month difference in cash in-hand. Enter your actual Basic in the CTC calculator for a number specific to your payslip.",
+      },
+      {
+        question: "Can I afford a car loan EMI on a ₹12 LPA salary?",
+        answer:
+          "At an in-hand of roughly ₹98,000/month, a typical car EMI of ₹10,000–₹15,000/month is feasible if rent and fixed costs remain controlled. A common guideline is to keep total EMIs under 30–35% of net income. Use the Salary Reality Check to model rent plus an EMI and see what monthly surplus remains before committing.",
+      },
+    ],
   },
   {
     slug: "15-lpa-in-hand-salary",
@@ -149,6 +203,23 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "Fifteen LPA is the band where income tax first becomes a meaningful line item under the new regime for FY 2025-26. Above the Section 87A rebate threshold, tax kicks in on the incremental taxable income — and the illustrated TDS spread reflects that. The in-hand estimate above is after this tax effect, PF, and a PT placeholder.",
       "At ₹15L, the old-vs-new regime comparison deserves explicit attention. If you pay significant rent and can claim HRA exemption, or if you max out 80C investments (₹1.5L) and NPS contributions, the old regime may produce lower annual tax than the new regime despite its higher slab rates. The crossover depends on your exact deduction profile — run the tax regime calculator to see your specific numbers.",
       "People at ₹15 LPA are often evaluating their first significant city upgrade — moving to a premium flat, adding a vehicle, or building savings for a home down payment. These goals require the full budget picture, not just in-hand. Add your actual rent and spend tier in the Salary Reality Check to see how much is actually left after living costs at this income level.",
+    ],
+    faq: [
+      {
+        question: "Why does income tax appear at ₹15 LPA but not at ₹12 LPA?",
+        answer:
+          "The Section 87A rebate of ₹25,000 applies only when taxable income is ₹12L or below (new regime, FY 2025-26). At ₹15L gross, income above ₹12L becomes taxable. The TDS spread in the breakdown above reflects the incremental tax on that portion.",
+      },
+      {
+        question: "Is the old tax regime worth switching to at ₹15 LPA?",
+        answer:
+          "Potentially yes — if you can claim HRA exemption (metro rent of ₹40k–₹60k/month), ₹1.5L under 80C, and ₹50k under NPS Section 80CCD(1B), your old-regime taxable income drops enough to reduce annual tax meaningfully. Run the tax regime calculator with your exact deductions to see the crossover point.",
+      },
+      {
+        question: "What home loan amount can I expect to be eligible for at ₹15 LPA?",
+        answer:
+          "Lenders typically sanction home loans at 4–5x annual gross salary under standard underwriting, implying eligibility in the ₹60L–₹75L range at ₹15L gross. The actual sanction depends on your credit score, existing EMIs, co-applicant income, and property valuation. Your net monthly income after existing obligations determines how much EMI the bank will allow — confirm directly with your lender.",
+      },
     ],
   },
   {
@@ -180,6 +251,23 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "This page assumes a clean salaried story (gross in, PF out, TDS spread). Real life adds joining bonuses, stock, medical, parents, or a partner with no income. If any of that is you, treat the in-hand line as a starting point, not a verdict.",
       "If your real question is “Can I live well on this in Bangalore / Mumbai / Pune?”, open a city scenario next — same engine, but with rent and lifestyle in the same picture.",
     ],
+    faq: [
+      {
+        question: 'How much income tax do I pay at ₹18 LPA under the new regime?',
+        answer:
+          'Annual income tax at ₹18L gross (new regime, FY 2025-26) is roughly ₹1.5L–₹1.7L as shown in the breakdown table. The exact amount depends on your actual Basic+DA and taxable allowances — open the tax calculator with your payslip inputs for a precise figure. No surcharge applies at this gross for salary-only income.',
+      },
+      {
+        question: 'Does my employee PF contribution reduce income tax at ₹18 LPA?',
+        answer:
+          'Under the new regime, employee PF is not an income tax deduction — it reduces your cash but not taxable income. Under the old regime, PF counts toward 80C (₹1.5L ceiling). If your annual PF plus other 80C investments already hit ₹1.5L, additional PF gives no further old-regime tax benefit.',
+      },
+      {
+        question: "How does ₹18 LPA compare to the median Indian salary?",
+        answer:
+          "India's national median formal-sector salary is estimated at roughly ₹4L–₹6L annually. ₹18 LPA places you in approximately the top 5–8% of salaried earners across the formal economy. Within the organized IT and services sector specifically, ₹18L sits above junior roles and below senior IC or lead levels — it is a competitive mid-level anchor for 5–8 years of experience in major metros.",
+      },
+    ],
   },
   {
     slug: "20-lpa-in-hand-salary",
@@ -205,6 +293,23 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "At ₹20L, the salary structure increasingly matters for net outcome. A company with Basic at 40% (₹8L annual) produces employee PF of roughly ₹7,200/month. A company with Basic at 30% produces roughly ₹5,400/month. The ₹1,800/month difference adds to in-hand but reduces gratuity accrual and EPF corpus. Neither structure is superior — it depends on how long you stay and how you value liquid vs locked-in savings.",
       "People evaluating ₹20 LPA offers are often at a stage where home loan EMIs, children's education, or family obligations start appearing in the budget. The Salary Reality Check is particularly relevant here — the tool helps you see whether ₹20L in your target city actually produces the savings you need for a specific financial goal after all fixed costs.",
     ],
+    faq: [
+      {
+        question: 'Why is my ₹20 LPA in-hand lower than I expected?',
+        answer:
+          'At ₹20L gross, both income tax (new regime kicks in above ₹12L rebate limit) and PF deductions are meaningful. Employee PF on a 45% Basic assumption is roughly ₹7,200/month, and annual tax adds another significant monthly TDS spread. Many people see only one deduction and underestimate the combined impact.',
+      },
+      {
+        question: 'Does an NPS contribution improve my ₹20 LPA in-hand under the new regime?',
+        answer:
+          'Under the new regime, NPS contributions via Section 80CCD are not available as deductions — they do not reduce your taxable income. If your employer contributes to NPS via Section 80CCD employer share (up to 10% of Basic+DA), that amount is separately non-taxable as a perquisite. Ask HR whether your CTC includes an employer NPS component.',
+      },
+      {
+        question: "Do I need to pay advance tax at ₹20 LPA?",
+        answer:
+          "If your employer correctly deducts TDS on salary, advance tax is generally not required for salary-only income — TDS acts as advance tax. You only need to pay advance tax separately if your total annual tax liability (after TDS) exceeds ₹10,000, which can happen if you have interest income, capital gains, or freelance receipts in the same year. Track all income sources, not just salary.",
+      },
+    ],
   },
   {
     slug: "25-lpa-in-hand-salary",
@@ -229,6 +334,23 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "Twenty-five LPA is senior-career territory for most Indian industries — product engineering, management consulting, financial services, and senior public sector roles. The in-hand illustrated above is a simplified model: it does not include surcharge (which may apply depending on total income including bonuses and other sources), perquisites, or employer-specific allowances. Treat it as a directional estimate.",
       "At this band, regime choice (old vs new) is genuinely non-trivial and depends on your full deduction profile: home loan interest (Section 24, up to ₹2L), HRA, NPS contributions (Section 80CCD), and 80C. For some employees, the old regime's deduction menu can reduce taxable income substantially enough to outperform the new regime's lower slab rates. Do the comparison explicitly before the financial year.",
       "Beyond in-hand, ₹25L employees are often building significant net worth through EPF, NPS, ESOP vesting, or real estate. The monthly in-hand from salary is one input to a fuller financial picture. Use this page to understand the tax and PF mechanics on the salary side, and consult a financial planner or CA for the investment and tax optimisation side.",
+    ],
+    faq: [
+      {
+        question: 'Does surcharge apply at ₹25 LPA gross?',
+        answer:
+          "Surcharge applies when total taxable income exceeds ₹50L. Salary alone at ₹25L gross does not trigger surcharge — but if bonuses, RSU vesting, capital gains, or rental income push your total income above ₹50L in a financial year, the 10% surcharge tier activates. This page's engine does not model surcharge; validate with your Form 16.",
+      },
+      {
+        question: 'Should I negotiate a lower Basic+DA at ₹25 LPA to increase in-hand?',
+        answer:
+          'Lowering Basic+DA reduces employee PF deduction and increases monthly cash, but also reduces your EPF corpus growth and gratuity accrual. At ₹25 LPA over a multi-year tenure, the EPF and gratuity side can be meaningful wealth. Weigh short-term cash against long-term accumulation before asking HR to restructure.',
+      },
+      {
+        question: "What is my effective income tax rate at ₹25 LPA under the new regime?",
+        answer:
+          "At ₹25L gross under the new regime with salary-only income, the effective tax rate is roughly 12–14% of gross — approximately ₹3L–₹3.5L in annual income tax. The marginal rate on income above ₹20L is 30%, but slabs below that are taxed at lower rates, pulling the effective rate down. No surcharge applies until total taxable income from all sources exceeds ₹50L.",
+      },
     ],
   },
   {
@@ -258,6 +380,23 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "If your ₹30 LPA package includes RSU vesting, annual bonuses, or any non-cash components, your actual effective tax rate will differ from this illustration. RSU vesting is taxed as perquisite income at the fair market value on vesting date — a large vest in one financial year can push effective tax significantly higher than the slab rates alone suggest. This requires advance tax planning and direct engagement with your chartered accountant.",
       "At ₹30 LPA, the monthly in-hand from salary is one piece of a larger financial picture. Home loan EMIs, children’s education fees, family insurance premiums, and wealth-building investments all compete for the same cash. Use the in-hand estimate here as the starting point for monthly budgeting, not a conclusion.",
     ],
+    faq: [
+      {
+        question: 'Is surcharge already deducted from my payslip at ₹30 LPA?',
+        answer:
+          'If your total taxable income from all sources exceeds ₹50L in a financial year, your employer should compute TDS including the 10% surcharge. However, employers sometimes reconcile this at year-end rather than monthly. Cross-check your Form 16 Part A and consult a CA to confirm correct TDS treatment — underpaid TDS can result in advance tax interest.',
+      },
+      {
+        question: 'How far off is this estimate from my real ₹30 LPA payslip?',
+        answer:
+          'If surcharge applies, your RSU vests are large, or your pay structure differs from a simple gross assumption, the actual annual tax can be ₹80k–₹1.5L higher than the illustrated TDS spread. Use this page for the shape of deductions and validate the absolute numbers with Form 16 and a tax professional.',
+      },
+      {
+        question: "Should I hire a CA for ITR filing at ₹30 LPA?",
+        answer:
+          "For salary-only income, ITR filing at ₹30L is manageable without a CA using the tax portal or reputable tax tools. A CA becomes advisable when you have RSU vesting, capital gains, NPS, home loan interest, or multiple income sources in the same year — because cross-income optimization (timing RSU sales, advance tax coordination, AIS reconciliation) is where professional advice pays for itself.",
+      },
+    ],
   },
   {
     slug: "35-lpa-in-hand-salary",
@@ -285,6 +424,18 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "Thirty-five LPA is firmly senior-leadership or senior-specialist territory. At this income level, the simplification in SalaryExit's engine — no surcharge modeling, no perquisite valuation, no marginal relief calculation — means the actual monthly in-hand on your payslip will likely differ from the illustration above. The difference is not arbitrary; it reflects the real complexity of high-income taxation in India, which requires Form 16 and a qualified CA to resolve accurately.",
       "A key planning issue at ₹35 LPA: whether to use old or new regime is not a simple comparison at this income level. The old regime's deduction menu (home loan interest, HRA, NPS, 80C) can reduce taxable income substantially. But the new regime's lower slab rates and absence of documentation requirements have their own appeal, especially if your deductions are limited. The regime calculator cannot model your entire financial situation — use it alongside professional advice.",
       "For most employees at ₹35 LPA, the monthly cash-flow question is less urgent than the wealth-accumulation question: how much EPF, NPS, ESOP, or real estate equity are you building? Monthly in-hand tells you what is available for spending and liquid savings. The rest of the wealth picture requires a separate analysis. Use this page for the salary mechanics and engage a financial planner for the broader picture.",
+    ],
+    faq: [
+      {
+        question: 'How far off is the ₹35 LPA estimate from my real payslip?',
+        answer:
+          'Potentially by ₹1L–₹2.5L annually if surcharge applies, your package includes large RSU vests or bonuses, or your employer uses a different salary structure. This page gives you the shape of deductions — not a filing-accurate number. Validate with Form 16 and a CA before advance tax or ITR.',
+      },
+      {
+        question: 'Should I file ITR under old or new regime at ₹35 LPA?',
+        answer:
+          "This is a genuine financial planning decision that depends on home loan interest, HRA, NPS, and 80C. The old regime's deduction menu can still outperform at ₹35L if your deductions are substantial. Use the tax regime calculator for a directional comparison, then confirm with a CA before your regime declaration deadline.",
+      },
     ],
   },
 ];

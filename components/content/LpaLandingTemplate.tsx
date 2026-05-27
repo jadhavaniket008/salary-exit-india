@@ -13,7 +13,7 @@ import { InHandBreakdownBars } from "@/components/charts/InHandBreakdownBars";
 import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
 import { MethodologyLink } from "@/components/trust/MethodologyLink";
 import { TrustMethodologyNotice } from "@/components/trust/TrustMethodologyNotice";
-import { faqPageJsonLd } from "@/lib/jsonld";
+import { articleJsonLd, faqPageJsonLd } from "@/lib/jsonld";
 import { formatInr } from "@/lib/format-inr";
 import { ROUTES } from "@/lib/routes";
 import { lpaLandingPath, salaryEnoughPath } from "@/lib/routes/landing-routes";
@@ -37,7 +37,7 @@ export function LpaLandingTemplate({ config }: Props) {
     { label: `${config.lpa} LPA in-hand`, href: path },
   ];
 
-  const faq: FaqItem[] = [
+  const genericFaq: FaqItem[] = [
     {
       question: `Is ₹${config.lpa} LPA gross the same as ₹${config.lpa} LPA CTC?`,
       answer:
@@ -54,9 +54,11 @@ export function LpaLandingTemplate({ config }: Props) {
         "This illustration uses the new regime for a common baseline. Compare regimes explicitly using the tax regime calculator and validate with a qualified professional for filing.",
     },
   ];
+  const faq: FaqItem[] = [...(config.faq ?? []), ...genericFaq];
 
   return (
     <div className="flex flex-1 flex-col">
+      <JsonLd data={articleJsonLd({ headline: config.seo.title, description: config.seo.description, urlPath: path })} />
       <JsonLd data={faqPageJsonLd(faq.map((f) => ({ question: f.question, answer: f.answer })))} />
 
       <Section className="pt-6 sm:pt-10">
