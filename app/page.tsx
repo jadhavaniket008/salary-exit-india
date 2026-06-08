@@ -136,8 +136,8 @@ export default function Home() {
                 Popular salary landing pages
               </h2>
               <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                Built from a single catalogue of LPA scenarios so we can add more bands without duplicating page
-                templates.
+                Each salary band is modeled with specific context: estimated in-hand, city cost breakdowns,
+                tax impact for that earnings level, and regime comparison.
               </p>
               <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                 {popularLpa.map((p) => (
