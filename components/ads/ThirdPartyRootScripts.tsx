@@ -39,10 +39,12 @@ export function ThirdPartyRootScripts() {
   }, [consentBannerOn]);
 
   const allowAnalytics = consent?.analytics ?? false;
-  const allowAds = consent?.ads ?? false;
   const showGa = Boolean(gaId && allowAnalytics);
   const showPlausible = Boolean(plausibleDomain && allowAnalytics);
-  const showAdsense = Boolean(adsenseClient && allowAds);
+  // The AdSense loader script must be present unconditionally so Google's review
+  // crawler (which does not click the consent banner) can verify the site and
+  // serve ads. Actual ad UNITS still respect consent in components/ads/AdSlot.tsx.
+  const showAdsense = Boolean(adsenseClient);
 
   return (
     <>
