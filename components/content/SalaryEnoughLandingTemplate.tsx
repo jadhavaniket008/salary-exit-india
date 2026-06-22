@@ -19,6 +19,7 @@ import { formatInr } from "@/lib/format-inr";
 import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
 import { MethodologyLink } from "@/components/trust/MethodologyLink";
 import { TrustMethodologyNotice } from "@/components/trust/TrustMethodologyNotice";
+import { CaConsultCta } from "@/components/monetization/CaConsultCta";
 import { ROUTES } from "@/lib/routes";
 import { lpaLandingPath, salaryEnoughPath } from "@/lib/routes/landing-routes";
 import type { BreadcrumbItem } from "@/lib/seo/breadcrumbs";
@@ -461,6 +462,7 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
             </p>
           </section>
 
+          <CaConsultCta />
           <TrustMethodologyNotice variant="compact" />
 
           <FaqSection items={faq} />
