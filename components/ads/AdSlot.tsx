@@ -117,24 +117,8 @@ export function AdSlot({
     );
   }
 
-  return (
-    <aside
-      {...{ [AD_SLOT_DATA_ATTR]: position }}
-      aria-label={label}
-      className={`rounded-2xl border border-dashed border-zinc-300/90 bg-zinc-50/90 text-center text-xs text-zinc-500 dark:border-zinc-700 dark:bg-zinc-900/50 dark:text-zinc-400 ${positionClasses[position]} ${className}`}
-    >
-      <div className="flex h-full min-h-inherit flex-col items-center justify-center px-4 py-6">
-        <span className="font-medium text-zinc-600 dark:text-zinc-300">{label}</span>
-        <span className="mt-1 max-w-sm text-[11px] leading-snug text-zinc-500 dark:text-zinc-500">
-          Slot: <code className="rounded bg-zinc-200/80 px-1 py-0.5 text-[10px] dark:bg-zinc-800">{position}</code>
-          .{" "}
-          {adsenseClient && !adsenseSlot
-            ? "Set NEXT_PUBLIC_ADSENSE_SLOT_* env vars in Vercel to render live AdSense units."
-            : consentBannerOn && !allowAds
-              ? "Accept ads in the consent banner to load AdSense."
-              : "Enable AdSense slots + client ID in production to replace this placeholder."}
-        </span>
-      </div>
-    </aside>
-  );
+  // Until a live AdSense unit can actually render, show nothing.
+  // Empty "Advertisement" placeholder boxes make the site look built-for-ads /
+  // under construction to the AdSense reviewer and hurt the content-to-ad ratio.
+  return null;
 }
