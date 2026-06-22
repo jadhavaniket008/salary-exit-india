@@ -1,4 +1,5 @@
 import { SalaryCalculatorClient } from "@/components/calculators/clients/SalaryCalculatorClient";
+import { AffiliateCta } from "@/components/monetization/AffiliateCta";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
 export const metadata = calculatorMetadata("salary");
@@ -80,6 +81,8 @@ export default function SalaryCalculatorPage() {
             calculator shows this breakdown so you can see both figures.
           </p>
         </section>
+
+        <AffiliateCta context="investing" />
       </div>
     </>
   );

@@ -29,6 +29,7 @@ export const ROUTES = {
   offerComparisonCalculator: "/offer-comparison-calculator",
   salaryHikeCalculator: "/salary-hike-calculator",
   epfCalculator: "/epf-calculator",
+  forBusinesses: "/for-businesses",
 } as const;
 
 export type AppRoute = (typeof ROUTES)[keyof typeof ROUTES];

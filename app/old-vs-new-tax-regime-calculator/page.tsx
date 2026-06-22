@@ -1,4 +1,5 @@
 import { TaxRegimeCalculatorClient } from "@/components/calculators/clients/TaxRegimeCalculatorClient";
+import { AffiliateCta } from "@/components/monetization/AffiliateCta";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
 export const metadata = calculatorMetadata("taxRegime");
@@ -94,6 +95,8 @@ export default function TaxRegimeCalculatorPage() {
             administrative simplicity has real value for many employees.
           </p>
         </section>
+
+        <AffiliateCta context="tax-filing" />
       </div>
     </>
   );

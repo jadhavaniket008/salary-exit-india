@@ -1,4 +1,5 @@
 import { CtcToInHandCalculatorClient } from "@/components/calculators/clients/CtcToInHandCalculatorClient";
+import { AffiliateCta } from "@/components/monetization/AffiliateCta";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
 export const metadata = calculatorMetadata("ctcToInHand");
@@ -102,6 +103,8 @@ export default function CtcToInHandCalculatorPage() {
             </li>
           </ul>
         </section>
+
+        <AffiliateCta context="investing" />
       </div>
     </>
   );

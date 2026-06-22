@@ -1,4 +1,5 @@
 import { OfferComparisonCalculatorClient } from "@/components/calculators/clients/OfferComparisonCalculatorClient";
+import { AffiliateCta } from "@/components/monetization/AffiliateCta";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
 export const metadata = calculatorMetadata("offerComparison");
@@ -84,6 +85,8 @@ export default function OfferComparisonCalculatorPage() {
             <li>Does the role create portfolio work or outcomes you can point to?</li>
           </ul>
         </section>
+
+        <AffiliateCta context="investing" />
       </div>
     </>
   );

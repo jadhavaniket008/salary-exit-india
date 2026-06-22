@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui";
 import { ROUTES } from "@/lib/routes";
+import { EmailCapture } from "@/components/monetization/EmailCapture";
 
 const legal = [
   { href: ROUTES.about, label: "About" },
@@ -13,6 +14,9 @@ const legal = [
 export function SiteFooter() {
   return (
     <footer className="border-t border-zinc-200/80 bg-white/80 py-10 dark:border-zinc-800 dark:bg-zinc-950/80">
+      <Container className="mb-10 border-b border-zinc-200/80 pb-10 dark:border-zinc-800">
+        <EmailCapture />
+      </Container>
       <Container className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
         <div className="max-w-md space-y-2">
           <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">SalaryExit India</p>
@@ -46,6 +50,9 @@ export function SiteFooter() {
               {item.label}
             </Link>
           ))}
+          <Link href={ROUTES.forBusinesses} className="text-zinc-700 hover:underline dark:text-zinc-300">
+            For businesses
+          </Link>
         </nav>
       </Container>
       <Container className="mt-8 border-t border-zinc-200/80 pt-6 text-center text-[11px] text-zinc-500 dark:border-zinc-800 dark:text-zinc-500">
