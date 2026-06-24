@@ -59,13 +59,13 @@ export function WhatAffectsInHandBody() {
 
       <h2 id="tax-regime">4. Tax regime and deductions: the largest swing for most people</h2>
       <p>
-        For a ₹15 LPA gross employee in FY 2025-26, choosing the new tax regime vs the old tax regime can
+        For a ₹15 LPA gross employee in FY 2026-27, choosing the new tax regime vs the old tax regime can
         produce different annual tax liabilities — sometimes by ₹20,000–₹60,000/year depending on HRA
         exemption, 80C investments, and home loan interest. Monthly TDS differences of ₹1,500–₹5,000 are
         common in the mid-income bands where this choice is most contested.
       </p>
       <p>
-        The new regime has a standard deduction of ₹75,000 (FY 2025-26) and lower slab rates but disallows
+        The new regime has a standard deduction of ₹75,000 (FY 2026-27) and lower slab rates but disallows
         most Chapter VI-A deductions. The old regime has a standard deduction of ₹50,000 but allows HRA
         exemption, 80C (up to ₹1.5L), 80D, NPS (80CCD(1B)), and home loan interest. For someone paying
         significant rent and maximizing 80C, the old regime often wins. For someone with no major deductions,

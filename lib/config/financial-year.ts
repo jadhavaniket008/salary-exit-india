@@ -16,7 +16,7 @@ export type TaxSlab = {
   marginalRate: number;
 };
 
-export type FinancialYearId = "FY2024_25" | "FY2025_26";
+export type FinancialYearId = "FY2024_25" | "FY2025_26" | "FY2026_27";
 
 export type FinancialYearConfig = {
   id: FinancialYearId;
@@ -93,5 +93,17 @@ export const FY2025_26: FinancialYearConfig = {
   rebate87ANewRegimeIncomeLimit: 1_200_000,
 };
 
+/**
+ * FY 2026-27 (AY 2027-28) — Union Budget 2026 (1 Feb 2026) made no changes to
+ * new-regime slabs, standard deduction, or Section 87A rebate.
+ * All figures carry forward from FY 2025-26 unchanged.
+ * Source: BankBazaar / Axis Max Life summary of Budget 2026 (verified June 2026).
+ */
+export const FY2026_27: FinancialYearConfig = {
+  ...FY2025_26,
+  id: "FY2026_27",
+  label: "Financial Year 2026-27 (AY 2027-28)",
+};
+
 /** Default FY used by all calculators and tax estimates. */
-export const DEFAULT_FINANCIAL_YEAR: FinancialYearConfig = FY2025_26;
+export const DEFAULT_FINANCIAL_YEAR: FinancialYearConfig = FY2026_27;

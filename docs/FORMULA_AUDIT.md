@@ -1,6 +1,6 @@
 # SalaryExit India — formula & assumptions audit
 
-Reference for QA and finance review. Implementation lives in `lib/calculators/` and `lib/config/`. FY defaults: `FY2024_25` in `lib/config/financial-year.ts`.
+Reference for QA and finance review. Implementation lives in `lib/calculators/` and `lib/config/`. FY defaults: `FY2026_27` in `lib/config/financial-year.ts` (Budget 2026 made no slab changes; slabs identical to FY2025_26).
 
 ## Summary: assumption-heavy vs lighter tools
 

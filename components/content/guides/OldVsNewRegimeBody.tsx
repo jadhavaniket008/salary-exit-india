@@ -14,7 +14,7 @@ export function OldVsNewRegimeBody() {
       </p>
       <p>
         <strong>Important:</strong> Tax slabs, standard deductions, and rebate thresholds change with each
-        Union Budget. This guide describes the structure as configured for FY 2025-26 in SalaryExit&apos;s
+        Union Budget. This guide describes the structure as configured for FY 2026-27 in SalaryExit&apos;s
         calculators. Verify current rates at the Income Tax Department&apos;s official portal for filing
         decisions.
       </p>

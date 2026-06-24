@@ -51,9 +51,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "8-lpa-in-hand-salary",
     lpa: 8,
     seo: {
-      title: "8 LPA In-Hand Salary: ₹64,600/month (FY 2025-26)",
+      title: "8 LPA In-Hand Salary: ₹64,600/month (FY 2026-27)",
       description:
-        "₹64,600/month in-hand on ₹8 LPA gross — zero income tax (Section 87A rebate, FY 2025-26). Employee PF included. Adjust Basic+DA and state PT in the CTC calculator.",
+        "₹64,600/month in-hand on ₹8 LPA gross — zero income tax (Section 87A rebate, FY 2026-27). Employee PF included. Adjust Basic+DA and state PT in the CTC calculator.",
       keywords: [
         "8 LPA in hand",
         "800000 salary in hand",
@@ -76,13 +76,13 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     realityCheckParagraphs: [
       "Eight LPA is a realistic first-job or early-career number in many Indian cities and sectors. After PF and a state PT placeholder, the in-hand estimate above is what typically hits your bank account before any rent, food, transport, or other fixed expenses. The gap between this and what your recruiter quoted as CTC is not hidden fees — it is statutory and policy-driven deductions.",
       "At this income band, PF deductions (roughly ₹3,600–4,000/month depending on your Basic+DA) are proportionally significant. Choosing to contribute more via VPF reduces in-hand further but builds a tax-efficient retirement corpus. If your employer has no PF (exempted establishment or contractual role), your in-hand will be higher but you will need to manage retirement savings separately.",
-      "Income tax at ₹8 LPA gross under the new regime is effectively zero after the Section 87A rebate (FY 2025-26) — so TDS should be minimal or nil if your employer has set it up correctly. If you are seeing unexpected TDS at this level, check whether your employer has your regime declaration on file.",
+      "Income tax at ₹8 LPA gross under the new regime is effectively zero after the Section 87A rebate (FY 2026-27) — so TDS should be minimal or nil if your employer has set it up correctly. If you are seeing unexpected TDS at this level, check whether your employer has your regime declaration on file.",
     ],
     faq: [
       {
         question: "Why is there no income tax deduction at ₹8 LPA?",
         answer:
-          "At ₹8L gross under the new regime, the Section 87A rebate of ₹25,000 covers the full income tax liability for FY 2025-26 — effective tax is nil. Your TDS should be minimal or zero if your employer has your regime declaration on file.",
+          "At ₹8L gross under the new regime, the Section 87A rebate (up to ₹60,000 under FY 2026-27) covers the full income tax liability at this gross — effective tax is nil. Your TDS should be minimal or zero if your employer has your regime declaration on file.",
       },
       {
         question: "How can I increase my in-hand at ₹8 LPA?",
@@ -100,9 +100,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "10-lpa-in-hand-salary",
     lpa: 10,
     seo: {
-      title: "10 LPA In-Hand Salary: ₹81,300/month (FY 2025-26)",
+      title: "10 LPA In-Hand Salary: ₹81,300/month (FY 2026-27)",
       description:
-        "₹81,300/month in-hand on ₹10 LPA gross — zero income tax (Section 87A rebate, FY 2025-26). Tune Basic+DA and state PT for your exact take-home.",
+        "₹81,300/month in-hand on ₹10 LPA gross — zero income tax (Section 87A rebate, FY 2026-27). Tune Basic+DA and state PT for your exact take-home.",
       keywords: ["10 LPA in hand", "10 lakh salary take home", "CTC 10 LPA India", "10 LPA monthly net"],
     },
     scenario: baseScenario(10),
@@ -116,15 +116,15 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "If your employer caps PF wage below Basic+DA, rerun numbers in the CTC→in-hand calculator with payslip PF.",
     ],
     realityCheckParagraphs: [
-      "Ten LPA is the most commonly searched salary band in India — it represents a first significant job milestone for many and a comparison anchor for early-career switches. The illustrated in-hand above assumes a clean new-regime setup with no itemized deductions. Under the Section 87A rebate structure for FY 2025-26, income tax at this gross is nil, so the deductions you see are PF and professional tax only.",
+      "Ten LPA is the most commonly searched salary band in India — it represents a first significant job milestone for many and a comparison anchor for early-career switches. The illustrated in-hand above assumes a clean new-regime setup with no itemized deductions. Under the Section 87A rebate structure for FY 2026-27, income tax at this gross is nil, so the deductions you see are PF and professional tax only.",
       "If your actual Basic+DA is higher than 45% of gross (the assumed split here), your PF deduction will be higher and your in-hand slightly lower. If your employer uses a PF wage cap, the deduction will be lower. Use the CTC-to-in-hand calculator and enter your payslip’s Basic+DA for a number that matches your specific situation rather than this band illustration.",
       "The question people at ₹10 LPA most often ask is not about tax — it is about rent. This page shows gross-to-in-hand mechanics only. For a realistic monthly budget picture (rent, commute, lifestyle spend, and what is left), use the Salary Reality Check with your actual city and rent figure.",
     ],
     faq: [
       {
-        question: "Is ₹10 LPA still tax-free under the new regime for FY 2025-26?",
+        question: "Is ₹10 LPA still tax-free under the new regime for FY 2026-27?",
         answer:
-          "Yes — the Section 87A rebate of ₹25,000 covers the full income tax liability at ₹10L gross. Effective income tax is nil, so the deductions you see here are PF and professional tax only. Confirm your employer has your regime choice recorded to avoid unnecessary TDS.",
+          "Yes — the Section 87A rebate (up to ₹60,000 under FY 2026-27 new regime) covers the full income tax at ₹10L gross. Effective income tax is nil, so the deductions you see here are PF and professional tax only. Confirm your employer has your regime choice recorded to avoid unnecessary TDS.",
       },
       {
         question: "How much of my ₹10 LPA in-hand should go toward rent?",
@@ -142,9 +142,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "12-lpa-in-hand-salary",
     lpa: 12,
     seo: {
-      title: "12 LPA In-Hand: ₹98,000/month, Zero Tax (FY 2025-26)",
+      title: "12 LPA In-Hand: ₹98,000/month, Zero Tax (FY 2026-27)",
       description:
-        "₹98,000/month in-hand on ₹12 LPA gross — zero income tax under Section 87A (FY 2025-26). Compare old vs new regime if you claim HRA or 80C deductions.",
+        "₹98,000/month in-hand on ₹12 LPA gross — zero income tax under Section 87A (FY 2026-27). Compare old vs new regime if you claim HRA or 80C deductions.",
       keywords: ["12 LPA in hand", "12 lakh CTC take home", "12 LPA monthly salary hand"],
     },
     scenario: baseScenario(12),
@@ -158,7 +158,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "Two offers with the same gross but different Basic+DA splits can produce different PF and slightly different take-home.",
     ],
     realityCheckParagraphs: [
-      "Twelve LPA is where many professionals make their first significant job switch, often moving from services to product companies or from tier-2 cities to metros. The in-hand illustration above uses the new regime and a 45% Basic+DA assumption. At this gross level, income tax under the new regime is zero (Section 87A rebate covers the full liability for FY 2025-26), meaning all your deductions are PF and professional tax.",
+      "Twelve LPA is where many professionals make their first significant job switch, often moving from services to product companies or from tier-2 cities to metros. The in-hand illustration above uses the new regime and a 45% Basic+DA assumption. At this gross level, income tax under the new regime is zero (Section 87A rebate covers the full liability for FY 2026-27), meaning all your deductions are PF and professional tax.",
       "If you are comparing a ₹12 LPA offer at two companies, check whether both have similar PF wage definitions. A company with Basic at 35% of gross has employee PF of roughly ₹5,040/month; a company with Basic at 50% has employee PF of roughly ₹7,200/month. The same headline gross produces nearly ₹2,000/month difference in monthly cash — which adds up to ₹24,000 over a year.",
       "At ₹12 LPA, the regime comparison (old vs new) may start to become relevant if you pay significant rent and can claim a substantial HRA exemption, or if you make maximum 80C investments. Use the tax regime calculator with your actual inputs before instructing your employer on TDS treatment.",
     ],
@@ -184,9 +184,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "15-lpa-in-hand-salary",
     lpa: 15,
     seo: {
-      title: "15 LPA In-Hand Salary: ₹1,14,900/month (FY 2025-26)",
+      title: "15 LPA In-Hand Salary: ₹1,14,900/month (FY 2026-27)",
       description:
-        "₹1,14,900/month in-hand on ₹15 LPA gross (new regime, FY 2025-26). Tax kicks in above the ₹12L rebate limit — see monthly PF, TDS, and PT breakdown.",
+        "₹1,14,900/month in-hand on ₹15 LPA gross (new regime, FY 2026-27). Tax kicks in above the ₹12L rebate limit — see monthly PF, TDS, and PT breakdown.",
       keywords: ["15 LPA in hand", "15 lakh salary monthly", "15 LPA net salary India"],
     },
     scenario: baseScenario(15),
@@ -200,7 +200,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "If you are evaluating startup equity vs cash, this page only covers cash salary mechanics — not liquidity or tax on ESOPs.",
     ],
     realityCheckParagraphs: [
-      "Fifteen LPA is the band where income tax first becomes a meaningful line item under the new regime for FY 2025-26. Above the Section 87A rebate threshold, tax kicks in on the incremental taxable income — and the illustrated TDS spread reflects that. The in-hand estimate above is after this tax effect, PF, and a PT placeholder.",
+      "Fifteen LPA is the band where income tax first becomes a meaningful line item under the new regime for FY 2026-27. Above the Section 87A rebate threshold, tax kicks in on the incremental taxable income — and the illustrated TDS spread reflects that. The in-hand estimate above is after this tax effect, PF, and a PT placeholder.",
       "At ₹15L, the old-vs-new regime comparison deserves explicit attention. If you pay significant rent and can claim HRA exemption, or if you max out 80C investments (₹1.5L) and NPS contributions, the old regime may produce lower annual tax than the new regime despite its higher slab rates. The crossover depends on your exact deduction profile — run the tax regime calculator to see your specific numbers.",
       "People at ₹15 LPA are often evaluating their first significant city upgrade — moving to a premium flat, adding a vehicle, or building savings for a home down payment. These goals require the full budget picture, not just in-hand. Add your actual rent and spend tier in the Salary Reality Check to see how much is actually left after living costs at this income level.",
     ],
@@ -208,7 +208,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       {
         question: "Why does income tax appear at ₹15 LPA but not at ₹12 LPA?",
         answer:
-          "The Section 87A rebate of ₹25,000 applies only when taxable income is ₹12L or below (new regime, FY 2025-26). At ₹15L gross, income above ₹12L becomes taxable. The TDS spread in the breakdown above reflects the incremental tax on that portion.",
+          "The Section 87A rebate (up to ₹60,000) applies only when taxable income is ₹12L or below under the new regime (FY 2026-27). At ₹15L gross, income above ₹12L becomes taxable. The TDS spread in the breakdown above reflects the incremental tax on that portion.",
       },
       {
         question: "Is the old tax regime worth switching to at ₹15 LPA?",
@@ -226,9 +226,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "18-lpa-in-hand-salary",
     lpa: 18,
     seo: {
-      title: "18 LPA In-Hand Salary: ₹1,35,400/month (FY 2025-26)",
+      title: "18 LPA In-Hand Salary: ₹1,35,400/month (FY 2026-27)",
       description:
-        "₹1,35,400/month in-hand on ₹18 LPA gross (new regime, FY 2025-26). Transparent monthly TDS, PF, and PT breakdown. Not a payslip — tune inputs for your employer.",
+        "₹1,35,400/month in-hand on ₹18 LPA gross (new regime, FY 2026-27). Transparent monthly TDS, PF, and PT breakdown. Not a payslip — tune inputs for your employer.",
       keywords: [
         "18 LPA in hand",
         "18 lakh CTC take home India",
@@ -255,7 +255,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       {
         question: 'How much income tax do I pay at ₹18 LPA under the new regime?',
         answer:
-          'Annual income tax at ₹18L gross (new regime, FY 2025-26) is roughly ₹1.5L–₹1.7L as shown in the breakdown table. The exact amount depends on your actual Basic+DA and taxable allowances — open the tax calculator with your payslip inputs for a precise figure. No surcharge applies at this gross for salary-only income.',
+          'Annual income tax at ₹18L gross (new regime, FY 2026-27) is roughly ₹1.5L–₹1.7L as shown in the breakdown table. The exact amount depends on your actual Basic+DA and taxable allowances — open the tax calculator with your payslip inputs for a precise figure. No surcharge applies at this gross for salary-only income.',
       },
       {
         question: 'Does my employee PF contribution reduce income tax at ₹18 LPA?',
@@ -273,9 +273,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "20-lpa-in-hand-salary",
     lpa: 20,
     seo: {
-      title: "20 LPA In-Hand Salary: ₹1,48,600/month (FY 2025-26)",
+      title: "20 LPA In-Hand Salary: ₹1,48,600/month (FY 2026-27)",
       description:
-        "₹1,48,600/month in-hand on ₹20 LPA gross (new regime, FY 2025-26). Monthly TDS, PF, and PT breakdown. Surcharge not modeled — treat as directional estimate.",
+        "₹1,48,600/month in-hand on ₹20 LPA gross (new regime, FY 2026-27). Monthly TDS, PF, and PT breakdown. Surcharge not modeled — treat as directional estimate.",
       keywords: ["20 LPA in hand", "20 lakh salary take home", "20 LPA net pay India"],
     },
     scenario: baseScenario(20),
@@ -315,9 +315,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "25-lpa-in-hand-salary",
     lpa: 25,
     seo: {
-      title: "25 LPA In-Hand Salary: ₹1,79,700/month (FY 2025-26)",
+      title: "25 LPA In-Hand Salary: ₹1,79,700/month (FY 2026-27)",
       description:
-        "₹1,79,700/month in-hand on ₹25 LPA gross (new regime, FY 2025-26). Transparent PF and TDS breakdown. Surcharge not modeled — directional planning only.",
+        "₹1,79,700/month in-hand on ₹25 LPA gross (new regime, FY 2026-27). Transparent PF and TDS breakdown. Surcharge not modeled — directional planning only.",
       keywords: ["25 LPA in hand", "25 lakh CTC monthly in hand", "25 LPA net salary"],
     },
     scenario: baseScenario(25),
@@ -357,9 +357,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "30-lpa-in-hand-salary",
     lpa: 30,
     seo: {
-      title: "30 LPA In-Hand Salary: ₹2,08,300/month (FY 2025-26)",
+      title: "30 LPA In-Hand Salary: ₹2,08,300/month (FY 2026-27)",
       description:
-        "₹2,08,300/month in-hand on ₹30 LPA gross (new regime, FY 2025-26). Directional estimate — surcharge and perquisites out of scope. Validate with Form 16.",
+        "₹2,08,300/month in-hand on ₹30 LPA gross (new regime, FY 2026-27). Directional estimate — surcharge and perquisites out of scope. Validate with Form 16.",
       keywords: ["30 LPA in hand", "30 lakh salary take home India", "30 LPA monthly net"],
     },
     scenario: baseScenario(30),
@@ -402,9 +402,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "35-lpa-in-hand-salary",
     lpa: 35,
     seo: {
-      title: "35 LPA In-Hand Salary: ₹2,37,000/month (FY 2025-26)",
+      title: "35 LPA In-Hand Salary: ₹2,37,000/month (FY 2026-27)",
       description:
-        "₹2,37,000/month in-hand on ₹35 LPA gross (new regime, FY 2025-26). Directional estimate — surcharge not modeled. Validate with Form 16 and a CA.",
+        "₹2,37,000/month in-hand on ₹35 LPA gross (new regime, FY 2026-27). Directional estimate — surcharge not modeled. Validate with Form 16 and a CA.",
       keywords: ["35 LPA in hand", "35 lakh salary take home India", "35 LPA monthly net"],
     },
     scenario: baseScenario(35),

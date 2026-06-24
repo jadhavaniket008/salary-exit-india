@@ -1443,7 +1443,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
           "Illustrative anchors reflect typical listing bands; your quote wins — paste it into the calculator.",
       },
       {
-        question: "Is tax modeled for FY 2025-26?",
+        question: "Is tax modeled for FY 2026-27?",
         answer:
           "Yes for new-regime slabs in code — see methodology for limits and surcharges not modeled.",
       },

@@ -15,7 +15,7 @@ export function WhatReducesInHandBody() {
       <h2 id="income-tax">1. Income tax (TDS) — often the largest deduction above ₹8 LPA gross</h2>
       <p>
         TDS is the income tax your employer withholds on your behalf and deposits with the government. For FY
-        2025-26 under the new regime:
+        2026-27 under the new regime:
       </p>
       <ul>
         <li>
