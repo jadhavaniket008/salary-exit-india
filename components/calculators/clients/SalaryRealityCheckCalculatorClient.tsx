@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -204,7 +204,7 @@ export function SalaryRealityCheckCalculatorClient({
     <>
       {!embed ? (
         <>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="text-sm text-foreground-secondary">
             This is a <strong>decision assistant</strong>: compare whether an offer leaves meaningful savings after a
             transparent spend model. Defaults are visible and editable so nothing feels like a black box.
           </p>
@@ -236,12 +236,12 @@ export function SalaryRealityCheckCalculatorClient({
           />
         </>
       ) : (
-        <p className="text-sm text-zinc-600 dark:text-zinc-400">
+        <p className="text-sm text-foreground-secondary">
           Edit the scenario below — CTC, rent, and lifestyle update estimated savings and the verdict instantly.
         </p>
       )}
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form
           id="salary-reality-form"
           className="space-y-5"
@@ -257,7 +257,7 @@ export function SalaryRealityCheckCalculatorClient({
           </FormField>
 
           <fieldset className="space-y-2">
-            <legend className="text-sm font-medium text-zinc-900 dark:text-zinc-100">City</legend>
+            <legend className="text-sm font-medium text-foreground">City</legend>
             <label className="flex items-center gap-2 text-sm">
               <input type="checkbox" checked={metro} onChange={(e) => setMetro(e.target.checked)} />
               Metro area (higher default commute band)
@@ -269,7 +269,7 @@ export function SalaryRealityCheckCalculatorClient({
           </FormField>
 
           <fieldset className="space-y-2">
-            <legend className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            <legend className="text-sm font-medium text-foreground">
               Lifestyle level (default non-rent bands)
             </legend>
             <div className="flex flex-wrap gap-4 text-sm">
@@ -285,26 +285,26 @@ export function SalaryRealityCheckCalculatorClient({
                 </label>
               ))}
             </div>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400">
+            <p className="text-xs text-foreground-secondary">
               <strong>{lifestyleHelp.title}:</strong> {lifestyleHelp.body}
             </p>
           </fieldset>
 
           {!embed ? (
             <div className="rounded-xl border border-zinc-200 bg-zinc-50/80 p-4 text-sm dark:border-zinc-700 dark:bg-zinc-900/50">
-              <p className="font-medium text-zinc-900 dark:text-zinc-100">How default expenses are chosen</p>
-              <p className="mt-2 text-zinc-600 dark:text-zinc-400">{SALARY_REALITY_EXPENSE_METHODOLOGY.summary}</p>
-              <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+              <p className="font-medium text-foreground">How default expenses are chosen</p>
+              <p className="mt-2 text-foreground-secondary">{SALARY_REALITY_EXPENSE_METHODOLOGY.summary}</p>
+              <p className="mt-2 text-foreground-secondary">
                 <strong>Metro vs non-metro:</strong> {SALARY_REALITY_EXPENSE_METHODOLOGY.metroVsNonMetro}
               </p>
-              <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+              <p className="mt-2 text-foreground-secondary">
                 <strong>Lifestyle tiers:</strong> {SALARY_REALITY_EXPENSE_METHODOLOGY.tiers}
               </p>
             </div>
           ) : null}
 
           <fieldset className="space-y-3">
-            <legend className="text-sm font-medium text-zinc-900 dark:text-zinc-100">Tax regime (in-hand)</legend>
+            <legend className="text-sm font-medium text-foreground">Tax regime (in-hand)</legend>
             <div className="flex flex-wrap gap-4 text-sm">
               <label className="inline-flex items-center gap-2">
                 <input
@@ -325,7 +325,7 @@ export function SalaryRealityCheckCalculatorClient({
                 Old regime
               </label>
             </div>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400">
+            <p className="text-xs text-foreground-secondary">
               <strong>New</strong> is the default for comparing recent offers (no 80C/HRA detail here).{" "}
               <strong>Old</strong> uses the same slab engine; this screen only includes employee PF in the 80C bucket
               — use the salary breakdown or CTC→in-hand tool for fuller old-regime inputs.
@@ -353,10 +353,10 @@ export function SalaryRealityCheckCalculatorClient({
                   else if (e.target.value.trim() === "") setBasicDaPct(NaN);
                 }}
               />
-              <span className="text-sm text-zinc-500">% of gross → PF base</span>
+              <span className="text-sm text-foreground-muted">% of gross → PF base</span>
             </div>
             {result && result.basicAndDaAnnual != null ? (
-              <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+              <p className="mt-2 text-xs text-foreground-secondary">
                 Implied Basic+DA annually: <strong className="tabular-nums">{formatInr(result.basicAndDaAnnual)}</strong>{" "}
                 ({(result.basicDaShareOfGross * 100).toFixed(0)}% of CTC).
               </p>
@@ -366,8 +366,8 @@ export function SalaryRealityCheckCalculatorClient({
           <div className="space-y-3">
             <div className="flex flex-wrap items-end justify-between gap-2">
               <div>
-                <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">Monthly spend model (₹)</p>
-                <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                <p className="text-sm font-medium text-foreground">Monthly spend model (₹)</p>
+                <p className="text-xs text-foreground-secondary">
                   Values below default from your tier and city; edit any field — savings update instantly.
                 </p>
               </div>
@@ -498,19 +498,19 @@ export function SalaryRealityCheckCalculatorClient({
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
-                <p className="text-xs font-semibold uppercase text-zinc-500">Total modeled monthly expenses</p>
-                <p className="mt-2 text-2xl font-semibold tabular-nums text-zinc-900 dark:text-zinc-50">
+                <p className="text-xs font-semibold uppercase text-foreground-muted">Total modeled monthly expenses</p>
+                <p className="mt-2 text-2xl font-semibold tabular-nums text-foreground">
                   {formatInr(result.totalMonthlyExpenses)}
                 </p>
               </div>
               <div className="rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
-                <p className="text-xs font-semibold uppercase text-zinc-500">Savings ratio</p>
+                <p className="text-xs font-semibold uppercase text-foreground-muted">Savings ratio</p>
                 <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-800 dark:text-emerald-200">
                   {result.inHandMonthly > 0
                     ? `${(result.savingsRatio * 100).toFixed(1)}%`
                     : "—"}
                 </p>
-                <p className="mt-1 text-xs text-zinc-500">Of estimated in-hand, after modeled spend.</p>
+                <p className="mt-1 text-xs text-foreground-muted">Of estimated in-hand, after modeled spend.</p>
               </div>
             </div>
 
@@ -521,13 +521,13 @@ export function SalaryRealityCheckCalculatorClient({
             />
 
             <CollapsibleBreakdown defaultOpen title="Expense breakdown">
-              <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+              <p className="mb-3 text-sm text-foreground-secondary">
                 Rent plus four modeled categories — same numbers as the inputs above. Totals drive savings.
               </p>
               <dl className="grid gap-3 text-sm sm:grid-cols-2">
                 {result.expenseLines.map((line) => (
                   <div key={line.label}>
-                    <dt className="text-zinc-500">{line.label}</dt>
+                    <dt className="text-foreground-muted">{line.label}</dt>
                     <dd className="font-medium tabular-nums">{formatInr(line.amount)}</dd>
                   </div>
                 ))}
@@ -557,8 +557,8 @@ export function SalaryRealityCheckCalculatorClient({
 
           <section className="flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-zinc-50/80 p-4 dark:border-zinc-800 dark:bg-zinc-900/40 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
             <div>
-              <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Next steps</p>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400">
+              <p className="text-sm font-semibold text-foreground">Next steps</p>
+              <p className="text-xs text-foreground-secondary">
                 Refine or compare offers with the same methodology.
               </p>
             </div>
@@ -615,3 +615,4 @@ export function SalaryRealityCheckCalculatorClient({
     </CalculatorPageLayout>
   );
 }
+

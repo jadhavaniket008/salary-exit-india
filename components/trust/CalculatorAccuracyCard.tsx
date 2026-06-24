@@ -2,16 +2,16 @@ import type { CalculatorSlug } from "@/lib/routes";
 import { getCalculatorTrust } from "@/lib/config/calculator-trust";
 import { EstimateConfidenceBadge } from "@/components/trust/EstimateConfidenceBadge";
 
-type Props = {
-  slug: CalculatorSlug;
-};
+type Props = { slug: CalculatorSlug };
 
 function List({ title, items }: { title: string; items: string[] }) {
   if (items.length === 0) return null;
   return (
     <div className="space-y-1.5">
-      <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">{title}</p>
-      <ul className="list-inside list-disc space-y-1 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <p className="text-[11px] font-bold uppercase tracking-wider text-foreground-muted">
+        {title}
+      </p>
+      <ul className="list-inside list-disc space-y-1 text-sm leading-relaxed text-foreground-secondary">
         {items.map((x) => (
           <li key={x}>{x}</li>
         ))}
@@ -20,16 +20,13 @@ function List({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-/**
- * Shared accuracy / “what is calculated vs estimated” block for every calculator.
- */
 export function CalculatorAccuracyCard({ slug }: Props) {
   const t = getCalculatorTrust(slug);
   return (
-    <aside className="rounded-2xl border border-zinc-200/90 bg-gradient-to-b from-white to-zinc-50/90 p-4 shadow-sm dark:border-zinc-800 dark:from-zinc-950 dark:to-zinc-950/80">
+    <aside className="rounded-2xl border border-border bg-surface-subtle p-5">
       <div className="flex flex-wrap items-start gap-3">
         <EstimateConfidenceBadge level={t.confidence} />
-        <p className="min-w-0 flex-1 text-sm font-medium leading-relaxed text-zinc-800 dark:text-zinc-100">
+        <p className="min-w-0 flex-1 text-sm font-medium leading-relaxed text-foreground">
           {t.headline}
         </p>
       </div>

@@ -1,13 +1,21 @@
 import type { HTMLAttributes } from "react";
 
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
+  variant?: "default" | "subtle" | "raised";
+}
+
 export function Card({
   className = "",
+  variant = "default",
   ...props
-}: HTMLAttributes<HTMLDivElement>) {
+}: CardProps) {
+  const variants = {
+    default: "bg-surface border border-border rounded-xl shadow-sm",
+    subtle:  "bg-surface-subtle border border-border rounded-xl",
+    raised:  "bg-surface border border-border rounded-xl shadow-md",
+  };
+
   return (
-    <div
-      className={`rounded-xl border border-zinc-200/80 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 ${className}`}
-      {...props}
-    />
+    <div className={`${variants[variant]} ${className}`} {...props} />
   );
 }

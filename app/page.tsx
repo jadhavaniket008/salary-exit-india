@@ -1,30 +1,31 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Container, Section, Card } from "@/components/ui";
-import { SiteSearchClient } from "@/components/home/SiteSearchClient";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { Container } from "@/components/ui";
 import { HomeHeroSection } from "@/components/home/HomeHeroSection";
 import { SalaryRealityCheckPromo } from "@/components/home/SalaryRealityCheckPromo";
+import { AdSlot } from "@/components/ads/AdSlot";
 import { JsonLd } from "@/components/content/JsonLd";
 import { FaqSection } from "@/components/calculators/FaqSection";
 import { CALCULATOR_REGISTRY } from "@/lib/calculator-registry";
 import { HOME_FAQ } from "@/lib/content/home-content";
 import { LPA_LANDING_PAGES } from "@/lib/content/lpa-pages.config";
 import { faqPageJsonLd } from "@/lib/jsonld";
-import { TrustMethodologyNotice } from "@/components/trust/TrustMethodologyNotice";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { ROUTES } from "@/lib/routes";
 import { lpaLandingPath } from "@/lib/routes/landing-routes";
+import { SiteSearchClient } from "@/components/home/SiteSearchClient";
+import { AnimateIn } from "@/components/ui/AnimateIn";
 
 export const metadata: Metadata = buildPageMetadata(
   {
-    title: "SalaryExit India — India salary, tax & exit estimates you can audit",
+    title: "SalaryExit India — real in-hand salary calculator (FY 2026–27)",
     description:
-      "SEO-first calculators and plain-English guides for Indian salaried employees: CTC to in-hand, tax regimes, PF/HRA, notice buyouts, gratuity, and offer comparison — with explicit assumptions.",
+      "Know your actual take-home salary before accepting or switching jobs. Free calculators for Indian salaried employees: CTC to in-hand, tax regime comparison, offer analysis, HRA, PF, gratuity, and exit calculations — with transparent assumptions.",
     keywords: [
       "India salary calculator",
-      "CTC to in hand",
+      "CTC to in hand salary",
       "old vs new tax regime India",
+      "take home salary calculator India",
       "notice buyout calculator",
       "gratuity India",
     ],
@@ -32,17 +33,39 @@ export const metadata: Metadata = buildPageMetadata(
   { canonicalPath: ROUTES.home }
 );
 
-const featuredSlugs = [
-  "salaryRealityCheck",
-  "ctcToInHand",
-  "salary",
+const secondaryCalculators = [
   "taxRegime",
+  "salaryRealityCheck",
   "offerComparison",
+  "hra",
+  "finalSettlement",
+] as const;
+
+const realQuestions = [
+  {
+    question: "Is ₹12 LPA enough in Mumbai?",
+    answer:
+      "After new-regime tax (₹0 at ₹12L with Section 87A rebate), PF, and PT, monthly in-hand is around ₹98,000. Mumbai rents for a 1BHK typically start at ₹25,000–₹45,000. So the answer depends heavily on rent and lifestyle.",
+    cta: { href: ROUTES.salaryRealityCheck, label: "Run Salary Reality Check" },
+  },
+  {
+    question: "How much will I take home from a ₹15 LPA offer?",
+    answer:
+      "Under the new regime: taxable income ₹13.75L (after ₹75k std. deduction) → estimated tax ~₹1,01,400/yr. Monthly in-hand ≈ ₹1,10,000 after PF ₹1,800 and PT ₹200.",
+    cta: { href: ROUTES.ctcToInHandCalculator, label: "Calculate ₹15L in-hand" },
+  },
+  {
+    question: "Old or new tax regime — which saves more?",
+    answer:
+      "Below ₹15L, the new regime almost always wins unless you have significant HRA + 80C + home loan interest. Run the comparison with your actual deductions to be sure.",
+    cta: { href: ROUTES.oldVsNewTaxRegimeCalculator, label: "Compare regimes" },
+  },
 ] as const;
 
 export default function Home() {
-  const featured = featuredSlugs.map((s) => CALCULATOR_REGISTRY[s]);
-  const popularLpa = LPA_LANDING_PAGES.slice(0, 6);
+  const primaryCalc = CALCULATOR_REGISTRY["ctcToInHand"];
+  const secondary = secondaryCalculators.map((s) => CALCULATOR_REGISTRY[s]);
+  const popularLpa = LPA_LANDING_PAGES.slice(0, 8);
 
   return (
     <div className="flex flex-1 flex-col">
@@ -53,135 +76,231 @@ export default function Home() {
       />
 
       <main className="flex-1">
-        <Section className="pt-8 sm:pt-14">
-          <Container className="space-y-12">
-            <header className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-              <HomeHeroSection />
+        {/* ── Hero ───────────────────────────────────────────────────── */}
+        <section className="border-b border-border bg-surface py-10 sm:py-14" aria-label="Hero">
+          <Container>
+            <HomeHeroSection />
+          </Container>
+        </section>
 
-              <Card className="space-y-4 p-5">
-                <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                  Search the site
-                </h2>
-                <SiteSearchClient />
-              </Card>
-            </header>
-
-            <AdSlot position="below-hero" label="Advertisement" className="w-full" />
-
-            <SalaryRealityCheckPromo />
-
-            <div className="space-y-12">
-            <section aria-labelledby="featured-calculators-heading" className="space-y-4">
-              <h2
-                id="featured-calculators-heading"
-                className="text-xl font-semibold text-zinc-900 dark:text-zinc-50"
-              >
-                Most used calculators
-              </h2>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {featured.map((c) => (
-                  <Link
-                    key={c.slug}
-                    href={c.path}
-                    className="rounded-xl border border-zinc-200 bg-white p-4 transition hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-zinc-700"
-                  >
-                    <span className="font-semibold text-zinc-900 dark:text-zinc-50">{c.label}</span>
-                    <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{c.seo.description}</p>
-                  </Link>
-                ))}
-              </div>
-            </section>
-
-            <AdSlot position="mid-content" label="Advertisement" />
-
-            <section aria-labelledby="clusters-heading" className="grid gap-6 lg:grid-cols-3">
-              <h2 className="sr-only" id="clusters-heading">
-                Guide clusters
-              </h2>
-              <Card className="space-y-3 p-5">
-                <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">Salary</h3>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  Structure, components, and what moves in-hand pay.
-                </p>
-                <Link className="text-sm font-medium underline" href={ROUTES.salaryGuides}>
-                  Open salary guides
-                </Link>
-              </Card>
-              <Card className="space-y-3 p-5">
-                <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">Tax</h3>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  Regime basics for salaried employees — educational context.
-                </p>
-                <Link className="text-sm font-medium underline" href={ROUTES.taxGuides}>
-                  Open tax guides
-                </Link>
-              </Card>
-              <Card className="space-y-3 p-5">
-                <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">Job switch</h3>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  Notice buyouts, gratuity, and comparing offers beyond CTC.
-                </p>
-                <Link className="text-sm font-medium underline" href={ROUTES.jobSwitchGuides}>
-                  Open job switch guides
-                </Link>
-              </Card>
-            </section>
-
-            <section aria-labelledby="popular-salary-pages-heading" className="space-y-4">
-              <h2
-                id="popular-salary-pages-heading"
-                className="text-xl font-semibold text-zinc-900 dark:text-zinc-50"
-              >
-                Popular salary landing pages
-              </h2>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                Each salary band is modeled with specific context: estimated in-hand, city cost breakdowns,
-                tax impact for that earnings level, and regime comparison.
-              </p>
-              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                {popularLpa.map((p) => (
-                  <Link
-                    key={p.slug}
-                    href={lpaLandingPath(p.slug)}
-                    className="rounded-lg border border-zinc-200 px-3 py-2 text-sm font-medium text-zinc-800 hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-900"
-                  >
-                    ₹{p.lpa} LPA in-hand (estimate)
-                  </Link>
-                ))}
-              </div>
-            </section>
-
-            <section aria-labelledby="why-vary-heading" className="space-y-3 rounded-2xl border border-zinc-200 bg-zinc-50/80 p-6 dark:border-zinc-800 dark:bg-zinc-900/40">
-              <h2 id="why-vary-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-                Why estimates vary (and why we publish assumptions)
-              </h2>
-              <ul className="list-inside list-disc space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
-                <li>
-                  <strong>Financial year settings</strong> change slabs, standard deductions, and rebate
-                  thresholds — we version them in config.
-                </li>
-                <li>
-                  <strong>PF wage definitions</strong> differ by employer; we avoid “magic accuracy” by letting
-                  you supply payslip-aligned inputs where possible.
-                </li>
-                <li>
-                  <strong>Professional tax</strong> is state-specific — we use placeholders unless you replace
-                  them.
-                </li>
-                <li>
-                  <strong>TDS smoothing</strong> means monthly net pay may not equal annual tax ÷ 12 every month.
-                </li>
-              </ul>
-            </section>
-
-            <TrustMethodologyNotice />
-
-            <AdSlot position="before-footer" label="Advertisement" />
-
-            <FaqSection items={HOME_FAQ} />
+        {/* ── Trust strip ────────────────────────────────────────────── */}
+        <section className="border-b border-border bg-surface-subtle py-3.5" aria-label="Trust indicators">
+          <Container>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 text-xs text-foreground-secondary">
+              {[
+                "FY 2026–27 engine",
+                "No login required",
+                "Estimates — not tax filing advice",
+                "Assumptions always visible",
+                "Built for Indian salary structure",
+              ].map((item) => (
+                <span key={item} className="flex items-center gap-1.5">
+                  <svg className="h-3 w-3 shrink-0 text-positive" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+                    <path d="M10.28 2.28L4.5 8.06 1.72 5.28a1 1 0 0 0-1.42 1.44l3.5 3.5a1 1 0 0 0 1.42 0l6.5-6.5a1 1 0 0 0-1.44-1.44z"/>
+                  </svg>
+                  {item}
+                </span>
+              ))}
             </div>
           </Container>
-        </Section>
+        </section>
+
+        <Container className="space-y-14 py-10 sm:py-14">
+
+          {/* ── Calculator grid — featured primary + secondary grid ─── */}
+          <AnimateIn>
+          <section aria-labelledby="calculators-heading">
+            <div className="mb-5 flex items-end justify-between gap-4">
+              <div>
+                <h2 id="calculators-heading" className="text-xl font-bold text-foreground sm:text-2xl">
+                  Calculators
+                </h2>
+                <p className="mt-1 text-sm text-foreground-secondary">
+                  Every one uses the same FY 2026–27 engine and states its assumptions.
+                </p>
+              </div>
+              <Link
+                href={ROUTES.calculators}
+                className="shrink-0 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
+              >
+                See all →
+              </Link>
+            </div>
+
+            {/* Featured card — CTC to in-hand */}
+            <Link
+              href={primaryCalc.path}
+              className="group mb-3 flex flex-col gap-3 rounded-2xl border-2 border-accent/30 bg-accent-light p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div>
+                <div className="mb-1 flex items-center gap-2">
+                  <span className="rounded-full bg-accent px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white">
+                    Most used
+                  </span>
+                </div>
+                <span className="block text-base font-bold text-foreground group-hover:text-accent transition-colors">
+                  {primaryCalc.label}
+                </span>
+                <p className="mt-1 max-w-xl text-sm leading-relaxed text-foreground-secondary">
+                  {primaryCalc.seo.description}
+                </p>
+              </div>
+              <span className="shrink-0 text-sm font-semibold text-accent group-hover:underline">
+                Calculate now →
+              </span>
+            </Link>
+
+            {/* Secondary 5 calculators */}
+            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              {secondary.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={c.path}
+                  className="group rounded-xl border border-border bg-surface p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-md"
+                >
+                  <span className="block text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
+                    {c.label}
+                  </span>
+                  <p className="mt-1 text-xs leading-relaxed text-foreground-secondary line-clamp-2">
+                    {c.seo.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+          </AnimateIn>
+
+          <AdSlot position="mid-content" label="Advertisement" />
+
+          {/* ── Salary Reality Check promo ──────────────────────────── */}
+          <AnimateIn>
+            <SalaryRealityCheckPromo />
+          </AnimateIn>
+
+          {/* ── Real questions — 2-col grid ─────────────────────────── */}
+          <AnimateIn>
+          <section aria-labelledby="real-questions-heading">
+            <h2 id="real-questions-heading" className="mb-1 text-xl font-bold text-foreground sm:text-2xl">
+              Real questions, real numbers
+            </h2>
+            <p className="mb-5 text-sm text-foreground-secondary">
+              Specific answers — not generic tax-website boilerplate.
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {realQuestions.map((q) => (
+                <div
+                  key={q.question}
+                  className="flex flex-col gap-3 rounded-xl border border-border bg-surface p-5 shadow-sm"
+                >
+                  <h3 className="text-sm font-bold text-foreground">{q.question}</h3>
+                  <p className="flex-1 text-sm leading-relaxed text-foreground-secondary">
+                    {q.answer}
+                  </p>
+                  <Link
+                    href={q.cta.href}
+                    className="self-start text-sm font-semibold text-accent hover:text-accent-hover transition-colors"
+                  >
+                    {q.cta.label} →
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </section>
+          </AnimateIn>
+
+          {/* ── Guide hubs — horizontal cards ───────────────────────── */}
+          <AnimateIn>
+          <section aria-labelledby="guides-heading">
+            <h2 id="guides-heading" className="mb-5 text-xl font-bold text-foreground sm:text-2xl">
+              Plain-English guides
+            </h2>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {[
+                {
+                  href: ROUTES.salaryGuides,
+                  label: "Salary guides",
+                  desc: "CTC components, in-hand structure, and what actually moves your take-home.",
+                  icon: "₹",
+                },
+                {
+                  href: ROUTES.taxGuides,
+                  label: "Tax guides",
+                  desc: "Old vs new regime, standard deduction, HRA, 87A rebate — educational only, not filing advice.",
+                  icon: "📋",
+                },
+                {
+                  href: ROUTES.jobSwitchGuides,
+                  label: "Job switch guides",
+                  desc: "Notice buyouts, gratuity eligibility, leave encashment, and offer evaluation.",
+                  icon: "→",
+                },
+              ].map((g) => (
+                <Link
+                  key={g.href}
+                  href={g.href}
+                  className="group flex flex-col gap-3 rounded-xl border border-border bg-surface p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-surface-subtle text-base font-bold text-foreground">
+                      {g.icon}
+                    </span>
+                    <span className="text-sm font-bold text-foreground group-hover:text-accent transition-colors">
+                      {g.label}
+                    </span>
+                  </div>
+                  <p className="flex-1 text-xs leading-relaxed text-foreground-secondary">
+                    {g.desc}
+                  </p>
+                  <span className="text-xs font-semibold text-accent">
+                    Open guides →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+          </AnimateIn>
+
+          {/* ── Popular LPA pages ───────────────────────────────────── */}
+          <AnimateIn>
+          <section aria-labelledby="lpa-pages-heading">
+            <div className="mb-4 flex items-end justify-between gap-4">
+              <h2 id="lpa-pages-heading" className="text-xl font-bold text-foreground sm:text-2xl">
+                Popular salary pages
+              </h2>
+            </div>
+            <p className="mb-4 text-sm text-foreground-secondary">
+              Each salary band has estimated in-hand, city cost breakdowns, regime comparison, and tax impact.
+            </p>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {popularLpa.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={lpaLandingPath(p.slug)}
+                  className="rounded-lg border border-border bg-surface px-4 py-3 text-sm font-medium text-foreground-secondary transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent-light hover:text-accent hover:shadow-sm"
+                >
+                  ₹{p.lpa} LPA
+                  <span className="block text-xs font-normal text-foreground-muted">
+                    in-hand breakdown
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+          </AnimateIn>
+
+          <AdSlot position="before-footer" label="Advertisement" />
+
+          {/* ── FAQ ─────────────────────────────────────────────────── */}
+          <FaqSection items={HOME_FAQ} />
+
+          {/* ── Site search ─────────────────────────────────────────── */}
+          <section aria-labelledby="site-search-heading">
+            <h2 id="site-search-heading" className="mb-4 text-xl font-bold text-foreground">
+              Search calculators and guides
+            </h2>
+            <SiteSearchClient />
+          </section>
+        </Container>
       </main>
     </div>
   );

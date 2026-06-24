@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import { Card, FormField, Input } from "@/components/ui";
@@ -86,7 +86,7 @@ export function EpfCalculatorClient() {
       title="EPF contribution estimator"
       intro="Estimate monthly employee and employer EPF contributions on PF wage. This is a simplified employer-cost model — not a payslip replica."
     >
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         Employer-side EPS diversion is <strong>not</strong> modeled separately — see accuracy card.
       </p>
 
@@ -97,7 +97,7 @@ export function EpfCalculatorClient() {
         ]}
       />
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
           <FormField
             label="PF wage (monthly, ₹)"
@@ -108,7 +108,7 @@ export function EpfCalculatorClient() {
           </FormField>
 
           <fieldset className="space-y-2">
-            <legend className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            <legend className="text-sm font-medium text-foreground">
               Wage ceiling model
             </legend>
             <label className="flex items-center gap-2 text-sm">
@@ -146,13 +146,13 @@ export function EpfCalculatorClient() {
             <CollapsibleBreakdown>
               <dl className="grid gap-3 text-sm sm:grid-cols-2">
                 <div>
-                  <dt className="text-zinc-500">Employee (monthly)</dt>
+                  <dt className="text-foreground-muted">Employee (monthly)</dt>
                   <dd className="font-medium tabular-nums">
                     {formatInr(result.employeeContributionMonthly, { decimals: true })}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-500">Employer (monthly)</dt>
+                  <dt className="text-foreground-muted">Employer (monthly)</dt>
                   <dd className="font-medium tabular-nums">
                     {formatInr(result.employerContributionMonthly, { decimals: true })}
                   </dd>
@@ -191,3 +191,4 @@ export function EpfCalculatorClient() {
     </CalculatorPageLayout>
   );
 }
+

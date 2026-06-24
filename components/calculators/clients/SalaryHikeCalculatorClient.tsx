@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import { Card, FormField, Input } from "@/components/ui";
@@ -89,13 +89,13 @@ export function SalaryHikeCalculatorClient() {
       title="Salary hike calculator"
       intro="Compute absolute and percentage change between two annual figures (typically CTC or gross). This is simple arithmetic — not a forecast of in-hand impact."
     >
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         If old CTC is zero, percentage hike is not meaningful — we show a warning. See accuracy card for definitions.
       </p>
 
       <RequiredInputsCallout items={["Old annual amount (₹)", "New annual amount (₹)"]} />
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
           <FormField label="Old annual CTC / gross (₹)" id="old">
             <Input id="old" inputMode="decimal" value={oldC} onChange={(e) => setOldC(e.target.value)} />
@@ -132,7 +132,7 @@ export function SalaryHikeCalculatorClient() {
             <CollapsibleBreakdown>
               <dl className="grid gap-3 text-sm sm:grid-cols-2">
                 <div>
-                  <dt className="text-zinc-500">Percent change</dt>
+                  <dt className="text-foreground-muted">Percent change</dt>
                   <dd className="text-lg font-semibold tabular-nums">
                     {result.percentIncrease.toLocaleString("en-IN", {
                       maximumFractionDigits: 2,
@@ -177,3 +177,4 @@ export function SalaryHikeCalculatorClient() {
     </CalculatorPageLayout>
   );
 }
+

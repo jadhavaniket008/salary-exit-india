@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import { Card, FormField, Input } from "@/components/ui";
@@ -96,7 +96,7 @@ export function GratuityCalculatorClient() {
       title="Gratuity calculator"
       intro="Estimate gratuity using the common statutory-style formula and a rough split between taxable and exempt amounts for covered employers."
     >
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         Legal/tax treatment can differ — this is a <strong>planning estimate</strong> (see accuracy card).
       </p>
 
@@ -108,7 +108,7 @@ export function GratuityCalculatorClient() {
         ]}
       />
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
           <FormField
             label="Last drawn monthly salary (Basic + DA, ₹)"
@@ -123,14 +123,14 @@ export function GratuityCalculatorClient() {
           </FormField>
 
           <fieldset className="space-y-2">
-            <legend className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            <legend className="text-sm font-medium text-foreground">
               Employer coverage
             </legend>
             <label className="flex items-center gap-2 text-sm">
               <input type="checkbox" checked={covered} onChange={(e) => setCovered(e.target.checked)} />
               Covered under Payment of Gratuity Act (model ₹20L exempt cap)
             </label>
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-foreground-muted">
               If you uncheck this, we do not assume the statutory exempt cap.
             </p>
           </fieldset>
@@ -152,11 +152,11 @@ export function GratuityCalculatorClient() {
             <CollapsibleBreakdown>
               <dl className="grid gap-3 text-sm sm:grid-cols-2">
                 <div>
-                  <dt className="text-zinc-500">Exempt (rough, covered)</dt>
+                  <dt className="text-foreground-muted">Exempt (rough, covered)</dt>
                   <dd className="font-medium tabular-nums">{formatInr(result.exemptGratuityEstimate)}</dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-500">Taxable (rough)</dt>
+                  <dt className="text-foreground-muted">Taxable (rough)</dt>
                   <dd className="font-medium tabular-nums">{formatInr(result.taxableGratuityEstimate)}</dd>
                 </div>
               </dl>
@@ -194,3 +194,4 @@ export function GratuityCalculatorClient() {
     </CalculatorPageLayout>
   );
 }
+

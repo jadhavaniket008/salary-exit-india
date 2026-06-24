@@ -36,20 +36,20 @@ export function SiteSearchClient() {
         onChange={(e) => setQuery(e.target.value)}
         autoComplete="off"
       />
-      <p className="text-xs text-zinc-500 dark:text-zinc-400">
+      <p className="text-xs text-foreground-muted">
         {query.trim() === ""
           ? "Popular destinations — type to filter the full index."
           : `${results.length} match(es) shown`}
       </p>
-      <ul className="divide-y divide-zinc-200 rounded-xl border border-zinc-200 bg-white dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-950">
+      <ul className="divide-y divide-border rounded-xl border border-border bg-surface">
         {results.map((r) => (
           <li key={`${r.href}-${r.title}`}>
             <Link
               href={r.href}
-              className="flex flex-col gap-0.5 px-4 py-3 text-sm transition hover:bg-zinc-50 dark:hover:bg-zinc-900"
+              className="flex flex-col gap-0.5 px-4 py-3 text-sm transition hover:bg-surface-subtle"
             >
-              <span className="font-medium text-zinc-900 dark:text-zinc-50">{r.title}</span>
-              <span className="text-xs text-zinc-500">{r.category}</span>
+              <span className="font-medium text-foreground">{r.title}</span>
+              <span className="text-xs text-foreground-secondary">{r.category}</span>
             </Link>
           </li>
         ))}
