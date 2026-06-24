@@ -10,7 +10,6 @@ import { CALCULATOR_REGISTRY } from "@/lib/calculator-registry";
 import { HOME_FAQ } from "@/lib/content/home-content";
 import { LPA_LANDING_PAGES } from "@/lib/content/lpa-pages.config";
 import { faqPageJsonLd } from "@/lib/jsonld";
-import { TrustMethodologyNotice } from "@/components/trust/TrustMethodologyNotice";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { ROUTES } from "@/lib/routes";
 import { lpaLandingPath } from "@/lib/routes/landing-routes";
@@ -33,37 +32,13 @@ export const metadata: Metadata = buildPageMetadata(
   { canonicalPath: ROUTES.home }
 );
 
-const featuredCalculators = [
-  "ctcToInHand",
+const secondaryCalculators = [
   "taxRegime",
   "salaryRealityCheck",
   "offerComparison",
   "hra",
   "finalSettlement",
 ] as const;
-
-const howItWorks = [
-  {
-    step: "1",
-    title: "You enter inputs",
-    body: "Gross CTC, PF wage, rent, regime choice — whatever the calculator needs. We ask only for what changes the result.",
-  },
-  {
-    step: "2",
-    title: "We state our assumptions",
-    body: "Every estimate names what it assumes: which FY slab, whether 87A applies, how PF ceiling is handled. Nothing hidden.",
-  },
-  {
-    step: "3",
-    title: "Engine calculates",
-    body: "A shared, versioned calculation engine applies tax slabs, standard deductions, and rebates — the same logic across every calculator.",
-  },
-  {
-    step: "4",
-    title: "Result with caveats",
-    body: "You get a number plus a clear explanation of what it doesn't include — surcharge, perquisites, variable pay, payroll rounding.",
-  },
-];
 
 const realQuestions = [
   {
@@ -73,33 +48,22 @@ const realQuestions = [
     cta: { href: ROUTES.salaryRealityCheck, label: "Run Salary Reality Check" },
   },
   {
-    question: "How much will I actually take home from a ₹15 LPA offer?",
+    question: "How much will I take home from a ₹15 LPA offer?",
     answer:
-      "Under the new regime: taxable income ₹13.75L (after ₹75k std. deduction) → estimated tax ₹97,500 + cess ₹3,900 = ~₹1,01,400/yr. Monthly in-hand ≈ ₹1,10,000 after PF ₹1,800 and PT ₹200.",
+      "Under the new regime: taxable income ₹13.75L (after ₹75k std. deduction) → estimated tax ~₹1,01,400/yr. Monthly in-hand ≈ ₹1,10,000 after PF ₹1,800 and PT ₹200.",
     cta: { href: ROUTES.ctcToInHandCalculator, label: "Calculate ₹15L in-hand" },
   },
   {
-    question: "Should I choose old or new tax regime?",
+    question: "Old or new tax regime — which saves more?",
     answer:
-      "At most income levels below ₹15L, the new regime wins unless you have significant HRA exemption + 80C + home loan interest. Use the comparison calculator to see your specific numbers.",
+      "Below ₹15L, the new regime almost always wins unless you have significant HRA + 80C + home loan interest. Run the comparison with your actual deductions to be sure.",
     cta: { href: ROUTES.oldVsNewTaxRegimeCalculator, label: "Compare regimes" },
   },
-  {
-    question: "Is a higher CTC always better?",
-    answer:
-      "Not necessarily. A CTC with large variable components, stock grants, or retention bonds can be much less reliable than a smaller fixed CTC. Compare offers on estimated monthly in-hand, not headline CTC.",
-    cta: { href: ROUTES.offerComparisonCalculator, label: "Compare two offers" },
-  },
-  {
-    question: "What happens to my salary during notice buyout?",
-    answer:
-      "The most common method: (gross monthly ÷ calendar days in month) × notice days to buy out. But contract terms vary — some employers use working days or a fixed formula. Check your offer letter.",
-    cta: { href: ROUTES.noticePeriodBuyoutCalculator, label: "Estimate notice buyout" },
-  },
-];
+] as const;
 
 export default function Home() {
-  const featured = featuredCalculators.map((s) => CALCULATOR_REGISTRY[s]);
+  const primaryCalc = CALCULATOR_REGISTRY["ctcToInHand"];
+  const secondary = secondaryCalculators.map((s) => CALCULATOR_REGISTRY[s]);
   const popularLpa = LPA_LANDING_PAGES.slice(0, 8);
 
   return (
@@ -112,16 +76,16 @@ export default function Home() {
 
       <main className="flex-1">
         {/* ── Hero ───────────────────────────────────────────────────── */}
-        <section className="border-b border-border bg-surface py-12 sm:py-16" aria-label="Hero">
+        <section className="border-b border-border bg-surface py-10 sm:py-14" aria-label="Hero">
           <Container>
             <HomeHeroSection />
           </Container>
         </section>
 
         {/* ── Trust strip ────────────────────────────────────────────── */}
-        <section className="border-b border-border bg-surface-subtle py-4" aria-label="Trust indicators">
+        <section className="border-b border-border bg-surface-subtle py-3.5" aria-label="Trust indicators">
           <Container>
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-foreground-secondary">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 text-xs text-foreground-secondary">
               {[
                 "FY 2026–27 engine",
                 "No login required",
@@ -130,7 +94,7 @@ export default function Home() {
                 "Built for Indian salary structure",
               ].map((item) => (
                 <span key={item} className="flex items-center gap-1.5">
-                  <svg className="h-3 w-3 text-positive" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+                  <svg className="h-3 w-3 shrink-0 text-positive" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
                     <path d="M10.28 2.28L4.5 8.06 1.72 5.28a1 1 0 0 0-1.42 1.44l3.5 3.5a1 1 0 0 0 1.42 0l6.5-6.5a1 1 0 0 0-1.44-1.44z"/>
                   </svg>
                   {item}
@@ -140,41 +104,66 @@ export default function Home() {
           </Container>
         </section>
 
-        <Container className="space-y-16 py-12 sm:py-16">
+        <Container className="space-y-14 py-10 sm:py-14">
 
-          {/* ── Featured calculators ────────────────────────────────── */}
+          {/* ── Calculator grid — featured primary + secondary grid ─── */}
           <section aria-labelledby="calculators-heading">
-            <div className="mb-6">
-              <h2 id="calculators-heading" className="text-xl font-bold text-foreground sm:text-2xl">
-                Most useful calculators
-              </h2>
-              <p className="mt-1 text-sm text-foreground-secondary">
-                Each one uses the same FY 2026–27 tax engine and states its assumptions.
-              </p>
+            <div className="mb-5 flex items-end justify-between gap-4">
+              <div>
+                <h2 id="calculators-heading" className="text-xl font-bold text-foreground sm:text-2xl">
+                  Calculators
+                </h2>
+                <p className="mt-1 text-sm text-foreground-secondary">
+                  Every one uses the same FY 2026–27 engine and states its assumptions.
+                </p>
+              </div>
+              <Link
+                href={ROUTES.calculators}
+                className="shrink-0 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
+              >
+                See all →
+              </Link>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {featured.map((c) => (
+
+            {/* Featured card — CTC to in-hand */}
+            <Link
+              href={primaryCalc.path}
+              className="group mb-3 flex flex-col gap-3 rounded-2xl border-2 border-accent/30 bg-accent-light p-6 shadow-sm transition-all hover:border-accent/60 hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div>
+                <div className="mb-1 flex items-center gap-2">
+                  <span className="rounded-full bg-accent px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white">
+                    Most used
+                  </span>
+                </div>
+                <span className="block text-base font-bold text-foreground group-hover:text-accent transition-colors">
+                  {primaryCalc.label}
+                </span>
+                <p className="mt-1 max-w-xl text-sm leading-relaxed text-foreground-secondary">
+                  {primaryCalc.seo.description}
+                </p>
+              </div>
+              <span className="shrink-0 text-sm font-semibold text-accent group-hover:underline">
+                Calculate now →
+              </span>
+            </Link>
+
+            {/* Secondary 5 calculators */}
+            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              {secondary.map((c) => (
                 <Link
                   key={c.slug}
                   href={c.path}
-                  className="group rounded-xl border border-border bg-surface p-5 shadow-sm transition-all hover:border-border-strong hover:shadow-md"
+                  className="group rounded-xl border border-border bg-surface p-4 transition-all hover:border-border-strong hover:bg-surface-subtle hover:shadow-sm"
                 >
                   <span className="block text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
                     {c.label}
                   </span>
-                  <p className="mt-1.5 text-sm leading-relaxed text-foreground-secondary">
+                  <p className="mt-1 text-xs leading-relaxed text-foreground-secondary line-clamp-2">
                     {c.seo.description}
                   </p>
                 </Link>
               ))}
-            </div>
-            <div className="mt-4 text-center">
-              <Link
-                href={ROUTES.calculators}
-                className="text-sm font-medium text-accent hover:text-accent-hover transition-colors underline-offset-2 hover:underline"
-              >
-                See all 12 calculators →
-              </Link>
             </div>
           </section>
 
@@ -183,61 +172,27 @@ export default function Home() {
           {/* ── Salary Reality Check promo ──────────────────────────── */}
           <SalaryRealityCheckPromo />
 
-          {/* ── How we think ────────────────────────────────────────── */}
-          <section aria-labelledby="how-it-works-heading">
-            <div className="mb-6">
-              <h2 id="how-it-works-heading" className="text-xl font-bold text-foreground sm:text-2xl">
-                How SalaryExit thinks
-              </h2>
-              <p className="mt-1 text-sm text-foreground-secondary">
-                Every estimate is built the same way — transparent, auditable, and honest about its limits.
-              </p>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {howItWorks.map((item) => (
-                <div
-                  key={item.step}
-                  className="rounded-xl border border-border bg-surface p-5 shadow-sm"
-                >
-                  <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-accent-light text-sm font-bold text-accent">
-                    {item.step}
-                  </div>
-                  <h3 className="mb-2 text-sm font-semibold text-foreground">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-foreground-secondary">{item.body}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-4">
-              <Link
-                href={ROUTES.methodology}
-                className="text-sm font-medium text-accent hover:text-accent-hover transition-colors underline-offset-2 hover:underline"
-              >
-                Read the full methodology →
-              </Link>
-            </div>
-          </section>
-
-          {/* ── Real questions ──────────────────────────────────────── */}
+          {/* ── Real questions — 2-col grid ─────────────────────────── */}
           <section aria-labelledby="real-questions-heading">
-            <div className="mb-6">
-              <h2 id="real-questions-heading" className="text-xl font-bold text-foreground sm:text-2xl">
-                Real questions people ask
-              </h2>
-              <p className="mt-1 text-sm text-foreground-secondary">
-                Specific answers with linked calculators — not generic tax-website boilerplate.
-              </p>
-            </div>
-            <div className="space-y-4">
+            <h2 id="real-questions-heading" className="mb-1 text-xl font-bold text-foreground sm:text-2xl">
+              Real questions, real numbers
+            </h2>
+            <p className="mb-5 text-sm text-foreground-secondary">
+              Specific answers — not generic tax-website boilerplate.
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {realQuestions.map((q) => (
                 <div
                   key={q.question}
-                  className="rounded-xl border border-border bg-surface p-5 shadow-sm"
+                  className="flex flex-col gap-3 rounded-xl border border-border bg-surface p-5 shadow-sm"
                 >
-                  <h3 className="mb-2 text-sm font-semibold text-foreground">{q.question}</h3>
-                  <p className="mb-3 text-sm leading-relaxed text-foreground-secondary">{q.answer}</p>
+                  <h3 className="text-sm font-bold text-foreground">{q.question}</h3>
+                  <p className="flex-1 text-sm leading-relaxed text-foreground-secondary">
+                    {q.answer}
+                  </p>
                   <Link
                     href={q.cta.href}
-                    className="inline-flex items-center text-sm font-medium text-accent hover:text-accent-hover transition-colors"
+                    className="self-start text-sm font-semibold text-accent hover:text-accent-hover transition-colors"
                   >
                     {q.cta.label} →
                   </Link>
@@ -246,111 +201,81 @@ export default function Home() {
             </div>
           </section>
 
-          {/* ── Guide hubs ──────────────────────────────────────────── */}
+          {/* ── Guide hubs — horizontal cards ───────────────────────── */}
           <section aria-labelledby="guides-heading">
-            <h2 id="guides-heading" className="mb-6 text-xl font-bold text-foreground sm:text-2xl">
+            <h2 id="guides-heading" className="mb-5 text-xl font-bold text-foreground sm:text-2xl">
               Plain-English guides
             </h2>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-3">
               {[
                 {
                   href: ROUTES.salaryGuides,
-                  title: "Salary guides",
-                  body: "Structure, CTC components, and what moves your take-home.",
-                  cta: "Open salary guides",
+                  label: "Salary guides",
+                  desc: "CTC components, in-hand structure, and what actually moves your take-home.",
+                  icon: "₹",
                 },
                 {
                   href: ROUTES.taxGuides,
-                  title: "Tax guides",
-                  body: "Old vs new regime basics for salaried employees — educational, not filing advice.",
-                  cta: "Open tax guides",
+                  label: "Tax guides",
+                  desc: "Old vs new regime, standard deduction, HRA, 87A rebate — educational only, not filing advice.",
+                  icon: "📋",
                 },
                 {
                   href: ROUTES.jobSwitchGuides,
-                  title: "Job switch guides",
-                  body: "Notice buyouts, gratuity, leave encashment, and offer evaluation.",
-                  cta: "Open job switch guides",
+                  label: "Job switch guides",
+                  desc: "Notice buyouts, gratuity eligibility, leave encashment, and offer evaluation.",
+                  icon: "→",
                 },
               ].map((g) => (
-                <div
+                <Link
                   key={g.href}
-                  className="flex flex-col gap-3 rounded-xl border border-border bg-surface p-5 shadow-sm"
+                  href={g.href}
+                  className="group flex flex-col gap-3 rounded-xl border border-border bg-surface p-5 shadow-sm transition-all hover:border-border-strong hover:shadow-md"
                 >
-                  <h3 className="text-sm font-semibold text-foreground">{g.title}</h3>
-                  <p className="flex-1 text-sm leading-relaxed text-foreground-secondary">{g.body}</p>
-                  <Link
-                    href={g.href}
-                    className="text-sm font-medium text-accent hover:text-accent-hover transition-colors"
-                  >
-                    {g.cta} →
-                  </Link>
-                </div>
+                  <div className="flex items-center gap-2">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-surface-subtle text-base font-bold text-foreground">
+                      {g.icon}
+                    </span>
+                    <span className="text-sm font-bold text-foreground group-hover:text-accent transition-colors">
+                      {g.label}
+                    </span>
+                  </div>
+                  <p className="flex-1 text-xs leading-relaxed text-foreground-secondary">
+                    {g.desc}
+                  </p>
+                  <span className="text-xs font-semibold text-accent">
+                    Open guides →
+                  </span>
+                </Link>
               ))}
             </div>
           </section>
 
           {/* ── Popular LPA pages ───────────────────────────────────── */}
           <section aria-labelledby="lpa-pages-heading">
-            <h2 id="lpa-pages-heading" className="mb-3 text-xl font-bold text-foreground sm:text-2xl">
-              Popular salary pages
-            </h2>
-            <p className="mb-5 text-sm text-foreground-secondary">
-              Each salary band is modeled with specific context: estimated in-hand, city cost
-              breakdowns, tax impact, and regime comparison.
+            <div className="mb-4 flex items-end justify-between gap-4">
+              <h2 id="lpa-pages-heading" className="text-xl font-bold text-foreground sm:text-2xl">
+                Popular salary pages
+              </h2>
+            </div>
+            <p className="mb-4 text-sm text-foreground-secondary">
+              Each salary band has estimated in-hand, city cost breakdowns, regime comparison, and tax impact.
             </p>
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
               {popularLpa.map((p) => (
                 <Link
                   key={p.slug}
                   href={lpaLandingPath(p.slug)}
-                  className="rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-medium text-foreground-secondary transition-colors hover:border-border-strong hover:bg-surface-subtle hover:text-foreground"
+                  className="rounded-lg border border-border bg-surface px-4 py-3 text-sm font-medium text-foreground-secondary transition-all hover:border-accent/40 hover:bg-accent-light hover:text-accent"
                 >
-                  ₹{p.lpa} LPA in-hand
+                  ₹{p.lpa} LPA
+                  <span className="block text-xs font-normal text-foreground-muted">
+                    in-hand breakdown
+                  </span>
                 </Link>
               ))}
             </div>
           </section>
-
-          {/* ── Why estimates vary ──────────────────────────────────── */}
-          <section
-            aria-labelledby="why-vary-heading"
-            className="rounded-2xl border border-border bg-surface-subtle p-6"
-          >
-            <h2 id="why-vary-heading" className="mb-4 text-lg font-bold text-foreground">
-              Why estimates vary — and why we publish assumptions
-            </h2>
-            <ul className="space-y-2">
-              {[
-                {
-                  title: "Financial year settings",
-                  body: "Slabs, standard deductions, and rebate thresholds change each Budget. We version them in config.",
-                },
-                {
-                  title: "PF wage definitions",
-                  body: "Differ by employer — some cap at ₹15k statutory ceiling, others deduct on full basic.",
-                },
-                {
-                  title: "Professional tax",
-                  body: "State-specific and employer-dependent. We use a ₹200/mo placeholder unless you supply the actual amount.",
-                },
-                {
-                  title: "TDS smoothing",
-                  body: "Monthly TDS varies through the year as projections update. Our flat-spread estimate is illustrative.",
-                },
-              ].map((item) => (
-                <li key={item.title} className="flex gap-3 text-sm">
-                  <span className="mt-0.5 h-4 w-4 shrink-0 rounded-full bg-accent-light text-center text-[10px] font-bold leading-4 text-accent">
-                    i
-                  </span>
-                  <span className="text-foreground-secondary">
-                    <strong className="text-foreground">{item.title}</strong> — {item.body}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <TrustMethodologyNotice />
 
           <AdSlot position="before-footer" label="Advertisement" />
 
@@ -359,7 +284,7 @@ export default function Home() {
 
           {/* ── Site search ─────────────────────────────────────────── */}
           <section aria-labelledby="site-search-heading">
-            <h2 id="site-search-heading" className="mb-4 text-lg font-bold text-foreground">
+            <h2 id="site-search-heading" className="mb-4 text-xl font-bold text-foreground">
               Search calculators and guides
             </h2>
             <SiteSearchClient />
