@@ -1,12 +1,19 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import {
   CONSENT_UPDATED_EVENT,
   readConsentFromStorage,
   type SalaryExitConsent,
 } from "@/lib/consent";
+
+type EzStandalone = {
+  cmd: Array<() => void>;
+  showAds?: (...ids: number[]) => void;
+  destroyAll?: () => void;
+};
 
 /**
  * Sitewide script insertion. When consent banner is enabled, analytics/ads load only after opt-in.
@@ -22,8 +29,11 @@ export function ThirdPartyRootScripts() {
   const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN?.trim();
   const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID?.trim();
   const consentBannerOn = process.env.NEXT_PUBLIC_ENABLE_CONSENT_BANNER === "true";
+  const ezoicEnabled = process.env.NEXT_PUBLIC_ENABLE_EZOIC === "true";
 
   const [consent, setConsent] = useState<SalaryExitConsent | null>(null);
+  const pathname = usePathname();
+  const isFirstNavigation = useRef(true);
 
   useEffect(() => {
     function refresh() {
@@ -38,13 +48,28 @@ export function ThirdPartyRootScripts() {
     return () => window.removeEventListener(CONSENT_UPDATED_EVENT, refresh);
   }, [consentBannerOn]);
 
+  // When navigating between pages in Next.js (SPA), Ezoic needs to destroy the
+  // previous page's ads and re-show ads for the new page's placeholders.
+  useEffect(() => {
+    if (!ezoicEnabled) return;
+    if (isFirstNavigation.current) {
+      isFirstNavigation.current = false;
+      return;
+    }
+    const ez = (window as Window & { ezstandalone?: EzStandalone }).ezstandalone;
+    if (ez?.cmd) {
+      ez.cmd.push(() => {
+        ez.destroyAll?.();
+        ez.showAds?.();
+      });
+    }
+  }, [pathname, ezoicEnabled]);
+
   const allowAnalytics = consent?.analytics ?? false;
   const showGa = Boolean(gaId && allowAnalytics);
   const showPlausible = Boolean(plausibleDomain && allowAnalytics);
-  // The AdSense loader script must be present unconditionally so Google's review
-  // crawler (which does not click the consent banner) can verify the site and
-  // serve ads. Actual ad UNITS still respect consent in components/ads/AdSlot.tsx.
-  const showAdsense = Boolean(adsenseClient);
+  // AdSense and Ezoic must not run simultaneously — Ezoic resells inventory its own way.
+  const showAdsense = Boolean(adsenseClient) && !ezoicEnabled;
 
   return (
     <>

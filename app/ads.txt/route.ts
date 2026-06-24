@@ -12,6 +12,16 @@ import { NextResponse } from "next/server";
  *   EZOIC_PUBLISHER_ID             — numeric ID shown in Ezoic dashboard (e.g. 123456)
  */
 export function GET() {
+  // When Ezoic is active, redirect to their ads.txt manager — it auto-updates daily
+  // with all required entries (Ezoic DIRECT + Google RESELLER lines).
+  // Verify the exact URL in: Ezoic dashboard → Settings → ads.txt Manager.
+  if (process.env.NEXT_PUBLIC_ENABLE_EZOIC === "true") {
+    return NextResponse.redirect(
+      "https://srv.adstxtmanager.com/19390/salaryexit.in",
+      { status: 301 }
+    );
+  }
+
   const lines: string[] = [];
 
   const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID?.trim();

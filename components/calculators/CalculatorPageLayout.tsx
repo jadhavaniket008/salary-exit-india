@@ -5,6 +5,7 @@ import type { CalculatorSlug } from "@/lib/routes";
 import { RelatedCalculators } from "@/components/calculators/RelatedCalculators";
 import { DisclaimerBlock } from "@/components/calculators/DisclaimerBlock";
 import { AdSlot } from "@/components/ads/AdSlot";
+import { EzoicAdSlot } from "@/components/ads/EzoicAdSlot";
 import { CalculatorAccuracyCard } from "@/components/trust/CalculatorAccuracyCard";
 import { CalculatorEstimateCaveats } from "@/components/trust/CalculatorEstimateCaveats";
 import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
@@ -46,8 +47,12 @@ export function CalculatorPageLayout({
             <CalculatorAccuracyCard slug={slug} />
           </header>
           <AdSlot position="below-hero" label="Advertisement" />
+          {/* Ezoic placement 101 = below hero; replace ID after creating placement in Ezoic dashboard */}
+          <EzoicAdSlot id={101} />
           {children}
           <AdSlot position="below-result" label="Advertisement" />
+          {/* Ezoic placement 102 = below result */}
+          <EzoicAdSlot id={102} />
           {showFooterBlocks ? (
             <div className="space-y-8 border-t border-zinc-200 pt-10 dark:border-zinc-800">
               <CalculatorEstimateCaveats slug={slug} />
