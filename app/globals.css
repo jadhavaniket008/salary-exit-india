@@ -74,6 +74,36 @@ body {
   outline-offset: 2px;
 }
 
+/* ─── Dark mode token overrides ────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background:      #111110;
+    --surface:         #1C1B19;
+    --surface-subtle:  #232220;
+    --surface-raised:  #292826;
+
+    --border:         #2E2D2A;
+    --border-strong:  #3E3D39;
+
+    --foreground:           #EDECEA;
+    --foreground-secondary: #A8A69F;
+    --foreground-muted:     #6B6966;
+    --foreground-inverse:   #111110;
+
+    --accent:       #29A05E;
+    --accent-light: #0D2419;
+    --accent-hover: #33B86E;
+
+    --positive:     #29A05E;
+    --negative:     #F87171;
+    --warning:      #FBB040;
+    --warning-bg:   #1E1200;
+    --negative-bg:  #1A0808;
+    --info:         #60A5FA;
+    --info-bg:      #0D1B35;
+  }
+}
+
 /* ─── Reduced motion ───────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
