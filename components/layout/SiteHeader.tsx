@@ -1,55 +1,85 @@
 import Link from "next/link";
 import { ROUTES } from "@/lib/routes";
 
-const links = [
+const navLinks = [
   { href: ROUTES.calculators, label: "Calculators" },
-  { href: ROUTES.methodology, label: "Methodology" },
   { href: ROUTES.salaryGuides, label: "Salary guides" },
   { href: ROUTES.taxGuides, label: "Tax guides" },
   { href: ROUTES.jobSwitchGuides, label: "Job switch" },
-  { href: ROUTES.ctcToInHandCalculator, label: "CTC → in-hand" },
+  { href: ROUTES.methodology, label: "Methodology" },
 ];
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-zinc-200/80 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90">
+    <header className="sticky top-0 z-40 border-b border-border bg-surface/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        {/* Logo */}
         <Link
           href={ROUTES.home}
-          className="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-50"
+          className="flex items-center gap-2 text-sm font-semibold text-foreground tracking-tight hover:text-accent transition-colors"
+          aria-label="SalaryExit India — home"
         >
-          SalaryExit India
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-white text-xs font-bold">
+            ₹
+          </span>
+          <span>SalaryExit</span>
+          <span className="hidden text-foreground-muted font-normal sm:inline">India</span>
         </Link>
+
+        {/* Desktop nav */}
         <nav
-          className="hidden flex-wrap items-center justify-end gap-x-4 gap-y-2 text-sm text-zinc-600 dark:text-zinc-400 md:flex"
-          aria-label="Primary"
+          className="hidden items-center gap-1 md:flex"
+          aria-label="Primary navigation"
         >
-          {links.map((l) => (
+          {navLinks.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="hover:text-zinc-900 dark:hover:text-zinc-100"
+              className="rounded-lg px-3 py-2 text-sm text-foreground-secondary transition-colors hover:bg-surface-subtle hover:text-foreground"
             >
               {l.label}
             </Link>
           ))}
         </nav>
-        <details className="relative md:hidden">
-          <summary className="cursor-pointer list-none rounded-lg border border-zinc-200 px-3 py-1.5 text-sm font-medium text-zinc-800 dark:border-zinc-800 dark:text-zinc-100 [&::-webkit-details-marker]:hidden">
-            Menu
-          </summary>
-          <div className="absolute right-0 mt-2 w-56 rounded-xl border border-zinc-200 bg-white p-2 shadow-lg dark:border-zinc-800 dark:bg-zinc-950">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 dark:text-zinc-200 dark:hover:bg-zinc-900"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </div>
-        </details>
+
+        {/* Desktop CTA + mobile menu */}
+        <div className="flex items-center gap-3">
+          <Link
+            href={ROUTES.ctcToInHandCalculator}
+            className="hidden rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover sm:inline-flex"
+          >
+            Calculate in-hand
+          </Link>
+
+          <details className="relative md:hidden">
+            <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground [&::-webkit-details-marker]:hidden">
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              Menu
+            </summary>
+            <div className="absolute right-0 mt-2 w-60 rounded-xl border border-border bg-surface shadow-lg">
+              <div className="p-2">
+                {navLinks.map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className="block rounded-lg px-3 py-2.5 text-sm text-foreground-secondary hover:bg-surface-subtle hover:text-foreground transition-colors"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+                <div className="mx-3 my-2 border-t border-border" />
+                <Link
+                  href={ROUTES.ctcToInHandCalculator}
+                  className="block rounded-lg bg-accent px-3 py-2.5 text-center text-sm font-medium text-white"
+                >
+                  Calculate in-hand
+                </Link>
+              </div>
+            </div>
+          </details>
+        </div>
       </div>
     </header>
   );

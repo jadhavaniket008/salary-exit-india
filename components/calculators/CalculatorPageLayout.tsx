@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Container, Section } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { CalculatorEducationLinks } from "@/components/content/CalculatorEducationLinks";
 import { ROUTES, type CalculatorSlug } from "@/lib/routes";
 import { CALCULATOR_REGISTRY } from "@/lib/calculator-registry";
@@ -20,13 +20,9 @@ type Props = {
   title: string;
   intro: string;
   children: ReactNode;
-  /** When false, hides related + disclaimer (rare) */
   showFooterBlocks?: boolean;
 };
 
-/**
- * Shared shell: H1, intro, main content, related calculators, disclaimer.
- */
 export function CalculatorPageLayout({
   slug,
   title,
@@ -46,28 +42,39 @@ export function CalculatorPageLayout({
           { name: title, path: urlPath },
         ])}
       />
-      <Section className="pt-8 sm:pt-12">
-        <Container className="max-w-3xl space-y-8">
-          <header className="space-y-3">
-            <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+
+      {/* ── Page header ─────────────────────────────────────────────── */}
+      <div className="border-b border-border bg-surface">
+        <Container className="max-w-3xl py-8 sm:py-10">
+          <header className="space-y-4">
+            <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               {title}
             </h1>
-            <p className="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+            <p className="text-base leading-relaxed text-foreground-secondary">
               {intro}
             </p>
-            <FreshnessBadges />
-            <MethodologyLink />
-            <CalculatorAccuracyCard slug={slug} />
+            <div className="flex flex-wrap items-center gap-3">
+              <FreshnessBadges />
+              <MethodologyLink />
+            </div>
           </header>
+        </Container>
+      </div>
+
+      {/* ── Calculator body ──────────────────────────────────────────── */}
+      <section className="py-8 sm:py-10">
+        <Container className="max-w-3xl space-y-8">
+          <CalculatorAccuracyCard slug={slug} />
           <AdSlot position="below-hero" label="Advertisement" />
-          {/* Ezoic placement 101 = below hero; replace ID after creating placement in Ezoic dashboard */}
           <EzoicAdSlot id={101} />
+
           {children}
+
           <AdSlot position="below-result" label="Advertisement" />
-          {/* Ezoic placement 102 = below result */}
           <EzoicAdSlot id={102} />
+
           {showFooterBlocks ? (
-            <div className="space-y-8 border-t border-zinc-200 pt-10 dark:border-zinc-800">
+            <div className="space-y-8 border-t border-border pt-10">
               <CalculatorEstimateCaveats slug={slug} />
               <CalculatorEditorial slug={slug} />
               <CalculatorEducationLinks slug={slug} />
@@ -76,7 +83,7 @@ export function CalculatorPageLayout({
             </div>
           ) : null}
         </Container>
-      </Section>
+      </section>
     </div>
   );
 }
