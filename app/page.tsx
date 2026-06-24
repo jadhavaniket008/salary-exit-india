@@ -70,8 +70,7 @@ export default function Home() {
 
             <SalaryRealityCheckPromo />
 
-            <div className="grid gap-8 lg:grid-cols-[1fr_minmax(240px,280px)] lg:items-start">
-              <div className="min-w-0 space-y-12">
+            <div className="space-y-12">
             <section aria-labelledby="featured-calculators-heading" className="space-y-4">
               <h2
                 id="featured-calculators-heading"
@@ -180,11 +179,6 @@ export default function Home() {
             <AdSlot position="before-footer" label="Advertisement" />
 
             <FaqSection items={HOME_FAQ} />
-              </div>
-
-              <div className="hidden lg:block lg:self-start">
-                <AdSlot position="sidebar-desktop" label="Advertisement" />
-              </div>
             </div>
           </Container>
         </Section>

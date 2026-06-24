@@ -71,7 +71,7 @@ export default function ForBusinessesPage() {
   return (
     <main>
       <Section className="pt-10 sm:pt-16">
-        <Container className="max-w-3xl space-y-16">
+        <Container className="max-w-3xl space-y-12">
 
           <header className="space-y-4">
             <span className="inline-block rounded-full border border-zinc-300 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:border-zinc-700 dark:text-zinc-400">

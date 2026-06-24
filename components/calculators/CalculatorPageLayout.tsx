@@ -45,20 +45,17 @@ export function CalculatorPageLayout({
             <MethodologyLink />
             <CalculatorAccuracyCard slug={slug} />
           </header>
-          <AdSlot position="below-hero" label="Advertisement" className="scroll-mt-24" />
+          <AdSlot position="below-hero" label="Advertisement" />
           {children}
-          <AdSlot position="below-result" label="Advertisement" className="scroll-mt-28" />
+          <AdSlot position="below-result" label="Advertisement" />
           {showFooterBlocks ? (
-            <>
-              <AdSlot position="before-footer" label="Advertisement" />
-              <div className="space-y-8 border-t border-zinc-200 pt-10 dark:border-zinc-800">
-                <CalculatorEstimateCaveats slug={slug} />
-                <CalculatorEditorial slug={slug} />
-                <CalculatorEducationLinks slug={slug} />
-                <RelatedCalculators currentSlug={slug} />
-                <DisclaimerBlock />
-              </div>
-            </>
+            <div className="space-y-8 border-t border-zinc-200 pt-10 dark:border-zinc-800">
+              <CalculatorEstimateCaveats slug={slug} />
+              <CalculatorEditorial slug={slug} />
+              <CalculatorEducationLinks slug={slug} />
+              <RelatedCalculators currentSlug={slug} />
+              <DisclaimerBlock />
+            </div>
           ) : null}
         </Container>
       </Section>
