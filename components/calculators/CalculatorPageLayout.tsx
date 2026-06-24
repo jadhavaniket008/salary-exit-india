@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import { Container, Section } from "@/components/ui";
 import { CalculatorEducationLinks } from "@/components/content/CalculatorEducationLinks";
-import type { CalculatorSlug } from "@/lib/routes";
+import { ROUTES, type CalculatorSlug } from "@/lib/routes";
+import { CALCULATOR_REGISTRY } from "@/lib/calculator-registry";
 import { RelatedCalculators } from "@/components/calculators/RelatedCalculators";
 import { DisclaimerBlock } from "@/components/calculators/DisclaimerBlock";
 import { AdSlot } from "@/components/ads/AdSlot";
@@ -11,6 +12,8 @@ import { CalculatorEstimateCaveats } from "@/components/trust/CalculatorEstimate
 import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
 import { MethodologyLink } from "@/components/trust/MethodologyLink";
 import { CalculatorEditorial } from "@/components/calculators/CalculatorEditorial";
+import { JsonLd } from "@/components/content/JsonLd";
+import { webApplicationJsonLd, breadcrumbJsonLd } from "@/lib/seo/structured-data";
 
 type Props = {
   slug: CalculatorSlug;
@@ -31,8 +34,18 @@ export function CalculatorPageLayout({
   children,
   showFooterBlocks = true,
 }: Props) {
+  const urlPath = CALCULATOR_REGISTRY[slug]?.path ?? `/${slug}`;
+
   return (
     <div className="flex flex-1 flex-col">
+      <JsonLd data={webApplicationJsonLd({ name: title, description: intro, urlPath })} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: ROUTES.home },
+          { name: "Calculators", path: ROUTES.calculators },
+          { name: title, path: urlPath },
+        ])}
+      />
       <Section className="pt-8 sm:pt-12">
         <Container className="max-w-3xl space-y-8">
           <header className="space-y-3">
