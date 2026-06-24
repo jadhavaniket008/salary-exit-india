@@ -1,4 +1,4 @@
-import { EpfCalculatorClient } from "@/components/calculators/clients/EpfCalculatorClient";
+﻿import { EpfCalculatorClient } from "@/components/calculators/clients/EpfCalculatorClient";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
 export const metadata = calculatorMetadata("epf");
@@ -9,29 +9,29 @@ export default function EpfCalculatorPage() {
       <EpfCalculatorClient />
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-10 sm:px-6">
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             What EPF is and why it shows up on your payslip twice
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             The Employees&apos; Provident Fund (EPF) is a mandatory retirement savings scheme under the
             Employees&apos; Provident Funds and Miscellaneous Provisions Act, 1952. Both you and your employer
             contribute — which is why most payslips show two PF lines: &quot;Employee PF&quot; (deducted from your
             gross) and &quot;Employer PF&quot; (an additional cost that may or may not be inside your CTC).
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             Employee contribution is 12% of your PF wage (Basic + Dearness Allowance). Employer
             contribution is also 12%, but it is split three ways — not all of it goes to your EPF account.
           </p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             EPF, EPS, and EDLI: where your employer&apos;s 12% actually goes
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             The employer&apos;s 12% contribution is split into three components:
           </p>
-          <ul className="list-inside list-disc space-y-2 text-zinc-600 dark:text-zinc-400">
+          <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
               <strong>8.33% to EPS (Employees&apos; Pension Scheme):</strong> This funds your pension on
               retirement and is capped at ₹1,250/month (8.33% of the ₹15,000 statutory wage ceiling).
@@ -51,37 +51,37 @@ export default function EpfCalculatorPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             The ₹15,000 statutory wage ceiling and why it matters
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             By law, employers must contribute PF only on the first ₹15,000 of monthly Basic+DA. If your
             Basic is ₹40,000/month, employer&apos;s statutory minimum PF contribution is 12% × ₹15,000 =
             ₹1,800/month — not 12% × ₹40,000.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             However, many employers choose to contribute on the actual Basic+DA without the ceiling,
             particularly in the organized tech and manufacturing sectors. This is better for employees
             (more savings, higher PF balance) but adds cost to the employer and can significantly
             reduce your monthly in-hand if your Basic is high.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             This is one of the largest sources of mismatch between a generic calculator&apos;s estimate
             and your actual payslip — always check your offer letter or HR portal for which PF rule applies.
           </p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             VPF: why some employees contribute more than mandatory
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             Voluntary Provident Fund (VPF) allows you to contribute more than the mandatory 12% to your
             EPF account — up to 100% of Basic+DA. The interest rate on VPF is the same as EPF (announced
             annually by the EPFO, typically 8–8.5% in recent years), which is significantly higher than
             most bank FDs.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             VPF contributions qualify for 80C deduction under the old tax regime (within the ₹1.5 lakh
             overall 80C cap). Interest earned up to ₹2.5 lakh of annual employee contributions (EPF +
             VPF combined) is tax-free. Above this threshold, interest is taxable from FY 2021-22 onwards.

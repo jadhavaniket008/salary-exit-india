@@ -1,4 +1,4 @@
-import { SalaryRealityCheckCalculatorClient } from "@/components/calculators/clients/SalaryRealityCheckCalculatorClient";
+﻿import { SalaryRealityCheckCalculatorClient } from "@/components/calculators/clients/SalaryRealityCheckCalculatorClient";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
 export const metadata = calculatorMetadata("salaryRealityCheck");
@@ -9,16 +9,16 @@ export default function SalaryRealityCheckPage() {
       <SalaryRealityCheckCalculatorClient />
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-10 sm:px-6">
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             Why savings rate matters more than income level
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             Two employees both earning ₹15 LPA can have wildly different savings outcomes. The employee
             in Delhi paying ₹25,000/month rent, EMI on a two-wheeler, and supporting family saves perhaps
             ₹5,000/month. The employee in Jaipur living at home saves ₹35,000/month. Their incomes are
             identical; their financial trajectories are not.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             The savings rate — what fraction of net in-hand you actually save or invest each month — is
             a better indicator of financial health than the salary figure itself. Personal finance
             practitioners typically use 20% of net income as a benchmark for adequate savings. Below
@@ -28,15 +28,15 @@ export default function SalaryRealityCheckPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             The three variables that move the needle most
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             In our experience of building this calculator and reading how Indian salaried employees
             actually budget, three variables explain most of the variance in savings outcomes at any
             given income level:
           </p>
-          <ol className="list-inside list-decimal space-y-3 text-zinc-600 dark:text-zinc-400">
+          <ol className="list-inside list-decimal space-y-3 text-foreground-secondary">
             <li>
               <strong>Rent:</strong> The single largest expense for most working-age Indians in urban
               areas. Rent as a percentage of in-hand can range from 0% (living with family) to 50%+
@@ -58,13 +58,13 @@ export default function SalaryRealityCheckPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             City tier differences in lifestyle cost
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             The tool uses a three-tier city classification when estimating discretionary expenses:
           </p>
-          <ul className="list-inside list-disc space-y-2 text-zinc-600 dark:text-zinc-400">
+          <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
               <strong>Tier 1 (Metro):</strong> Mumbai, Delhi NCR, Bengaluru, Hyderabad, Chennai, Pune.
               Rent typically ₹15,000–45,000/month for a 1BHK. Food and transport costs are higher.
@@ -79,7 +79,7 @@ export default function SalaryRealityCheckPage() {
               are substantially lower. Living with family is more common, which eliminates rent entirely.
             </li>
           </ul>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             A ₹10 LPA salary in a Tier 2 city often provides more financial breathing room than ₹15 LPA
             in Mumbai once rent, commute, and basic lifestyle costs are accounted for.
           </p>

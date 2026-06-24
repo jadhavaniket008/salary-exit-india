@@ -15,7 +15,7 @@ export function RelatedCalculators({ currentSlug }: Props) {
     <nav aria-labelledby="related-heading" className="space-y-3">
       <h2
         id="related-heading"
-        className="text-lg font-semibold text-zinc-900 dark:text-zinc-50"
+        className="text-lg font-semibold text-foreground"
       >
         Related calculators
       </h2>
@@ -30,7 +30,7 @@ export function RelatedCalculators({ currentSlug }: Props) {
           >
             <Link
               href={l.href}
-              className="block rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-medium text-zinc-800 transition hover:border-zinc-300 hover:bg-zinc-50 active:scale-[0.99] dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 dark:hover:border-zinc-700 dark:hover:bg-zinc-900"
+              className="block rounded-lg border border-border bg-surface px-3 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-sm active:scale-[0.99]"
             >
               {l.label}
             </Link>

@@ -1,4 +1,4 @@
-import { SalaryCalculatorClient } from "@/components/calculators/clients/SalaryCalculatorClient";
+﻿import { SalaryCalculatorClient } from "@/components/calculators/clients/SalaryCalculatorClient";
 import { AffiliateCta } from "@/components/monetization/AffiliateCta";
 import { CaConsultCta } from "@/components/monetization/CaConsultCta";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
@@ -11,14 +11,14 @@ export default function SalaryCalculatorPage() {
       <SalaryCalculatorClient />
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-10 sm:px-6">
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             How Indian payslip tax is calculated: step by step
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             Indian income tax for salaried employees follows a specific sequence. Understanding the steps
             explains why two employees earning the same gross salary can have very different tax liabilities.
           </p>
-          <ol className="list-inside list-decimal space-y-3 text-zinc-600 dark:text-zinc-400">
+          <ol className="list-inside list-decimal space-y-3 text-foreground-secondary">
             <li>
               <strong>Start with annual gross salary.</strong> This is the sum of all salary components
               before any deductions: Basic, HRA, special allowance, LTA, meal allowance, etc.
@@ -51,31 +51,31 @@ export default function SalaryCalculatorPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             Why Section 80C is the first deduction to maximize under old regime
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             Section 80C allows a deduction of up to ₹1,50,000 per year from taxable income. Most
             salaried employees&apos; employee PF contribution already counts towards 80C — meaning if you
             contribute ₹72,000/year to EPF, you only have ₹78,000 of 80C space left to fill with
             other investments like ELSS, PPF, or life insurance premiums.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             At the 30% slab, fully utilizing ₹1.5 lakh of 80C saves approximately ₹46,800 in annual
             tax (including cess). At the 20% slab, the saving is about ₹31,200/year.
           </p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             Effective tax rate vs marginal tax rate
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             India&apos;s income tax system is progressive: only the income in each slab is taxed at that
             slab&apos;s rate. Saying &quot;I am in the 30% tax bracket&quot; does not mean 30% of your total income
             is taxed — only the income above ₹10 lakh (old) or ₹24 lakh (new) is taxed at 30%.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             For example, a ₹15 LPA gross under the new regime (after ₹75,000 standard deduction, taxable
             income ≈ ₹14.25 lakh) faces a basic tax of approximately ₹1,82,500. That is an effective rate
             of about 12.7% on taxable income — not 25% (the marginal slab rate at ₹14.25 lakh). The

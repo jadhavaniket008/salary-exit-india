@@ -86,8 +86,8 @@ export function SalaryRealityShareBlock({
 
   return (
     <div className="space-y-3">
-      <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">Share this result</p>
-      <p className="text-xs text-zinc-500 dark:text-zinc-400">
+      <p className="text-sm font-medium text-foreground">Share this result</p>
+      <p className="text-xs text-foreground-muted">
         Short summary for WhatsApp, X, or email — includes a disclaimer and link back to the tool.
       </p>
 

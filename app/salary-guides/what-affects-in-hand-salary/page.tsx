@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { GuideArticleShell } from "@/components/content/GuideArticleShell";
 import { WhatAffectsInHandBody } from "@/components/content/guides/WhatAffectsInHandBody";
 import { guideArticleMetadata } from "@/lib/content/guide-metadata";
@@ -22,7 +22,7 @@ const faq: FaqItem[] = [
       "Tax regime choice, PF wage definition, rent/HRA position, and state professional tax — plus any change in variable pay mix.",
   },
   {
-    question: "Should I trust a single month’s payslip as my ‘true’ in-hand?",
+    question: "Should I trust a single month's payslip as my 'true' in-hand?",
     answer:
       "Use annualization when possible. One month can include arrears, bonus accruals, or adjusted TDS.",
   },

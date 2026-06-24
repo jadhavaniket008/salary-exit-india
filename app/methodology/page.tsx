@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPageLayout, legalBreadcrumbs } from "@/components/legal/LegalPageLayout";
 import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
@@ -40,7 +40,7 @@ export default function MethodologyPage() {
         methodology copy last reviewed: <strong>{SITE_CONTENT_LAST_UPDATED}</strong>.
       </p>
 
-      <h2>What is “exact” in math terms</h2>
+      <h2>What is "exact" in math terms</h2>
       <p>
         Given the same inputs and assumptions, the engine applies the same formulas every time: slab tax, cess on tax
         after rebate, PF on wage (with optional ceiling), and simple aggregations (e.g. final settlement sums).
@@ -87,7 +87,7 @@ export default function MethodologyPage() {
         <strong>{ENGINE_FY_LABEL}</strong>.
       </p>
 
-      <p className="mt-6 text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="mt-6 text-sm text-foreground-secondary">
         <Link href={ROUTES.calculators} className="font-medium underline">
           Back to calculators
         </Link>{" "}

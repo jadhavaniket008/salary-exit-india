@@ -44,7 +44,7 @@ export function OfferComparisonCalculatorClient() {
   const assumptionBullets = useMemo(
     () => [
       "Ranking uses the monthly in-hand and annual CTC values you enter — it does not recompute tax inside this screen.",
-      "For fair comparison, compute each offer’s in-hand using the same CTC→in-hand methodology.",
+      "For fair comparison, compute each offer's in-hand using the same CTC→in-hand methodology.",
       "Optional annual tax can be used for notes/ranking context if you keep it consistent across offers.",
     ],
     []
@@ -156,7 +156,7 @@ export function OfferComparisonCalculatorClient() {
           {rows.map((row, idx) => (
             <div
               key={row.id}
-              className="space-y-3 rounded-xl border border-zinc-200 p-4 dark:border-zinc-800"
+              className="space-y-3 rounded-xl border border-border p-4"
             >
               <div className="flex items-center justify-between gap-3">
                 <p className="text-sm font-semibold text-foreground">
@@ -229,7 +229,7 @@ export function OfferComparisonCalculatorClient() {
 
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Enter at least two comparable offers. The ranking is only as good as your in-hand estimates.
           </div>
         ) : (
@@ -245,7 +245,7 @@ export function OfferComparisonCalculatorClient() {
             <div className="overflow-x-auto">
               <table className="w-full min-w-[640px] text-left text-sm">
                 <thead>
-                  <tr className="border-b border-zinc-200 text-zinc-500 dark:border-zinc-800">
+                  <tr className="border-b border-border text-foreground-muted">
                     <th className="py-2 pr-4 font-medium">Offer</th>
                     <th className="py-2 pr-4 font-medium">CTC</th>
                     <th className="py-2 pr-4 font-medium">In-hand / mo</th>
@@ -258,7 +258,7 @@ export function OfferComparisonCalculatorClient() {
                   {result.rows.map((r, idx) => (
                     <tr
                       key={`${r.label}-${idx}`}
-                      className="border-b border-zinc-100 dark:border-zinc-900"
+                      className="border-b border-border/50"
                     >
                       <td className="py-2 pr-4 font-medium text-foreground">
                         {r.label}
@@ -277,7 +277,7 @@ export function OfferComparisonCalculatorClient() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-3 text-sm text-zinc-700 dark:text-zinc-300">
+            <p className="mt-3 text-sm text-foreground-secondary">
               Best by in-hand (based on your inputs):{" "}
               <strong>{result.bestByInHand || "—"}</strong>. Best by CTC:{" "}
               <strong>{result.bestByCtc || "—"}</strong>.

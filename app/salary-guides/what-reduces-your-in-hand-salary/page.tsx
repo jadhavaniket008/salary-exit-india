@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { GuideArticleShell } from "@/components/content/GuideArticleShell";
 import { WhatReducesInHandBody } from "@/components/content/guides/WhatReducesInHandBody";
 import { guideArticleMetadata } from "@/lib/content/guide-metadata";
@@ -22,7 +22,7 @@ const faq: FaqItem[] = [
       "CTC includes non-cash and employer costs; take-home subtracts PF, tax, PT, and other deductions. Use CTC → in-hand with explicit assumptions.",
   },
   {
-    question: "Is this guide different from “what affects in-hand salary”?",
+    question: "Is this guide different from \"what affects in-hand salary\"?",
     answer:
       "This page is a shorter deduction-first checklist. The other guide explains interactions and timing effects in more depth.",
   },

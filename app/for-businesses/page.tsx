@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Container, Section } from "@/components/ui";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -74,13 +74,13 @@ export default function ForBusinessesPage() {
         <Container className="max-w-3xl space-y-12">
 
           <header className="space-y-4">
-            <span className="inline-block rounded-full border border-zinc-300 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:border-zinc-700 dark:text-zinc-400">
+            <span className="inline-block rounded-full border border-border px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground-secondary">
               For businesses
             </span>
-            <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+            <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               Embed India's salary calculator engine on your platform
             </h1>
-            <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+            <p className="text-lg leading-relaxed text-foreground-secondary">
               SalaryExit's calculator engine handles CTC → in-hand conversion, old vs new tax regime
               comparison, PF, HRA, gratuity, and settlement math for Indian salaried employees —
               maintained against each Union Budget. License it for your product instead of building
@@ -88,50 +88,50 @@ export default function ForBusinessesPage() {
             </p>
             <a
               href={`mailto:${contactEmail}?subject=B2B calculator embed inquiry`}
-              className="inline-flex items-center justify-center rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
+              className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
             >
               Contact us to discuss →
             </a>
           </header>
 
           <section className="space-y-6">
-            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">Who this is for</h2>
+            <h2 className="text-xl font-semibold text-foreground">Who this is for</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               {USE_CASES.map((uc) => (
                 <div
                   key={uc.role}
-                  className="space-y-2 rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950"
+                  className="space-y-2 rounded-xl border border-border bg-surface p-5"
                 >
-                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">{uc.role}</h3>
-                  <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{uc.description}</p>
-                  <p className="text-xs text-zinc-400 dark:text-zinc-500">{uc.examples}</p>
+                  <h3 className="font-semibold text-foreground">{uc.role}</h3>
+                  <p className="text-sm leading-relaxed text-foreground-secondary">{uc.description}</p>
+                  <p className="text-xs text-foreground-muted">{uc.examples}</p>
                 </div>
               ))}
             </div>
           </section>
 
           <section className="space-y-6">
-            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">What you get</h2>
+            <h2 className="text-xl font-semibold text-foreground">What you get</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               {WHAT_YOU_GET.map((item) => (
                 <div key={item.title} className="space-y-1.5">
-                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{item.body}</p>
+                  <h3 className="font-semibold text-foreground">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-foreground-secondary">{item.body}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <section className="space-y-4 rounded-2xl border border-zinc-200 bg-zinc-50/80 p-6 dark:border-zinc-800 dark:bg-zinc-900/40">
-            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">What's under the hood</h2>
-            <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <section className="space-y-4 rounded-2xl border border-border bg-surface-subtle p-6">
+            <h2 className="text-xl font-semibold text-foreground">What's under the hood</h2>
+            <p className="text-sm leading-relaxed text-foreground-secondary">
               The calculation engine is written in TypeScript, unit-tested against worked examples from
               Finance Act publications, and covers: CTC → in-hand conversion, old vs new tax regime
               comparison (FY 2025-26 slabs), PF (statutory ceiling and actual Basic+DA modes), HRA
               exemption under Section 10(13A), professional tax, Section 87A rebate, and payslip line
               breakdown. Tax slabs and thresholds are version-controlled and updated with each Budget.
             </p>
-            <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+            <p className="text-sm leading-relaxed text-foreground-secondary">
               You can review the public calculator at{" "}
               <Link href={ROUTES.ctcToInHandCalculator} className="font-medium underline">
                 CTC → in-hand calculator
@@ -145,11 +145,11 @@ export default function ForBusinessesPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">Pricing</h2>
-            <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+            <h2 className="text-xl font-semibold text-foreground">Pricing</h2>
+            <p className="text-sm leading-relaxed text-foreground-secondary">
               Pricing is based on use case, integration type, and request volume. We offer:
             </p>
-            <ul className="list-inside list-disc space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+            <ul className="list-inside list-disc space-y-2 text-sm text-foreground-secondary">
               <li>
                 <strong>Iframe embed (light branding):</strong> Flat monthly fee, unlimited usage on your domain.
               </li>
@@ -160,20 +160,20 @@ export default function ForBusinessesPage() {
                 <strong>API access:</strong> Per-request pricing or monthly flat rate by volume tier.
               </li>
             </ul>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="text-sm text-foreground-secondary">
               Reach out with your use case and approximate monthly usage and we'll respond within 2 business days.
             </p>
           </section>
 
-          <section className="rounded-2xl border border-zinc-900 bg-zinc-900 p-7 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900">
+          <section className="rounded-2xl border border-accent bg-accent p-7 text-white">
             <h2 className="text-xl font-semibold">Interested? Let's talk.</h2>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-300 dark:text-zinc-600">
+            <p className="mt-2 text-sm leading-relaxed text-white/80">
               Email us with your company name, product type, and the integration you're exploring.
               We'll send back a demo and pricing within 2 business days.
             </p>
             <a
               href={`mailto:${contactEmail}?subject=B2B calculator embed inquiry`}
-              className="mt-5 inline-flex items-center justify-center rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800"
+              className="mt-5 inline-flex items-center justify-center rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-accent transition hover:bg-white/90"
             >
               {contactEmail}
             </a>

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { SalaryRealityCheckCalculatorClient } from "@/components/calculators/clients/SalaryRealityCheckCalculatorClient";
 import { FaqSection } from "@/components/calculators/FaqSection";
 import { DisclaimerBlock } from "@/components/calculators/DisclaimerBlock";
@@ -123,11 +123,11 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
             >
               {answerLabel(config.answerKind)}
             </div>
-            <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+            <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               {config.seo.title}
             </h1>
-            <p className="text-lg font-medium text-zinc-800 dark:text-zinc-200">{config.answerHeadline}</p>
-            <p className="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">{config.leadParagraph}</p>
+            <p className="text-lg font-medium text-foreground">{config.answerHeadline}</p>
+            <p className="text-base leading-relaxed text-foreground-secondary">{config.leadParagraph}</p>
             <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <FreshnessBadges />
               <MethodologyLink />
@@ -136,49 +136,49 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
 
           <section
             aria-labelledby="real-numbers-heading"
-            className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
+            className="rounded-2xl border border-border bg-surface p-5 shadow-sm"
           >
-            <h2 id="real-numbers-heading" className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+            <h2 id="real-numbers-heading" className="text-lg font-semibold text-foreground">
               Real numbers for this scenario
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            <p className="mt-2 text-sm leading-relaxed text-foreground-secondary">
               At <strong>₹{config.lpa} LPA</strong> gross in <strong>{config.city.name}</strong>, with{" "}
               <strong>{formatInr(config.monthlyRent)}/month</strong> rent, <strong className="capitalize">{config.lifestyle}</strong>{" "}
               lifestyle, new tax regime, and the same PF assumptions as the calculator below:
             </p>
-            <ul className="mt-3 space-y-2 text-sm text-zinc-800 dark:text-zinc-200">
+            <ul className="mt-3 space-y-2 text-sm text-foreground">
               <li>
-                <span className="font-medium text-zinc-900 dark:text-zinc-50">Est. in-hand:</span>{" "}
+                <span className="font-medium text-foreground">Est. in-hand:</span>{" "}
                 ~{formatInr(preview.inHandMonthly)}/month
               </li>
               <li>
-                <span className="font-medium text-zinc-900 dark:text-zinc-50">Rent (this page):</span>{" "}
+                <span className="font-medium text-foreground">Rent (this page):</span>{" "}
                 {formatInr(config.monthlyRent)}/month
               </li>
               <li>
-                <span className="font-medium text-zinc-900 dark:text-zinc-50">Est. savings after modeled spend:</span>{" "}
+                <span className="font-medium text-foreground">Est. savings after modeled spend:</span>{" "}
                 ~{formatInr(preview.monthlySavings)}/month — <em>{preview.verdictTitle}</em>
               </li>
             </ul>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div>
-                <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Often workable for</h3>
-                <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
+                <h3 className="text-sm font-semibold text-foreground">Often workable for</h3>
+                <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-foreground-secondary">
                   {GLANCE_TYPICAL_FOR[config.answerKind].map((line) => (
                     <li key={line}>{line}</li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Often tight if</h3>
-                <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
+                <h3 className="text-sm font-semibold text-foreground">Often tight if</h3>
+                <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-foreground-secondary">
                   {GLANCE_TIGHT_IF[config.answerKind].map((line) => (
                     <li key={line}>{line}</li>
                   ))}
                 </ul>
               </div>
             </div>
-            <p className="mt-4 text-xs text-zinc-500 dark:text-zinc-400">
+            <p className="mt-4 text-xs text-foreground-muted">
               Figures come from the same engine as the embedded calculator — not your payslip. Adjust rent and tier below
               to match your life.
             </p>
@@ -203,24 +203,24 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
           <AdSlot position="below-hero" label="Advertisement" />
 
           <section aria-labelledby="who-heading" className="space-y-3">
-            <h2 id="who-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+            <h2 id="who-heading" className="text-xl font-semibold text-foreground">
               Who this page is for
             </h2>
-            <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">{config.whoThisWorksFor}</p>
+            <p className="text-base leading-relaxed text-foreground-secondary">{config.whoThisWorksFor}</p>
           </section>
 
           <section aria-labelledby="enough-not-heading" className="space-y-3">
-            <h2 id="enough-not-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-              When it looks “enough” vs when it breaks
+            <h2 id="enough-not-heading" className="text-xl font-semibold text-foreground">
+              When it looks "enough" vs when it breaks
             </h2>
-            <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">{config.whenEnoughVsNot}</p>
+            <p className="text-base leading-relaxed text-foreground-secondary">{config.whenEnoughVsNot}</p>
           </section>
 
           <section aria-labelledby="tradeoffs-heading" className="space-y-3">
-            <h2 id="tradeoffs-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+            <h2 id="tradeoffs-heading" className="text-xl font-semibold text-foreground">
               Major tradeoffs
             </h2>
-            <ul className="list-inside list-disc space-y-2 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+            <ul className="list-inside list-disc space-y-2 text-sm leading-relaxed text-foreground-secondary">
               {config.majorTradeoffs.map((t) => (
                 <li key={t}>{t}</li>
               ))}
@@ -228,10 +228,10 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
           </section>
 
           <section aria-labelledby="city-heading" className="space-y-3">
-            <h2 id="city-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+            <h2 id="city-heading" className="text-xl font-semibold text-foreground">
               {config.city.name}-specific reality
             </h2>
-            <ul className="list-inside list-disc space-y-2 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+            <ul className="list-inside list-disc space-y-2 text-sm leading-relaxed text-foreground-secondary">
               {config.cityRealityNotes.map((t) => (
                 <li key={t}>{t}</li>
               ))}
@@ -240,26 +240,26 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
 
           <section
             aria-labelledby="solo-family-heading"
-            className="rounded-xl border border-zinc-200 bg-zinc-50/80 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-900/40"
+            className="rounded-xl border border-border bg-surface-subtle p-4 text-sm"
           >
-            <h2 id="solo-family-heading" className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
+            <h2 id="solo-family-heading" className="text-base font-semibold text-foreground">
               Solo earner vs family budget
             </h2>
-            <p className="mt-2 leading-relaxed text-zinc-700 dark:text-zinc-300">{config.soloVsFamilyCaveat}</p>
+            <p className="mt-2 leading-relaxed text-foreground-secondary">{config.soloVsFamilyCaveat}</p>
           </section>
 
           <section aria-labelledby="why-heading" className="space-y-3">
-            <h2 id="why-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+            <h2 id="why-heading" className="text-xl font-semibold text-foreground">
               Why we say that
             </h2>
-            <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">{config.whyParagraph}</p>
+            <p className="text-base leading-relaxed text-foreground-secondary">{config.whyParagraph}</p>
           </section>
 
           <section aria-labelledby="snapshot-heading" className="space-y-4">
-            <h2 id="snapshot-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+            <h2 id="snapshot-heading" className="text-xl font-semibold text-foreground">
               Snapshot for this scenario
             </h2>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="text-sm text-foreground-secondary">
               <strong>{config.city.name}</strong>, metro commute band:{" "}
               <strong>{config.city.metro ? "on" : "off"}</strong> · Rent:{" "}
               <strong>{formatInr(config.monthlyRent)}/mo</strong> · Lifestyle:{" "}
@@ -267,49 +267,49 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
               {Math.round(DEFAULT_BASIC_DA_SHARE_OF_GROSS * 100)}% of gross (PF).
             </p>
             <div className="grid gap-3 sm:grid-cols-3">
-              <div className="rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
-                <p className="text-xs font-semibold uppercase text-zinc-500">Est. in-hand / mo</p>
-                <p className="mt-1 text-xl font-semibold tabular-nums text-zinc-900 dark:text-zinc-50">
+              <div className="rounded-xl border border-border bg-surface p-4">
+                <p className="text-xs font-semibold uppercase text-foreground-muted">Est. in-hand / mo</p>
+                <p className="mt-1 text-xl font-semibold tabular-nums text-foreground">
                   {formatInr(preview.inHandMonthly)}
                 </p>
               </div>
-              <div className="rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
-                <p className="text-xs font-semibold uppercase text-zinc-500">Est. savings / mo</p>
-                <p className="mt-1 text-xl font-semibold tabular-nums text-zinc-900 dark:text-zinc-50">
+              <div className="rounded-xl border border-border bg-surface p-4">
+                <p className="text-xs font-semibold uppercase text-foreground-muted">Est. savings / mo</p>
+                <p className="mt-1 text-xl font-semibold tabular-nums text-foreground">
                   {formatInr(preview.monthlySavings)}
                 </p>
               </div>
-              <div className="rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
-                <p className="text-xs font-semibold uppercase text-zinc-500">Takeaway</p>
-                <p className="mt-1 text-sm font-semibold leading-snug text-zinc-900 dark:text-zinc-50">
+              <div className="rounded-xl border border-border bg-surface p-4">
+                <p className="text-xs font-semibold uppercase text-foreground-muted">Takeaway</p>
+                <p className="mt-1 text-sm font-semibold leading-snug text-foreground">
                   {preview.verdictTitle}
                 </p>
               </div>
             </div>
-            <div className="rounded-xl border border-zinc-200 bg-zinc-50/80 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-900/40">
-              <p className="font-medium text-zinc-900 dark:text-zinc-100">What the verdict means here</p>
-              <p className="mt-2 text-zinc-700 dark:text-zinc-300">{preview.verdictWhy}</p>
+            <div className="rounded-xl border border-border bg-surface-subtle p-4 text-sm">
+              <p className="font-medium text-foreground">What the verdict means here</p>
+              <p className="mt-2 text-foreground-secondary">{preview.verdictWhy}</p>
             </div>
           </section>
 
           <section aria-labelledby="expenses-heading" className="space-y-3">
-            <h2 id="expenses-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+            <h2 id="expenses-heading" className="text-xl font-semibold text-foreground">
               Typical expenses in this model
             </h2>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="text-sm text-foreground-secondary">
               Rent is your input; groceries, commute, utilities, and discretionary follow the{" "}
               <span className="capitalize">{config.lifestyle}</span> tier table (metro commute when checked).
             </p>
-            <ul className="list-inside list-disc space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+            <ul className="list-inside list-disc space-y-2 text-sm text-foreground-secondary">
               {config.typicalSpendNotes.map((note) => (
                 <li key={note}>{note}</li>
               ))}
             </ul>
-            <dl className="grid gap-2 rounded-xl border border-zinc-200 bg-white p-4 text-sm dark:border-zinc-800 dark:bg-zinc-950 sm:grid-cols-2">
+            <dl className="grid gap-2 rounded-xl border border-border bg-surface p-4 text-sm sm:grid-cols-2">
               {preview.expenseLines.map((line) => (
                 <div key={line.label} className="flex justify-between gap-4">
-                  <dt className="text-zinc-500">{line.label}</dt>
-                  <dd className="font-medium tabular-nums text-zinc-900 dark:text-zinc-50">
+                  <dt className="text-foreground-muted">{line.label}</dt>
+                  <dd className="font-medium tabular-nums text-foreground">
                     {formatInr(line.amount)}
                   </dd>
                 </div>
@@ -320,23 +320,23 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
           <div className="flex flex-wrap gap-3">
             <a
               href="#salary-reality-embed"
-              className="inline-flex items-center justify-center rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
+              className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
             >
               Adjust inputs in the calculator
             </a>
             <Link
               href={ROUTES.salaryRealityCheck}
-              className="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-900 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100 dark:hover:bg-zinc-900"
+              className="inline-flex items-center justify-center rounded-lg border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground transition hover:bg-surface-subtle"
             >
               Open full Salary Reality Check
             </Link>
           </div>
 
-          <section aria-labelledby="calc-heading" className="space-y-3 border-t border-zinc-200 pt-10 dark:border-zinc-800">
-            <h2 id="calc-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <section aria-labelledby="calc-heading" className="space-y-3 border-t border-border pt-10">
+            <h2 id="calc-heading" className="text-xl font-semibold text-foreground">
               Run your own numbers
             </h2>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="text-sm text-foreground-secondary">
               Same engine as above — this block is pre-filled for ₹{config.lpa} LPA in {config.city.name}. Change rent,
               tier, or expense lines to match your life.
             </p>
@@ -344,25 +344,25 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
           </section>
 
           <section aria-labelledby="links-heading" className="space-y-3">
-            <h2 id="links-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+            <h2 id="links-heading" className="text-xl font-semibold text-foreground">
               Calculators & related pages
             </h2>
-            <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+            <ul className="space-y-2 text-sm text-foreground-secondary">
               <li>
-                <Link className="font-medium text-zinc-900 underline dark:text-zinc-100" href={ROUTES.salaryRealityCheck}>
+                <Link className="font-medium text-foreground underline" href={ROUTES.salaryRealityCheck}>
                   Salary Reality Check
                 </Link>{" "}
                 — full-page version with methodology and FAQs.
               </li>
               <li>
-                <Link className="font-medium text-zinc-900 underline dark:text-zinc-100" href={ROUTES.salaryCalculator}>
+                <Link className="font-medium text-foreground underline" href={ROUTES.salaryCalculator}>
                   Salary calculator
                 </Link>{" "}
                 — taxable income, tax slabs, and in-hand breakdown.
               </li>
               <li>
                 <Link
-                  className="font-medium text-zinc-900 underline dark:text-zinc-100"
+                  className="font-medium text-foreground underline"
                   href={ROUTES.oldVsNewTaxRegimeCalculator}
                 >
                   Old vs new tax regime
@@ -370,19 +370,19 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
                 — compare net in-hand when deductions matter.
               </li>
               <li>
-                <Link className="font-medium text-zinc-900 underline dark:text-zinc-100" href={ROUTES.ctcToInHandCalculator}>
+                <Link className="font-medium text-foreground underline" href={ROUTES.ctcToInHandCalculator}>
                   CTC → in-hand
                 </Link>{" "}
                 — detailed PF/PT/TDS lines.
               </li>
               <li>
-                <Link className="font-medium text-zinc-900 underline dark:text-zinc-100" href={ROUTES.offerComparisonCalculator}>
+                <Link className="font-medium text-foreground underline" href={ROUTES.offerComparisonCalculator}>
                   Offer comparison
                 </Link>{" "}
                 — two offers side by side.
               </li>
             </ul>
-            <p className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+            <p className="text-sm font-medium text-foreground">
               Same gross, tax-only view (compare to this page)
             </p>
             <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
@@ -393,7 +393,7 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
                   : slug.replace(/-/g, " ");
                 return (
                   <li key={slug}>
-                    <Link className="text-zinc-700 underline dark:text-zinc-300" href={lpaLandingPath(slug)}>
+                    <Link className="text-foreground-secondary underline" href={lpaLandingPath(slug)}>
                       {label}
                     </Link>
                   </li>
@@ -402,26 +402,26 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
             </ul>
             {relatedEnoughPages.length > 0 ? (
               <>
-                <p className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                  More “is this salary enough?” pages
+                <p className="text-sm font-medium text-foreground">
+                  More "is this salary enough?" pages
                 </p>
-                <ul className="mb-4 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+                <ul className="mb-4 space-y-2 text-sm text-foreground-secondary">
                   {relatedEnoughPages.map((p) => (
                     <li key={p.slug}>
                       <Link
-                        className="font-medium text-zinc-900 underline dark:text-zinc-100"
+                        className="font-medium text-foreground underline"
                         href={salaryEnoughPath(p.slug)}
                       >
                         {p.seo.title}
                       </Link>
-                      <span className="text-zinc-500 dark:text-zinc-400"> — {p.city.name}</span>
+                      <span className="text-foreground-muted"> — {p.city.name}</span>
                     </li>
                   ))}
                 </ul>
               </>
             ) : null}
-            <p className="text-sm font-medium text-zinc-800 dark:text-zinc-200">Guides that pair with this check</p>
-            <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+            <p className="text-sm font-medium text-foreground">Guides that pair with this check</p>
+            <ul className="space-y-2 text-sm text-foreground-secondary">
               <li>
                 <Link
                   className="underline"
@@ -452,12 +452,12 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
               </li>
             </ul>
             <p className="text-sm">
-              <Link href={ROUTES.salaryGuides} className="text-zinc-700 underline dark:text-zinc-300">
+              <Link href={ROUTES.salaryGuides} className="text-foreground-secondary underline">
                 All salary guides
               </Link>
               {" · "}
-              <Link href={`${ROUTES.salaryGuides}#enough-heading`} className="text-zinc-700 underline dark:text-zinc-300">
-                More city “enough salary” pages
+              <Link href={`${ROUTES.salaryGuides}#enough-heading`} className="text-foreground-secondary underline">
+                More city "enough salary" pages
               </Link>
             </p>
           </section>

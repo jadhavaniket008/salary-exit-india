@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPageLayout, legalBreadcrumbs } from "@/components/legal/LegalPageLayout";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -36,7 +36,7 @@ export default function TermsPage() {
 
       <h2>No warranty</h2>
       <p>
-        Content and software are provided “as is” without warranties of any kind, including accuracy,
+        Content and software are provided "as is" without warranties of any kind, including accuracy,
         completeness, fitness for a particular purpose, or non-infringement. Tax laws, payroll practices, and
         product features change; the site may contain errors or outdated information.
       </p>
@@ -57,7 +57,7 @@ export default function TermsPage() {
 
       <h2>Third-party links</h2>
       <p>
-        The site may link to third parties (including calculators’ documentation and official resources). We
+        The site may link to third parties (including calculators' documentation and official resources). We
         do not control third-party content or policies.
       </p>
 

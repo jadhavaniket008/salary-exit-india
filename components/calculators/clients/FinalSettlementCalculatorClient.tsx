@@ -142,7 +142,7 @@ export function FinalSettlementCalculatorClient() {
               {credits.map((row, idx) => (
                 <div
                   key={row.id}
-                  className="grid gap-3 rounded-lg border border-zinc-200 p-3 dark:border-zinc-800 sm:grid-cols-[1fr_120px_auto]"
+                  className="grid gap-3 rounded-lg border border-border p-3 sm:grid-cols-[1fr_120px_auto]"
                 >
                   <FormField label={`Label (optional)`} id={`${baseId}-c-label-${row.id}`}>
                     <Input
@@ -197,7 +197,7 @@ export function FinalSettlementCalculatorClient() {
               {deductions.map((row, idx) => (
                 <div
                   key={row.id}
-                  className="grid gap-3 rounded-lg border border-zinc-200 p-3 dark:border-zinc-800 sm:grid-cols-[1fr_120px_auto]"
+                  className="grid gap-3 rounded-lg border border-border p-3 sm:grid-cols-[1fr_120px_auto]"
                 >
                   <FormField label="Label (optional)" id={`${baseId}-d-label-${row.id}`}>
                     <Input
@@ -250,7 +250,7 @@ export function FinalSettlementCalculatorClient() {
 
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Add payout lines (and optional deductions) to compute net settlement.
           </div>
         ) : (
@@ -290,7 +290,7 @@ export function FinalSettlementCalculatorClient() {
       <FaqSection
         items={[
           {
-            question: "Why is my net different from HR’s statement?",
+            question: "Why is my net different from HR's statement?",
             answer:
               "HR statements include tax deductions, timing, recoveries, and components you may not have listed here.",
           },

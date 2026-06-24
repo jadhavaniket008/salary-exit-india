@@ -128,7 +128,7 @@ export function EpfCalculatorClient() {
 
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Enter PF wage to estimate employee + employer contributions.
           </div>
         ) : (
@@ -182,7 +182,7 @@ export function EpfCalculatorClient() {
       <FaqSection
         items={[
           {
-            question: "Why doesn’t this match my payslip’s employer PF?",
+            question: "Why doesn't this match my payslip's employer PF?",
             answer:
               "Employers split contributions across EPF/EPS/EDLI and may use different wage definitions.",
           },

@@ -33,7 +33,7 @@ export function SalaryHikeCalculatorClient() {
   const assumptionBullets = useMemo(
     () => [
       "Percentage change is computed as (new − old) ÷ old when old is greater than 0.",
-      "Use the same definition for “CTC” in both boxes (gross vs net definitions mix easily).",
+      "Use the same definition for \"CTC\" in both boxes (gross vs net definitions mix easily).",
     ],
     []
   );
@@ -110,7 +110,7 @@ export function SalaryHikeCalculatorClient() {
 
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Enter both figures to see the hike in ₹ and %.
           </div>
         ) : (

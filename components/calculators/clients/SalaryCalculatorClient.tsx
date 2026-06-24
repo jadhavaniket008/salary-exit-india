@@ -250,7 +250,7 @@ export function SalaryCalculatorClient() {
 
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Enter your inputs and click <strong>Calculate</strong> to see an estimated
             monthly in-hand and tax breakdown.
           </div>
@@ -267,7 +267,7 @@ export function SalaryCalculatorClient() {
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[280px] text-left text-sm">
                   <thead>
-                    <tr className="border-b border-zinc-200 text-zinc-500 dark:border-zinc-800">
+                    <tr className="border-b border-border text-foreground-muted">
                       <th className="py-2 pr-4 font-medium">Line</th>
                       <th className="py-2 pr-4 font-medium">Annual</th>
                       <th className="py-2 font-medium">Monthly</th>
@@ -277,15 +277,15 @@ export function SalaryCalculatorClient() {
                     {result.breakdownLines?.map((line) => (
                       <tr
                         key={line.label}
-                        className="border-b border-zinc-100 dark:border-zinc-900"
+                        className="border-b border-border/50"
                       >
-                        <td className="py-2 pr-4 text-zinc-800 dark:text-zinc-200">
+                        <td className="py-2 pr-4 text-foreground">
                           {line.label}
                         </td>
-                        <td className="py-2 pr-4 tabular-nums text-zinc-700 dark:text-zinc-300">
+                        <td className="py-2 pr-4 tabular-nums text-foreground-secondary">
                           {formatInr(line.amountAnnual)}
                         </td>
-                        <td className="py-2 tabular-nums text-zinc-700 dark:text-zinc-300">
+                        <td className="py-2 tabular-nums text-foreground-secondary">
                           {formatInr(line.amountMonthly, { decimals: true })}
                         </td>
                       </tr>
@@ -328,14 +328,14 @@ export function SalaryCalculatorClient() {
       <FaqSection
         items={[
           {
-            question: "Why doesn’t this match my payslip exactly?",
+            question: "Why doesn't this match my payslip exactly?",
             answer:
               "Payslips include timing effects (arrears, bonuses), flex components, perquisites, and actual TDS adjustments. This tool uses a simplified annual model.",
           },
           {
             question: "Can I use this to file taxes?",
             answer:
-              "No. It’s an educational estimate. Use Form 16, AIS, and a CA/tool for filing.",
+              "No. It's an educational estimate. Use Form 16, AIS, and a CA/tool for filing.",
           },
         ]}
       />

@@ -33,7 +33,7 @@ export function LeaveEncashmentCalculatorClient() {
   const assumptionBullets = useMemo(
     () => [
       "Gross encashment = (Basic+DA monthly ÷ day basis) × unused leave days.",
-      "Day basis 26 is common in Indian payroll “per day” calculations; 30 is a calendar-day style alternative.",
+      "Day basis 26 is common in Indian payroll \"per day\" calculations; 30 is a calendar-day style alternative.",
       "Tax exemptions (e.g., Section 10(10AA) where applicable) are not calculated here.",
       "Employers may use Basic-only, caps, or rounding rules not modeled.",
     ],
@@ -160,7 +160,7 @@ export function LeaveEncashmentCalculatorClient() {
 
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Enter Basic+DA and leave days to estimate gross encashment.
           </div>
         ) : (
@@ -198,7 +198,7 @@ export function LeaveEncashmentCalculatorClient() {
           {
             question: "Why two day bases?",
             answer:
-              "Companies differ. If you don’t know, compare both and treat the range as uncertainty, not precision.",
+              "Companies differ. If you don't know, compare both and treat the range as uncertainty, not precision.",
           },
         ]}
       />

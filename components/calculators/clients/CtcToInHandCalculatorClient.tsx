@@ -185,7 +185,7 @@ export function CtcToInHandCalculatorClient() {
       intro="Estimate monthly take-home from annual gross using centralized tax + PF logic. If you only know Basic+DA, we can derive PF; if you know PF, enter it directly."
     >
       <p className="text-sm text-foreground-secondary">
-        Output is a <strong>modeled estimate</strong> from FY slabs + PF rules in code — not your employer’s payroll
+        Output is a <strong>modeled estimate</strong> from FY slabs + PF rules in code — not your employer's payroll
         system. Ambiguous inputs are blocked with an explicit message (see accuracy card).
       </p>
 
@@ -238,7 +238,7 @@ export function CtcToInHandCalculatorClient() {
           <FormField
             label="Professional tax (annual, ₹)"
             id="pt"
-            hint="Replace the default with your state’s realistic annual PT if known."
+            hint="Replace the default with your state's realistic annual PT if known."
           >
             <Input id="pt" inputMode="decimal" value={pt} onChange={(e) => setPt(e.target.value)} />
           </FormField>
@@ -282,7 +282,7 @@ export function CtcToInHandCalculatorClient() {
 
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Provide gross salary and PF inputs (one method), then calculate to see estimated in-hand.
           </div>
         ) : (
@@ -399,7 +399,7 @@ export function CtcToInHandCalculatorClient() {
       <FaqSection
         items={[
           {
-            question: "Why can’t I enter PF and Basic+DA together?",
+            question: "Why can't I enter PF and Basic+DA together?",
             answer:
               "The engine needs a single PF source to avoid double-counting. Use payslip PF if you have it; otherwise use Basic+DA to derive PF under configured assumptions.",
           },

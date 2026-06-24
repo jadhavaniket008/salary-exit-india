@@ -1,4 +1,4 @@
-import { SalaryHikeCalculatorClient } from "@/components/calculators/clients/SalaryHikeCalculatorClient";
+﻿import { SalaryHikeCalculatorClient } from "@/components/calculators/clients/SalaryHikeCalculatorClient";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
 export const metadata = calculatorMetadata("salaryHike");
@@ -9,16 +9,16 @@ export default function SalaryHikeCalculatorPage() {
       <SalaryHikeCalculatorClient />
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-10 sm:px-6">
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             How salary hike percentage is calculated (and why it can mislead)
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             A salary hike percentage is simple math: (New CTC − Old CTC) ÷ Old CTC × 100. HR
             communications, benchmark reports, and LinkedIn discussions all use this figure. But the
             percentage hike on CTC and the actual change in your monthly in-hand salary are often
             meaningfully different, and the gap tends to widen at higher salary levels.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             Why: as your income crosses tax slab thresholds, each additional rupee of gross salary
             is partly absorbed by higher marginal tax. A 15% CTC hike from ₹15 LPA to ₹17.25 LPA
             moves more income into the 15–20% new regime slab (or 20–30% old regime slab), making
@@ -27,14 +27,14 @@ export default function SalaryHikeCalculatorPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             The tax bracket effect: where increments feel smallest
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             Income tax in India is progressive, but the slab transitions create zones where a salary
             increment has a disproportionately low in-hand impact. Under the new regime for FY 2025-26:
           </p>
-          <ul className="list-inside list-disc space-y-2 text-zinc-600 dark:text-zinc-400">
+          <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
               <strong>Around ₹12 LPA:</strong> The Section 87A rebate creates a sharp transition.
               Income below ₹12 lakh (after standard deduction) attracts zero tax. Income ₹1 above
@@ -55,20 +55,20 @@ export default function SalaryHikeCalculatorPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             CTC hike vs in-hand hike: worked example
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             Employee currently earning ₹12 LPA gross, new regime. After-hike: ₹15 LPA gross.
             CTC hike: 25%.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             Old in-hand (approximate, new regime, no PT, basic PF): ₹85,000/month. New in-hand
             (approximate): ₹1,02,000/month. That is a 20% in-hand increase — less than the 25% CTC
             hike, because the additional ₹3 LPA falls partly in the 10–15% slabs and the 87A rebate
             no longer applies in full.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             The gap is not a mistake or unfairness — it is how progressive taxation works. But it is
             important to know this before entering a salary negotiation or comparing net pay from
             your new offer to your current payslip.
@@ -76,15 +76,15 @@ export default function SalaryHikeCalculatorPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             What to negotiate beyond the CTC number
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             If you are approaching a performance review or a job switch negotiation, the CTC number
             is only part of the story. Components that affect your in-hand without changing your
             nominal CTC significantly:
           </p>
-          <ul className="list-inside list-disc space-y-2 text-zinc-600 dark:text-zinc-400">
+          <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
               <strong>LTA (Leave Travel Allowance):</strong> Exempt from tax if actual travel bills
               are submitted under the old regime. Adding LTA to your structure shifts some gross to

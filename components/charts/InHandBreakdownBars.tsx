@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "motion/react";
 
@@ -21,13 +21,13 @@ export function InHandBreakdownBars({
   const g = Math.max(grossMonthly, 1e-9);
   return (
     <motion.div
-      className="space-y-3 rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950"
+      className="space-y-3 rounded-xl border border-border bg-surface p-4"
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
     >
-      <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">{title}</p>
-      <div className="flex h-8 w-full overflow-hidden rounded-lg bg-zinc-100 dark:bg-zinc-900">
+      <p className="text-sm font-medium text-foreground">{title}</p>
+      <div className="flex h-8 w-full overflow-hidden rounded-lg bg-border/30">
         {rows.map((r) => {
           const pct = Math.max(0, Math.min(100, (Math.abs(r.amount) / g) * 100));
           const bg =
@@ -48,10 +48,10 @@ export function InHandBreakdownBars({
           );
         })}
       </div>
-      <ul className="grid gap-1 text-xs text-zinc-600 dark:text-zinc-400 sm:grid-cols-2">
+      <ul className="grid gap-1 text-xs text-foreground-secondary sm:grid-cols-2">
         {rows.map((r) => (
           <li key={r.label}>
-            <span className="font-medium text-zinc-800 dark:text-zinc-200">{r.label}:</span>{" "}
+            <span className="font-medium text-foreground">{r.label}:</span>{" "}
             {r.amount.toLocaleString("en-IN", { maximumFractionDigits: 0 })}
           </li>
         ))}

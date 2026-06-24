@@ -7,7 +7,7 @@ interface Props {
 export function CaConsultCta({ variant = "card" }: Props) {
   if (variant === "inline") {
     return (
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         Want a CA to verify these numbers for your situation?{" "}
         <a
           href={`https://tally.so/r/${TALLY_FORM_ID}`}

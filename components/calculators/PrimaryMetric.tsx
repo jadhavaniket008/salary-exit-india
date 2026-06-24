@@ -24,9 +24,9 @@ export function PrimaryMetric({ label, value, animate, helperText }: Props) {
       prev.current = value;
       void controls.start({
         boxShadow: [
-          "0 0 0 0px rgba(234, 179, 8, 0)",
-          "0 0 0 3px rgba(234, 179, 8, 0.45)",
-          "0 0 0 0px rgba(234, 179, 8, 0)",
+          "0 0 0 0px rgba(41, 160, 94, 0)",
+          "0 0 0 3px rgba(41, 160, 94, 0.35)",
+          "0 0 0 0px rgba(41, 160, 94, 0)",
         ],
         transition: { duration: 0.75, ease: "easeOut" },
       });
@@ -36,9 +36,9 @@ export function PrimaryMetric({ label, value, animate, helperText }: Props) {
   return (
     <motion.div
       animate={controls}
-      className="rounded-2xl border border-zinc-200 bg-gradient-to-b from-white to-zinc-50 p-6 shadow-sm dark:border-zinc-800 dark:from-zinc-950 dark:to-zinc-950/80"
+      className="rounded-2xl border border-border bg-surface p-6 shadow-sm"
     >
-      <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+      <p className="text-xs font-semibold uppercase tracking-wide text-foreground-muted">
         {label}
       </p>
       <motion.p
@@ -46,12 +46,12 @@ export function PrimaryMetric({ label, value, animate, helperText }: Props) {
         initial={{ opacity: 0.85, scale: 0.995 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.25 }}
-        className="mt-2 text-3xl font-semibold tabular-nums tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl"
+        className="mt-2 text-3xl font-bold tabular-nums tracking-tight text-foreground sm:text-4xl"
       >
         {formatInr(display)}
       </motion.p>
       {helperText ? (
-        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        <p className="mt-2 text-sm text-foreground-secondary">
           {helperText}
         </p>
       ) : null}

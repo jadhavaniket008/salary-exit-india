@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPageLayout, legalBreadcrumbs } from "@/components/legal/LegalPageLayout";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -39,7 +39,7 @@ export default function ContactPage() {
           <strong>Placeholder only.</strong> The address above is a documented default (
           <code className="text-xs">contact@example.com</code>) until you set a real inbox. Site operators
           should set{" "}
-          <code className="rounded bg-white/80 px-1 text-xs dark:bg-zinc-900">NEXT_PUBLIC_CONTACT_EMAIL</code>{" "}
+          <code className="rounded bg-surface-raised px-1 text-xs">NEXT_PUBLIC_CONTACT_EMAIL</code>{" "}
           in the hosting environment (see <code className="text-xs">.env.example</code>) so visitors reach a
           monitored mailbox.
         </p>
@@ -68,7 +68,7 @@ export default function ContactPage() {
         <li>Browser and device type (helps with UI issues).</li>
       </ul>
 
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         For filing and compliance, consult a qualified professional in your jurisdiction.{" "}
         <Link href={ROUTES.disclaimer} className="font-medium underline">
           Disclaimer

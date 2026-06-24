@@ -217,10 +217,10 @@ export function SalaryRealityCheckCalculatorClient({
               Reality check
             </h2>
             <p className="text-sm leading-relaxed text-teal-950/90 dark:text-teal-100/90">
-              CTC is a headline; <strong>rent is usually the villain</strong> in Indian metros. This tool doesn’t judge your choices — it shows, under editable defaults, whether there’s any cushion left after tax/PF and a lifestyle-shaped month. If the verdict feels harsh, the fix is often ₹5–15k rent or one lifestyle tier, not a lecture.
+              CTC is a headline; <strong>rent is usually the villain</strong> in Indian metros. This tool doesn't judge your choices — it shows, under editable defaults, whether there's any cushion left after tax/PF and a lifestyle-shaped month. If the verdict feels harsh, the fix is often ₹5–15k rent or one lifestyle tier, not a lecture.
             </p>
             <p className="text-sm leading-relaxed text-teal-950/90 dark:text-teal-100/90">
-              It works best when you’re comparing two offers, two cities, or “can I afford this lease?” It does <strong>not</strong> replace a budget with your actual card statements — override every expense line until it feels like your life, not ours.
+              It works best when you're comparing two offers, two cities, or "can I afford this lease?" It does <strong>not</strong> replace a budget with your actual card statements — override every expense line until it feels like your life, not ours.
             </p>
           </section>
 
@@ -291,7 +291,7 @@ export function SalaryRealityCheckCalculatorClient({
           </fieldset>
 
           {!embed ? (
-            <div className="rounded-xl border border-zinc-200 bg-zinc-50/80 p-4 text-sm dark:border-zinc-700 dark:bg-zinc-900/50">
+            <div className="rounded-xl border border-border bg-surface-subtle p-4 text-sm">
               <p className="font-medium text-foreground">How default expenses are chosen</p>
               <p className="mt-2 text-foreground-secondary">{SALARY_REALITY_EXPENSE_METHODOLOGY.summary}</p>
               <p className="mt-2 text-foreground-secondary">
@@ -430,7 +430,7 @@ export function SalaryRealityCheckCalculatorClient({
 
       <section aria-live="polite" className="space-y-4">
         {!canShowResult ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Enter valid annual CTC and monthly rent to see estimated in-hand, modeled spend, savings, and a verdict.
             Change tax regime, Basic+DA %, or any expense line — numbers update as you type.
           </div>
@@ -497,13 +497,13 @@ export function SalaryRealityCheckCalculatorClient({
             ) : null}
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
+              <div className="rounded-2xl border border-border bg-surface p-4">
                 <p className="text-xs font-semibold uppercase text-foreground-muted">Total modeled monthly expenses</p>
                 <p className="mt-2 text-2xl font-semibold tabular-nums text-foreground">
                   {formatInr(result.totalMonthlyExpenses)}
                 </p>
               </div>
-              <div className="rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
+              <div className="rounded-2xl border border-border bg-surface p-4">
                 <p className="text-xs font-semibold uppercase text-foreground-muted">Savings ratio</p>
                 <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-800 dark:text-emerald-200">
                   {result.inHandMonthly > 0
@@ -555,7 +555,7 @@ export function SalaryRealityCheckCalculatorClient({
             </p>
           </WorkedExample>
 
-          <section className="flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-zinc-50/80 p-4 dark:border-zinc-800 dark:bg-zinc-900/40 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+          <section className="flex flex-col gap-3 rounded-2xl border border-border bg-surface-subtle p-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
             <div>
               <p className="text-sm font-semibold text-foreground">Next steps</p>
               <p className="text-xs text-foreground-secondary">
@@ -568,14 +568,14 @@ export function SalaryRealityCheckCalculatorClient({
               </Button>
               <Link
                 href={ROUTES.offerComparisonCalculator}
-                className="inline-flex items-center justify-center rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white dark:bg-zinc-100 dark:text-zinc-900"
+                className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
                 onClick={() => trackOfferCompareClick("salary_reality_next_steps")}
               >
                 Compare with another offer
               </Link>
               <Link
                 href={ROUTES.ctcToInHandCalculator}
-                className="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-900 dark:border-zinc-600 dark:bg-zinc-950 dark:text-zinc-100"
+                className="inline-flex items-center justify-center rounded-lg border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground transition hover:bg-surface-subtle"
               >
                 Open CTC → in-hand detail
               </Link>
@@ -609,7 +609,7 @@ export function SalaryRealityCheckCalculatorClient({
     <CalculatorPageLayout
       slug="salaryRealityCheck"
       title="Salary Reality Check — rent vs savings left"
-      intro="Paste your CTC (as gross for tax), your rent, and a lifestyle tier — we estimate in-hand after tax/PF, stack a transparent month of non-rent spend, and show what’s left to save. Built for offers and city trade-offs; not a substitute for your bank statement or tax filing."
+      intro="Paste your CTC (as gross for tax), your rent, and a lifestyle tier — we estimate in-hand after tax/PF, stack a transparent month of non-rent spend, and show what's left to save. Built for offers and city trade-offs; not a substitute for your bank statement or tax filing."
     >
       {main}
     </CalculatorPageLayout>

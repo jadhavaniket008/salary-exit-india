@@ -37,7 +37,7 @@ export function StickyMobileCta() {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Link
               href={ROUTES.calculators}
-              className="flex items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-900 px-4 py-3 text-center text-sm font-semibold text-white shadow-lg transition-shadow hover:shadow-xl dark:border-zinc-700 dark:bg-zinc-100 dark:text-zinc-900"
+              className="flex items-center justify-center rounded-2xl bg-accent px-4 py-3 text-center text-sm font-semibold text-white shadow-lg transition-shadow hover:shadow-xl"
             >
               Open calculators
             </Link>

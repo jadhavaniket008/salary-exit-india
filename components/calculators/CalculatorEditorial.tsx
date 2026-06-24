@@ -1,10 +1,10 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { CalculatorSlug } from "@/lib/routes";
 import { ROUTES } from "@/lib/routes";
 
 function Section({ children }: { children: React.ReactNode }) {
   return (
-    <section className="space-y-4 rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950">
+    <section className="space-y-4 rounded-xl border border-border bg-surface p-5">
       {children}
     </section>
   );
@@ -12,19 +12,19 @@ function Section({ children }: { children: React.ReactNode }) {
 
 function H2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">{children}</h2>
+    <h2 className="text-base font-semibold text-foreground">{children}</h2>
   );
 }
 
 function P({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{children}</p>
+    <p className="text-sm leading-relaxed text-foreground-secondary">{children}</p>
   );
 }
 
 function OL({ children }: { children: React.ReactNode }) {
   return (
-    <ol className="list-decimal list-inside space-y-1.5 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+    <ol className="list-decimal list-inside space-y-1.5 text-sm leading-relaxed text-foreground-secondary">
       {children}
     </ol>
   );
@@ -32,7 +32,7 @@ function OL({ children }: { children: React.ReactNode }) {
 
 function UL({ children }: { children: React.ReactNode }) {
   return (
-    <ul className="list-disc list-inside space-y-1.5 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+    <ul className="list-disc list-inside space-y-1.5 text-sm leading-relaxed text-foreground-secondary">
       {children}
     </ul>
   );
@@ -125,7 +125,7 @@ function SalaryEditorial() {
         collect it. Rates vary by state and income band, but for salaried employees the
         maximum annual liability is typically ₹2,400–₹3,000. It is deducted from your
         gross before income tax is calculated in some interpretations, though the exact
-        treatment depends on the employer’s payroll system.
+        treatment depends on the employer's payroll system.
       </P>
       <UL>
         <li>Gross salary = Basic + HRA + Special allowance + all taxable monthly components.</li>
@@ -143,7 +143,7 @@ function TaxRegimeEditorial() {
     <Section>
       <H2>Old vs new income tax regime: what the choice actually means</H2>
       <P>
-        India’s dual tax regime system allows salaried employees to choose between two
+        India's dual tax regime system allows salaried employees to choose between two
         completely different frameworks for computing income tax. The choice — made once
         at the start of each financial year for TDS purposes, and finalised at filing —
         has a meaningful impact on how much monthly cash you keep.
@@ -159,7 +159,7 @@ function TaxRegimeEditorial() {
       <P>
         The old regime uses lower slab rates only after you subtract significant
         deductions. The ₹50,000 standard deduction applies, plus: Section 80C investments
-        up to ₹1.5 lakh (PF, ELSS, PPF, LIC premiums, home loan principal, children’s
+        up to ₹1.5 lakh (PF, ELSS, PPF, LIC premiums, home loan principal, children's
         tuition fees), HRA exemption under Section 10(13A) if you pay rent, NPS deductions
         under Section 80CCD, and home loan interest under Section 24. An employee with
         high rent, maximum 80C use, and NPS contributions can reduce taxable income by
@@ -213,11 +213,11 @@ function HraEditorial() {
         defaulting to whichever their employer assumed. The HRA exemption can reduce
         taxable income substantially for someone paying ₹20,000–₹40,000/month in rent
         in a metro city — sometimes making the old regime the better choice even accounting
-        for the new regime’s lower slab rates.
+        for the new regime's lower slab rates.
       </P>
       <P>
         Documentation matters: HRA exemption can be claimed at filing time with actual
-        rent receipts, but if the annual rent exceeds ₹1 lakh, the landlord’s PAN is
+        rent receipts, but if the annual rent exceeds ₹1 lakh, the landlord's PAN is
         required. Employers typically collect rent declarations and receipts mid-year and
         adjust TDS accordingly. If you forget to submit proofs on time, you can still
         claim the exemption at ITR filing — but you may face excess TDS during the year.
@@ -227,7 +227,7 @@ function HraEditorial() {
         <li>Metro cities: 50% of Basic applies (Mumbai, Delhi, Kolkata, Chennai).</li>
         <li>Non-metro: 40% of Basic applies.</li>
         <li>Landlord PAN required if annual rent exceeds ₹1 lakh.</li>
-        <li>Exemption is on Basic salary, not gross — so “Basic” definition in your CTC letter matters.</li>
+        <li>Exemption is on Basic salary, not gross — so "Basic" definition in your CTC letter matters.</li>
       </UL>
     </Section>
   );
@@ -238,7 +238,7 @@ function EpfEditorial() {
     <Section>
       <H2>EPF contributions: what PF wage means and why it matters</H2>
       <P>
-        Employees’ Provident Fund (EPF) is the statutory retirement savings scheme that
+        Employees' Provident Fund (EPF) is the statutory retirement savings scheme that
         applies to establishments with 20 or more employees in India. For salaried
         employees covered by EPF, the scheme determines a mandatory deduction from
         your payslip every month — and a matching employer contribution. Understanding
@@ -254,10 +254,10 @@ function EpfEditorial() {
         may have different PF deductions if their Basic+DA splits differ.
       </P>
       <P>
-        Of the employer’s 12% contribution, 8.33% goes to the Employees’ Pension Scheme
+        Of the employer's 12% contribution, 8.33% goes to the Employees' Pension Scheme
         (EPS) — capped at a wage ceiling defined by EPFO rules — and the remainder goes
-        into the EPF corpus. The employee’s full 12% goes to EPF. When you see “employer
-        PF” in a CTC breakup, it includes both these streams. Employees cannot access the
+        into the EPF corpus. The employee's full 12% goes to EPF. When you see "employer
+        PF" in a CTC breakup, it includes both these streams. Employees cannot access the
         EPS share directly at withdrawal — it is part of the pension fund and has
         different rules at retirement. These nuances are why employer PF in CTC does not
         translate linearly to your EPF balance.
@@ -291,18 +291,18 @@ function GratuityEditorial() {
         It applies to establishments with 10 or more employees. For most private-sector
         salaried employees in India, gratuity becomes payable after completing five years
         of continuous service — though the exact minimum-service rule has court
-        interpretations worth verifying with your employer’s HR.
+        interpretations worth verifying with your employer's HR.
       </P>
       <P>
         The formula used by most covered employers is: <em>Monthly basic salary × 15 × years
-        of service ÷ 26</em>. The “26” represents a standard working-month denominator; the
-        “15” represents 15 days’ salary per year of service. Monthly basic salary here means
+        of service ÷ 26</em>. The "26" represents a standard working-month denominator; the
+        "15" represents 15 days' salary per year of service. Monthly basic salary here means
         the last drawn Basic + DA, not gross. This means the gratuity quantum is directly
         sensitive to your Basic+DA — a low Basic salary at a high-CTC company will produce a
         lower gratuity than the same gross at a company with a higher Basic structure.
       </P>
       <P>
-        Tax treatment depends on your employer’s coverage status. For employees covered
+        Tax treatment depends on your employer's coverage status. For employees covered
         under the Payment of Gratuity Act (10+ employees), gratuity received is exempt
         from income tax up to a statutory ceiling. Beyond that ceiling, the excess is
         taxable as salary income. For employers not covered by the Act (fewer than 10
@@ -336,16 +336,16 @@ function NoticeBuyoutEditorial() {
       <H2>Notice period buyout in India: how it is calculated and what to watch for</H2>
       <P>
         When an employee in India leaves a job without serving the full contractual notice
-        period, the shortfall is typically offset by a “notice period buyout” or “notice
-        pay” — a deduction from the final settlement equal to the salary that would have
+        period, the shortfall is typically offset by a "notice period buyout" or "notice
+        pay" — a deduction from the final settlement equal to the salary that would have
         been earned during the unserved notice days. Similarly, if the employer asks the
         employee to leave without serving notice, the employer pays the employee an
         equivalent amount as notice pay in lieu.
       </P>
       <P>
-        The question of what “salary” means in this context is where variation enters.
+        The question of what "salary" means in this context is where variation enters.
         Most employment agreements define notice pay as the basic monthly salary, or the
-        “gross monthly salary” as defined in the contract. Some contracts specify CTC/12.
+        "gross monthly salary" as defined in the contract. Some contracts specify CTC/12.
         Variable pay, bonuses, and allowances are typically excluded from notice pay
         calculations — but this depends entirely on your employment agreement wording.
         Reading your appointment letter carefully before negotiating a short exit is
@@ -368,10 +368,10 @@ function NoticeBuyoutEditorial() {
         amounts are significant.
       </P>
       <UL>
-        <li>Check whether your contract says “basic” or “gross” or “CTC/12” for notice pay calculation.</li>
+        <li>Check whether your contract says "basic" or "gross" or "CTC/12" for notice pay calculation.</li>
         <li>Variable pay and bonuses are usually excluded from notice pay — verify contractually.</li>
         <li>Calendar day method vs 30-day month method can differ by a few thousand rupees — clarify with HR.</li>
-        <li>Notice period waivers are at employer’s discretion — negotiate rather than assume.</li>
+        <li>Notice period waivers are at employer's discretion — negotiate rather than assume.</li>
         <li>Notice pay received by the employee is taxable as salary income.</li>
       </UL>
     </Section>
@@ -384,19 +384,19 @@ function LeaveEncashmentEditorial() {
       <H2>Leave encashment in India: how the per-day rate and tax rules work</H2>
       <P>
         Leave encashment is the cash equivalent you receive for unused earned leave (EL)
-        when you leave a job or, in some companies, at the employer’s discretion during
+        when you leave a job or, in some companies, at the employer's discretion during
         service. Private-sector employees typically accumulate earned leave at a rate
-        defined by their company’s leave policy, often 1–1.5 days per month (12–18 days
+        defined by their company's leave policy, often 1–1.5 days per month (12–18 days
         per year), with a maximum carryforward cap set by the employer.
       </P>
       <P>
         The per-day rate for encashment is calculated from your Basic + DA (or
-        “basic salary” as defined in the leave policy), divided by either 26 or 30.
+        "basic salary" as defined in the leave policy), divided by either 26 or 30.
         The 26-day denominator treats a month as 26 working days — a convention common
         in the Payment of Gratuity Act and some employer policies. The 30-day denominator
         uses the calendar month. Whichever method your employer uses determines the
         per-day value of each encashed leave day. This calculator lets you choose the
-        denominator to match your company’s policy.
+        denominator to match your company's policy.
       </P>
       <P>
         Tax treatment differs by employment type. Central and state government employees
@@ -437,7 +437,7 @@ function FinalSettlementEditorial() {
         through adjustment against accrued salary or gratuity).
       </P>
       <P>
-        Typical FnF credit components include: last month’s salary (for days worked),
+        Typical FnF credit components include: last month's salary (for days worked),
         leave encashment of accumulated earned leave (subject to company policy and
         tax rules), gratuity if eligible (5+ years, covered employer), bonus arrears
         if applicable and unpaid, and notice pay received from employer if asked to leave
@@ -504,13 +504,13 @@ function OfferComparisonEditorial() {
         The Basic+DA split also matters: a company with a low Basic (30–35% of gross) will
         produce lower employee PF deductions, slightly higher monthly in-hand, but also
         lower gratuity accrual and potentially lower leave encashment. A company with
-        40–50% Basic has higher statutory deductions but more “employer-paid” retirement
+        40–50% Basic has higher statutory deductions but more "employer-paid" retirement
         benefits. Neither is universally better — it depends on your priorities. Use this
         calculator to compare net in-hand after PF across offer structures.
       </P>
       <UL>
         <li>Compare fixed gross first, not CTC — strip variable pay from headline offers.</li>
-        <li>Amortize joining bonuses over a realistic tenure before counting them as “salary”.</li>
+        <li>Amortize joining bonuses over a realistic tenure before counting them as "salary".</li>
         <li>Higher Basic+DA = higher PF, higher gratuity, slightly lower in-hand — different risk profile.</li>
         <li>Factor ESOPs separately: vesting schedules, strike price, and liquidity events are not salary.</li>
         <li>City cost of living matters more than CTC at similar gross levels — ₹18 LPA in Pune ≠ ₹18 LPA in Mumbai.</li>
@@ -559,7 +559,7 @@ function SalaryHikeEditorial() {
         <li>Hike % × current CTC = absolute CTC addition (before tax/PF changes).</li>
         <li>The effective monthly in-hand gain is lower than CTC gain due to progressive tax and PF.</li>
         <li>A restructured salary on a switch may have different Basic+DA ratios than a simple increment.</li>
-        <li>Always verify what “CTC” means in a revised letter: same components, or restructured?</li>
+        <li>Always verify what "CTC" means in a revised letter: same components, or restructured?</li>
         <li>Negotiate on fixed monthly in-hand, not CTC, when the structure is uncertain.</li>
       </UL>
     </Section>
@@ -582,9 +582,9 @@ function SalaryRealityCheckEditorial() {
         The spending tier categories in the calculator (basic, moderate, premium) represent
         real-world ranges observed across Indian cities and income levels. They are not
         exact — your specific lifestyle will differ — but they give you a starting structure.
-        In many Indian metros, a “moderate” lifestyle for a single professional includes
+        In many Indian metros, a "moderate" lifestyle for a single professional includes
         meals (home-cooked and eating out), transport (auto, metro, occasional ride-hail),
-        personal care, and phone/internet. The “premium” tier adds higher discretionary
+        personal care, and phone/internet. The "premium" tier adds higher discretionary
         spend, more frequent dining out, gym memberships, and similar costs.
       </P>
       <P>
@@ -594,7 +594,7 @@ function SalaryRealityCheckEditorial() {
         ₹45,000/month consumes a much larger fraction of in-hand than a comparable unit
         in Pune at ₹18,000/month. This calculator does not hardcode city benchmarks —
         it asks for your actual rent, which makes the output more useful than generic
-        “cost of living” comparisons.
+        "cost of living" comparisons.
       </P>
       <P>
         A practical savings target: financial planners in India commonly suggest saving

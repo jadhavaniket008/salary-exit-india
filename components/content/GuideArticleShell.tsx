@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+﻿import type { ReactNode } from "react";
 import Link from "next/link";
 import { Container, Section } from "@/components/ui";
 import type { BreadcrumbItem } from "@/lib/seo/breadcrumbs";
@@ -79,16 +79,16 @@ export function GuideArticleShell({
         <Container className="max-w-3xl space-y-8">
           <BreadcrumbNav items={breadcrumbs} />
           <header className="space-y-3">
-            <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+            <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               {title}
             </h1>
-            <p className="text-base text-zinc-600 dark:text-zinc-400">{intro}</p>
+            <p className="text-base text-foreground-secondary">{intro}</p>
             {(lastUpdated || methodologyHref !== false) && (
-              <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2 border-b border-zinc-200 pb-6 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
+              <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2 border-b border-border pb-6 text-sm text-foreground-muted">
                 {lastUpdated ? (
                   <span>
                     Last updated:{" "}
-                    <time dateTime={lastUpdatedIso ?? undefined} className="text-zinc-700 dark:text-zinc-300">
+                    <time dateTime={lastUpdatedIso ?? undefined} className="text-foreground-secondary">
                       {lastUpdated}
                     </time>
                   </span>
@@ -96,7 +96,7 @@ export function GuideArticleShell({
                 {methodologyHref !== false ? (
                   <Link
                     href={methodologyHref ?? ROUTES.methodology}
-                    className="font-medium text-zinc-800 underline underline-offset-2 dark:text-zinc-200"
+                    className="font-medium text-foreground underline underline-offset-2"
                   >
                     Methodology & calculator assumptions
                   </Link>
@@ -112,39 +112,39 @@ export function GuideArticleShell({
           {clusterSpec && clusterEnough.length >= 2 ? (
             <section
               aria-labelledby="guide-cluster-links-heading"
-              className="rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950"
+              className="rounded-xl border border-border bg-surface p-4"
             >
               <h2
                 id="guide-cluster-links-heading"
-                className="text-base font-semibold text-zinc-900 dark:text-zinc-50"
+                className="text-base font-semibold text-foreground"
               >
                 Put it in context: city rent + one calculator
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{clusterSpec.intro}</p>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-zinc-500">
-                “Is this salary enough?” scenarios
+              <p className="mt-2 text-sm leading-relaxed text-foreground-secondary">{clusterSpec.intro}</p>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-foreground-muted">
+                "Is this salary enough?" scenarios
               </p>
-              <ul className="mt-2 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+              <ul className="mt-2 space-y-2 text-sm text-foreground-secondary">
                 {clusterEnough.map((item) => (
                   <li key={item.slug}>
                     <Link
                       href={salaryEnoughPath(item.slug)}
-                      className="font-medium text-zinc-900 underline underline-offset-2 dark:text-zinc-100"
+                      className="font-medium text-foreground underline underline-offset-2"
                     >
                       {item.title}
                     </Link>
-                    <span className="text-zinc-500 dark:text-zinc-400"> · {item.city}</span>
+                    <span className="text-foreground-muted"> · {item.city}</span>
                   </li>
                 ))}
               </ul>
               <p className="mt-4 text-sm">
                 <Link
                   href={clusterSpec.calculatorHref}
-                  className="font-semibold text-zinc-900 underline underline-offset-2 dark:text-zinc-100"
+                  className="font-semibold text-foreground underline underline-offset-2"
                 >
                   {clusterSpec.calculatorLabel}
                 </Link>
-                <span className="text-zinc-600 dark:text-zinc-400"> — same engines as the rest of SalaryExit.</span>
+                <span className="text-foreground-secondary"> — same engines as the rest of SalaryExit.</span>
               </p>
             </section>
           ) : null}
@@ -157,9 +157,9 @@ export function GuideArticleShell({
 
           <AdSlot position="before-footer" label="Advertisement" />
 
-          <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-900/40">
-            <p className="font-medium text-zinc-900 dark:text-zinc-100">Keep exploring</p>
-            <ul className="mt-2 space-y-1 text-zinc-700 dark:text-zinc-300">
+          <div className="rounded-xl border border-border bg-surface-subtle p-4 text-sm">
+            <p className="font-medium text-foreground">Keep exploring</p>
+            <ul className="mt-2 space-y-1 text-foreground-secondary">
               <li>
                 <Link className="underline" href="/calculators">
                   Browse all calculators

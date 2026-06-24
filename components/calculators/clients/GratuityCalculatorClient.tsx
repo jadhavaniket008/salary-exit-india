@@ -113,7 +113,7 @@ export function GratuityCalculatorClient() {
           <FormField
             label="Last drawn monthly salary (Basic + DA, ₹)"
             id="monthly"
-            hint="Use the definition consistent with your employer’s gratuity policy."
+            hint="Use the definition consistent with your employer's gratuity policy."
           >
             <Input id="monthly" inputMode="decimal" value={monthly} onChange={(e) => setMonthly(e.target.value)} />
           </FormField>
@@ -142,7 +142,7 @@ export function GratuityCalculatorClient() {
 
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Enter service details to estimate gratuity and a rough exempt/taxable split.
           </div>
         ) : (

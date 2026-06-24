@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { GuideArticleShell } from "@/components/content/GuideArticleShell";
 import { JudgeSalaryGoodIndiaBody } from "@/components/content/guides/JudgeSalaryGoodIndiaBody";
 import { guideArticleMetadata } from "@/lib/content/guide-metadata";
@@ -22,7 +22,7 @@ const faq: FaqItem[] = [
       "Not if in-hand, rent, and loan load are worse. Compare the same tax and PF assumptions for each offer, then layer city rent.",
   },
   {
-    question: "Should I trust Reddit / Blind for “good salary” numbers?",
+    question: "Should I trust Reddit / Blind for \"good salary\" numbers?",
     answer:
       "Treat them as anecdotes. You need your rent, regime, and household costs — scenario pages and calculators beat crowdsourced LPA.",
   },

@@ -24,16 +24,16 @@ export function AffiliateCta({ context }: Props) {
   return (
     <aside
       aria-label="Explore related services"
-      className="space-y-4 rounded-xl border border-zinc-200 bg-zinc-50/60 p-5 dark:border-zinc-800 dark:bg-zinc-900/40"
+      className="space-y-4 rounded-xl border border-border bg-surface-subtle p-5"
     >
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-base font-semibold text-foreground">
             {HEADING[context]}
           </h2>
-          <p className="mt-0.5 text-sm text-zinc-600 dark:text-zinc-400">{SUBTEXT[context]}</p>
+          <p className="mt-0.5 text-sm text-foreground-secondary">{SUBTEXT[context]}</p>
         </div>
-        <span className="shrink-0 rounded-full border border-zinc-300/80 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-zinc-500 dark:border-zinc-700 dark:text-zinc-400">
+        <span className="shrink-0 rounded-full border border-border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-foreground-muted">
           Partner links
         </span>
       </div>
@@ -45,27 +45,27 @@ export function AffiliateCta({ context }: Props) {
             href={link.url}
             target="_blank"
             rel="nofollow sponsored noopener noreferrer"
-            className="group flex flex-col justify-between gap-3 rounded-xl border border-zinc-200 bg-white p-4 transition-colors hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-zinc-700 dark:hover:bg-zinc-900"
+            className="group flex flex-col justify-between gap-3 rounded-xl border border-border bg-surface p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md"
           >
             <div className="space-y-1.5">
               <div className="flex items-center gap-2">
-                <span className="font-semibold text-zinc-900 dark:text-zinc-50">{link.name}</span>
+                <span className="font-semibold text-foreground">{link.name}</span>
                 {link.badge && (
-                  <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">
+                  <span className="rounded-full bg-accent/10 px-2 py-0.5 text-[10px] font-semibold text-accent">
                     {link.badge}
                   </span>
                 )}
               </div>
-              <p className="text-sm leading-snug text-zinc-600 dark:text-zinc-400">{link.tagline}</p>
+              <p className="text-sm leading-snug text-foreground-secondary">{link.tagline}</p>
             </div>
-            <span className="text-sm font-medium text-zinc-800 underline-offset-2 group-hover:underline dark:text-zinc-200">
+            <span className="text-sm font-medium text-foreground underline-offset-2 group-hover:underline">
               {link.cta} →
             </span>
           </a>
         ))}
       </div>
 
-      <p className="text-[11px] leading-relaxed text-zinc-400 dark:text-zinc-500">
+      <p className="text-[11px] leading-relaxed text-foreground-muted">
         These are partner links. Clicking them may earn SalaryExit a small referral fee at no cost to you.
         We only link to services we can stand behind. This is not financial advice — verify suitability yourself.
       </p>

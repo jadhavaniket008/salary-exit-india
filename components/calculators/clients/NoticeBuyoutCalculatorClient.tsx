@@ -146,7 +146,7 @@ export function NoticeBuyoutCalculatorClient() {
             <FormField label="Month" id="month">
               <select
                 id="month"
-                className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-950"
+                className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 value={month}
                 onChange={(e) => setMonth(e.target.value)}
               >
@@ -169,7 +169,7 @@ export function NoticeBuyoutCalculatorClient() {
 
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Choose the month that your policy uses for day-counting (often the month of exit).
           </div>
         ) : (

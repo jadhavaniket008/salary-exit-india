@@ -125,11 +125,11 @@ export function TaxRegimeCalculatorClient() {
           Reality check
         </h2>
         <p className="text-sm leading-relaxed text-indigo-950/90 dark:text-indigo-100/90">
-          Most people don’t feel “tax regime” in the abstract — they feel rent, EMIs, and whether anything is left at month-end. This screen only answers{" "}
-          <strong>which regime taxes your salary harder in our simplified model</strong>. If old regime wins here but you hate collecting proofs, that’s a real-life cost this math ignores.
+          Most people don't feel "tax regime" in the abstract — they feel rent, EMIs, and whether anything is left at month-end. This screen only answers{" "}
+          <strong>which regime taxes your salary harder in our simplified model</strong>. If old regime wins here but you hate collecting proofs, that's a real-life cost this math ignores.
         </p>
         <p className="text-sm leading-relaxed text-indigo-950/90 dark:text-indigo-100/90">
-          New regime often looks clean until you remember you’re not modeling full HRA, home loan, or NPS the way your CA would. Use the result as a directional nudge, then talk to someone qualified before locking declarations for the year.
+          New regime often looks clean until you remember you're not modeling full HRA, home loan, or NPS the way your CA would. Use the result as a directional nudge, then talk to someone qualified before locking declarations for the year.
         </p>
       </section>
 
@@ -189,7 +189,7 @@ export function TaxRegimeCalculatorClient() {
 
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Enter gross salary (and optional deductions) to compare regimes.
           </div>
         ) : (
@@ -210,22 +210,22 @@ export function TaxRegimeCalculatorClient() {
 
             <CollapsibleBreakdown defaultOpen>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-lg border border-zinc-200 p-3 dark:border-zinc-800">
+                <div className="rounded-lg border border-border p-3">
                   <p className="text-xs font-semibold uppercase text-foreground-muted">Old regime</p>
-                  <p className="mt-2 text-sm text-zinc-600">Taxable income</p>
+                  <p className="mt-2 text-sm text-foreground-secondary">Taxable income</p>
                   <p className="text-lg font-semibold tabular-nums">{formatInr(result.oldRegime.taxableIncomeAnnual)}</p>
-                  <p className="mt-2 text-sm text-zinc-600">Total tax + cess</p>
+                  <p className="mt-2 text-sm text-foreground-secondary">Total tax + cess</p>
                   <p className="text-lg font-semibold tabular-nums">{formatInr(result.oldRegime.totalTaxAnnual)}</p>
                 </div>
-                <div className="rounded-lg border border-zinc-200 p-3 dark:border-zinc-800">
+                <div className="rounded-lg border border-border p-3">
                   <p className="text-xs font-semibold uppercase text-foreground-muted">New regime</p>
-                  <p className="mt-2 text-sm text-zinc-600">Taxable income</p>
+                  <p className="mt-2 text-sm text-foreground-secondary">Taxable income</p>
                   <p className="text-lg font-semibold tabular-nums">{formatInr(result.newRegime.taxableIncomeAnnual)}</p>
-                  <p className="mt-2 text-sm text-zinc-600">Total tax + cess</p>
+                  <p className="mt-2 text-sm text-foreground-secondary">Total tax + cess</p>
                   <p className="text-lg font-semibold tabular-nums">{formatInr(result.newRegime.totalTaxAnnual)}</p>
                 </div>
               </div>
-              <p className="mt-3 text-sm text-zinc-700 dark:text-zinc-300">
+              <p className="mt-3 text-sm text-foreground-secondary">
                 Lower regime in this model: <strong>{result.lowerRegime}</strong>.{" "}
                 Absolute gap: <strong>{formatInr(result.annualSavingsIfChooseLower)}</strong>.
               </p>
@@ -257,10 +257,10 @@ export function TaxRegimeCalculatorClient() {
           {
             question: "Should I choose the regime with lower tax here?",
             answer:
-              "Not automatically. This tool ignores many real-world factors. Your employer’s regime choice, deductions, and long-term plans matter.",
+              "Not automatically. This tool ignores many real-world factors. Your employer's regime choice, deductions, and long-term plans matter.",
           },
           {
-            question: "Why doesn’t this match Form 16?",
+            question: "Why doesn't this match Form 16?",
             answer:
               "Form 16 uses actual TDS, proofs, and payroll timing. This is an annualized simplified model.",
           },

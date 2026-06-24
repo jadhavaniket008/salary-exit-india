@@ -15,7 +15,7 @@ export function WorkedExample({
   return (
     <motion.section
       aria-labelledby="worked-example-heading"
-      className="rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950"
+      className="rounded-xl border border-border bg-surface p-4"
       initial={{ opacity: 0, y: 8 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-32px" }}
@@ -23,11 +23,11 @@ export function WorkedExample({
     >
       <h2
         id="worked-example-heading"
-        className="text-sm font-semibold text-zinc-900 dark:text-zinc-100"
+        className="text-sm font-semibold text-foreground"
       >
         {title}
       </h2>
-      <div className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+      <div className="mt-2 text-sm leading-relaxed text-foreground-secondary">
         {children}
       </div>
     </motion.section>

@@ -20,7 +20,7 @@ export function EstimateBadge({ variant = "estimate" }: { variant?: Variant }) {
   return (
     <span
       title={v.title}
-      className="inline-flex items-center rounded-full border border-zinc-300 bg-white px-2.5 py-0.5 text-xs font-medium text-zinc-700 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-200"
+      className="inline-flex items-center rounded-full border border-border bg-surface px-2.5 py-0.5 text-xs font-medium text-foreground-secondary"
     >
       {v.label}
     </span>

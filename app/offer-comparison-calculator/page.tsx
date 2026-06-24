@@ -1,4 +1,4 @@
-import { OfferComparisonCalculatorClient } from "@/components/calculators/clients/OfferComparisonCalculatorClient";
+﻿import { OfferComparisonCalculatorClient } from "@/components/calculators/clients/OfferComparisonCalculatorClient";
 import { AffiliateCta } from "@/components/monetization/AffiliateCta";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
@@ -10,10 +10,10 @@ export default function OfferComparisonCalculatorPage() {
       <OfferComparisonCalculatorClient />
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-10 sm:px-6">
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             Why comparing CTC numbers is the wrong starting point
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             The most common mistake in evaluating a job offer is leading with CTC. A ₹20 LPA offer
             from Company A vs ₹18 LPA from Company B looks like a clear winner for A. But the
             comparison collapses when you account for the actual variables: PF wage definitions
@@ -21,17 +21,17 @@ export default function OfferComparisonCalculatorPage() {
             differences (different cities), regime eligibility, and whether the CTC definition
             includes gratuity accrual.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             The only number that matters for monthly budgeting is <strong>net in-hand salary</strong>.
             Use this calculator to convert both offers to comparable in-hand figures before deciding.
           </p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             Five dimensions of a complete offer comparison
           </h2>
-          <ol className="list-inside list-decimal space-y-3 text-zinc-600 dark:text-zinc-400">
+          <ol className="list-inside list-decimal space-y-3 text-foreground-secondary">
             <li>
               <strong>Net in-hand monthly salary.</strong> Compute this for both offers using consistent
               assumptions (same regime, realistic PT, actual PF rule from the offer letter). This is
@@ -61,24 +61,24 @@ export default function OfferComparisonCalculatorPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-xl font-semibold text-foreground">
             The career capital dimension: what doesn&apos;t show in the calculator
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             A calculator can compare in-hand salary across two offers. It cannot compare what each
             job does to your market value in 3–5 years. This is the dimension that most systematically
             goes under-weighted in offer decisions.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             If Offer A pays ₹15 LPA but puts you in a leadership role building a product from scratch,
             your market value in 3 years may be ₹28–35 LPA. If Offer B pays ₹18 LPA but puts you in
             maintenance mode on a legacy system with little ownership, your market value may be ₹22 LPA.
             The ₹3 LPA differential today may become a ₹10–13 LPA differential by year 4.
           </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-foreground-secondary">
             Factors to assess qualitatively before making this calculation:
           </p>
-          <ul className="list-inside list-disc space-y-2 text-zinc-600 dark:text-zinc-400">
+          <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>Is the role hiring you for what you already know (extractive) or what you are trying to build (developmental)?</li>
             <li>What is the brand value of the company for your next job?</li>
             <li>What is the hiring team&apos;s track record — are former employees progressing in their careers?</li>

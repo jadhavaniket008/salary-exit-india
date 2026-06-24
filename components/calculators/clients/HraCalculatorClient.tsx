@@ -148,7 +148,7 @@ export function HraCalculatorClient() {
               Metro city (50% of Basic+DA cap)
             </label>
             <p className="text-xs text-foreground-muted">
-              If you’re unsure, treat “non-metro” as the conservative assumption for the % cap.
+              If you're unsure, treat "non-metro" as the conservative assumption for the % cap.
             </p>
           </fieldset>
 
@@ -159,7 +159,7 @@ export function HraCalculatorClient() {
 
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
-          <div className="rounded-xl border border-dashed border-zinc-300 bg-white/50 p-6 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-950/40 dark:text-zinc-400">
+          <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
             Fill all annual amounts to compute the minimum of the three tests.
           </div>
         ) : (

@@ -13,16 +13,16 @@ function FaqItemRow({ item }: { item: FaqItem }) {
 
   return (
     <details
-      className="group border-b border-zinc-200 px-4 py-3 last:border-b-0 dark:border-zinc-800 [&_summary::-webkit-details-marker]:hidden"
+      className="group border-b border-border px-4 py-3 last:border-b-0 [&_summary::-webkit-details-marker]:hidden"
       open={open}
       onToggle={(e) => setOpen(e.currentTarget.open)}
     >
-      <summary className="cursor-pointer list-none text-sm font-medium text-zinc-900 outline-none transition-colors hover:text-zinc-700 focus-visible:ring-2 focus-visible:ring-zinc-400 dark:text-zinc-100 dark:hover:text-zinc-200">
+      <summary className="cursor-pointer list-none text-sm font-medium text-foreground outline-none transition-colors hover:text-foreground-secondary focus-visible:ring-2 focus-visible:ring-accent/40">
         <span className="flex items-start justify-between gap-2">
           <span>{item.question}</span>
           <motion.span
             aria-hidden
-            className="mt-0.5 inline-block shrink-0 text-zinc-400"
+            className="mt-0.5 inline-block shrink-0 text-foreground-muted"
             animate={{ rotate: open ? 180 : 0 }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
           >
@@ -31,7 +31,7 @@ function FaqItemRow({ item }: { item: FaqItem }) {
         </span>
       </summary>
       <motion.p
-        className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400"
+        className="mt-2 text-sm leading-relaxed text-foreground-secondary"
         initial={false}
         animate={{ opacity: open ? 1 : 0.92 }}
         transition={{ duration: 0.2 }}
@@ -47,11 +47,11 @@ export function FaqSection({ items }: Props) {
     <section aria-labelledby="faq-heading" className="space-y-3">
       <h2
         id="faq-heading"
-        className="text-lg font-semibold text-zinc-900 dark:text-zinc-50"
+        className="text-lg font-semibold text-foreground"
       >
         FAQ
       </h2>
-      <div className="rounded-xl border border-zinc-200 dark:border-zinc-800">
+      <div className="rounded-xl border border-border">
         {items.map((item, idx) => (
           <FaqItemRow key={`${idx}-${item.question}`} item={item} />
         ))}

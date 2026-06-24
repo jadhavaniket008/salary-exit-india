@@ -59,15 +59,15 @@ export function ConsentBannerShell() {
           role="dialog"
           aria-modal="true"
           aria-labelledby="consent-title"
-          className="fixed bottom-0 left-0 right-0 z-[60] border-t border-zinc-200 bg-white/95 p-4 text-sm shadow-lg backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95"
+          className="fixed bottom-0 left-0 right-0 z-[60] border-t border-border bg-surface/95 p-4 text-sm shadow-lg backdrop-blur"
           initial={{ y: 48, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 48, opacity: 0 }}
           transition={{ type: "spring", stiffness: 420, damping: 34 }}
         >
           <div className="mx-auto flex max-w-5xl flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-            <div className="space-y-2 text-zinc-700 dark:text-zinc-300">
-              <p id="consent-title" className="font-semibold text-zinc-900 dark:text-zinc-50">
+            <div className="space-y-2 text-foreground-secondary">
+              <p id="consent-title" className="font-semibold text-foreground">
                 Cookies & privacy choices
               </p>
               <p>
@@ -82,14 +82,14 @@ export function ConsentBannerShell() {
             <div className="flex shrink-0 flex-col gap-2 sm:flex-row sm:items-center">
               <button
                 type="button"
-                className="rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-900 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100"
+                className="rounded-lg border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground transition hover:bg-surface-subtle"
                 onClick={rejectNonEssential}
               >
                 Reject non-essential
               </button>
               <button
                 type="button"
-                className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white dark:bg-zinc-100 dark:text-zinc-900"
+                className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
                 onClick={acceptAll}
               >
                 Accept all

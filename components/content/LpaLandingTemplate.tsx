@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Container, Section } from "@/components/ui";
 import { BreadcrumbNav } from "@/components/content/BreadcrumbNav";
 import { JsonLd } from "@/components/content/JsonLd";
@@ -66,16 +66,16 @@ export function LpaLandingTemplate({ config }: Props) {
           <BreadcrumbNav items={breadcrumbs} />
 
           <header className="space-y-3">
-            <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+            <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               ₹{config.lpa} LPA in India: estimated monthly in-hand salary
             </h1>
-            <p className="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-              Quick answer: under SalaryExit’s default scenario for this page (new regime, state PT placeholder,
+            <p className="text-base leading-relaxed text-foreground-secondary">
+              Quick answer: under SalaryExit's default scenario for this page (new regime, state PT placeholder,
               PF derived from an assumed Basic+DA split), estimated monthly in-hand is roughly{" "}
               <strong>{formatInr(result.inHandMonthly, { decimals: true })}</strong> before any additional payroll
               items not modeled here.
             </p>
-            <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">{config.angleParagraph}</p>
+            <p className="text-base leading-relaxed text-foreground-secondary">{config.angleParagraph}</p>
             <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <FreshnessBadges />
               <MethodologyLink />
@@ -101,41 +101,41 @@ export function LpaLandingTemplate({ config }: Props) {
           <AdSlot position="below-hero" label="Advertisement" />
 
           <section aria-labelledby="breakdown-heading" className="space-y-3">
-            <h2 id="breakdown-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+            <h2 id="breakdown-heading" className="text-xl font-semibold text-foreground">
               Monthly breakdown (illustrative)
             </h2>
-            <div className="overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-800">
+            <div className="overflow-x-auto rounded-xl border border-border">
               <table className="w-full min-w-[320px] text-left text-sm">
-                <thead className="bg-zinc-50 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400">
+                <thead className="bg-surface-subtle text-foreground-secondary">
                   <tr>
                     <th className="px-4 py-3 font-medium">Line</th>
                     <th className="px-4 py-3 font-medium">Monthly</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
+                <tbody className="divide-y divide-border">
                   <tr>
-                    <td className="px-4 py-3 text-zinc-800 dark:text-zinc-200">Gross</td>
+                    <td className="px-4 py-3 text-foreground">Gross</td>
                     <td className="px-4 py-3 tabular-nums">{formatInr(result.grossMonthly, { decimals: true })}</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-zinc-800 dark:text-zinc-200">Employee PF (estimate)</td>
+                    <td className="px-4 py-3 text-foreground">Employee PF (estimate)</td>
                     <td className="px-4 py-3 tabular-nums">
                       {formatInr(result.employeePfMonthly, { decimals: true })}
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-zinc-800 dark:text-zinc-200">Professional tax (placeholder)</td>
+                    <td className="px-4 py-3 text-foreground">Professional tax (placeholder)</td>
                     <td className="px-4 py-3 tabular-nums">
                       {formatInr(result.professionalTaxMonthly, { decimals: true })}
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-zinc-800 dark:text-zinc-200">TDS spread (estimate)</td>
+                    <td className="px-4 py-3 text-foreground">TDS spread (estimate)</td>
                     <td className="px-4 py-3 tabular-nums">{formatInr(result.tdsMonthly, { decimals: true })}</td>
                   </tr>
-                  <tr className="bg-zinc-50/80 font-semibold dark:bg-zinc-900/60">
-                    <td className="px-4 py-3 text-zinc-900 dark:text-zinc-50">Estimated in-hand</td>
-                    <td className="px-4 py-3 tabular-nums text-zinc-900 dark:text-zinc-50">
+                  <tr className="bg-surface-subtle font-semibold">
+                    <td className="px-4 py-3 text-foreground">Estimated in-hand</td>
+                    <td className="px-4 py-3 tabular-nums text-foreground">
                       {formatInr(result.inHandMonthly, { decimals: true })}
                     </td>
                   </tr>
@@ -151,21 +151,21 @@ export function LpaLandingTemplate({ config }: Props) {
                 { label: "TDS (spread)", amount: result.tdsMonthly, tone: "deduct" },
               ]}
             />
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="text-sm text-foreground-secondary">
               Annual tax + cess (engine estimate):{" "}
               <strong>{formatInr(result.estimatedTotalTaxAnnual)}</strong>.
             </p>
           </section>
 
-          <section className="rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
-            <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
+          <section className="rounded-xl border border-border bg-surface p-4">
+            <h2 className="text-base font-semibold text-foreground">
               At ₹{config.lpa} LPA — what usually matters
             </h2>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="mt-1 text-sm text-foreground-secondary">
               Band-specific context (not duplicated on other LPA pages). Still illustrative — tune the calculators for your
               payslip.
             </p>
-            <ul className="mt-3 list-inside list-disc space-y-2 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+            <ul className="mt-3 list-inside list-disc space-y-2 text-sm leading-relaxed text-foreground-secondary">
               {config.bandInsights.map((line) => (
                 <li key={line}>{line}</li>
               ))}
@@ -199,32 +199,32 @@ export function LpaLandingTemplate({ config }: Props) {
           <section className="flex flex-wrap gap-3">
             <Link
               href={ROUTES.ctcToInHandCalculator}
-              className="inline-flex items-center justify-center rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
+              className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:opacity-90"
             >
               Open CTC → in-hand calculator
             </Link>
             <Link
               href={ROUTES.salaryCalculator}
-              className="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-900 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100 dark:hover:bg-zinc-900"
+              className="inline-flex items-center justify-center rounded-lg border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground hover:bg-surface-subtle"
             >
               Open salary breakdown calculator
             </Link>
             <Link
               href={ROUTES.oldVsNewTaxRegimeCalculator}
-              className="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-900 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100 dark:hover:bg-zinc-900"
+              className="inline-flex items-center justify-center rounded-lg border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground hover:bg-surface-subtle"
             >
               Compare tax regimes
             </Link>
           </section>
 
-          <section className="rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
-            <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">After tax — what about rent and city?</h2>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+          <section className="rounded-xl border border-border bg-surface p-4">
+            <h2 className="text-base font-semibold text-foreground">After tax — what about rent and city?</h2>
+            <p className="mt-1 text-sm text-foreground-secondary">
               This band page is gross → in-hand only. To stress-test{" "}
               <strong>rent, commute, and lifestyle spend</strong> in a real city scenario, use the tools below — same
               engines, different question.
             </p>
-            <ul className="mt-3 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+            <ul className="mt-3 space-y-2 text-sm text-foreground-secondary">
               <li>
                 <Link className="font-medium underline" href={ROUTES.salaryRealityCheck}>
                   Salary Reality Check
@@ -233,7 +233,7 @@ export function LpaLandingTemplate({ config }: Props) {
               </li>
               <li>
                 <Link className="font-medium underline" href={`${ROUTES.salaryGuides}#enough-heading`}>
-                  “Is this salary enough?” city pages
+                  "Is this salary enough?" city pages
                 </Link>{" "}
                 — decision-intent examples (Bengaluru, Pune, Hyderabad) with embedded checks.
               </li>
@@ -241,21 +241,21 @@ export function LpaLandingTemplate({ config }: Props) {
                 <Link className="font-medium underline" href={ROUTES.offerComparisonCalculator}>
                   Compare two offers
                 </Link>{" "}
-                — when you’re choosing between employers, not just cities.
+                — when you're choosing between employers, not just cities.
               </li>
             </ul>
             {salaryEnoughSpotlight.length > 0 ? (
-              <div className="mt-4 border-t border-zinc-200 pt-4 dark:border-zinc-800">
-                <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                  City “enough salary?” checks near ₹{config.lpa} LPA
+              <div className="mt-4 border-t border-border pt-4">
+                <h3 className="text-sm font-semibold text-foreground">
+                  City "enough salary?" checks near ₹{config.lpa} LPA
                 </h3>
-                <ul className="mt-2 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+                <ul className="mt-2 space-y-2 text-sm text-foreground-secondary">
                   {salaryEnoughSpotlight.map((p) => (
                     <li key={p.slug}>
                       <Link className="font-medium underline" href={salaryEnoughPath(p.slug)}>
                         {p.seo.title}
                       </Link>
-                      <span className="text-zinc-500 dark:text-zinc-400"> — {p.city.name}</span>
+                      <span className="text-foreground-muted"> — {p.city.name}</span>
                     </li>
                   ))}
                 </ul>
@@ -263,16 +263,16 @@ export function LpaLandingTemplate({ config }: Props) {
             ) : null}
           </section>
 
-          <section className="rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
-            <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">Nearby salary bands</h2>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+          <section className="rounded-xl border border-border bg-surface p-4">
+            <h2 className="text-base font-semibold text-foreground">Nearby salary bands</h2>
+            <p className="mt-1 text-sm text-foreground-secondary">
               Compare similar LPA pages (same engine assumptions across bands).
             </p>
             <ul className="mt-3 flex flex-wrap gap-3 text-sm">
               {adjacent.prev ? (
                 <li>
                   <Link
-                    className="font-medium text-zinc-900 underline underline-offset-2 dark:text-zinc-100"
+                    className="font-medium text-foreground underline underline-offset-2"
                     href={lpaLandingPath(adjacent.prev.slug)}
                   >
                     ← ₹{adjacent.prev.lpa} LPA in-hand estimate
@@ -282,7 +282,7 @@ export function LpaLandingTemplate({ config }: Props) {
               {adjacent.next ? (
                 <li>
                   <Link
-                    className="font-medium text-zinc-900 underline underline-offset-2 dark:text-zinc-100"
+                    className="font-medium text-foreground underline underline-offset-2"
                     href={lpaLandingPath(adjacent.next.slug)}
                   >
                     ₹{adjacent.next.lpa} LPA in-hand estimate →
@@ -293,27 +293,27 @@ export function LpaLandingTemplate({ config }: Props) {
           </section>
 
           <section className="rounded-xl border border-blue-200/80 bg-blue-50/40 p-4 dark:border-blue-900/35 dark:bg-blue-950/20">
-            <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
+            <h2 className="text-base font-semibold text-foreground">
               Guides that match ₹{config.lpa}L offers
             </h2>
-            <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
-              Picked by band so similar LPA pages don’t all push the exact same reading order.
+            <p className="mt-1 text-xs text-foreground-secondary">
+              Picked by band so similar LPA pages don't all push the exact same reading order.
             </p>
-            <ul className="mt-3 space-y-3 text-sm text-zinc-700 dark:text-zinc-300">
+            <ul className="mt-3 space-y-3 text-sm text-foreground-secondary">
               {bandGuides.map((g) => (
                 <li key={g.href}>
-                  <Link className="font-medium text-zinc-900 underline dark:text-zinc-100" href={g.href}>
+                  <Link className="font-medium text-foreground underline" href={g.href}>
                     {g.label}
                   </Link>
-                  <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">{g.hint}</p>
+                  <p className="mt-0.5 text-xs text-foreground-muted">{g.hint}</p>
                 </li>
               ))}
             </ul>
           </section>
 
-          <section className="rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
-            <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">Read next</h2>
-            <ul className="mt-2 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+          <section className="rounded-xl border border-border bg-surface p-4">
+            <h2 className="text-base font-semibold text-foreground">Read next</h2>
+            <ul className="mt-2 space-y-2 text-sm text-foreground-secondary">
               <li>
                 <Link className="font-medium underline" href={ROUTES.methodology}>
                   Methodology — slabs, PF, and what the engine does not model
