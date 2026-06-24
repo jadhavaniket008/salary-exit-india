@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import { Card, FormField, Input } from "@/components/ui";
@@ -100,7 +100,7 @@ export function LeaveEncashmentCalculatorClient() {
         </p>
       </div>
 
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         Changing the day basis can materially change results — pick what matches your payslip policy best (see accuracy
         card).
       </p>
@@ -113,7 +113,7 @@ export function LeaveEncashmentCalculatorClient() {
         ]}
       />
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
           <FormField
             label="Basic + DA (monthly, ₹)"
@@ -128,7 +128,7 @@ export function LeaveEncashmentCalculatorClient() {
           </FormField>
 
           <fieldset className="space-y-2">
-            <legend className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            <legend className="text-sm font-medium text-foreground">
               Day basis for per-day rate
             </legend>
             <div className="flex flex-wrap gap-4 text-sm">
@@ -205,3 +205,4 @@ export function LeaveEncashmentCalculatorClient() {
     </CalculatorPageLayout>
   );
 }
+

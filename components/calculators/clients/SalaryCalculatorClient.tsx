@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import { Card, FormField, Input } from "@/components/ui";
@@ -133,7 +133,7 @@ export function SalaryCalculatorClient() {
       title="Salary & tax breakdown calculator"
       intro="Estimate taxable income, tax + cess, and monthly in-hand after PF and professional tax — using the same pure engine as the rest of SalaryExit India."
     >
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         Figures are <strong>modeled estimates</strong> — see the accuracy card under the title for what is direct vs
         assumed.
       </p>
@@ -146,7 +146,7 @@ export function SalaryCalculatorClient() {
         ]}
       />
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
           <FormField label="Annual gross salary (₹)" id="gross" hint="Before employee deductions.">
             <Input
@@ -160,7 +160,7 @@ export function SalaryCalculatorClient() {
           </FormField>
 
           <fieldset className="space-y-2">
-            <legend className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            <legend className="text-sm font-medium text-foreground">
               Tax regime
             </legend>
             <div className="flex flex-wrap gap-4 text-sm">
@@ -183,7 +183,7 @@ export function SalaryCalculatorClient() {
                 Old regime
               </label>
             </div>
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-foreground-muted">
               New regime ignores HRA/80C in this simplified model except where noted.
             </p>
           </fieldset>
@@ -342,3 +342,4 @@ export function SalaryCalculatorClient() {
     </CalculatorPageLayout>
   );
 }
+

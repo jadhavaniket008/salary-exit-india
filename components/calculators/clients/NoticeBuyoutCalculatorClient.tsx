@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import { Card, FormField, Input } from "@/components/ui";
@@ -120,7 +120,7 @@ export function NoticeBuyoutCalculatorClient() {
       title="Notice period buyout calculator"
       intro="Estimate buyout as gross monthly pay prorated by the number of days in a chosen calendar month. Your contract may define a different method."
     >
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         This is a <strong>gross</strong> estimate — taxes and recoveries are not applied (see accuracy card).
       </p>
 
@@ -132,7 +132,7 @@ export function NoticeBuyoutCalculatorClient() {
         ]}
       />
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
           <FormField label="Gross monthly salary (₹)" id="gross">
             <Input id="gross" inputMode="decimal" value={gross} onChange={(e) => setGross(e.target.value)} />
@@ -178,11 +178,11 @@ export function NoticeBuyoutCalculatorClient() {
             <CollapsibleBreakdown>
               <dl className="grid gap-3 text-sm sm:grid-cols-2">
                 <div>
-                  <dt className="text-zinc-500">Days in month</dt>
+                  <dt className="text-foreground-muted">Days in month</dt>
                   <dd className="font-medium">{result.daysInMonth}</dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-500">Daily rate</dt>
+                  <dt className="text-foreground-muted">Daily rate</dt>
                   <dd className="font-medium tabular-nums">{formatInr(result.dailyRate, { decimals: true })}</dd>
                 </div>
               </dl>
@@ -220,3 +220,4 @@ export function NoticeBuyoutCalculatorClient() {
     </CalculatorPageLayout>
   );
 }
+

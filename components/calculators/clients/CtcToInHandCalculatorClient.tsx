@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import { InHandBreakdownBars } from "@/components/charts/InHandBreakdownBars";
@@ -184,7 +184,7 @@ export function CtcToInHandCalculatorClient() {
       title="CTC to in-hand calculator"
       intro="Estimate monthly take-home from annual gross using centralized tax + PF logic. If you only know Basic+DA, we can derive PF; if you know PF, enter it directly."
     >
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         Output is a <strong>modeled estimate</strong> from FY slabs + PF rules in code — not your employer’s payroll
         system. Ambiguous inputs are blocked with an explicit message (see accuracy card).
       </p>
@@ -198,10 +198,10 @@ export function CtcToInHandCalculatorClient() {
         ]}
       />
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
           <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
-            <span className="text-xs font-medium uppercase tracking-wide text-zinc-500">Assumption presets</span>
+            <span className="text-xs font-medium uppercase tracking-wide text-foreground-muted">Assumption presets</span>
             <div className="flex flex-wrap gap-2">
               <Button type="button" variant="secondary" onClick={() => applyPreset("12l-bda")}>
                 ₹12L — BDA-derived PF
@@ -220,7 +220,7 @@ export function CtcToInHandCalculatorClient() {
           </FormField>
 
           <fieldset className="space-y-2">
-            <legend className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            <legend className="text-sm font-medium text-foreground">
               Tax regime
             </legend>
             <div className="flex flex-wrap gap-4 text-sm">
@@ -306,23 +306,23 @@ export function CtcToInHandCalculatorClient() {
             <CollapsibleBreakdown>
               <dl className="grid gap-3 text-sm sm:grid-cols-2">
                 <div>
-                  <dt className="text-zinc-500">Gross (monthly)</dt>
+                  <dt className="text-foreground-muted">Gross (monthly)</dt>
                   <dd className="font-medium tabular-nums">{formatInr(result.grossMonthly)}</dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-500">Employee PF (monthly)</dt>
+                  <dt className="text-foreground-muted">Employee PF (monthly)</dt>
                   <dd className="font-medium tabular-nums">{formatInr(result.employeePfMonthly, { decimals: true })}</dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-500">Professional tax (monthly)</dt>
+                  <dt className="text-foreground-muted">Professional tax (monthly)</dt>
                   <dd className="font-medium tabular-nums">{formatInr(result.professionalTaxMonthly, { decimals: true })}</dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-500">TDS (monthly spread)</dt>
+                  <dt className="text-foreground-muted">TDS (monthly spread)</dt>
                   <dd className="font-medium tabular-nums">{formatInr(result.tdsMonthly, { decimals: true })}</dd>
                 </div>
                 <div className="sm:col-span-2">
-                  <dt className="text-zinc-500">Estimated total tax + cess (annual)</dt>
+                  <dt className="text-foreground-muted">Estimated total tax + cess (annual)</dt>
                   <dd className="font-medium tabular-nums">{formatInr(result.estimatedTotalTaxAnnual)}</dd>
                 </div>
               </dl>
@@ -343,27 +343,27 @@ export function CtcToInHandCalculatorClient() {
             />
             {compareResult ? (
               <>
-                <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Compared scenario breakdown</h3>
+                <h3 className="text-sm font-semibold text-foreground">Compared scenario breakdown</h3>
                 <CollapsibleBreakdown title="Compared — line items">
                   <dl className="grid gap-3 text-sm sm:grid-cols-2">
                     <div>
-                      <dt className="text-zinc-500">Gross (monthly)</dt>
+                      <dt className="text-foreground-muted">Gross (monthly)</dt>
                       <dd className="font-medium tabular-nums">{formatInr(compareResult.grossMonthly)}</dd>
                     </div>
                     <div>
-                      <dt className="text-zinc-500">Employee PF (monthly)</dt>
+                      <dt className="text-foreground-muted">Employee PF (monthly)</dt>
                       <dd className="font-medium tabular-nums">{formatInr(compareResult.employeePfMonthly, { decimals: true })}</dd>
                     </div>
                     <div>
-                      <dt className="text-zinc-500">Professional tax (monthly)</dt>
+                      <dt className="text-foreground-muted">Professional tax (monthly)</dt>
                       <dd className="font-medium tabular-nums">{formatInr(compareResult.professionalTaxMonthly, { decimals: true })}</dd>
                     </div>
                     <div>
-                      <dt className="text-zinc-500">TDS (monthly spread)</dt>
+                      <dt className="text-foreground-muted">TDS (monthly spread)</dt>
                       <dd className="font-medium tabular-nums">{formatInr(compareResult.tdsMonthly, { decimals: true })}</dd>
                     </div>
                     <div className="sm:col-span-2">
-                      <dt className="text-zinc-500">Estimated total tax + cess (annual)</dt>
+                      <dt className="text-foreground-muted">Estimated total tax + cess (annual)</dt>
                       <dd className="font-medium tabular-nums">{formatInr(compareResult.estimatedTotalTaxAnnual)}</dd>
                     </div>
                   </dl>
@@ -413,3 +413,4 @@ export function CtcToInHandCalculatorClient() {
     </CalculatorPageLayout>
   );
 }
+

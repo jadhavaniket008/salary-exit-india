@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useId, useMemo, useState } from "react";
 import { Button, Card, FormField, Input } from "@/components/ui";
@@ -138,7 +138,7 @@ export function OfferComparisonCalculatorClient() {
       title="Offer comparison calculator"
       intro="Compare offers using annual CTC and your estimated monthly in-hand (from the CTC→in-hand tool or payslip assumptions). This page ranks what you enter — it does not invent in-hand from CTC automatically."
     >
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         In-hand must be estimated <strong>consistently</strong> across offers — the accuracy card explains ranking
         limits.
       </p>
@@ -151,7 +151,7 @@ export function OfferComparisonCalculatorClient() {
         ]}
       />
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form className="space-y-6" onSubmit={onSubmit} noValidate>
           {rows.map((row, idx) => (
             <div
@@ -159,7 +159,7 @@ export function OfferComparisonCalculatorClient() {
               className="space-y-3 rounded-xl border border-zinc-200 p-4 dark:border-zinc-800"
             >
               <div className="flex items-center justify-between gap-3">
-                <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                <p className="text-sm font-semibold text-foreground">
                   Offer {idx + 1}
                 </p>
                 <Button
@@ -260,7 +260,7 @@ export function OfferComparisonCalculatorClient() {
                       key={`${r.label}-${idx}`}
                       className="border-b border-zinc-100 dark:border-zinc-900"
                     >
-                      <td className="py-2 pr-4 font-medium text-zinc-900 dark:text-zinc-100">
+                      <td className="py-2 pr-4 font-medium text-foreground">
                         {r.label}
                       </td>
                       <td className="py-2 pr-4 tabular-nums">{formatInr(r.annualCtc)}</td>
@@ -313,3 +313,4 @@ export function OfferComparisonCalculatorClient() {
     </CalculatorPageLayout>
   );
 }
+

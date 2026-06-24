@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useId, useMemo, useState } from "react";
 import { Button, Card, FormField, Input } from "@/components/ui";
@@ -118,7 +118,7 @@ export function FinalSettlementCalculatorClient() {
       title="Final settlement calculator"
       intro="Build your full-and-final payout by listing credit components and deductions. The engine only sums what you enter — it does not guess components."
     >
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         Net settlement is <strong>only</strong> as complete as your line items (see accuracy card).
       </p>
 
@@ -129,13 +129,13 @@ export function FinalSettlementCalculatorClient() {
         ]}
       />
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form className="space-y-8" onSubmit={onSubmit} noValidate>
           <fieldset className="space-y-3">
-            <legend className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <legend className="text-sm font-semibold text-foreground">
               Payout components (credits)
             </legend>
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-foreground-muted">
               Examples: leave encashment, bonus, gratuity (if known), notice pay, reimbursements.
             </p>
             <div className="space-y-3">
@@ -189,10 +189,10 @@ export function FinalSettlementCalculatorClient() {
           </fieldset>
 
           <fieldset className="space-y-3">
-            <legend className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <legend className="text-sm font-semibold text-foreground">
               Deductions (optional)
             </legend>
-            <p className="text-xs text-zinc-500">Examples: loan recovery, asset recovery.</p>
+            <p className="text-xs text-foreground-muted">Examples: loan recovery, asset recovery.</p>
             <div className="space-y-3">
               {deductions.map((row, idx) => (
                 <div
@@ -260,11 +260,11 @@ export function FinalSettlementCalculatorClient() {
             <CollapsibleBreakdown defaultOpen>
               <dl className="grid gap-3 text-sm sm:grid-cols-2">
                 <div>
-                  <dt className="text-zinc-500">Gross credits</dt>
+                  <dt className="text-foreground-muted">Gross credits</dt>
                   <dd className="font-medium tabular-nums">{formatInr(result.grossCredits)}</dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-500">Total deductions</dt>
+                  <dt className="text-foreground-muted">Total deductions</dt>
                   <dd className="font-medium tabular-nums">{formatInr(result.totalDeductions)}</dd>
                 </div>
               </dl>
@@ -299,3 +299,4 @@ export function FinalSettlementCalculatorClient() {
     </CalculatorPageLayout>
   );
 }
+

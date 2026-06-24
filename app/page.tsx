@@ -14,6 +14,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { ROUTES } from "@/lib/routes";
 import { lpaLandingPath } from "@/lib/routes/landing-routes";
 import { SiteSearchClient } from "@/components/home/SiteSearchClient";
+import { AnimateIn } from "@/components/ui/AnimateIn";
 
 export const metadata: Metadata = buildPageMetadata(
   {
@@ -107,6 +108,7 @@ export default function Home() {
         <Container className="space-y-14 py-10 sm:py-14">
 
           {/* ── Calculator grid — featured primary + secondary grid ─── */}
+          <AnimateIn>
           <section aria-labelledby="calculators-heading">
             <div className="mb-5 flex items-end justify-between gap-4">
               <div>
@@ -128,7 +130,7 @@ export default function Home() {
             {/* Featured card — CTC to in-hand */}
             <Link
               href={primaryCalc.path}
-              className="group mb-3 flex flex-col gap-3 rounded-2xl border-2 border-accent/30 bg-accent-light p-6 shadow-sm transition-all hover:border-accent/60 hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+              className="group mb-3 flex flex-col gap-3 rounded-2xl border-2 border-accent/30 bg-accent-light p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
             >
               <div>
                 <div className="mb-1 flex items-center gap-2">
@@ -154,7 +156,7 @@ export default function Home() {
                 <Link
                   key={c.slug}
                   href={c.path}
-                  className="group rounded-xl border border-border bg-surface p-4 transition-all hover:border-border-strong hover:bg-surface-subtle hover:shadow-sm"
+                  className="group rounded-xl border border-border bg-surface p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-md"
                 >
                   <span className="block text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
                     {c.label}
@@ -166,13 +168,17 @@ export default function Home() {
               ))}
             </div>
           </section>
+          </AnimateIn>
 
           <AdSlot position="mid-content" label="Advertisement" />
 
           {/* ── Salary Reality Check promo ──────────────────────────── */}
-          <SalaryRealityCheckPromo />
+          <AnimateIn>
+            <SalaryRealityCheckPromo />
+          </AnimateIn>
 
           {/* ── Real questions — 2-col grid ─────────────────────────── */}
+          <AnimateIn>
           <section aria-labelledby="real-questions-heading">
             <h2 id="real-questions-heading" className="mb-1 text-xl font-bold text-foreground sm:text-2xl">
               Real questions, real numbers
@@ -200,8 +206,10 @@ export default function Home() {
               ))}
             </div>
           </section>
+          </AnimateIn>
 
           {/* ── Guide hubs — horizontal cards ───────────────────────── */}
+          <AnimateIn>
           <section aria-labelledby="guides-heading">
             <h2 id="guides-heading" className="mb-5 text-xl font-bold text-foreground sm:text-2xl">
               Plain-English guides
@@ -230,7 +238,7 @@ export default function Home() {
                 <Link
                   key={g.href}
                   href={g.href}
-                  className="group flex flex-col gap-3 rounded-xl border border-border bg-surface p-5 shadow-sm transition-all hover:border-border-strong hover:shadow-md"
+                  className="group flex flex-col gap-3 rounded-xl border border-border bg-surface p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg"
                 >
                   <div className="flex items-center gap-2">
                     <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-surface-subtle text-base font-bold text-foreground">
@@ -250,8 +258,10 @@ export default function Home() {
               ))}
             </div>
           </section>
+          </AnimateIn>
 
           {/* ── Popular LPA pages ───────────────────────────────────── */}
+          <AnimateIn>
           <section aria-labelledby="lpa-pages-heading">
             <div className="mb-4 flex items-end justify-between gap-4">
               <h2 id="lpa-pages-heading" className="text-xl font-bold text-foreground sm:text-2xl">
@@ -266,7 +276,7 @@ export default function Home() {
                 <Link
                   key={p.slug}
                   href={lpaLandingPath(p.slug)}
-                  className="rounded-lg border border-border bg-surface px-4 py-3 text-sm font-medium text-foreground-secondary transition-all hover:border-accent/40 hover:bg-accent-light hover:text-accent"
+                  className="rounded-lg border border-border bg-surface px-4 py-3 text-sm font-medium text-foreground-secondary transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent-light hover:text-accent hover:shadow-sm"
                 >
                   ₹{p.lpa} LPA
                   <span className="block text-xs font-normal text-foreground-muted">
@@ -276,6 +286,7 @@ export default function Home() {
               ))}
             </div>
           </section>
+          </AnimateIn>
 
           <AdSlot position="before-footer" label="Advertisement" />
 

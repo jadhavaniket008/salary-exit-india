@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import { Card, FormField, Input } from "@/components/ui";
@@ -143,7 +143,7 @@ export function TaxRegimeCalculatorClient() {
         </p>
       </div>
 
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         Outputs are <strong>annualized estimates</strong> — see the accuracy card for regime limits in this engine.
       </p>
 
@@ -156,7 +156,7 @@ export function TaxRegimeCalculatorClient() {
         ]}
       />
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
           <FormField label="Annual gross salary (₹)" id="gross">
             <Input id="gross" inputMode="decimal" value={gross} onChange={(e) => setGross(e.target.value)} />
@@ -211,14 +211,14 @@ export function TaxRegimeCalculatorClient() {
             <CollapsibleBreakdown defaultOpen>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-lg border border-zinc-200 p-3 dark:border-zinc-800">
-                  <p className="text-xs font-semibold uppercase text-zinc-500">Old regime</p>
+                  <p className="text-xs font-semibold uppercase text-foreground-muted">Old regime</p>
                   <p className="mt-2 text-sm text-zinc-600">Taxable income</p>
                   <p className="text-lg font-semibold tabular-nums">{formatInr(result.oldRegime.taxableIncomeAnnual)}</p>
                   <p className="mt-2 text-sm text-zinc-600">Total tax + cess</p>
                   <p className="text-lg font-semibold tabular-nums">{formatInr(result.oldRegime.totalTaxAnnual)}</p>
                 </div>
                 <div className="rounded-lg border border-zinc-200 p-3 dark:border-zinc-800">
-                  <p className="text-xs font-semibold uppercase text-zinc-500">New regime</p>
+                  <p className="text-xs font-semibold uppercase text-foreground-muted">New regime</p>
                   <p className="mt-2 text-sm text-zinc-600">Taxable income</p>
                   <p className="text-lg font-semibold tabular-nums">{formatInr(result.newRegime.taxableIncomeAnnual)}</p>
                   <p className="mt-2 text-sm text-zinc-600">Total tax + cess</p>
@@ -269,3 +269,4 @@ export function TaxRegimeCalculatorClient() {
     </CalculatorPageLayout>
   );
 }
+

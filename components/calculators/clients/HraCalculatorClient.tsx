@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import { Card, FormField, Input } from "@/components/ui";
@@ -106,7 +106,7 @@ export function HraCalculatorClient() {
       title="HRA exemption calculator"
       intro="Estimate HRA exemption using the three-part test (actual HRA, rent minus 10% salary, and salary percentage cap). This is typically relevant under the old tax regime."
     >
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-foreground-secondary">
         The three tests are computed from your inputs — see the accuracy card for regime and payroll caveats.
       </p>
 
@@ -120,7 +120,7 @@ export function HraCalculatorClient() {
         ]}
       />
 
-      <Card className="space-y-6">
+      <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
           <FormField label="Basic salary (annual, ₹)" id="basic">
             <Input id="basic" inputMode="decimal" value={basic} onChange={(e) => setBasic(e.target.value)} />
@@ -140,14 +140,14 @@ export function HraCalculatorClient() {
           </FormField>
 
           <fieldset className="space-y-2">
-            <legend className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            <legend className="text-sm font-medium text-foreground">
               City type (for 50% / 40% test)
             </legend>
             <label className="flex items-center gap-2 text-sm">
               <input type="checkbox" checked={metro} onChange={(e) => setMetro(e.target.checked)} />
               Metro city (50% of Basic+DA cap)
             </label>
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-foreground-muted">
               If you’re unsure, treat “non-metro” as the conservative assumption for the % cap.
             </p>
           </fieldset>
@@ -180,7 +180,7 @@ export function HraCalculatorClient() {
             <CollapsibleBreakdown>
               <dl className="grid gap-3 text-sm">
                 <div>
-                  <dt className="text-zinc-500">Test 1 — Actual HRA received</dt>
+                  <dt className="text-foreground-muted">Test 1 — Actual HRA received</dt>
                   <dd className="tabular-nums font-medium">
                     {formatInr(
                       (() => {
@@ -191,11 +191,11 @@ export function HraCalculatorClient() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-500">Test 2 — Rent − 10% of (Basic+DA)</dt>
+                  <dt className="text-foreground-muted">Test 2 — Rent − 10% of (Basic+DA)</dt>
                   <dd className="tabular-nums font-medium">{formatInr(result.testRentMinus10Percent)}</dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-500">Test 3 — {metro ? "50%" : "40%"} of (Basic+DA)</dt>
+                  <dt className="text-foreground-muted">Test 3 — {metro ? "50%" : "40%"} of (Basic+DA)</dt>
                   <dd className="tabular-nums font-medium">{formatInr(result.testSalaryPercentCap)}</dd>
                 </div>
               </dl>
@@ -233,3 +233,4 @@ export function HraCalculatorClient() {
     </CalculatorPageLayout>
   );
 }
+
