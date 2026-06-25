@@ -11,6 +11,7 @@ import { getSiteOrigin } from "@/lib/seo/site-origin";
 import { defaultSiteSeo } from "@/lib/site";
 import { JsonLd } from "@/components/content/JsonLd";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo/structured-data";
+import { SeasonalBanner } from "@/components/ui/SeasonalBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,6 +66,7 @@ export default function RootLayout({
         <JsonLd data={websiteJsonLd()} />
         <JsonLd data={organizationJsonLd()} />
         <SiteHeader />
+        <SeasonalBanner />
         {children}
         <SiteFooter />
         <ThirdPartyRootScripts />

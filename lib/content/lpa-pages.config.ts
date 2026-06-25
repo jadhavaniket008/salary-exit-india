@@ -48,6 +48,170 @@ function baseScenario(lpa: number): CtcToInHandInput {
 
 export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
   {
+    slug: "3-lpa-in-hand-salary",
+    lpa: 3,
+    seo: {
+      title: "3 LPA In-Hand Salary: ₹23,400/month (FY 2026-27)",
+      description:
+        "3 LPA का मतलब: ₹23,400/month in-hand (FY 2026-27, नई regime, zero tax). Fresher salary breakdown — employee PF, professional tax, zero TDS. Adjust for your state.",
+      keywords: ["3 LPA in hand", "3 lakh salary in hand", "fresher 3 LPA monthly salary", "3 LPA take home India"],
+    },
+    scenario: baseScenario(3),
+    scenarioNotes: [
+      "₹3 LPA = ₹3,00,000 gross per year. Basic+DA at 45% = ₹11,250/month — below the PF wage ceiling, so PF is calculated on actual Basic+DA here.",
+    ],
+    angleParagraph:
+      "At ₹3 LPA, Basic+DA (45% of gross = ₹11,250/month) sits below the ₹15,000 PF wage ceiling, so PF is computed on actual Basic+DA — ₹1,350/month rather than the ₹1,800 that applies at higher bands. Income tax is zero. This makes the gross-to-in-hand conversion particularly clean.",
+    bandInsights: [
+      "Zero income tax: taxable income after ₹75,000 standard deduction = ₹2.25L — no slab liability, full 87A rebate.",
+      "PF deduction is ~₹1,350/month here (not the ₹1,800 cap), because Basic+DA is below the ₹15,000 PF wage ceiling.",
+      "Many small employers at this salary band don't deduct PF at all — check your offer letter for PF applicability.",
+      "In-hand at ₹3 LPA covers basic expenses in tier-2/3 cities; metros require shared accommodation or supplements.",
+    ],
+    faq: [
+      {
+        question: "What is the in-hand salary for 3 LPA in India (FY 2026-27)?",
+        answer:
+          "Approximately ₹23,400/month under the new tax regime. No income tax (Section 87A rebate applies). Deductions: employee PF ~₹1,350/month and professional tax ~₹208/month. Actual take-home varies if your employer has a different Basic+DA split or exempts PF.",
+      },
+      {
+        question: "Is 3 LPA a good fresher salary in India?",
+        answer:
+          "₹3 LPA (₹23,400/month) is viable in tier-2/tier-3 cities but tight in metros where rent alone can consume 50–60% of take-home. For freshers, trajectory matters more than starting salary — look for structured appraisal cycles rather than just the first number.",
+      },
+    ],
+  },
+  {
+    slug: "4-lpa-in-hand-salary",
+    lpa: 4,
+    seo: {
+      title: "4 LPA In-Hand Salary: ₹31,300/month (FY 2026-27)",
+      description:
+        "4 LPA का मतलब: ₹31,300/month in-hand (FY 2026-27, नई regime, zero tax). CTC to take-home breakdown for ₹4 lakh annual salary — PF capped at ₹1,800/month.",
+      keywords: ["4 LPA in hand", "4 lakh salary in hand", "CTC 4 LPA take home India", "4 LPA monthly salary"],
+    },
+    scenario: baseScenario(4),
+    scenarioNotes: [
+      "₹4 LPA = ₹4,00,000 gross per year. Basic+DA at 45% = ₹15,000/month — exactly at the PF wage ceiling.",
+    ],
+    angleParagraph:
+      "₹4 LPA is where the PF wage ceiling kicks in exactly — Basic+DA at the 45% assumption is precisely ₹15,000/month, capping employee PF at ₹1,800. Income tax is nil. The gross-to-in-hand math is clean: only PF and professional tax reduce your take-home.",
+    bandInsights: [
+      "Zero income tax: taxable income = ₹3.25L after standard deduction — covered by Section 87A rebate.",
+      "PF deduction is ₹1,800/month (12% of ₹15,000 PF wage ceiling) — same as it will be at ₹5, ₹8, or ₹12 LPA.",
+      "Variable pay, joining bonus, and quarterly components are not modelled here — add them on top for total CTC view.",
+      "Old regime also yields zero tax at ₹4 LPA — no advantage over new regime at this band.",
+    ],
+    faq: [
+      {
+        question: "4 LPA in-hand per month India — how much is it?",
+        answer:
+          "~₹31,300/month under the new tax regime (FY 2026-27). Zero income tax (Section 87A rebate). Deductions: employee PF ₹1,800/month + professional tax ~₹208/month. Adjust for your state's PT and Basic+DA split using the calculator above.",
+      },
+      {
+        question: "Does 4 LPA qualify for a home loan or credit card?",
+        answer:
+          "Most banks require ₹25,000–₹30,000/month minimum in-hand for entry credit cards. At ~₹31,300/month you're at the lower threshold. Home loan eligibility at ₹4 LPA is typically ₹15–20L (50–60× monthly in-hand) — insufficient in most metro markets but workable with a co-applicant.",
+      },
+    ],
+  },
+  {
+    slug: "5-lpa-in-hand-salary",
+    lpa: 5,
+    seo: {
+      title: "5 LPA In-Hand Salary: ₹39,600/month (FY 2026-27)",
+      description:
+        "5 LPA का मतलब: ₹39,600/month in-hand (FY 2026-27, नई regime, zero tax). Free CTC to take-home calculator for ₹5 lakh annual salary — no registration required.",
+      keywords: ["5 LPA in hand", "5 lakh salary in hand", "5 LPA monthly in hand salary", "CTC 5 LPA take home"],
+    },
+    scenario: baseScenario(5),
+    scenarioNotes: ["₹5 LPA = ₹5,00,000 gross per year. New tax regime baseline for FY 2026-27."],
+    angleParagraph:
+      "₹5 LPA is a common offer for IT graduates after 1–2 years of experience and non-tech professionals in mid-tier roles. At this gross, Section 87A rebate eliminates income tax entirely — only PF and professional tax reduce take-home.",
+    bandInsights: [
+      "Zero income tax: taxable income = ₹4.25L after standard deduction — well within 87A coverage.",
+      "Both old and new tax regimes produce zero tax at ₹5 LPA — new regime wins on simplicity.",
+      "NPS Tier 1 at this band: ₹50,000 under 80CCD(1B) is still reachable and builds compounding even if tax saving is minimal now.",
+      "₹39,600/month gives reasonable financial independence in tier-2 cities; metros typically require shared accommodation.",
+    ],
+    faq: [
+      {
+        question: "What is the in-hand salary for 5 LPA in India (FY 2026-27)?",
+        answer:
+          "~₹39,600/month under the new tax regime. Income tax is zero (Section 87A rebate covers full liability at ₹5L gross). Deductions: employee PF ₹1,800/month + professional tax ~₹208/month.",
+      },
+      {
+        question: "Is old or new regime better at 5 LPA?",
+        answer:
+          "Both give zero tax at ₹5 LPA. New regime is better in practice — no paperwork, no investment proof required. Old regime with 80C deductions doesn't reduce an already-zero liability. Stick with new regime unless you have specific high-deduction scenarios.",
+      },
+    ],
+  },
+  {
+    slug: "6-lpa-in-hand-salary",
+    lpa: 6,
+    seo: {
+      title: "6 LPA In-Hand Salary: ₹48,000/month (FY 2026-27)",
+      description:
+        "6 LPA का मतलब: ₹48,000/month in-hand (FY 2026-27, नई regime, zero tax). Monthly take-home for ₹6 lakh salary — PF, PT, and TDS breakdown with calculator.",
+      keywords: ["6 LPA in hand", "6 lakh salary in hand", "6 LPA monthly salary India", "CTC 6 LPA take home"],
+    },
+    scenario: baseScenario(6),
+    scenarioNotes: ["₹6 LPA = ₹6,00,000 gross per year. New regime, standard non-metro PT assumption."],
+    angleParagraph:
+      "₹6 LPA is a transition band where many professionals start encountering structured HRA and flexi-pay components in their CTC. These components affect how much of the CTC headline translates to gross salary — and thus in-hand. Tax remains zero at this gross under the new regime.",
+    bandInsights: [
+      "Zero income tax: taxable income = ₹5.25L after standard deduction — fully within 87A rebate coverage.",
+      "HRA exemption in old regime is irrelevant here — new regime already produces zero tax, so HRA saves nothing additional.",
+      "If your CTC packs in employer PF and gratuity on top of gross, your actual gross is lower than the headline — enter gross (not CTC) in the calculator.",
+      "₹48,000/month supports independent living in most tier-2 Indian cities with modest savings.",
+    ],
+    faq: [
+      {
+        question: "6 LPA in-hand per month — exact amount?",
+        answer:
+          "~₹48,000/month under the new regime (FY 2026-27). Zero income tax (87A rebate). Deductions: PF ₹1,800/month + professional tax ~₹208/month. Use the calculator above to adjust for your state PT and Basic+DA split.",
+      },
+      {
+        question: "Is 6 LPA gross or CTC — and does it matter?",
+        answer:
+          "It matters significantly. If 6 LPA is CTC (includes employer PF ₹21,600/year, gratuity ~₹28,846/year, and insurance), your gross salary is closer to ₹5.4–5.5L — meaning monthly in-hand drops by ₹4,000–5,000. Always ask for a salary breakup before accepting, not just the CTC headline.",
+      },
+    ],
+  },
+  {
+    slug: "7-lpa-in-hand-salary",
+    lpa: 7,
+    seo: {
+      title: "7 LPA In-Hand Salary: ₹56,300/month (FY 2026-27)",
+      description:
+        "7 LPA का मतलब: ₹56,300/month in-hand (FY 2026-27, नई regime, zero tax). Monthly take-home, PF deduction, zero TDS explained for ₹7 lakh annual salary.",
+      keywords: ["7 LPA in hand", "7 lakh salary in hand", "CTC 7 LPA take home India", "7 LPA monthly in hand"],
+    },
+    scenario: baseScenario(7),
+    scenarioNotes: ["₹7 LPA = ₹7,00,000 gross per year. New regime baseline; 45% Basic+DA assumed."],
+    angleParagraph:
+      "₹7 LPA is a common milestone for engineers with 2–3 years of experience or first-job offers at product companies. Income tax is still zero under the new regime — salary engineering (Basic splits, flexi-pay) only affects PF, not tax.",
+    bandInsights: [
+      "Zero income tax: taxable income = ₹6.25L after standard deduction — covered by Section 87A (new regime).",
+      "Old regime with max 80C + basic HRA yields near-zero tax too — new regime wins on paperwork simplicity.",
+      "Variable pay at this band (common in sales, banking) changes annual CTC materially — model fixed monthly pay separately.",
+      "Delhi, Haryana, and some states don't levy professional tax — adjust the PT field to ₹0 if you're in a zero-PT state.",
+    ],
+    faq: [
+      {
+        question: "What is 7 LPA in-hand per month in India?",
+        answer:
+          "~₹56,300/month under the new tax regime (FY 2026-27). Income tax is zero (Section 87A rebate). Deductions: PF ₹1,800/month + professional tax ~₹208/month. Verify your employer has your regime declaration on file to avoid unnecessary TDS.",
+      },
+      {
+        question: "New vs old regime at ₹7 LPA — which is better?",
+        answer:
+          "New regime: zero tax, no paperwork. Old regime: near-zero tax if you claim 80C and basic HRA, but needs documentation. Unless you pay substantial rent or have significant 80C investments that push taxable income much lower, new regime is simpler and typically equivalent or better at this band.",
+      },
+    ],
+  },
+  {
     slug: "8-lpa-in-hand-salary",
     lpa: 8,
     seo: {
@@ -97,6 +261,38 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     ],
   },
   {
+    slug: "9-lpa-in-hand-salary",
+    lpa: 9,
+    seo: {
+      title: "9 LPA In-Hand Salary: ₹73,000/month (FY 2026-27)",
+      description:
+        "9 LPA का मतलब: ₹73,000/month in-hand (FY 2026-27, नई regime, zero tax). CTC to take-home breakdown for ₹9 lakh annual salary — PF, professional tax, zero TDS.",
+      keywords: ["9 LPA in hand", "9 lakh salary in hand", "9 LPA monthly salary India", "CTC 9 LPA take home"],
+    },
+    scenario: baseScenario(9),
+    scenarioNotes: ["₹9 LPA = ₹9,00,000 gross per year. New tax regime; taxable income after standard deduction = ₹8.25L — below 87A threshold."],
+    angleParagraph:
+      "₹9 LPA sits in the middle of a zero-tax band — income tax remains nil under both old and new regimes. Many professionals at this band start accumulating meaningful PF balance and question whether to make VPF contributions. The short answer: VPF reduces in-hand by exactly as much as you contribute but delivers 8%+ compounding in a tax-free instrument.",
+    bandInsights: [
+      "Zero income tax: taxable income = ₹8.25L after standard deduction — fully covered by Section 87A rebate (new regime).",
+      "VPF at ₹9 LPA: if you can spare ₹5,000–8,000/month, VPF offers guaranteed 8.25% (FY 2023-24 rate) compounding tax-free.",
+      "Switching employers? Check whether your PF balance will be transferred (UAN-linked) or withdrawn — premature withdrawal under 5 years is taxable.",
+      "Metro vs non-metro: ₹73,000/month can support independent living in most cities — see the Salary Reality Check for a city-specific view.",
+    ],
+    faq: [
+      {
+        question: "What is the in-hand salary for 9 LPA in India (FY 2026-27)?",
+        answer:
+          "~₹73,000/month under the new tax regime. Zero income tax (Section 87A rebate covers full liability at ₹9L gross). Deductions: employee PF ₹1,800/month + professional tax ~₹208/month.",
+      },
+      {
+        question: "Is 9 LPA a good salary in India in 2026?",
+        answer:
+          "₹9 LPA (₹73,000/month in-hand) is comfortable in tier-2 cities and manageable in metros with shared accommodation or reasonable rent. It falls within the zero-tax zone, which means your employer's salary structure (Basic+DA split, flexi-pay components) determines your in-hand more than your tax bracket does.",
+      },
+    ],
+  },
+  {
     slug: "10-lpa-in-hand-salary",
     lpa: 10,
     seo: {
@@ -135,6 +331,38 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
         question: "How much does my employer contribute to EPF at ₹10 LPA?",
         answer:
           "Employer PF matches your 12% employee contribution on Basic+DA. At a 45% Basic assumption on ₹10L gross, that is roughly ₹3,600–₹4,500/month going into your EPF account from the employer side. This amount is part of your CTC but not part of in-hand — it builds your retirement corpus and is accessible after employment ends, subject to withdrawal rules.",
+      },
+    ],
+  },
+  {
+    slug: "11-lpa-in-hand-salary",
+    lpa: 11,
+    seo: {
+      title: "11 LPA In-Hand Salary: ₹89,600/month (FY 2026-27)",
+      description:
+        "11 LPA का मतलब: ₹89,600/month in-hand (FY 2026-27, नई regime, zero tax). CTC to take-home calculator for ₹11 lakh salary — last zero-tax band before the ₹12L threshold.",
+      keywords: ["11 LPA in hand", "11 lakh salary in hand", "11 LPA monthly salary India", "CTC 11 LPA take home"],
+    },
+    scenario: baseScenario(11),
+    scenarioNotes: ["₹11 LPA = ₹11,00,000 gross per year. Taxable income after standard deduction = ₹10.25L — below the 87A threshold for full rebate."],
+    angleParagraph:
+      "₹11 LPA is the last full LPA band before income crosses the ₹12L mark where Section 87A rebate no longer fully covers tax. At ₹11L gross, effective income tax is still nil — which is why ₹11–12 LPA is a particularly attractive band: you cross a meaningful salary milestone without entering a tax bracket.",
+    bandInsights: [
+      "Zero income tax: taxable income = ₹10.25L after standard deduction — still within 87A full coverage (new regime).",
+      "The jump from ₹11 to ₹13 LPA triggers progressive tax — see the 13 LPA page for how this changes in-hand.",
+      "Negotiating ₹11 vs ₹12 LPA? The in-hand difference is ~₹8,300/month with zero tax at both levels. Worth pushing for.",
+      "If your employer's Basic+DA is set very high (60%+), your PF deduction rises — but tax remains zero at this gross.",
+    ],
+    faq: [
+      {
+        question: "What is the in-hand salary for 11 LPA (FY 2026-27)?",
+        answer:
+          "~₹89,600/month under the new tax regime. Zero income tax — Section 87A rebate covers the full liability at ₹11L gross (taxable income = ₹10.25L after standard deduction). Deductions: employee PF ₹1,800/month + professional tax ~₹208/month.",
+      },
+      {
+        question: "Why is ₹11 LPA considered a sweet spot for in-hand salary?",
+        answer:
+          "At ₹11 LPA, you cross ₹85,000+/month in-hand while paying zero income tax — the Section 87A rebate still covers the full tax liability. Cross into ₹13+ LPA and progressive tax starts, reducing the per-rupee take-home. The ₹10–12 LPA range gives the best gross-to-net conversion of any salary band in India right now.",
       },
     ],
   },
@@ -181,6 +409,74 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     ],
   },
   {
+    slug: "13-lpa-in-hand-salary",
+    lpa: 13,
+    seo: {
+      title: "13 LPA In-Hand Salary: ₹1,03,600/month (FY 2026-27)",
+      description:
+        "13 LPA का मतलब: ~₹1,03,600/month in-hand (FY 2026-27, नई regime). Tax kicks in just above ₹12L — see how marginal relief keeps your liability low at ₹13 LPA.",
+      keywords: ["13 LPA in hand", "13 lakh salary monthly", "13 LPA take home India", "CTC 13 LPA monthly salary"],
+    },
+    scenario: baseScenario(13),
+    scenarioNotes: [
+      "₹13 LPA = ₹13,00,000 gross per year. Taxable income after standard deduction = ₹12.25L — marginally above the 87A threshold.",
+    ],
+    angleParagraph:
+      "₹13 LPA is the first band where income tax enters the picture under the new regime, but marginal relief provisions limit the effective liability. The tax at this level is small relative to income — the bigger practical question is old vs new regime and whether your deductions (HRA, 80C) change the calculation.",
+    bandInsights: [
+      "Tax kicks in: taxable income = ₹12.25L (above 87A threshold). Marginal relief may cap liability near ₹25,000–30,000 annually.",
+      "Old regime comparison becomes worthwhile at ₹13 LPA if you pay metro rent + claim 80C — run the tax regime calculator.",
+      "The step from ₹12 to ₹13 LPA does not give you ₹8,300/month more in-hand; income tax shaves some of that increment.",
+      "Home loan eligibility steps up meaningfully here: lenders typically offer ₹52L–₹65L at this gross (4–5× annual salary).",
+    ],
+    faq: [
+      {
+        question: "How much is 13 LPA in-hand per month (FY 2026-27)?",
+        answer:
+          "Approximately ₹1,03,600/month under the new tax regime. Tax begins at this gross (taxable income = ₹12.25L after standard deduction), but marginal relief provisions keep the annual liability low. Deductions: PF ₹1,800/month + professional tax ~₹208/month + small TDS spread.",
+      },
+      {
+        question: "Why is my in-hand lower at ₹13 LPA than expected after ₹12 LPA zero-tax?",
+        answer:
+          "At ₹12 LPA, Section 87A rebate eliminated all tax. At ₹13 LPA, taxable income crosses ₹12L and income tax applies on the incremental amount — marginal relief limits the pain, but it does reduce the per-rupee take-home increment. This is why offers in the ₹12–15 LPA range need a proper tax model, not just a headline comparison.",
+      },
+    ],
+  },
+  {
+    slug: "14-lpa-in-hand-salary",
+    lpa: 14,
+    seo: {
+      title: "14 LPA In-Hand Salary: ₹1,09,300/month (FY 2026-27)",
+      description:
+        "14 LPA का मतलब: ~₹1,09,300/month in-hand (FY 2026-27, नई regime). Monthly take-home for ₹14 lakh salary — PF, TDS, PT breakdown and old vs new regime comparison.",
+      keywords: ["14 LPA in hand", "14 lakh salary monthly", "14 LPA take home India", "CTC 14 LPA monthly salary"],
+    },
+    scenario: baseScenario(14),
+    scenarioNotes: [
+      "₹14 LPA = ₹14,00,000 gross per year. Taxable income after standard deduction = ₹13.25L.",
+    ],
+    angleParagraph:
+      "At ₹14 LPA, income tax is a growing line item but still moderate under the new regime. This band is where the old-vs-new regime choice starts to matter if you have significant rent or 80C commitments — the break-even point on deductions is worth modelling explicitly before your employer's regime declaration deadline.",
+    bandInsights: [
+      "Taxable income = ₹13.25L — annual tax under new regime approx ₹1,05,000–₹1,12,000 (inc. cess); ~₹9,000/month TDS.",
+      "Old regime may win if: HRA deduction ≥ ₹15,000/month + 80C of ₹1.5L + NPS ₹50k. Otherwise new regime is simpler.",
+      "Notice period buyout at ₹14 LPA: ~₹1,16,700/month gross. Use the exit calculator to model your exact notice period cost.",
+      "Two ₹14 LPA offers with different fixed-to-variable ratios are not equivalent — model only fixed monthly pay for in-hand comparison.",
+    ],
+    faq: [
+      {
+        question: "What is 14 LPA in-hand per month in India (FY 2026-27)?",
+        answer:
+          "~₹1,09,300/month under the new tax regime. Annual income tax approx ₹1,05,000–₹1,12,000 (including 4% cess) on ₹13.25L taxable income. Deductions per month: PF ₹1,800 + professional tax ~₹208 + TDS ~₹9,000. Enter your actual Basic+DA and regime in the calculator for your exact payslip figure.",
+      },
+      {
+        question: "Is ₹14 LPA in the old or new tax regime better?",
+        answer:
+          "Depends on your deductions. Old regime wins if you can combine: HRA exemption (rent ₹15k+/month in metro), 80C investments of ₹1.5L, and NPS 80CCD(1B) of ₹50k. The combined deduction of ~₹2.75L+ can pull taxable income below ₹10.5L, where old-regime slabs become competitive. Use the tax regime calculator with your actual numbers.",
+      },
+    ],
+  },
+  {
     slug: "15-lpa-in-hand-salary",
     lpa: 15,
     seo: {
@@ -219,6 +515,70 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
         question: "What home loan amount can I expect to be eligible for at ₹15 LPA?",
         answer:
           "Lenders typically sanction home loans at 4–5x annual gross salary under standard underwriting, implying eligibility in the ₹60L–₹75L range at ₹15L gross. The actual sanction depends on your credit score, existing EMIs, co-applicant income, and property valuation. Your net monthly income after existing obligations determines how much EMI the bank will allow — confirm directly with your lender.",
+      },
+    ],
+  },
+  {
+    slug: "16-lpa-in-hand-salary",
+    lpa: 16,
+    seo: {
+      title: "16 LPA In-Hand Salary: ₹1,21,700/month (FY 2026-27)",
+      description:
+        "16 LPA का मतलब: ~₹1,21,700/month in-hand (FY 2026-27, नई regime). Monthly take-home, PF, TDS breakdown for ₹16 lakh salary — old vs new regime comparison included.",
+      keywords: ["16 LPA in hand", "16 lakh salary monthly", "16 LPA take home India", "CTC 16 LPA monthly net"],
+    },
+    scenario: baseScenario(16),
+    scenarioNotes: ["₹16 LPA = ₹16,00,000 gross per year. Taxable income after standard deduction = ₹15.25L."],
+    angleParagraph:
+      "At ₹16 LPA, income tax becomes a genuine monthly line item. This is the band where building a focused regime comparison — old vs new — delivers real value. If you pay ₹20,000+/month in rent and maximize 80C, the old regime may outperform despite higher marginal rates.",
+    bandInsights: [
+      "Annual tax under new regime: approx ₹1,55,000–₹1,65,000 (incl. cess) on ₹15.25L taxable; ~₹13,000–₹14,000 TDS/month.",
+      "Old regime worth modelling if: HRA deduction ≥ ₹18k/month + 80C ₹1.5L + NPS ₹50k.",
+      "ESOP or RSU grants at this level? Perquisite tax on exercise and sale can dwarf salary tax — see the income tax calculator for a fuller picture.",
+      "₹1.21L/month in-hand supports EMIs, savings, and rent simultaneously in most cities — use the Salary Reality Check for a city-specific breakdown.",
+    ],
+    faq: [
+      {
+        question: "What is 16 LPA in-hand per month (FY 2026-27)?",
+        answer:
+          "~₹1,21,700/month under the new tax regime. Annual tax approx ₹1,60,000 on ₹15.25L taxable income. Monthly: PF ₹1,800 + PT ~₹208 + TDS ~₹13,300. Use the calculator above with your actual Basic+DA for a payslip-accurate number.",
+      },
+      {
+        question: "How much more is 16 LPA take-home compared to 15 LPA?",
+        answer:
+          "~₹6,800/month more in-hand (₹1,21,700 vs ₹1,14,900). The ₹1L extra gross is partially consumed by incremental income tax in the 20% slab — your effective take-home per additional rupee of gross is about 82 paise at this band (new regime).",
+      },
+    ],
+  },
+  {
+    slug: "17-lpa-in-hand-salary",
+    lpa: 17,
+    seo: {
+      title: "17 LPA In-Hand Salary: ₹1,28,600/month (FY 2026-27)",
+      description:
+        "17 LPA का मतलब: ~₹1,28,600/month in-hand (FY 2026-27, नई regime). Monthly take-home for ₹17 lakh salary — PF, TDS, PT and free CTC to net calculator.",
+      keywords: ["17 LPA in hand", "17 lakh salary monthly", "17 LPA take home India", "CTC 17 LPA net salary"],
+    },
+    scenario: baseScenario(17),
+    scenarioNotes: ["₹17 LPA = ₹17,00,000 gross per year. Taxable income after standard deduction = ₹16.25L."],
+    angleParagraph:
+      "₹17 LPA sits in the 20% new-regime slab — effective tax rate is rising but still far from the 30% bracket that begins at ₹15L taxable. This is a useful anchor for professionals comparing mid-senior offers or evaluating whether a ₹2–3L hike is worth switching employers.",
+    bandInsights: [
+      "Annual tax under new regime: approx ₹1,80,000–₹1,92,000 (incl. cess) on ₹16.25L taxable; ~₹15,000–₹16,000 TDS/month.",
+      "At ₹17L, a ₹2L raise (to ₹19L) increases gross by 11% but in-hand by only ~₹1L (post-tax increment shrinks).",
+      "Appraisal negotiation: ask for the raise in gross, not CTC. Employer PF and gratuity embedded in CTC inflate the headline without changing your take-home.",
+      "Gratuity eligibility starts at 5 years of service — at ₹17L, gratuity accrual is ~₹81,700/year; model exit timing.",
+    ],
+    faq: [
+      {
+        question: "What is 17 LPA in-hand per month in India?",
+        answer:
+          "~₹1,28,600/month under the new tax regime (FY 2026-27). Annual income tax approx ₹1,86,000 on ₹16.25L taxable income. Monthly deductions: PF ₹1,800 + PT ~₹208 + TDS ~₹15,500.",
+      },
+      {
+        question: "Is there a big jump from ₹15 LPA to ₹17 LPA in take-home?",
+        answer:
+          "The gross jump is ₹2L/year (13%), but in-hand increases by ~₹13,700/month (₹1,28,600 vs ₹1,14,900). After tax absorption, each additional LPA at this band adds roughly ₹6,800–₹7,000/month to your take-home. Worth negotiating for, but manage expectations — a ₹2L raise is not ₹16,667/month extra in-hand.",
       },
     ],
   },
@@ -266,6 +626,38 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
         question: "How does ₹18 LPA compare to the median Indian salary?",
         answer:
           "India's national median formal-sector salary is estimated at roughly ₹4L–₹6L annually. ₹18 LPA places you in approximately the top 5–8% of salaried earners across the formal economy. Within the organized IT and services sector specifically, ₹18L sits above junior roles and below senior IC or lead levels — it is a competitive mid-level anchor for 5–8 years of experience in major metros.",
+      },
+    ],
+  },
+  {
+    slug: "19-lpa-in-hand-salary",
+    lpa: 19,
+    seo: {
+      title: "19 LPA In-Hand Salary: ₹1,42,000/month (FY 2026-27)",
+      description:
+        "19 LPA का मतलब: ~₹1,42,000/month in-hand (FY 2026-27, नई regime). Monthly take-home for ₹19 lakh salary — PF, TDS breakdown and free CTC to net salary calculator.",
+      keywords: ["19 LPA in hand", "19 lakh salary monthly", "19 LPA take home India", "CTC 19 LPA net salary"],
+    },
+    scenario: baseScenario(19),
+    scenarioNotes: ["₹19 LPA = ₹19,00,000 gross per year. Taxable income after standard deduction = ₹18.25L."],
+    angleParagraph:
+      "₹19 LPA is a common appraisal destination from ₹16–18 LPA. At this gross, the 20% and 30% slabs overlap at the margin — understanding your effective tax rate (not marginal rate) matters more than worrying about the slab number.",
+    bandInsights: [
+      "Annual tax under new regime at ₹19L: approx ₹2,25,000–₹2,40,000 (incl. cess); TDS spread ~₹19,000/month.",
+      "The effective tax rate at ₹19L is roughly 14–15% of gross — not 30%, which is only the marginal rate on income above ₹15L.",
+      "Appraisal jump from ₹18 to ₹19 LPA: in-hand rises ~₹6,600/month after tax — a meaningful but not dramatic change.",
+      "Salary negotiation anchor: if counter-offering at ₹19 vs ₹18 LPA, the monthly cash difference is ~₹6,600 — factor this into your decision-making.",
+    ],
+    faq: [
+      {
+        question: "What is 19 LPA in-hand per month (FY 2026-27)?",
+        answer:
+          "~₹1,42,000/month under the new tax regime. Annual income tax approx ₹2,32,500 on ₹18.25L taxable income. Monthly: PF ₹1,800 + PT ~₹208 + TDS ~₹19,375.",
+      },
+      {
+        question: "How much more is 19 LPA take-home vs 18 LPA?",
+        answer:
+          "~₹6,600/month more in-hand (₹1,42,000 vs ₹1,35,400). The ₹1L gross increment is partially absorbed by the 30% marginal slab applying to income above ₹15L taxable. Your effective per-rupee take-home at this band is ~79 paise on each extra rupee of gross.",
       },
     ],
   },
