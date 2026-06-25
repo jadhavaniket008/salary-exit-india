@@ -1664,6 +1664,512 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       "This page is most useful for families considering whether one ₹20 LPA salary can carry a Bengaluru household. The honest answer is: it can, but only with deliberate trade-offs. Lower rent in outer ORR or Whitefield (₹28k–₹32k), a more affordable school, or a second income each materially change the outcome. The most practical use of the embedded calculator: enter your actual rent quote, set lifestyle to premium, and manually estimate your school fee as a monthly number added to expenses — see what the savings line shows before you commit to a lease and enrollment simultaneously.",
     ],
   },
+  {
+    slug: "is-10-lpa-good-in-delhi",
+    lpa: 10,
+    annualCtc: 10_00_000,
+    city: { id: "delhi", name: "Delhi", metro: true },
+    monthlyRent: 25_000,
+    lifestyle: "moderate",
+    answerKind: "depends",
+    seo: {
+      title: "Is ₹10 LPA enough in Delhi? Rent, commute & savings reality check",
+      description:
+        "10 LPA in Delhi NCR: honest look at rent (₹25k/month solo flat), commute costs, and what 'moderate' spend actually means in the capital. No PT deduction in Delhi.",
+      keywords: ["is 10 lpa enough in delhi", "10 lakh salary delhi", "10 LPA delhi living cost", "is 10 lpa good in delhi"],
+    },
+    answerHeadline: "Tight for a solo flat in central Delhi — manageable in outer areas or with a flatmate.",
+    leadParagraph:
+      "Ten LPA in Delhi sounds reasonable on paper, but the capital's rental spread is wide: ₹25,000/month can get you a decent place in Dwarka, Rohini, or outer South Delhi, while the same money barely covers a studio in Saket or Hauz Khas. Delhi also has zero professional tax — a small but real advantage over Maharashtra or Karnataka.",
+    whyParagraph:
+      "We use ₹25,000/month as the rent anchor — a realistic solo flat in mid-Delhi or a flatmate arrangement in a better location. Metro and bus passes are cheap, but Delhi's geographical sprawl means commute time and auto/cab spend can be significant even when rent is managed. The model uses new-regime in-hand (zero PT in Delhi/NCR) as the base.",
+    typicalSpendNotes: [
+      "Delhi has no professional tax — you keep roughly ₹2,500/year more than an equivalent earner in Maharashtra.",
+      "Metro card is cost-effective but Delhi's corridors mean many professionals still depend on autos for the last mile.",
+      "Groceries are broadly comparable to Bengaluru; eating out is slightly cheaper in most of NCR.",
+    ],
+    relatedLpaSlugs: ["10-lpa-in-hand-salary", "12-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Early-career professionals joining Delhi-based employers or NCR startups, especially if you're willing to live in outer areas or share accommodation. Less suited if you need a premium central pincode on a single income.",
+    whenEnoughVsNot:
+      "Works when rent is ₹20–25k (shared or outer area) and lifestyle stays moderate. Stops working when rent climbs above ₹30k for a solo central flat or when you need premium spend plus a long commute.",
+    majorTradeoffs: [
+      "Central vs outer Delhi: Saket/Vasant Kunj rents are 40–60% higher than Dwarka or Rohini for similar flat sizes.",
+      "Metro connectivity is excellent on the main corridors — but that determines where you live as much as where you work.",
+      "Zero PT is a small win vs Mumbai or Bengaluru — doesn't change the rent equation but adds ₹200/month.",
+    ],
+    cityRealityNotes: [
+      "Delhi's rental market is less transparent than Bengaluru's — prices vary widely on floor, maintenance charges, and broker fees (typically 1–2 months rent upfront).",
+      "Air quality and seasonal heat mean utility bills can be higher than southern cities (AC in summer, air purifiers in winter).",
+      "NCR is large — Gurgaon and Noida jobs often have better pay for similar roles; a ₹10 LPA Delhi offer may compare poorly with an equivalent NCR offer on total comp.",
+    ],
+    soloVsFamilyCaveat:
+      "This scenario models one adult's expenses. Family overhead (school, medical, spouse dependents) pushes the viability threshold considerably higher for Delhi.",
+    faq: [
+      {
+        question: "Is there professional tax in Delhi?",
+        answer:
+          "No. Delhi does not levy professional tax — unlike Maharashtra (₹2,500/year) or Karnataka (₹2,400/year). Your gross-to-in-hand conversion in Delhi skips the PT deduction entirely.",
+      },
+      {
+        question: "Is ₹10 LPA a good salary in Delhi NCR in 2026?",
+        answer:
+          "It's viable but not comfortable in central areas. ₹10 LPA gives ~₹81,300/month in-hand (new regime, zero PT). After ₹25k rent, that leaves ~₹56k for all other expenses — workable with discipline but tight if you want any savings buffer.",
+      },
+    ],
+  },
+  {
+    slug: "is-12-lpa-good-in-delhi",
+    lpa: 12,
+    annualCtc: 12_00_000,
+    city: { id: "delhi", name: "Delhi", metro: true },
+    monthlyRent: 28_000,
+    lifestyle: "moderate",
+    answerKind: "yes",
+    seo: {
+      title: "Is ₹12 LPA enough in Delhi? In-hand salary, rent & savings check",
+      description:
+        "12 LPA in Delhi: ~₹98,000/month in-hand, zero income tax (FY 2026-27), no professional tax. Real breakdown of rent (₹28k/month), commute, and savings in Delhi NCR.",
+      keywords: ["is 12 lpa good in delhi", "12 lpa delhi salary", "12 lakh salary delhi", "is 12 lpa enough delhi ncr"],
+    },
+    answerHeadline: "Yes — comfortable for a single earner if rent is ₹25–30k and lifestyle stays moderate.",
+    leadParagraph:
+      "Twelve LPA in Delhi gives you ~₹98,000/month in-hand (new regime, zero PT) — a comfortable base for solo living in most of Delhi NCR. With income tax at zero (87A rebate covers full liability at ₹12L gross) and no professional tax, the gross-to-in-hand conversion is clean: only PF reduces your paycheck.",
+    whyParagraph:
+      "We anchor rent at ₹28,000/month — a reasonable 1BHK in South Delhi extensions, Dwarka Sector 10–12, or a decent 2BHK shared in Hauz Khas. On that assumption, monthly surplus after all modeled spend is positive and gives room for SIPs or emergency buffer building. The zero-PT Delhi advantage adds ~₹2,500/year vs Bengaluru.",
+    typicalSpendNotes: [
+      "₹28k rent covers a solo 1BHK in most outer-central pincodes without premium finishes.",
+      "Delhi Metro is affordable; long-distance office commutes by cab can add ₹4,000–8,000/month depending on route.",
+      "Eating out is generally cheaper than Bengaluru; alcohol is cheaper than Karnataka but more expensive than Haryana (no dry-day restrictions in Delhi).",
+    ],
+    relatedLpaSlugs: ["12-lpa-in-hand-salary", "15-lpa-in-hand-salary", "10-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Mid-career professionals in Delhi-based companies or NCR tech firms wanting a realistic picture of ₹12 LPA in the capital. Good anchor for offer evaluation when comparing Delhi vs Bengaluru compensation.",
+    whenEnoughVsNot:
+      "Works well for a single earner with ₹25–30k rent and moderate spend. Becomes tight when rent pushes ₹35k+ (premium South Delhi or CP area) or when family obligations enter the picture.",
+    majorTradeoffs: [
+      "Delhi vs Bengaluru at ₹12 LPA: Delhi wins on PT savings and slightly lower food costs; Bengaluru often has higher gross compensation offers at this band in tech.",
+      "Outer area vs central: trading location for rent saves ₹5–10k/month — add 30–45 min commute each way.",
+      "No PTax in Delhi vs ₹200/month saving is small but real — adds up to ₹2,500/year.",
+    ],
+    cityRealityNotes: [
+      "Delhi's housing supply is larger than Bengaluru's — a ₹28k budget goes further than the same number in Koramangala or Indiranagar.",
+      "Power cuts and seasonal heat still affect outer Delhi — budget for a UPS and higher summer electricity bills.",
+      "Delhi has stronger public school options than many cities — relevant if you're planning a family.",
+    ],
+    soloVsFamilyCaveat:
+      "This is a solo-earner scenario. Add ₹10–15k for a partner's discretionary spend, or ₹15–25k for a child's school and care costs, to stress-test family viability.",
+    faq: [
+      {
+        question: "How much in-hand do I get on ₹12 LPA in Delhi (FY 2026-27)?",
+        answer:
+          "~₹98,000/month under the new regime. Income tax is zero (Section 87A rebate). Delhi has no professional tax. Deductions: only employee PF ~₹1,800/month.",
+      },
+      {
+        question: "Is ₹12 LPA in Delhi better than ₹12 LPA in Bangalore?",
+        answer:
+          "Financially close. Delhi gives ~₹2,500/year more due to zero PT. Bengaluru tech roles at ₹12 LPA may offer stronger career trajectories and higher increment ceilings. Cost-of-living for similar quality-of-life is broadly comparable — Delhi wins on rent in outer areas; Bengaluru is cheaper on food and auto in some areas.",
+      },
+    ],
+  },
+  {
+    slug: "is-15-lpa-good-in-delhi",
+    lpa: 15,
+    annualCtc: 15_00_000,
+    city: { id: "delhi", name: "Delhi", metro: true },
+    monthlyRent: 32_000,
+    lifestyle: "moderate",
+    answerKind: "yes",
+    seo: {
+      title: "Is ₹15 LPA good in Delhi? Salary reality check with rent & savings",
+      description:
+        "15 LPA in Delhi: ~₹1,14,400/month in-hand (FY 2026-27, no PT). Is ₹15 lakh a good salary in Delhi NCR? Rent, commute, savings breakdown for single and family earners.",
+      keywords: ["is 15 lpa good in delhi", "15 lpa delhi salary", "15 lakh salary delhi", "is 15 lpa enough in delhi"],
+    },
+    answerHeadline: "Yes — good salary for solo living with savings; moderate for a young family in Delhi.",
+    leadParagraph:
+      "Fifteen LPA in Delhi gives ~₹1,14,400/month in-hand (new regime). At this gross, income tax is manageable (~₹21,000–₹24,000 annual TDS spread) and Delhi's zero PT keeps the paycheck clean. Most professionals at this band can afford a comfortable 1BHK in good South Delhi areas or a 2BHK in outer NCR.",
+    whyParagraph:
+      "We use ₹32,000/month as rent — a realistic solo 1BHK in Saket, Janakpuri, or Rajouri Garden, or a large 2BHK in Dwarka. After rent, moderate commute, and lifestyle spend, the modeled monthly surplus leaves room for SIPs and a small emergency fund build. It's not lavish but it's stable.",
+    typicalSpendNotes: [
+      "₹32k gets you a well-maintained 1BHK in South/West Delhi or a spacious 2BHK in outer areas — both realistic options at ₹15 LPA.",
+      "Metro commute from Dwarka or Janakpuri to CP/Connaught Place is 30–40 min and costs under ₹100/day.",
+      "Food spend at moderate tier assumes 3–4 restaurant meals/week — achievable in Delhi where dining out is generally cheaper than Bengaluru.",
+    ],
+    relatedLpaSlugs: ["15-lpa-in-hand-salary", "12-lpa-in-hand-salary", "18-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Mid-career professionals comparing a Delhi offer against NCR options, or evaluating a move from Bengaluru/Mumbai to Delhi at similar gross. Also useful for anyone assessing ₹15 LPA solo vs shared rent scenarios.",
+    whenEnoughVsNot:
+      "Comfortable for a single earner with ₹28–35k rent. Gets tight for a family in premium South Delhi (rent ₹45k+) or when school fees and dependent care enter the picture.",
+    majorTradeoffs: [
+      "Delhi central (Khan Market, Vasant Vihar) vs outer (Dwarka, Rohini): same income, ₹15–25k rent difference, 30–45 min commute difference.",
+      "At ₹15 LPA, old vs new regime gap is small (~₹5,000/year with typical 80C) — new regime wins on simplicity for most at this band in Delhi.",
+      "NCR comparison: ₹15 LPA in Gurgaon (Haryana also zero PT) often comes with more tech/MNC options; ₹15 LPA in Delhi proper may be government-adjacent or trading/services roles.",
+    ],
+    cityRealityNotes: [
+      "Delhi's property market is one of the most unequal in India — a 2km radius change in pincode can double or halve rent.",
+      "Water supply reliability varies significantly by area — check your building's borewell or tanker dependency before renting.",
+      "Eating out is reasonably affordable and the food scene is diverse — a meaningful quality-of-life upside vs southern metros.",
+    ],
+    soloVsFamilyCaveat:
+      "Solo earner scenario. A family setup with one child in a mid-tier school adds ₹12,000–₹20,000/month in costs that the default model does not capture — raise lifestyle tier or add to rent to stress-test.",
+    faq: [
+      {
+        question: "Is ₹15 LPA a good salary in Delhi in 2026?",
+        answer:
+          "Yes — ₹15 LPA gives ~₹1,14,400/month in-hand in Delhi (new regime, zero PT). It's a comfortable salary for a single earner and a workable starting point for a young family in outer areas with managed rent.",
+      },
+      {
+        question: "Is ₹15 LPA better in Delhi or Bangalore?",
+        answer:
+          "Very similar in purchasing power. Delhi has no PT (saves ₹2,500/year), slightly cheaper eating out and entertainment. Bengaluru has marginally better tech compensation growth trajectories at this band. Rent is broadly comparable for similar quality. Pick the city based on career opportunity, not small cost differences.",
+      },
+      {
+        question: "Is 15 LPA good salary in Delhi NCR?",
+        answer:
+          "Yes, ₹15 LPA is above median for most formal-sector roles in Delhi NCR. It allows independent living with savings capacity. In Gurgaon or Noida (zero PT states), in-hand is the same or similar — the key differentiator is your specific employer, role growth, and pincode choices.",
+      },
+    ],
+  },
+  {
+    slug: "is-20-lpa-good-in-delhi",
+    lpa: 20,
+    annualCtc: 20_00_000,
+    city: { id: "delhi", name: "Delhi", metro: true },
+    monthlyRent: 38_000,
+    lifestyle: "moderate",
+    answerKind: "yes",
+    seo: {
+      title: "Is ₹20 LPA good in Delhi? In-hand salary, rent & lifestyle check",
+      description:
+        "20 LPA in Delhi: ~₹1,48,600/month in-hand (FY 2026-27, no PT). Honest breakdown of rent (₹38k/month), savings, and what ₹20 lakh salary feels like in Delhi NCR.",
+      keywords: ["is 20 lpa good in delhi", "20 lpa delhi salary", "20 lakh salary delhi", "is 20 lpa enough in delhi"],
+    },
+    answerHeadline: "Good — comfortable for solo or couple with real savings capacity in most of Delhi.",
+    leadParagraph:
+      "Twenty LPA in Delhi gives ~₹1,48,600/month in-hand (new regime, zero PT). At this gross, tax is real (~₹27,000/month TDS) but manageable, and Delhi's zero professional tax adds a small yearly advantage over Bengaluru or Mumbai. Most professionals at ₹20 LPA can choose between a premium 1BHK in central Delhi and a very comfortable 2BHK in outer areas.",
+    whyParagraph:
+      "We use ₹38,000/month rent — a realistic premium 1BHK in Saket/Vasant Kunj or a large 2BHK in Janakpuri/Rajouri Garden. After rent, commute, and moderate lifestyle, the surplus is meaningful — enough for SIPs, emergency fund, and occasional travel without financial stress.",
+    typicalSpendNotes: [
+      "₹38k in Delhi covers a premium 1BHK in established South Delhi corridors — the same goes for roughly ₹35k in outer NCR (Dwarka Sector 6, Rohini).",
+      "Commute is relatively well-served by Metro across most of Delhi — a monthly pass costs under ₹1,000 for most corridors.",
+      "Eating out regularly and some entertainment: Delhi's costs are 10–15% lower than Bengaluru at equivalent quality.",
+    ],
+    relatedLpaSlugs: ["20-lpa-in-hand-salary", "15-lpa-in-hand-salary", "25-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Senior professionals or senior ICs evaluating Delhi-based offers, or comparing ₹20 LPA Delhi with equivalent Bengaluru/Mumbai compensation. Also relevant for couples where one earner makes ₹20 LPA and the household needs a Delhi budget view.",
+    whenEnoughVsNot:
+      "Very comfortable solo or couple. Gets stretched only when rent climbs to premium South Delhi / GK levels (₹50k+) or when family obligations (school, parents, EMIs) stack on top of the rent line.",
+    majorTradeoffs: [
+      "₹20 LPA Delhi vs Bengaluru: Delhi wins on no-PT and cheaper eat-out; Bengaluru tech roles at ₹20 LPA typically have stronger year-3 increment trajectories.",
+      "Premium central Delhi rent (₹45–60k) vs outer area (₹30–38k): same gross, very different savings — a ₹15k rent difference is ₹1.8L annually.",
+      "Old regime at ₹20 LPA in Delhi: no HRA exemption benefit for Delhi renters if CTC doesn't separately show HRA — confirm your salary structure before choosing regime.",
+    ],
+    cityRealityNotes: [
+      "Delhi has some of India's best public hospitals (AIIMS, GTB, Safdarjung) — reduces effective healthcare spend vs cities relying entirely on private care.",
+      "Vehicle ownership pressure is high in Delhi outside Metro corridors — a car or two-wheeler adds ₹8–15k/month in EMI, insurance, fuel, and parking.",
+      "Delhi's extreme summer (May–June) and winter (December–January) mean higher utility bills than year-round-pleasant cities like Pune.",
+    ],
+    soloVsFamilyCaveat:
+      "Comfortable solo or as a couple. A child's school fees (₹10–20k/month for mid-tier schools) and childcare significantly shift the equation — run the calculator with actual school fee estimates before committing.",
+    faq: [
+      {
+        question: "Is ₹20 LPA a good salary in Delhi in 2026?",
+        answer:
+          "Yes — ₹20 LPA (₹1,48,600/month in-hand in Delhi, new regime, zero PT) provides comfortable living with meaningful savings capacity for a single earner. For a couple or a family with one child, it works with rent discipline but has less margin.",
+      },
+      {
+        question: "How much in-hand do I get on ₹20 LPA in Delhi?",
+        answer:
+          "~₹1,48,600/month under the new tax regime. Delhi has no professional tax, so deductions are employee PF (~₹1,800/month) and income tax TDS (~₹26,900/month). Total monthly deductions ~₹28,700.",
+      },
+      {
+        question: "₹20 LPA in Delhi vs ₹20 LPA in Bangalore — which is better?",
+        answer:
+          "Very close financially. Delhi has no PT (saves ₹2,500/year) and slightly lower food/entertainment costs. Bengaluru typically offers better tech career trajectory and more product company density at this comp level. Pick based on career, not cost arbitrage at ₹20 LPA.",
+      },
+    ],
+  },
+  {
+    slug: "is-12-lpa-good-in-gurgaon",
+    lpa: 12,
+    annualCtc: 12_00_000,
+    city: { id: "gurgaon", name: "Gurgaon", metro: true },
+    monthlyRent: 26_000,
+    lifestyle: "moderate",
+    answerKind: "depends",
+    seo: {
+      title: "Is ₹12 LPA good in Gurgaon? Rent, commute & savings reality check",
+      description:
+        "12 LPA in Gurgaon: ~₹98,000/month in-hand (zero PT, FY 2026-27). Honest take on DLF Phase rent (₹26k/month), commute, and whether ₹12 lakh is enough in Gurgaon NCR.",
+      keywords: ["is 12 lpa good in gurgaon", "12 lpa gurgaon salary", "12 lakh salary gurgaon", "is 12 lpa enough in gurugram"],
+    },
+    answerHeadline: "Workable in outer Gurgaon — tight near DLF corridors where rent is aggressive.",
+    leadParagraph:
+      "Gurgaon (Gurugram) is India's MNC capital — high rents, high cab spend, and often better comp than equivalent Delhi or Noida roles. At ₹12 LPA, Haryana's zero professional tax means your in-hand matches or beats the Delhi equivalent. The challenge is that Gurgaon's cheapest liveable areas are often far from major employment clusters.",
+    whyParagraph:
+      "We anchor rent at ₹26,000/month — realistic for a 1BHK in Sector 45–57 or a shared arrangement nearer DLF Cyber City. Commute costs in Gurgaon are higher than Metro-connected cities because rapid metro coverage is thinner; a mix of cab and auto is the reality for many employees in Udyog Vihar, Golf Course Road, or Manesar.",
+    typicalSpendNotes: [
+      "Gurgaon's rental market is heavily skewed by DLF proximity — the same ₹26k budget gets you much more in Sector 55/65 than in DLF Phase 3 or Golf Course Extension.",
+      "Cab dependency: Gurgaon's auto ecosystem is weaker than Delhi; Uber/Ola can be ₹3,000–8,000/month for short-commute office trips.",
+      "Eating out is comparable to Delhi — good options across price points but premium restaurants concentrate in malls (DLF Cyberhub, Ambience).",
+    ],
+    relatedLpaSlugs: ["12-lpa-in-hand-salary", "15-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "IT/MNC employees joining Gurgaon-based companies at ₹12 LPA who want to understand rent viability before relocating from other cities. Particularly relevant for those comparing Gurgaon vs Bengaluru offers at this comp level.",
+    whenEnoughVsNot:
+      "Works when rent is ₹22–28k and you have tolerance for outer sectors. Stops working when rent near office exceeds ₹35k or when Uber/cab costs are high due to poor last-mile Metro access.",
+    majorTradeoffs: [
+      "DLF Cyber City proximity: ₹5–10k premium in rent vs sectors 45–60 but saves 45–60 min commute daily.",
+      "No PT in Haryana: saves ₹2,500/year vs Maharashtra/Karnataka — small but real.",
+      "Gurgaon vs Noida at ₹12 LPA: Noida tends to be cheaper rent + better Metro access; Gurgaon has more MNC/BFSI employers.",
+    ],
+    cityRealityNotes: [
+      "Waterlogging and infrastructure gaps in Gurgaon's older sectors make outer living less comfortable in monsoon months.",
+      "DLF Cyberhub, Ambience Mall, and the recent restaurant strip in Sector 29 make Gurgaon one of the better F&B cities for its size.",
+      "Gurgaon has no direct Metro link to many residential clusters — check the Rapid Metro and Delhi Metro Yellow Line coverage for your specific office location.",
+    ],
+    soloVsFamilyCaveat:
+      "Solo-earner model. Gurgaon schools are expensive; a child's school fees can add ₹15–25k/month for mid-tier options near most employment clusters.",
+    faq: [
+      {
+        question: "Is there professional tax in Gurgaon (Haryana)?",
+        answer:
+          "No. Haryana does not levy professional tax. Your gross-to-in-hand in Gurgaon is the same as Delhi — only PF and income tax deduct from your salary.",
+      },
+      {
+        question: "Is ₹12 LPA a good salary in Gurgaon in 2026?",
+        answer:
+          "It's viable but not comfortable near prime office clusters. ₹12 LPA gives ~₹98,000/month in-hand. After ₹26k rent and ₹5–8k in commute/cab, you have ~₹64–67k for living expenses and savings — manageable but tight if rent or commute climbs.",
+      },
+    ],
+  },
+  {
+    slug: "is-20-lpa-good-in-gurgaon",
+    lpa: 20,
+    annualCtc: 20_00_000,
+    city: { id: "gurgaon", name: "Gurgaon", metro: true },
+    monthlyRent: 38_000,
+    lifestyle: "moderate",
+    answerKind: "yes",
+    seo: {
+      title: "Is ₹20 LPA good in Gurgaon? Salary, rent & savings reality check",
+      description:
+        "20 LPA in Gurgaon: ~₹1,48,600/month in-hand (zero PT, FY 2026-27). Honest breakdown of DLF/Golf Course rent (₹38k/month), commute costs, and monthly savings in Gurugram.",
+      keywords: ["is 20 lpa good in gurgaon", "20 lpa gurgaon salary", "20 lakh salary gurgaon", "is 20 lpa enough in gurugram"],
+    },
+    answerHeadline: "Yes — comfortable for solo or couple; workable for a small family with managed rent.",
+    leadParagraph:
+      "Twenty LPA in Gurgaon delivers ~₹1,48,600/month in-hand (new regime, zero PT). This is one of the most common senior-IC compensation points in Gurgaon's BFSI, consulting, and tech sectors. At this level, rent in a premium DLF or Golf Course corridor is feasible without wiping savings.",
+    whyParagraph:
+      "We use ₹38,000/month rent — a good 1BHK in DLF Phase 1–3 or a 2BHK in Sector 57 or Sohna Road. After rent, cab costs (Gurgaon has higher cab dependency than Delhi), and moderate spend, surplus is solid for SIPs and occasional international travel once a year.",
+    typicalSpendNotes: [
+      "₹38k rent in Gurgaon covers a well-furnished 1BHK in prime corridors (near Cyber City, Golf Course Road) or a spacious 2BHK in outer sectors.",
+      "Cab costs can be ₹6–12k/month in Gurgaon depending on commute — factor this before finalising a flat far from the office.",
+      "Cyberhub and sector 29 dining is relatively expensive; cooking or ordering from apps brings food spend down significantly.",
+    ],
+    relatedLpaSlugs: ["20-lpa-in-hand-salary", "15-lpa-in-hand-salary", "25-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Mid-senior professionals in Gurgaon's tech, BFSI, or consulting sectors evaluating whether ₹20 LPA clears the comfort threshold. Also useful for those moving from Bengaluru or Mumbai to Gurgaon at similar comp.",
+    whenEnoughVsNot:
+      "Comfortable for solo earner or couple without dependents. Gets stretched when Golf Course Extension or premium DLF rent exceeds ₹50k, or when family schooling/medical costs layer on top.",
+    majorTradeoffs: [
+      "Prime DLF vs outer Gurgaon: ₹15k rent difference, 30–45 min saved daily. At ₹20 LPA, the commute time trade-off is worth quantifying.",
+      "No PT: Haryana's zero PT saves ₹2,500/year over Bengaluru — minor at ₹20L but real.",
+      "Gurgaon MNC density: ₹20 LPA roles in Gurgaon often come with formal appraisal cycles and promotion frameworks not always present in smaller Delhi startups.",
+    ],
+    cityRealityNotes: [
+      "Gurgaon's residential areas have improved significantly in the last 5 years — better malls, restaurants, and civic amenities than a decade ago.",
+      "Air quality is similar to Delhi — invest in a good air purifier if living outside conditioned towers.",
+      "Driving in Gurgaon is difficult during peak hours — proximity to office matters for quality of life more than pincode prestige.",
+    ],
+    soloVsFamilyCaveat:
+      "Comfortable solo. A child adds ₹15–25k/month for reasonable Gurgaon schooling; a second car or school transport adds further. Stress-test via the calculator before making school and flat decisions simultaneously.",
+    faq: [
+      {
+        question: "Is ₹20 LPA a good salary in Gurgaon in 2026?",
+        answer:
+          "Yes. ₹20 LPA in Gurgaon (Haryana, zero PT) gives ~₹1,48,600/month in-hand. It provides comfortable solo or couple living with real savings capacity. For families, it's workable with rent discipline and modest school choice.",
+      },
+      {
+        question: "How does ₹20 LPA Gurgaon compare to ₹20 LPA Bangalore?",
+        answer:
+          "Financially similar. Gurgaon: zero PT, slightly lower food costs but higher cab dependency. Bengaluru: better Metro connectivity and stronger tech product-company density. Net take-home is identical. Pick based on career opportunity.",
+      },
+    ],
+  },
+  {
+    slug: "is-20-lpa-good-in-hyderabad",
+    lpa: 20,
+    annualCtc: 20_00_000,
+    city: { id: "hyderabad", name: "Hyderabad", metro: true },
+    monthlyRent: 32_000,
+    lifestyle: "moderate",
+    answerKind: "yes",
+    seo: {
+      title: "Is ₹20 LPA good in Hyderabad? Salary, rent & savings reality check",
+      description:
+        "20 LPA in Hyderabad: ~₹1,48,400/month in-hand (FY 2026-27, ₹200/month PT). Honest breakdown of Kondapur/Madhapur rent (₹32k/month) and savings in Cyberabad.",
+      keywords: ["is 20 lpa good in hyderabad", "20 lpa hyderabad salary", "20 lakh salary hyderabad", "is 20 lpa enough in hyderabad"],
+    },
+    answerHeadline: "Yes — excellent value for money; one of the best cities at ₹20 LPA in India.",
+    leadParagraph:
+      "Twenty LPA in Hyderabad delivers a quality-of-life advantage that is hard to match in Bengaluru or Mumbai at the same gross. Rents in the Cyberabad corridor (Kondapur, Madhapur, Gachibowli) are 20–30% lower than equivalent Bengaluru tech areas, and the city's infrastructure has improved significantly. Telangana's PT is only ₹200/month — a minor deduction.",
+    whyParagraph:
+      "We use ₹32,000/month rent — a realistic premium 2BHK in Kondapur or a large 3BHK in the outer Financial District area. After rent, moderate commute (Hyderabad traffic is growing but still less brutal than Bengaluru), and lifestyle spend, monthly surplus is comfortably above most comparable metros at this gross.",
+    typicalSpendNotes: [
+      "₹32k in Hyderabad buys a premium 2BHK in Kondapur, Gachibowli, or Madhapur — you get more space for the money vs Bengaluru.",
+      "Eating out is cheaper than Bengaluru and Mumbai — Hyderabadi food culture (biryani, Irani chai) is affordable at all price points.",
+      "MMTS train and Metro connectivity has improved but cabs remain popular for Cyberabad office clusters — budget ₹3,000–6,000/month.",
+    ],
+    relatedLpaSlugs: ["20-lpa-in-hand-salary", "15-lpa-in-hand-salary", "25-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Tech and BFSI professionals with Hyderabad offers evaluating whether ₹20 LPA clears the comfort bar. Also useful for Bengaluru or Mumbai expats considering a Hyderabad move at similar gross.",
+    whenEnoughVsNot:
+      "Excellent for solo earner or couple. Even for a small family, ₹20 LPA in Hyderabad is more comfortable than the same gross in Bengaluru or Mumbai due to lower rent and cost of living.",
+    majorTradeoffs: [
+      "Hyderabad vs Bengaluru at ₹20 LPA: Hyderabad wins significantly on rent and quality-of-life per rupee. Bengaluru has wider career optionality at senior levels.",
+      "Inner Cyberabad vs outer areas: ₹32k vs ₹22k rent, but inner area saves 30–45 min daily commute.",
+      "Telangana PT (₹200/month) vs Karnataka (₹200/month) — essentially the same; no state-tax advantage either way.",
+    ],
+    cityRealityNotes: [
+      "Hyderabad's water supply is generally reliable in maintained apartments — fewer tanker-dependency issues than outer Bengaluru.",
+      "Outer Ring Road connectivity makes commutes faster than equivalent Bengaluru distances in many corridors.",
+      "Hyderabad lacks the pub culture of Bengaluru but has excellent restaurants, especially around Banjara Hills and Jubilee Hills.",
+    ],
+    soloVsFamilyCaveat:
+      "A family with one child at ₹20 LPA in Hyderabad is more comfortable than the same family in Bengaluru or Mumbai at the same gross — lower rent gives meaningful extra margin.",
+    faq: [
+      {
+        question: "Is ₹20 LPA a good salary in Hyderabad in 2026?",
+        answer:
+          "Excellent — one of the best cities at this comp level. ₹20 LPA in Hyderabad gives ~₹1,48,400/month in-hand. With rent 20–30% lower than Bengaluru for equivalent space, the quality-of-life per rupee is hard to beat in Indian tech hubs.",
+      },
+      {
+        question: "How much in-hand is ₹20 LPA in Hyderabad?",
+        answer:
+          "~₹1,48,400/month (new tax regime, Telangana PT ₹200/month). Deductions: employee PF ~₹1,800/month, PT ~₹200/month, TDS ~₹26,900/month.",
+      },
+    ],
+  },
+  {
+    slug: "is-25-lpa-good-in-mumbai",
+    lpa: 25,
+    annualCtc: 25_00_000,
+    city: { id: "mumbai", name: "Mumbai", metro: true },
+    monthlyRent: 55_000,
+    lifestyle: "moderate",
+    answerKind: "depends",
+    seo: {
+      title: "Is ₹25 LPA good in Mumbai? Rent, savings & lifestyle reality check",
+      description:
+        "25 LPA in Mumbai: ~₹1,80,000/month in-hand (FY 2026-27, ₹208/month PT). Honest breakdown: Andheri/Powai rent (₹55k/month), commute, and whether ₹25 lakh is enough in Mumbai.",
+      keywords: ["is 25 lpa good in mumbai", "25 lpa mumbai salary", "25 lakh salary mumbai", "is 25 lpa enough in mumbai"],
+    },
+    answerHeadline: "Good for solo — tighter for a family; Mumbai's rent pressure is relentless at every income level.",
+    leadParagraph:
+      "Twenty-five LPA in Mumbai gives ~₹1,80,000/month in-hand (new regime). This sounds substantial until Mumbai's rent enters the calculation — a 1BHK in Andheri West or Powai comfortably anchors at ₹45,000–₹60,000/month, leaving a narrower margin than the same gross in Bengaluru or Hyderabad.",
+    whyParagraph:
+      "We use ₹55,000/month rent — a fair market rate for a 1BHK in Andheri West, Powai, or Bandra East. Mumbai's local train network is excellent but peak-hour commutes are gruelling; many professionals trade higher rent for proximity to reduce time cost. After rent and moderate spend, surplus is positive but not generous by national metro standards.",
+    typicalSpendNotes: [
+      "₹55k in Mumbai gets a decent 1BHK in Andheri West/East, Powai, or Malad West — not luxury but liveable in good buildings.",
+      "Local train monthly pass costs under ₹500 for most routes — a massive commute subsidy vs Bengaluru/Hyderabad cab costs.",
+      "Eating out in Mumbai ranges from cheap street food to expensive restaurants — 'moderate' tier here assumes a mix, not all sit-down dining.",
+    ],
+    relatedLpaSlugs: ["25-lpa-in-hand-salary", "20-lpa-in-hand-salary", "30-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "BFSI, media, consulting, or mid-senior tech professionals with Mumbai offers. Particularly useful for those relocating from lower-cost cities who want a realistic picture before committing to Mumbai rent.",
+    whenEnoughVsNot:
+      "Good for a single earner choosing rent wisely. Becomes strained when rent exceeds ₹65k (Bandra West, Lower Parel premium), when a family adds school and childcare costs, or when lifestyle moves to premium tier.",
+    majorTradeoffs: [
+      "Mumbai vs Bengaluru at ₹25 LPA: Mumbai rent is 30–50% higher for comparable space. Bengaluru's tech ecosystem offers more lateral move options. Mumbai wins on BFSI, media, and non-tech career density.",
+      "Train proximity vs rent: living near a Western or Central Railway station saves ₹5–10k/month in cab costs vs being off the rail network.",
+      "South Mumbai (Fort, Worli, Dadar) rents are brutally high at ₹70k+ for a 1BHK — most ₹25 LPA earners live in suburbs.",
+    ],
+    cityRealityNotes: [
+      "Mumbai's local train network is a genuine quality-of-life asset — it connects the city affordably and reliably in a way that road-centric cities cannot replicate.",
+      "Flooding risk in low-lying areas during monsoon (June–September) is real — check the area's flood history before signing a lease.",
+      "Mumbai has India's best social and professional networking scene — events, industry meetups, and serendipity encounters are part of the city's value that no salary calculator captures.",
+    ],
+    soloVsFamilyCaveat:
+      "Solo earner scenario. A family in Mumbai at ₹25 LPA is very stretched — school fees (₹1.5–3L/year for mid-tier English-medium) and the city's cost premium compound fast. A dual-income household changes this materially.",
+    faq: [
+      {
+        question: "Is ₹25 LPA a good salary in Mumbai in 2026?",
+        answer:
+          "Good for a single earner — comfortable if rent is managed below ₹55k and lifestyle is moderate. Mumbai's rent premium means this feels tighter than the same gross in Bengaluru or Hyderabad. For a family, it requires careful budgeting or a second income.",
+      },
+      {
+        question: "How much in-hand salary is ₹25 LPA in Mumbai?",
+        answer:
+          "~₹1,80,000/month (new tax regime, Maharashtra PT ~₹208/month). Deductions: PF ~₹1,800/month, PT ~₹208/month, TDS ~₹37,400/month. Total deductions ~₹39,400/month from gross of ₹2,08,333.",
+      },
+      {
+        question: "Is ₹25 LPA in Mumbai better than ₹20 LPA in Bengaluru?",
+        answer:
+          "Not necessarily. ₹25 LPA Mumbai in-hand (~₹1,80,000) vs ₹20 LPA Bengaluru in-hand (~₹1,48,000) is ~₹32,000/month more. But a Mumbai 1BHK costs ₹20–30k more/month in rent than a Bengaluru equivalent. The net financial advantage of the Mumbai offer is smaller than the gross difference suggests.",
+      },
+    ],
+  },
+  {
+    slug: "is-30-lpa-good-in-bangalore",
+    lpa: 30,
+    annualCtc: 30_00_000,
+    city: { id: "bangalore", name: "Bengaluru", metro: true },
+    monthlyRent: 50_000,
+    lifestyle: "moderate",
+    answerKind: "yes",
+    seo: {
+      title: "Is ₹30 LPA good in Bangalore? Salary, rent & lifestyle reality check",
+      description:
+        "30 LPA in Bengaluru: ~₹2,03,000/month in-hand (FY 2026-27). Honest breakdown of Indiranagar/Koramangala rent (₹50k/month), commute, and savings at ₹30 lakh salary in Bangalore.",
+      keywords: ["is 30 lpa good in bangalore", "30 lpa bangalore salary", "30 lakh salary bangalore", "is 30 lpa enough in bengaluru"],
+    },
+    answerHeadline: "Yes — very comfortable for solo or couple; workable for a family with one school-going child.",
+    leadParagraph:
+      "Thirty LPA in Bengaluru is a senior IC or lead-level compensation that provides genuine financial comfort. At ~₹2,03,000/month in-hand (new regime), you can afford premium-area rents, save meaningfully, and build wealth — this is the tier where financial stress largely exits the picture for most lifestyle choices in Bengaluru.",
+    whyParagraph:
+      "We use ₹50,000/month rent — a quality 2BHK in Indiranagar, Koramangala, or JP Nagar, or a premium 1BHK in a gated community in Whitefield. After rent and moderate lifestyle spend, monthly surplus is substantial enough for active investment — SIPs, NPS, or a home loan EMI — alongside discretionary flexibility.",
+    typicalSpendNotes: [
+      "₹50k in Bengaluru covers a well-furnished 2BHK in core tech corridors or a premium 1BHK with amenities in Whitefield and ORR areas.",
+      "At ₹30 LPA, many professionals start car ownership — adds ₹15–20k/month in EMI, fuel, and maintenance.",
+      "Travel, eating out regularly, and weekend activities: moderate tier here assumes once-a-month restaurant meals plus daily ordering/cooking mix — not a premium lifestyle.",
+    ],
+    relatedLpaSlugs: ["30-lpa-in-hand-salary", "25-lpa-in-hand-salary", "35-lpa-in-hand-salary"],
+    whoThisWorksFor:
+      "Senior engineers, leads, and managers evaluating their first ₹30 LPA offer in Bengaluru. Also relevant for those who want to understand if ₹30 LPA clears the bar for a home loan EMI alongside rent.",
+    whenEnoughVsNot:
+      "Very comfortable for solo or couple. For a family with school-age children in premium schools (₹20–40k/month fees), the equation gets tighter but remains workable — see the calculator with your actual school fee estimate.",
+    majorTradeoffs: [
+      "At ₹30 LPA, owning vs renting in Bengaluru becomes a real debate — EMI on a ₹1.2–1.5Cr flat is roughly ₹80–100k/month. On ₹2,03,000 in-hand, that's aggressive but not impossible with careful budgeting.",
+      "Indiranagar/Koramangala rent premium: ₹50k vs ₹35k in Whitefield/Sarjapur — saves ₹1.8L/year but adds 45–60 min daily commute for many offices.",
+      "Old vs new regime at ₹30 LPA: with home loan deduction, HRA, and 80C, old regime can save ₹2–4L annually. Worth a detailed comparison before your April declaration.",
+    ],
+    cityRealityNotes: [
+      "Bengaluru's traffic means proximity to office matters more at ₹30 LPA when discretionary time becomes more valuable than rent savings.",
+      "Tech ecosystem density at this comp level opens lateral move options — compensation benchmarking becomes easier when you're in the Bengaluru market.",
+      "Bengaluru's climate remains the city's consistent lifestyle advantage — negligible heating/cooling costs vs Delhi or Mumbai's extremes.",
+    ],
+    soloVsFamilyCaveat:
+      "Very comfortable solo or as a couple. A family with one child in a good Bengaluru school adds ₹15–35k/month; two children double that. The surplus at ₹30 LPA absorbs one child's costs well — two children require careful rent-school-lifestyle trade-offs.",
+    faq: [
+      {
+        question: "Is ₹30 LPA a good salary in Bengaluru in 2026?",
+        answer:
+          "Yes — ₹30 LPA (₹2,03,000/month in-hand, new regime) is a comfortable senior-level salary in Bengaluru. It provides premium-area living, meaningful investment capacity, and financial flexibility for most lifestyle choices.",
+      },
+      {
+        question: "How much in-hand is ₹30 LPA in Bangalore?",
+        answer:
+          "~₹2,03,000/month under the new tax regime. Deductions: PF ~₹1,800/month, Karnataka PT ~₹200/month, TDS ~₹45,000/month. Gross monthly: ₹2,50,000.",
+      },
+      {
+        question: "Can I afford a home loan EMI at ₹30 LPA in Bangalore?",
+        answer:
+          "Feasible but requires careful planning. At ~₹2,03,000/month in-hand, a 30–35% EMI guideline suggests ₹60,000–₹70,000/month affordable EMI. That supports a ₹1.2–1.5Cr home loan at current rates. In Bengaluru's market, that buys a 2BHK in outer areas or a 1BHK in near-core. Rent + EMI simultaneously is not advised — pick one.",
+      },
+    ],
+  },
 ];
 
 const bySlug = new Map(SALARY_ENOUGH_PAGES.map((p) => [p.slug, p]));

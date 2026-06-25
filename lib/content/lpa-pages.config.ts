@@ -830,6 +830,146 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       },
     ],
   },
+  {
+    slug: "40-lpa-in-hand-salary",
+    lpa: 40,
+    seo: {
+      title: "40 LPA In-Hand Salary: ₹2,65,700/month (FY 2026-27)",
+      description:
+        "40 LPA का मतलब: ~₹2,65,700/month in-hand (FY 2026-27, नई regime). 40 lakh gross to take-home — PF, TDS, PT breakdown. Directional estimate; surcharge not modeled.",
+      keywords: ["40 LPA in hand", "40 lakh salary take home India", "40 LPA monthly net India", "40lpa meaning"],
+    },
+    scenario: baseScenario(40),
+    scenarioNotes: [
+      "₹40 LPA = ₹40,00,000 gross per year. Taxable income after standard deduction = ₹39.25L.",
+      "No surcharge at this gross (below ₹50L taxable income threshold) — tax is computed at slab rates only.",
+    ],
+    angleParagraph:
+      "Forty LPA is a senior IC or early-leadership milestone in Indian tech and financial services. Unlike lower bands, the tax deduction here is substantial — roughly ₹7.9L annually (pre-cess) — making regime choice and deduction optimization genuinely meaningful rather than academic.",
+    bandInsights: [
+      "Annual tax under new regime: ~₹7,87,800 (including 4% cess). Monthly TDS spread: ~₹65,650.",
+      "Old regime comparison matters at ₹40L: HRA + home loan interest + NPS can together reduce taxable income by ₹5–8L, potentially saving ₹1.5–2L in annual tax.",
+      "RSU vests and joining bonuses are taxed as perquisites or salary income — they spike the effective TDS in the vesting/receipt month. Many employees at this band see uneven monthly in-hand for this reason.",
+      "At ₹40 LPA, the question shifts from 'how much tax?' to 'which deductions am I missing?' — engage a CA or a structured regime comparison before your April declaration.",
+    ],
+    realityCheckParagraphs: [
+      "Forty LPA is where monthly cash flow stops being the only financial concern. The illustrated in-hand of ~₹2,65,700/month is substantial for individual spend, but at this income level wealth accumulation — EPF, ESOP vesting schedules, NPS, real estate equity — typically contributes more to net worth over a career than monthly surplus alone.",
+      "For most employees at ₹40 LPA, the most impactful salary optimization is the annual regime declaration, not payroll mechanics. If you claim HRA (metro rent ≥ ₹50,000/month), home loan interest (₹2L deduction), and full 80C (₹1.5L), the old regime can save ₹1.5–2.5L annually compared to new regime at this gross. The tax regime calculator can model this — but use actual rent receipts and home loan statements, not estimates.",
+      "The PF deduction shown here (₹1,800/month) is the statutory minimum calculation on capped PF wage. Many employees at ₹40 LPA negotiate lower Basic+DA explicitly to minimize PF deduction, trading long-term corpus for short-term cash. Neither choice is wrong — but be clear about the trade-off before accepting a salary structure.",
+    ],
+    faq: [
+      {
+        question: "What is the in-hand salary for 40 LPA in India (FY 2026-27)?",
+        answer:
+          "~₹2,65,700/month under the new tax regime. Annual income tax is approximately ₹7,87,800 (including 4% cess). Deductions: employee PF ₹1,800/month + professional tax ~₹208/month. Actual payslip may differ based on your Basic+DA split, state PT, and any RSU or bonus perquisites.",
+      },
+      {
+        question: "40 LPA ka matlab kya hota hai? In-hand kitni hogi?",
+        answer:
+          "40 LPA yani ₹40,00,000 saalana gross CTC. FY 2026-27 mein nai tax regime ke hisab se, estimated in-hand salary lagbhag ₹2,65,700 per maah hoti hai — employee PF (₹1,800) aur professional tax (₹208) deduct karne ke baad. Actual salary aapke employer ki salary structure par depend karti hai.",
+      },
+      {
+        question: "Should I choose old or new regime at ₹40 LPA?",
+        answer:
+          "At ₹40L, the regime choice is not trivial. If you claim metro HRA (₹40,000–₹60,000/month rent), home loan interest (₹2L deduction), and full 80C (₹1.5L), the old regime can save ₹1.5–2.5L annually. If you have few deductions, the new regime is simpler. Use the tax regime calculator with your actual deductions — don't default without checking.",
+      },
+    ],
+  },
+  {
+    slug: "45-lpa-in-hand-salary",
+    lpa: 45,
+    seo: {
+      title: "45 LPA In-Hand Salary: ₹2,94,300/month (FY 2026-27)",
+      description:
+        "45 LPA का मतलब: ~₹2,94,300/month in-hand (FY 2026-27, नई regime). 45 lakh gross to monthly take-home — TDS, PF breakdown. Directional estimate; validate with Form 16.",
+      keywords: ["45 LPA in hand", "45 lakh salary take home India", "45 LPA monthly net", "45lpa meaning"],
+    },
+    scenario: baseScenario(45),
+    scenarioNotes: [
+      "₹45 LPA = ₹45,00,000 gross per year. Taxable income after standard deduction = ₹44.25L.",
+      "No surcharge at this gross (taxable income below ₹50L threshold).",
+    ],
+    angleParagraph:
+      "₹45 LPA is a common destination for senior engineers (L6/L7 equivalents), directors, and principals in tech. Tax at this gross is ~₹9.44L annually under the new regime — the monthly TDS bite of ~₹78,650 is significant enough that regime optimization and deduction planning can add ₹1–2L back into your year.",
+    bandInsights: [
+      "Annual tax under new regime: ~₹9,43,800 (including 4% cess). Monthly TDS spread: ~₹78,650.",
+      "Old regime at ₹45L: with full 80C + substantial HRA + home loan interest, deductions can reduce taxable income by ₹5–10L — potentially saving ₹2–3L annually vs new regime.",
+      "At ₹45 LPA in metro cities, equity compensation (ESOPs, RSUs) often represents a large fraction of total CTC — this page models only the fixed salary gross.",
+      "VPF as a tax strategy: under the new regime, VPF saves zero income tax but builds a tax-free EPF corpus. Under old regime, VPF counts toward 80C only up to ₹1.5L ceiling already filled by PPF/ELSS/insurance.",
+    ],
+    realityCheckParagraphs: [
+      "At ₹45 LPA, the monthly in-hand of ~₹2,94,300 is above what most household expenses require in even high-cost metro living — which means the real question is about savings rate and wealth allocation, not sufficiency. This page shows statutory deductions only; your actual wealth build depends on EPF balance, equity vesting, and investment decisions that happen outside the payslip.",
+      "Tax planning at this income level rewards investment in professional advice. The difference between an optimized and an unoptimized tax declaration at ₹45L can be ₹1.5–3L annually — one fee-only financial planner session typically pays for itself many times over at this income.",
+    ],
+    faq: [
+      {
+        question: "What is the in-hand salary for 45 LPA in India (FY 2026-27)?",
+        answer:
+          "~₹2,94,300/month under the new tax regime. Annual income tax approximately ₹9,43,800 (including cess). Deductions: employee PF ₹1,800/month + PT ~₹208/month. Payslip values vary with salary structure, RSU vests, and bonus perquisites.",
+      },
+      {
+        question: "45 LPA ka matlab kya hai? Monthly in-hand kitni hoti hai?",
+        answer:
+          "45 LPA matlab ₹45 lakh saalana gross. FY 2026-27 mein nai regime se in-hand lagbhag ₹2,94,300 per maah — PF aur tax deduct karne ke baad. Ye ek estimate hai; aapki actual salary employer ki structure par depend karegi.",
+      },
+      {
+        question: "Does surcharge apply at ₹45 LPA under the new regime?",
+        answer:
+          "No surcharge at ₹45L gross for salary-only income under the new regime. The surcharge threshold triggers when taxable income (after standard deduction) exceeds ₹50L. At ₹45L gross, taxable income is approximately ₹44.25L — below the ₹50L surcharge trigger. However, if you receive a large bonus or RSU vest in the same year pushing total income above ₹50L, surcharge applies on that increment.",
+      },
+    ],
+  },
+  {
+    slug: "50-lpa-in-hand-salary",
+    lpa: 50,
+    seo: {
+      title: "50 LPA In-Hand Salary: ₹3,23,000/month (FY 2026-27)",
+      description:
+        "50 LPA का मतलब: ~₹3,23,000/month in-hand (FY 2026-27, नई regime, no surcharge at this gross). 50 lakh salary take-home breakdown — TDS, PF, PT. Validate with Form 16.",
+      keywords: ["50 LPA in hand", "50 lakh salary take home India", "50 LPA monthly net", "50lpa meaning"],
+    },
+    scenario: baseScenario(50),
+    scenarioNotes: [
+      "₹50 LPA = ₹50,00,000 gross per year. Taxable income after standard deduction = ₹49.25L.",
+      "Taxable income is below the ₹50L surcharge threshold — no surcharge in this illustration.",
+      "If total income (salary + other sources) exceeds ₹50L, surcharge of 10% applies on tax — this model does not capture that scenario.",
+    ],
+    angleParagraph:
+      "Fifty LPA is a senior leadership or deep-specialist level that places you in approximately the top 0.5–1% of salaried earners in India's formal economy. The illustrated in-hand of ~₹3,23,000/month is after new-regime tax of roughly ₹11L annually — old regime with significant deductions may materially change this picture.",
+    bandInsights: [
+      "Annual tax under new regime: ~₹10,99,800 (including 4% cess). Monthly TDS spread: ~₹91,650.",
+      "Surcharge boundary: taxable income of ₹49.25L sits just below the ₹50L surcharge trigger. A small bonus or interest income can push total income over ₹50L and add 10% surcharge on the full tax — this creates a marginal rate cliff that professional tax planning specifically addresses.",
+      "At ₹50 LPA, the salary structure negotiation (Basic+DA split, allowances, NPS employer contribution) has meaningful tax consequences — unlike lower bands where structure mainly affects PF, not tax.",
+      "Old regime evaluation: home loan deductions, NPS (employer 80CCD and Section 80CCD(1B) both available under old regime), and HRA can reduce taxable income significantly. With ₹5–10L of legitimate deductions, old regime can save ₹2–3.5L vs new regime annually.",
+    ],
+    realityCheckParagraphs: [
+      "Fifty LPA produces a monthly in-hand that comfortably covers high-cost metro living, premium housing, and substantial discretionary spending. The financial challenges at this level shift from cash flow to complexity: multiple income streams (salary, ESOP vests, capital gains, interest), advance tax obligations, and the surcharge boundary all require active management rather than passive payroll reliance.",
+      "The SalaryExit engine used here is simplified and directional at this income level. It does not model surcharge, perquisite valuation (car, ESOP), non-salary income, or employer NPS contributions. For a filing-accurate picture, use Form 16 and a CA. Use this page for understanding the shape of your salary deductions — PF, PT, and approximate TDS — not for ITR planning.",
+      "At ₹50 LPA, the most impactful monthly cash flow lever is often not the salary structure but the advance tax schedule. Many employees at this gross underestimate their TDS (especially if year includes ESOP vests) and face a large Q4 recovery deduction. If you have RSUs vesting or interest income, project full-year income by February and adjust employer TDS or pay advance tax before March 15.",
+    ],
+    faq: [
+      {
+        question: "What is the in-hand salary for 50 LPA in India (FY 2026-27)?",
+        answer:
+          "~₹3,23,000/month under the new tax regime, assuming salary-only income stays below the ₹50L surcharge threshold. Annual income tax ~₹10,99,800 (including cess). Deductions: PF ₹1,800/month + PT ~₹208/month. Validate against your Form 16 — this is a directional estimate.",
+      },
+      {
+        question: "50 LPA ka matlab kya hota hai? In-hand salary kitni hoti hai?",
+        answer:
+          "50 LPA matlab ₹50,00,000 saalana gross CTC. FY 2026-27 mein nai tax regime se in-hand lagbhag ₹3,23,000 per maah hoti hai — PF (₹1,800) aur income tax TDS (~₹91,650/month) deduct karne ke baad. Ye estimate hai; actual payslip aapki salary structure aur bonuses par depend karegi.",
+      },
+      {
+        question: "Does surcharge apply at ₹50 LPA?",
+        answer:
+          "At ₹50L gross, taxable income (after ₹75,000 standard deduction) is ~₹49.25L — just below the ₹50L surcharge trigger. Salary-only income at this gross typically avoids surcharge. However, if you receive any interest income, rental income, capital gains, or RSU vests in the same year pushing total income above ₹50L, 10% surcharge applies on income tax for that portion. Track all income sources, not just salary.",
+      },
+      {
+        question: "Old regime vs new regime at ₹50 LPA — which is better?",
+        answer:
+          "This depends heavily on your actual deductions. If you claim HRA (metro rent ≥ ₹60,000/month), home loan interest (₹2L), full 80C (₹1.5L), and NPS 80CCD(1B) (₹50,000), your deductions can total ₹5–8L, potentially saving ₹2–3.5L annually vs the new regime. At ₹50L, this calculation is worth a fee-only planner session. Don't default to new regime without running the numbers.",
+      },
+    ],
+  },
 ];
 
 const bySlug = new Map(LPA_LANDING_PAGES.map((p) => [p.slug, p]));

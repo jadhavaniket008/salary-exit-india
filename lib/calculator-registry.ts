@@ -58,10 +58,10 @@ export const CALCULATOR_REGISTRY: Record<CalculatorSlug, CalculatorDefinition> =
     label: "CTC to in-hand",
     shortLabel: "CTC → in-hand",
     seo: {
-      title: "CTC to in-hand salary calculator (India)",
+      title: "CTC to In-Hand Salary Calculator India (FY 2026-27) — Free",
       description:
-        "Convert annual gross / CTC into estimated monthly take-home after PF, professional tax, and TDS spread. Indicative only.",
-      keywords: [...baseKeywords, "CTC calculator", "take home salary"],
+        "Free CTC to in-hand salary calculator for India. Enter your annual CTC or gross salary and get monthly take-home after PF, professional tax, and TDS — FY 2026-27 slabs. No registration.",
+      keywords: [...baseKeywords, "CTC to in hand calculator", "take home salary calculator India", "gross to net salary India", "ctc calculator india free"],
     },
     related: ["salaryRealityCheck", "salary", "taxRegime", "epf"],
   },
