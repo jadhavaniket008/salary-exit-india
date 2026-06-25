@@ -828,6 +828,21 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
         answer:
           "This is a genuine financial planning decision that depends on home loan interest, HRA, NPS, and 80C. The old regime's deduction menu can still outperform at ₹35L if your deductions are substantial. Use the tax regime calculator for a directional comparison, then confirm with a CA before your regime declaration deadline.",
       },
+      {
+        question: 'Is ₹35 LPA a good salary in India in 2026?',
+        answer:
+          '₹35 LPA puts you in the top 1–2% of salaried earners in India by gross income. In most cities, ₹2,37,000/month in-hand provides genuine financial comfort — quality housing, real savings capacity, and investment headroom. Whether it feels "good" depends on your city, family size, and lifestyle expectations. In Bengaluru or Hyderabad, ₹35 LPA is excellent. In Mumbai or Delhi with premium rent, it is comfortable but not lavish.',
+      },
+      {
+        question: 'Is ₹35 LPA a good salary in Bangalore?',
+        answer:
+          '₹35 LPA is very good in Bengaluru. At ~₹2,37,000/month in-hand (new regime, Karnataka PT ₹200/month), you can afford a premium 2BHK in Koramangala or Indiranagar (₹45–60k rent), build meaningful savings, and have discretionary spend. It is senior-IC or tech-lead territory — a marker of strong career trajectory in the Bengaluru tech ecosystem.',
+      },
+      {
+        question: '35 LPA ka matlab kya hota hai? Monthly in-hand kitni hogi?',
+        answer:
+          '35 LPA yani ₹35,00,000 saalana gross CTC. Is par monthly in-hand lagbhag ₹2,37,000 hoti hai (nayi tax regime, FY 2026-27). Har mahine gross: ₹2,91,667. Deductions: PF ~₹1,800, income tax TDS ~₹52,650. Yeh ek senior-level salary hai — India ke top earners mein aate hain.',
+      },
     ],
   },
   {
