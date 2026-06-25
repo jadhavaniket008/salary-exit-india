@@ -133,9 +133,9 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "moderate",
     answerKind: "depends",
     seo: {
-      title: "Is ₹12 LPA good in Bangalore? Rent vs in-hand reality check",
+      title: "Is ₹12 LPA Good in Bangalore? ₹98K in-hand vs ₹27k rent — real numbers",
       description:
-        "₹12 lakh CTC in Bengaluru: ₹27k rent scenario, estimated in-hand and savings — pre-filled Salary Reality Check you can edit for your lease and lifestyle.",
+        "12 LPA Bangalore reality: ₹98,000/month in-hand, ₹27k rent, moderate lifestyle — exact savings breakdown. Pre-filled Salary Reality Check you can edit for your lease.",
       keywords: [
         "is 12 lpa good in bangalore",
         "12 lakh salary bangalore enough",
@@ -690,9 +690,9 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "moderate",
     answerKind: "depends",
     seo: {
-      title: "₹15 LPA Bangalore: enough, ₹30k rent (2026)",
+      title: "Is ₹15 LPA Good in Bangalore? ₹1.1L in-hand vs ₹30k rent — honest model",
       description:
-        "Honest Bengaluru scenario: ₹15 lakh gross → in-hand after tax/PF, ₹30k rent, moderate spend, and what’s left to save. Adjust rent and tier in the embedded Salary Reality Check.",
+        "15 LPA Bangalore reality: ₹1,14,900/month in-hand, ₹30k rent, moderate lifestyle — see exact savings. Pre-filled Salary Reality Check you can edit for your actual rent and spend.",
       keywords: [
         "is 15 lpa enough in bangalore",
         "is 15 lpa good in bangalore",
@@ -832,9 +832,9 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "moderate",
     answerKind: "depends",
     seo: {
-      title: "₹20 LPA Mumbai: enough after high rent? (2026)",
+      title: "Is ₹20 LPA Good in Mumbai? ₹1.4L in-hand vs ₹42k rent — honest check",
       description:
-        "₹20 lakh gross, Mumbai: in-hand after tax/PF vs ₹42k rent and moderate spend — real savings line, fully editable. One scenario, not your broker’s pitch.",
+        "20 LPA Mumbai reality: ₹1,48,600/month in-hand, ₹42k rent, moderate spend — see real savings. Fully editable Salary Reality Check with actual Mumbai rent bands.",
       keywords: [
         "is 20 lpa enough in mumbai",
         "is 20 lpa good in mumbai",

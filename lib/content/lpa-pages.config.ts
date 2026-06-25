@@ -144,7 +144,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     seo: {
       title: "12 LPA In-Hand: ₹98,000/month, Zero Tax (FY 2026-27)",
       description:
-        "₹98,000/month in-hand on ₹12 LPA gross — zero income tax under Section 87A (FY 2026-27). Compare old vs new regime if you claim HRA or 80C deductions.",
+        "12 LPA का मतलब: ₹98,000/month in-hand (FY 2026-27, नई regime, zero tax). 12 lakh gross to take-home — PF, TDS breakdown with calculator. Old vs new regime comparison.",
       keywords: ["12 LPA in hand", "12 lakh CTC take home", "12 LPA monthly salary hand"],
     },
     scenario: baseScenario(12),
@@ -228,7 +228,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     seo: {
       title: "18 LPA In-Hand Salary: ₹1,35,400/month (FY 2026-27)",
       description:
-        "₹1,35,400/month in-hand on ₹18 LPA gross (new regime, FY 2026-27). Transparent monthly TDS, PF, and PT breakdown. Not a payslip — tune inputs for your employer.",
+        "18 LPA का मतलब: ₹1,35,400/month in-hand (FY 2026-27, नई regime). 18 lakh gross to take-home — monthly PF, TDS, PT breakdown. Tune Basic+DA for your payslip.",
       keywords: [
         "18 LPA in hand",
         "18 lakh CTC take home India",
@@ -275,7 +275,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     seo: {
       title: "20 LPA In-Hand Salary: ₹1,48,600/month (FY 2026-27)",
       description:
-        "₹1,48,600/month in-hand on ₹20 LPA gross (new regime, FY 2026-27). Monthly TDS, PF, and PT breakdown. Surcharge not modeled — treat as directional estimate.",
+        "20 LPA का मतलब: ₹1,48,600/month in-hand (FY 2026-27, नई regime). 20 lakh gross to take-home — PF, TDS, PT breakdown. Surcharge not modeled; use as directional estimate.",
       keywords: ["20 LPA in hand", "20 lakh salary take home", "20 LPA net pay India"],
     },
     scenario: baseScenario(20),
@@ -404,7 +404,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     seo: {
       title: "35 LPA In-Hand Salary: ₹2,37,000/month (FY 2026-27)",
       description:
-        "₹2,37,000/month in-hand on ₹35 LPA gross (new regime, FY 2026-27). Directional estimate — surcharge not modeled. Validate with Form 16 and a CA.",
+        "35 LPA का मतलब: ₹2,37,000/month in-hand (FY 2026-27, नई regime, directional). 35 lakh gross to take-home — PF, TDS, PT breakdown. Validate with Form 16 and a CA.",
       keywords: ["35 LPA in hand", "35 lakh salary take home India", "35 LPA monthly net"],
     },
     scenario: baseScenario(35),
