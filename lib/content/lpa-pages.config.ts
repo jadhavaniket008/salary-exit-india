@@ -370,10 +370,10 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "12-lpa-in-hand-salary",
     lpa: 12,
     seo: {
-      title: "12 LPA In-Hand: ₹98,000/month, Zero Tax (FY 2026-27)",
+      title: "12 LPA In-Hand: ₹98,000/Month — PF, Tax & State Breakdown",
       description:
-        "12 LPA का मतलब: ₹98,000/month in-hand (FY 2026-27, नई regime, zero tax). 12 lakh gross to take-home — PF, TDS breakdown with calculator. Old vs new regime comparison.",
-      keywords: ["12 LPA in hand", "12 lakh CTC take home", "12 LPA monthly salary hand"],
+        "12 LPA का मतलब ₹98,000/month in-hand (FY 2026-27, zero tax on new regime). Your exact cut shifts with state PT and PF basis. Free calculator — see your real take-home.",
+      keywords: ["12 LPA in hand", "12 lpa ka matlab", "12 lpa meaning", "12 lakh CTC take home", "12 LPA monthly salary hand"],
     },
     scenario: baseScenario(12),
     scenarioNotes: ["₹12 LPA is interpreted as ₹12,00,000 gross per year."],
@@ -794,10 +794,10 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "35-lpa-in-hand-salary",
     lpa: 35,
     seo: {
-      title: "35 LPA In-Hand Salary: ₹2,37,000/month (FY 2026-27)",
+      title: "35 LPA Means ₹2.37L/Month — See Deductions & Regime Impact",
       description:
-        "35 LPA का मतलब: ₹2,37,000/month in-hand (FY 2026-27, नई regime, directional). 35 lakh gross to take-home — PF, TDS, PT breakdown. Validate with Form 16 and a CA.",
-      keywords: ["35 LPA in hand", "35 lakh salary take home India", "35 LPA monthly net"],
+        "35 LPA = ₹2,37,000/month in-hand (FY 2026-27, new regime). Regime switch and deductions can change this. See exact PF, TDS, PT split — free calculator.",
+      keywords: ["35 LPA in hand", "35 lpa means", "35 lpa how much per month", "35 lakh salary take home India", "35 LPA monthly net"],
     },
     scenario: baseScenario(35),
     scenarioNotes: [
@@ -894,10 +894,10 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "45-lpa-in-hand-salary",
     lpa: 45,
     seo: {
-      title: "45 LPA In-Hand Salary: ₹2,94,300/month (FY 2026-27)",
+      title: "45 LPA Meaning: ₹2.94L/Month In-Hand + Tax Breakdown 2026",
       description:
-        "45 LPA का मतलब: ~₹2,94,300/month in-hand (FY 2026-27, नई regime). 45 lakh gross to monthly take-home — TDS, PF breakdown. Directional estimate; validate with Form 16.",
-      keywords: ["45 LPA in hand", "45 lakh salary take home India", "45 LPA monthly net", "45lpa meaning"],
+        "45 LPA = ~₹2,94,300/month in-hand (FY 2026-27, new regime). Tax at this band: ~₹78,650/month TDS. Old vs new regime comparison with full PF and PT deduction detail.",
+      keywords: ["45 LPA in hand", "45lpa means", "45lpa meaning", "45 lakh salary take home India", "45 LPA monthly net"],
     },
     scenario: baseScenario(45),
     scenarioNotes: [
