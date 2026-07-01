@@ -129,9 +129,9 @@ export const CALCULATOR_REGISTRY: Record<CalculatorSlug, CalculatorDefinition> =
     label: "Notice period buyout",
     shortLabel: "Notice buyout",
     seo: {
-      title: "Notice period buyout calculator",
+      title: "Notice Period Buyout Calculator — How Much Do You Owe HR?",
       description:
-        "Estimate notice buyout as gross monthly pay prorated by calendar days in a month. Contract terms may differ.",
+        "Find out exactly what your notice period buyout will cost before you talk to HR. Enter your gross salary and notice period — see the result instantly.",
       keywords: [...baseKeywords, "notice period", "buyout"],
     },
     related: ["finalSettlement", "salaryHike", "offerComparison"],

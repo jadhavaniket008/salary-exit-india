@@ -1,4 +1,4 @@
-/**
+﻿/**
  * “Is ₹X LPA enough in [city]?” — decision-intent SEO layer.
  * Add rows here to scale; scenario fields drive Salary Reality Check prefill + server-side preview.
  */
@@ -64,9 +64,9 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "moderate",
     answerKind: "depends",
     seo: {
-      title: "Is ₹10 LPA enough in Bangalore? Rent, spend & savings reality check",
+      title: "Is 10 LPA Enough in Bangalore? Honest Rent & Savings Check",
       description:
-        "₹10 lakh CTC in Bengaluru: honest take on roommates vs solo rent, what “moderate” spend assumes, and a live Salary Reality Check with Bangalore-sized numbers — not generic SEO.",
+        "10 LPA in Bangalore: in-hand vs ₹28k rent (shared 2BHK). Solo living is tight at this salary — see the real numbers and decide. Pre-filled calculator, fully editable.",
       keywords: [
         "is 10 lpa enough in bangalore",
         "10 lakh salary bangalore living",
@@ -690,9 +690,9 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "moderate",
     answerKind: "depends",
     seo: {
-      title: "Is ₹15 LPA Good in Bangalore? ₹1.1L in-hand vs ₹30k rent — honest model",
+      title: "Is 15 LPA Good in Bangalore? ₹1.14L In-Hand vs ₹30K Rent",
       description:
-        "15 LPA Bangalore reality: ₹1,14,900/month in-hand, ₹30k rent, moderate lifestyle — see exact savings. Pre-filled Salary Reality Check you can edit for your actual rent and spend.",
+        "15 LPA in Bangalore: ₹1,14,900/month in-hand, ₹30k rent, ~₹27k savings/month (moderate lifestyle). Edit the model for your actual rent and spend — see if it's enough.",
       keywords: [
         "is 15 lpa enough in bangalore",
         "is 15 lpa good in bangalore",
@@ -762,9 +762,9 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "moderate",
     answerKind: "yes",
     seo: {
-      title: "Is ₹25 LPA good in Bangalore? Higher rent, still room to save (model)",
+      title: "Is 25 LPA Good in Bangalore? ₹40K Rent Reality Check",
       description:
-        "₹25 lakh CTC in Bengaluru: ₹40k rent stress-test, in-hand vs spend — Salary Reality Check pre-filled, fully editable.",
+        "25 LPA in Bangalore: ~₹1.82L/month in-hand, ₹40k rent. Comfortable but Bangalore expenses add up — see the real savings model for 2026. Fully editable.",
       keywords: [
         "is 25 lpa good in bangalore",
         "25 lakh salary bangalore",
@@ -903,9 +903,9 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "moderate",
     answerKind: "depends",
     seo: {
-      title: "Is ₹30 LPA good in Mumbai? Upper-mid gross vs Mumbai rent (check)",
+      title: "Is 30 LPA Good in Mumbai? ₹52K Rent, Full Savings Model",
       description:
-        "₹30 lakh CTC in Mumbai: ₹52k rent scenario, in-hand and savings model — surcharge and perks not fully modeled; use for direction.",
+        "30 LPA in Mumbai: ~₹2.1L/month in-hand vs ₹52k rent. Mumbai is expensive — see what actually saves after rent, commute, and expenses in 2026.",
       keywords: [
         "is 30 lpa good in mumbai",
         "30 lakh salary mumbai",
@@ -1323,9 +1323,9 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "moderate",
     answerKind: "depends",
     seo: {
-      title: "Is ₹15 LPA good in Kolkata? In-hand salary, rent & savings check",
+      title: "Is 15 LPA Good in Kolkata? ₹18K Rent vs ₹1.14L In-Hand",
       description:
-        "₹15 LPA in Kolkata: ~₹1,14,000/month in-hand (FY 2026-27). Kolkata has the lowest rents of India's major metros — ₹18k/month gets a decent 2BHK. Real breakdown for 2026.",
+        "15 LPA in Kolkata: ₹1,14,000/month in-hand, ₹18k rent (2BHK). Kolkata's lower costs mean higher savings vs Bangalore or Mumbai. See the full 2026 breakdown.",
       keywords: [
         "is 15 lpa good in kolkata",
         "15 lakh salary kolkata",
@@ -1603,9 +1603,9 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "premium",
     answerKind: "depends",
     seo: {
-      title: "Is ₹20 LPA enough for a family in Bangalore? One-earner reality check",
+      title: "Is 20 LPA Enough for a Family in Bangalore? One Income",
       description:
-        "₹20 lakh CTC in Bengaluru with premium spend bands and ₹38k rent — see modeled savings for a family-shaped budget; tune every input.",
+        "20 LPA for a family in Bangalore: ₹1,48,600/month in-hand, ₹38k rent, premium budget. Real savings model — school fees, EMIs, food all included.",
       keywords: [
         "is 20 lpa enough for family in bangalore",
         "20 lakh salary family bangalore",

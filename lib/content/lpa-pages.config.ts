@@ -215,9 +215,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "8-lpa-in-hand-salary",
     lpa: 8,
     seo: {
-      title: "8 LPA In-Hand Salary: ₹64,600/month (FY 2026-27)",
+      title: "8 LPA In-Hand: ₹64,600/Month — Zero Tax, PF Breakdown",
       description:
-        "₹64,600/month in-hand on ₹8 LPA gross — zero income tax (Section 87A rebate, FY 2026-27). Employee PF included. Adjust Basic+DA and state PT in the CTC calculator.",
+        "8 LPA = ₹64,600/month in-hand (FY 2026-27, zero tax on new regime). Your exact take-home shifts with state PT and Basic+DA split. Free calculator — 30-second result.",
       keywords: [
         "8 LPA in hand",
         "800000 salary in hand",
@@ -338,9 +338,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "11-lpa-in-hand-salary",
     lpa: 11,
     seo: {
-      title: "11 LPA In-Hand Salary: ₹89,600/month (FY 2026-27)",
+      title: "11 LPA In-Hand: ₹89,600/Month — Last Zero-Tax LPA Band",
       description:
-        "11 LPA का मतलब: ₹89,600/month in-hand (FY 2026-27, नई regime, zero tax). CTC to take-home calculator for ₹11 lakh salary — last zero-tax band before the ₹12L threshold.",
+        "11 LPA का मतलब ₹89,600/month in-hand (FY 2026-27, zero tax). Above ₹12L the Section 87A rebate ends — compare your band before your next offer. PF + PT breakdown included.",
       keywords: ["11 LPA in hand", "11 lakh salary in hand", "11 LPA monthly salary India", "CTC 11 LPA take home"],
     },
     scenario: baseScenario(11),
@@ -480,9 +480,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "15-lpa-in-hand-salary",
     lpa: 15,
     seo: {
-      title: "15 LPA In-Hand Salary: ₹1,14,900/month (FY 2026-27)",
+      title: "15 LPA In-Hand: ₹1.15L/Month — Tax Kicks In, See Breakdown",
       description:
-        "₹1,14,900/month in-hand on ₹15 LPA gross (new regime, FY 2026-27). Tax kicks in above the ₹12L rebate limit — see monthly PF, TDS, and PT breakdown.",
+        "15 LPA = ₹1,14,900/month in-hand (FY 2026-27, new regime). Income tax starts here — the ₹12L rebate is crossed. Old vs new regime comparison + exact PF, TDS, PT split.",
       keywords: ["15 LPA in hand", "15 lakh salary monthly", "15 LPA net salary India"],
     },
     scenario: baseScenario(15),
@@ -586,9 +586,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "18-lpa-in-hand-salary",
     lpa: 18,
     seo: {
-      title: "18 LPA In-Hand Salary: ₹1,35,400/month (FY 2026-27)",
+      title: "18 LPA Meaning: ₹1.35L/Month + Tax & Deduction Breakdown",
       description:
-        "18 LPA का मतलब: ₹1,35,400/month in-hand (FY 2026-27, नई regime). 18 lakh gross to take-home — monthly PF, TDS, PT breakdown. Tune Basic+DA for your payslip.",
+        "18 LPA का मतलब ₹1,35,400/month in-hand (FY 2026-27, new regime). Regime switch and Basic+DA split can change this. Free calculator — see your exact figure.",
       keywords: [
         "18 LPA in hand",
         "18 lakh CTC take home India",
@@ -665,9 +665,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "20-lpa-in-hand-salary",
     lpa: 20,
     seo: {
-      title: "20 LPA In-Hand Salary: ₹1,48,600/month (FY 2026-27)",
+      title: "20 LPA Means ₹1.49L/Month — What Hits Your Account?",
       description:
-        "20 LPA का मतलब: ₹1,48,600/month in-hand (FY 2026-27, नई regime). 20 lakh gross to take-home — PF, TDS, PT breakdown. Surcharge not modeled; use as directional estimate.",
+        "20 LPA = ₹1,48,600/month in-hand (FY 2026-27, new regime). PF, TDS, and PT reduce this — your actual cut depends on your city and Basic split. Free calculator.",
       keywords: ["20 LPA in hand", "20 lakh salary take home", "20 LPA net pay India"],
     },
     scenario: baseScenario(20),
