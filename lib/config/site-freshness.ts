@@ -4,10 +4,10 @@
  */
 
 /** When site copy and policy alignment were last reviewed (human-readable). */
-export const SITE_CONTENT_LAST_UPDATED = "June 2026";
+export const SITE_CONTENT_LAST_UPDATED = "July 2026";
 
 /** Stable machine-readable date for sitemap lastModified (YYYY-MM-DD). */
-export const SITE_CONTENT_LAST_UPDATED_ISO = "2026-06-24";
+export const SITE_CONTENT_LAST_UPDATED_ISO = "2026-07-01";
 
 /**
  * Short label for badges — keep in sync with {@link DEFAULT_FINANCIAL_YEAR} in financial-year.ts.

@@ -9,6 +9,7 @@ import { Container, Section } from "@/components/ui";
 import { computeSalaryRealityCheck } from "@/lib/calculators/salary-reality-check";
 import { DEFAULT_BASIC_DA_SHARE_OF_GROSS } from "@/lib/config/salary-reality-heuristics";
 import { articleJsonLd, faqPageJsonLd } from "@/lib/jsonld";
+import { SITE_CONTENT_LAST_UPDATED_ISO } from "@/lib/config/site-freshness";
 import {
   getRelatedSalaryEnoughPages,
   type SalaryEnoughAnswerKind,
@@ -110,7 +111,15 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
 
   return (
     <div className="flex flex-1 flex-col">
-      <JsonLd data={articleJsonLd({ headline: config.seo.title, description: config.seo.description, urlPath: path })} />
+      <JsonLd
+        data={articleJsonLd({
+          headline: config.seo.title,
+          description: config.seo.description,
+          urlPath: path,
+          datePublished: "2026-03-15",
+          dateModified: SITE_CONTENT_LAST_UPDATED_ISO,
+        })}
+      />
       <JsonLd data={faqPageJsonLd(faq.map((f) => ({ question: f.question, answer: f.answer })))} />
 
       <Section className="pt-6 sm:pt-10">

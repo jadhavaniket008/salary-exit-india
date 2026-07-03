@@ -14,6 +14,7 @@ import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
 import { MethodologyLink } from "@/components/trust/MethodologyLink";
 import { TrustMethodologyNotice } from "@/components/trust/TrustMethodologyNotice";
 import { articleJsonLd, faqPageJsonLd } from "@/lib/jsonld";
+import { SITE_CONTENT_LAST_UPDATED_ISO } from "@/lib/config/site-freshness";
 import { formatInr } from "@/lib/format-inr";
 import { ROUTES } from "@/lib/routes";
 import { lpaLandingPath, salaryEnoughPath } from "@/lib/routes/landing-routes";
@@ -43,6 +44,10 @@ export function LpaLandingTemplate({ config }: Props) {
       answer: `${config.lpa} LPA यानी ₹${config.lpa} लाख (${formatInr(config.lpa * 1_00_000)}) सालाना gross CTC। FY 2026-27 में नई tax regime के अनुसार, अनुमानित in-hand salary लगभग ${formatInr(result.inHandMonthly)} प्रति माह होती है — employee PF (Basic+DA का 12%) और professional tax काटने के बाद। यह एक estimate है; actual payslip आपके employer की salary structure पर depend करती है।`,
     },
     {
+      question: `${config.lpa} LPA in numbers — kitna hota hai in rupees?`,
+      answer: `${config.lpa} LPA = ${formatInr(config.lpa * 1_00_000)} per year (${config.lpa} lakh rupees per annum). Monthly gross: ${formatInr(result.grossMonthly)}. FY 2026-27 nayi tax regime ke hisaab se estimated in-hand salary lagbhag ${formatInr(result.inHandMonthly)} per month hoti hai — employee PF aur professional tax ke baad. Exact amount aapke employer ki salary structure par depend karta hai.`,
+    },
+    {
       question: `Is ₹${config.lpa} LPA gross the same as ₹${config.lpa} LPA CTC?`,
       answer:
         "Not always. CTC may include employer contributions and non-cash costs. This page interprets the band as annual gross salary for the illustrated scenario unless you change inputs in the calculator.",
@@ -62,7 +67,15 @@ export function LpaLandingTemplate({ config }: Props) {
 
   return (
     <div className="flex flex-1 flex-col">
-      <JsonLd data={articleJsonLd({ headline: config.seo.title, description: config.seo.description, urlPath: path })} />
+      <JsonLd
+        data={articleJsonLd({
+          headline: config.seo.title,
+          description: config.seo.description,
+          urlPath: path,
+          datePublished: "2026-03-15",
+          dateModified: SITE_CONTENT_LAST_UPDATED_ISO,
+        })}
+      />
       <JsonLd data={faqPageJsonLd(faq.map((f) => ({ question: f.question, answer: f.answer })))} />
 
       <Section className="pt-6 sm:pt-10">
