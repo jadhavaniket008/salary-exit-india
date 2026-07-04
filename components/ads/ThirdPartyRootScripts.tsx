@@ -18,7 +18,7 @@ type EzStandalone = {
 /**
  * Sitewide script insertion. When consent banner is enabled, analytics/ads load only after opt-in.
  *
- * **No network calls** to Google Analytics, Plausible, or AdSense are made unless:
+ * **No network calls** to Google Analytics or Plausible are made unless:
  * - the corresponding `NEXT_PUBLIC_*` env var is set, and
  * - consent allows it (or the banner is off, in which case analytics/ads are treated as allowed — see `lib/consent.ts`).
  *
@@ -27,7 +27,6 @@ type EzStandalone = {
 export function ThirdPartyRootScripts() {
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
   const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN?.trim();
-  const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID?.trim();
   const consentBannerOn = process.env.NEXT_PUBLIC_ENABLE_CONSENT_BANNER === "true";
   const ezoicEnabled = process.env.NEXT_PUBLIC_ENABLE_EZOIC === "true";
 
@@ -68,8 +67,8 @@ export function ThirdPartyRootScripts() {
   const allowAnalytics = consent?.analytics ?? false;
   const showGa = Boolean(gaId && allowAnalytics);
   const showPlausible = Boolean(plausibleDomain && allowAnalytics);
-  // AdSense and Ezoic must not run simultaneously — Ezoic resells inventory its own way.
-  const showAdsense = Boolean(adsenseClient) && !ezoicEnabled;
+  // AdSense loader lives in app/layout.tsx <head> (server-rendered) so Google's
+  // site verification can see it. Do not re-add it here.
 
   return (
     <>
@@ -99,14 +98,6 @@ export function ThirdPartyRootScripts() {
         />
       ) : null}
 
-      {showAdsense ? (
-        <Script
-          async
-          crossOrigin="anonymous"
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(adsenseClient!)}`}
-          strategy="afterInteractive"
-        />
-      ) : null}
     </>
   );
 }

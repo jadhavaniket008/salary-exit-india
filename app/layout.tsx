@@ -32,6 +32,10 @@ export const metadata: Metadata = {
 };
 
 const ezoicEnabled = process.env.NEXT_PUBLIC_ENABLE_EZOIC === "true";
+const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID?.trim();
+// AdSense verification requires the loader in the server-rendered <head>;
+// a client-injected script (next/script afterInteractive) is invisible to Google's checker.
+const adsenseHeadScriptEnabled = Boolean(adsenseClientId) && !ezoicEnabled;
 
 export default function RootLayout({
   children,
@@ -60,6 +64,14 @@ export default function RootLayout({
           />
           {/* eslint-disable-next-line @next/next/no-sync-scripts */}
           <script src="//ezoicanalytics.com/analytics.js" />
+        </head>
+      ) : adsenseHeadScriptEnabled ? (
+        <head>
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(adsenseClientId!)}`}
+            crossOrigin="anonymous"
+          />
         </head>
       ) : null}
       <body className="min-h-full flex flex-col bg-background text-foreground">
