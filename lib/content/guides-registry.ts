@@ -160,6 +160,20 @@ export const GUIDE_ARTICLES: readonly GuideArticleMeta[] = [
     relatedCalculatorPaths: [ROUTES.salaryRealityCheck, ROUTES.ctcToInHandCalculator],
   },
   {
+    hub: "salary",
+    segment: "pf-withdrawal-rules-explained",
+    title: "PF withdrawal rules in India (2026): what's tax-free and what isn't",
+    description:
+      "Full withdrawal, partial advances, the EPS pension component, and the 5-year rule that decides whether your EPF withdrawal is taxed — explained with the mistakes that cost people the most.",
+    keywords: [
+      "PF withdrawal rules",
+      "EPF withdrawal tax",
+      "PF withdrawal after resignation",
+      "EPS pension withdrawal",
+    ],
+    relatedCalculatorPaths: [ROUTES.epfCalculator, ROUTES.finalSettlementCalculator],
+  },
+  {
     hub: "tax",
     segment: "old-vs-new-tax-regime-basics",
     title: "Old vs new tax regime in India: basics for salaried employees",
@@ -171,6 +185,20 @@ export const GUIDE_ARTICLES: readonly GuideArticleMeta[] = [
       ROUTES.hraCalculator,
       ROUTES.salaryCalculator,
     ],
+  },
+  {
+    hub: "tax",
+    segment: "how-to-read-form-16",
+    title: "How to read Form 16 line by line (Part A and Part B explained)",
+    description:
+      "What each line of Form 16 actually means, how to reconcile it with Form 26AS/AIS, and the common employer errors that cost salaried employees a tax notice or a lost refund.",
+    keywords: [
+      "how to read form 16",
+      "form 16 part a part b",
+      "form 16 vs 26AS",
+      "form 16 explained",
+    ],
+    relatedCalculatorPaths: [ROUTES.salaryCalculator, ROUTES.oldVsNewTaxRegimeCalculator],
   },
   {
     hub: "jobSwitch",

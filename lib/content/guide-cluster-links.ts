@@ -88,6 +88,26 @@ const MAP = new Map<string, GuideClusterLinkSpec>([
     },
   ],
   [
+    KEY("salary", "pf-withdrawal-rules-explained"),
+    {
+      salaryEnoughSlugs: ["is-20-lpa-enough-for-family-in-bangalore", "is-20-lpa-good-in-pune"],
+      calculatorHref: ROUTES.epfCalculator,
+      calculatorLabel: "EPF contribution estimator",
+      intro:
+        "Withdrawal rules only matter once there's a corpus to withdraw — see how the monthly contribution builds, then stress-test two family-budget cities to see where that corpus actually gets spent.",
+    },
+  ],
+  [
+    KEY("tax", "how-to-read-form-16"),
+    {
+      salaryEnoughSlugs: ["is-12-lpa-good-in-kolkata", "is-15-lpa-good-in-hyderabad"],
+      calculatorHref: ROUTES.salaryCalculator,
+      calculatorLabel: "Salary & tax breakdown",
+      intro:
+        "Form 16's Part B is just your salary breakdown in a different format — rebuild the same numbers here, then check two mid-metro \"enough?\" scenarios for context.",
+    },
+  ],
+  [
     KEY("tax", "old-vs-new-tax-regime-basics"),
     {
       salaryEnoughSlugs: ["is-18-lpa-good-in-noida", "is-15-lpa-good-in-gurgaon"],
