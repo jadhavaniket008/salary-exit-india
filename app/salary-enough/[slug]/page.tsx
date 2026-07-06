@@ -20,7 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const config = getSalaryEnoughPageConfig(slug);
   if (!config) return {};
-  return buildPageMetadata(config.seo, { canonicalPath: salaryEnoughPath(config.slug) });
+  return {
+    ...buildPageMetadata(config.seo, { canonicalPath: salaryEnoughPath(config.slug) }),
+    // Temporarily noindexed during AdSense review — this 25-page templated cluster
+    // earns near-zero GSC clicks and reads as replicated content to the reviewer.
+    // Re-enable (and restore the sitemap entries) after AdSense approval.
+    robots: { index: false, follow: true },
+  };
 }
 
 export default async function SalaryEnoughLandingPage({ params }: Props) {

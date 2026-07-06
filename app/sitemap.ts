@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { CALCULATOR_REGISTRY } from "@/lib/calculator-registry";
 import { LPA_LANDING_PAGES } from "@/lib/content/lpa-pages.config";
-import { SALARY_ENOUGH_PAGES } from "@/lib/content/salary-enough-pages.config";
-import { lpaLandingPath, salaryEnoughPath } from "@/lib/routes/landing-routes";
+import { lpaLandingPath } from "@/lib/routes/landing-routes";
 import { GUIDE_ARTICLES, guideArticlePath } from "@/lib/content/guides-registry";
 import { ROUTES } from "@/lib/routes";
 import { getSiteOrigin } from "@/lib/seo/site-origin";
@@ -30,7 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ROUTES.jobSwitchGuides,
     ...Object.values(CALCULATOR_REGISTRY).map((c) => c.path),
     ...LPA_LANDING_PAGES.map((p) => lpaLandingPath(p.slug)),
-    ...SALARY_ENOUGH_PAGES.map((p) => salaryEnoughPath(p.slug)),
+    // salary-enough pages are noindexed pending AdSense approval — keep them out
+    // of the sitemap while the robots meta says noindex (mixed signals confuse Google).
     ...GUIDE_ARTICLES.map((a) => guideArticlePath(a)),
   ];
 
