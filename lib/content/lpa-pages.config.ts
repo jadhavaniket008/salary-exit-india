@@ -370,10 +370,10 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "12-lpa-in-hand-salary",
     lpa: 12,
     seo: {
-      title: "12 LPA In-Hand: ₹98,000/Month — PF, Tax & State Breakdown",
+      title: "12 LPA In-Hand Salary Calculator — Exact Monthly Breakdown",
       description:
-        "12 LPA का मतलब ₹98,000/month in-hand (FY 2026-27, zero tax on new regime). Your exact cut shifts with state PT and PF basis. Free calculator — see your real take-home.",
-      keywords: ["12 LPA in hand", "12 lpa ka matlab", "12 lpa meaning", "12 lakh CTC take home", "12 LPA monthly salary hand"],
+        "12 LPA pays zero income tax (FY 2026-27 new regime) — but your in-hand isn't ₹1L/month. PF and state PT decide the real number. Free calculator, takes 10 seconds.",
+      keywords: ["12 LPA in hand salary calculator", "12 lpa ka matlab", "12 lpa salary structure", "12 lakh CTC take home", "12 LPA monthly salary hand"],
     },
     scenario: baseScenario(12),
     scenarioNotes: ["₹12 LPA is interpreted as ₹12,00,000 gross per year."],
