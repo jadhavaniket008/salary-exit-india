@@ -39,8 +39,8 @@ export function TaxRegimeCalculatorClient() {
   const assumptionBullets = useMemo(
     () => [
       `Uses ${fy.label} slab tables configured in code.`,
-      `Section 87A rebates are simplified (old: up to ₹${formatInrPlain(fy.rebate87AOldRegimeMax)} when taxable ≤ ₹${formatInrPlain(fy.rebate87AOldRegimeIncomeLimit)}; new: full rebate when taxable ≤ ₹${formatInrPlain(fy.rebate87ANewRegimeIncomeLimit)} in this model).`,
-      `Surcharge, marginal relief, perquisites, and alternate minimum tax are not modeled.`,
+      `Section 87A rebates are simplified (old: up to ₹${formatInrPlain(fy.rebate87AOldRegimeMax)} when taxable ≤ ₹${formatInrPlain(fy.rebate87AOldRegimeIncomeLimit)}; new: full rebate when taxable ≤ ₹${formatInrPlain(fy.rebate87ANewRegimeIncomeLimit)}, with marginal relief just above it).`,
+      `Surcharge, perquisites, and alternate minimum tax are not modeled.`,
     ],
     []
   );

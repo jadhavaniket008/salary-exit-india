@@ -23,4 +23,4 @@ export const TAX_RULESET_SOURCE_LABEL =
 /**
  * Longer reassurance line for methodology / trust components.
  */
-export const CALCULATIONS_POLICY_SYNC_LINE = `Calculator tax math was last aligned to ${TAX_RULESET_SOURCE_LABEL}. Surcharge and marginal relief are not modeled — validate Form 16 and CBDT circulars for filing.`;
+export const CALCULATIONS_POLICY_SYNC_LINE = `Calculator tax math was last aligned to ${TAX_RULESET_SOURCE_LABEL}. Section 87A marginal relief (new regime) is modeled; surcharge is not — validate Form 16 and CBDT circulars for filing.`;

@@ -32,7 +32,7 @@ export function computeSalaryBreakdown(
   fy = DEFAULT_TAX_SETTINGS.financialYear
 ): SalaryOutput {
   const warnings: string[] = [
-    "Figures are indicative. Surcharge, marginal relief, bonus, and perquisites are not modeled.",
+    "Figures are indicative. Surcharge, bonus, and perquisites are not modeled; 87A marginal relief is.",
     "Monthly in-hand uses annual tax ÷ 12 for a smooth TDS estimate — actual employer TDS can differ month to month.",
   ];
 

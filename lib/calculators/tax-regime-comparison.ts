@@ -64,7 +64,7 @@ export function compareTaxRegimes(
   fy: FinancialYearConfig = DEFAULT_TAX_SETTINGS.financialYear
 ): TaxComparisonOutput {
   const warnings: string[] = [
-    "Surcharge, marginal relief, and perquisites are not modeled. Values are estimates only.",
+    "Surcharge and perquisites are not modeled; 87A marginal relief is. Values are estimates only.",
   ];
 
   const gross = Math.max(0, input.annualGrossSalary);

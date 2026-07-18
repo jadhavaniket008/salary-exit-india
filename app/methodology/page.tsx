@@ -31,9 +31,10 @@ export default function MethodologyPage() {
 
       <h2>Financial year and tax engine</h2>
       <p>
-        Income tax slabs, standard deductions, and simplified Section 87A rebates follow the configured financial year
-        ({ENGINE_FY_LABEL}). Values are defined in code and should be reviewed after each Union Budget.{" "}
-        <strong>Surcharge</strong> and <strong>marginal relief</strong> are not modeled.
+        Income tax slabs, standard deductions, and Section 87A rebates (including new-regime marginal relief just above
+        the rebate threshold) follow the configured financial year ({ENGINE_FY_LABEL}). Values are defined in code and
+        should be reviewed after each Union Budget. <strong>Surcharge</strong> (₹50L+ taxable) and its marginal relief
+        are not modeled.
       </p>
       <p className="rounded-lg border border-emerald-200/80 bg-emerald-50/70 p-3 text-sm text-emerald-950 dark:border-emerald-900/40 dark:bg-emerald-950/30 dark:text-emerald-50">
         <strong className="font-semibold">Policy sync for visitors:</strong> {CALCULATIONS_POLICY_SYNC_LINE} Content and

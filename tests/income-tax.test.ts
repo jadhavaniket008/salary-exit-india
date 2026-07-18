@@ -71,8 +71,18 @@ describe("FY2025_26 new regime slabs", () => {
     expect(rebate87ANewRegime(1_200_000, taxBefore, FY2025_26)).toBe(60_000);
   });
 
-  it("does not rebate above ₹12L taxable", () => {
-    const taxBefore = progressiveTax(1_200_001, FY2025_26.newRegimeSlabs);
-    expect(rebate87ANewRegime(1_200_001, taxBefore, FY2025_26)).toBe(0);
+  it("applies marginal relief just above ₹12L taxable (tax capped at excess)", () => {
+    // Taxable ₹12,25,000 → slab tax 63,750, but excess over limit is only 25,000.
+    // Marginal relief caps tax before cess at the excess: rebate = 63,750 − 25,000.
+    const taxBefore = progressiveTax(1_225_000, FY2025_26.newRegimeSlabs);
+    expect(taxBefore).toBe(63_750);
+    expect(rebate87ANewRegime(1_225_000, taxBefore, FY2025_26)).toBe(38_750);
+  });
+
+  it("phases out marginal relief once slab tax is below the excess", () => {
+    // Taxable ₹13,25,000 → slab tax 78,750 < excess 1,25,000 → no relief.
+    const taxBefore = progressiveTax(1_325_000, FY2025_26.newRegimeSlabs);
+    expect(taxBefore).toBe(78_750);
+    expect(rebate87ANewRegime(1_325_000, taxBefore, FY2025_26)).toBe(0);
   });
 });

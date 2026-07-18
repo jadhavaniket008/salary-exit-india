@@ -61,7 +61,7 @@ export const CALCULATOR_TRUST: Record<CalculatorSlug, CalculatorTrustProfile> = 
     ],
     assumptions: [
       "Single salary head; limited old-regime deductions vs a dedicated HRA flow.",
-      "No surcharge, marginal relief, or perquisite valuation.",
+      "No surcharge (₹50L+ taxable) or perquisite valuation; 87A marginal relief is modeled.",
     ],
     realWorldFactors: [
       "Bonuses, arrears, FBP, and one-off pay.",

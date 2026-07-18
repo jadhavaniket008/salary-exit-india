@@ -13,8 +13,8 @@ export function DisclaimerBlock() {
       </p>
       <ul className="mt-3 list-inside list-disc space-y-1 text-foreground-secondary">
         <li>
-          Tax math uses configured FY slabs and a simplified Section 87A model — <strong>no surcharge</strong>,{" "}
-          <strong>no marginal relief</strong>, and limited Chapter VI-A detail depending on the tool.
+          Tax math uses configured FY slabs and Section 87A with marginal relief — <strong>no surcharge</strong>{" "}
+          (₹50L+ taxable) and limited Chapter VI-A detail depending on the tool.
         </li>
         <li>
           PF, professional tax, HRA, notice buyouts, and settlements depend on state law and company policy —

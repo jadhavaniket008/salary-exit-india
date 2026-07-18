@@ -44,7 +44,7 @@ export function SalaryCalculatorClient() {
       `Income tax slabs, standard deductions, and simplified Section 87A match the configured FY (${fy.label}).`,
       `Standard deduction: old ₹${formatInrPlain(fy.standardDeductionOldRegime)}, new ₹${formatInrPlain(fy.standardDeductionNewRegime)}.`,
       `Old regime: employee PF + other 80C combined are capped at ₹${formatInrPlain(DEFAULT_TAX_SETTINGS.section80CCap)} for this estimate.`,
-      `Surcharge, perquisites, bonus timing, and marginal relief are not modeled.`,
+      `Surcharge, perquisites, and bonus timing are not modeled; new-regime 87A marginal relief is.`,
     ],
     []
   );

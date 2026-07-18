@@ -50,8 +50,11 @@ export function rebate87AOldRegime(
 }
 
 /**
- * Simplified new-regime rebate: if taxable income is within the configured
- * limit, rebate equals entire tax before cess (approximates Section 87A).
+ * New-regime Section 87A rebate with marginal relief.
+ * Within the limit: rebate equals entire tax before cess (tax is nil).
+ * Just above the limit: tax payable (before cess) is capped at the income
+ * in excess of the limit, so ₹1 of extra income never costs more than ₹1
+ * of tax. Relief phases out naturally once slab tax exceeds the excess.
  */
 export function rebate87ANewRegime(
   taxableIncome: number,
@@ -61,7 +64,8 @@ export function rebate87ANewRegime(
   if (taxableIncome <= fy.rebate87ANewRegimeIncomeLimit) {
     return taxBeforeRebate;
   }
-  return 0;
+  const excessIncome = taxableIncome - fy.rebate87ANewRegimeIncomeLimit;
+  return Math.max(0, taxBeforeRebate - excessIncome);
 }
 
 export function addCess(taxAfterRebate: number, fy: FinancialYearConfig): number {

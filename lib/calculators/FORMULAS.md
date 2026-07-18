@@ -65,8 +65,9 @@ This document explains what each calculator **estimates**, the **assumptions** b
 - **Slabs & cess**: Progressive slab tax plus **4% health and education cess** on tax after rebate (not on income).
 - **Section 87A**: **Simplified**:
   - Old regime: rebate up to ₹12,500 when taxable income ≤ ₹5,00,000 (verify FY-specific rules).
-  - New regime: full rebate of tax when taxable income ≤ ₹7,00,000 (verify FY-specific rules and conditions).
-- **Not modeled**: Surcharge, marginal relief, rebates beyond 87A, perquisites, capital gains, loss set-off, alternate minimum tax, etc.
+  - New regime: full rebate of tax when taxable income ≤ the FY's configured limit (₹12,00,000 for FY 2025-26 / FY 2026-27; verify FY-specific rules and conditions).
+  - New regime **marginal relief**: just above the limit, tax before cess is capped at (taxable income − limit), i.e. `rebate = max(0, slabTax − excess)`. Relief phases out once slab tax exceeds the excess (~₹12.71L taxable for FY 2026-27).
+- **Not modeled**: Surcharge and surcharge marginal relief (₹50L+ taxable), rebates beyond 87A, perquisites, capital gains, loss set-off, alternate minimum tax, etc.
 
 ## EPF (`epf.ts`)
 
