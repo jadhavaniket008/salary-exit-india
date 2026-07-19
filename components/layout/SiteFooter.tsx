@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui";
 import { ROUTES } from "@/lib/routes";
+import { SupportLink } from "@/components/monetization/SupportLink";
 
 const calculatorLinks = [
   { href: ROUTES.ctcToInHandCalculator, label: "CTC to in-hand" },
@@ -104,6 +105,9 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <SupportLink />
+              </li>
             </ul>
           </div>
 

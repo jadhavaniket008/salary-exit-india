@@ -29,6 +29,7 @@ Copy `.env.example` to `.env.local` for local development. In Vercel, add the sa
 | `NEXT_PUBLIC_ENABLE_AD_SLOTS` | `true` (default) shows placeholder slots; `false` hides them. |
 | `NEXT_PUBLIC_ENABLE_CONSENT_BANNER` | `true` shows the placeholder banner; wire a CMP before real consent in EU/UK. |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | Email displayed on `/contact`. |
+| `NEXT_PUBLIC_BUYMEACOFFEE_USERNAME` | Optional. Just the username (not full URL) — shows a footer support link when set. |
 
 Redeploy after changing env vars.
 

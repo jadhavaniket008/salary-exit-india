@@ -68,3 +68,9 @@ export function trackAffiliateClick(partnerName: string, context: AffiliateConte
   gtagEvent("affiliate_link_click", params);
   plausibleEvent("affiliate_link_click", { partner_name: partnerName, affiliate_context: context });
 }
+
+/** Outbound click on the footer "Buy me a coffee" support link. */
+export function trackSupportClick(): void {
+  gtagEvent("support_link_click");
+  plausibleEvent("support_link_click");
+}
