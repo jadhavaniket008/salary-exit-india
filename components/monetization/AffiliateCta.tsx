@@ -1,4 +1,7 @@
+"use client";
+
 import { AFFILIATE_LINKS, type AffiliateContext } from "@/lib/content/affiliate-links";
+import { trackAffiliateClick } from "@/lib/analytics/client";
 
 const HEADING: Record<AffiliateContext, string> = {
   investing: "Put your savings to work",
@@ -45,6 +48,7 @@ export function AffiliateCta({ context }: Props) {
             href={link.url}
             target="_blank"
             rel="nofollow sponsored noopener noreferrer"
+            onClick={() => trackAffiliateClick(link.name, context)}
             className="group flex flex-col justify-between gap-3 rounded-xl border border-border bg-surface p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md"
           >
             <div className="space-y-1.5">

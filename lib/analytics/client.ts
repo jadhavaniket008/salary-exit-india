@@ -1,6 +1,7 @@
 "use client";
 
 import type { CalculatorSlug } from "@/lib/routes";
+import type { AffiliateContext } from "@/lib/content/affiliate-links";
 
 /**
  * Client-side measurement helpers. They **no-op** until GA4 and/or Plausible scripts are
@@ -59,4 +60,11 @@ export function trackShareSummary(action: "copy" | "share_native"): void {
   const params = { action };
   gtagEvent("share_summary", params);
   plausibleEvent("share_summary", { action });
+}
+
+/** Outbound click on a partner (affiliate) link — investing or tax-filing CTA blocks. */
+export function trackAffiliateClick(partnerName: string, context: AffiliateContext): void {
+  const params = { partner_name: partnerName, affiliate_context: context };
+  gtagEvent("affiliate_link_click", params);
+  plausibleEvent("affiliate_link_click", { partner_name: partnerName, affiliate_context: context });
 }
