@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { LpaLandingTemplate } from "@/components/content/LpaLandingTemplate";
-import { getAllLpaSlugs, getLpaLandingPageConfig } from "@/lib/content/lpa-pages.config";
+import { getAllLpaSlugs, getLpaLandingPageConfig, LOW_DEMAND_LPA_SLUGS } from "@/lib/content/lpa-pages.config";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { lpaLandingPath } from "@/lib/routes/landing-routes";
 
@@ -17,7 +17,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const config = getLpaLandingPageConfig(slug);
   if (!config) return {};
-  return buildPageMetadata(config.seo, { canonicalPath: lpaLandingPath(config.slug) });
+  const base = buildPageMetadata(config.seo, { canonicalPath: lpaLandingPath(config.slug) });
+  if (LOW_DEMAND_LPA_SLUGS.has(config.slug)) {
+    // Long-tail band with negligible search demand — noindexed pending AdSense
+    // approval to shrink the templated-page footprint. Page stays live for users.
+    return { ...base, robots: { index: false, follow: true } };
+  }
+  return base;
 }
 
 export default async function LpaLandingPage({ params }: Props) {

@@ -108,6 +108,36 @@ const MAP = new Map<string, GuideClusterLinkSpec>([
     },
   ],
   [
+    KEY("tax", "hra-exemption-rules-explained"),
+    {
+      salaryEnoughSlugs: ["is-12-lpa-good-in-bangalore", "is-12-lpa-good-in-chennai"],
+      calculatorHref: ROUTES.hraCalculator,
+      calculatorLabel: "HRA exemption calculator",
+      intro:
+        "Metro vs non-metro changes your HRA cap, and it changes what \"enough\" means too — compare two ₹12L cities on opposite sides of that metro line, then run your own rent through the calculator.",
+    },
+  ],
+  [
+    KEY("jobSwitch", "leave-encashment-rules-and-tax"),
+    {
+      salaryEnoughSlugs: ["is-15-lpa-good-in-kolkata", "is-20-lpa-good-in-pune"],
+      calculatorHref: ROUTES.leaveEncashmentCalculator,
+      calculatorLabel: "Leave encashment calculator",
+      intro:
+        "Leave encashment is a one-time cushion, rent is a monthly constant — see two city scenarios for the ongoing cost, then estimate the one-time payout separately.",
+    },
+  ],
+  [
+    KEY("jobSwitch", "final-settlement-checklist"),
+    {
+      salaryEnoughSlugs: ["is-25-lpa-good-in-bangalore", "is-30-lpa-good-in-mumbai"],
+      calculatorHref: ROUTES.finalSettlementCalculator,
+      calculatorLabel: "Final settlement calculator",
+      intro:
+        "Your settlement cheque needs to cover you until the next paycheck — see what higher-LPA city life actually costs monthly, then model the full settlement you're owed.",
+    },
+  ],
+  [
     KEY("tax", "old-vs-new-tax-regime-basics"),
     {
       salaryEnoughSlugs: ["is-18-lpa-good-in-noida", "is-15-lpa-good-in-gurgaon"],

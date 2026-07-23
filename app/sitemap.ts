@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { CALCULATOR_REGISTRY } from "@/lib/calculator-registry";
-import { LPA_LANDING_PAGES } from "@/lib/content/lpa-pages.config";
+import { LPA_LANDING_PAGES, LOW_DEMAND_LPA_SLUGS } from "@/lib/content/lpa-pages.config";
 import { lpaLandingPath } from "@/lib/routes/landing-routes";
 import { GUIDE_ARTICLES, guideArticlePath } from "@/lib/content/guides-registry";
 import { ROUTES } from "@/lib/routes";
@@ -28,7 +28,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ROUTES.taxGuides,
     ROUTES.jobSwitchGuides,
     ...Object.values(CALCULATOR_REGISTRY).map((c) => c.path),
-    ...LPA_LANDING_PAGES.map((p) => lpaLandingPath(p.slug)),
+    // Long-tail LPA bands are noindexed pending AdSense approval — keep them out
+    // of the sitemap while the robots meta says noindex (mixed signals confuse Google).
+    ...LPA_LANDING_PAGES.filter((p) => !LOW_DEMAND_LPA_SLUGS.has(p.slug)).map((p) => lpaLandingPath(p.slug)),
     // salary-enough pages are noindexed pending AdSense approval — keep them out
     // of the sitemap while the robots meta says noindex (mixed signals confuse Google).
     ...GUIDE_ARTICLES.map((a) => guideArticlePath(a)),

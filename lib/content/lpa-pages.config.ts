@@ -27,6 +27,33 @@ export type LpaLandingPageConfig = {
   realityCheckParagraphs?: string[];
 };
 
+/**
+ * LPA slugs kept out of the index — long-tail bands with negligible GSC demand
+ * (<100 impressions / 30d, several at 0) that inflate the "templated content at
+ * scale" pattern behind AdSense's low-value-content rejections. The 8 bands
+ * NOT listed here (8, 11, 12, 15, 18, 20, 35, 45) capture ~85% of all LPA-page
+ * search demand. Pulled from GSC 2026-06-21..2026-07-20 — re-evaluate if a
+ * noindexed band's demand grows.
+ */
+export const LOW_DEMAND_LPA_SLUGS: ReadonlySet<string> = new Set([
+  "3-lpa-in-hand-salary",
+  "4-lpa-in-hand-salary",
+  "5-lpa-in-hand-salary",
+  "6-lpa-in-hand-salary",
+  "7-lpa-in-hand-salary",
+  "9-lpa-in-hand-salary",
+  "10-lpa-in-hand-salary",
+  "13-lpa-in-hand-salary",
+  "14-lpa-in-hand-salary",
+  "16-lpa-in-hand-salary",
+  "17-lpa-in-hand-salary",
+  "19-lpa-in-hand-salary",
+  "25-lpa-in-hand-salary",
+  "30-lpa-in-hand-salary",
+  "40-lpa-in-hand-salary",
+  "50-lpa-in-hand-salary",
+]);
+
 const PT_ANNUAL = 2_500;
 
 /**

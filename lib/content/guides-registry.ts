@@ -201,6 +201,52 @@ export const GUIDE_ARTICLES: readonly GuideArticleMeta[] = [
     relatedCalculatorPaths: [ROUTES.salaryCalculator, ROUTES.oldVsNewTaxRegimeCalculator],
   },
   {
+    hub: "tax",
+    segment: "hra-exemption-rules-explained",
+    title: "HRA exemption rules explained (the actual formula, not just the theory)",
+    description:
+      "The least-of-three HRA formula, metro vs non-metro city classification, paying rent to parents correctly, and why this exemption only exists under the old regime.",
+    keywords: [
+      "HRA exemption rules",
+      "HRA exemption formula",
+      "HRA metro non-metro",
+      "HRA rent to parents",
+    ],
+    relatedCalculatorPaths: [ROUTES.hraCalculator, ROUTES.oldVsNewTaxRegimeCalculator],
+  },
+  {
+    hub: "jobSwitch",
+    segment: "leave-encashment-rules-and-tax",
+    title: "Leave encashment rules and tax treatment in India",
+    description:
+      "Why leave encashment during service is fully taxed but encashment at resignation isn't — the four-way exemption limit, and the mistakes that shrink people's payout.",
+    keywords: [
+      "leave encashment rules",
+      "leave encashment tax",
+      "earned leave encashment",
+      "leave encashment on resignation",
+    ],
+    relatedCalculatorPaths: [ROUTES.leaveEncashmentCalculator, ROUTES.finalSettlementCalculator],
+  },
+  {
+    hub: "jobSwitch",
+    segment: "final-settlement-checklist",
+    title: "Final settlement checklist: what your employer owes you when you resign",
+    description:
+      "Every line item a full and final settlement should include, the statutory timeline, and what to verify before you sign the no-dues certificate.",
+    keywords: [
+      "full and final settlement",
+      "final settlement checklist",
+      "F&F settlement India",
+      "no dues certificate",
+    ],
+    relatedCalculatorPaths: [
+      ROUTES.finalSettlementCalculator,
+      ROUTES.leaveEncashmentCalculator,
+      ROUTES.gratuityCalculator,
+    ],
+  },
+  {
     hub: "jobSwitch",
     segment: "how-notice-period-buyout-works",
     title: "How notice period buyout usually works (India)",
