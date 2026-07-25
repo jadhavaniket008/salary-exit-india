@@ -15,6 +15,7 @@ import { ROUTES } from "@/lib/routes";
 import { lpaLandingPath } from "@/lib/routes/landing-routes";
 import { SiteSearchClient } from "@/components/home/SiteSearchClient";
 import { AnimateIn } from "@/components/ui/AnimateIn";
+import { FeaturedCalcVideoPreview } from "@/components/home/FeaturedCalcVideoPreview";
 
 export const metadata: Metadata = buildPageMetadata(
   {
@@ -145,6 +146,7 @@ export default function Home() {
                   {primaryCalc.seo.description}
                 </p>
               </div>
+              <FeaturedCalcVideoPreview />
               <span className="shrink-0 text-sm font-semibold text-accent group-hover:underline">
                 Calculate now →
               </span>
