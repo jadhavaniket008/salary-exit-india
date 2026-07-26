@@ -9,6 +9,10 @@ export default function SalaryCalculatorPage() {
   return (
     <>
       <SalaryCalculatorClient />
+      <div className="mx-auto max-w-3xl space-y-6 px-4 pt-6 sm:px-6">
+        <CaConsultCta variant="inline" />
+        <AffiliateCta context="investing" />
+      </div>
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-10 sm:px-6">
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
@@ -82,9 +86,6 @@ export default function SalaryCalculatorPage() {
             calculator shows this breakdown so you can see both figures.
           </p>
         </section>
-
-        <CaConsultCta variant="inline" />
-        <AffiliateCta context="investing" />
       </div>
     </>
   );

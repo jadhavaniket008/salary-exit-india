@@ -8,6 +8,9 @@ export default function OfferComparisonCalculatorPage() {
   return (
     <>
       <OfferComparisonCalculatorClient />
+      <div className="mx-auto max-w-3xl px-4 pt-6 sm:px-6">
+        <AffiliateCta context="investing" />
+      </div>
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-10 sm:px-6">
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
@@ -85,8 +88,6 @@ export default function OfferComparisonCalculatorPage() {
             <li>Does the role create portfolio work or outcomes you can point to?</li>
           </ul>
         </section>
-
-        <AffiliateCta context="investing" />
       </div>
     </>
   );

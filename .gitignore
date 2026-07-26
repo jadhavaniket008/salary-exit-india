@@ -73,6 +73,7 @@ graphify-out/graph.html
 /airtable/
 /outreach/
 /brag-output/
+/reddit_posts/
 *.xls
 /*.png
 !public/**/*.png

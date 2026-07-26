@@ -8,6 +8,9 @@ export default function CtcToInHandCalculatorPage() {
   return (
     <>
       <CtcToInHandCalculatorClient />
+      <div className="mx-auto max-w-3xl px-4 pt-6 sm:px-6">
+        <AffiliateCta context="investing" />
+      </div>
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-10 sm:px-6">
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
@@ -103,8 +106,6 @@ export default function CtcToInHandCalculatorPage() {
             </li>
           </ul>
         </section>
-
-        <AffiliateCta context="investing" />
       </div>
     </>
   );

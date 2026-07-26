@@ -9,6 +9,10 @@ export default function TaxRegimeCalculatorPage() {
   return (
     <>
       <TaxRegimeCalculatorClient />
+      <div className="mx-auto max-w-3xl space-y-6 px-4 pt-6 sm:px-6">
+        <CaConsultCta />
+        <AffiliateCta context="tax-filing" />
+      </div>
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-10 sm:px-6">
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
@@ -96,9 +100,6 @@ export default function TaxRegimeCalculatorPage() {
             administrative simplicity has real value for many employees.
           </p>
         </section>
-
-        <CaConsultCta />
-        <AffiliateCta context="tax-filing" />
       </div>
     </>
   );
