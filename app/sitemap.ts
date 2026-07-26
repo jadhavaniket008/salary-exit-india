@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { CALCULATOR_REGISTRY } from "@/lib/calculator-registry";
 import { LPA_LANDING_PAGES, LOW_DEMAND_LPA_SLUGS } from "@/lib/content/lpa-pages.config";
-import { lpaLandingPath } from "@/lib/routes/landing-routes";
+import { STRONG_PERFORMER_SALARY_ENOUGH_SLUGS } from "@/lib/content/salary-enough-pages.config";
+import { lpaLandingPath, salaryEnoughPath } from "@/lib/routes/landing-routes";
 import { GUIDE_ARTICLES, guideArticlePath } from "@/lib/content/guides-registry";
 import { ROUTES } from "@/lib/routes";
 import { getSiteOrigin } from "@/lib/seo/site-origin";
@@ -31,8 +32,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Long-tail LPA bands are noindexed pending AdSense approval — keep them out
     // of the sitemap while the robots meta says noindex (mixed signals confuse Google).
     ...LPA_LANDING_PAGES.filter((p) => !LOW_DEMAND_LPA_SLUGS.has(p.slug)).map((p) => lpaLandingPath(p.slug)),
-    // salary-enough pages are noindexed pending AdSense approval — keep them out
-    // of the sitemap while the robots meta says noindex (mixed signals confuse Google).
+    // salary-enough pages are noindexed pending AdSense approval, except the 2 proven
+    // performers carved out in salary-enough-pages.config.ts (still indexed, still ranking).
+    ...Array.from(STRONG_PERFORMER_SALARY_ENOUGH_SLUGS).map((slug) => salaryEnoughPath(slug)),
     ...GUIDE_ARTICLES.map((a) => guideArticlePath(a)),
   ];
 

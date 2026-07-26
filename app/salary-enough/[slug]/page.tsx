@@ -4,6 +4,7 @@ import { SalaryEnoughLandingTemplate } from "@/components/content/SalaryEnoughLa
 import {
   getAllSalaryEnoughSlugs,
   getSalaryEnoughPageConfig,
+  STRONG_PERFORMER_SALARY_ENOUGH_SLUGS,
 } from "@/lib/content/salary-enough-pages.config";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { salaryEnoughPath } from "@/lib/routes/landing-routes";
@@ -20,8 +21,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const config = getSalaryEnoughPageConfig(slug);
   if (!config) return {};
+  const meta = buildPageMetadata(config.seo, { canonicalPath: salaryEnoughPath(config.slug) });
+  if (STRONG_PERFORMER_SALARY_ENOUGH_SLUGS.has(config.slug)) {
+    return meta;
+  }
   return {
-    ...buildPageMetadata(config.seo, { canonicalPath: salaryEnoughPath(config.slug) }),
+    ...meta,
     // Temporarily noindexed during AdSense review — this 25-page templated cluster
     // earns near-zero GSC clicks and reads as replicated content to the reviewer.
     // Re-enable (and restore the sitemap entries) after AdSense approval.

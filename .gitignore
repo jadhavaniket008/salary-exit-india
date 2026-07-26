@@ -68,3 +68,11 @@ lib/content/graphify-out/
 Thumbs.db
 
 graphify-out/graph.html
+
+# operational data — not app code, keep out of the repo
+/airtable/
+/outreach/
+/brag-output/
+*.xls
+/*.png
+!public/**/*.png

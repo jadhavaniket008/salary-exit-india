@@ -2454,6 +2454,17 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
 
 const bySlug = new Map(SALARY_ENOUGH_PAGES.map((p) => [p.slug, p]));
 
+/**
+ * Carve-out from the cluster-wide noindex (see app/salary-enough/[slug]/page.tsx).
+ * These 2 pages kept ranking and converting weeks after the rest of the cluster was
+ * noindexed pending AdSense review — pos 5.9 / 7.4, 2.1-2.2% CTR — so they stay indexed
+ * while the other 23 stay out. Revisit once AdSense approves and the full cluster reopens.
+ */
+export const STRONG_PERFORMER_SALARY_ENOUGH_SLUGS: ReadonlySet<string> = new Set([
+  "is-15-lpa-good-in-bangalore",
+  "is-20-lpa-good-in-mumbai",
+]);
+
 export function getSalaryEnoughPageConfig(slug: string): SalaryEnoughPageConfig | undefined {
   return bySlug.get(slug);
 }
