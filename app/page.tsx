@@ -16,6 +16,7 @@ import { lpaLandingPath } from "@/lib/routes/landing-routes";
 import { SiteSearchClient } from "@/components/home/SiteSearchClient";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { FeaturedCalcVideoPreview } from "@/components/home/FeaturedCalcVideoPreview";
+import { EmailCapture } from "@/components/monetization/EmailCapture";
 
 export const metadata: Metadata = buildPageMetadata(
   {
@@ -294,6 +295,14 @@ export default function Home() {
 
           {/* ── FAQ ─────────────────────────────────────────────────── */}
           <FaqSection items={HOME_FAQ} />
+
+          {/* ── Email capture ───────────────────────────────────────── */}
+          <section aria-labelledby="email-capture-heading" className="rounded-xl border border-border bg-surface-subtle p-5">
+            <h2 id="email-capture-heading" className="sr-only">
+              Subscribe for salary and tax updates
+            </h2>
+            <EmailCapture />
+          </section>
 
           {/* ── Site search ─────────────────────────────────────────── */}
           <section aria-labelledby="site-search-heading">
