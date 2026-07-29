@@ -47,4 +47,8 @@ export const EDUCATION_LINKS_BY_CALCULATOR: Record<
   offerComparison: pick({ hub: "jobSwitch", segment: "compare-job-offers-beyond-ctc" }),
   salaryHike: pick({ hub: "jobSwitch", segment: "compare-job-offers-beyond-ctc" }),
   epf: pick({ hub: "salary", segment: "salary-structure-in-india" }),
+  reverseSalary: pick(
+    { hub: "salary", segment: "salary-structure-in-india" },
+    { hub: "salary", segment: "what-affects-in-hand-salary" }
+  ),
 };

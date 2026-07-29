@@ -313,6 +313,31 @@ export const CALCULATOR_TRUST: Record<CalculatorSlug, CalculatorTrustProfile> = 
       "Employer total cost includes more than EPF shown here.",
     ],
   },
+  reverseSalary: {
+    confidence: "assumption-heavy",
+    headline:
+      "Works backwards from your target in-hand using a numeric search against the same CTC→in-hand engine — the required-CTC figure is a range, not a single precise number.",
+    direct: [
+      "The solved gross is checked against your target in-hand until they match within ₹25.",
+    ],
+    estimated: [
+      "Required CTC = required gross ÷ (1 − employer-cost share you set).",
+      "Low/high CTC range uses fixed 8%–18% employer-cost-share bounds regardless of your input.",
+    ],
+    assumptions: [
+      "Fixed monthly in-hand only — variable pay, bonuses, and ESOPs are not modeled.",
+      "Basic+DA share of gross and employer-cost share are user-set approximations, not your actual offer letter.",
+    ],
+    realWorldFactors: [
+      "Real employers vary widely in how much CTC goes to employer PF, gratuity, and insurance.",
+      "Joining bonus, relocation, and clawback clauses can change the effective first-year target.",
+    ],
+    caveatsTitle: "Why an actual offer may need a different CTC",
+    caveatsBullets: [
+      "If your employer's employer-cost share falls outside 8%–18%, the true required CTC sits outside this range.",
+      "Use the CTC → in-hand calculator to check a specific offer's real breakdown once you have one.",
+    ],
+  },
 };
 
 export function getCalculatorTrust(slug: CalculatorSlug): CalculatorTrustProfile {

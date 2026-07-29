@@ -37,7 +37,7 @@ export const CALCULATOR_REGISTRY: Record<CalculatorSlug, CalculatorDefinition> =
         "real savings from salary",
       ],
     },
-    related: ["ctcToInHand", "offerComparison", "salary"],
+    related: ["ctcToInHand", "offerComparison", "salary", "reverseSalary"],
   },
   salary: {
     slug: "salary",
@@ -63,7 +63,7 @@ export const CALCULATOR_REGISTRY: Record<CalculatorSlug, CalculatorDefinition> =
         "Free CTC to in-hand salary calculator for India. Enter your annual CTC or gross salary and get monthly take-home after PF, professional tax, and TDS — FY 2026-27 slabs. No registration.",
       keywords: [...baseKeywords, "CTC to in hand calculator", "take home salary calculator India", "gross to net salary India", "ctc calculator india free"],
     },
-    related: ["salaryRealityCheck", "salary", "taxRegime", "epf"],
+    related: ["salaryRealityCheck", "salary", "taxRegime", "epf", "reverseSalary"],
   },
   taxRegime: {
     slug: "taxRegime",
@@ -160,7 +160,7 @@ export const CALCULATOR_REGISTRY: Record<CalculatorSlug, CalculatorDefinition> =
         "Rank multiple offers by estimated monthly in-hand and CTC using numbers you provide. Consistency of methodology matters.",
       keywords: [...baseKeywords, "offer comparison", "CTC"],
     },
-    related: ["salaryRealityCheck", "ctcToInHand", "salaryHike", "taxRegime"],
+    related: ["salaryRealityCheck", "ctcToInHand", "salaryHike", "taxRegime", "reverseSalary"],
   },
   salaryHike: {
     slug: "salaryHike",
@@ -187,6 +187,25 @@ export const CALCULATOR_REGISTRY: Record<CalculatorSlug, CalculatorDefinition> =
       keywords: [...baseKeywords, "EPF", "PF contribution"],
     },
     related: ["ctcToInHand", "salary", "gratuity"],
+  },
+  reverseSalary: {
+    slug: "reverseSalary",
+    path: ROUTES.reverseSalaryCalculator,
+    label: "Required CTC for target in-hand",
+    shortLabel: "Reverse salary",
+    seo: {
+      title: "What CTC Do I Need for ₹1 Lakh In-Hand? Reverse Salary Calculator",
+      description:
+        "Work backwards from your target monthly in-hand to find the required CTC — enter ₹1 lakh, ₹1.5 lakh, or any figure and see the gross and CTC range, factoring PF, tax regime, and employer-side costs.",
+      keywords: [
+        ...baseKeywords,
+        "CTC required for 1 lakh in hand",
+        "reverse salary calculator",
+        "required CTC for target salary",
+        "how much CTC do I need",
+      ],
+    },
+    related: ["ctcToInHand", "salaryRealityCheck", "offerComparison"],
   },
 };
 

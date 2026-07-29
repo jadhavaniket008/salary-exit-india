@@ -29,6 +29,7 @@ export const ROUTES = {
   offerComparisonCalculator: "/offer-comparison-calculator",
   salaryHikeCalculator: "/salary-hike-calculator",
   epfCalculator: "/epf-calculator",
+  reverseSalaryCalculator: "/reverse-salary-calculator",
   forBusinesses: "/for-businesses",
 } as const;
 
@@ -46,7 +47,8 @@ export type CalculatorSlug =
   | "finalSettlement"
   | "offerComparison"
   | "salaryHike"
-  | "epf";
+  | "epf"
+  | "reverseSalary";
 
 /** Config-driven LPA / salary-enough SEO pages — canonical paths. */
 export {
