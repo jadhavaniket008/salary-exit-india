@@ -688,11 +688,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     city: { id: "bangalore", name: "Bengaluru", metro: true },
     monthlyRent: 30_000,
     lifestyle: "moderate",
-    answerKind: "depends",
+    answerKind: "yes",
     seo: {
       title: "Is 15 LPA Good in Bangalore? ₹1.14L In-Hand vs ₹30K Rent",
       description:
-        "15 LPA in Bangalore: ₹1,14,900/month in-hand, ₹30k rent, ~₹27k savings/month (moderate lifestyle). Edit the model for your actual rent and spend — see if it's enough.",
+        "15 LPA in Bangalore: ₹1,14,900/month in-hand, ₹30k rent, ~₹44k savings/month (moderate lifestyle). Edit the model for your actual rent and spend — see if it's enough.",
       keywords: [
         "is 15 lpa enough in bangalore",
         "is 15 lpa good in bangalore",
@@ -703,7 +703,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       ],
     },
     answerHeadline:
-      "On this model, often tight for solo renters in pricey corridors — workable with sharing, outer areas, or a lean moderate lifestyle.",
+      "On this model, ₹15 LPA gross is workable in Bengaluru — about ₹43,867/month left after tax, PF, ₹30k rent, and a moderate lifestyle. Solo renters in pricier corridors or premium-tier spend will feel it tighter than this default.",
     leadParagraph:
       "If you’re asking whether ₹15 LPA is “enough” in Bengaluru, the straight answer is: it depends almost entirely on rent and whether you’ll share a flat or commute from farther out. Fifteen LPA is a crowded campus-to-first-switch band — we stress-test ₹30,000/month rent with moderate spend so you can see cash flow after tax and PF, not vibes.",
     whyParagraph:
@@ -830,11 +830,11 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     city: { id: "mumbai", name: "Mumbai", metro: true },
     monthlyRent: 42_000,
     lifestyle: "moderate",
-    answerKind: "depends",
+    answerKind: "yes",
     seo: {
       title: "Is ₹20 LPA Good in Mumbai? ₹1.4L in-hand vs ₹42k rent — honest check",
       description:
-        "20 LPA Mumbai reality: ₹1,48,600/month in-hand, ₹42k rent, moderate spend — see real savings. Fully editable Salary Reality Check with actual Mumbai rent bands.",
+        "20 LPA Mumbai reality: ₹1,48,600/month in-hand, ₹42k rent, ~₹66k savings/month (moderate lifestyle). Fully editable Salary Reality Check with actual Mumbai rent bands.",
       keywords: [
         "is 20 lpa enough in mumbai",
         "is 20 lpa good in mumbai",
@@ -844,7 +844,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       ],
     },
     answerHeadline:
-      "Often tight: Mumbai rent eats gross faster than most inland cities — sharing or outer suburbs helps; solo premium pockets hurt.",
+      "On this model, ₹20 LPA gross is workable in Mumbai — about ₹65,625/month left after tax, PF, ₹42k rent, and a moderate lifestyle. It gets tight fast with premium rent, solo luxury pockets, or heavy EMIs outside this model.",
     leadParagraph:
       "Twenty LPA sounds strong on LinkedIn until you price Mumbai rent. We line up ₹42,000/month — plausible for many connected suburbs in a compact or shared setup, not for every sea-facing dream — then show where salary goes after tax, PF, and moderate day-to-day spend.",
     whyParagraph:
