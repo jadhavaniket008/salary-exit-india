@@ -405,7 +405,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     scenario: baseScenario(12),
     scenarioNotes: ["₹12 LPA is interpreted as ₹12,00,000 gross per year."],
     angleParagraph:
-      "Twelve LPA is often discussed as gross CTC — here we treat it as taxable gross for a like-for-like in-hand story. If your offer packs large variable pay, interpret “LPA” consistently before comparing employers.",
+      "Twelve LPA is often quoted as CTC, but this page treats it as taxable gross for a like-for-like in-hand story — if your CTC bundles employer PF, gratuity, or insurance, your real gross runs lower than the CTC headline. If your offer packs large variable pay, interpret “LPA” consistently before comparing employers.",
     bandInsights: [
       "Twelve lakh gross is a frequent benchmark for first switches — compare offers on the same definition of fixed vs variable.",
       "New regime is shown for a clean baseline; if you claim HRA + 80C, old regime may win — model both explicitly.",
@@ -868,7 +868,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       {
         question: '35 LPA ka matlab kya hota hai? Monthly in-hand kitni hogi?',
         answer:
-          '35 LPA yani ₹35,00,000 saalana gross CTC. Is par monthly in-hand lagbhag ₹2,37,000 hoti hai (nayi tax regime, FY 2026-27). Har mahine gross: ₹2,91,667. Deductions: PF ~₹1,800, income tax TDS ~₹52,650. Yeh ek senior-level salary hai — India ke top earners mein aate hain.',
+          '35 LPA yani ₹35,00,000 saalana gross salary (CTC nahi — agar aapki CTC mein employer PF, gratuity ya insurance shaamil hai, to real gross isse kam hoga). Is par monthly in-hand lagbhag ₹2,37,000 hoti hai (nayi tax regime, FY 2026-27). Har mahine gross: ₹2,91,667. Deductions: PF ~₹1,800, income tax TDS ~₹52,650. Yeh ek senior-level salary hai — India ke top earners mein aate hain.',
       },
     ],
   },
@@ -908,7 +908,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       {
         question: "40 LPA ka matlab kya hota hai? In-hand kitni hogi?",
         answer:
-          "40 LPA yani ₹40,00,000 saalana gross CTC. FY 2026-27 mein nai tax regime ke hisab se, estimated in-hand salary lagbhag ₹2,65,700 per maah hoti hai — employee PF (₹1,800) aur professional tax (₹208) deduct karne ke baad. Actual salary aapke employer ki salary structure par depend karti hai.",
+          "40 LPA yani ₹40,00,000 saalana gross salary (CTC nahi). FY 2026-27 mein nai tax regime ke hisab se, estimated in-hand salary lagbhag ₹2,65,700 per maah hoti hai — employee PF (₹1,800) aur professional tax (₹208) deduct karne ke baad. Actual salary aapke employer ki salary structure par depend karti hai.",
       },
       {
         question: "Should I choose old or new regime at ₹40 LPA?",
@@ -998,7 +998,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       {
         question: "50 LPA ka matlab kya hota hai? In-hand salary kitni hoti hai?",
         answer:
-          "50 LPA matlab ₹50,00,000 saalana gross CTC. FY 2026-27 mein nai tax regime se in-hand lagbhag ₹3,23,000 per maah hoti hai — PF (₹1,800) aur income tax TDS (~₹91,650/month) deduct karne ke baad. Ye estimate hai; actual payslip aapki salary structure aur bonuses par depend karegi.",
+          "50 LPA matlab ₹50,00,000 saalana gross salary (CTC nahi). FY 2026-27 mein nai tax regime se in-hand lagbhag ₹3,23,000 per maah hoti hai — PF (₹1,800) aur income tax TDS (~₹91,650/month) deduct karne ke baad. Ye estimate hai; actual payslip aapki salary structure aur bonuses par depend karegi.",
       },
       {
         question: "Does surcharge apply at ₹50 LPA?",
