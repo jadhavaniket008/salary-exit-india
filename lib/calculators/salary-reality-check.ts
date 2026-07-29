@@ -18,7 +18,7 @@ import type {
   SavingsVerdict,
 } from "@/types/salary-reality";
 import type { CtcToInHandOutput, TaxRegime } from "@/types/salary";
-import { computeCtcToInHand } from "./ctc-to-inhand";
+import { computeCtcToInHand, deriveGrossFromCtc } from "./ctc-to-inhand";
 
 function clampBasicDaShare(raw: number): number {
   if (!Number.isFinite(raw)) return DEFAULT_BASIC_DA_SHARE_OF_GROSS;
@@ -232,18 +232,24 @@ function classifyVerdict(
 }
 
 export function computeSalaryRealityCheck(input: SalaryRealityInput): SalaryRealityOutput {
-  const annualCtc = Math.max(0, input.annualCtc);
   const monthlyRent = Math.max(0, input.monthlyRent);
   const regime: TaxRegime = input.regime ?? "new";
   const basicDaShareOfGross = clampBasicDaShare(
     input.basicDaShareOfGross ?? DEFAULT_BASIC_DA_SHARE_OF_GROSS
   );
 
+  const { annualGrossSalary, employerSideCostsAnnual } = deriveGrossFromCtc({
+    annualCtc: input.annualCtc,
+    employerPfAnnual: input.employerPfAnnual,
+    gratuityAnnual: input.gratuityAnnual,
+    insuranceAndBenefitsAnnual: input.insuranceAndBenefitsAnnual,
+  });
+
   const basicAndDaAnnual =
-    annualCtc > 0 ? Math.round(annualCtc * basicDaShareOfGross) : undefined;
+    annualGrossSalary > 0 ? Math.round(annualGrossSalary * basicDaShareOfGross) : undefined;
 
   const ctcEngine = computeCtcToInHand({
-    annualGrossSalary: annualCtc,
+    annualGrossSalary,
     regime,
     metroCity: input.metroCity,
     professionalTaxAnnual: DEFAULT_PROFESSIONAL_TAX_ANNUAL_ESTIMATE,
@@ -287,7 +293,9 @@ export function computeSalaryRealityCheck(input: SalaryRealityInput): SalaryReal
 
   const warnings: string[] = [
     "Expense lines are heuristics (not your bank statement). Tune rent and category lines, or compare lifestyle tier to your real spend.",
-    `CTC is treated as annual gross for tax/PF like the CTC→in-hand calculator (${regime} regime, PF from Basic+DA = ${(basicDaShareOfGross * 100).toFixed(0)}% of gross, default PT).`,
+    employerSideCostsAnnual > 0
+      ? `${formatInr(employerSideCostsAnnual)}/year of employer PF, gratuity, and insurance was subtracted from your CTC to estimate gross (${regime} regime, PF from Basic+DA = ${(basicDaShareOfGross * 100).toFixed(0)}% of gross, default PT).`
+      : `No employer-side costs were entered, so the full amount is treated as annual gross for tax/PF (${regime} regime, PF from Basic+DA = ${(basicDaShareOfGross * 100).toFixed(0)}% of gross, default PT).`,
     ...ctcEngine.warnings,
   ];
 
@@ -297,6 +305,8 @@ export function computeSalaryRealityCheck(input: SalaryRealityInput): SalaryReal
 
   return {
     inHandMonthly,
+    annualGrossSalary,
+    employerSideCostsAnnual,
     ctcEngine,
     regime,
     basicDaShareOfGross,

@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { InHandBreakdownBars } from "@/components/charts/InHandBreakdownBars";
 import { ResultReveal } from "@/components/motion/ResultReveal";
 import { Button, Card, FormField, Input } from "@/components/ui";
@@ -15,7 +15,7 @@ import {
   ValidationSummary,
   WorkedExample,
 } from "@/components/calculators";
-import { trackCalculatorUse } from "@/lib/analytics/client";
+import { trackCalculatorStarted, trackCalculatorUse, trackInputModeSelected } from "@/lib/analytics/client";
 import {
   computeCtcToInHand,
   CTC_WORKED_EXAMPLE_INPUT,
@@ -52,6 +52,20 @@ export function CtcToInHandCalculatorClient() {
   const [compareGross, setCompareGross] = useState("");
   const [compareResult, setCompareResult] = useState<CtcToInHandOutput | null>(null);
   const [compareError, setCompareError] = useState<string | null>(null);
+
+  const hasTrackedStart = useRef(false);
+  function markStarted() {
+    if (hasTrackedStart.current) return;
+    hasTrackedStart.current = true;
+    trackCalculatorStarted("ctcToInHand");
+  }
+
+  function handleModeChange(next: InputMode) {
+    if (next === mode) return;
+    trackInputModeSelected("ctcToInHand", mode, next);
+    setMode(next);
+    markStarted();
+  }
 
   const assumptionBullets = useMemo(
     () => [
@@ -281,14 +295,14 @@ export function CtcToInHandCalculatorClient() {
               <Button
                 type="button"
                 variant={mode === "ctc" ? "primary" : "secondary"}
-                onClick={() => setMode("ctc")}
+                onClick={() => handleModeChange("ctc")}
               >
                 I know my CTC
               </Button>
               <Button
                 type="button"
                 variant={mode === "gross" ? "primary" : "secondary"}
-                onClick={() => setMode("gross")}
+                onClick={() => handleModeChange("gross")}
               >
                 I know my gross salary
               </Button>
@@ -319,7 +333,15 @@ export function CtcToInHandCalculatorClient() {
                 id="ctc"
                 hint="The headline number from your offer letter — includes employer-side costs."
               >
-                <Input id="ctc" inputMode="decimal" value={ctcAnnual} onChange={(e) => setCtcAnnual(e.target.value)} />
+                <Input
+                  id="ctc"
+                  inputMode="decimal"
+                  value={ctcAnnual}
+                  onChange={(e) => {
+                    setCtcAnnual(e.target.value);
+                    markStarted();
+                  }}
+                />
               </FormField>
               <FormField
                 label="Employer PF (annual, ₹)"
@@ -363,7 +385,15 @@ export function CtcToInHandCalculatorClient() {
             </>
           ) : (
             <FormField label="Annual gross salary (₹)" id="gross" hint="Your taxable gross basis for this simplified model.">
-              <Input id="gross" inputMode="decimal" value={gross} onChange={(e) => setGross(e.target.value)} />
+              <Input
+                id="gross"
+                inputMode="decimal"
+                value={gross}
+                onChange={(e) => {
+                  setGross(e.target.value);
+                  markStarted();
+                }}
+              />
             </FormField>
           )}
 

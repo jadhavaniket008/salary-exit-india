@@ -79,4 +79,36 @@ describe("computeSalaryRealityCheck", () => {
     expect(out.verdictSuggestions.length).toBeGreaterThan(0);
     expect(out.verdictTitle).toMatch(/savings|balanced|cost|unsustainable/i);
   });
+
+  it("treats CTC as gross unchanged when no employer-side costs are given (city-page compatibility)", () => {
+    const out = computeSalaryRealityCheck({
+      annualCtc: 18_00_000,
+      metroCity: true,
+      monthlyRent: 28_000,
+      lifestyle: "moderate",
+    });
+    expect(out.annualGrossSalary).toBe(18_00_000);
+    expect(out.employerSideCostsAnnual).toBe(0);
+  });
+
+  it("subtracts employer PF, gratuity, and insurance from CTC before computing in-hand", () => {
+    const withoutCosts = computeSalaryRealityCheck({
+      annualCtc: 18_00_000,
+      metroCity: true,
+      monthlyRent: 28_000,
+      lifestyle: "moderate",
+    });
+    const withCosts = computeSalaryRealityCheck({
+      annualCtc: 18_00_000,
+      employerPfAnnual: 43_200,
+      gratuityAnnual: 34_615,
+      insuranceAndBenefitsAnnual: 12_000,
+      metroCity: true,
+      monthlyRent: 28_000,
+      lifestyle: "moderate",
+    });
+    expect(withCosts.employerSideCostsAnnual).toBe(43_200 + 34_615 + 12_000);
+    expect(withCosts.annualGrossSalary).toBe(18_00_000 - (43_200 + 34_615 + 12_000));
+    expect(withCosts.inHandMonthly).toBeLessThan(withoutCosts.inHandMonthly);
+  });
 });

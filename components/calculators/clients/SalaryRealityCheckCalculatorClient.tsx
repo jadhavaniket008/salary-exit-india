@@ -23,7 +23,13 @@ import {
   getHeuristicMonthlyExpenses,
   lifestyleDescription,
 } from "@/lib/config/salary-reality-heuristics";
-import { trackOfferCompareClick, trackSalaryRealityCheckUse } from "@/lib/analytics/client";
+import {
+  trackCalculatorStarted,
+  trackInputModeSelected,
+  trackNextToolClicked,
+  trackOfferCompareClick,
+  trackSalaryRealityCheckUse,
+} from "@/lib/analytics/client";
 import { computeSalaryRealityCheck } from "@/lib/calculators/salary-reality-check";
 import { formatInr } from "@/lib/format-inr";
 import { ROUTES } from "@/lib/routes";
@@ -31,6 +37,8 @@ import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
 import type { TaxRegime } from "@/types/salary";
 import type { LifestyleLevel, MonthlyExpenseParts, SavingsVerdict } from "@/types/salary-reality";
+
+type InputMode = "ctc" | "gross";
 
 export type SalaryRealityCheckInitialScenario = {
   annualCtc: number;
@@ -73,9 +81,13 @@ export function SalaryRealityCheckCalculatorClient({
   initial,
   embed = false,
 }: SalaryRealityCheckCalculatorClientProps = {}) {
+  const [mode, setMode] = useState<InputMode>(() => (initial ? "gross" : "ctc"));
   const [ctc, setCtc] = useState(() =>
     initial ? String(initial.annualCtc) : ""
   );
+  const [employerPfAnnual, setEmployerPfAnnual] = useState("");
+  const [gratuityAnnual, setGratuityAnnual] = useState("");
+  const [insuranceAnnual, setInsuranceAnnual] = useState("");
   const [metro, setMetro] = useState(() => initial?.metroCity ?? true);
   const [rent, setRent] = useState(() =>
     initial ? String(initial.monthlyRent) : ""
@@ -100,24 +112,26 @@ export function SalaryRealityCheckCalculatorClient({
 
   const lifestyleHelp = useMemo(() => lifestyleDescription(lifestyle), [lifestyle]);
 
+  const primaryFieldLabel = mode === "ctc" ? "Annual CTC" : "Annual gross salary";
+
   const parsed = useMemo(() => {
     const c = sanitizeNumber(ctc);
     const r = sanitizeNumber(rent);
     if (!c.ok || !r.ok) return { ok: false as const };
-    const eC = assertNonNegative("Annual CTC", c.value);
+    const eC = assertNonNegative(primaryFieldLabel, c.value);
     const eR = assertNonNegative("Monthly rent", r.value);
     const errs = [eC, eR].filter(Boolean) as string[];
     if (errs.length) return { ok: false as const, errors: errs };
     return { ok: true as const, annualCtc: c.value, monthlyRent: r.value };
-  }, [ctc, rent]);
+  }, [ctc, rent, primaryFieldLabel]);
 
   const validationErrors = useMemo(() => {
     const next: string[] = [];
     if (ctc.trim()) {
       const c = sanitizeNumber(ctc);
-      if (!c.ok) next.push("Annual CTC (₹): " + c.error);
+      if (!c.ok) next.push(`${primaryFieldLabel} (₹): ` + c.error);
       else {
-        const nn = assertNonNegative("Annual CTC", c.value);
+        const nn = assertNonNegative(primaryFieldLabel, c.value);
         if (nn) next.push(nn);
       }
     }
@@ -130,7 +144,7 @@ export function SalaryRealityCheckCalculatorClient({
       }
     }
     return next;
-  }, [ctc, rent]);
+  }, [ctc, rent, primaryFieldLabel]);
 
   const basicShare = useMemo(() => {
     const p = basicDaPct;
@@ -138,10 +152,23 @@ export function SalaryRealityCheckCalculatorClient({
     return Math.min(60, Math.max(10, p)) / 100;
   }, [basicDaPct]);
 
+  const employerCosts = useMemo(() => {
+    if (mode !== "ctc") return { employerPfAnnual: 0, gratuityAnnual: 0, insuranceAndBenefitsAnnual: 0 };
+    const empPf = sanitizeNumber(employerPfAnnual || "0", { fallback: 0 });
+    const grat = sanitizeNumber(gratuityAnnual || "0", { fallback: 0 });
+    const ins = sanitizeNumber(insuranceAnnual || "0", { fallback: 0 });
+    return {
+      employerPfAnnual: empPf.ok ? empPf.value : 0,
+      gratuityAnnual: grat.ok ? grat.value : 0,
+      insuranceAndBenefitsAnnual: ins.ok ? ins.value : 0,
+    };
+  }, [mode, employerPfAnnual, gratuityAnnual, insuranceAnnual]);
+
   const result = useMemo(() => {
     if (!parsed.ok) return null;
     return computeSalaryRealityCheck({
       annualCtc: parsed.annualCtc,
+      ...employerCosts,
       monthlyRent: parsed.monthlyRent,
       metroCity: metro,
       lifestyle,
@@ -149,9 +176,27 @@ export function SalaryRealityCheckCalculatorClient({
       basicDaShareOfGross: basicShare,
       monthlyExpenses: expenses,
     });
-  }, [parsed, metro, lifestyle, regime, basicShare, expenses]);
+  }, [parsed, metro, lifestyle, regime, basicShare, expenses, employerCosts]);
+
+  const hasTrackedStart = useRef(false);
+  function markStarted() {
+    if (hasTrackedStart.current) return;
+    hasTrackedStart.current = true;
+    trackCalculatorStarted("salaryRealityCheck");
+  }
+
+  function handleModeChange(next: InputMode) {
+    if (next === mode) return;
+    trackInputModeSelected("salaryRealityCheck", mode, next);
+    setMode(next);
+    markStarted();
+  }
 
   function reset() {
+    setMode(initial ? "gross" : "ctc");
+    setEmployerPfAnnual("");
+    setGratuityAnnual("");
+    setInsuranceAnnual("");
     if (initial) {
       setCtc(String(initial.annualCtc));
       setRent(String(initial.monthlyRent));
@@ -227,12 +272,21 @@ export function SalaryRealityCheckCalculatorClient({
           <CalculatorSalaryEnoughSpotlight variant="reality" />
 
           <RequiredInputsCallout
-            items={[
-              "Annual CTC (₹) — treated as gross for tax/PF like CTC→in-hand",
-              "Metro vs non-metro (commute default band)",
-              "Monthly rent (₹)",
-              "Lifestyle level (initial values for non-rent spend — override per line if needed)",
-            ]}
+            items={
+              mode === "ctc"
+                ? [
+                    "Annual CTC (₹) — employer PF/gratuity/insurance below are subtracted to get gross",
+                    "Metro vs non-metro (commute default band)",
+                    "Monthly rent (₹)",
+                    "Lifestyle level (initial values for non-rent spend — override per line if needed)",
+                  ]
+                : [
+                    "Annual gross salary (₹) — already excludes employer-side costs",
+                    "Metro vs non-metro (commute default band)",
+                    "Monthly rent (₹)",
+                    "Lifestyle level (initial values for non-rent spend — override per line if needed)",
+                  ]
+            }
           />
         </>
       ) : (
@@ -248,13 +302,85 @@ export function SalaryRealityCheckCalculatorClient({
           onSubmit={(e) => e.preventDefault()}
           noValidate
         >
+          <fieldset className="space-y-2">
+            <legend className="text-sm font-medium text-foreground">What do you know?</legend>
+            <div className="flex flex-wrap gap-2">
+              <Button
+                type="button"
+                variant={mode === "ctc" ? "primary" : "secondary"}
+                onClick={() => handleModeChange("ctc")}
+              >
+                I know my CTC
+              </Button>
+              <Button
+                type="button"
+                variant={mode === "gross" ? "primary" : "secondary"}
+                onClick={() => handleModeChange("gross")}
+              >
+                I know my gross salary
+              </Button>
+            </div>
+          </fieldset>
+
           <FormField
-            label="Annual CTC (₹)"
+            label={`${primaryFieldLabel} (₹)`}
             id="ctc"
-            hint="Interpreted as annual gross for tax — align with how you compare offers."
+            hint={
+              mode === "ctc"
+                ? "Your offer-letter CTC — enter employer PF, gratuity, and insurance below to get an accurate gross."
+                : "Your annual gross salary — already excludes employer-side costs."
+            }
           >
-            <Input id="ctc" inputMode="decimal" value={ctc} onChange={(e) => setCtc(e.target.value)} />
+            <Input
+              id="ctc"
+              inputMode="decimal"
+              value={ctc}
+              onChange={(e) => {
+                setCtc(e.target.value);
+                markStarted();
+              }}
+            />
           </FormField>
+
+          {mode === "ctc" ? (
+            <div className="grid gap-4 sm:grid-cols-3">
+              <FormField
+                label="Employer PF (annual, ₹)"
+                id="employer-pf"
+                hint="Optional — from your CTC breakup sheet."
+              >
+                <Input
+                  id="employer-pf"
+                  inputMode="decimal"
+                  value={employerPfAnnual}
+                  onChange={(e) => setEmployerPfAnnual(e.target.value)}
+                  placeholder="Optional"
+                />
+              </FormField>
+              <FormField label="Gratuity (annual, ₹)" id="gratuity" hint="Optional — often a separate CTC line.">
+                <Input
+                  id="gratuity"
+                  inputMode="decimal"
+                  value={gratuityAnnual}
+                  onChange={(e) => setGratuityAnnual(e.target.value)}
+                  placeholder="Optional"
+                />
+              </FormField>
+              <FormField
+                label="Insurance & benefits (annual, ₹)"
+                id="insurance"
+                hint="Optional — group insurance or other non-cash CTC components."
+              >
+                <Input
+                  id="insurance"
+                  inputMode="decimal"
+                  value={insuranceAnnual}
+                  onChange={(e) => setInsuranceAnnual(e.target.value)}
+                  placeholder="Optional"
+                />
+              </FormField>
+            </div>
+          ) : null}
 
           <fieldset className="space-y-2">
             <legend className="text-sm font-medium text-foreground">City</legend>
@@ -265,7 +391,15 @@ export function SalaryRealityCheckCalculatorClient({
           </fieldset>
 
           <FormField label="Monthly rent (₹)" id="rent" hint="Your actual or expected rent; 0 if not paying rent.">
-            <Input id="rent" inputMode="decimal" value={rent} onChange={(e) => setRent(e.target.value)} />
+            <Input
+              id="rent"
+              inputMode="decimal"
+              value={rent}
+              onChange={(e) => {
+                setRent(e.target.value);
+                markStarted();
+              }}
+            />
           </FormField>
 
           <fieldset className="space-y-2">
@@ -358,7 +492,7 @@ export function SalaryRealityCheckCalculatorClient({
             {result && result.basicAndDaAnnual != null ? (
               <p className="mt-2 text-xs text-foreground-secondary">
                 Implied Basic+DA annually: <strong className="tabular-nums">{formatInr(result.basicAndDaAnnual)}</strong>{" "}
-                ({(result.basicDaShareOfGross * 100).toFixed(0)}% of CTC).
+                ({(result.basicDaShareOfGross * 100).toFixed(0)}% of gross).
               </p>
             ) : null}
           </FormField>
@@ -436,6 +570,13 @@ export function SalaryRealityCheckCalculatorClient({
           </div>
         ) : (
           <ResultReveal show={!!result}>
+            {mode === "ctc" && result.employerSideCostsAnnual > 0 ? (
+              <div className="rounded-xl border border-border bg-surface-subtle p-4 text-sm text-foreground-secondary">
+                Your CTC breaks down to an estimated <strong>{formatInr(result.annualGrossSalary)}</strong> gross
+                after removing {formatInr(result.employerSideCostsAnnual)} of employer-side costs (PF, gratuity,
+                insurance). Everything below is computed on this gross figure.
+              </div>
+            ) : null}
             <div
               className={`rounded-2xl border p-4 ${verdictStyles[result.verdict]}`}
               role="status"
@@ -569,13 +710,17 @@ export function SalaryRealityCheckCalculatorClient({
               <Link
                 href={ROUTES.offerComparisonCalculator}
                 className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
-                onClick={() => trackOfferCompareClick("salary_reality_next_steps")}
+                onClick={() => {
+                  trackOfferCompareClick("salary_reality_next_steps");
+                  trackNextToolClicked("salaryRealityCheck", "offerComparison");
+                }}
               >
                 Compare with another offer
               </Link>
               <Link
                 href={ROUTES.ctcToInHandCalculator}
                 className="inline-flex items-center justify-center rounded-lg border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground transition hover:bg-surface-subtle"
+                onClick={() => trackNextToolClicked("salaryRealityCheck", "ctcToInHand")}
               >
                 Open CTC → in-hand detail
               </Link>
@@ -609,7 +754,7 @@ export function SalaryRealityCheckCalculatorClient({
     <CalculatorPageLayout
       slug="salaryRealityCheck"
       title="Salary Reality Check — rent vs savings left"
-      intro="Paste your CTC (as gross for tax), your rent, and a lifestyle tier — we estimate in-hand after tax/PF, stack a transparent month of non-rent spend, and show what's left to save. Built for offers and city trade-offs; not a substitute for your bank statement or tax filing."
+      intro="Enter your offer-letter CTC (or gross salary if you already know it), your rent, and a lifestyle tier — we estimate in-hand after tax/PF, stack a transparent month of non-rent spend, and show what's left to save. Built for offers and city trade-offs; not a substitute for your bank statement or tax filing."
     >
       {main}
     </CalculatorPageLayout>

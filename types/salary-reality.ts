@@ -14,8 +14,14 @@ export type SalaryRealityDrivingFactor = {
 };
 
 export type SalaryRealityInput = {
-  /** Annual CTC / gross interpreted as taxable gross for the engine (same as CTC→in-hand). */
+  /** Annual CTC as entered — employer-side costs below are subtracted from this to get taxable gross. */
   annualCtc: number;
+  /** Employer PF contribution (annual) — subtracted from annualCtc before computing gross. Default 0. */
+  employerPfAnnual?: number;
+  /** Gratuity accrual (annual) — subtracted from annualCtc before computing gross. Default 0. */
+  gratuityAnnual?: number;
+  /** Insurance/other non-cash benefits (annual) — subtracted from annualCtc before computing gross. Default 0. */
+  insuranceAndBenefitsAnnual?: number;
   metroCity: boolean;
   monthlyRent: number;
   lifestyle: LifestyleLevel;
@@ -35,6 +41,10 @@ export type SalaryRealityInput = {
 export type SalaryRealityOutput = {
   /** Monthly in-hand from centralized CTC engine */
   inHandMonthly: number;
+  /** Annual gross after subtracting employer PF/gratuity/insurance from annualCtc (equals annualCtc when none provided) */
+  annualGrossSalary: number;
+  /** Sum of employer PF + gratuity + insurance/benefits subtracted from annualCtc */
+  employerSideCostsAnnual: number;
   ctcEngine: CtcToInHandOutput;
   regime: TaxRegime;
   basicDaShareOfGross: number;

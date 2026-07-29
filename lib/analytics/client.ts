@@ -33,6 +33,35 @@ export function trackCalculatorUse(slug: CalculatorSlug): void {
   });
 }
 
+/** First meaningful input change in a session — fires once per mount, before a result exists. */
+export function trackCalculatorStarted(slug: CalculatorSlug): void {
+  const params = { calculator_slug: slug };
+  gtagEvent("calculator_started", params);
+  plausibleEvent("calculator_started", { calculator_slug: slug });
+}
+
+/** User switched between "I know my CTC" and "I know my gross salary" input modes. */
+export function trackInputModeSelected(
+  slug: CalculatorSlug,
+  fromMode: string,
+  toMode: string
+): void {
+  const params = { calculator_slug: slug, from_mode: fromMode, to_mode: toMode };
+  gtagEvent("salary_input_mode_selected", params);
+  plausibleEvent("salary_input_mode_selected", {
+    calculator_slug: slug,
+    from_mode: fromMode,
+    to_mode: toMode,
+  });
+}
+
+/** Click toward another calculator from within a result/next-steps block. */
+export function trackNextToolClicked(sourceTool: CalculatorSlug, destinationTool: string): void {
+  const params = { source_tool: sourceTool, destination_tool: destinationTool };
+  gtagEvent("next_tool_clicked", params);
+  plausibleEvent("next_tool_clicked", { source_tool: sourceTool, destination_tool: destinationTool });
+}
+
 /** First time inputs produce a valid modeled result in a session (live-updated tool). */
 export function trackSalaryRealityCheckUse(options: { embed: boolean }): void {
   const params = { embed: options.embed ? "true" : "false" };
