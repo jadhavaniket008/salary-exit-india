@@ -34,6 +34,10 @@ export function useCountUp(
       setValue(0);
       return;
     }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setValue(target);
+      return;
+    }
 
     let cancelled = false;
     const start = performance.now();

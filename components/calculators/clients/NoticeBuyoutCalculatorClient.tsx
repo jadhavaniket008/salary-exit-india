@@ -19,6 +19,8 @@ import { computeNoticeBuyout, NOTICE_WORKED_EXAMPLE_INPUT } from "@/lib/calculat
 import { formatInr } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative, isValidMonthYear } from "@/lib/validation/validators";
+import type { NoticeDayCountMethod, NoticeSalaryBasis } from "@/types/notice";
+
 const months = [
   { v: 1, label: "January" },
   { v: 2, label: "February" },
@@ -37,9 +39,13 @@ const months = [
 export function NoticeBuyoutCalculatorClient() {
   const now = new Date();
   const [gross, setGross] = useState("");
+  const [salaryBasis, setSalaryBasis] = useState<NoticeSalaryBasis>("gross");
   const [noticeDays, setNoticeDays] = useState("");
+  const [dayCountMethod, setDayCountMethod] = useState<NoticeDayCountMethod>("calendar");
   const [month, setMonth] = useState(String(now.getMonth() + 1));
   const [year, setYear] = useState(String(now.getFullYear()));
+  const [workingDays, setWorkingDays] = useState("");
+  const [customDivisor, setCustomDivisor] = useState("");
 
   const [errors, setErrors] = useState<string[]>([]);
   const [result, setResult] = useState<ReturnType<typeof computeNoticeBuyout> | null>(
@@ -59,9 +65,13 @@ export function NoticeBuyoutCalculatorClient() {
 
   function reset() {
     setGross("");
+    setSalaryBasis("gross");
     setNoticeDays("");
+    setDayCountMethod("calendar");
     setMonth(String(now.getMonth() + 1));
     setYear(String(now.getFullYear()));
+    setWorkingDays("");
+    setCustomDivisor("");
     setErrors([]);
     setResult(null);
     setShowResult(false);
@@ -85,14 +95,40 @@ export function NoticeBuyoutCalculatorClient() {
       if (nn) nextErrors.push(nn);
     }
 
-    const mo = sanitizeNumber(month);
-    const yr = sanitizeNumber(year);
-    if (!mo.ok) nextErrors.push("Month: " + mo.error);
-    if (!yr.ok) nextErrors.push("Year: " + yr.error);
-    const mInt = mo.ok ? Math.trunc(mo.value) : 0;
-    const yInt = yr.ok ? Math.trunc(yr.value) : 0;
-    if (mo.ok && yr.ok && !isValidMonthYear(mInt, yInt)) {
-      nextErrors.push("Month/year must be a valid calendar month.");
+    let mInt = 0;
+    let yInt = 0;
+    if (dayCountMethod === "calendar") {
+      const mo = sanitizeNumber(month);
+      const yr = sanitizeNumber(year);
+      if (!mo.ok) nextErrors.push("Month: " + mo.error);
+      if (!yr.ok) nextErrors.push("Year: " + yr.error);
+      mInt = mo.ok ? Math.trunc(mo.value) : 0;
+      yInt = yr.ok ? Math.trunc(yr.value) : 0;
+      if (mo.ok && yr.ok && !isValidMonthYear(mInt, yInt)) {
+        nextErrors.push("Month/year must be a valid calendar month.");
+      }
+    }
+
+    let workingDaysVal: number | undefined;
+    if (dayCountMethod === "workingDays") {
+      const w = sanitizeNumber(workingDays);
+      if (!w.ok) nextErrors.push("Working days in month: " + w.error);
+      else {
+        const nn = assertNonNegative("Working days in month", w.value);
+        if (nn) nextErrors.push(nn);
+        workingDaysVal = w.value;
+      }
+    }
+
+    let customDivisorVal: number | undefined;
+    if (dayCountMethod === "custom") {
+      const c = sanitizeNumber(customDivisor);
+      if (!c.ok) nextErrors.push("Custom divisor: " + c.error);
+      else {
+        const nn = assertNonNegative("Custom divisor", c.value);
+        if (nn) nextErrors.push(nn);
+        customDivisorVal = c.value;
+      }
     }
 
     setErrors(nextErrors);
@@ -104,9 +140,13 @@ export function NoticeBuyoutCalculatorClient() {
 
     const out = computeNoticeBuyout({
       grossMonthlySalary: g.ok ? g.value : 0,
+      salaryBasis,
       noticeDays: n.ok ? n.value : 0,
+      dayCountMethod,
       month: mInt,
       year: yInt,
+      workingDaysInMonth: workingDaysVal,
+      customDivisor: customDivisorVal,
     });
 
     setResult(out);
@@ -118,7 +158,7 @@ export function NoticeBuyoutCalculatorClient() {
     <CalculatorPageLayout
       slug="noticeBuyout"
       title="Notice period buyout calculator"
-      intro="Estimate buyout as gross monthly pay prorated by the number of days in a chosen calendar month. Your contract may define a different method."
+      intro="Estimate buyout by choosing the salary basis and day-count method your contract actually uses — calendar days, a fixed 30-day month, working days, or a custom divisor."
     >
       <p className="text-sm text-foreground-secondary">
         This is a <strong>gross</strong> estimate — taxes and recoveries are not applied (see accuracy card).
@@ -126,15 +166,46 @@ export function NoticeBuyoutCalculatorClient() {
 
       <RequiredInputsCallout
         items={[
-          "Gross monthly salary (₹)",
+          "Monthly salary basis (Basic, gross, or a custom figure) and amount (₹)",
           "Notice days to buy out",
-          "Calendar month + year (to determine days-in-month)",
+          "Day-count method your contract uses (calendar month, fixed 30 days, working days, or custom)",
         ]}
       />
 
       <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
-          <FormField label="Gross monthly salary (₹)" id="gross">
+          <fieldset className="space-y-2">
+            <legend className="text-sm font-medium text-foreground">Salary basis</legend>
+            <div className="flex flex-wrap gap-4 text-sm">
+              <label className="inline-flex items-center gap-2">
+                <input type="radio" name="salaryBasis" checked={salaryBasis === "gross"} onChange={() => setSalaryBasis("gross")} />
+                Gross monthly
+              </label>
+              <label className="inline-flex items-center gap-2">
+                <input type="radio" name="salaryBasis" checked={salaryBasis === "basic"} onChange={() => setSalaryBasis("basic")} />
+                Basic only
+              </label>
+              <label className="inline-flex items-center gap-2">
+                <input type="radio" name="salaryBasis" checked={salaryBasis === "custom"} onChange={() => setSalaryBasis("custom")} />
+                Custom (per my contract)
+              </label>
+            </div>
+            <p className="text-xs text-foreground-secondary">
+              Most contracts use gross monthly salary — check your appointment letter's exact wording before
+              assuming.
+            </p>
+          </fieldset>
+
+          <FormField
+            label={
+              salaryBasis === "basic"
+                ? "Monthly Basic salary (₹)"
+                : salaryBasis === "custom"
+                  ? "Monthly amount, per your contract (₹)"
+                  : "Gross monthly salary (₹)"
+            }
+            id="gross"
+          >
             <Input id="gross" inputMode="decimal" value={gross} onChange={(e) => setGross(e.target.value)} />
           </FormField>
 
@@ -142,25 +213,79 @@ export function NoticeBuyoutCalculatorClient() {
             <Input id="ndays" inputMode="decimal" value={noticeDays} onChange={(e) => setNoticeDays(e.target.value)} />
           </FormField>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <FormField label="Month" id="month">
-              <select
-                id="month"
-                className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-                value={month}
-                onChange={(e) => setMonth(e.target.value)}
-              >
-                {months.map((m) => (
-                  <option key={m.v} value={m.v}>
-                    {m.label}
-                  </option>
-                ))}
-              </select>
+          <fieldset className="space-y-2">
+            <legend className="text-sm font-medium text-foreground">Day-count method</legend>
+            <div className="flex flex-wrap gap-4 text-sm">
+              <label className="inline-flex items-center gap-2">
+                <input type="radio" name="dayCountMethod" checked={dayCountMethod === "calendar"} onChange={() => setDayCountMethod("calendar")} />
+                Actual calendar days
+              </label>
+              <label className="inline-flex items-center gap-2">
+                <input type="radio" name="dayCountMethod" checked={dayCountMethod === "fixed30"} onChange={() => setDayCountMethod("fixed30")} />
+                Fixed 30-day month
+              </label>
+              <label className="inline-flex items-center gap-2">
+                <input type="radio" name="dayCountMethod" checked={dayCountMethod === "workingDays"} onChange={() => setDayCountMethod("workingDays")} />
+                Working days
+              </label>
+              <label className="inline-flex items-center gap-2">
+                <input type="radio" name="dayCountMethod" checked={dayCountMethod === "custom"} onChange={() => setDayCountMethod("custom")} />
+                Custom divisor
+              </label>
+            </div>
+          </fieldset>
+
+          {dayCountMethod === "calendar" ? (
+            <div className="grid gap-4 sm:grid-cols-2">
+              <FormField label="Month" id="month">
+                <select
+                  id="month"
+                  className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                  value={month}
+                  onChange={(e) => setMonth(e.target.value)}
+                >
+                  {months.map((m) => (
+                    <option key={m.v} value={m.v}>
+                      {m.label}
+                    </option>
+                  ))}
+                </select>
+              </FormField>
+              <FormField label="Year" id="year">
+                <Input id="year" inputMode="numeric" value={year} onChange={(e) => setYear(e.target.value)} />
+              </FormField>
+            </div>
+          ) : null}
+
+          {dayCountMethod === "workingDays" ? (
+            <FormField
+              label="Working days in the month"
+              id="working-days"
+              hint="Count only days your company treats as working days for this purpose."
+            >
+              <Input
+                id="working-days"
+                inputMode="decimal"
+                value={workingDays}
+                onChange={(e) => setWorkingDays(e.target.value)}
+              />
             </FormField>
-            <FormField label="Year" id="year">
-              <Input id="year" inputMode="numeric" value={year} onChange={(e) => setYear(e.target.value)} />
+          ) : null}
+
+          {dayCountMethod === "custom" ? (
+            <FormField
+              label="Custom divisor (days)"
+              id="custom-divisor"
+              hint="Whatever number your contract or HR specifies for prorating a month."
+            >
+              <Input
+                id="custom-divisor"
+                inputMode="decimal"
+                value={customDivisor}
+                onChange={(e) => setCustomDivisor(e.target.value)}
+              />
             </FormField>
-          </div>
+          ) : null}
 
           <ValidationSummary messages={errors} />
           <FormActions onReset={reset} />
@@ -178,7 +303,7 @@ export function NoticeBuyoutCalculatorClient() {
             <CollapsibleBreakdown>
               <dl className="grid gap-3 text-sm sm:grid-cols-2">
                 <div>
-                  <dt className="text-foreground-muted">Days in month</dt>
+                  <dt className="text-foreground-muted">Divisor used</dt>
                   <dd className="font-medium">{result.daysInMonth}</dd>
                 </div>
                 <div>
@@ -211,9 +336,14 @@ export function NoticeBuyoutCalculatorClient() {
       <FaqSection
         items={[
           {
-            question: "Why pick a month?",
+            question: "Which day-count method should I pick?",
             answer:
-              "This model divides by the calendar days in that month. February vs March changes the daily rate.",
+              "Check your appointment letter or ask HR — contracts commonly use actual calendar days, a flat 30-day month, or working days only. The method changes the daily rate, so guessing wrong can be off by a few thousand rupees.",
+          },
+          {
+            question: "Should I use Basic or gross salary?",
+            answer:
+              "Most Indian contracts define notice pay on gross monthly salary, but some specify Basic only. This is one of the most commonly disputed points in an exit — confirm it explicitly rather than assuming.",
           },
         ]}
       />

@@ -22,7 +22,7 @@ export function OldVsNewRegimeBody() {
       <h2 id="what-the-regimes-mean">What old vs new actually means</h2>
       <p>
         The <strong>new regime</strong> (under Section 115BAC, as updated) offers lower progressive slab rates
-        but disallows most exemptions and Chapter VI-A deductions. In FY 2025-26, it includes a standard
+        but disallows most exemptions and Chapter VI-A deductions. In FY 2026-27, it includes a standard
         deduction of ₹75,000 for salaried employees and a Section 87A rebate that makes tax nil for those
         whose taxable income is ₹12 lakh or less after the standard deduction.
       </p>
@@ -85,7 +85,7 @@ export function OldVsNewRegimeBody() {
 
       <h2 id="87a-rebate">The Section 87A rebate: zero tax for many at lower-mid incomes</h2>
       <p>
-        For FY 2025-26, the new regime&apos;s Section 87A rebate provides a full rebate on income tax
+        For FY 2026-27, the new regime&apos;s Section 87A rebate provides a full rebate on income tax
         when taxable income (after the ₹75,000 standard deduction) is ₹12 lakh or less. This means: if
         your gross salary is approximately ₹12.75 LPA or below (₹75,000 standard deduction + ₹12L
         rebate limit), your income tax under the new regime is effectively zero. TDS should be nil or
@@ -95,7 +95,7 @@ export function OldVsNewRegimeBody() {
 
       <h2 id="worked-example">A worked example: ₹18 LPA gross</h2>
       <p>
-        New regime (FY 2025-26): Gross ₹18L, standard deduction ₹75,000 → taxable income ₹17.25L.
+        New regime (FY 2026-27): Gross ₹18L, standard deduction ₹75,000 → taxable income ₹17.25L.
         Tax on ₹17.25L under new regime slabs (approx.) = ~₹2.2L before cess, ~₹2.29L after 4% cess.
         Monthly TDS ≈ ₹19,100.
       </p>

@@ -1,5 +1,6 @@
 ﻿import { CtcToInHandCalculatorClient } from "@/components/calculators/clients/CtcToInHandCalculatorClient";
 import { AffiliateCta } from "@/components/monetization/AffiliateCta";
+import { CollapsibleArticleSection } from "@/components/content/CollapsibleArticleSection";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
 export const metadata = calculatorMetadata("ctcToInHand");
@@ -33,10 +34,7 @@ export default function CtcToInHandCalculatorPage() {
           </p>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-foreground">
-            The four deductions that shrink your gross salary
-          </h2>
+        <CollapsibleArticleSection title="The four deductions that shrink your gross salary">
           <ul className="list-inside list-disc space-y-3 text-foreground-secondary">
             <li>
               <strong>Income tax (TDS):</strong> Your employer deducts tax at source monthly, spreading the
@@ -58,12 +56,9 @@ export default function CtcToInHandCalculatorPage() {
               or below — 0.75% of gross. Above that threshold, ESI does not apply.
             </li>
           </ul>
-        </section>
+        </CollapsibleArticleSection>
 
-        <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-foreground">
-            Why the old and new tax regime produce different in-hand amounts
-          </h2>
+        <CollapsibleArticleSection title="Why the old and new tax regime produce different in-hand amounts">
           <p className="text-foreground-secondary">
             Under the <strong>new tax regime</strong> (default from FY 2024-25 onwards), the slabs are lower
             but most deductions are not available. Standard deduction is ₹75,000. No 80C, no HRA exemption,
@@ -79,12 +74,9 @@ export default function CtcToInHandCalculatorPage() {
             now typically produces a higher or equal in-hand figure. Above ₹20 LPA with aggressive 80C
             and HRA claims, the old regime often still wins.
           </p>
-        </section>
+        </CollapsibleArticleSection>
 
-        <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-foreground">
-            Why your payslip may not match this calculator&apos;s output
-          </h2>
+        <CollapsibleArticleSection title="Why your payslip may not match this calculator's output">
           <p className="text-foreground-secondary">
             This calculator computes an estimate from financial-year slabs and statutory rules. Your
             employer&apos;s payroll system may differ in three specific ways:
@@ -105,7 +97,7 @@ export default function CtcToInHandCalculatorPage() {
               excluded from the base monthly gross calculation.
             </li>
           </ul>
-        </section>
+        </CollapsibleArticleSection>
       </div>
     </>
   );

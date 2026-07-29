@@ -304,9 +304,11 @@ export function SalaryRealityCheckCalculatorClient({
         >
           <fieldset className="space-y-2">
             <legend className="text-sm font-medium text-foreground">What do you know?</legend>
-            <div className="flex flex-wrap gap-2">
+            <div role="radiogroup" aria-label="What do you know?" className="flex flex-wrap gap-2">
               <Button
                 type="button"
+                role="radio"
+                aria-checked={mode === "ctc"}
                 variant={mode === "ctc" ? "primary" : "secondary"}
                 onClick={() => handleModeChange("ctc")}
               >
@@ -314,6 +316,8 @@ export function SalaryRealityCheckCalculatorClient({
               </Button>
               <Button
                 type="button"
+                role="radio"
+                aria-checked={mode === "gross"}
                 variant={mode === "gross" ? "primary" : "secondary"}
                 onClick={() => handleModeChange("gross")}
               >

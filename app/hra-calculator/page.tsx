@@ -1,4 +1,5 @@
-﻿import { HraCalculatorClient } from "@/components/calculators/clients/HraCalculatorClient";
+import { HraCalculatorClient } from "@/components/calculators/clients/HraCalculatorClient";
+import { CollapsibleArticleSection } from "@/components/content/CollapsibleArticleSection";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
 export const metadata = calculatorMetadata("hra");
@@ -26,10 +27,7 @@ export default function HraCalculatorPage() {
           </p>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-foreground">
-            The three-part test: how the exempt amount is calculated
-          </h2>
+        <CollapsibleArticleSection title="The three-part test: how the exempt amount is calculated" defaultOpen>
           <p className="text-foreground-secondary">
             The exempt amount is the <em>lowest</em> of three figures. You do not get to pick — the tax
             rules take whichever is smallest:
@@ -53,12 +51,9 @@ export default function HraCalculatorPage() {
             This means increasing your HRA component on paper does not automatically give you a larger
             exemption if rent actually paid is the binding constraint.
           </p>
-        </section>
+        </CollapsibleArticleSection>
 
-        <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-foreground">
-            Common mistakes that reduce or eliminate the HRA benefit
-          </h2>
+        <CollapsibleArticleSection title="Common mistakes that reduce or eliminate the HRA benefit">
           <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
               <strong>Not submitting rent receipts:</strong> If you fail to submit rent receipts and a
@@ -82,12 +77,9 @@ export default function HraCalculatorPage() {
               should not expect this benefit.
             </li>
           </ul>
-        </section>
+        </CollapsibleArticleSection>
 
-        <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-foreground">
-            How much tax HRA exemption actually saves
-          </h2>
+        <CollapsibleArticleSection title="How much tax HRA exemption actually saves">
           <p className="text-foreground-secondary">
             The tax saving equals the exemption amount multiplied by your marginal tax rate. For a
             taxpayer whose relevant taxable income falls in the 30% slab (old regime: taxable income above
@@ -98,7 +90,7 @@ export default function HraCalculatorPage() {
             This is why the old regime can still make sense for employees paying significant rent in
             metro cities, particularly above ₹15,000/month, even though the new regime&apos;s slabs are lower.
           </p>
-        </section>
+        </CollapsibleArticleSection>
       </div>
     </>
   );

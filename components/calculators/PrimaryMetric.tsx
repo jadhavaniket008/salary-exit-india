@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion, useAnimation } from "motion/react";
+import { motion, useAnimation, useReducedMotion } from "motion/react";
 import { useCountUp } from "@/hooks/useCountUp";
 import { formatInr } from "@/lib/format-inr";
 
@@ -18,10 +18,12 @@ export function PrimaryMetric({ label, value, animate, helperText }: Props) {
   const display = animate ? animated : value;
   const controls = useAnimation();
   const prev = useRef(value);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     if (prev.current !== value) {
       prev.current = value;
+      if (prefersReducedMotion) return;
       void controls.start({
         boxShadow: [
           "0 0 0 0px rgba(41, 160, 94, 0)",
@@ -31,7 +33,7 @@ export function PrimaryMetric({ label, value, animate, helperText }: Props) {
         transition: { duration: 0.75, ease: "easeOut" },
       });
     }
-  }, [value, controls]);
+  }, [value, controls, prefersReducedMotion]);
 
   return (
     <motion.div
@@ -42,10 +44,12 @@ export function PrimaryMetric({ label, value, animate, helperText }: Props) {
         {label}
       </p>
       <motion.p
-        key={Math.round(value)}
-        initial={{ opacity: 0.85, scale: 0.995 }}
-        animate={{ opacity: 1, scale: 1 }}
+        key={prefersReducedMotion ? undefined : Math.round(value)}
+        initial={prefersReducedMotion ? false : { opacity: 0.85, scale: 0.995 }}
+        animate={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }}
         transition={{ duration: 0.25 }}
+        aria-live="polite"
+        aria-label={`${label}: ${formatInr(display)}`}
         className="mt-2 text-3xl font-bold tabular-nums tracking-tight text-foreground sm:text-4xl"
       >
         {formatInr(display)}

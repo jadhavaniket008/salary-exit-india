@@ -57,7 +57,7 @@ export function HowMuchSalaryBangaloreBody() {
 
       <h2 id="at-10-lpa">What ₹10 LPA looks like in Bangalore</h2>
       <p>
-        Monthly in-hand on ₹10 LPA gross (new regime, FY 2025-26): roughly ₹78,000–₹85,000. At outer
+        Monthly in-hand on ₹10 LPA gross (new regime, FY 2026-27): roughly ₹78,000–₹85,000. At outer
         corridor rent of ₹16,000, you have ~₹62,000–₹69,000 left for food, transport, utilities, and
         savings. If you are a first-jobber saving ₹15,000–₹20,000/month, this math works — but leaves
         little slack. A solo flat in Koramangala at ₹28,000 rent changes the picture entirely: only

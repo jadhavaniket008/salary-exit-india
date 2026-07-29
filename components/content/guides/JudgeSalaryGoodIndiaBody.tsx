@@ -24,7 +24,7 @@ export function JudgeSalaryGoodIndiaBody() {
         your specific offer structure.
       </p>
       <p>
-        At ₹20 LPA gross in FY 2025-26 (new regime, typical PF structure), monthly in-hand is roughly
+        At ₹20 LPA gross in FY 2026-27 (new regime, typical PF structure), monthly in-hand is roughly
         ₹1,45,000–₹1,55,000 depending on PF wage and state PT. At ₹15 LPA, roughly ₹1,10,000–₹1,20,000.
         At ₹10 LPA, roughly ₹78,000–₹85,000. These are ballpark estimates — use the{" "}
         <Link href={ROUTES.ctcToInHandCalculator}>CTC to in-hand calculator</Link> with your specific

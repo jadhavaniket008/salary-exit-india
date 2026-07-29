@@ -29,7 +29,7 @@ export default function TaxRegimeCalculatorPage() {
 
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
-            New regime tax slabs (FY 2025-26)
+            New regime tax slabs (FY 2026-27)
           </h2>
           <p className="text-foreground-secondary">
             Income up to ₹4 lakh: nil. ₹4–8 lakh: 5%. ₹8–12 lakh: 10%. ₹12–16 lakh: 15%.

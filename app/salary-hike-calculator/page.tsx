@@ -32,7 +32,7 @@ export default function SalaryHikeCalculatorPage() {
           </h2>
           <p className="text-foreground-secondary">
             Income tax in India is progressive, but the slab transitions create zones where a salary
-            increment has a disproportionately low in-hand impact. Under the new regime for FY 2025-26:
+            increment has a disproportionately low in-hand impact. Under the new regime for FY 2026-27:
           </p>
           <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>

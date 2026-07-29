@@ -20,7 +20,7 @@ export function HowMuchSalaryPuneBody() {
       <h2 id="translate-ctc">Step 1: Translate CTC to monthly cash before anything else</h2>
       <p>
         A ₹15 LPA offer in Pune does not produce ₹1,25,000/month — it produces roughly ₹1,10,000–₹1,18,000
-        in monthly in-hand after employee PF and TDS under the new regime (FY 2025-26). The gap depends on
+        in monthly in-hand after employee PF and TDS under the new regime (FY 2026-27). The gap depends on
         your PF wage structure and professional tax (Maharashtra levies PT on salaried employees). Run your
         specific offer structure through the{" "}
         <Link href={ROUTES.ctcToInHandCalculator}>CTC to in-hand calculator</Link> before comparing
