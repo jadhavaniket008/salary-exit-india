@@ -67,3 +67,23 @@ export type CtcToInHandOutput = {
   estimatedTotalTaxAnnual: number;
   warnings: string[];
 };
+
+/** Inputs for decomposing an offer-letter CTC into its gross-salary basis. */
+export type CtcDecomposeInput = {
+  /** Annual CTC as stated in the offer letter */
+  annualCtc: number;
+  /** Employer's PF contribution (annual) — a company cost, not employee income */
+  employerPfAnnual?: number;
+  /** Gratuity accrual (annual) — a company cost, not employee income */
+  gratuityAnnual?: number;
+  /** Insurance premiums and other non-cash benefits (annual) */
+  insuranceAndBenefitsAnnual?: number;
+};
+
+export type CtcDecomposeOutput = {
+  annualCtc: number;
+  /** Sum of employer PF + gratuity + insurance/benefits */
+  employerSideCostsAnnual: number;
+  /** CTC minus employer-side costs — the taxable gross basis */
+  annualGrossSalary: number;
+};

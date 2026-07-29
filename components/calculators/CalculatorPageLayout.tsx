@@ -5,6 +5,7 @@ import { ROUTES, type CalculatorSlug } from "@/lib/routes";
 import { CALCULATOR_REGISTRY } from "@/lib/calculator-registry";
 import { RelatedCalculators } from "@/components/calculators/RelatedCalculators";
 import { DisclaimerBlock } from "@/components/calculators/DisclaimerBlock";
+import { ReportCalculationErrorLink } from "@/components/calculators/ReportCalculationErrorLink";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { EzoicAdSlot } from "@/components/ads/EzoicAdSlot";
 import { CalculatorAccuracyCard } from "@/components/trust/CalculatorAccuracyCard";
@@ -86,6 +87,7 @@ export function CalculatorPageLayout({
               <CalculatorEditorial slug={slug} />
               <CalculatorEducationLinks slug={slug} />
               <RelatedCalculators currentSlug={slug} />
+              <ReportCalculationErrorLink toolName={title} />
               <DisclaimerBlock />
             </div>
           ) : null}

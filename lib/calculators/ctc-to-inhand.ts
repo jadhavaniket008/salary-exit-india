@@ -5,10 +5,34 @@
  */
 
 import { DEFAULT_PF_ASSUMPTIONS, DEFAULT_TAX_SETTINGS } from "@/lib/config";
-import type { CtcToInHandInput, CtcToInHandOutput } from "@/types/salary";
+import type {
+  CtcDecomposeInput,
+  CtcDecomposeOutput,
+  CtcToInHandInput,
+  CtcToInHandOutput,
+} from "@/types/salary";
 import { clampNonNegative } from "@/lib/validation/sanitize";
 import { estimateAnnualIncomeTax } from "./annual-tax";
 import { computeEmployeePfAnnual } from "./pf";
+
+/**
+ * Decompose an offer-letter CTC into its taxable gross basis by removing
+ * employer-side costs (employer PF, gratuity accrual, insurance/benefits) —
+ * these are company spend, not employee income, and must not be treated as gross.
+ */
+export function deriveGrossFromCtc(input: CtcDecomposeInput): CtcDecomposeOutput {
+  const annualCtc = clampNonNegative(input.annualCtc);
+  const employerPfAnnual = clampNonNegative(input.employerPfAnnual ?? 0);
+  const gratuityAnnual = clampNonNegative(input.gratuityAnnual ?? 0);
+  const insuranceAndBenefitsAnnual = clampNonNegative(input.insuranceAndBenefitsAnnual ?? 0);
+  const employerSideCostsAnnual = employerPfAnnual + gratuityAnnual + insuranceAndBenefitsAnnual;
+
+  return {
+    annualCtc,
+    employerSideCostsAnnual,
+    annualGrossSalary: Math.max(0, annualCtc - employerSideCostsAnnual),
+  };
+}
 
 /** Worked example aligned with the CTC→in-hand calculator page — keep in sync with UI/tests. */
 export const CTC_WORKED_EXAMPLE_INPUT: CtcToInHandInput = {

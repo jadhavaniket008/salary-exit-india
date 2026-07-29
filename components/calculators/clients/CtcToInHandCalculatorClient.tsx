@@ -16,18 +16,29 @@ import {
   WorkedExample,
 } from "@/components/calculators";
 import { trackCalculatorUse } from "@/lib/analytics/client";
-import { computeCtcToInHand, CTC_WORKED_EXAMPLE_INPUT } from "@/lib/calculators/ctc-to-inhand";
+import {
+  computeCtcToInHand,
+  CTC_WORKED_EXAMPLE_INPUT,
+  deriveGrossFromCtc,
+} from "@/lib/calculators/ctc-to-inhand";
 import { DEFAULT_TAX_SETTINGS } from "@/lib/config";
 import { DEFAULT_PROFESSIONAL_TAX_ANNUAL_ESTIMATE } from "@/lib/config/professional-tax";
 import { formatInr, formatInrPlain } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
-import type { CtcToInHandInput, CtcToInHandOutput } from "@/types/salary";
+import type { CtcDecomposeOutput, CtcToInHandInput, CtcToInHandOutput } from "@/types/salary";
 
 const fy = DEFAULT_TAX_SETTINGS.financialYear;
 
+type InputMode = "ctc" | "gross";
+
 export function CtcToInHandCalculatorClient() {
   const ctcWorkedExample = useMemo(() => computeCtcToInHand(CTC_WORKED_EXAMPLE_INPUT), []);
+  const [mode, setMode] = useState<InputMode>("ctc");
+  const [ctcAnnual, setCtcAnnual] = useState("");
+  const [employerPfAnnual, setEmployerPfAnnual] = useState("");
+  const [gratuityAnnual, setGratuityAnnual] = useState("");
+  const [insuranceAnnual, setInsuranceAnnual] = useState("");
   const [gross, setGross] = useState("");
   const [regime, setRegime] = useState<"old" | "new">("new");
   const [pt, setPt] = useState(String(DEFAULT_PROFESSIONAL_TAX_ANNUAL_ESTIMATE));
@@ -36,6 +47,7 @@ export function CtcToInHandCalculatorClient() {
 
   const [errors, setErrors] = useState<string[]>([]);
   const [result, setResult] = useState<CtcToInHandOutput | null>(null);
+  const [derivedGross, setDerivedGross] = useState<CtcDecomposeOutput | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [compareGross, setCompareGross] = useState("");
   const [compareResult, setCompareResult] = useState<CtcToInHandOutput | null>(null);
@@ -51,6 +63,11 @@ export function CtcToInHandCalculatorClient() {
   );
 
   function reset() {
+    setMode("ctc");
+    setCtcAnnual("");
+    setEmployerPfAnnual("");
+    setGratuityAnnual("");
+    setInsuranceAnnual("");
     setGross("");
     setRegime("new");
     setPt(String(DEFAULT_PROFESSIONAL_TAX_ANNUAL_ESTIMATE));
@@ -61,10 +78,12 @@ export function CtcToInHandCalculatorClient() {
     setCompareError(null);
     setErrors([]);
     setResult(null);
+    setDerivedGross(null);
     setShowResult(false);
   }
 
   function applyPreset(kind: "12l-bda" | "18l-bda" | "12l-pf") {
+    setMode("gross");
     setCompareGross("");
     setCompareResult(null);
     setCompareError(null);
@@ -96,11 +115,46 @@ export function CtcToInHandCalculatorClient() {
     e.preventDefault();
     const nextErrors: string[] = [];
 
-    const g = sanitizeNumber(gross);
-    if (!g.ok) nextErrors.push("Annual gross salary: " + g.error);
-    else {
-      const nn = assertNonNegative("Annual gross salary", g.value);
-      if (nn) nextErrors.push(nn);
+    let effectiveGross = 0;
+    let nextDerivedGross: CtcDecomposeOutput | null = null;
+    let employerCostsProvided = false;
+
+    if (mode === "ctc") {
+      const c = sanitizeNumber(ctcAnnual);
+      if (!c.ok) nextErrors.push("Annual CTC: " + c.error);
+      else {
+        const nn = assertNonNegative("Annual CTC", c.value);
+        if (nn) nextErrors.push(nn);
+      }
+
+      const empPf = employerPfAnnual.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(employerPfAnnual);
+      if (!empPf.ok) nextErrors.push("Employer PF (annual): " + empPf.error);
+
+      const grat = gratuityAnnual.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(gratuityAnnual);
+      if (!grat.ok) nextErrors.push("Gratuity (annual): " + grat.error);
+
+      const ins = insuranceAnnual.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(insuranceAnnual);
+      if (!ins.ok) nextErrors.push("Insurance & other benefits (annual): " + ins.error);
+
+      if (c.ok && empPf.ok && grat.ok && ins.ok) {
+        employerCostsProvided =
+          employerPfAnnual.trim() !== "" || gratuityAnnual.trim() !== "" || insuranceAnnual.trim() !== "";
+        nextDerivedGross = deriveGrossFromCtc({
+          annualCtc: c.value,
+          employerPfAnnual: empPf.value,
+          gratuityAnnual: grat.value,
+          insuranceAndBenefitsAnnual: ins.value,
+        });
+        effectiveGross = nextDerivedGross.annualGrossSalary;
+      }
+    } else {
+      const g = sanitizeNumber(gross);
+      if (!g.ok) nextErrors.push("Annual gross salary: " + g.error);
+      else {
+        const nn = assertNonNegative("Annual gross salary", g.value);
+        if (nn) nextErrors.push(nn);
+        effectiveGross = g.value;
+      }
     }
 
     const ptVal = sanitizeNumber(pt, { fallback: 0 });
@@ -145,15 +199,26 @@ export function CtcToInHandCalculatorClient() {
     }
 
     const base: CtcToInHandInput = {
-      annualGrossSalary: g.ok ? g.value : 0,
+      annualGrossSalary: effectiveGross,
       regime,
       metroCity: false,
       professionalTaxAnnual: ptVal.ok ? ptVal.value : 0,
       basicAndDaAnnual: b.ok && b.value !== undefined ? b.value : undefined,
       employeePfAnnual: p.ok && p.value !== undefined ? p.value : undefined,
     };
-    const out = computeCtcToInHand(base);
+    const rawOut = computeCtcToInHand(base);
+    const out: CtcToInHandOutput =
+      mode === "ctc" && !employerCostsProvided
+        ? {
+            ...rawOut,
+            warnings: [
+              ...rawOut.warnings,
+              "You didn't enter employer PF, gratuity, or insurance — this estimate treats your full CTC as gross, which overstates in-hand if your employer's CTC bundles those employer-side costs (common).",
+            ],
+          }
+        : rawOut;
     setResult(out);
+    setDerivedGross(nextDerivedGross);
     setShowResult(true);
     trackCalculatorUse("ctcToInHand");
 
@@ -182,7 +247,7 @@ export function CtcToInHandCalculatorClient() {
     <CalculatorPageLayout
       slug="ctcToInHand"
       title="CTC to in-hand calculator"
-      intro="Estimate monthly take-home from annual gross using centralized tax + PF logic. If you only know Basic+DA, we can derive PF; if you know PF, enter it directly."
+      intro="Enter your offer-letter CTC and we'll strip out employer PF, gratuity, and insurance to find your real gross before computing tax and in-hand — or switch to gross mode if you already know your taxable gross."
     >
       <p className="text-sm text-foreground-secondary">
         Output is a <strong>modeled estimate</strong> from FY slabs + PF rules in code — not your employer's payroll
@@ -190,34 +255,117 @@ export function CtcToInHandCalculatorClient() {
       </p>
 
       <RequiredInputsCallout
-        items={[
-          "Annual gross salary (₹)",
-          "Tax regime",
-          "Annual professional tax (₹)",
-          "Either employee PF (annual) OR Basic+DA (annual) for PF — not both",
-        ]}
+        items={
+          mode === "ctc"
+            ? [
+                "Annual CTC (₹)",
+                "Employer PF, gratuity, insurance (annual, ₹) — optional but recommended for an accurate gross",
+                "Tax regime",
+                "Annual professional tax (₹)",
+                "Either employee PF (annual) OR Basic+DA (annual) for PF — not both",
+              ]
+            : [
+                "Annual gross salary (₹)",
+                "Tax regime",
+                "Annual professional tax (₹)",
+                "Either employee PF (annual) OR Basic+DA (annual) for PF — not both",
+              ]
+        }
       />
 
       <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
-          <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
-            <span className="text-xs font-medium uppercase tracking-wide text-foreground-muted">Assumption presets</span>
+          <fieldset className="space-y-2">
+            <legend className="text-sm font-medium text-foreground">What do you know?</legend>
             <div className="flex flex-wrap gap-2">
-              <Button type="button" variant="secondary" onClick={() => applyPreset("12l-bda")}>
-                ₹12L — BDA-derived PF
+              <Button
+                type="button"
+                variant={mode === "ctc" ? "primary" : "secondary"}
+                onClick={() => setMode("ctc")}
+              >
+                I know my CTC
               </Button>
-              <Button type="button" variant="secondary" onClick={() => applyPreset("18l-bda")}>
-                ₹18L — worked-example split
-              </Button>
-              <Button type="button" variant="secondary" onClick={() => applyPreset("12l-pf")}>
-                ₹12L — payslip PF ₹72k
+              <Button
+                type="button"
+                variant={mode === "gross" ? "primary" : "secondary"}
+                onClick={() => setMode("gross")}
+              >
+                I know my gross salary
               </Button>
             </div>
-          </div>
+          </fieldset>
 
-          <FormField label="Annual gross salary (₹)" id="gross" hint="Your taxable gross basis for this simplified model.">
-            <Input id="gross" inputMode="decimal" value={gross} onChange={(e) => setGross(e.target.value)} />
-          </FormField>
+          {mode === "gross" ? (
+            <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+              <span className="text-xs font-medium uppercase tracking-wide text-foreground-muted">Assumption presets</span>
+              <div className="flex flex-wrap gap-2">
+                <Button type="button" variant="secondary" onClick={() => applyPreset("12l-bda")}>
+                  ₹12L — BDA-derived PF
+                </Button>
+                <Button type="button" variant="secondary" onClick={() => applyPreset("18l-bda")}>
+                  ₹18L — worked-example split
+                </Button>
+                <Button type="button" variant="secondary" onClick={() => applyPreset("12l-pf")}>
+                  ₹12L — payslip PF ₹72k
+                </Button>
+              </div>
+            </div>
+          ) : null}
+
+          {mode === "ctc" ? (
+            <>
+              <FormField
+                label="Annual CTC (₹)"
+                id="ctc"
+                hint="The headline number from your offer letter — includes employer-side costs."
+              >
+                <Input id="ctc" inputMode="decimal" value={ctcAnnual} onChange={(e) => setCtcAnnual(e.target.value)} />
+              </FormField>
+              <FormField
+                label="Employer PF (annual, ₹)"
+                id="employer-pf"
+                hint="Company's PF contribution — check your CTC breakup sheet. Leave blank if unknown."
+              >
+                <Input
+                  id="employer-pf"
+                  inputMode="decimal"
+                  value={employerPfAnnual}
+                  onChange={(e) => setEmployerPfAnnual(e.target.value)}
+                  placeholder="Optional"
+                />
+              </FormField>
+              <FormField
+                label="Gratuity accrual (annual, ₹)"
+                id="gratuity"
+                hint="Often shown as a separate CTC line item — commonly ~4.81% of Basic+DA."
+              >
+                <Input
+                  id="gratuity"
+                  inputMode="decimal"
+                  value={gratuityAnnual}
+                  onChange={(e) => setGratuityAnnual(e.target.value)}
+                  placeholder="Optional"
+                />
+              </FormField>
+              <FormField
+                label="Insurance & other benefits (annual, ₹)"
+                id="insurance"
+                hint="Group health/term insurance premiums or other non-cash CTC components."
+              >
+                <Input
+                  id="insurance"
+                  inputMode="decimal"
+                  value={insuranceAnnual}
+                  onChange={(e) => setInsuranceAnnual(e.target.value)}
+                  placeholder="Optional"
+                />
+              </FormField>
+            </>
+          ) : (
+            <FormField label="Annual gross salary (₹)" id="gross" hint="Your taxable gross basis for this simplified model.">
+              <Input id="gross" inputMode="decimal" value={gross} onChange={(e) => setGross(e.target.value)} />
+            </FormField>
+          )}
 
           <fieldset className="space-y-2">
             <legend className="text-sm font-medium text-foreground">
@@ -283,10 +431,20 @@ export function CtcToInHandCalculatorClient() {
       <section aria-live="polite" className="space-y-4">
         {!showResult || !result ? (
           <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
-            Provide gross salary and PF inputs (one method), then calculate to see estimated in-hand.
+            {mode === "ctc"
+              ? "Provide your CTC and PF inputs (one method), then calculate to see estimated in-hand."
+              : "Provide gross salary and PF inputs (one method), then calculate to see estimated in-hand."}
           </div>
         ) : (
           <ResultReveal show={showResult && !!result}>
+            {mode === "ctc" && derivedGross ? (
+              <div className="rounded-xl border border-border bg-surface-subtle p-4 text-sm text-foreground-secondary">
+                Your CTC of <strong>{formatInr(derivedGross.annualCtc)}</strong> breaks down to an estimated{" "}
+                <strong>{formatInr(derivedGross.annualGrossSalary)}</strong> gross after removing{" "}
+                {formatInr(derivedGross.employerSideCostsAnnual)} of employer-side costs (PF, gratuity,
+                insurance). Tax and in-hand below are computed on this gross figure, not on the full CTC.
+              </div>
+            ) : null}
             <div className={`grid gap-4 ${compareResult ? "sm:grid-cols-2" : ""}`}>
               <PrimaryMetric
                 label="Estimated monthly in-hand"
@@ -406,7 +564,7 @@ export function CtcToInHandCalculatorClient() {
           {
             question: "Does this include employer PF or gratuity accrual?",
             answer:
-              "No. It uses employee-side deductions and income-tax estimate on gross — adjust gross if your CTC definition differs.",
+              "In 'I know my CTC' mode, yes — employer PF, gratuity, and insurance you enter are subtracted from CTC before computing gross and in-hand, so they reduce your gross rather than count as spendable cash. In 'I know my gross salary' mode, you're entering the post-employer-cost figure directly, so there's nothing left to subtract.",
           },
         ]}
       />

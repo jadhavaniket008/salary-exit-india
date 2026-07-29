@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { computeCtcToInHand } from "@/lib/calculators/ctc-to-inhand";
+import { computeCtcToInHand, deriveGrossFromCtc } from "@/lib/calculators/ctc-to-inhand";
 import { DEFAULT_PROFESSIONAL_TAX_ANNUAL_ESTIMATE } from "@/lib/config/professional-tax";
 
 describe("computeCtcToInHand", () => {
@@ -68,5 +68,35 @@ describe("computeCtcToInHand", () => {
       employeePfAnnual: 50_000,
     });
     expect(out.warnings.some((w) => w.includes("Old regime on this screen"))).toBe(true);
+  });
+});
+
+describe("deriveGrossFromCtc", () => {
+  it("subtracts employer PF, gratuity, and insurance from CTC to get gross", () => {
+    const out = deriveGrossFromCtc({
+      annualCtc: 18_00_000,
+      employerPfAnnual: 43_200,
+      gratuityAnnual: 34_615,
+      insuranceAndBenefitsAnnual: 12_000,
+    });
+    expect(out.employerSideCostsAnnual).toBe(43_200 + 34_615 + 12_000);
+    expect(out.annualGrossSalary).toBe(18_00_000 - (43_200 + 34_615 + 12_000));
+  });
+
+  it("treats CTC as gross when no employer-side costs are provided", () => {
+    const out = deriveGrossFromCtc({ annualCtc: 12_00_000 });
+    expect(out.employerSideCostsAnnual).toBe(0);
+    expect(out.annualGrossSalary).toBe(12_00_000);
+  });
+
+  it("never returns a negative gross when employer costs exceed CTC", () => {
+    const out = deriveGrossFromCtc({ annualCtc: 1_00_000, employerPfAnnual: 2_00_000 });
+    expect(out.annualGrossSalary).toBe(0);
+  });
+
+  it("clamps negative CTC input to zero", () => {
+    const out = deriveGrossFromCtc({ annualCtc: -5_00_000 });
+    expect(out.annualCtc).toBe(0);
+    expect(out.annualGrossSalary).toBe(0);
   });
 });

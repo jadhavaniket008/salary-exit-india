@@ -21,6 +21,7 @@ import { FreshnessBadges } from "@/components/trust/FreshnessBadges";
 import { MethodologyLink } from "@/components/trust/MethodologyLink";
 import { TrustMethodologyNotice } from "@/components/trust/TrustMethodologyNotice";
 import { CaConsultCta } from "@/components/monetization/CaConsultCta";
+import { ReportCalculationErrorLink } from "@/components/calculators/ReportCalculationErrorLink";
 import { ROUTES } from "@/lib/routes";
 import { lpaLandingPath, salaryEnoughPath } from "@/lib/routes/landing-routes";
 import type { BreadcrumbItem } from "@/lib/seo/breadcrumbs";
@@ -473,6 +474,7 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
 
           <CaConsultCta />
           <TrustMethodologyNotice variant="compact" />
+          <ReportCalculationErrorLink toolName={config.seo.title} />
 
           <FaqSection items={faq} />
 

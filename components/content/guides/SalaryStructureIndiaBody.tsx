@@ -119,10 +119,11 @@ export function SalaryStructureIndiaBody() {
 
       <h2 id="two-offers-same-ctc">Why two offers at the same CTC can pay differently</h2>
       <p>
-        Consider two ₹18 LPA offers: Company A has Basic at 40% (₹7,200/month), full PF wage, and ₹3L
-        variable. Company B has Basic at 50% (₹9,000/month), capped PF wage at ₹15,000/month, and ₹1.5L
-        variable. Company A&apos;s fixed monthly in-hand will be higher due to lower PF deduction, but
-        Company B&apos;s gratuity accrual and HRA exemption potential (under old regime) are stronger. The
+        Consider two ₹18 LPA offers: Company A has Basic at 40% (₹60,000/month) with full PF wage, so
+        employee PF works out to ₹7,200/month. Company B has Basic at 50% (₹75,000/month) but caps PF wage
+        at the statutory ₹15,000/month ceiling, so employee PF is only ₹1,800/month. Company B&apos;s fixed
+        monthly in-hand will be higher thanks to the capped PF deduction, and its higher Basic also
+        strengthens gratuity accrual. Company A trades monthly liquidity for a larger EPF corpus. The
         &quot;better&quot; offer depends on your tax situation, savings goals, and how long you plan to stay.
       </p>
       <p>
