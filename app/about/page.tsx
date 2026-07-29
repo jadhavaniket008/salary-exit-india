@@ -22,6 +22,21 @@ export default function AboutPage() {
       intro="SalaryExit India is an independent, information-first site for salaried employees in India who want clearer intuition about pay, tax regimes, rent vs savings, and exit scenarios — with assumptions shown in the open."
       breadcrumbs={legalBreadcrumbs("About", ROUTES.about)}
     >
+      <h2>Who built this</h2>
+      <p>
+        SalaryExit India is created and maintained by <strong>Aniket Jadhav</strong>, a software engineer
+        who builds the calculation engine, the test suite, and the content on this site. There is no
+        editorial team or company behind this — it is an independent, solo-run project.
+      </p>
+      <p>
+        <strong>Aniket is not a chartered accountant, employment lawyer, or SEBI-registered adviser.</strong>{" "}
+        Tax slabs, PF rules, and gratuity/leave-encashment formulas are sourced from Finance Act
+        publications, CBDT notifications, the EPF &amp; Miscellaneous Provisions Act, and the Payment of
+        Gratuity Act — cited on the <Link href={ROUTES.methodology}>methodology</Link> page — but the
+        calculator engine itself has not been reviewed by an external CA or lawyer. Treat every output as
+        an estimate to verify, not a professional opinion.
+      </p>
+
       <h2>Why this site exists</h2>
       <p>
         SalaryExit was built after a frustrating experience that many Indian salaried employees will recognize:

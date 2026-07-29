@@ -152,12 +152,44 @@ export const GUIDE_ARTICLES: readonly GuideArticleMeta[] = [
   },
   {
     hub: "salary",
+    segment: "reverse-salary-calculation-explained",
+    title: "How reverse salary calculation works (target in-hand → required CTC)",
+    description:
+      "Why there's no single formula from target in-hand back to CTC, how our reverse salary calculator solves it numerically, and why the answer is a range.",
+    keywords: [
+      "reverse salary calculator",
+      "required CTC for target salary",
+      "how much CTC do I need",
+      "in-hand to CTC calculation",
+    ],
+    relatedCalculatorPaths: [
+      ROUTES.reverseSalaryCalculator,
+      ROUTES.ctcToInHandCalculator,
+      ROUTES.offerComparisonCalculator,
+    ],
+  },
+  {
+    hub: "salary",
     segment: "how-much-salary-you-need-in-pune",
     title: "How much salary you need in Pune — rent, commute, and what “enough” means",
     description:
       "Pune is not one rental market. Here is how to translate CTC into monthly cash, then compare it to rent and lifestyle without generic cost-of-living fluff.",
     keywords: ["how much salary Pune", "Pune IT salary enough", "Pune rent salary", "LPA Pune"],
     relatedCalculatorPaths: [ROUTES.salaryRealityCheck, ROUTES.ctcToInHandCalculator],
+  },
+  {
+    hub: "salary",
+    segment: "epf-wage-ceiling-capped-vs-full-basic",
+    title: "EPF wage ceiling: capped PF vs full Basic (why your PF deduction varies)",
+    description:
+      "Why two employees at the same gross salary can have PF deductions ₹5,000+/month apart — the statutory ₹15,000 wage ceiling, and what each choice trades off.",
+    keywords: [
+      "EPF wage ceiling",
+      "PF capped at 15000",
+      "PF full basic vs capped",
+      "statutory PF ceiling India",
+    ],
+    relatedCalculatorPaths: [ROUTES.epfCalculator, ROUTES.ctcToInHandCalculator, ROUTES.salaryCalculator],
   },
   {
     hub: "salary",
@@ -199,6 +231,24 @@ export const GUIDE_ARTICLES: readonly GuideArticleMeta[] = [
       "form 16 explained",
     ],
     relatedCalculatorPaths: [ROUTES.salaryCalculator, ROUTES.oldVsNewTaxRegimeCalculator],
+  },
+  {
+    hub: "tax",
+    segment: "section-87a-marginal-relief-explained",
+    title: "Section 87A marginal relief explained (the ₹12 lakh cliff, worked out)",
+    description:
+      "Why earning ₹1 more than ₹12 lakh doesn't cost you ₹60,000 extra tax — how marginal relief caps the damage, with the exact worked math.",
+    keywords: [
+      "section 87a marginal relief",
+      "12 lakh tax cliff",
+      "87a rebate new regime",
+      "tax on 12 lakh 1 rupee",
+    ],
+    relatedCalculatorPaths: [
+      ROUTES.salaryCalculator,
+      ROUTES.oldVsNewTaxRegimeCalculator,
+      ROUTES.ctcToInHandCalculator,
+    ],
   },
   {
     hub: "tax",

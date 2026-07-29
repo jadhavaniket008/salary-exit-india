@@ -136,9 +136,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
           "~₹31,300/month under the new tax regime (FY 2026-27). Zero income tax (Section 87A rebate). Deductions: employee PF ₹1,800/month + professional tax ~₹208/month. Adjust for your state's PT and Basic+DA split using the calculator above.",
       },
       {
-        question: "Does 4 LPA qualify for a home loan or credit card?",
+        question: "Will my in-hand at 4 LPA change if I switch to the old tax regime?",
         answer:
-          "Most banks require ₹25,000–₹30,000/month minimum in-hand for entry credit cards. At ~₹31,300/month you're at the lower threshold. Home loan eligibility at ₹4 LPA is typically ₹15–20L (50–60× monthly in-hand) — insufficient in most metro markets but workable with a co-applicant.",
+          "At 4 LPA gross, both regimes already produce zero income tax after the standard deduction and rebate, so switching regimes changes nothing here. Regime choice starts to matter once taxable income moves well above the rebate threshold — use the old vs new regime calculator once your gross rises.",
       },
     ],
   },
@@ -539,9 +539,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
           "Potentially yes — if you can claim HRA exemption (metro rent of ₹40k–₹60k/month), ₹1.5L under 80C, and ₹50k under NPS Section 80CCD(1B), your old-regime taxable income drops enough to reduce annual tax meaningfully. Run the tax regime calculator with your exact deductions to see the crossover point.",
       },
       {
-        question: "What home loan amount can I expect to be eligible for at ₹15 LPA?",
+        question: "How much does Basic+DA percentage change in-hand at ₹15 LPA?",
         answer:
-          "Lenders typically sanction home loans at 4–5x annual gross salary under standard underwriting, implying eligibility in the ₹60L–₹75L range at ₹15L gross. The actual sanction depends on your credit score, existing EMIs, co-applicant income, and property valuation. Your net monthly income after existing obligations determines how much EMI the bank will allow — confirm directly with your lender.",
+          "It changes your PF deduction, not your tax. A company with Basic+DA at 40% of gross deducts less employee PF than one at 55%, so the lower-Basic structure leaves slightly more monthly cash — but also builds a smaller EPF corpus and lower gratuity accrual. Enter your actual Basic+DA in the calculator above instead of assuming the default split.",
       },
     ],
   },

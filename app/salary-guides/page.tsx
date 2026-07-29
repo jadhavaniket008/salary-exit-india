@@ -4,7 +4,10 @@ import { Container } from "@/components/ui";
 import { AdPlaceholder } from "@/components/content/AdPlaceholder";
 import { BreadcrumbNav } from "@/components/content/BreadcrumbNav";
 import { LPA_LANDING_PAGES } from "@/lib/content/lpa-pages.config";
-import { SALARY_ENOUGH_PAGES } from "@/lib/content/salary-enough-pages.config";
+import {
+  SALARY_ENOUGH_PAGES,
+  STRONG_PERFORMER_SALARY_ENOUGH_SLUGS,
+} from "@/lib/content/salary-enough-pages.config";
 import { GUIDE_HUBS, GUIDE_ARTICLES, guideArticlePath } from "@/lib/content/guides-registry";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { ROUTES } from "@/lib/routes";
@@ -18,6 +21,9 @@ export const metadata: Metadata = buildPageMetadata(GUIDE_HUBS.salary.seo, {
 export default function SalaryGuidesHubPage() {
   const articles = GUIDE_ARTICLES.filter((a) => a.hub === "salary");
   const popularLpa = LPA_LANDING_PAGES.slice(0, 4);
+  const indexedSalaryEnoughPages = SALARY_ENOUGH_PAGES.filter((p) =>
+    STRONG_PERFORMER_SALARY_ENOUGH_SLUGS.has(p.slug)
+  );
 
   return (
     <div className="flex flex-1 flex-col">
@@ -80,8 +86,8 @@ export default function SalaryGuidesHubPage() {
               Popular in-hand salary pages
             </h2>
             <p className="text-sm text-foreground-secondary">
-              Scenario-based estimates with explicit assumptions — we expand coverage by adding new LPA
-              scenarios to our content catalogue as we publish them.
+              Scenario-based estimates with explicit assumptions — each band shows its own worked breakdown,
+              not a generic table.
             </p>
             <ul className="grid gap-2 sm:grid-cols-2">
               {popularLpa.map((p) => (
@@ -109,10 +115,10 @@ export default function SalaryGuidesHubPage() {
               <Link href={ROUTES.salaryRealityCheck} className="font-medium text-accent hover:underline">
                 Salary Reality Check
               </Link>
-              . More city and salary combinations are added over time as we publish them.
+              . Run your own city, rent, and salary combination directly in the tool below.
             </p>
             <ul className="grid gap-2 sm:grid-cols-2">
-              {SALARY_ENOUGH_PAGES.map((p) => (
+              {indexedSalaryEnoughPages.map((p) => (
                 <li key={p.slug}>
                   <Link
                     href={salaryEnoughPath(p.slug)}
@@ -123,6 +129,9 @@ export default function SalaryGuidesHubPage() {
                 </li>
               ))}
             </ul>
+            <Link href={ROUTES.salaryRealityCheck} className="text-sm font-medium text-accent hover:underline">
+              Open the full Salary Reality Check for any city or salary
+            </Link>
           </section>
 
           <div className="rounded-xl border border-border bg-surface-subtle p-5 text-sm">
