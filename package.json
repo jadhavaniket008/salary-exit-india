@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run --config vitest.config.mjs",
-    "test:watch": "vitest --config vitest.config.mjs"
+    "test:watch": "vitest --config vitest.config.mjs",
+    "check:integrity": "tsx scripts/check-site-integrity.ts",
+    "verify": "npm run build && npm run check:integrity"
   },
   "dependencies": {
     "motion": "^12.38.0",
@@ -25,6 +27,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
+    "tsx": "^4.23.1",
     "typescript": "^5",
     "vitest": "^4.1.0"
   }

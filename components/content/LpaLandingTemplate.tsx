@@ -41,7 +41,7 @@ export function LpaLandingTemplate({ config }: Props) {
   const genericFaq: FaqItem[] = [
     {
       question: `${config.lpa} LPA का मतलब क्या होता है? In-hand salary कितनी होगी?`,
-      answer: `${config.lpa} LPA यानी ₹${config.lpa} लाख (${formatInr(config.lpa * 1_00_000)}) सालाना gross CTC। FY 2026-27 में नई tax regime के अनुसार, अनुमानित in-hand salary लगभग ${formatInr(result.inHandMonthly)} प्रति माह होती है — employee PF (Basic+DA का 12%) और professional tax काटने के बाद। यह एक estimate है; actual payslip आपके employer की salary structure पर depend करती है।`,
+      answer: `${config.lpa} LPA यानी ₹${config.lpa} लाख (${formatInr(config.lpa * 1_00_000)}) सालाना gross salary (CTC नहीं)। FY 2026-27 में नई tax regime के अनुसार, अनुमानित in-hand salary लगभग ${formatInr(result.inHandMonthly)} प्रति माह होती है — employee PF (Basic+DA का 12%) और professional tax काटने के बाद। यह एक estimate है; actual payslip आपके employer की salary structure पर depend करती है।`,
     },
     {
       question: `${config.lpa} LPA in numbers — kitna hota hai in rupees?`,
@@ -102,8 +102,8 @@ export function LpaLandingTemplate({ config }: Props) {
                 हिंदी में जानकारी
               </p>
               <p className="leading-relaxed text-amber-950/90 dark:text-amber-100/85">
-                <strong>{config.lpa} LPA का मतलब</strong> है {formatInr(config.lpa * 1_00_000)} सालाना —
-                यानी {formatInr(result.grossMonthly)} प्रति माह (gross CTC)। FY 2026-27 में नई tax
+                <strong>{config.lpa} LPA का मतलब</strong> है {formatInr(config.lpa * 1_00_000)} सालाना
+                gross salary (CTC नहीं) — यानी {formatInr(result.grossMonthly)} प्रति माह। FY 2026-27 में नई tax
                 regime के अनुसार, अनुमानित{" "}
                 <strong>in-hand salary लगभग {formatInr(result.inHandMonthly)} प्रति माह</strong> होती
                 है — employee PF और professional tax काटने के बाद।
