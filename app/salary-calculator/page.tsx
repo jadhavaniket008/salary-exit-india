@@ -41,7 +41,7 @@ export default function SalaryCalculatorPage() {
               basic tax liability.
             </li>
             <li>
-              <strong>Check Section 87A rebate.</strong> If net taxable income is ≤ ₹7 lakh (old regime)
+              <strong>Check Section 87A rebate.</strong> If net taxable income is ≤ ₹5 lakh (old regime)
               or ≤ ₹12 lakh (new regime), the full tax is rebated — effective liability becomes zero.
             </li>
             <li>

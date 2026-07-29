@@ -56,13 +56,13 @@ function CtcToInHandEditorial() {
         a state-specific levy, usually collected monthly from payroll and ranging from zero
         (some states) to around ₹200–250 per month in states like Maharashtra and Karnataka.
         Third, TDS (Tax Deducted at Source) is your estimated annual income tax spread across
-        12 months. Under FY 2025-26 rules, new-regime employees with taxable income up to
+        12 months. Under FY 2026-27 rules, new-regime employees with taxable income up to
         ₹12 lakh pay zero income tax after the Section 87A rebate — but TDS is still computed
         and spread every month until actual liability is zero.
       </P>
       <P>
         The regime choice (old vs new) has a direct, sometimes large, effect on in-hand.
-        The new regime offers a ₹75,000 standard deduction (FY 2025-26) and lower slab rates,
+        The new regime offers a ₹75,000 standard deduction (FY 2026-27) and lower slab rates,
         making it the default for many employees — especially those with fewer deductions.
         The old regime allows deductions like Section 80C (up to ₹1.5 lakh), HRA exemption,
         and others that can make it worth more for employees with high rent or large
@@ -103,7 +103,7 @@ function SalaryEditorial() {
       </P>
       <P>
         Taxable income under both regimes is gross salary minus the standard deduction —
-        ₹75,000 under the new regime and ₹50,000 under the old regime for FY 2025-26.
+        ₹75,000 under the new regime and ₹50,000 under the old regime for FY 2026-27.
         The old regime allows additional deductions on top: HRA exemption for those paying
         rent, Section 80C investments up to ₹1.5 lakh, NPS contributions under Section
         80CCD, and others. Whether the old or new regime produces a lower tax bill depends
@@ -150,7 +150,7 @@ function TaxRegimeEditorial() {
       </P>
       <P>
         The new regime (under Section 115BAC) offers lower marginal rates and a higher
-        basic exemption structure. For FY 2025-26, the new regime includes a ₹75,000
+        basic exemption structure. For FY 2026-27, the new regime includes a ₹75,000
         standard deduction and a Section 87A rebate that makes taxable income up to
         ₹12 lakh effectively tax-free. This makes the new regime the default choice for
         most employees with taxable income below ₹12 lakh after standard deduction — and
@@ -178,9 +178,9 @@ function TaxRegimeEditorial() {
       <UL>
         <li>New regime: ₹75,000 standard deduction, lower slab rates, no itemized deductions beyond standard.</li>
         <li>Old regime: ₹50,000 standard deduction, higher rates, full deduction menu (80C, HRA, 24(b), etc.).</li>
-        <li>The 87A rebate in the new regime eliminates tax for taxable income ≤ ₹12 lakh (FY 2025-26).</li>
+        <li>The 87A rebate in the new regime eliminates tax for taxable income ≤ ₹12 lakh (FY 2026-27).</li>
         <li>Regime must be selected before the FY begins for TDS — you can change at filing time.</li>
-        <li>Surcharge and marginal relief apply above ₹50 lakh — this calculator does not model them.</li>
+        <li>Surcharge (and its own marginal relief) applies above ₹50 lakh taxable income — this calculator does not model surcharge. Section 87A marginal relief near the ₹12 lakh new-regime threshold is modeled separately and is not affected by this.</li>
       </UL>
     </Section>
   );

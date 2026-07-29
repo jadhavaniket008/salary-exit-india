@@ -36,6 +36,7 @@ export const metadata: Metadata = buildPageMetadata(
 );
 
 const secondaryCalculators = [
+  "reverseSalary",
   "taxRegime",
   "salaryRealityCheck",
   "offerComparison",

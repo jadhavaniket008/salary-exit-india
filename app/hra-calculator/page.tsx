@@ -19,8 +19,10 @@ export default function HraCalculatorPage() {
             regime, HRA exemption is not available regardless of what your payslip shows.
           </p>
           <p className="text-foreground-secondary">
-            The exemption does not apply to home owners. If you own the house you live in, the HRA
-            component is fully taxable even if it is listed on your payslip.
+            You cannot claim HRA exemption for a home you own and occupy without paying genuine rent —
+            the component is fully taxable in that case even if it&apos;s listed on your payslip. Owning a
+            different property (in another city, or one you don&apos;t live in) does not automatically
+            disqualify a valid HRA claim for the place you actually rent.
           </p>
         </section>
 
@@ -87,10 +89,10 @@ export default function HraCalculatorPage() {
             How much tax HRA exemption actually saves
           </h2>
           <p className="text-foreground-secondary">
-            The tax saving equals the exemption amount multiplied by your marginal tax rate. For someone
-            in the 30% slab (income above ₹15 LPA under old regime) with an exemption of ₹1.5 lakh, the
-            annual saving is approximately ₹1.5L × 30% × (1 + 4% cess) = roughly ₹46,800. At the 20%
-            slab, the same exemption saves around ₹31,200/year.
+            The tax saving equals the exemption amount multiplied by your marginal tax rate. For a
+            taxpayer whose relevant taxable income falls in the 30% slab (old regime: taxable income above
+            ₹10 lakh) with an exemption of ₹1.5 lakh, the annual saving is approximately ₹1.5L × 30% ×
+            (1 + 4% cess) = roughly ₹46,800. At the 20% slab, the same exemption saves around ₹31,200/year.
           </p>
           <p className="text-foreground-secondary">
             This is why the old regime can still make sense for employees paying significant rent in

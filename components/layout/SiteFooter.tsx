@@ -5,6 +5,7 @@ import { SupportLink } from "@/components/monetization/SupportLink";
 
 const calculatorLinks = [
   { href: ROUTES.ctcToInHandCalculator, label: "CTC to in-hand" },
+  { href: ROUTES.reverseSalaryCalculator, label: "Required CTC (reverse salary)" },
   { href: ROUTES.salaryCalculator, label: "Salary breakdown" },
   { href: ROUTES.oldVsNewTaxRegimeCalculator, label: "Tax regime comparison" },
   { href: ROUTES.salaryRealityCheck, label: "Salary Reality Check" },
@@ -13,6 +14,8 @@ const calculatorLinks = [
   { href: ROUTES.gratuityCalculator, label: "Gratuity" },
   { href: ROUTES.noticePeriodBuyoutCalculator, label: "Notice buyout" },
   { href: ROUTES.finalSettlementCalculator, label: "Final settlement" },
+  { href: ROUTES.leaveEncashmentCalculator, label: "Leave encashment" },
+  { href: ROUTES.salaryHikeCalculator, label: "Salary hike" },
   { href: ROUTES.epfCalculator, label: "EPF contributions" },
 ];
 
