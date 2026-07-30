@@ -35,7 +35,7 @@ export function SalaryRealityCheckPromo() {
           <p className="text-sm font-semibold text-foreground">Start in under a minute</p>
           <Link
             href={ROUTES.salaryRealityCheck}
-            className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
+            className="inline-flex items-center justify-center rounded-lg bg-accent-solid px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-accent-solid-hover"
           >
             Run Salary Reality Check
           </Link>

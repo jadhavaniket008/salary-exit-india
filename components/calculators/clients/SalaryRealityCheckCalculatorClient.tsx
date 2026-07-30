@@ -713,7 +713,7 @@ export function SalaryRealityCheckCalculatorClient({
               </Button>
               <Link
                 href={ROUTES.offerComparisonCalculator}
-                className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
+                className="inline-flex items-center justify-center rounded-lg bg-accent-solid px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
                 onClick={() => {
                   trackOfferCompareClick("salary_reality_next_steps");
                   trackNextToolClicked("salaryRealityCheck", "offerComparison");

@@ -11,11 +11,11 @@ type Props = {
 };
 
 const EXP_COLORS = [
-  "bg-rose-500/85",
-  "bg-amber-500/80",
-  "bg-orange-500/75",
-  "bg-amber-600/75",
-  "bg-slate-500/75",
+  "bg-rose-600",
+  "bg-amber-700",
+  "bg-orange-600",
+  "bg-amber-800",
+  "bg-slate-600",
 ];
 
 /**

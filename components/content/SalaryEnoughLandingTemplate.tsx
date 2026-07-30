@@ -330,7 +330,7 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
           <div className="flex flex-wrap gap-3">
             <a
               href="#salary-reality-embed"
-              className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
+              className="inline-flex items-center justify-center rounded-lg bg-accent-solid px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
             >
               Adjust inputs in the calculator
             </a>

@@ -54,19 +54,20 @@ export function SeasonalBanner() {
 
   return (
     <div
+      role="region"
+      aria-label="Site announcement"
       className={
         isHigh
           ? "border-b border-amber-300/60 bg-amber-50 dark:border-amber-700/40 dark:bg-amber-950/30"
           : "border-b border-[var(--border)] bg-[var(--surface-subtle)]"
       }
-      role="banner"
     >
       <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-2 px-4 py-2.5 text-sm sm:flex-nowrap">
         <span
           className={
             isHigh
-              ? "shrink-0 rounded-full bg-amber-500 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-white"
-              : "shrink-0 rounded-full bg-[var(--accent)] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-white"
+              ? "shrink-0 rounded-full bg-amber-500 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-black"
+              : "shrink-0 rounded-full bg-[var(--accent-solid)] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-white"
           }
         >
           {banner.label}

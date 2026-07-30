@@ -89,7 +89,7 @@ export function ConsentBannerShell() {
               </button>
               <button
                 type="button"
-                className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
+                className="rounded-lg bg-accent-solid px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
                 onClick={acceptAll}
               >
                 Accept all

@@ -78,7 +78,7 @@ export default function Home() {
         )}
       />
 
-      <main className="flex-1">
+      <div className="flex-1">
         {/* ── Hero ───────────────────────────────────────────────────── */}
         <section className="border-b border-border bg-surface py-10 sm:py-14" aria-label="Hero">
           <Container>
@@ -137,7 +137,7 @@ export default function Home() {
             >
               <div>
                 <div className="mb-1 flex items-center gap-2">
-                  <span className="rounded-full bg-accent px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white">
+                  <span className="rounded-full bg-accent-solid px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white">
                     Most used
                   </span>
                 </div>
@@ -313,7 +313,7 @@ export default function Home() {
             <SiteSearchClient />
           </section>
         </Container>
-      </main>
+      </div>
     </div>
   );
 }

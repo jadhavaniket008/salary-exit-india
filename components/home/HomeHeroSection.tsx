@@ -21,7 +21,7 @@ function SalaryPreviewCard() {
             Example · ₹12 LPA · New regime · FY 2026–27
           </p>
         </div>
-        <span className="shrink-0 rounded-full bg-accent px-2.5 py-0.5 text-[11px] font-bold text-white">
+        <span className="shrink-0 rounded-full bg-accent-solid px-2.5 py-0.5 text-[11px] font-bold text-white">
           Zero tax
         </span>
       </div>
@@ -97,7 +97,7 @@ export function HomeHeroSection() {
         <div className="space-y-3">
           <Link
             href={ROUTES.ctcToInHandCalculator}
-            className="inline-flex w-full items-center justify-center rounded-xl bg-accent px-6 py-3.5 text-base font-bold text-white shadow-md transition-all hover:bg-accent-hover hover:shadow-lg sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-xl bg-accent-solid px-6 py-3.5 text-base font-bold text-white shadow-md transition-all hover:bg-accent-solid-hover hover:shadow-lg sm:w-auto"
           >
             Calculate my in-hand salary →
           </Link>

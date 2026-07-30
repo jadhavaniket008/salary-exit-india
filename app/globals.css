@@ -18,11 +18,18 @@
   --foreground-muted:     #9A9890;
   --foreground-inverse:   #FFFFFF;
 
-  /* Accent — Salary Green */
+  /* Accent — Salary Green (text, links, icons on light/dark surfaces) */
   --accent:       #1A6B45;
   --accent-light: #EBF5EF;
   --accent-hover: #155639;
   --accent-text:  #FFFFFF;
+
+  /* Accent solid — for filled buttons/badges carrying white text.
+     Same value as --accent in light mode; dark mode needs a darker
+     shade here because --accent itself is tuned to read as *text* on
+     near-black surfaces, which is too light for white text on top of it. */
+  --accent-solid:       #1A6B45;
+  --accent-solid-hover: #155639;
 
   /* Semantic */
   --positive:     #1A6B45;
@@ -49,6 +56,8 @@
   --color-accent:               var(--accent);
   --color-accent-light:         var(--accent-light);
   --color-accent-hover:         var(--accent-hover);
+  --color-accent-solid:         var(--accent-solid);
+  --color-accent-solid-hover:   var(--accent-solid-hover);
   --color-positive:             var(--positive);
   --color-negative:             var(--negative);
   --color-warning:              var(--warning);
@@ -87,12 +96,15 @@ body {
 
     --foreground:           #EDECEA;
     --foreground-secondary: #A8A69F;
-    --foreground-muted:     #6B6966;
+    --foreground-muted:     #8B8983;
     --foreground-inverse:   #111110;
 
     --accent:       #29A05E;
     --accent-light: #0D2419;
     --accent-hover: #33B86E;
+
+    --accent-solid:       #15803D;
+    --accent-solid-hover: #166534;
 
     --positive:     #29A05E;
     --negative:     #F87171;

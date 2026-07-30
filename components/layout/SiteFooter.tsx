@@ -46,7 +46,7 @@ export function SiteFooter() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-white text-xs font-bold">₹</span>
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent-solid text-white text-xs font-bold">₹</span>
               <span className="text-sm font-semibold text-foreground">SalaryExit India</span>
             </div>
             <p className="text-xs leading-relaxed text-foreground-secondary">

@@ -69,7 +69,7 @@ export default function ForBusinessesPage() {
   const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@salaryexit.in";
 
   return (
-    <main>
+    <div>
       <Section className="pt-10 sm:pt-16">
         <Container className="max-w-3xl space-y-12">
 
@@ -88,7 +88,7 @@ export default function ForBusinessesPage() {
             </p>
             <a
               href={`mailto:${contactEmail}?subject=B2B calculator embed inquiry`}
-              className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+              className="inline-flex items-center justify-center rounded-lg bg-accent-solid px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
             >
               Contact us to discuss →
             </a>
@@ -165,7 +165,7 @@ export default function ForBusinessesPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-accent bg-accent p-7 text-white">
+          <section className="rounded-2xl border border-accent-solid bg-accent-solid p-7 text-white">
             <h2 className="text-xl font-semibold">Interested? Let's talk.</h2>
             <p className="mt-2 text-sm leading-relaxed text-white/80">
               Email us with your company name, product type, and the integration you're exploring.
@@ -181,6 +181,6 @@ export default function ForBusinessesPage() {
 
         </Container>
       </Section>
-    </main>
+    </div>
   );
 }

@@ -19,7 +19,7 @@ export function SiteHeader() {
           className="flex items-center gap-2 text-sm font-semibold text-foreground tracking-tight hover:text-accent transition-colors"
           aria-label="SalaryExit India — home"
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-white text-xs font-bold">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent-solid text-white text-xs font-bold">
             ₹
           </span>
           <span>SalaryExit</span>
@@ -46,7 +46,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href={ROUTES.ctcToInHandCalculator}
-            className="hidden rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover sm:inline-flex"
+            className="hidden rounded-lg bg-accent-solid px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-solid-hover sm:inline-flex"
           >
             Calculate in-hand
           </Link>
@@ -72,7 +72,7 @@ export function SiteHeader() {
                 <div className="mx-3 my-2 border-t border-border" />
                 <Link
                   href={ROUTES.ctcToInHandCalculator}
-                  className="block rounded-lg bg-accent px-3 py-2.5 text-center text-sm font-medium text-white"
+                  className="block rounded-lg bg-accent-solid px-3 py-2.5 text-center text-sm font-medium text-white"
                 >
                   Calculate in-hand
                 </Link>
