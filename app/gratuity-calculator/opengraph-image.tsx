@@ -1,0 +1,17 @@
+import {
+  buildOgImageResponse,
+  OG_IMAGE_SIZE,
+  OG_IMAGE_CONTENT_TYPE,
+} from "@/lib/seo/og-image";
+
+export const alt = "Gratuity calculator — SalaryExit India";
+export const size = OG_IMAGE_SIZE;
+export const contentType = OG_IMAGE_CONTENT_TYPE;
+
+export default async function Image() {
+  return buildOgImageResponse({
+    category: "Calculator",
+    title: "Gratuity Calculator",
+    subtitle: "Estimate using the common 15/26 formula",
+  });
+}
