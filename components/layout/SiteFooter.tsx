@@ -3,20 +3,21 @@ import { Container } from "@/components/ui";
 import { ROUTES } from "@/lib/routes";
 import { SupportLink } from "@/components/monetization/SupportLink";
 
-const calculatorLinks = [
+/**
+ * Curated subset, not the full 13-calculator directory — keeps the footer
+ * scannable. The complete list lives at ROUTES.calculators; a link to it
+ * follows this list wherever it's rendered. Reverse salary, leave encashment,
+ * and salary hike are included deliberately so they stay discoverable from
+ * every page without requiring a visit to the hub.
+ */
+const popularCalculatorLinks = [
   { href: ROUTES.ctcToInHandCalculator, label: "CTC to in-hand" },
   { href: ROUTES.reverseSalaryCalculator, label: "Required CTC (reverse salary)" },
   { href: ROUTES.salaryCalculator, label: "Salary breakdown" },
   { href: ROUTES.oldVsNewTaxRegimeCalculator, label: "Tax regime comparison" },
   { href: ROUTES.salaryRealityCheck, label: "Salary Reality Check" },
-  { href: ROUTES.offerComparisonCalculator, label: "Offer comparison" },
-  { href: ROUTES.hraCalculator, label: "HRA exemption" },
-  { href: ROUTES.gratuityCalculator, label: "Gratuity" },
-  { href: ROUTES.noticePeriodBuyoutCalculator, label: "Notice buyout" },
-  { href: ROUTES.finalSettlementCalculator, label: "Final settlement" },
   { href: ROUTES.leaveEncashmentCalculator, label: "Leave encashment" },
   { href: ROUTES.salaryHikeCalculator, label: "Salary hike" },
-  { href: ROUTES.epfCalculator, label: "EPF contributions" },
 ];
 
 const guideLinks = [
@@ -61,10 +62,10 @@ export function SiteFooter() {
           {/* Calculators */}
           <div>
             <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-foreground-muted">
-              Calculators
+              Popular calculators
             </h3>
             <ul className="space-y-2">
-              {calculatorLinks.map((l) => (
+              {popularCalculatorLinks.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
@@ -74,6 +75,14 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href={ROUTES.calculators}
+                  className="text-sm font-medium text-foreground hover:text-accent-solid transition-colors"
+                >
+                  All calculators →
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -134,8 +143,11 @@ export function SiteFooter() {
             <div className="mt-6 rounded-xl border border-border bg-surface-subtle p-4">
               <p className="text-xs leading-relaxed text-foreground-secondary">
                 <strong className="text-foreground">Not a CA, law firm, or filing tool.</strong>{" "}
-                Calculators are indicative. Always verify salary, tax, and exit numbers with your
-                employer, HR, and a qualified tax professional.
+                Read the full{" "}
+                <Link href={ROUTES.disclaimer} className="underline hover:text-foreground">
+                  disclaimer
+                </Link>
+                .
               </p>
             </div>
           </div>
