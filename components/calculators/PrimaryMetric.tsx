@@ -48,12 +48,17 @@ export function PrimaryMetric({ label, value, animate, helperText }: Props) {
         initial={prefersReducedMotion ? false : { opacity: 0.85, scale: 0.995 }}
         animate={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }}
         transition={{ duration: 0.25 }}
-        aria-live="polite"
-        aria-label={`${label}: ${formatInr(display)}`}
+        aria-hidden="true"
         className="mt-2 text-3xl font-bold tabular-nums tracking-tight text-foreground sm:text-4xl"
       >
         {formatInr(display)}
       </motion.p>
+      {/* Screen readers get exactly one announcement of the settled value —
+          not the visual node above, which repaints every animation frame
+          during a recalculation and would otherwise be read frame-by-frame. */}
+      <span className="sr-only" role="status" aria-live="polite">
+        {label}: {formatInr(value)}
+      </span>
       {helperText ? (
         <p className="mt-2 text-sm text-foreground-secondary">
           {helperText}

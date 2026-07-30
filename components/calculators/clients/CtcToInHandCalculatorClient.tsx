@@ -545,11 +545,39 @@ export function CtcToInHandCalculatorClient() {
         ) : (
           <ResultReveal show={showResult && !!result}>
             {mode === "ctc" && derivedGross ? (
-              <div className="rounded-xl border border-border bg-surface-subtle p-4 text-sm text-foreground-secondary">
-                Your CTC of <strong>{formatInr(derivedGross.annualCtc)}</strong> breaks down to an estimated{" "}
-                <strong>{formatInr(derivedGross.annualGrossSalary)}</strong> gross after removing{" "}
-                {formatInr(derivedGross.employerSideCostsAnnual)} of employer-side costs (PF, gratuity,
-                insurance). Tax and in-hand below are computed on this gross figure, not on the full CTC.
+              <div className="space-y-3">
+                <dl className="space-y-1 rounded-lg border border-border bg-surface-subtle px-4 py-3 font-mono text-sm">
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-foreground-secondary">Total CTC</dt>
+                    <dd className="tabular-nums text-foreground">{formatInr(derivedGross.annualCtc)}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-foreground-secondary">− Employer-side costs</dt>
+                    <dd className="tabular-nums text-foreground">
+                      {formatInr(derivedGross.employerSideCostsAnnual)}
+                    </dd>
+                  </div>
+                  <div className="flex justify-between gap-4 border-t border-border pt-1 font-semibold">
+                    <dt className="text-foreground">= Gross salary</dt>
+                    <dd className="tabular-nums text-foreground">{formatInr(result.annualGrossSalary)}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-foreground-secondary">− Employee deductions and tax</dt>
+                    <dd className="tabular-nums text-foreground">
+                      {formatInr(result.annualGrossSalary - result.inHandMonthly * 12)}
+                    </dd>
+                  </div>
+                  <div className="flex justify-between gap-4 border-t border-border pt-1 font-semibold">
+                    <dt className="text-foreground">= Estimated in-hand (annual)</dt>
+                    <dd className="tabular-nums text-positive">{formatInr(result.inHandMonthly * 12)}</dd>
+                  </div>
+                </dl>
+                <p className="text-sm text-foreground-secondary">
+                  Your CTC of <strong>{formatInr(derivedGross.annualCtc)}</strong> breaks down to an estimated{" "}
+                  <strong>{formatInr(derivedGross.annualGrossSalary)}</strong> gross after removing employer-side
+                  costs (PF, gratuity, insurance). Tax and in-hand below are computed on this gross figure, not
+                  on the full CTC.
+                </p>
               </div>
             ) : null}
             <div className={`grid gap-4 ${compareResult ? "sm:grid-cols-2" : ""}`}>

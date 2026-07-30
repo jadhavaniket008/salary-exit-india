@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useRef, useState } from "react";
 import { Button, Card, FormField, Input } from "@/components/ui";
 import { ResultReveal } from "@/components/motion/ResultReveal";
@@ -19,6 +20,7 @@ import { computeRequiredCtcForInHand } from "@/lib/calculators/reverse-salary";
 import { DEFAULT_BASIC_DA_SHARE_OF_GROSS } from "@/lib/config/salary-reality-heuristics";
 import { DEFAULT_PROFESSIONAL_TAX_ANNUAL_ESTIMATE } from "@/lib/config/professional-tax";
 import { formatInr } from "@/lib/format-inr";
+import { ROUTES } from "@/lib/routes";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
 import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
@@ -239,10 +241,19 @@ export function ReverseSalaryCalculatorClient() {
               helperText={`Assumes ${employerCostPct}% of CTC goes to employer PF, gratuity, and insurance.`}
             />
             <div className="rounded-xl border border-border bg-surface-subtle p-4 text-sm text-foreground-secondary">
-              Realistic range across common employer-cost structures:{" "}
-              <strong className="tabular-nums text-foreground">{formatInr(result.requiredAnnualCtcLow)}</strong> to{" "}
-              <strong className="tabular-nums text-foreground">{formatInr(result.requiredAnnualCtcHigh)}</strong>{" "}
-              annual CTC.
+              <p>
+                Realistic range across common employer-cost structures:{" "}
+                <strong className="tabular-nums text-foreground">{formatInr(result.requiredAnnualCtcLow)}</strong> to{" "}
+                <strong className="tabular-nums text-foreground">{formatInr(result.requiredAnnualCtcHigh)}</strong>{" "}
+                annual CTC — a range, not one number, because two employers offering the same in-hand can bundle
+                very different amounts of PF, gratuity, and insurance into that headline CTC figure.
+              </p>
+              <Link
+                href={ROUTES.ctcToInHandCalculator}
+                className="mt-2 inline-block font-medium text-accent underline underline-offset-2 hover:text-accent-hover"
+              >
+                Got a specific CTC offer? Check its exact in-hand →
+              </Link>
             </div>
             <CollapsibleBreakdown title="How we got there">
               <dl className="grid gap-3 text-sm sm:grid-cols-2">

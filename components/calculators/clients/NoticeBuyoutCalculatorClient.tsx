@@ -339,7 +339,22 @@ export function NoticeBuyoutCalculatorClient() {
           </div>
         ) : (
           <ResultReveal show={showResult && !!result}>
-            <PrimaryMetric label="Estimated notice buyout (gross)" value={result.buyoutAmount} animate />
+            <PrimaryMetric
+              label="Estimated notice buyout (gross)"
+              value={result.buyoutAmount}
+              animate
+              helperText={`Based on ${
+                salaryBasis === "basic" ? "Basic salary" : salaryBasis === "custom" ? "your custom amount" : "gross monthly salary"
+              }, ${
+                dayCountMethod === "calendar"
+                  ? "actual calendar days"
+                  : dayCountMethod === "fixed30"
+                    ? "a fixed 30-day month"
+                    : dayCountMethod === "workingDays"
+                      ? "working days only"
+                      : "your custom divisor"
+              }.`}
+            />
             <CollapsibleBreakdown>
               <dl className="grid gap-3 text-sm sm:grid-cols-2">
                 <div>

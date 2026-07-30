@@ -323,6 +323,7 @@ export function SalaryRealityCheckCalculatorClient({
           onSubmit={(e) => e.preventDefault()}
           noValidate
         >
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-foreground-muted">Income</h3>
           <fieldset className="space-y-2">
             <legend className="text-sm font-medium text-foreground">What do you know?</legend>
             <div role="radiogroup" aria-label="What do you know?" className="flex flex-wrap gap-2">
@@ -408,6 +409,7 @@ export function SalaryRealityCheckCalculatorClient({
             </div>
           ) : null}
 
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-foreground-muted">Housing</h3>
           <fieldset className="space-y-2">
             <legend className="text-sm font-medium text-foreground">City</legend>
             <label className="flex items-center gap-2 text-sm">
@@ -456,16 +458,23 @@ export function SalaryRealityCheckCalculatorClient({
           </fieldset>
 
           {!embed ? (
-            <div className="rounded-xl border border-border bg-surface-subtle p-4 text-sm">
-              <p className="font-medium text-foreground">How default expenses are chosen</p>
-              <p className="mt-2 text-foreground-secondary">{SALARY_REALITY_EXPENSE_METHODOLOGY.summary}</p>
-              <p className="mt-2 text-foreground-secondary">
-                <strong>Metro vs non-metro:</strong> {SALARY_REALITY_EXPENSE_METHODOLOGY.metroVsNonMetro}
-              </p>
-              <p className="mt-2 text-foreground-secondary">
-                <strong>Lifestyle tiers:</strong> {SALARY_REALITY_EXPENSE_METHODOLOGY.tiers}
-              </p>
-            </div>
+            <details className="group rounded-xl border border-border bg-surface-subtle p-4 text-sm [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-medium text-foreground">
+                How default expenses are chosen
+                <span className="shrink-0 text-foreground-muted transition-transform duration-200 group-open:rotate-180">
+                  ▾
+                </span>
+              </summary>
+              <div className="mt-2 space-y-2">
+                <p className="text-foreground-secondary">{SALARY_REALITY_EXPENSE_METHODOLOGY.summary}</p>
+                <p className="text-foreground-secondary">
+                  <strong>Metro vs non-metro:</strong> {SALARY_REALITY_EXPENSE_METHODOLOGY.metroVsNonMetro}
+                </p>
+                <p className="text-foreground-secondary">
+                  <strong>Lifestyle tiers:</strong> {SALARY_REALITY_EXPENSE_METHODOLOGY.tiers}
+                </p>
+              </div>
+            </details>
           ) : null}
 
           <fieldset className="space-y-3">
