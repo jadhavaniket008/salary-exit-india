@@ -9,3 +9,4 @@ export {
   daysInMonth,
   isValidMonthYear,
 } from "./validators";
+export { focusFirstInvalidField } from "./focus-first-invalid";

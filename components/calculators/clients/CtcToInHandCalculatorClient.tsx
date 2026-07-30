@@ -26,6 +26,7 @@ import { DEFAULT_PROFESSIONAL_TAX_ANNUAL_ESTIMATE } from "@/lib/config/professio
 import { formatInr, formatInrPlain } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
+import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
 import type { CtcDecomposeOutput, CtcToInHandInput, CtcToInHandOutput } from "@/types/salary";
 
 const fy = DEFAULT_TAX_SETTINGS.financialYear;
@@ -46,6 +47,7 @@ export function CtcToInHandCalculatorClient() {
   const [pfAnnual, setPfAnnual] = useState("");
 
   const [errors, setErrors] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<CtcToInHandOutput | null>(null);
   const [derivedGross, setDerivedGross] = useState<CtcDecomposeOutput | null>(null);
   const [showResult, setShowResult] = useState(false);
@@ -91,6 +93,7 @@ export function CtcToInHandCalculatorClient() {
     setCompareResult(null);
     setCompareError(null);
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
     setDerivedGross(null);
     setShowResult(false);
@@ -102,6 +105,7 @@ export function CtcToInHandCalculatorClient() {
     setCompareResult(null);
     setCompareError(null);
     setErrors([]);
+    setFieldErrors({});
     if (kind === "12l-bda") {
       setGross("1200000");
       setRegime("new");
@@ -128,27 +132,51 @@ export function CtcToInHandCalculatorClient() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors: string[] = [];
+    const nextFieldErrors: Record<string, string> = {};
 
     let effectiveGross = 0;
     let nextDerivedGross: CtcDecomposeOutput | null = null;
     let employerCostsProvided = false;
 
     if (mode === "ctc") {
-      const c = sanitizeNumber(ctcAnnual);
-      if (!c.ok) nextErrors.push("Annual CTC: " + c.error);
-      else {
+      const c = sanitizeNumber(ctcAnnual, { label: "Annual CTC" });
+      if (!c.ok) {
+        nextErrors.push(c.error);
+        nextFieldErrors.ctc = c.error;
+      } else {
         const nn = assertNonNegative("Annual CTC", c.value);
-        if (nn) nextErrors.push(nn);
+        if (nn) {
+          nextErrors.push(nn);
+          nextFieldErrors.ctc = nn;
+        }
       }
 
-      const empPf = employerPfAnnual.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(employerPfAnnual);
-      if (!empPf.ok) nextErrors.push("Employer PF (annual): " + empPf.error);
+      const empPf =
+        employerPfAnnual.trim() === ""
+          ? { ok: true as const, value: 0 }
+          : sanitizeNumber(employerPfAnnual, { label: "Employer PF (annual)" });
+      if (!empPf.ok) {
+        nextErrors.push(empPf.error);
+        nextFieldErrors["employer-pf"] = empPf.error;
+      }
 
-      const grat = gratuityAnnual.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(gratuityAnnual);
-      if (!grat.ok) nextErrors.push("Gratuity (annual): " + grat.error);
+      const grat =
+        gratuityAnnual.trim() === ""
+          ? { ok: true as const, value: 0 }
+          : sanitizeNumber(gratuityAnnual, { label: "Gratuity accrual (annual)" });
+      if (!grat.ok) {
+        nextErrors.push(grat.error);
+        nextFieldErrors.gratuity = grat.error;
+      }
 
-      const ins = insuranceAnnual.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(insuranceAnnual);
-      if (!ins.ok) nextErrors.push("Insurance & other benefits (annual): " + ins.error);
+      const ins =
+        insuranceAnnual.trim() === ""
+          ? { ok: true as const, value: 0 }
+          : sanitizeNumber(insuranceAnnual, { label: "Insurance & other benefits (annual)" });
+      if (!ins.ok) {
+        nextErrors.push(ins.error);
+        nextFieldErrors.insurance = ins.error;
+      }
 
       if (c.ok && empPf.ok && grat.ok && ins.ok) {
         employerCostsProvided =
@@ -162,34 +190,60 @@ export function CtcToInHandCalculatorClient() {
         effectiveGross = nextDerivedGross.annualGrossSalary;
       }
     } else {
-      const g = sanitizeNumber(gross);
-      if (!g.ok) nextErrors.push("Annual gross salary: " + g.error);
-      else {
+      const g = sanitizeNumber(gross, { label: "Annual gross salary" });
+      if (!g.ok) {
+        nextErrors.push(g.error);
+        nextFieldErrors.gross = g.error;
+      } else {
         const nn = assertNonNegative("Annual gross salary", g.value);
-        if (nn) nextErrors.push(nn);
+        if (nn) {
+          nextErrors.push(nn);
+          nextFieldErrors.gross = nn;
+        }
         effectiveGross = g.value;
       }
     }
 
-    const ptVal = sanitizeNumber(pt, { fallback: 0 });
-    if (!ptVal.ok) nextErrors.push("Professional tax (annual): " + ptVal.error);
-    else {
+    const ptVal = sanitizeNumber(pt, { fallback: 0, label: "Professional tax (annual)" });
+    if (!ptVal.ok) {
+      nextErrors.push(ptVal.error);
+      nextFieldErrors.pt = ptVal.error;
+    } else {
       const nn = assertNonNegative("Professional tax (annual)", ptVal.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.pt = nn;
+      }
     }
 
-    const b = basicDaAnnual.trim() === "" ? { ok: true as const, value: undefined as number | undefined } : sanitizeNumber(basicDaAnnual);
-    if (!b.ok) nextErrors.push("Basic + DA (annual): " + b.error);
-    else if (b.value !== undefined) {
+    const b =
+      basicDaAnnual.trim() === ""
+        ? { ok: true as const, value: undefined as number | undefined }
+        : sanitizeNumber(basicDaAnnual, { label: "Basic + DA (annual)" });
+    if (!b.ok) {
+      nextErrors.push(b.error);
+      nextFieldErrors.bda = b.error;
+    } else if (b.value !== undefined) {
       const nn = assertNonNegative("Basic + DA (annual)", b.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.bda = nn;
+      }
     }
 
-    const p = pfAnnual.trim() === "" ? { ok: true as const, value: undefined as number | undefined } : sanitizeNumber(pfAnnual);
-    if (!p.ok) nextErrors.push("Employee PF (annual): " + p.error);
-    else if (p.value !== undefined) {
+    const p =
+      pfAnnual.trim() === ""
+        ? { ok: true as const, value: undefined as number | undefined }
+        : sanitizeNumber(pfAnnual, { label: "Employee PF (annual)" });
+    if (!p.ok) {
+      nextErrors.push(p.error);
+      nextFieldErrors.pf = p.error;
+    } else if (p.value !== undefined) {
       const nn = assertNonNegative("Employee PF (annual)", p.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.pf = nn;
+      }
     }
 
     if (
@@ -198,17 +252,25 @@ export function CtcToInHandCalculatorClient() {
       b.ok &&
       b.value !== undefined
     ) {
-      nextErrors.push(
-        "Provide either employee PF (annual) **or** Basic+DA (annual) for PF estimation — not both."
-      );
+      const msg = "Enter either employee PF (annual) or Basic+DA (annual) for PF — not both.";
+      nextErrors.push(msg);
+      nextFieldErrors.pf = msg;
+      nextFieldErrors.bda = msg;
     }
 
     setErrors(nextErrors);
+    setFieldErrors(nextFieldErrors);
     if (nextErrors.length > 0) {
       setResult(null);
       setShowResult(false);
       setCompareResult(null);
       setCompareError(null);
+      focusFirstInvalidField(
+        mode === "ctc"
+          ? ["ctc", "employer-pf", "gratuity", "insurance", "pt", "pf", "bda"]
+          : ["gross", "pt", "pf", "bda"],
+        nextFieldErrors
+      );
       return;
     }
 
@@ -240,7 +302,7 @@ export function CtcToInHandCalculatorClient() {
       setCompareResult(null);
       setCompareError(null);
     } else {
-      const cg = sanitizeNumber(compareGross);
+      const cg = sanitizeNumber(compareGross, { label: "Compare gross salary" });
       if (!cg.ok) {
         setCompareError(cg.error);
         setCompareResult(null);
@@ -336,6 +398,7 @@ export function CtcToInHandCalculatorClient() {
                 label="Annual CTC (₹)"
                 id="ctc"
                 hint="The headline number from your offer letter — includes employer-side costs."
+                error={fieldErrors.ctc}
               >
                 <Input
                   id="ctc"
@@ -351,6 +414,7 @@ export function CtcToInHandCalculatorClient() {
                 label="Employer PF (annual, ₹)"
                 id="employer-pf"
                 hint="Company's PF contribution — check your CTC breakup sheet. Leave blank if unknown."
+                error={fieldErrors["employer-pf"]}
               >
                 <Input
                   id="employer-pf"
@@ -364,6 +428,7 @@ export function CtcToInHandCalculatorClient() {
                 label="Gratuity accrual (annual, ₹)"
                 id="gratuity"
                 hint="Often shown as a separate CTC line item — commonly ~4.81% of Basic+DA."
+                error={fieldErrors.gratuity}
               >
                 <Input
                   id="gratuity"
@@ -377,6 +442,7 @@ export function CtcToInHandCalculatorClient() {
                 label="Insurance & other benefits (annual, ₹)"
                 id="insurance"
                 hint="Group health/term insurance premiums or other non-cash CTC components."
+                error={fieldErrors.insurance}
               >
                 <Input
                   id="insurance"
@@ -388,7 +454,12 @@ export function CtcToInHandCalculatorClient() {
               </FormField>
             </>
           ) : (
-            <FormField label="Annual gross salary (₹)" id="gross" hint="Your taxable gross basis for this simplified model.">
+            <FormField
+              label="Annual gross salary (₹)"
+              id="gross"
+              hint="Your taxable gross basis for this simplified model."
+              error={fieldErrors.gross}
+            >
               <Input
                 id="gross"
                 inputMode="decimal"
@@ -421,6 +492,7 @@ export function CtcToInHandCalculatorClient() {
             label="Professional tax (annual, ₹)"
             id="pt"
             hint="Replace the default with your state's realistic annual PT if known."
+            error={fieldErrors.pt}
           >
             <Input id="pt" inputMode="decimal" value={pt} onChange={(e) => setPt(e.target.value)} />
           </FormField>
@@ -429,7 +501,7 @@ export function CtcToInHandCalculatorClient() {
             label="Employee PF (annual, ₹)"
             id="pf"
             hint="Leave empty if you will provide Basic+DA instead."
-            error={undefined}
+            error={fieldErrors.pf}
           >
             <Input id="pf" inputMode="decimal" value={pfAnnual} onChange={(e) => setPfAnnual(e.target.value)} placeholder="Optional" />
           </FormField>
@@ -438,6 +510,7 @@ export function CtcToInHandCalculatorClient() {
             label="Basic + DA (annual, ₹)"
             id="bda"
             hint="Used only if PF is omitted — we derive monthly PF wage as (Basic+DA)/12."
+            error={fieldErrors.bda}
           >
             <Input id="bda" inputMode="decimal" value={basicDaAnnual} onChange={(e) => setBasicDaAnnual(e.target.value)} placeholder="Optional" />
           </FormField>

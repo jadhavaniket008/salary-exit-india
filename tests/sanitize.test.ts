@@ -32,6 +32,27 @@ describe("sanitizeNumber", () => {
   });
 });
 
+describe("sanitizeNumber error messages", () => {
+  it("produces a plain-language required message using the field label, not schema-validator language", () => {
+    const r = sanitizeNumber("", { label: "Notice days" });
+    expect(r.ok).toBe(false);
+    expect(!r.ok && r.error).toBe("Enter notice days.");
+    expect(!r.ok && r.error).not.toMatch(/empty string|schema|nan/i);
+  });
+
+  it("produces a plain-language invalid-number message using the field label", () => {
+    const r = sanitizeNumber("abc", { label: "Gross monthly salary" });
+    expect(r.ok).toBe(false);
+    expect(!r.ok && r.error).toBe("Gross monthly salary must be a number.");
+  });
+
+  it("falls back to generic phrasing when no label is given", () => {
+    const r = sanitizeNumber("");
+    expect(r.ok).toBe(false);
+    expect(!r.ok && r.error).toBe("Enter this field.");
+  });
+});
+
 describe("normalizeNumericInputString", () => {
   it("strips commas and spaces", () => {
     expect(normalizeNumericInputString("1,00,000")).toBe("100000");

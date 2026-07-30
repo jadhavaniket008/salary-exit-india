@@ -22,6 +22,7 @@ import { DEFAULT_PROFESSIONAL_TAX_ANNUAL_ESTIMATE } from "@/lib/config/professio
 import { formatInr, formatInrPlain } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
+import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
 import type { SalaryOutput } from "@/types/salary";
 
 const fy = DEFAULT_TAX_SETTINGS.financialYear;
@@ -36,6 +37,7 @@ export function SalaryCalculatorClient() {
   const [hra, setHra] = useState("");
 
   const [errors, setErrors] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<SalaryOutput | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -57,6 +59,7 @@ export function SalaryCalculatorClient() {
     setOther80c("");
     setHra("");
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
     setShowResult(false);
   }
@@ -64,52 +67,85 @@ export function SalaryCalculatorClient() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors: string[] = [];
+    const nextFieldErrors: Record<string, string> = {};
 
-    const g = sanitizeNumber(gross);
-    if (!g.ok) nextErrors.push("Annual gross salary: " + g.error);
-    else {
+    const g = sanitizeNumber(gross, { label: "Annual gross salary" });
+    if (!g.ok) {
+      nextErrors.push(g.error);
+      nextFieldErrors.gross = g.error;
+    } else {
       const nn = assertNonNegative("Annual gross salary", g.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.gross = nn;
+      }
     }
 
-    const ptVal = sanitizeNumber(pt, { fallback: 0 });
-    if (!ptVal.ok) nextErrors.push("Professional tax (annual): " + ptVal.error);
-    else {
+    const ptVal = sanitizeNumber(pt, { fallback: 0, label: "Professional tax (annual)" });
+    if (!ptVal.ok) {
+      nextErrors.push(ptVal.error);
+      nextFieldErrors.pt = ptVal.error;
+    } else {
       const nn = assertNonNegative("Professional tax (annual)", ptVal.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.pt = nn;
+      }
     }
 
-    const pfVal = pf.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(pf);
-    if (!pfVal.ok) nextErrors.push("Employee PF (annual): " + pfVal.error);
-    else {
+    const pfVal =
+      pf.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(pf, { label: "Employee PF (annual)" });
+    if (!pfVal.ok) {
+      nextErrors.push(pfVal.error);
+      nextFieldErrors.pf = pfVal.error;
+    } else {
       const nn = assertNonNegative("Employee PF (annual)", pfVal.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.pf = nn;
+      }
     }
 
-    const oVal = other80c.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(other80c);
-    if (!oVal.ok) nextErrors.push("Other 80C (annual): " + oVal.error);
-    else {
+    const oVal =
+      other80c.trim() === ""
+        ? { ok: true as const, value: 0 }
+        : sanitizeNumber(other80c, { label: "Other 80C (annual)" });
+    if (!oVal.ok) {
+      nextErrors.push(oVal.error);
+      nextFieldErrors["80c"] = oVal.error;
+    } else {
       const nn = assertNonNegative("Other 80C (annual)", oVal.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors["80c"] = nn;
+      }
     }
 
-    const hVal = hra.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(hra);
-    if (!hVal.ok) nextErrors.push("HRA exemption (annual): " + hVal.error);
-    else {
+    const hVal =
+      hra.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(hra, { label: "HRA exemption (annual)" });
+    if (!hVal.ok) {
+      nextErrors.push(hVal.error);
+      nextFieldErrors.hra = hVal.error;
+    } else {
       const nn = assertNonNegative("HRA exemption (annual)", hVal.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.hra = nn;
+      }
     }
 
     if (regime === "new" && hVal.ok && hVal.value > 0) {
-      nextErrors.push(
-        "HRA exemption is typically relevant under the old regime. Clear HRA or switch to old regime."
-      );
+      const msg = "HRA exemption is typically relevant under the old regime. Clear HRA or switch to old regime.";
+      nextErrors.push(msg);
+      nextFieldErrors.hra = msg;
     }
 
     setErrors(nextErrors);
+    setFieldErrors(nextFieldErrors);
     if (nextErrors.length > 0) {
       setResult(null);
       setShowResult(false);
+      focusFirstInvalidField(["gross", "pt", "pf", "80c", "hra"], nextFieldErrors);
       return;
     }
 
@@ -148,14 +184,13 @@ export function SalaryCalculatorClient() {
 
       <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
-          <FormField label="Annual gross salary (₹)" id="gross" hint="Before employee deductions.">
+          <FormField label="Annual gross salary (₹)" id="gross" hint="Before employee deductions." error={fieldErrors.gross}>
             <Input
               id="gross"
               inputMode="decimal"
               autoComplete="off"
               value={gross}
               onChange={(e) => setGross(e.target.value)}
-              aria-invalid={errors.some((x) => x.includes("gross"))}
             />
           </FormField>
 
@@ -192,6 +227,7 @@ export function SalaryCalculatorClient() {
             label="Professional tax (annual, ₹)"
             id="pt"
             hint="Placeholder default is not your exact state slab — replace with your annual PT."
+            error={fieldErrors.pt}
           >
             <Input
               id="pt"
@@ -205,6 +241,7 @@ export function SalaryCalculatorClient() {
             label="Employee PF + VPF (annual, ₹)"
             id="pf"
             hint="Optional. Used for old-regime 80C cap logic."
+            error={fieldErrors.pf}
           >
             <Input
               id="pf"
@@ -219,6 +256,7 @@ export function SalaryCalculatorClient() {
             label="Other Chapter VI-A / 80C (annual, ₹)"
             id="80c"
             hint="Optional rough bucket (old regime). Combined with PF subject to ₹1.5L cap."
+            error={fieldErrors["80c"]}
           >
             <Input
               id="80c"
@@ -233,6 +271,7 @@ export function SalaryCalculatorClient() {
             label="HRA exemption (annual, ₹)"
             id="hra"
             hint="Optional. Enter only if you already estimated exemption (e.g., via HRA calculator). Old regime only."
+            error={fieldErrors.hra}
           >
             <Input
               id="hra"

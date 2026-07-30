@@ -19,6 +19,7 @@ import { computeLeaveEncashment, LEAVE_WORKED_EXAMPLE_INPUT } from "@/lib/calcul
 import { formatInr } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
+import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
 import type { LeaveEncashmentOutput } from "@/types/leave-encashment";
 
 export function LeaveEncashmentCalculatorClient() {
@@ -27,6 +28,7 @@ export function LeaveEncashmentCalculatorClient() {
   const [basis, setBasis] = useState<26 | 30>(26);
 
   const [errors, setErrors] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<LeaveEncashmentOutput | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -47,6 +49,7 @@ export function LeaveEncashmentCalculatorClient() {
     setDays("");
     setBasis(26);
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
     setShowResult(false);
   }
@@ -54,25 +57,38 @@ export function LeaveEncashmentCalculatorClient() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors: string[] = [];
+    const nextFieldErrors: Record<string, string> = {};
 
-    const m = sanitizeNumber(monthly);
-    if (!m.ok) nextErrors.push("Basic + DA (monthly): " + m.error);
-    else {
+    const m = sanitizeNumber(monthly, { label: "Basic + DA (monthly)" });
+    if (!m.ok) {
+      nextErrors.push(m.error);
+      nextFieldErrors.bda = m.error;
+    } else {
       const nn = assertNonNegative("Basic + DA (monthly)", m.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.bda = nn;
+      }
     }
 
-    const d = sanitizeNumber(days);
-    if (!d.ok) nextErrors.push("Unused leave days: " + d.error);
-    else {
+    const d = sanitizeNumber(days, { label: "Unused leave days" });
+    if (!d.ok) {
+      nextErrors.push(d.error);
+      nextFieldErrors.days = d.error;
+    } else {
       const nn = assertNonNegative("Unused leave days", d.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.days = nn;
+      }
     }
 
     setErrors(nextErrors);
+    setFieldErrors(nextFieldErrors);
     if (nextErrors.length > 0) {
       setResult(null);
       setShowResult(false);
+      focusFirstInvalidField(["bda", "days"], nextFieldErrors);
       return;
     }
 
@@ -119,11 +135,12 @@ export function LeaveEncashmentCalculatorClient() {
             label="Basic + DA (monthly, ₹)"
             id="bda"
             hint="If your employer encashes on Basic only, enter Basic here and treat DA as 0."
+            error={fieldErrors.bda}
           >
             <Input id="bda" inputMode="decimal" value={monthly} onChange={(e) => setMonthly(e.target.value)} />
           </FormField>
 
-          <FormField label="Unused leave days" id="days">
+          <FormField label="Unused leave days" id="days" error={fieldErrors.days}>
             <Input id="days" inputMode="decimal" value={days} onChange={(e) => setDays(e.target.value)} />
           </FormField>
 

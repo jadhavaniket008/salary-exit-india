@@ -22,6 +22,7 @@ import { DEFAULT_TAX_SETTINGS } from "@/lib/config";
 import { formatInr, formatInrPlain } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
+import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
 import type { TaxComparisonOutput } from "@/types/tax";
 
 const fy = DEFAULT_TAX_SETTINGS.financialYear;
@@ -33,6 +34,7 @@ export function TaxRegimeCalculatorClient() {
   const [hra, setHra] = useState("");
 
   const [errors, setErrors] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<TaxComparisonOutput | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -53,6 +55,7 @@ export function TaxRegimeCalculatorClient() {
     setOther80c("");
     setHra("");
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
     setShowResult(false);
   }
@@ -60,39 +63,67 @@ export function TaxRegimeCalculatorClient() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors: string[] = [];
+    const nextFieldErrors: Record<string, string> = {};
 
-    const g = sanitizeNumber(gross);
-    if (!g.ok) nextErrors.push("Annual gross salary: " + g.error);
-    else {
+    const g = sanitizeNumber(gross, { label: "Annual gross salary" });
+    if (!g.ok) {
+      nextErrors.push(g.error);
+      nextFieldErrors.gross = g.error;
+    } else {
       const nn = assertNonNegative("Annual gross salary", g.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.gross = nn;
+      }
     }
 
-    const pfVal = pf.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(pf);
-    if (!pfVal.ok) nextErrors.push("Employee PF (annual): " + pfVal.error);
-    else {
+    const pfVal =
+      pf.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(pf, { label: "Employee PF (annual)" });
+    if (!pfVal.ok) {
+      nextErrors.push(pfVal.error);
+      nextFieldErrors.pf = pfVal.error;
+    } else {
       const nn = assertNonNegative("Employee PF (annual)", pfVal.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.pf = nn;
+      }
     }
 
-    const oVal = other80c.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(other80c);
-    if (!oVal.ok) nextErrors.push("Other 80C (annual): " + oVal.error);
-    else {
+    const oVal =
+      other80c.trim() === ""
+        ? { ok: true as const, value: 0 }
+        : sanitizeNumber(other80c, { label: "Other 80C (annual)" });
+    if (!oVal.ok) {
+      nextErrors.push(oVal.error);
+      nextFieldErrors.o80c = oVal.error;
+    } else {
       const nn = assertNonNegative("Other 80C (annual)", oVal.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.o80c = nn;
+      }
     }
 
-    const hVal = hra.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(hra);
-    if (!hVal.ok) nextErrors.push("HRA exemption (annual): " + hVal.error);
-    else {
+    const hVal =
+      hra.trim() === "" ? { ok: true as const, value: 0 } : sanitizeNumber(hra, { label: "HRA exemption (annual)" });
+    if (!hVal.ok) {
+      nextErrors.push(hVal.error);
+      nextFieldErrors.hra = hVal.error;
+    } else {
       const nn = assertNonNegative("HRA exemption (annual)", hVal.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.hra = nn;
+      }
     }
 
     setErrors(nextErrors);
+    setFieldErrors(nextFieldErrors);
     if (nextErrors.length > 0) {
       setResult(null);
       setShowResult(false);
+      focusFirstInvalidField(["gross", "pf", "o80c", "hra"], nextFieldErrors);
       return;
     }
 
@@ -158,7 +189,7 @@ export function TaxRegimeCalculatorClient() {
 
       <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
-          <FormField label="Annual gross salary (₹)" id="gross">
+          <FormField label="Annual gross salary (₹)" id="gross" error={fieldErrors.gross}>
             <Input id="gross" inputMode="decimal" value={gross} onChange={(e) => setGross(e.target.value)} />
           </FormField>
 
@@ -166,11 +197,12 @@ export function TaxRegimeCalculatorClient() {
             label="Employee PF (annual, ₹)"
             id="pf"
             hint="Counted toward the 80C cap in the old-regime path."
+            error={fieldErrors.pf}
           >
             <Input id="pf" inputMode="decimal" value={pf} onChange={(e) => setPf(e.target.value)} placeholder="0" />
           </FormField>
 
-          <FormField label="Other 80C (annual, ₹)" id="o80c">
+          <FormField label="Other 80C (annual, ₹)" id="o80c" error={fieldErrors.o80c}>
             <Input id="o80c" inputMode="decimal" value={other80c} onChange={(e) => setOther80c(e.target.value)} placeholder="0" />
           </FormField>
 
@@ -178,6 +210,7 @@ export function TaxRegimeCalculatorClient() {
             label="HRA exemption (annual, ₹)"
             id="hra"
             hint="Optional. If you are not claiming HRA in old regime, leave 0."
+            error={fieldErrors.hra}
           >
             <Input id="hra" inputMode="decimal" value={hra} onChange={(e) => setHra(e.target.value)} placeholder="0" />
           </FormField>

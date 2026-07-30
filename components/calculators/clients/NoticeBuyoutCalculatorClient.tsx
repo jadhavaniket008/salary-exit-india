@@ -19,6 +19,7 @@ import { computeNoticeBuyout, NOTICE_WORKED_EXAMPLE_INPUT } from "@/lib/calculat
 import { formatInr } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative, isValidMonthYear } from "@/lib/validation/validators";
+import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
 import type { NoticeDayCountMethod, NoticeSalaryBasis } from "@/types/notice";
 
 const months = [
@@ -48,6 +49,7 @@ export function NoticeBuyoutCalculatorClient() {
   const [customDivisor, setCustomDivisor] = useState("");
 
   const [errors, setErrors] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<ReturnType<typeof computeNoticeBuyout> | null>(
     null
   );
@@ -73,6 +75,7 @@ export function NoticeBuyoutCalculatorClient() {
     setWorkingDays("");
     setCustomDivisor("");
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
     setShowResult(false);
   }
@@ -80,61 +83,95 @@ export function NoticeBuyoutCalculatorClient() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors: string[] = [];
+    const nextFieldErrors: Record<string, string> = {};
 
-    const g = sanitizeNumber(gross);
-    if (!g.ok) nextErrors.push("Gross monthly salary: " + g.error);
-    else {
+    const g = sanitizeNumber(gross, { label: "Gross monthly salary" });
+    if (!g.ok) {
+      nextErrors.push(g.error);
+      nextFieldErrors.gross = g.error;
+    } else {
       const nn = assertNonNegative("Gross monthly salary", g.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.gross = nn;
+      }
     }
 
-    const n = sanitizeNumber(noticeDays);
-    if (!n.ok) nextErrors.push("Notice days: " + n.error);
-    else {
+    const n = sanitizeNumber(noticeDays, { label: "Notice days" });
+    if (!n.ok) {
+      nextErrors.push(n.error);
+      nextFieldErrors.ndays = n.error;
+    } else {
       const nn = assertNonNegative("Notice days", n.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.ndays = nn;
+      }
     }
 
     let mInt = 0;
     let yInt = 0;
     if (dayCountMethod === "calendar") {
-      const mo = sanitizeNumber(month);
-      const yr = sanitizeNumber(year);
-      if (!mo.ok) nextErrors.push("Month: " + mo.error);
-      if (!yr.ok) nextErrors.push("Year: " + yr.error);
+      const mo = sanitizeNumber(month, { label: "Month" });
+      const yr = sanitizeNumber(year, { label: "Year" });
+      if (!mo.ok) {
+        nextErrors.push(mo.error);
+        nextFieldErrors.month = mo.error;
+      }
+      if (!yr.ok) {
+        nextErrors.push(yr.error);
+        nextFieldErrors.year = yr.error;
+      }
       mInt = mo.ok ? Math.trunc(mo.value) : 0;
       yInt = yr.ok ? Math.trunc(yr.value) : 0;
       if (mo.ok && yr.ok && !isValidMonthYear(mInt, yInt)) {
-        nextErrors.push("Month/year must be a valid calendar month.");
+        const msg = "Choose a valid month and year.";
+        nextErrors.push(msg);
+        nextFieldErrors.year = msg;
       }
     }
 
     let workingDaysVal: number | undefined;
     if (dayCountMethod === "workingDays") {
-      const w = sanitizeNumber(workingDays);
-      if (!w.ok) nextErrors.push("Working days in month: " + w.error);
-      else {
-        const nn = assertNonNegative("Working days in month", w.value);
-        if (nn) nextErrors.push(nn);
+      const w = sanitizeNumber(workingDays, { label: "Working days in the month" });
+      if (!w.ok) {
+        nextErrors.push(w.error);
+        nextFieldErrors["working-days"] = w.error;
+      } else {
+        const nn = assertNonNegative("Working days in the month", w.value);
+        if (nn) {
+          nextErrors.push(nn);
+          nextFieldErrors["working-days"] = nn;
+        }
         workingDaysVal = w.value;
       }
     }
 
     let customDivisorVal: number | undefined;
     if (dayCountMethod === "custom") {
-      const c = sanitizeNumber(customDivisor);
-      if (!c.ok) nextErrors.push("Custom divisor: " + c.error);
-      else {
+      const c = sanitizeNumber(customDivisor, { label: "Custom divisor" });
+      if (!c.ok) {
+        nextErrors.push(c.error);
+        nextFieldErrors["custom-divisor"] = c.error;
+      } else {
         const nn = assertNonNegative("Custom divisor", c.value);
-        if (nn) nextErrors.push(nn);
+        if (nn) {
+          nextErrors.push(nn);
+          nextFieldErrors["custom-divisor"] = nn;
+        }
         customDivisorVal = c.value;
       }
     }
 
     setErrors(nextErrors);
+    setFieldErrors(nextFieldErrors);
     if (nextErrors.length > 0) {
       setResult(null);
       setShowResult(false);
+      focusFirstInvalidField(
+        ["gross", "ndays", "month", "year", "working-days", "custom-divisor"],
+        nextFieldErrors
+      );
       return;
     }
 
@@ -205,11 +242,12 @@ export function NoticeBuyoutCalculatorClient() {
                   : "Gross monthly salary (₹)"
             }
             id="gross"
+            error={fieldErrors.gross}
           >
             <Input id="gross" inputMode="decimal" value={gross} onChange={(e) => setGross(e.target.value)} />
           </FormField>
 
-          <FormField label="Notice days" id="ndays">
+          <FormField label="Notice days" id="ndays" error={fieldErrors.ndays}>
             <Input id="ndays" inputMode="decimal" value={noticeDays} onChange={(e) => setNoticeDays(e.target.value)} />
           </FormField>
 
@@ -237,7 +275,7 @@ export function NoticeBuyoutCalculatorClient() {
 
           {dayCountMethod === "calendar" ? (
             <div className="grid gap-4 sm:grid-cols-2">
-              <FormField label="Month" id="month">
+              <FormField label="Month" id="month" error={fieldErrors.month}>
                 <select
                   id="month"
                   className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
@@ -251,7 +289,7 @@ export function NoticeBuyoutCalculatorClient() {
                   ))}
                 </select>
               </FormField>
-              <FormField label="Year" id="year">
+              <FormField label="Year" id="year" error={fieldErrors.year}>
                 <Input id="year" inputMode="numeric" value={year} onChange={(e) => setYear(e.target.value)} />
               </FormField>
             </div>
@@ -262,6 +300,7 @@ export function NoticeBuyoutCalculatorClient() {
               label="Working days in the month"
               id="working-days"
               hint="Count only days your company treats as working days for this purpose."
+              error={fieldErrors["working-days"]}
             >
               <Input
                 id="working-days"
@@ -277,6 +316,7 @@ export function NoticeBuyoutCalculatorClient() {
               label="Custom divisor (days)"
               id="custom-divisor"
               hint="Whatever number your contract or HR specifies for prorating a month."
+              error={fieldErrors["custom-divisor"]}
             >
               <Input
                 id="custom-divisor"

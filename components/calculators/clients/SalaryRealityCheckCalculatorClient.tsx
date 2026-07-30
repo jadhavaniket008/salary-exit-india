@@ -128,19 +128,40 @@ export function SalaryRealityCheckCalculatorClient({
   const validationErrors = useMemo(() => {
     const next: string[] = [];
     if (ctc.trim()) {
-      const c = sanitizeNumber(ctc);
-      if (!c.ok) next.push(`${primaryFieldLabel} (₹): ` + c.error);
+      const c = sanitizeNumber(ctc, { label: `${primaryFieldLabel} (₹)` });
+      if (!c.ok) next.push(c.error);
       else {
         const nn = assertNonNegative(primaryFieldLabel, c.value);
         if (nn) next.push(nn);
       }
     }
     if (rent.trim()) {
-      const r = sanitizeNumber(rent);
-      if (!r.ok) next.push("Monthly rent (₹): " + r.error);
+      const r = sanitizeNumber(rent, { label: "Monthly rent (₹)" });
+      if (!r.ok) next.push(r.error);
       else {
         const nn = assertNonNegative("Monthly rent", r.value);
         if (nn) next.push(nn);
+      }
+    }
+    return next;
+  }, [ctc, rent, primaryFieldLabel]);
+
+  const fieldErrors = useMemo(() => {
+    const next: Record<string, string> = {};
+    if (ctc.trim()) {
+      const c = sanitizeNumber(ctc, { label: `${primaryFieldLabel} (₹)` });
+      if (!c.ok) next.ctc = c.error;
+      else {
+        const nn = assertNonNegative(primaryFieldLabel, c.value);
+        if (nn) next.ctc = nn;
+      }
+    }
+    if (rent.trim()) {
+      const r = sanitizeNumber(rent, { label: "Monthly rent (₹)" });
+      if (!r.ok) next.rent = r.error;
+      else {
+        const nn = assertNonNegative("Monthly rent", r.value);
+        if (nn) next.rent = nn;
       }
     }
     return next;
@@ -334,6 +355,7 @@ export function SalaryRealityCheckCalculatorClient({
                 ? "Your offer-letter CTC — enter employer PF, gratuity, and insurance below to get an accurate gross."
                 : "Your annual gross salary — already excludes employer-side costs."
             }
+            error={fieldErrors.ctc}
           >
             <Input
               id="ctc"
@@ -394,7 +416,12 @@ export function SalaryRealityCheckCalculatorClient({
             </label>
           </fieldset>
 
-          <FormField label="Monthly rent (₹)" id="rent" hint="Your actual or expected rent; 0 if not paying rent.">
+          <FormField
+            label="Monthly rent (₹)"
+            id="rent"
+            hint="Your actual or expected rent; 0 if not paying rent."
+            error={fieldErrors.rent}
+          >
             <Input
               id="rent"
               inputMode="decimal"

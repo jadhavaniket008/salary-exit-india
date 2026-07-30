@@ -19,6 +19,7 @@ import { compareOffers } from "@/lib/calculators/offer-comparison";
 import { formatInr } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
+import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
 import type { OfferComparisonOutput } from "@/types/offer";
 
 type Row = {
@@ -38,6 +39,7 @@ export function OfferComparisonCalculatorClient() {
   const [rows, setRows] = useState<Row[]>([emptyOffer(), emptyOffer()]);
 
   const [errors, setErrors] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<OfferComparisonOutput | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -53,6 +55,7 @@ export function OfferComparisonCalculatorClient() {
   function reset() {
     setRows([emptyOffer(), emptyOffer()]);
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
     setShowResult(false);
   }
@@ -60,6 +63,8 @@ export function OfferComparisonCalculatorClient() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors: string[] = [];
+    const nextFieldErrors: Record<string, string> = {};
+    const orderedFieldIds: string[] = [];
 
     const offers: {
       label: string;
@@ -78,27 +83,48 @@ export function OfferComparisonCalculatorClient() {
         return;
       }
       const label = r.label.trim() === "" ? `Offer ${idx + 1}` : r.label.trim();
+      const ctcId = `${baseId}-ctc-${r.id}`;
+      const ihId = `${baseId}-ih-${r.id}`;
+      const taxId = `${baseId}-tax-${r.id}`;
+      orderedFieldIds.push(ctcId, ihId, taxId);
 
-      const ctc = sanitizeNumber(r.ctc);
-      if (!ctc.ok) nextErrors.push(`${label}: CTC ${ctc.error}`);
-      else {
+      const ctc = sanitizeNumber(r.ctc, { label: `${label}'s annual CTC` });
+      if (!ctc.ok) {
+        nextErrors.push(ctc.error);
+        nextFieldErrors[ctcId] = ctc.error;
+      } else {
         const nn = assertNonNegative(`${label} CTC`, ctc.value);
-        if (nn) nextErrors.push(nn);
+        if (nn) {
+          nextErrors.push(nn);
+          nextFieldErrors[ctcId] = nn;
+        }
       }
 
-      const ih = sanitizeNumber(r.inHand);
-      if (!ih.ok) nextErrors.push(`${label}: In-hand ${ih.error}`);
-      else {
+      const ih = sanitizeNumber(r.inHand, { label: `${label}'s monthly in-hand` });
+      if (!ih.ok) {
+        nextErrors.push(ih.error);
+        nextFieldErrors[ihId] = ih.error;
+      } else {
         const nn = assertNonNegative(`${label} in-hand`, ih.value);
-        if (nn) nextErrors.push(nn);
+        if (nn) {
+          nextErrors.push(nn);
+          nextFieldErrors[ihId] = nn;
+        }
       }
 
       const tx =
-        r.tax.trim() === "" ? { ok: true as const, value: undefined as number | undefined } : sanitizeNumber(r.tax);
-      if (!tx.ok) nextErrors.push(`${label}: Tax ${tx.error}`);
-      else if (tx.value !== undefined) {
+        r.tax.trim() === ""
+          ? { ok: true as const, value: undefined as number | undefined }
+          : sanitizeNumber(r.tax, { label: `${label}'s annual tax` });
+      if (!tx.ok) {
+        nextErrors.push(tx.error);
+        nextFieldErrors[taxId] = tx.error;
+      } else if (tx.value !== undefined) {
         const nn = assertNonNegative(`${label} tax`, tx.value);
-        if (nn) nextErrors.push(nn);
+        if (nn) {
+          nextErrors.push(nn);
+          nextFieldErrors[taxId] = nn;
+        }
       }
 
       if (ctc.ok && ih.ok && tx.ok) {
@@ -116,9 +142,11 @@ export function OfferComparisonCalculatorClient() {
     }
 
     setErrors(nextErrors);
+    setFieldErrors(nextFieldErrors);
     if (nextErrors.length > 0) {
       setResult(null);
       setShowResult(false);
+      focusFirstInvalidField(orderedFieldIds, nextFieldErrors);
       return;
     }
 
@@ -182,7 +210,11 @@ export function OfferComparisonCalculatorClient() {
               </FormField>
 
               <div className="grid gap-4 sm:grid-cols-3">
-                <FormField label="Annual CTC (₹)" id={`${baseId}-ctc-${row.id}`}>
+                <FormField
+                  label="Annual CTC (₹)"
+                  id={`${baseId}-ctc-${row.id}`}
+                  error={fieldErrors[`${baseId}-ctc-${row.id}`]}
+                >
                   <Input
                     id={`${baseId}-ctc-${row.id}`}
                     inputMode="decimal"
@@ -194,6 +226,7 @@ export function OfferComparisonCalculatorClient() {
                   label="Est. monthly in-hand (₹)"
                   id={`${baseId}-ih-${row.id}`}
                   hint="Use the same method for each offer."
+                  error={fieldErrors[`${baseId}-ih-${row.id}`]}
                 >
                   <Input
                     id={`${baseId}-ih-${row.id}`}
@@ -205,6 +238,7 @@ export function OfferComparisonCalculatorClient() {
                 <FormField
                   label="Est. annual tax (₹, optional)"
                   id={`${baseId}-tax-${row.id}`}
+                  error={fieldErrors[`${baseId}-tax-${row.id}`]}
                 >
                   <Input
                     id={`${baseId}-tax-${row.id}`}

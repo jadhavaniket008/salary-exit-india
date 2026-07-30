@@ -20,6 +20,7 @@ import { computeSalaryHike, SALARY_HIKE_WORKED_EXAMPLE_INPUT } from "@/lib/calcu
 import { formatInr } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
+import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
 import type { SalaryHikeOutput } from "@/types/hike";
 
 export function SalaryHikeCalculatorClient() {
@@ -27,6 +28,7 @@ export function SalaryHikeCalculatorClient() {
   const [newC, setNewC] = useState("");
 
   const [errors, setErrors] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<SalaryHikeOutput | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -46,6 +48,7 @@ export function SalaryHikeCalculatorClient() {
     setOldC("");
     setNewC("");
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
     setShowResult(false);
   }
@@ -53,24 +56,37 @@ export function SalaryHikeCalculatorClient() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors: string[] = [];
+    const nextFieldErrors: Record<string, string> = {};
 
-    const o = sanitizeNumber(oldC);
-    const n = sanitizeNumber(newC);
-    if (!o.ok) nextErrors.push("Old annual CTC: " + o.error);
-    else {
+    const o = sanitizeNumber(oldC, { label: "Old annual CTC" });
+    const n = sanitizeNumber(newC, { label: "New annual CTC" });
+    if (!o.ok) {
+      nextErrors.push(o.error);
+      nextFieldErrors.old = o.error;
+    } else {
       const nn = assertNonNegative("Old annual CTC", o.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.old = nn;
+      }
     }
-    if (!n.ok) nextErrors.push("New annual CTC: " + n.error);
-    else {
+    if (!n.ok) {
+      nextErrors.push(n.error);
+      nextFieldErrors.new = n.error;
+    } else {
       const nn = assertNonNegative("New annual CTC", n.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.new = nn;
+      }
     }
 
     setErrors(nextErrors);
+    setFieldErrors(nextFieldErrors);
     if (nextErrors.length > 0) {
       setResult(null);
       setShowResult(false);
+      focusFirstInvalidField(["old", "new"], nextFieldErrors);
       return;
     }
 
@@ -97,10 +113,10 @@ export function SalaryHikeCalculatorClient() {
 
       <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
-          <FormField label="Old annual CTC / gross (₹)" id="old">
+          <FormField label="Old annual CTC / gross (₹)" id="old" error={fieldErrors.old}>
             <Input id="old" inputMode="decimal" value={oldC} onChange={(e) => setOldC(e.target.value)} />
           </FormField>
-          <FormField label="New annual CTC / gross (₹)" id="new">
+          <FormField label="New annual CTC / gross (₹)" id="new" error={fieldErrors.new}>
             <Input id="new" inputMode="decimal" value={newC} onChange={(e) => setNewC(e.target.value)} />
           </FormField>
           <ValidationSummary messages={errors} />

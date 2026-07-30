@@ -21,6 +21,7 @@ import { DEFAULT_HRA_ASSUMPTIONS } from "@/lib/config/hra";
 import { formatInr } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
+import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
 import type { HraOutput } from "@/types/hra";
 
 export function HraCalculatorClient() {
@@ -31,6 +32,7 @@ export function HraCalculatorClient() {
   const [metro, setMetro] = useState(true);
 
   const [errors, setErrors] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<HraOutput | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -53,6 +55,7 @@ export function HraCalculatorClient() {
     setRent("");
     setMetro(true);
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
     setShowResult(false);
   }
@@ -60,30 +63,37 @@ export function HraCalculatorClient() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors: string[] = [];
+    const nextFieldErrors: Record<string, string> = {};
 
     const fields = [
-      { name: "Basic (annual)", raw: basic },
-      { name: "DA (annual)", raw: da },
-      { name: "HRA received (annual)", raw: hra },
-      { name: "Rent paid (annual)", raw: rent },
+      { id: "basic", name: "Basic salary (annual)", raw: basic },
+      { id: "da", name: "Dearness allowance (annual)", raw: da },
+      { id: "hra", name: "HRA received (annual)", raw: hra },
+      { id: "rent", name: "Rent paid (annual)", raw: rent },
     ] as const;
 
     const values: number[] = [];
     for (const f of fields) {
-      const s = sanitizeNumber(f.raw);
+      const s = sanitizeNumber(f.raw, { label: f.name });
       if (!s.ok) {
-        nextErrors.push(`${f.name}: ${s.error}`);
+        nextErrors.push(s.error);
+        nextFieldErrors[f.id] = s.error;
       } else {
         const nn = assertNonNegative(f.name, s.value);
-        if (nn) nextErrors.push(nn);
+        if (nn) {
+          nextErrors.push(nn);
+          nextFieldErrors[f.id] = nn;
+        }
         values.push(s.value);
       }
     }
 
     setErrors(nextErrors);
+    setFieldErrors(nextFieldErrors);
     if (nextErrors.length > 0) {
       setResult(null);
       setShowResult(false);
+      focusFirstInvalidField(["basic", "da", "hra", "rent"], nextFieldErrors);
       return;
     }
 
@@ -122,20 +132,21 @@ export function HraCalculatorClient() {
 
       <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
-          <FormField label="Basic salary (annual, ₹)" id="basic">
+          <FormField label="Basic salary (annual, ₹)" id="basic" error={fieldErrors.basic}>
             <Input id="basic" inputMode="decimal" value={basic} onChange={(e) => setBasic(e.target.value)} />
           </FormField>
           <FormField
             label="Dearness allowance (annual, ₹)"
             id="da"
             hint="Use 0 if DA is not part of retirement benefits in your context."
+            error={fieldErrors.da}
           >
             <Input id="da" inputMode="decimal" value={da} onChange={(e) => setDa(e.target.value)} placeholder="0" />
           </FormField>
-          <FormField label="HRA received (annual, ₹)" id="hra">
+          <FormField label="HRA received (annual, ₹)" id="hra" error={fieldErrors.hra}>
             <Input id="hra" inputMode="decimal" value={hra} onChange={(e) => setHra(e.target.value)} />
           </FormField>
-          <FormField label="Rent paid (annual, ₹)" id="rent">
+          <FormField label="Rent paid (annual, ₹)" id="rent" error={fieldErrors.rent}>
             <Input id="rent" inputMode="decimal" value={rent} onChange={(e) => setRent(e.target.value)} />
           </FormField>
 

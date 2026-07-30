@@ -21,6 +21,7 @@ import { DEFAULT_GRATUITY_ASSUMPTIONS } from "@/lib/config/gratuity";
 import { formatInr } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
+import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
 import type { GratuityOutput } from "@/types/gratuity";
 
 export function GratuityCalculatorClient() {
@@ -29,6 +30,7 @@ export function GratuityCalculatorClient() {
   const [covered, setCovered] = useState(true);
 
   const [errors, setErrors] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<GratuityOutput | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -51,6 +53,7 @@ export function GratuityCalculatorClient() {
     setYears("");
     setCovered(true);
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
     setShowResult(false);
   }
@@ -58,25 +61,38 @@ export function GratuityCalculatorClient() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors: string[] = [];
+    const nextFieldErrors: Record<string, string> = {};
 
-    const m = sanitizeNumber(monthly);
-    if (!m.ok) nextErrors.push("Last drawn monthly salary (Basic+DA): " + m.error);
-    else {
+    const m = sanitizeNumber(monthly, { label: "Last drawn monthly salary (Basic+DA)" });
+    if (!m.ok) {
+      nextErrors.push(m.error);
+      nextFieldErrors.monthly = m.error;
+    } else {
       const nn = assertNonNegative("Last drawn monthly salary", m.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.monthly = nn;
+      }
     }
 
-    const y = sanitizeNumber(years);
-    if (!y.ok) nextErrors.push("Years of service: " + y.error);
-    else {
+    const y = sanitizeNumber(years, { label: "Years of service" });
+    if (!y.ok) {
+      nextErrors.push(y.error);
+      nextFieldErrors.years = y.error;
+    } else {
       const nn = assertNonNegative("Years of service", y.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.years = nn;
+      }
     }
 
     setErrors(nextErrors);
+    setFieldErrors(nextFieldErrors);
     if (nextErrors.length > 0) {
       setResult(null);
       setShowResult(false);
+      focusFirstInvalidField(["monthly", "years"], nextFieldErrors);
       return;
     }
 
@@ -114,11 +130,12 @@ export function GratuityCalculatorClient() {
             label="Last drawn monthly salary (Basic + DA, ₹)"
             id="monthly"
             hint="Use the definition consistent with your employer's gratuity policy."
+            error={fieldErrors.monthly}
           >
             <Input id="monthly" inputMode="decimal" value={monthly} onChange={(e) => setMonthly(e.target.value)} />
           </FormField>
 
-          <FormField label="Years of service" id="years" hint="e.g. 6.5">
+          <FormField label="Years of service" id="years" hint="e.g. 6.5" error={fieldErrors.years}>
             <Input id="years" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} />
           </FormField>
 

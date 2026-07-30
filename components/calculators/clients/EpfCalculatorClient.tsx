@@ -21,6 +21,7 @@ import { DEFAULT_PF_ASSUMPTIONS } from "@/lib/config/pf";
 import { formatInr } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
+import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
 import type { EpfOutput } from "@/types/epf";
 
 export function EpfCalculatorClient() {
@@ -28,6 +29,7 @@ export function EpfCalculatorClient() {
   const [useCeiling, setUseCeiling] = useState(true);
 
   const [errors, setErrors] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<EpfOutput | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -46,6 +48,7 @@ export function EpfCalculatorClient() {
     setWage("");
     setUseCeiling(true);
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
     setShowResult(false);
   }
@@ -53,18 +56,26 @@ export function EpfCalculatorClient() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors: string[] = [];
+    const nextFieldErrors: Record<string, string> = {};
 
-    const w = sanitizeNumber(wage);
-    if (!w.ok) nextErrors.push("PF wage (monthly): " + w.error);
-    else {
+    const w = sanitizeNumber(wage, { label: "PF wage (monthly)" });
+    if (!w.ok) {
+      nextErrors.push(w.error);
+      nextFieldErrors.wage = w.error;
+    } else {
       const nn = assertNonNegative("PF wage (monthly)", w.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.wage = nn;
+      }
     }
 
     setErrors(nextErrors);
+    setFieldErrors(nextFieldErrors);
     if (nextErrors.length > 0) {
       setResult(null);
       setShowResult(false);
+      focusFirstInvalidField(["wage"], nextFieldErrors);
       return;
     }
 
@@ -103,6 +114,7 @@ export function EpfCalculatorClient() {
             label="PF wage (monthly, ₹)"
             id="wage"
             hint="If unsure, start with your monthly Basic+DA from payslip."
+            error={fieldErrors.wage}
           >
             <Input id="wage" inputMode="decimal" value={wage} onChange={(e) => setWage(e.target.value)} />
           </FormField>

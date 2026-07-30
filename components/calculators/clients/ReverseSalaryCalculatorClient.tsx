@@ -21,6 +21,7 @@ import { DEFAULT_PROFESSIONAL_TAX_ANNUAL_ESTIMATE } from "@/lib/config/professio
 import { formatInr } from "@/lib/format-inr";
 import { sanitizeNumber } from "@/lib/validation/sanitize";
 import { assertNonNegative } from "@/lib/validation/validators";
+import { focusFirstInvalidField } from "@/lib/validation/focus-first-invalid";
 import type { TaxRegime } from "@/types/salary";
 import type { ReverseSalaryOutput } from "@/types/reverse-salary";
 
@@ -39,6 +40,7 @@ export function ReverseSalaryCalculatorClient() {
   const [employerCostPct, setEmployerCostPct] = useState(10);
 
   const [errors, setErrors] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<ReverseSalaryOutput | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -56,6 +58,7 @@ export function ReverseSalaryCalculatorClient() {
     setBasicDaPct(Math.round(DEFAULT_BASIC_DA_SHARE_OF_GROSS * 100));
     setEmployerCostPct(10);
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
     setShowResult(false);
   }
@@ -63,25 +66,38 @@ export function ReverseSalaryCalculatorClient() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors: string[] = [];
+    const nextFieldErrors: Record<string, string> = {};
 
-    const target = sanitizeNumber(targetInHand);
-    if (!target.ok) nextErrors.push("Desired monthly in-hand: " + target.error);
-    else {
+    const target = sanitizeNumber(targetInHand, { label: "Desired monthly in-hand" });
+    if (!target.ok) {
+      nextErrors.push(target.error);
+      nextFieldErrors["target-in-hand"] = target.error;
+    } else {
       const nn = assertNonNegative("Desired monthly in-hand", target.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors["target-in-hand"] = nn;
+      }
     }
 
-    const ptVal = sanitizeNumber(pt, { fallback: 0 });
-    if (!ptVal.ok) nextErrors.push("Professional tax (annual): " + ptVal.error);
-    else {
+    const ptVal = sanitizeNumber(pt, { fallback: 0, label: "Professional tax (annual)" });
+    if (!ptVal.ok) {
+      nextErrors.push(ptVal.error);
+      nextFieldErrors.pt = ptVal.error;
+    } else {
       const nn = assertNonNegative("Professional tax (annual)", ptVal.value);
-      if (nn) nextErrors.push(nn);
+      if (nn) {
+        nextErrors.push(nn);
+        nextFieldErrors.pt = nn;
+      }
     }
 
     setErrors(nextErrors);
+    setFieldErrors(nextFieldErrors);
     if (nextErrors.length > 0 || !target.ok || !ptVal.ok) {
       setResult(null);
       setShowResult(false);
+      focusFirstInvalidField(["target-in-hand", "pt"], nextFieldErrors);
       return;
     }
 
@@ -128,6 +144,7 @@ export function ReverseSalaryCalculatorClient() {
             label="Desired monthly in-hand (₹)"
             id="target-in-hand"
             hint="What you want to actually receive in a normal, non-bonus month."
+            error={fieldErrors["target-in-hand"]}
           >
             <Input
               id="target-in-hand"
@@ -158,6 +175,7 @@ export function ReverseSalaryCalculatorClient() {
             label="Professional tax (annual, ₹)"
             id="pt"
             hint="Replace the default with your state's realistic annual PT if known."
+            error={fieldErrors.pt}
           >
             <Input id="pt" inputMode="decimal" value={pt} onChange={(e) => setPt(e.target.value)} />
           </FormField>
