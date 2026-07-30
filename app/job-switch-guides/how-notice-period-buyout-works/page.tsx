@@ -15,6 +15,16 @@ const meta = getGuideArticleByHubSegment("jobSwitch", "how-notice-period-buyout-
 
 export const metadata: Metadata = guideArticleMetadata(meta);
 
+const toc = [
+  { id: "what-it-tries", label: "What a notice buyout is trying to do" },
+  { id: "per-day-calculation", label: "The per-day salary problem: where most disputes start" },
+  { id: "worked-example", label: "A worked example: 45 days short on 90-day notice" },
+  { id: "gross-vs-net", label: "Gross vs net: how buyout is processed through payroll" },
+  { id: "what-you-can-negotiate", label: "What employees actually negotiate" },
+  { id: "new-employer-paying", label: "When the new employer offers to pay the buyout" },
+  { id: "legal-reality", label: "What happens if you just leave without paying" },
+];
+
 const faq: FaqItem[] = [
   {
     question: "Is buyout always calculated on gross salary?",
@@ -41,6 +51,7 @@ export default function NoticeBuyoutGuidePage() {
       urlPath={guideArticlePath(meta)}
       description={meta.description}
       faq={faq}
+      toc={toc}
       lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
       lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
       guideCluster={{ hub: "jobSwitch", segment: "how-notice-period-buyout-works" }}

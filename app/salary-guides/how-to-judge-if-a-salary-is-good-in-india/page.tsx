@@ -15,6 +15,16 @@ const meta = getGuideArticleByHubSegment("salary", "how-to-judge-if-a-salary-is-
 
 export const metadata: Metadata = guideArticleMetadata(meta);
 
+const toc = [
+  { id: "start-in-hand", label: "Step 1: Convert CTC to monthly in-hand first" },
+  { id: "fixed-costs", label: "Step 2: Stack your fixed costs against in-hand" },
+  { id: "savings-target", label: "Step 3: Define a savings target first, not last" },
+  { id: "city-matters", label: "Step 4: Make the city completely explicit" },
+  { id: "variable-pay", label: "Step 5: Price variable pay and ESOPs conservatively" },
+  { id: "career-growth", label: "Step 6: Factor the career trajectory, not just current cash" },
+  { id: "verdict", label: "The four-item verdict" },
+];
+
 const faq: FaqItem[] = [
   {
     question: "Is a higher CTC always better?",
@@ -46,6 +56,7 @@ export default function HowToJudgeSalaryGoodIndiaPage() {
       urlPath={guideArticlePath(meta)}
       description={meta.description}
       faq={faq}
+      toc={toc}
       lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
       lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
       guideCluster={{ hub: "salary", segment: "how-to-judge-if-a-salary-is-good-in-india" }}

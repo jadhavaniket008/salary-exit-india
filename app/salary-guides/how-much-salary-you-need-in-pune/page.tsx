@@ -15,6 +15,16 @@ const meta = getGuideArticleByHubSegment("salary", "how-much-salary-you-need-in-
 
 export const metadata: Metadata = guideArticleMetadata(meta);
 
+const toc = [
+  { id: "translate-ctc", label: "Step 1: Translate CTC to monthly cash before anything else" },
+  { id: "pune-corridors", label: "Pune's rent corridors: what each looks like in 2025" },
+  { id: "at-10-lpa", label: "What ₹10 LPA looks like in Pune" },
+  { id: "at-15-lpa", label: "What ₹15 LPA looks like in Pune" },
+  { id: "at-18-20-lpa", label: "What ₹18–20 LPA looks like in Pune" },
+  { id: "pune-vs-mumbai", label: "Pune vs Mumbai: the real comparison" },
+  { id: "pune-vs-bangalore", label: "Pune vs Bangalore: closer than most think" },
+];
+
 const faq: FaqItem[] = [
   {
     question: "Is Pune cheaper than Bangalore for the same salary?",
@@ -41,6 +51,7 @@ export default function HowMuchSalaryPunePage() {
       urlPath={guideArticlePath(meta)}
       description={meta.description}
       faq={faq}
+      toc={toc}
       lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
       lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
       guideCluster={{ hub: "salary", segment: "how-much-salary-you-need-in-pune" }}

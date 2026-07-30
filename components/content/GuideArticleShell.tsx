@@ -15,6 +15,12 @@ import { getGuideClusterLinks } from "@/lib/content/guide-cluster-links";
 import { getSalaryEnoughPageConfig } from "@/lib/content/salary-enough-pages.config";
 import { salaryEnoughPath } from "@/lib/routes/landing-routes";
 
+/** One entry in the in-article table of contents — id must match a heading's id in the guide body. */
+export type GuideTocEntry = {
+  id: string;
+  label: string;
+};
+
 type Props = {
   title: string;
   intro: string;
@@ -32,6 +38,12 @@ type Props = {
   methodologyHref?: string | false;
   /** Enables contextual links to salary-enough pages + one calculator (internal linking cluster). */
   guideCluster?: { hub: GuideHubId; segment: string };
+  /**
+   * Anchor-link table of contents for long guides — only pass this for guides with many
+   * h2 sections (roughly 7+). Short guides should omit it; forcing a ToC onto a short
+   * article adds noise without helping navigation.
+   */
+  toc?: GuideTocEntry[];
 };
 
 export function GuideArticleShell({
@@ -47,6 +59,7 @@ export function GuideArticleShell({
   lastUpdatedIso,
   methodologyHref,
   guideCluster,
+  toc,
 }: Props) {
   const clusterSpec = guideCluster ? getGuideClusterLinks(guideCluster.hub, guideCluster.segment) : undefined;
   const clusterEnough =
@@ -78,32 +91,54 @@ export function GuideArticleShell({
       <Section className="pt-6 sm:pt-10">
         <Container className="max-w-3xl space-y-8">
           <BreadcrumbNav items={breadcrumbs} />
-          <header className="space-y-3">
+          <header className="space-y-4">
             <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               {title}
             </h1>
-            <p className="text-base text-foreground-secondary">{intro}</p>
-            {(lastUpdated || methodologyHref !== false) && (
-              <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2 border-b border-border pb-6 text-sm text-foreground-muted">
-                {lastUpdated ? (
-                  <span>
-                    Last updated:{" "}
-                    <time dateTime={lastUpdatedIso ?? undefined} className="text-foreground-secondary">
-                      {lastUpdated}
-                    </time>
-                  </span>
-                ) : null}
-                {methodologyHref !== false ? (
-                  <Link
-                    href={methodologyHref ?? ROUTES.methodology}
-                    className="font-medium text-foreground underline underline-offset-2"
-                  >
-                    Methodology & calculator assumptions
-                  </Link>
-                ) : null}
-              </div>
-            )}
+            <p className="text-lg leading-relaxed text-foreground-secondary">{intro}</p>
+            <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2 border-b border-border pb-6 text-sm text-foreground-muted">
+              <span>
+                By{" "}
+                <Link href={ROUTES.about} className="font-medium text-foreground-secondary underline underline-offset-2">
+                  Aniket Jadhav
+                </Link>
+              </span>
+              {lastUpdated ? (
+                <span>
+                  Last updated:{" "}
+                  <time dateTime={lastUpdatedIso ?? undefined} className="text-foreground-secondary">
+                    {lastUpdated}
+                  </time>
+                </span>
+              ) : null}
+              {methodologyHref !== false ? (
+                <Link
+                  href={methodologyHref ?? ROUTES.methodology}
+                  className="font-medium text-foreground underline underline-offset-2"
+                >
+                  Methodology & calculator assumptions
+                </Link>
+              ) : null}
+            </div>
           </header>
+
+          {toc && toc.length > 0 ? (
+            <nav aria-label="Table of contents" className="rounded-xl border border-border bg-surface-subtle p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-foreground-muted">In this guide</p>
+              <ol className="mt-2 space-y-1.5 text-sm">
+                {toc.map((item) => (
+                  <li key={item.id}>
+                    <a
+                      href={`#${item.id}`}
+                      className="text-foreground-secondary underline underline-offset-2 hover:text-foreground"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          ) : null}
 
           <AdSlot position="below-hero" label="Advertisement" />
 
@@ -159,28 +194,20 @@ export function GuideArticleShell({
 
           <div className="rounded-xl border border-border bg-surface-subtle p-4 text-sm">
             <p className="font-medium text-foreground">Keep exploring</p>
-            <ul className="mt-2 space-y-1 text-foreground-secondary">
-              <li>
-                <Link className="underline" href="/calculators">
-                  Browse all calculators
-                </Link>
-              </li>
-              <li>
-                <Link className="underline" href="/salary-guides">
-                  Salary guides hub
-                </Link>
-              </li>
-              <li>
-                <Link className="underline" href="/tax-guides">
-                  Tax guides hub
-                </Link>
-              </li>
-              <li>
-                <Link className="underline" href="/job-switch-guides">
-                  Job switch & exit guides
-                </Link>
-              </li>
-            </ul>
+            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1.5 text-foreground-secondary">
+              <Link className="underline underline-offset-2" href="/calculators">
+                Browse all calculators
+              </Link>
+              <Link className="underline underline-offset-2" href="/salary-guides">
+                Salary guides hub
+              </Link>
+              <Link className="underline underline-offset-2" href="/tax-guides">
+                Tax guides hub
+              </Link>
+              <Link className="underline underline-offset-2" href="/job-switch-guides">
+                Job switch & exit guides
+              </Link>
+            </div>
           </div>
 
           <DisclaimerBlock />

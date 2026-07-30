@@ -15,6 +15,16 @@ const meta = getGuideArticleByHubSegment("jobSwitch", "compare-job-offers-beyond
 
 export const metadata: Metadata = guideArticleMetadata(meta);
 
+const toc = [
+  { id: "build-inhand", label: "Step 1: Build a credible monthly in-hand for each offer" },
+  { id: "regime-comparison", label: "Step 2: Account for tax regime impact across offers" },
+  { id: "variable-pay", label: "Step 3: Model variable pay realistically, not optimistically" },
+  { id: "joining-bonus", label: "Step 4: The joining bonus trap" },
+  { id: "benefits", label: "Step 5: Benefits that matter for real financial outcomes" },
+  { id: "exit-economics", label: "Step 6: Check exit economics before you join" },
+  { id: "city-rent", label: "Step 7: If offers are in different cities, model rent explicitly" },
+];
+
 const faq: FaqItem[] = [
   {
     question: "What is the biggest mistake when comparing offers?",
@@ -41,6 +51,7 @@ export default function CompareOffersGuidePage() {
       urlPath={guideArticlePath(meta)}
       description={meta.description}
       faq={faq}
+      toc={toc}
       lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
       lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
       guideCluster={{ hub: "jobSwitch", segment: "compare-job-offers-beyond-ctc" }}

@@ -15,6 +15,16 @@ const meta = getGuideArticleByHubSegment("salary", "how-much-salary-you-need-in-
 
 export const metadata: Metadata = guideArticleMetadata(meta);
 
+const toc = [
+  { id: "ctc-to-inhand-first", label: "Always translate CTC to monthly in-hand first" },
+  { id: "rent-corridors", label: "Bangalore's rent corridors: the same LPA feels different by location" },
+  { id: "at-10-lpa", label: "What ₹10 LPA looks like in Bangalore" },
+  { id: "at-15-lpa", label: "What ₹15 LPA looks like in Bangalore" },
+  { id: "at-20-lpa", label: "What ₹20 LPA looks like in Bangalore" },
+  { id: "commute-factor", label: "The commute factor: Bangalore's hidden cost" },
+  { id: "comparing-cities", label: "Comparing Bangalore to other cities" },
+];
+
 const faq: FaqItem[] = [
   {
     question: "What is a good salary for a software engineer in Bangalore?",
@@ -41,6 +51,7 @@ export default function HowMuchSalaryBangalorePage() {
       urlPath={guideArticlePath(meta)}
       description={meta.description}
       faq={faq}
+      toc={toc}
       lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
       lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
       guideCluster={{ hub: "salary", segment: "how-much-salary-you-need-in-bangalore" }}

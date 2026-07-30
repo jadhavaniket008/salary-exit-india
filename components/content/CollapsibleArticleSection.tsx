@@ -5,6 +5,8 @@ type Props = {
   children: ReactNode;
   /** Open by default — use sparingly, only for the single most important section on a page. */
   defaultOpen?: boolean;
+  /** Anchor id — set when the section is also a table-of-contents / deep-link target. */
+  id?: string;
 };
 
 /**
@@ -12,10 +14,11 @@ type Props = {
  * (crawlable, no JS required to read) while collapsed by default — cuts vertical
  * length on calculator pages without removing any content.
  */
-export function CollapsibleArticleSection({ title, children, defaultOpen = false }: Props) {
+export function CollapsibleArticleSection({ title, children, defaultOpen = false, id }: Props) {
   return (
     <details
-      className="group rounded-xl border border-border bg-surface p-5 open:pb-5 [&_summary::-webkit-details-marker]:hidden"
+      id={id}
+      className="group scroll-mt-24 rounded-xl border border-border bg-surface p-5 open:pb-5 [&_summary::-webkit-details-marker]:hidden"
       open={defaultOpen}
     >
       <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-xl font-semibold text-foreground">

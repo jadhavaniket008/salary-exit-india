@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArticleProse } from "@/components/content/ArticleProse";
+import { CollapsibleArticleSection } from "@/components/content/CollapsibleArticleSection";
 import { ROUTES } from "@/lib/routes";
 
 export function FormSixteenBody() {
@@ -31,52 +32,60 @@ export function FormSixteenBody() {
         </li>
       </ul>
 
-      <h2 id="part-b-line-by-line">Part B, line by line</h2>
-      <p>The computation on Part B generally follows this order:</p>
-      <ol>
-        <li>
-          <strong>Gross salary</strong> — basic + allowances + perquisites (Section 17(1), 17(2), 17(3)
-          combined). This should be close to your payslip&apos;s annual gross, though timing differences
-          (bonus paid in a different month, ESOP perquisite value, rent-free accommodation valuation) can
-          create a small gap.
-        </li>
-        <li>
-          <strong>Less: exemptions under Section 10</strong> — HRA exemption, LTA exemption, and similar,
-          but only if you are on the <strong>old regime</strong>. Under the new regime, this line is
-          usually zero since most Section 10 exemptions do not apply.
-        </li>
-        <li>
-          <strong>Standard deduction under Section 16</strong> — a flat deduction for salaried employees,
-          different under old vs new regime (see the{" "}
-          <Link href={ROUTES.oldVsNewTaxRegimeCalculator}>old vs new regime comparison</Link> for current
-          FY figures).
-        </li>
-        <li>
-          <strong>Income chargeable under the head &quot;Salaries&quot;</strong> — gross salary minus the
-          two lines above.
-        </li>
-        <li>
-          <strong>Deductions under Chapter VI-A</strong> — 80C, 80D, 80CCD(1B), etc. Populated only if you
-          declared the old regime and submitted proofs to payroll during the investment declaration window.
-          Under the new regime this section is largely blank except employer NPS contribution (80CCD(2)),
-          which remains available in both regimes.
-        </li>
-        <li>
-          <strong>Total taxable income</strong>, followed by <strong>tax on total income</strong> computed
-          on the applicable slab (old or new, whichever your employer used for TDS).
-        </li>
-        <li>
-          <strong>Rebate under Section 87A</strong> — brings tax to nil if your taxable income is at or
-          below the rebate threshold for the regime and year in question.
-        </li>
-        <li>
-          <strong>Health and education cess</strong>, added after rebate and any surcharge.
-        </li>
-        <li>
-          <strong>Net tax payable</strong> and, at the bottom, <strong>total TDS deducted</strong> — these
-          two numbers should match if your employer withheld exactly what was due across the year.
-        </li>
-      </ol>
+      <CollapsibleArticleSection id="part-b-line-by-line" title="Part B, line by line" defaultOpen>
+        <p className="text-foreground-secondary">
+          The computation on Part B generally follows this order:
+        </p>
+        <ol className="list-decimal space-y-3 pl-5 text-foreground-secondary marker:text-foreground-muted [&_strong]:text-foreground">
+          <li>
+            <strong>Gross salary</strong> — basic + allowances + perquisites (Section 17(1), 17(2), 17(3)
+            combined). This should be close to your payslip&apos;s annual gross, though timing differences
+            (bonus paid in a different month, ESOP perquisite value, rent-free accommodation valuation) can
+            create a small gap.
+          </li>
+          <li>
+            <strong>Less: exemptions under Section 10</strong> — HRA exemption, LTA exemption, and similar,
+            but only if you are on the <strong>old regime</strong>. Under the new regime, this line is
+            usually zero since most Section 10 exemptions do not apply.
+          </li>
+          <li>
+            <strong>Standard deduction under Section 16</strong> — a flat deduction for salaried employees,
+            different under old vs new regime (see the{" "}
+            <Link
+              href={ROUTES.oldVsNewTaxRegimeCalculator}
+              className="font-medium text-foreground underline underline-offset-2"
+            >
+              old vs new regime comparison
+            </Link>{" "}
+            for current FY figures).
+          </li>
+          <li>
+            <strong>Income chargeable under the head &quot;Salaries&quot;</strong> — gross salary minus the
+            two lines above.
+          </li>
+          <li>
+            <strong>Deductions under Chapter VI-A</strong> — 80C, 80D, 80CCD(1B), etc. Populated only if you
+            declared the old regime and submitted proofs to payroll during the investment declaration window.
+            Under the new regime this section is largely blank except employer NPS contribution (80CCD(2)),
+            which remains available in both regimes.
+          </li>
+          <li>
+            <strong>Total taxable income</strong>, followed by <strong>tax on total income</strong> computed
+            on the applicable slab (old or new, whichever your employer used for TDS).
+          </li>
+          <li>
+            <strong>Rebate under Section 87A</strong> — brings tax to nil if your taxable income is at or
+            below the rebate threshold for the regime and year in question.
+          </li>
+          <li>
+            <strong>Health and education cess</strong>, added after rebate and any surcharge.
+          </li>
+          <li>
+            <strong>Net tax payable</strong> and, at the bottom, <strong>total TDS deducted</strong> — these
+            two numbers should match if your employer withheld exactly what was due across the year.
+          </li>
+        </ol>
+      </CollapsibleArticleSection>
 
       <h2 id="which-regime">Which regime is Form 16 built on</h2>
       <p>

@@ -10,6 +10,16 @@ const meta = getGuideArticleByHubSegment("salary", "pf-withdrawal-rules-explaine
 
 export const metadata: Metadata = guideArticleMetadata(meta);
 
+const toc = [
+  { id: "transfer-vs-withdraw", label: "When you switch jobs: transfer, don't withdraw" },
+  { id: "full-withdrawal", label: "Full withdrawal after leaving employment" },
+  { id: "partial-withdrawal", label: "Partial withdrawals (advances) while still employed" },
+  { id: "eps-separate", label: "The pension component (EPS) is a separate pot" },
+  { id: "tax-treatment", label: "Is your withdrawal actually tax-free?" },
+  { id: "how-to-withdraw", label: "How to actually file a claim" },
+  { id: "mistakes", label: "Mistakes that cost people the most" },
+];
+
 const faq: FaqItem[] = [
   {
     question: "Is PF withdrawal always tax-free?",
@@ -41,6 +51,7 @@ export default function PfWithdrawalRulesExplainedPage() {
       urlPath={guideArticlePath(meta)}
       description={meta.description}
       faq={faq}
+      toc={toc}
       lastUpdated="6 July 2026"
       lastUpdatedIso="2026-07-06"
       guideCluster={{ hub: "salary", segment: "pf-withdrawal-rules-explained" }}

@@ -10,6 +10,16 @@ const meta = getGuideArticleByHubSegment("tax", "how-to-read-form-16")!;
 
 export const metadata: Metadata = guideArticleMetadata(meta);
 
+const toc = [
+  { id: "what-it-is", label: "What Form 16 actually certifies" },
+  { id: "part-b-line-by-line", label: "Part B, line by line" },
+  { id: "which-regime", label: "Which regime is Form 16 built on" },
+  { id: "reconcile", label: "Reconciling Form 16 with Form 26AS / AIS" },
+  { id: "common-errors", label: "Common errors to check for" },
+  { id: "not-covered", label: "What Form 16 does not cover" },
+  { id: "timeline", label: "When you should have it, and what to do if you don't" },
+];
+
 const faq: FaqItem[] = [
   {
     question: "Why doesn't my Form 16 gross salary match my payslip total?",
@@ -41,6 +51,7 @@ export default function HowToReadFormSixteenPage() {
       urlPath={guideArticlePath(meta)}
       description={meta.description}
       faq={faq}
+      toc={toc}
       lastUpdated="6 July 2026"
       lastUpdatedIso="2026-07-06"
       guideCluster={{ hub: "tax", segment: "how-to-read-form-16" }}
