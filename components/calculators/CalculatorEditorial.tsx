@@ -1,6 +1,4 @@
-﻿import Link from "next/link";
-import type { CalculatorSlug } from "@/lib/routes";
-import { ROUTES } from "@/lib/routes";
+﻿import type { CalculatorSlug } from "@/lib/routes";
 
 function Section({ children }: { children: React.ReactNode }) {
   return (
@@ -35,58 +33,6 @@ function UL({ children }: { children: React.ReactNode }) {
     <ul className="list-disc list-inside space-y-1.5 text-sm leading-relaxed text-foreground-secondary">
       {children}
     </ul>
-  );
-}
-
-function CtcToInHandEditorial() {
-  return (
-    <Section>
-      <H2>How CTC converts to in-hand salary in India</H2>
-      <P>
-        When an employer offers you a job in India, the number in the offer letter is usually CTC —
-        Cost to Company. This includes everything the employer spends on you: your salary, employer
-        PF contribution, group insurance premiums, and sometimes a gratuity accrual. Your
-        actual monthly bank credit (in-hand salary) is always lower than CTC divided by 12, often
-        substantially so.
-      </P>
-      <P>
-        Three categories of deductions explain the gap. First, your employee PF contribution —
-        typically 12% of your PF wage (Basic + DA or a capped PF wage, depending on employer
-        policy) — is deducted before any cash reaches you. Second, professional tax (PT) is
-        a state-specific levy, usually collected monthly from payroll and ranging from zero
-        (some states) to around ₹200–250 per month in states like Maharashtra and Karnataka.
-        Third, TDS (Tax Deducted at Source) is your estimated annual income tax spread across
-        12 months. Under FY 2026-27 rules, new-regime employees with taxable income up to
-        ₹12 lakh pay zero income tax after the Section 87A rebate — but TDS is still computed
-        and spread every month until actual liability is zero.
-      </P>
-      <P>
-        The regime choice (old vs new) has a direct, sometimes large, effect on in-hand.
-        The new regime offers a ₹75,000 standard deduction (FY 2026-27) and lower slab rates,
-        making it the default for many employees — especially those with fewer deductions.
-        The old regime allows deductions like Section 80C (up to ₹1.5 lakh), HRA exemption,
-        and others that can make it worth more for employees with high rent or large
-        investments. Use the{" "}
-        <Link href={ROUTES.oldVsNewTaxRegimeCalculator} className="font-medium underline underline-offset-2">
-          tax regime comparison calculator
-        </Link>{" "}
-        to see which produces a lower annual liability for your specific numbers.
-      </P>
-      <P>
-        Common mistakes when reading an offer letter: treating CTC as a monthly number (divide
-        by 12 to get gross, then apply deductions); assuming all components are paid monthly
-        (bonus and variable pay are often paid quarterly or annually); and ignoring PF wage
-        definition differences between employers (the same CTC at two companies can produce
-        different monthly PF deductions and different in-hand).
-      </P>
-      <OL>
-        <li>Identify fixed monthly components versus annual/variable components in the offer.</li>
-        <li>Clarify whether employer PF is inside or outside the quoted CTC.</li>
-        <li>Ask payroll for the PF wage definition (Basic+DA vs a statutory cap approach).</li>
-        <li>Choose your tax regime before the financial year begins — mid-year switches are restricted.</li>
-        <li>Use this calculator with your actual Basic+DA and state PT for a personalized estimate.</li>
-      </OL>
-    </Section>
   );
 }
 
@@ -181,53 +127,6 @@ function TaxRegimeEditorial() {
         <li>The 87A rebate in the new regime eliminates tax for taxable income ≤ ₹12 lakh (FY 2026-27).</li>
         <li>Regime must be selected before the FY begins for TDS — you can change at filing time.</li>
         <li>Surcharge (and its own marginal relief) applies above ₹50 lakh taxable income — this calculator does not model surcharge. Section 87A marginal relief near the ₹12 lakh new-regime threshold is modeled separately and is not affected by this.</li>
-      </UL>
-    </Section>
-  );
-}
-
-function HraEditorial() {
-  return (
-    <Section>
-      <H2>HRA exemption under Section 10(13A): how it actually works</H2>
-      <P>
-        House Rent Allowance (HRA) is a salary component that can significantly reduce your
-        income tax liability under the old regime, through the Section 10(13A) exemption.
-        The key thing most employees misunderstand: receiving HRA does not automatically
-        mean all of it is tax-exempt. The exemption is the lowest of three different
-        calculated limits, which means your actual exempted amount depends on your salary
-        structure, your rent, and your city.
-      </P>
-      <P>
-        The three-part Section 10(13A) test: The exemption is the lowest of (1) actual
-        HRA received from the employer, (2) actual rent paid minus 10% of Basic salary,
-        and (3) 50% of Basic salary if you live in a metro city (Mumbai, Delhi, Kolkata,
-        Chennai) or 40% of Basic salary for all other locations. You need all three
-        numbers to find the correct exemption — which is why a calculator that asks for
-        all three inputs is necessary for an accurate estimate.
-      </P>
-      <P>
-        HRA exemption applies only under the old tax regime. If you choose the new
-        regime, your HRA is taxable even if you pay rent. This is the most common reason
-        employees with significant rent should compare regimes explicitly rather than
-        defaulting to whichever their employer assumed. The HRA exemption can reduce
-        taxable income substantially for someone paying ₹20,000–₹40,000/month in rent
-        in a metro city — sometimes making the old regime the better choice even accounting
-        for the new regime's lower slab rates.
-      </P>
-      <P>
-        Documentation matters: HRA exemption can be claimed at filing time with actual
-        rent receipts, but if the annual rent exceeds ₹1 lakh, the landlord's PAN is
-        required. Employers typically collect rent declarations and receipts mid-year and
-        adjust TDS accordingly. If you forget to submit proofs on time, you can still
-        claim the exemption at ITR filing — but you may face excess TDS during the year.
-      </P>
-      <UL>
-        <li>Only applicable under the old tax regime — zero benefit in the new regime.</li>
-        <li>Metro cities: 50% of Basic applies (Mumbai, Delhi, Kolkata, Chennai).</li>
-        <li>Non-metro: 40% of Basic applies.</li>
-        <li>Landlord PAN required if annual rent exceeds ₹1 lakh.</li>
-        <li>Exemption is on Basic salary, not gross — so "Basic" definition in your CTC letter matters.</li>
       </UL>
     </Section>
   );
@@ -615,11 +514,15 @@ function SalaryRealityCheckEditorial() {
   );
 }
 
+// ctcToInHand and hra are deliberately absent here: those two calculator
+// pages already carry their own richer, collapsible educational sections
+// (app/ctc-to-in-hand-calculator/page.tsx, app/hra-calculator/page.tsx) —
+// this always-expanded block would just duplicate the same explanations
+// (CTC vs gross vs in-hand; the three-part HRA test) a second time on the
+// same page.
 const EDITORIAL_MAP: Partial<Record<CalculatorSlug, React.ComponentType>> = {
-  ctcToInHand: CtcToInHandEditorial,
   salary: SalaryEditorial,
   taxRegime: TaxRegimeEditorial,
-  hra: HraEditorial,
   epf: EpfEditorial,
   gratuity: GratuityEditorial,
   noticeBuyout: NoticeBuyoutEditorial,
