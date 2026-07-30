@@ -136,6 +136,10 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
             <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               {config.seo.title}
             </h1>
+            <p className="text-sm font-medium text-foreground-secondary">
+              Salary basis: <strong className="text-foreground">₹{config.lpa} LPA annual gross</strong> — not CTC after
+              employer-side deductions, and not your monthly take-home.
+            </p>
             <p className="text-lg font-medium text-foreground">{config.answerHeadline}</p>
             <p className="text-base leading-relaxed text-foreground-secondary">{config.leadParagraph}</p>
             <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
@@ -152,24 +156,41 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
               Real numbers for this scenario
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-foreground-secondary">
-              At <strong>₹{config.lpa} LPA</strong> gross in <strong>{config.city.name}</strong>, with{" "}
+              At <strong>₹{config.lpa} LPA annual gross</strong> in <strong>{config.city.name}</strong>, with{" "}
               <strong>{formatInr(config.monthlyRent)}/month</strong> rent, <strong className="capitalize">{config.lifestyle}</strong>{" "}
-              lifestyle, new tax regime, and the same PF assumptions as the calculator below:
+              lifestyle, new tax regime, and Basic+DA at {Math.round(DEFAULT_BASIC_DA_SHARE_OF_GROSS * 100)}% of gross for
+              PF (same assumptions as the calculator below):
             </p>
-            <ul className="mt-3 space-y-2 text-sm text-foreground">
-              <li>
-                <span className="font-medium text-foreground">Est. in-hand:</span>{" "}
-                ~{formatInr(preview.inHandMonthly)}/month
-              </li>
-              <li>
-                <span className="font-medium text-foreground">Rent (this page):</span>{" "}
-                {formatInr(config.monthlyRent)}/month
-              </li>
-              <li>
-                <span className="font-medium text-foreground">Est. savings after modeled spend:</span>{" "}
-                ~{formatInr(preview.monthlySavings)}/month — <em>{preview.verdictTitle}</em>
-              </li>
-            </ul>
+            <dl className="mt-3 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-xl border border-border bg-surface-subtle p-3">
+                <dt className="text-xs font-semibold uppercase text-foreground-muted">Est. in-hand / month</dt>
+                <dd className="mt-1 text-lg font-semibold tabular-nums text-foreground">
+                  ~{formatInr(preview.inHandMonthly)}
+                </dd>
+              </div>
+              <div className="rounded-xl border border-border bg-surface-subtle p-3">
+                <dt className="text-xs font-semibold uppercase text-foreground-muted">Rent (this page)</dt>
+                <dd className="mt-1 text-lg font-semibold tabular-nums text-foreground">
+                  {formatInr(config.monthlyRent)}
+                </dd>
+              </div>
+              <div className="rounded-xl border border-border bg-surface-subtle p-3">
+                <dt className="text-xs font-semibold uppercase text-foreground-muted">Modeled spend / month</dt>
+                <dd className="mt-1 text-lg font-semibold tabular-nums text-foreground">
+                  ~{formatInr(preview.totalMonthlyExpenses)}
+                </dd>
+              </div>
+              <div className="rounded-xl border border-border bg-surface-subtle p-3">
+                <dt className="text-xs font-semibold uppercase text-foreground-muted">Est. surplus / month</dt>
+                <dd className="mt-1 text-lg font-semibold tabular-nums text-foreground">
+                  ~{formatInr(preview.monthlySavings)}
+                </dd>
+              </div>
+            </dl>
+            <div className="mt-3 rounded-xl border border-border bg-surface-subtle p-3 text-sm">
+              <p className="font-medium text-foreground">Verdict: {preview.verdictTitle}</p>
+              <p className="mt-1 text-foreground-secondary">{preview.verdictWhy}</p>
+            </div>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div>
                 <h3 className="text-sm font-semibold text-foreground">Often workable for</h3>
@@ -189,9 +210,27 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
               </div>
             </div>
             <p className="mt-4 text-xs text-foreground-muted">
-              Figures come from the same engine as the embedded calculator — not your payslip. Adjust rent and tier below
-              to match your life.
+              Figures come from the same engine as the embedded calculator right below — not your payslip.
             </p>
+          </section>
+
+          <section aria-labelledby="calc-heading" className="space-y-3">
+            <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <h2 id="calc-heading" className="text-xl font-semibold text-foreground">
+                Run your own numbers
+              </h2>
+              <Link
+                href={ROUTES.salaryRealityCheck}
+                className="text-sm font-medium text-foreground underline underline-offset-2"
+              >
+                Open full Salary Reality Check
+              </Link>
+            </div>
+            <p className="text-sm text-foreground-secondary">
+              Same engine as above — pre-filled for ₹{config.lpa} LPA gross in {config.city.name}. Change rent, tier, or
+              expense lines to match your life; the numbers above update the same way this calculator would.
+            </p>
+            <SalaryRealityCheckCalculatorClient initial={initialScenario} embed />
           </section>
 
           {config.realityCheckParagraphs && config.realityCheckParagraphs.length > 0 ? (
@@ -265,43 +304,6 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
             <p className="text-base leading-relaxed text-foreground-secondary">{config.whyParagraph}</p>
           </section>
 
-          <section aria-labelledby="snapshot-heading" className="space-y-4">
-            <h2 id="snapshot-heading" className="text-xl font-semibold text-foreground">
-              Snapshot for this scenario
-            </h2>
-            <p className="text-sm text-foreground-secondary">
-              <strong>{config.city.name}</strong>, metro commute band:{" "}
-              <strong>{config.city.metro ? "on" : "off"}</strong> · Rent:{" "}
-              <strong>{formatInr(config.monthlyRent)}/mo</strong> · Lifestyle:{" "}
-              <strong className="capitalize">{config.lifestyle}</strong> · New regime · Basic+DA{" "}
-              {Math.round(DEFAULT_BASIC_DA_SHARE_OF_GROSS * 100)}% of gross (PF).
-            </p>
-            <div className="grid gap-3 sm:grid-cols-3">
-              <div className="rounded-xl border border-border bg-surface p-4">
-                <p className="text-xs font-semibold uppercase text-foreground-muted">Est. in-hand / mo</p>
-                <p className="mt-1 text-xl font-semibold tabular-nums text-foreground">
-                  {formatInr(preview.inHandMonthly)}
-                </p>
-              </div>
-              <div className="rounded-xl border border-border bg-surface p-4">
-                <p className="text-xs font-semibold uppercase text-foreground-muted">Est. savings / mo</p>
-                <p className="mt-1 text-xl font-semibold tabular-nums text-foreground">
-                  {formatInr(preview.monthlySavings)}
-                </p>
-              </div>
-              <div className="rounded-xl border border-border bg-surface p-4">
-                <p className="text-xs font-semibold uppercase text-foreground-muted">Takeaway</p>
-                <p className="mt-1 text-sm font-semibold leading-snug text-foreground">
-                  {preview.verdictTitle}
-                </p>
-              </div>
-            </div>
-            <div className="rounded-xl border border-border bg-surface-subtle p-4 text-sm">
-              <p className="font-medium text-foreground">What the verdict means here</p>
-              <p className="mt-2 text-foreground-secondary">{preview.verdictWhy}</p>
-            </div>
-          </section>
-
           <section aria-labelledby="expenses-heading" className="space-y-3">
             <h2 id="expenses-heading" className="text-xl font-semibold text-foreground">
               Typical expenses in this model
@@ -325,32 +327,6 @@ export function SalaryEnoughLandingTemplate({ config }: Props) {
                 </div>
               ))}
             </dl>
-          </section>
-
-          <div className="flex flex-wrap gap-3">
-            <a
-              href="#salary-reality-embed"
-              className="inline-flex items-center justify-center rounded-lg bg-accent-solid px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
-            >
-              Adjust inputs in the calculator
-            </a>
-            <Link
-              href={ROUTES.salaryRealityCheck}
-              className="inline-flex items-center justify-center rounded-lg border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground transition hover:bg-surface-subtle"
-            >
-              Open full Salary Reality Check
-            </Link>
-          </div>
-
-          <section aria-labelledby="calc-heading" className="space-y-3 border-t border-border pt-10">
-            <h2 id="calc-heading" className="text-xl font-semibold text-foreground">
-              Run your own numbers
-            </h2>
-            <p className="text-sm text-foreground-secondary">
-              Same engine as above — this block is pre-filled for ₹{config.lpa} LPA in {config.city.name}. Change rent,
-              tier, or expense lines to match your life.
-            </p>
-            <SalaryRealityCheckCalculatorClient initial={initialScenario} embed />
           </section>
 
           <section aria-labelledby="links-heading" className="space-y-3">
