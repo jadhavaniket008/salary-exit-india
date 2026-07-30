@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 type BannerConfig = {
   label: string;
@@ -9,6 +10,14 @@ type BannerConfig = {
   href: string;
   urgency: "high" | "medium";
 };
+
+const DISMISS_KEY_PREFIX = "salaryexit_banner_dismissed_";
+
+/** Changes whenever the banner's actual content changes, so dismissing one
+ * seasonal banner doesn't silently hide a later, different one. */
+function bannerDismissKey(banner: BannerConfig): string {
+  return DISMISS_KEY_PREFIX + banner.label;
+}
 
 function getSeasonalBanner(): BannerConfig | null {
   const month = new Date().getMonth() + 1; // 1-indexed
@@ -48,7 +57,29 @@ function getSeasonalBanner(): BannerConfig | null {
 
 export function SeasonalBanner() {
   const banner = getSeasonalBanner();
-  if (!banner) return null;
+  const [dismissed, setDismissed] = useState(false);
+
+  useEffect(() => {
+    if (!banner) return;
+    try {
+      if (localStorage.getItem(bannerDismissKey(banner)) === "1") {
+        setDismissed(true);
+      }
+    } catch {
+      // localStorage unavailable (private browsing etc.) — just don't persist dismissal.
+    }
+  }, [banner]);
+
+  if (!banner || dismissed) return null;
+
+  function handleDismiss() {
+    setDismissed(true);
+    try {
+      if (banner) localStorage.setItem(bannerDismissKey(banner), "1");
+    } catch {
+      // ignore — dismissal still applies for this page view.
+    }
+  }
 
   const isHigh = banner.urgency === "high";
 
@@ -91,6 +122,26 @@ export function SeasonalBanner() {
         >
           {banner.cta}
         </Link>
+        <button
+          type="button"
+          onClick={handleDismiss}
+          aria-label="Dismiss announcement"
+          className={
+            isHigh
+              ? "shrink-0 rounded-lg p-1 text-amber-700 transition-colors hover:bg-amber-100 dark:text-amber-300 dark:hover:bg-amber-900/40"
+              : "shrink-0 rounded-lg p-1 text-[var(--foreground-muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)]"
+          }
+        >
+          <svg
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
     </div>
   );

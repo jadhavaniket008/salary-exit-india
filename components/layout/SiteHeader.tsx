@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ROUTES } from "@/lib/routes";
+import { MobileNavMenu } from "@/components/layout/MobileNavMenu";
 
 const navLinks = [
   { href: ROUTES.calculators, label: "Calculators" },
@@ -51,34 +52,7 @@ export function SiteHeader() {
             Calculate in-hand
           </Link>
 
-          <details className="relative md:hidden">
-            <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground [&::-webkit-details-marker]:hidden">
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              Menu
-            </summary>
-            <div className="absolute right-0 mt-2 w-60 rounded-xl border border-border bg-surface shadow-lg">
-              <div className="p-2">
-                {navLinks.map((l) => (
-                  <Link
-                    key={l.href}
-                    href={l.href}
-                    className="block rounded-lg px-3 py-2.5 text-sm text-foreground-secondary hover:bg-surface-subtle hover:text-foreground transition-colors"
-                  >
-                    {l.label}
-                  </Link>
-                ))}
-                <div className="mx-3 my-2 border-t border-border" />
-                <Link
-                  href={ROUTES.ctcToInHandCalculator}
-                  className="block rounded-lg bg-accent-solid px-3 py-2.5 text-center text-sm font-medium text-white"
-                >
-                  Calculate in-hand
-                </Link>
-              </div>
-            </div>
-          </details>
+          <MobileNavMenu navLinks={navLinks} ctaHref={ROUTES.ctcToInHandCalculator} ctaLabel="Calculate in-hand" />
         </div>
       </div>
     </header>
