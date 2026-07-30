@@ -14,7 +14,6 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { ROUTES } from "@/lib/routes";
 import { lpaLandingPath } from "@/lib/routes/landing-routes";
 import { SiteSearchClient } from "@/components/home/SiteSearchClient";
-import { AnimateIn } from "@/components/ui/AnimateIn";
 import { FeaturedCalcVideoPreview } from "@/components/home/FeaturedCalcVideoPreview";
 import { EmailCapture } from "@/components/monetization/EmailCapture";
 
@@ -35,13 +34,19 @@ export const metadata: Metadata = buildPageMetadata(
   { canonicalPath: ROUTES.home }
 );
 
-const secondaryCalculators = [
-  "reverseSalary",
-  "taxRegime",
-  "salaryRealityCheck",
-  "offerComparison",
-  "hra",
-  "finalSettlement",
+const calculatorGroups = [
+  {
+    heading: "Understand my offer",
+    slugs: ["offerComparison", "reverseSalary"],
+  },
+  {
+    heading: "Understand tax and deductions",
+    slugs: ["taxRegime", "hra"],
+  },
+  {
+    heading: "Plan a resignation",
+    slugs: ["finalSettlement", "noticeBuyout"],
+  },
 ] as const;
 
 const realQuestions = [
@@ -67,7 +72,6 @@ const realQuestions = [
 
 export default function Home() {
   const primaryCalc = CALCULATOR_REGISTRY["ctcToInHand"];
-  const secondary = secondaryCalculators.map((s) => CALCULATOR_REGISTRY[s]);
   const popularLpa = LPA_LANDING_PAGES.slice(0, 8);
 
   return (
@@ -111,7 +115,6 @@ export default function Home() {
         <Container className="space-y-14 py-10 sm:py-14">
 
           {/* ── Calculator grid — featured primary + secondary grid ─── */}
-          <AnimateIn>
           <section aria-labelledby="calculators-heading">
             <div className="mb-5 flex items-end justify-between gap-4">
               <div>
@@ -154,35 +157,43 @@ export default function Home() {
               </span>
             </Link>
 
-            {/* Secondary 5 calculators */}
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-              {secondary.map((c) => (
-                <Link
-                  key={c.slug}
-                  href={c.path}
-                  className="group rounded-xl border border-border bg-surface p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-md"
-                >
-                  <span className="block text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
-                    {c.label}
-                  </span>
-                  <p className="mt-1 text-xs leading-relaxed text-foreground-secondary line-clamp-2">
-                    {c.seo.description}
-                  </p>
-                </Link>
+            {/* Secondary calculators, grouped by what you're actually trying to do */}
+            <div className="space-y-5">
+              {calculatorGroups.map((group) => (
+                <div key={group.heading}>
+                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-foreground-muted">
+                    {group.heading}
+                  </h3>
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    {group.slugs.map((slug) => {
+                      const c = CALCULATOR_REGISTRY[slug];
+                      return (
+                        <Link
+                          key={c.slug}
+                          href={c.path}
+                          className="group rounded-xl border border-border bg-surface p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-md"
+                        >
+                          <span className="block text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
+                            {c.label}
+                          </span>
+                          <p className="mt-1 text-xs leading-relaxed text-foreground-secondary line-clamp-2">
+                            {c.seo.description}
+                          </p>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
               ))}
             </div>
           </section>
-          </AnimateIn>
 
           <AdSlot position="mid-content" label="Advertisement" />
 
           {/* ── Salary Reality Check promo ──────────────────────────── */}
-          <AnimateIn>
-            <SalaryRealityCheckPromo />
-          </AnimateIn>
+          <SalaryRealityCheckPromo />
 
           {/* ── Real questions — 2-col grid ─────────────────────────── */}
-          <AnimateIn>
           <section aria-labelledby="real-questions-heading">
             <h2 id="real-questions-heading" className="mb-1 text-xl font-bold text-foreground sm:text-2xl">
               Real questions, real numbers
@@ -210,10 +221,8 @@ export default function Home() {
               ))}
             </div>
           </section>
-          </AnimateIn>
 
           {/* ── Guide hubs — horizontal cards ───────────────────────── */}
-          <AnimateIn>
           <section aria-labelledby="guides-heading">
             <h2 id="guides-heading" className="mb-5 text-xl font-bold text-foreground sm:text-2xl">
               Plain-English guides
@@ -262,10 +271,8 @@ export default function Home() {
               ))}
             </div>
           </section>
-          </AnimateIn>
 
           {/* ── Popular LPA pages ───────────────────────────────────── */}
-          <AnimateIn>
           <section aria-labelledby="lpa-pages-heading">
             <div className="mb-4 flex items-end justify-between gap-4">
               <h2 id="lpa-pages-heading" className="text-xl font-bold text-foreground sm:text-2xl">
@@ -290,7 +297,6 @@ export default function Home() {
               ))}
             </div>
           </section>
-          </AnimateIn>
 
           <AdSlot position="before-footer" label="Advertisement" />
 

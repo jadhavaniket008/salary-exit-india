@@ -60,7 +60,7 @@ function SalaryPreviewCard() {
       </div>
 
       <p className="mt-4 text-[10px] leading-relaxed text-foreground-muted">
-        Estimate only · New regime · PF on ₹15k statutory ceiling · Section 87A rebate eliminates tax at ₹12L CTC
+        Estimate only · New regime · PF on ₹15k statutory ceiling · Section 87A rebate eliminates tax at ₹12L gross
       </p>
     </div>
   );
@@ -102,6 +102,12 @@ export function HomeHeroSection() {
             Calculate my in-hand salary →
           </Link>
           <div className="flex flex-wrap gap-2">
+            <Link
+              href={ROUTES.reverseSalaryCalculator}
+              className="inline-flex items-center justify-center rounded-lg border border-border-strong bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-subtle"
+            >
+              What CTC do I need?
+            </Link>
             <Link
               href={ROUTES.salaryRealityCheck}
               className="inline-flex items-center justify-center rounded-lg border border-border-strong bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-subtle"

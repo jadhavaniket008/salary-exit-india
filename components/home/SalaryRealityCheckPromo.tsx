@@ -24,6 +24,20 @@ export function SalaryRealityCheckPromo() {
             spend heuristics, and show <strong>savings ratio</strong> plus a plain verdict — so you
             can judge an offer or city move beyond a single net-pay number.
           </p>
+          <dl className="w-fit space-y-1 rounded-lg border border-border bg-surface px-4 py-3 font-mono text-sm">
+            <div className="flex justify-between gap-6">
+              <dt className="text-foreground-secondary">Estimated in-hand</dt>
+              <dd className="tabular-nums text-foreground">from CTC/tax/PF</dd>
+            </div>
+            <div className="flex justify-between gap-6">
+              <dt className="text-foreground-secondary">− Rent and monthly spend</dt>
+              <dd className="tabular-nums text-foreground">rent + heuristics</dd>
+            </div>
+            <div className="flex justify-between gap-6 border-t border-border pt-1 font-semibold">
+              <dt className="text-foreground">= Modeled monthly surplus</dt>
+              <dd className="tabular-nums text-positive">the verdict</dd>
+            </div>
+          </dl>
           <ul className="list-inside list-disc space-y-1 text-sm text-foreground-secondary">
             <li>In-hand from centralized FY + PF logic</li>
             <li>Modeled groceries, commute, utilities, discretionary</li>
