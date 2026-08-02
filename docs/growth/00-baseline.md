@@ -1,6 +1,8 @@
-# Growth baseline — 2026-07-31
+# Growth baseline — 2026-07-31 (re-checked 2026-08-01)
 
 Baseline snapshot before the 90-day growth-authority-system campaign begins. Source for every figure below is stated inline. `Unknown` means no GA4/GSC/Plausible dashboard was accessed to produce this document — see `analytics-export-request.md` for exactly what to pull.
+
+**Re-checked for newly supplied exports (2026-08-01):** searched the repository root and common locations for any GA4/GSC/Plausible export files (CSV/XLS named for those tools) — none found. Every figure below remains `Unknown`. **Launch measurement is blocked pending these exports** — this does not block Phases 1-5 or the pilot preparation in Phase 9, per the task's own instruction, but the Phase-14-style weekly decision rules in `growth-dashboard-spec.md` have no real data to operate on until they land.
 
 ## Traffic (GA4/Plausible)
 

@@ -51,7 +51,7 @@ Per Phase 5's CTA policy: only 1 of every 3 posts strongly asks for a click — 
 >
 > #BuildInPublic #SalaryCalculator #FinTech
 
-## Week 1 — Company page — evergreen archive
+## Week 1 — Company page — evergreen archive — CTA: discuss (no link, per the pilot's 4-link cap — see pilot-four-weeks.csv)
 
 > SalaryExit India In-Hand Salary Model 2026 is live.
 >
@@ -59,7 +59,7 @@ Per Phase 5's CTA policy: only 1 of every 3 posts strongly asks for a click — 
 >
 > Free CSV/JSON download, full methodology, citable with attribution.
 >
-> [link to report]
+> What's the one number from a salary breakdown that would've changed how you negotiated your first offer?
 >
 > #SalaryExitIndia #InHandSalary #FY202627
 
@@ -135,9 +135,11 @@ Per Phase 5's CTA policy: only 1 of every 3 posts strongly asks for a click — 
 >
 > #OfferComparison #SalaryNegotiation
 
-## Week 3 — Company page — evergreen archive
+## Week 3 — Company page — evergreen archive — CTA: discuss (no link, per the pilot's 4-link cap — see pilot-four-weeks.csv)
 
-> Building or maintaining an HRMS, payroll product, or job board? Our salary/tax calculation engine is available as an embed, white-label, or API — see how it works: [link to /for-businesses]
+> Building or maintaining an HRMS, payroll product, or job board? Every one of these calculators runs on a single shared engine — CTC to in-hand, tax-regime comparison, PF, HRA, gratuity — unit-tested against Finance Act publications.
+>
+> What's the most common "why doesn't my payslip match your calculator" question your support team fields? Curious how consistent the pattern is across products.
 >
 > #HRTech #PayrollSoftware #API
 

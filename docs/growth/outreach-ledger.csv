@@ -1,11 +1,11 @@
 prospect_id,contact_date,follow_up_date,sent,delivered,replied,positive,declined,citation,link,relationship_status,utm_content,notes
-A01,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-01,Queued for first batch of 10 — see outreach-templates.md
-A02,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-02,Queued for first batch of 10
-A04,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-03,Queued for first batch of 10
-A17,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-04,Queued for first batch of 10
-A18,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-05,Queued for first batch of 10
-A20,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-06,Queued for first batch of 10
-A21,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-07,Queued for first batch of 10
-C01,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-finance-01,Queued for first batch of 10 — real, named individual (CA Sandeep Kanoi)
-C02,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-finance-02,Queued for first batch of 10 — real, named individual (M. Pattabiraman)
-C10,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-finance-03,Queued for first batch of 10
+A02,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-01,"HR Katha — real confirmed article (""The year HR stopped pretending"" 2025 roundup). Tier 1."
+A04,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-02,"India Briefing — real confirmed live 2026 HR/Payroll compliance guide. Tier 1."
+A17,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-finance-01,"BankBazaar — real, verified publisher with a salary/PF/tax content vertical. Tier 1."
+A18,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-finance-02,"ClearTax — real, major tax-filing platform with salary-tax explainers. Tier 1. Do not also contact C09 (same organization)."
+A20,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-career-01,"Naukri Campus — real confirmed live career-guidance content (salary negotiation for freshers). Tier 1."
+B14,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-career-02,"Careers360 — real confirmed live college placement coverage. Tier 1. Cross-references Phase 8 college partnership work — coordinate outreach."
+C10,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-finance-03,"Groww blog — real confirmed live Personal Finance blog category. Tier 1."
+C18,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-finance-04,"PaisaBazaar (PolicyBazaar sister platform) — real, verified via search. Tier 1."
+D01,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-college-01,"IIT Madras — real confirmed live Students' Guide & Policies placement document. Tier 1. Use the First Offer Reality Guide asset (Phase 5), not a generic chart."
+D02,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-college-02,"IIT (BHU) Varanasi — real confirmed live Training & Placement Cell site. Tier 1. Use the First Offer Reality Guide asset (Phase 5)."
