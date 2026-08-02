@@ -4,18 +4,18 @@ Three pitches, one per journalist type, drafted for manual review. Not sent. Eac
 
 ## Pitch 1 — Career/employment journalist
 
-**Subject:** Data: the ₹12L-to-₹15L salary gap is smaller than it looks (Section 87A rebate cliff)
+**Subject:** Data: a ₹70,587-wide band where the new tax regime taxes every extra rupee at 100%
 
 ```text
 Hi {{name}},
 
-One finding from a salary model I've just published that might interest your coverage of job-switch/negotiation trends: candidates comparing a ₹12L and ₹15L offer are often negotiating over a much smaller real difference than the ₹3L headline gap suggests — because ₹12L taxable income is exactly where the new tax regime's Section 87A rebate cliff sits. Modeled precisely, the monthly in-hand gap is closer to ₹19,150, not proportional to the ₹3L CTC gap.
+One finding from a salary model I've just published that might interest your coverage of job-switch/negotiation trends: between ₹12,00,000 and ₹12,70,587 of taxable income, Section 87A's new-regime marginal relief caps tax at exactly (income minus ₹12L) — meaning every additional rupee earned in that band is taxed away in full. It's not a hard cliff (you don't suddenly owe tax on your whole income), but inside that specific band, a raise genuinely produces zero net take-home gain. At CTC level, moving from ₹12L to ₹15L CTC (13% employer-cost structure) raises monthly in-hand by only ₹19,150 for a ₹3L/year jump in CTC — a meaningful part of why is this zone.
 
-Methodology: modeled from SalaryExit India's own FY 2026-27 tax/PF calculation engine (same engine behind our public calculators), not a survey.
+Methodology: modeled from SalaryExit India's own FY 2026-27 tax/PF calculation engine (same engine behind our public calculators), not a survey. The zone boundaries are computed directly from the tax-slab and rebate formulas, not estimated.
 
 Full data, CSV, and methodology: {{link with unique utm_content}}
 
-Quote, if useful: "Most people don't find out about the 87A cliff until their first payslip after crossing it — it's the single biggest 'why is my hike not translating' surprise in the ₹12-15L band." — Aniket Jadhav, Founder, SalaryExit India
+Quote, if useful: "It's not that crossing ₹12L income suddenly costs you everything — it's that for a specific ₹70,587-wide stretch right above it, a raise genuinely doesn't move your take-home at all. Most people find that out by comparing payslips, not by being told in advance." — Aniket Jadhav, Founder, SalaryExit India
 
 Happy to run a custom cut for a specific angle if useful.
 

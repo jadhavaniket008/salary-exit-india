@@ -33,7 +33,9 @@ export default function InHandSalaryModelReportPage() {
   const model = generateInHandSalaryModel(REPORT_PUBLISHED_ISO + "T00:00:00.000Z");
 
   const article = articleJsonLd({
-    headline: `${REPORT_TITLE}: CTC to In-Hand, Modeled (${model.assumptions.financialYearLabel})`,
+    // Matches the visible <h1> text exactly (see the header below) — Article
+    // headline must reflect the page's actual headline, not the SEO <title>.
+    headline: `${REPORT_TITLE}: what CTC actually becomes`,
     description:
       "Modeled dataset: how CTC converts to monthly in-hand across employer-cost structures and PF choices, generated from SalaryExit's live tax and PF engine.",
     urlPath: ROUTES.inHandSalaryModelReport,

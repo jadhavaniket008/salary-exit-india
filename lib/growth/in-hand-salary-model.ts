@@ -19,6 +19,7 @@ import { DEFAULT_PF_ASSUMPTIONS, type PfAssumptions } from "@/lib/config/pf";
 import { computeCtcToInHand } from "@/lib/calculators/ctc-to-inhand";
 import { computeEmployeePfAnnual } from "@/lib/calculators/pf";
 import { computeRequiredCtcForInHand } from "@/lib/calculators/reverse-salary";
+import { progressiveTax, rebate87ANewRegime } from "@/lib/calculators/income-tax";
 import type { TaxRegime } from "@/types/salary";
 
 /** Model-wide assumptions, stated once so the report and CSV can cite the same numbers. */
@@ -55,6 +56,8 @@ export type SalaryLevelRow = {
   annualGross: number;
   pfScenario: "statutory-ceiling" | "full-basic";
   employeePfAnnual: number;
+  /** Gross minus the new-regime standard deduction — the actual Section 87A comparison basis. */
+  taxableIncomeAnnual: number;
   monthlyInHand: number;
   annualTaxEstimate: number;
   inHandAsPctOfCtc: number;
@@ -90,7 +93,13 @@ function computeInHandForCtc(
   annualCtc: number,
   employerCostShare: number,
   pf: PfAssumptions
-): { annualGross: number; employeePfAnnual: number; monthlyInHand: number; annualTax: number } {
+): {
+  annualGross: number;
+  employeePfAnnual: number;
+  taxableIncomeAnnual: number;
+  monthlyInHand: number;
+  annualTax: number;
+} {
   const annualGross = grossFromCtc(annualCtc, employerCostShare);
   const basicAndDaAnnual = annualGross * MODEL_ASSUMPTIONS.basicDaShareOfGross;
   const employeePfAnnual = computeEmployeePfAnnual(basicAndDaAnnual / 12, pf);
@@ -106,6 +115,9 @@ function computeInHandForCtc(
   return {
     annualGross,
     employeePfAnnual,
+    // Matches estimateAnnualIncomeTax's new-regime formula exactly (annual-tax.ts):
+    // taxableIncomeAnnual = max(0, gross - standardDeductionNewRegime).
+    taxableIncomeAnnual: Math.max(0, annualGross - DEFAULT_FINANCIAL_YEAR.standardDeductionNewRegime),
     monthlyInHand: out.inHandMonthly,
     annualTax: out.estimatedTotalTaxAnnual,
   };
@@ -127,6 +139,7 @@ export function generateInHandSalaryModel(generatedAtIso: string = new Date().to
         annualGross: capped.annualGross,
         pfScenario: "statutory-ceiling",
         employeePfAnnual: capped.employeePfAnnual,
+        taxableIncomeAnnual: capped.taxableIncomeAnnual,
         monthlyInHand: capped.monthlyInHand,
         annualTaxEstimate: capped.annualTax,
         inHandAsPctOfCtc: (capped.monthlyInHand * 12) / annualCtc,
@@ -137,6 +150,7 @@ export function generateInHandSalaryModel(generatedAtIso: string = new Date().to
         annualGross: full.annualGross,
         pfScenario: "full-basic",
         employeePfAnnual: full.employeePfAnnual,
+        taxableIncomeAnnual: full.taxableIncomeAnnual,
         monthlyInHand: full.monthlyInHand,
         annualTaxEstimate: full.annualTax,
         inHandAsPctOfCtc: (full.monthlyInHand * 12) / annualCtc,
@@ -187,6 +201,36 @@ function formatInr(value: number): string {
   return `₹${Math.round(value).toLocaleString("en-IN")}`;
 }
 
+/**
+ * Finds where Section 87A's new-regime marginal relief (income-tax.ts,
+ * rebate87ANewRegime) stops applying — i.e. where tax-after-rebate first
+ * equals tax-before-rebate again, so normal slab progression resumes.
+ * Below this point (and above the rebate threshold), every extra rupee of
+ * taxable income is taxed at exactly 100% — verified numerically against
+ * lib/calculators/income-tax.ts before this was written into report copy;
+ * see docs/growth/report-claim-audit.md.
+ */
+function findMarginalReliefZoneEndTaxableIncome(): number {
+  const fy = DEFAULT_FINANCIAL_YEAR;
+  const start = fy.rebate87ANewRegimeIncomeLimit;
+  let low = start;
+  let high = start + 5_00_000; // generous search ceiling — well past any realistic phase-out width
+  for (let i = 0; i < 60; i++) {
+    const mid = (low + high) / 2;
+    const before = progressiveTax(mid, fy.newRegimeSlabs);
+    const rebate = rebate87ANewRegime(mid, before, fy);
+    const after = before - rebate;
+    // Inside the zone: after === mid - start (100% marginal rate). Once the
+    // rebate hits zero, after === before again — that's the phase-out point.
+    if (Math.abs(after - before) < 1) {
+      high = mid;
+    } else {
+      low = mid;
+    }
+  }
+  return high;
+}
+
 /** Findings are derived entirely from computed rows — no invented observed behaviour. */
 function buildKeyFindings(
   pfRows: PfComparisonRow[],
@@ -217,18 +261,33 @@ function buildKeyFindings(
     );
   }
 
-  const level12L = levelRows.filter((r) => r.annualCtc === 12_00_000 && r.pfScenario === "statutory-ceiling");
-  const level15L = levelRows.filter((r) => r.annualCtc === 15_00_000 && r.pfScenario === "statutory-ceiling");
-  if (level12L.length && level15L.length) {
-    const midCtc12 = level12L[Math.floor(level12L.length / 2)];
-    const midCtc15 = level15L[Math.floor(level15L.length / 2)];
-    const monthlyGap = midCtc15.monthlyInHand - midCtc12.monthlyInHand;
+  // Explicitly the 13% (mid) employer-cost scenario — not array-position order.
+  const ctc12LMid = levelRows.find(
+    (r) => r.annualCtc === 12_00_000 && r.pfScenario === "statutory-ceiling" && r.employerCostSharePct === 0.13
+  );
+  const ctc15LMid = levelRows.find(
+    (r) => r.annualCtc === 15_00_000 && r.pfScenario === "statutory-ceiling" && r.employerCostSharePct === 0.13
+  );
+  if (ctc12LMid && ctc15LMid) {
+    const monthlyGap = ctc15LMid.monthlyInHand - ctc12LMid.monthlyInHand;
     findings.push(
-      `Between ₹12L and ₹15L CTC, monthly in-hand rises by only ${formatInr(
+      `At a 13% employer-cost structure, moving from ₹12L to ₹15L CTC (a ₹3L/year increase) raises monthly in-hand by only ${formatInr(
         monthlyGap
-      )} for a ₹3L/year jump in CTC — this is the ${MODEL_ASSUMPTIONS.financialYearLabel} Section 87A rebate cliff at ₹12L taxable income under the new regime.`
+      )}. Taxable income moves from ${formatInr(ctc12LMid.taxableIncomeAnnual)} (below the ₹12L nil-tax threshold, so ₹0 tax) to ${formatInr(
+        ctc15LMid.taxableIncomeAnnual
+      )} (inside Section 87A's new-regime marginal-relief zone, where tax is genuinely payable) — the CTC figures and the ₹12L taxable-income threshold are on different bases, not the same number.`
     );
   }
+
+  const zoneEnd = findMarginalReliefZoneEndTaxableIncome();
+  const zoneWidth = zoneEnd - DEFAULT_FINANCIAL_YEAR.rebate87ANewRegimeIncomeLimit;
+  findings.push(
+    `Section 87A's new-regime marginal relief is not a hard cliff — crossing ₹12L taxable income doesn't jump straight to full slab tax. But for the next ${formatInr(
+      zoneWidth
+    )} of taxable income (₹12,00,000 to ${formatInr(
+      zoneEnd
+    )}), the marginal tax rate is exactly 100%: every additional rupee earned is taxed away in full, before normal slab progression resumes.`
+  );
 
   const spreadAt10L = levelRows.filter((r) => r.annualCtc === 10_00_000 && r.pfScenario === "statutory-ceiling");
   if (spreadAt10L.length >= 2) {

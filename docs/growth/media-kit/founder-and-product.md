@@ -14,7 +14,7 @@ Tax and PF calculations are computed from a version-controlled TypeScript engine
 
 ## Key findings (from the flagship report — see the report itself for full context and caveats)
 
-1. The ₹12L-to-₹15L CTC gap produces a much smaller monthly in-hand gap than proportional, due to the Section 87A rebate cliff at ₹12L taxable income.
+1. Between ₹12,00,000 and ₹12,70,587 taxable income, Section 87A's new-regime marginal relief taxes every additional rupee at exactly 100% — not a hard cliff, but a real, precisely-bounded zone where a raise produces zero net take-home gain.
 2. At the same CTC, employer-cost structure (8% vs. 18% of CTC) alone can shift monthly in-hand by a meaningful amount.
 3. Choosing full-Basic PF over the statutory ceiling has a precise, quantifiable monthly-cash cost.
 4. The CTC required for a given target in-hand is a range, not a single number, because the gross-to-CTC conversion depends on employer-cost structure.

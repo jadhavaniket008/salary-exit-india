@@ -1,5 +1,5 @@
 {
-  "generatedAtIso": "2026-08-02T08:51:50.846Z",
+  "generatedAtIso": "2026-08-02T09:43:55.716Z",
   "assumptions": {
     "regime": "new",
     "basicDaShareOfGross": 0.45,
@@ -41,6 +41,7 @@
       "annualGross": 460000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 385000,
       "monthlyInHand": 36325,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8718
@@ -51,6 +52,7 @@
       "annualGross": 460000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 24840,
+      "taxableIncomeAnnual": 385000,
       "monthlyInHand": 36055,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.86532
@@ -61,6 +63,7 @@
       "annualGross": 435000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 360000,
       "monthlyInHand": 34241.666666666664,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8218
@@ -71,6 +74,7 @@
       "annualGross": 435000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 23490,
+      "taxableIncomeAnnual": 360000,
       "monthlyInHand": 34084.166666666664,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.81802
@@ -81,6 +85,7 @@
       "annualGross": 410000.00000000006,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 335000.00000000006,
       "monthlyInHand": 32158.33333333334,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.7718000000000002
@@ -91,6 +96,7 @@
       "annualGross": 410000.00000000006,
       "pfScenario": "full-basic",
       "employeePfAnnual": 22140.000000000004,
+      "taxableIncomeAnnual": 335000.00000000006,
       "monthlyInHand": 32113.33333333334,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.7707200000000001
@@ -101,6 +107,7 @@
       "annualGross": 552000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 477000,
       "monthlyInHand": 43991.666666666664,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8798333333333334
@@ -111,6 +118,7 @@
       "annualGross": 552000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 29808,
+      "taxableIncomeAnnual": 477000,
       "monthlyInHand": 43307.666666666664,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8661533333333333
@@ -121,6 +129,7 @@
       "annualGross": 522000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 447000,
       "monthlyInHand": 41491.666666666664,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8298333333333333
@@ -131,6 +140,7 @@
       "annualGross": 522000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 28188,
+      "taxableIncomeAnnual": 447000,
       "monthlyInHand": 40942.666666666664,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8188533333333333
@@ -141,6 +151,7 @@
       "annualGross": 492000.00000000006,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 417000.00000000006,
       "monthlyInHand": 38991.66666666667,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.7798333333333334
@@ -151,6 +162,7 @@
       "annualGross": 492000.00000000006,
       "pfScenario": "full-basic",
       "employeePfAnnual": 26568.000000000007,
+      "taxableIncomeAnnual": 417000.00000000006,
       "monthlyInHand": 38577.66666666667,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.7715533333333334
@@ -161,6 +173,7 @@
       "annualGross": 736000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 661000,
       "monthlyInHand": 59325,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.889875
@@ -171,6 +184,7 @@
       "annualGross": 736000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 39744,
+      "taxableIncomeAnnual": 661000,
       "monthlyInHand": 57813,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.867195
@@ -181,6 +195,7 @@
       "annualGross": 696000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 621000,
       "monthlyInHand": 55991.666666666664,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.839875
@@ -191,6 +206,7 @@
       "annualGross": 696000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 37584,
+      "taxableIncomeAnnual": 621000,
       "monthlyInHand": 54659.666666666664,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.819895
@@ -201,6 +217,7 @@
       "annualGross": 656000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 581000,
       "monthlyInHand": 52658.33333333333,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.789875
@@ -211,6 +228,7 @@
       "annualGross": 656000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 35424,
+      "taxableIncomeAnnual": 581000,
       "monthlyInHand": 51506.33333333333,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.772595
@@ -221,6 +239,7 @@
       "annualGross": 920000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 845000,
       "monthlyInHand": 74658.33333333334,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8959000000000001
@@ -231,6 +250,7 @@
       "annualGross": 920000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 49680,
+      "taxableIncomeAnnual": 845000,
       "monthlyInHand": 72318.33333333334,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8678200000000001
@@ -241,6 +261,7 @@
       "annualGross": 870000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 795000,
       "monthlyInHand": 70491.66666666667,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8459
@@ -251,6 +272,7 @@
       "annualGross": 870000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 46980,
+      "taxableIncomeAnnual": 795000,
       "monthlyInHand": 68376.66666666667,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.82052
@@ -261,6 +283,7 @@
       "annualGross": 820000.0000000001,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 745000.0000000001,
       "monthlyInHand": 66325.00000000001,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.7959000000000003
@@ -271,6 +294,7 @@
       "annualGross": 820000.0000000001,
       "pfScenario": "full-basic",
       "employeePfAnnual": 44280.00000000001,
+      "taxableIncomeAnnual": 745000.0000000001,
       "monthlyInHand": 64435.00000000001,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.7732200000000001
@@ -281,6 +305,7 @@
       "annualGross": 1104000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 1029000,
       "monthlyInHand": 89991.66666666667,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8999166666666667
@@ -291,6 +316,7 @@
       "annualGross": 1104000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 59616,
+      "taxableIncomeAnnual": 1029000,
       "monthlyInHand": 86823.66666666667,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8682366666666667
@@ -301,6 +327,7 @@
       "annualGross": 1044000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 969000,
       "monthlyInHand": 84991.66666666667,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8499166666666667
@@ -311,6 +338,7 @@
       "annualGross": 1044000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 56376,
+      "taxableIncomeAnnual": 969000,
       "monthlyInHand": 82093.66666666667,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8209366666666666
@@ -321,6 +349,7 @@
       "annualGross": 984000.0000000001,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 909000.0000000001,
       "monthlyInHand": 79991.66666666669,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.7999166666666668
@@ -331,6 +360,7 @@
       "annualGross": 984000.0000000001,
       "pfScenario": "full-basic",
       "employeePfAnnual": 53136.000000000015,
+      "taxableIncomeAnnual": 909000.0000000001,
       "monthlyInHand": 77363.66666666669,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.7736366666666669
@@ -341,6 +371,7 @@
       "annualGross": 1380000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 1305000,
       "monthlyInHand": 106426.66666666667,
       "annualTaxEstimate": 78780,
       "inHandAsPctOfCtc": 0.8514133333333334
@@ -351,6 +382,7 @@
       "annualGross": 1380000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 74520,
+      "taxableIncomeAnnual": 1305000,
       "monthlyInHand": 102016.66666666667,
       "annualTaxEstimate": 78780,
       "inHandAsPctOfCtc": 0.8161333333333334
@@ -361,6 +393,7 @@
       "annualGross": 1305000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 1230000,
       "monthlyInHand": 104141.66666666667,
       "annualTaxEstimate": 31200,
       "inHandAsPctOfCtc": 0.8331333333333333
@@ -371,6 +404,7 @@
       "annualGross": 1305000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 70470,
+      "taxableIncomeAnnual": 1230000,
       "monthlyInHand": 100069.16666666667,
       "annualTaxEstimate": 31200,
       "inHandAsPctOfCtc": 0.8005533333333333
@@ -381,6 +415,7 @@
       "annualGross": 1230000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 1155000,
       "monthlyInHand": 100491.66666666667,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.8039333333333334
@@ -391,6 +426,7 @@
       "annualGross": 1230000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 66420,
+      "taxableIncomeAnnual": 1155000,
       "monthlyInHand": 96756.66666666667,
       "annualTaxEstimate": 0,
       "inHandAsPctOfCtc": 0.7740533333333334
@@ -401,6 +437,7 @@
       "annualGross": 1656000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 1581000,
       "monthlyInHand": 125838.66666666666,
       "annualTaxEstimate": 121836,
       "inHandAsPctOfCtc": 0.8389244444444445
@@ -411,6 +448,7 @@
       "annualGross": 1656000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 89424,
+      "taxableIncomeAnnual": 1581000,
       "monthlyInHand": 120186.66666666667,
       "annualTaxEstimate": 121836,
       "inHandAsPctOfCtc": 0.8012444444444444
@@ -421,6 +459,7 @@
       "annualGross": 1566000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 1491000,
       "monthlyInHand": 119508.66666666667,
       "annualTaxEstimate": 107796,
       "inHandAsPctOfCtc": 0.7967244444444445
@@ -431,6 +470,7 @@
       "annualGross": 1566000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 84564,
+      "taxableIncomeAnnual": 1491000,
       "monthlyInHand": 114261.66666666667,
       "annualTaxEstimate": 107796,
       "inHandAsPctOfCtc": 0.7617444444444444
@@ -441,6 +481,7 @@
       "annualGross": 1476000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 1401000,
       "monthlyInHand": 113178.66666666667,
       "annualTaxEstimate": 93756,
       "inHandAsPctOfCtc": 0.7545244444444444
@@ -451,6 +492,7 @@
       "annualGross": 1476000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 79704,
+      "taxableIncomeAnnual": 1401000,
       "monthlyInHand": 108336.66666666667,
       "annualTaxEstimate": 93756,
       "inHandAsPctOfCtc": 0.7222444444444445
@@ -461,6 +503,7 @@
       "annualGross": 1840000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 1765000,
       "monthlyInHand": 138065,
       "annualTaxEstimate": 159120,
       "inHandAsPctOfCtc": 0.82839
@@ -471,6 +514,7 @@
       "annualGross": 1840000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 99360,
+      "taxableIncomeAnnual": 1765000,
       "monthlyInHand": 131585,
       "annualTaxEstimate": 159120,
       "inHandAsPctOfCtc": 0.78951
@@ -481,6 +525,7 @@
       "annualGross": 1740000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 1665000,
       "monthlyInHand": 131465,
       "annualTaxEstimate": 138320,
       "inHandAsPctOfCtc": 0.78879
@@ -491,6 +536,7 @@
       "annualGross": 1740000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 93960,
+      "taxableIncomeAnnual": 1665000,
       "monthlyInHand": 125434.99999999999,
       "annualTaxEstimate": 138320,
       "inHandAsPctOfCtc": 0.7526099999999999
@@ -501,6 +547,7 @@
       "annualGross": 1640000.0000000002,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 1565000.0000000002,
       "monthlyInHand": 124713.33333333334,
       "annualTaxEstimate": 119340.00000000003,
       "inHandAsPctOfCtc": 0.74828
@@ -511,6 +558,7 @@
       "annualGross": 1640000.0000000002,
       "pfScenario": "full-basic",
       "employeePfAnnual": 88560.00000000001,
+      "taxableIncomeAnnual": 1565000.0000000002,
       "monthlyInHand": 119133.33333333336,
       "annualTaxEstimate": 119340.00000000003,
       "inHandAsPctOfCtc": 0.7148000000000001
@@ -521,6 +569,7 @@
       "annualGross": 2300000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 2225000,
       "monthlyInHand": 167449.99999999997,
       "annualTaxEstimate": 266500,
       "inHandAsPctOfCtc": 0.8037599999999998
@@ -531,6 +580,7 @@
       "annualGross": 2300000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 124200,
+      "taxableIncomeAnnual": 2225000,
       "monthlyInHand": 158899.99999999997,
       "annualTaxEstimate": 266500,
       "inHandAsPctOfCtc": 0.7627199999999998
@@ -541,6 +591,7 @@
       "annualGross": 2175000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 2100000,
       "monthlyInHand": 159741.66666666666,
       "annualTaxEstimate": 234000,
       "inHandAsPctOfCtc": 0.76676
@@ -551,6 +602,7 @@
       "annualGross": 2175000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 117450,
+      "taxableIncomeAnnual": 2100000,
       "monthlyInHand": 151754.16666666666,
       "annualTaxEstimate": 234000,
       "inHandAsPctOfCtc": 0.72842
@@ -561,6 +613,7 @@
       "annualGross": 2050000.0000000002,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 1975000.0000000002,
       "monthlyInHand": 151925,
       "annualTaxEstimate": 202800.00000000006,
       "inHandAsPctOfCtc": 0.72924
@@ -571,6 +624,7 @@
       "annualGross": 2050000.0000000002,
       "pfScenario": "full-basic",
       "employeePfAnnual": 110700.00000000003,
+      "taxableIncomeAnnual": 1975000.0000000002,
       "monthlyInHand": 144500,
       "annualTaxEstimate": 202800.00000000006,
       "inHandAsPctOfCtc": 0.6936
@@ -581,6 +635,7 @@
       "annualGross": 2760000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 2685000,
       "monthlyInHand": 194581.66666666666,
       "annualTaxEstimate": 400920,
       "inHandAsPctOfCtc": 0.7783266666666667
@@ -591,6 +646,7 @@
       "annualGross": 2760000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 149040,
+      "taxableIncomeAnnual": 2685000,
       "monthlyInHand": 183961.66666666666,
       "annualTaxEstimate": 400920,
       "inHandAsPctOfCtc": 0.7358466666666666
@@ -601,6 +657,7 @@
       "annualGross": 2610000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 2535000,
       "monthlyInHand": 185981.66666666666,
       "annualTaxEstimate": 354120,
       "inHandAsPctOfCtc": 0.7439266666666666
@@ -611,6 +668,7 @@
       "annualGross": 2610000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 140940,
+      "taxableIncomeAnnual": 2535000,
       "monthlyInHand": 176036.66666666666,
       "annualTaxEstimate": 354120,
       "inHandAsPctOfCtc": 0.7041466666666667
@@ -621,6 +679,7 @@
       "annualGross": 2460000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 2385000,
       "monthlyInHand": 177316.66666666666,
       "annualTaxEstimate": 308100,
       "inHandAsPctOfCtc": 0.7092666666666667
@@ -631,6 +690,7 @@
       "annualGross": 2460000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 132840,
+      "taxableIncomeAnnual": 2385000,
       "monthlyInHand": 168046.66666666666,
       "annualTaxEstimate": 308100,
       "inHandAsPctOfCtc": 0.6721866666666667
@@ -641,6 +701,7 @@
       "annualGross": 3680000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 3605000,
       "monthlyInHand": 247328.33333333337,
       "annualTaxEstimate": 687960,
       "inHandAsPctOfCtc": 0.7419850000000001
@@ -651,6 +712,7 @@
       "annualGross": 3680000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 198720,
+      "taxableIncomeAnnual": 3605000,
       "monthlyInHand": 232568.33333333337,
       "annualTaxEstimate": 687960,
       "inHandAsPctOfCtc": 0.6977050000000001
@@ -661,6 +723,7 @@
       "annualGross": 3480000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 3405000,
       "monthlyInHand": 235861.6666666667,
       "annualTaxEstimate": 625560,
       "inHandAsPctOfCtc": 0.707585
@@ -671,6 +734,7 @@
       "annualGross": 3480000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 187920,
+      "taxableIncomeAnnual": 3405000,
       "monthlyInHand": 222001.6666666667,
       "annualTaxEstimate": 625560,
       "inHandAsPctOfCtc": 0.666005
@@ -681,6 +745,7 @@
       "annualGross": 3280000.0000000005,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 3205000.0000000005,
       "monthlyInHand": 224395.00000000006,
       "annualTaxEstimate": 563160.0000000001,
       "inHandAsPctOfCtc": 0.6731850000000003
@@ -691,6 +756,7 @@
       "annualGross": 3280000.0000000005,
       "pfScenario": "full-basic",
       "employeePfAnnual": 177120.00000000003,
+      "taxableIncomeAnnual": 3205000.0000000005,
       "monthlyInHand": 211435.00000000003,
       "annualTaxEstimate": 563160.0000000001,
       "inHandAsPctOfCtc": 0.6343050000000001
@@ -701,6 +767,7 @@
       "annualGross": 4600000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 4525000,
       "monthlyInHand": 300075,
       "annualTaxEstimate": 975000,
       "inHandAsPctOfCtc": 0.72018
@@ -711,6 +778,7 @@
       "annualGross": 4600000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 248400,
+      "taxableIncomeAnnual": 4525000,
       "monthlyInHand": 281175,
       "annualTaxEstimate": 975000,
       "inHandAsPctOfCtc": 0.67482
@@ -721,6 +789,7 @@
       "annualGross": 4350000,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 4275000,
       "monthlyInHand": 285741.6666666667,
       "annualTaxEstimate": 897000,
       "inHandAsPctOfCtc": 0.68578
@@ -731,6 +800,7 @@
       "annualGross": 4350000,
       "pfScenario": "full-basic",
       "employeePfAnnual": 234900,
+      "taxableIncomeAnnual": 4275000,
       "monthlyInHand": 267966.6666666667,
       "annualTaxEstimate": 897000,
       "inHandAsPctOfCtc": 0.64312
@@ -741,6 +811,7 @@
       "annualGross": 4100000.0000000005,
       "pfScenario": "statutory-ceiling",
       "employeePfAnnual": 21600,
+      "taxableIncomeAnnual": 4025000.0000000005,
       "monthlyInHand": 271408.3333333334,
       "annualTaxEstimate": 819000.0000000001,
       "inHandAsPctOfCtc": 0.6513800000000001
@@ -751,6 +822,7 @@
       "annualGross": 4100000.0000000005,
       "pfScenario": "full-basic",
       "employeePfAnnual": 221400.00000000006,
+      "taxableIncomeAnnual": 4025000.0000000005,
       "monthlyInHand": 254758.33333333337,
       "annualTaxEstimate": 819000.0000000001,
       "inHandAsPctOfCtc": 0.6114200000000001
@@ -1086,7 +1158,8 @@
   "keyFindings": [
     "At ₹20L CTC (13% employer-cost structure), choosing full-Basic PF instead of the statutory-ceiling default reduces monthly in-hand by ₹6,030 — ₹72,360 a year — for a larger retirement corpus instead.",
     "To land ₹1,00,000/month in-hand, the required CTC ranges from ₹13,30,583 to ₹14,92,849 a year depending only on how much of the offer is employer-side cost (8%–18% of CTC) — a spread of ₹1,62,266 for the identical take-home.",
-    "Between ₹12L and ₹15L CTC, monthly in-hand rises by only ₹19,150 for a ₹3L/year jump in CTC — this is the FY FY2026-27 Section 87A rebate cliff at ₹12L taxable income under the new regime.",
+    "At a 13% employer-cost structure, moving from ₹12L to ₹15L CTC (a ₹3L/year increase) raises monthly in-hand by only ₹19,150. Taxable income moves from ₹9,69,000 (below the ₹12L nil-tax threshold, so ₹0 tax) to ₹12,30,000 (inside Section 87A's new-regime marginal-relief zone, where tax is genuinely payable) — the CTC figures and the ₹12L taxable-income threshold are on different bases, not the same number.",
+    "Section 87A's new-regime marginal relief is not a hard cliff — crossing ₹12L taxable income doesn't jump straight to full slab tax. But for the next ₹70,587 of taxable income (₹12,00,000 to ₹12,70,587), the marginal tax rate is exactly 100%: every additional rupee earned is taxed away in full, before normal slab progression resumes.",
     "Two offers with the identical ₹10L CTC can differ by ₹8,333/month in-hand purely because of how much of the CTC is employer-side cost (PF, gratuity, insurance) versus fixed cash gross."
   ]
 }

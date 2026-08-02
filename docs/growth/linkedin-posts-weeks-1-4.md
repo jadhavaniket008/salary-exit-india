@@ -77,13 +77,13 @@ Per Phase 5's CTA policy: only 1 of every 3 posts strongly asks for a click — 
 
 ## Week 2, Post 2 (Wed) — personal profile — teardown — CTA: save
 
-> ₹12 LPA and ₹15 LPA. On paper, a ₹3L gap.
+> There's a ₹70,587-wide band of taxable income where the new tax regime takes 100% of every extra rupee you earn.
 >
-> In monthly in-hand, under the new regime: about ₹19,150/month gap. Not nothing — but far smaller than the CTC gap suggests.
+> Not a typo. From ₹12,00,000 to ₹12,70,587 taxable income, Section 87A's marginal relief caps your tax at exactly (income − ₹12L) — which means every rupee you cross the threshold by, you pay a rupee in tax. Zero net gain, rupee for rupee, until you clear ₹12.7L.
 >
-> Why: ₹12L taxable income is exactly where the Section 87A rebate cliff sits under the new regime. Below it, near-zero tax. Cross it, and real TDS starts every month.
+> It's not a cliff — you don't suddenly owe tax on your whole income. But inside that band, a raise genuinely doesn't move your take-home at all.
 >
-> If you're negotiating in this exact band, know the cliff exists before you anchor on the CTC number alone.
+> Modeled precisely, not a rule of thumb: [link]
 >
 > #Section87A #NewTaxRegime #SalaryNegotiation
 

@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/layout/SiteHeader";
-import { SiteFooter } from "@/components/layout/SiteFooter";
-import { ThirdPartyRootScripts } from "@/components/ads/ThirdPartyRootScripts";
-import { ConsentBannerShell } from "@/components/privacy/ConsentBannerShell";
-import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { getSiteOrigin } from "@/lib/seo/site-origin";
 import { defaultSiteSeo } from "@/lib/site";
 import { JsonLd } from "@/components/content/JsonLd";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo/structured-data";
-import { SeasonalBanner } from "@/components/ui/SeasonalBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -75,23 +69,9 @@ export default function RootLayout({
         </head>
       ) : null}
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-accent-solid focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
-        >
-          Skip to main content
-        </a>
         <JsonLd data={websiteJsonLd()} />
         <JsonLd data={organizationJsonLd()} />
-        <SiteHeader />
-        <SeasonalBanner />
-        <main id="main-content" className="flex flex-1 flex-col">
-          {children}
-        </main>
-        <SiteFooter />
-        <ThirdPartyRootScripts />
-        <ConsentBannerShell />
-        <StickyMobileCta />
+        {children}
       </body>
     </html>
   );
