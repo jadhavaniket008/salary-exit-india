@@ -1,0 +1,1092 @@
+{
+  "generatedAtIso": "2026-08-02T08:51:50.846Z",
+  "assumptions": {
+    "regime": "new",
+    "basicDaShareOfGross": 0.45,
+    "professionalTaxAnnual": 2500,
+    "metroCity": false,
+    "employerCostShareScenarios": [
+      0.08,
+      0.13,
+      0.18
+    ],
+    "salaryLevelsAnnualCtc": [
+      500000,
+      600000,
+      800000,
+      1000000,
+      1200000,
+      1500000,
+      1800000,
+      2000000,
+      2500000,
+      3000000,
+      4000000,
+      5000000
+    ],
+    "targetMonthlyInHandLevels": [
+      50000,
+      75000,
+      100000,
+      150000,
+      200000
+    ],
+    "financialYearLabel": "Financial Year 2026-27 (AY 2027-28)",
+    "financialYearId": "FY2026_27"
+  },
+  "salaryLevelRows": [
+    {
+      "annualCtc": 500000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 460000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 36325,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8718
+    },
+    {
+      "annualCtc": 500000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 460000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 24840,
+      "monthlyInHand": 36055,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.86532
+    },
+    {
+      "annualCtc": 500000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 435000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 34241.666666666664,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8218
+    },
+    {
+      "annualCtc": 500000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 435000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 23490,
+      "monthlyInHand": 34084.166666666664,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.81802
+    },
+    {
+      "annualCtc": 500000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 410000.00000000006,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 32158.33333333334,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.7718000000000002
+    },
+    {
+      "annualCtc": 500000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 410000.00000000006,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 22140.000000000004,
+      "monthlyInHand": 32113.33333333334,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.7707200000000001
+    },
+    {
+      "annualCtc": 600000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 552000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 43991.666666666664,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8798333333333334
+    },
+    {
+      "annualCtc": 600000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 552000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 29808,
+      "monthlyInHand": 43307.666666666664,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8661533333333333
+    },
+    {
+      "annualCtc": 600000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 522000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 41491.666666666664,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8298333333333333
+    },
+    {
+      "annualCtc": 600000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 522000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 28188,
+      "monthlyInHand": 40942.666666666664,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8188533333333333
+    },
+    {
+      "annualCtc": 600000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 492000.00000000006,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 38991.66666666667,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.7798333333333334
+    },
+    {
+      "annualCtc": 600000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 492000.00000000006,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 26568.000000000007,
+      "monthlyInHand": 38577.66666666667,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.7715533333333334
+    },
+    {
+      "annualCtc": 800000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 736000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 59325,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.889875
+    },
+    {
+      "annualCtc": 800000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 736000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 39744,
+      "monthlyInHand": 57813,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.867195
+    },
+    {
+      "annualCtc": 800000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 696000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 55991.666666666664,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.839875
+    },
+    {
+      "annualCtc": 800000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 696000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 37584,
+      "monthlyInHand": 54659.666666666664,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.819895
+    },
+    {
+      "annualCtc": 800000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 656000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 52658.33333333333,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.789875
+    },
+    {
+      "annualCtc": 800000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 656000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 35424,
+      "monthlyInHand": 51506.33333333333,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.772595
+    },
+    {
+      "annualCtc": 1000000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 920000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 74658.33333333334,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8959000000000001
+    },
+    {
+      "annualCtc": 1000000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 920000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 49680,
+      "monthlyInHand": 72318.33333333334,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8678200000000001
+    },
+    {
+      "annualCtc": 1000000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 870000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 70491.66666666667,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8459
+    },
+    {
+      "annualCtc": 1000000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 870000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 46980,
+      "monthlyInHand": 68376.66666666667,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.82052
+    },
+    {
+      "annualCtc": 1000000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 820000.0000000001,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 66325.00000000001,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.7959000000000003
+    },
+    {
+      "annualCtc": 1000000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 820000.0000000001,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 44280.00000000001,
+      "monthlyInHand": 64435.00000000001,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.7732200000000001
+    },
+    {
+      "annualCtc": 1200000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 1104000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 89991.66666666667,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8999166666666667
+    },
+    {
+      "annualCtc": 1200000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 1104000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 59616,
+      "monthlyInHand": 86823.66666666667,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8682366666666667
+    },
+    {
+      "annualCtc": 1200000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 1044000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 84991.66666666667,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8499166666666667
+    },
+    {
+      "annualCtc": 1200000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 1044000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 56376,
+      "monthlyInHand": 82093.66666666667,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8209366666666666
+    },
+    {
+      "annualCtc": 1200000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 984000.0000000001,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 79991.66666666669,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.7999166666666668
+    },
+    {
+      "annualCtc": 1200000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 984000.0000000001,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 53136.000000000015,
+      "monthlyInHand": 77363.66666666669,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.7736366666666669
+    },
+    {
+      "annualCtc": 1500000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 1380000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 106426.66666666667,
+      "annualTaxEstimate": 78780,
+      "inHandAsPctOfCtc": 0.8514133333333334
+    },
+    {
+      "annualCtc": 1500000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 1380000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 74520,
+      "monthlyInHand": 102016.66666666667,
+      "annualTaxEstimate": 78780,
+      "inHandAsPctOfCtc": 0.8161333333333334
+    },
+    {
+      "annualCtc": 1500000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 1305000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 104141.66666666667,
+      "annualTaxEstimate": 31200,
+      "inHandAsPctOfCtc": 0.8331333333333333
+    },
+    {
+      "annualCtc": 1500000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 1305000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 70470,
+      "monthlyInHand": 100069.16666666667,
+      "annualTaxEstimate": 31200,
+      "inHandAsPctOfCtc": 0.8005533333333333
+    },
+    {
+      "annualCtc": 1500000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 1230000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 100491.66666666667,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.8039333333333334
+    },
+    {
+      "annualCtc": 1500000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 1230000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 66420,
+      "monthlyInHand": 96756.66666666667,
+      "annualTaxEstimate": 0,
+      "inHandAsPctOfCtc": 0.7740533333333334
+    },
+    {
+      "annualCtc": 1800000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 1656000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 125838.66666666666,
+      "annualTaxEstimate": 121836,
+      "inHandAsPctOfCtc": 0.8389244444444445
+    },
+    {
+      "annualCtc": 1800000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 1656000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 89424,
+      "monthlyInHand": 120186.66666666667,
+      "annualTaxEstimate": 121836,
+      "inHandAsPctOfCtc": 0.8012444444444444
+    },
+    {
+      "annualCtc": 1800000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 1566000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 119508.66666666667,
+      "annualTaxEstimate": 107796,
+      "inHandAsPctOfCtc": 0.7967244444444445
+    },
+    {
+      "annualCtc": 1800000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 1566000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 84564,
+      "monthlyInHand": 114261.66666666667,
+      "annualTaxEstimate": 107796,
+      "inHandAsPctOfCtc": 0.7617444444444444
+    },
+    {
+      "annualCtc": 1800000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 1476000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 113178.66666666667,
+      "annualTaxEstimate": 93756,
+      "inHandAsPctOfCtc": 0.7545244444444444
+    },
+    {
+      "annualCtc": 1800000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 1476000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 79704,
+      "monthlyInHand": 108336.66666666667,
+      "annualTaxEstimate": 93756,
+      "inHandAsPctOfCtc": 0.7222444444444445
+    },
+    {
+      "annualCtc": 2000000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 1840000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 138065,
+      "annualTaxEstimate": 159120,
+      "inHandAsPctOfCtc": 0.82839
+    },
+    {
+      "annualCtc": 2000000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 1840000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 99360,
+      "monthlyInHand": 131585,
+      "annualTaxEstimate": 159120,
+      "inHandAsPctOfCtc": 0.78951
+    },
+    {
+      "annualCtc": 2000000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 1740000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 131465,
+      "annualTaxEstimate": 138320,
+      "inHandAsPctOfCtc": 0.78879
+    },
+    {
+      "annualCtc": 2000000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 1740000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 93960,
+      "monthlyInHand": 125434.99999999999,
+      "annualTaxEstimate": 138320,
+      "inHandAsPctOfCtc": 0.7526099999999999
+    },
+    {
+      "annualCtc": 2000000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 1640000.0000000002,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 124713.33333333334,
+      "annualTaxEstimate": 119340.00000000003,
+      "inHandAsPctOfCtc": 0.74828
+    },
+    {
+      "annualCtc": 2000000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 1640000.0000000002,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 88560.00000000001,
+      "monthlyInHand": 119133.33333333336,
+      "annualTaxEstimate": 119340.00000000003,
+      "inHandAsPctOfCtc": 0.7148000000000001
+    },
+    {
+      "annualCtc": 2500000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 2300000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 167449.99999999997,
+      "annualTaxEstimate": 266500,
+      "inHandAsPctOfCtc": 0.8037599999999998
+    },
+    {
+      "annualCtc": 2500000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 2300000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 124200,
+      "monthlyInHand": 158899.99999999997,
+      "annualTaxEstimate": 266500,
+      "inHandAsPctOfCtc": 0.7627199999999998
+    },
+    {
+      "annualCtc": 2500000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 2175000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 159741.66666666666,
+      "annualTaxEstimate": 234000,
+      "inHandAsPctOfCtc": 0.76676
+    },
+    {
+      "annualCtc": 2500000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 2175000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 117450,
+      "monthlyInHand": 151754.16666666666,
+      "annualTaxEstimate": 234000,
+      "inHandAsPctOfCtc": 0.72842
+    },
+    {
+      "annualCtc": 2500000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 2050000.0000000002,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 151925,
+      "annualTaxEstimate": 202800.00000000006,
+      "inHandAsPctOfCtc": 0.72924
+    },
+    {
+      "annualCtc": 2500000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 2050000.0000000002,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 110700.00000000003,
+      "monthlyInHand": 144500,
+      "annualTaxEstimate": 202800.00000000006,
+      "inHandAsPctOfCtc": 0.6936
+    },
+    {
+      "annualCtc": 3000000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 2760000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 194581.66666666666,
+      "annualTaxEstimate": 400920,
+      "inHandAsPctOfCtc": 0.7783266666666667
+    },
+    {
+      "annualCtc": 3000000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 2760000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 149040,
+      "monthlyInHand": 183961.66666666666,
+      "annualTaxEstimate": 400920,
+      "inHandAsPctOfCtc": 0.7358466666666666
+    },
+    {
+      "annualCtc": 3000000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 2610000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 185981.66666666666,
+      "annualTaxEstimate": 354120,
+      "inHandAsPctOfCtc": 0.7439266666666666
+    },
+    {
+      "annualCtc": 3000000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 2610000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 140940,
+      "monthlyInHand": 176036.66666666666,
+      "annualTaxEstimate": 354120,
+      "inHandAsPctOfCtc": 0.7041466666666667
+    },
+    {
+      "annualCtc": 3000000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 2460000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 177316.66666666666,
+      "annualTaxEstimate": 308100,
+      "inHandAsPctOfCtc": 0.7092666666666667
+    },
+    {
+      "annualCtc": 3000000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 2460000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 132840,
+      "monthlyInHand": 168046.66666666666,
+      "annualTaxEstimate": 308100,
+      "inHandAsPctOfCtc": 0.6721866666666667
+    },
+    {
+      "annualCtc": 4000000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 3680000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 247328.33333333337,
+      "annualTaxEstimate": 687960,
+      "inHandAsPctOfCtc": 0.7419850000000001
+    },
+    {
+      "annualCtc": 4000000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 3680000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 198720,
+      "monthlyInHand": 232568.33333333337,
+      "annualTaxEstimate": 687960,
+      "inHandAsPctOfCtc": 0.6977050000000001
+    },
+    {
+      "annualCtc": 4000000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 3480000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 235861.6666666667,
+      "annualTaxEstimate": 625560,
+      "inHandAsPctOfCtc": 0.707585
+    },
+    {
+      "annualCtc": 4000000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 3480000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 187920,
+      "monthlyInHand": 222001.6666666667,
+      "annualTaxEstimate": 625560,
+      "inHandAsPctOfCtc": 0.666005
+    },
+    {
+      "annualCtc": 4000000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 3280000.0000000005,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 224395.00000000006,
+      "annualTaxEstimate": 563160.0000000001,
+      "inHandAsPctOfCtc": 0.6731850000000003
+    },
+    {
+      "annualCtc": 4000000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 3280000.0000000005,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 177120.00000000003,
+      "monthlyInHand": 211435.00000000003,
+      "annualTaxEstimate": 563160.0000000001,
+      "inHandAsPctOfCtc": 0.6343050000000001
+    },
+    {
+      "annualCtc": 5000000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 4600000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 300075,
+      "annualTaxEstimate": 975000,
+      "inHandAsPctOfCtc": 0.72018
+    },
+    {
+      "annualCtc": 5000000,
+      "employerCostSharePct": 0.08,
+      "annualGross": 4600000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 248400,
+      "monthlyInHand": 281175,
+      "annualTaxEstimate": 975000,
+      "inHandAsPctOfCtc": 0.67482
+    },
+    {
+      "annualCtc": 5000000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 4350000,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 285741.6666666667,
+      "annualTaxEstimate": 897000,
+      "inHandAsPctOfCtc": 0.68578
+    },
+    {
+      "annualCtc": 5000000,
+      "employerCostSharePct": 0.13,
+      "annualGross": 4350000,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 234900,
+      "monthlyInHand": 267966.6666666667,
+      "annualTaxEstimate": 897000,
+      "inHandAsPctOfCtc": 0.64312
+    },
+    {
+      "annualCtc": 5000000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 4100000.0000000005,
+      "pfScenario": "statutory-ceiling",
+      "employeePfAnnual": 21600,
+      "monthlyInHand": 271408.3333333334,
+      "annualTaxEstimate": 819000.0000000001,
+      "inHandAsPctOfCtc": 0.6513800000000001
+    },
+    {
+      "annualCtc": 5000000,
+      "employerCostSharePct": 0.18,
+      "annualGross": 4100000.0000000005,
+      "pfScenario": "full-basic",
+      "employeePfAnnual": 221400.00000000006,
+      "monthlyInHand": 254758.33333333337,
+      "annualTaxEstimate": 819000.0000000001,
+      "inHandAsPctOfCtc": 0.6114200000000001
+    }
+  ],
+  "pfComparisonRows": [
+    {
+      "annualCtc": 500000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 36325,
+      "fullBasicPfMonthlyInHand": 36055,
+      "monthlyCashDifference": 270,
+      "annualCashDifference": 3240
+    },
+    {
+      "annualCtc": 500000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 34241.666666666664,
+      "fullBasicPfMonthlyInHand": 34084.166666666664,
+      "monthlyCashDifference": 157.5,
+      "annualCashDifference": 1890
+    },
+    {
+      "annualCtc": 500000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 32158.33333333334,
+      "fullBasicPfMonthlyInHand": 32113.33333333334,
+      "monthlyCashDifference": 45,
+      "annualCashDifference": 540
+    },
+    {
+      "annualCtc": 600000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 43991.666666666664,
+      "fullBasicPfMonthlyInHand": 43307.666666666664,
+      "monthlyCashDifference": 684,
+      "annualCashDifference": 8208
+    },
+    {
+      "annualCtc": 600000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 41491.666666666664,
+      "fullBasicPfMonthlyInHand": 40942.666666666664,
+      "monthlyCashDifference": 549,
+      "annualCashDifference": 6588
+    },
+    {
+      "annualCtc": 600000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 38991.66666666667,
+      "fullBasicPfMonthlyInHand": 38577.66666666667,
+      "monthlyCashDifference": 414,
+      "annualCashDifference": 4968
+    },
+    {
+      "annualCtc": 800000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 59325,
+      "fullBasicPfMonthlyInHand": 57813,
+      "monthlyCashDifference": 1512,
+      "annualCashDifference": 18144
+    },
+    {
+      "annualCtc": 800000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 55991.666666666664,
+      "fullBasicPfMonthlyInHand": 54659.666666666664,
+      "monthlyCashDifference": 1332,
+      "annualCashDifference": 15984
+    },
+    {
+      "annualCtc": 800000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 52658.33333333333,
+      "fullBasicPfMonthlyInHand": 51506.33333333333,
+      "monthlyCashDifference": 1152,
+      "annualCashDifference": 13824
+    },
+    {
+      "annualCtc": 1000000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 74658.33333333334,
+      "fullBasicPfMonthlyInHand": 72318.33333333334,
+      "monthlyCashDifference": 2340,
+      "annualCashDifference": 28080
+    },
+    {
+      "annualCtc": 1000000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 70491.66666666667,
+      "fullBasicPfMonthlyInHand": 68376.66666666667,
+      "monthlyCashDifference": 2115,
+      "annualCashDifference": 25380
+    },
+    {
+      "annualCtc": 1000000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 66325.00000000001,
+      "fullBasicPfMonthlyInHand": 64435.00000000001,
+      "monthlyCashDifference": 1890.0000000000073,
+      "annualCashDifference": 22680.000000000087
+    },
+    {
+      "annualCtc": 1200000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 89991.66666666667,
+      "fullBasicPfMonthlyInHand": 86823.66666666667,
+      "monthlyCashDifference": 3168,
+      "annualCashDifference": 38016
+    },
+    {
+      "annualCtc": 1200000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 84991.66666666667,
+      "fullBasicPfMonthlyInHand": 82093.66666666667,
+      "monthlyCashDifference": 2898,
+      "annualCashDifference": 34776
+    },
+    {
+      "annualCtc": 1200000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 79991.66666666669,
+      "fullBasicPfMonthlyInHand": 77363.66666666669,
+      "monthlyCashDifference": 2628,
+      "annualCashDifference": 31536
+    },
+    {
+      "annualCtc": 1500000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 106426.66666666667,
+      "fullBasicPfMonthlyInHand": 102016.66666666667,
+      "monthlyCashDifference": 4410,
+      "annualCashDifference": 52920
+    },
+    {
+      "annualCtc": 1500000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 104141.66666666667,
+      "fullBasicPfMonthlyInHand": 100069.16666666667,
+      "monthlyCashDifference": 4072.5,
+      "annualCashDifference": 48870
+    },
+    {
+      "annualCtc": 1500000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 100491.66666666667,
+      "fullBasicPfMonthlyInHand": 96756.66666666667,
+      "monthlyCashDifference": 3735,
+      "annualCashDifference": 44820
+    },
+    {
+      "annualCtc": 1800000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 125838.66666666666,
+      "fullBasicPfMonthlyInHand": 120186.66666666667,
+      "monthlyCashDifference": 5651.999999999985,
+      "annualCashDifference": 67823.99999999983
+    },
+    {
+      "annualCtc": 1800000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 119508.66666666667,
+      "fullBasicPfMonthlyInHand": 114261.66666666667,
+      "monthlyCashDifference": 5247,
+      "annualCashDifference": 62964
+    },
+    {
+      "annualCtc": 1800000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 113178.66666666667,
+      "fullBasicPfMonthlyInHand": 108336.66666666667,
+      "monthlyCashDifference": 4842,
+      "annualCashDifference": 58104
+    },
+    {
+      "annualCtc": 2000000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 138065,
+      "fullBasicPfMonthlyInHand": 131585,
+      "monthlyCashDifference": 6480,
+      "annualCashDifference": 77760
+    },
+    {
+      "annualCtc": 2000000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 131465,
+      "fullBasicPfMonthlyInHand": 125434.99999999999,
+      "monthlyCashDifference": 6030.000000000015,
+      "annualCashDifference": 72360.00000000017
+    },
+    {
+      "annualCtc": 2000000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 124713.33333333334,
+      "fullBasicPfMonthlyInHand": 119133.33333333336,
+      "monthlyCashDifference": 5579.999999999985,
+      "annualCashDifference": 66959.99999999983
+    },
+    {
+      "annualCtc": 2500000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 167449.99999999997,
+      "fullBasicPfMonthlyInHand": 158899.99999999997,
+      "monthlyCashDifference": 8550,
+      "annualCashDifference": 102600
+    },
+    {
+      "annualCtc": 2500000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 159741.66666666666,
+      "fullBasicPfMonthlyInHand": 151754.16666666666,
+      "monthlyCashDifference": 7987.5,
+      "annualCashDifference": 95850
+    },
+    {
+      "annualCtc": 2500000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 151925,
+      "fullBasicPfMonthlyInHand": 144500,
+      "monthlyCashDifference": 7425,
+      "annualCashDifference": 89100
+    },
+    {
+      "annualCtc": 3000000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 194581.66666666666,
+      "fullBasicPfMonthlyInHand": 183961.66666666666,
+      "monthlyCashDifference": 10620,
+      "annualCashDifference": 127440
+    },
+    {
+      "annualCtc": 3000000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 185981.66666666666,
+      "fullBasicPfMonthlyInHand": 176036.66666666666,
+      "monthlyCashDifference": 9945,
+      "annualCashDifference": 119340
+    },
+    {
+      "annualCtc": 3000000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 177316.66666666666,
+      "fullBasicPfMonthlyInHand": 168046.66666666666,
+      "monthlyCashDifference": 9270,
+      "annualCashDifference": 111240
+    },
+    {
+      "annualCtc": 4000000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 247328.33333333337,
+      "fullBasicPfMonthlyInHand": 232568.33333333337,
+      "monthlyCashDifference": 14760,
+      "annualCashDifference": 177120
+    },
+    {
+      "annualCtc": 4000000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 235861.6666666667,
+      "fullBasicPfMonthlyInHand": 222001.6666666667,
+      "monthlyCashDifference": 13860,
+      "annualCashDifference": 166320
+    },
+    {
+      "annualCtc": 4000000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 224395.00000000006,
+      "fullBasicPfMonthlyInHand": 211435.00000000003,
+      "monthlyCashDifference": 12960.00000000003,
+      "annualCashDifference": 155520.00000000035
+    },
+    {
+      "annualCtc": 5000000,
+      "employerCostSharePct": 0.08,
+      "cappedPfMonthlyInHand": 300075,
+      "fullBasicPfMonthlyInHand": 281175,
+      "monthlyCashDifference": 18900,
+      "annualCashDifference": 226800
+    },
+    {
+      "annualCtc": 5000000,
+      "employerCostSharePct": 0.13,
+      "cappedPfMonthlyInHand": 285741.6666666667,
+      "fullBasicPfMonthlyInHand": 267966.6666666667,
+      "monthlyCashDifference": 17775,
+      "annualCashDifference": 213300
+    },
+    {
+      "annualCtc": 5000000,
+      "employerCostSharePct": 0.18,
+      "cappedPfMonthlyInHand": 271408.3333333334,
+      "fullBasicPfMonthlyInHand": 254758.33333333337,
+      "monthlyCashDifference": 16650,
+      "annualCashDifference": 199800
+    }
+  ],
+  "requiredCtcRows": [
+    {
+      "targetMonthlyInHand": 50000,
+      "requiredAnnualGross": 624084.47265625,
+      "requiredAnnualCtcLow": 678352.6876698369,
+      "requiredAnnualCtcPoint": 693427.1918402778,
+      "requiredAnnualCtcHigh": 761078.6251905487
+    },
+    {
+      "targetMonthlyInHand": 75000,
+      "requiredAnnualGross": 923919.677734375,
+      "requiredAnnualCtcLow": 1004260.5192764945,
+      "requiredAnnualCtcPoint": 1026577.4197048611,
+      "requiredAnnualCtcHigh": 1126731.3143102133
+    },
+    {
+      "targetMonthlyInHand": 100000,
+      "requiredAnnualGross": 1224136.3525390625,
+      "requiredAnnualCtcLow": 1330582.9918902852,
+      "requiredAnnualCtcPoint": 1360151.5028211805,
+      "requiredAnnualCtcHigh": 1492849.2104134907
+    },
+    {
+      "targetMonthlyInHand": 150000,
+      "requiredAnnualGross": 2021026.611328125,
+      "requiredAnnualCtcLow": 2196768.05579144,
+      "requiredAnnualCtcPoint": 2245585.1236979165,
+      "requiredAnnualCtcHigh": 2464666.59918064
+    },
+    {
+      "targetMonthlyInHand": 200000,
+      "requiredAnnualGross": 2854919.43359375,
+      "requiredAnnualCtcLow": 3103173.2973845107,
+      "requiredAnnualCtcPoint": 3172132.7039930555,
+      "requiredAnnualCtcHigh": 3481609.0653582313
+    }
+  ],
+  "keyFindings": [
+    "At ₹20L CTC (13% employer-cost structure), choosing full-Basic PF instead of the statutory-ceiling default reduces monthly in-hand by ₹6,030 — ₹72,360 a year — for a larger retirement corpus instead.",
+    "To land ₹1,00,000/month in-hand, the required CTC ranges from ₹13,30,583 to ₹14,92,849 a year depending only on how much of the offer is employer-side cost (8%–18% of CTC) — a spread of ₹1,62,266 for the identical take-home.",
+    "Between ₹12L and ₹15L CTC, monthly in-hand rises by only ₹19,150 for a ₹3L/year jump in CTC — this is the FY FY2026-27 Section 87A rebate cliff at ₹12L taxable income under the new regime.",
+    "Two offers with the identical ₹10L CTC can differ by ₹8,333/month in-hand purely because of how much of the CTC is employer-side cost (PF, gratuity, insurance) versus fixed cash gross."
+  ]
+}

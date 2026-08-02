@@ -31,6 +31,9 @@ export const ROUTES = {
   epfCalculator: "/epf-calculator",
   reverseSalaryCalculator: "/reverse-salary-calculator",
   forBusinesses: "/for-businesses",
+  /** Flagship linkable data asset — see docs/growth/link-earning-offers.md */
+  inHandSalaryModelReport: "/reports/india-in-hand-salary-model-2026",
+  inHandSalaryTableEmbed: "/embed/in-hand-salary-table",
 } as const;
 
 export type AppRoute = (typeof ROUTES)[keyof typeof ROUTES];

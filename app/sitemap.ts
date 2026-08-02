@@ -28,6 +28,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ROUTES.salaryGuides,
     ROUTES.taxGuides,
     ROUTES.jobSwitchGuides,
+    // Flagship linkable data asset — see docs/growth/link-earning-offers.md.
+    // The /embed counterpart is deliberately noindexed (see its own page metadata)
+    // so it doesn't compete with this page for search visibility.
+    ROUTES.inHandSalaryModelReport,
     ...Object.values(CALCULATOR_REGISTRY).map((c) => c.path),
     // Long-tail LPA bands are noindexed pending AdSense approval — keep them out
     // of the sitemap while the robots meta says noindex (mixed signals confuse Google).

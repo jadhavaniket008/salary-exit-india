@@ -1,0 +1,43 @@
+week,day,account,post_number_this_week,content_type,topic,cta_type,utm_content,status
+1,Mon,personal profile,1,native data,same CTC three employer-cost structures,discuss,personal-profile-week1-post1,drafted
+1,Wed,personal profile,2,teardown,two identical-CTC offers different in-hand,save,personal-profile-week1-post2,drafted
+1,Fri,personal profile,3,build/accuracy insight,why reverse-salary gives a range not one number,click,personal-profile-week1-post3,drafted
+1,Thu,company page,1,archive/evergreen,flagship report announcement,click,company-page-week1,drafted
+2,Mon,personal profile,1,native data,PF ceiling vs full-Basic monthly cost,discuss,personal-profile-week2-post1,to draft
+2,Wed,personal profile,2,teardown,the 12L-to-15L rebate cliff explained,save,personal-profile-week2-post2,to draft
+2,Fri,personal profile,3,founder/build,why we built a reverse salary calculator,click,personal-profile-week2-post3,to draft
+3,Mon,personal profile,1,native data,required CTC for 1L in-hand range,discuss,personal-profile-week3-post1,to draft
+3,Wed,personal profile,2,carousel,offer-comparison checklist,save,personal-profile-week3-post2,to draft
+3,Fri,personal profile,3,teardown,why two 20L offers pay differently,click,personal-profile-week3-post3,to draft
+3,Thu,company page,1,evergreen,for-businesses embed offering,click,company-page-week3,to draft
+4,Mon,personal profile,1,native data,city-adjusted in-hand vs rent scenario,discuss,personal-profile-week4-post1,to draft
+4,Wed,personal profile,2,build/accuracy insight,how PF wage ceiling assumptions work,save,personal-profile-week4-post2,to draft
+4,Fri,personal profile,3,teardown,notice buyout math worked example,click,personal-profile-week4-post3,to draft
+5,Mon,personal profile,1,native data,gratuity accrual over 5 years modeled,discuss,personal-profile-week5-post1,to draft
+5,Wed,personal profile,2,founder/build,what surprised us building the tax engine,save,personal-profile-week5-post2,to draft
+5,Fri,personal profile,3,teardown,old vs new regime break-even point,click,personal-profile-week5-post3,to draft
+5,Thu,company page,1,evergreen,in-hand salary model report recap,click,company-page-week5,to draft
+6,Mon,personal profile,1,native data,leave encashment tax treatment example,discuss,personal-profile-week6-post1,to draft
+6,Wed,personal profile,2,carousel,how to read your offer letter (5 slides),save,personal-profile-week6-post2,to draft
+6,Fri,personal profile,3,teardown,final settlement worked example,click,personal-profile-week6-post3,to draft
+7,Mon,personal profile,1,native data,employer PF vs employee PF confusion,discuss,personal-profile-week7-post1,to draft
+7,Wed,personal profile,2,build/accuracy insight,what the calculation-error report taught us,save,personal-profile-week7-post2,to draft
+7,Fri,personal profile,3,teardown,salary hike vs inflation reality check,click,personal-profile-week7-post3,to draft
+7,Thu,company page,1,evergreen,college partnership announcement (if secured),click,company-page-week7,to draft
+8,Mon,personal profile,1,native data,second data cut preview,discuss,personal-profile-week8-post1,to draft
+8,Wed,personal profile,2,teardown,HRA exemption three-part test example,save,personal-profile-week8-post2,to draft
+8,Fri,personal profile,3,founder/build,what changed after week 1-7 data,click,personal-profile-week8-post3,to draft
+9,Mon,personal profile,1,native data,EPF withdrawal vs transfer real numbers,discuss,personal-profile-week9-post1,to draft
+9,Wed,personal profile,2,carousel,job-switch checklist beyond CTC,save,personal-profile-week9-post2,to draft
+9,Fri,personal profile,3,teardown,professional tax state variation example,click,personal-profile-week9-post3,to draft
+10,Mon,personal profile,1,native data,second report/data-cut launch,discuss,personal-profile-week10-post1,to draft
+10,Wed,personal profile,2,build/accuracy insight,reverse-engineering a real offer letter,save,personal-profile-week10-post2,to draft
+10,Fri,personal profile,3,teardown,offer comparison ranking example,click,personal-profile-week10-post3,to draft
+10,Thu,company page,1,evergreen,second report announcement,click,company-page-week10,to draft
+11,Mon,personal profile,1,native data,90-day campaign learnings preview,discuss,personal-profile-week11-post1,to draft
+11,Wed,personal profile,2,teardown,co-created resource spotlight (if secured),save,personal-profile-week11-post2,to draft
+11,Fri,personal profile,3,founder/build,what we're changing next quarter,click,personal-profile-week11-post3,to draft
+12,Mon,personal profile,1,native data,90-day results recap (real numbers only),discuss,personal-profile-week12-post1,to draft
+12,Wed,personal profile,2,teardown,what worked vs what we're stopping,save,personal-profile-week12-post2,to draft
+12,Fri,personal profile,3,founder/build,thank-you + what's next,click,personal-profile-week12-post3,to draft
+12,Thu,company page,1,evergreen,quarter recap,click,company-page-week12,to draft

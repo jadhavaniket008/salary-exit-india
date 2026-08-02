@@ -1,0 +1,11 @@
+prospect_id,contact_date,follow_up_date,sent,delivered,replied,positive,declined,citation,link,relationship_status,utm_content,notes
+A01,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-01,Queued for first batch of 10 — see outreach-templates.md
+A02,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-02,Queued for first batch of 10
+A04,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-03,Queued for first batch of 10
+A17,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-04,Queued for first batch of 10
+A18,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-05,Queued for first batch of 10
+A20,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-06,Queued for first batch of 10
+A21,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-hr-07,Queued for first batch of 10
+C01,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-finance-01,Queued for first batch of 10 — real, named individual (CA Sandeep Kanoi)
+C02,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-finance-02,Queued for first batch of 10 — real, named individual (M. Pattabiraman)
+C10,,,false,unknown,false,false,false,false,false,not started,editorial-batch1-finance-03,Queued for first batch of 10
