@@ -60,6 +60,25 @@ describe("generateInHandSalaryModel", () => {
     expect(zoneFinding).toMatch(/₹70,58[5-9]/);
   });
 
+  it("distinguishes income tax before cess (100%) from total tax including cess (104%) in the marginal-relief finding", () => {
+    const zoneFinding = model.keyFindings.find((f) => f.includes("marginal relief"));
+    expect(zoneFinding).toBeDefined();
+    expect(zoneFinding).toContain("before cess");
+    expect(zoneFinding).toContain("100% marginal rate on income tax alone");
+    expect(zoneFinding).toContain("104%");
+    expect(zoneFinding).toContain("cess");
+    // Must not claim a flat, unqualified 100% on TOTAL tax liability.
+    expect(zoneFinding).not.toMatch(/marginal rate on total tax.*100%/i);
+  });
+
+  it("never states an unqualified 100% marginal rate without the before/after-cess distinction anywhere in the findings", () => {
+    for (const finding of model.keyFindings) {
+      if (finding.includes("100%")) {
+        expect(finding).toContain("before cess");
+      }
+    }
+  });
+
   it("keeps the CTC-vs-taxable-income finding on separate, explicit bases", () => {
     const ctcFinding = model.keyFindings.find((f) => f.includes("₹12L to ₹15L CTC"));
     expect(ctcFinding).toBeDefined();

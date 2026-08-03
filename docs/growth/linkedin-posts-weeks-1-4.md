@@ -4,25 +4,23 @@ Per Phase 5's CTA policy: only 1 of every 3 posts strongly asks for a click — 
 
 ---
 
-## Week 1, Post 1 (Mon) — personal profile — native data — CTA: discuss
+## Week 1, Post 1 (Mon) — personal profile — native data — CTA: discuss — NO LINK
 
 > Ran the same ₹20L CTC through three different employer-cost structures.
 >
-> 8% employer cost (lean structure — mostly fixed cash): one number.
-> 13% employer cost (typical): a different number.
-> 18% employer cost (heavy PF/gratuity/insurance): a third number.
+> 8% employer cost (lean structure — mostly fixed cash): ₹1,38,065/month in-hand.
+> 13% employer cost (typical): ₹1,31,465/month.
+> 18% employer cost (heavy PF/gratuity/insurance): ₹1,24,713/month.
 >
-> Same CTC. Same offer letter headline. Different monthly in-hand — by a meaningful amount, not a rounding error.
+> Same CTC. Same offer letter headline. ₹13,352/month difference between the leanest and heaviest structure — over ₹1.6L/year, not a rounding error.
 >
 > This is why "I got ₹20L too, why is your in-hand higher" is a real, answerable question — not just office gossip.
->
-> Full model (all 12 CTC bands, all 3 structures, free CSV): [link]
 >
 > Has anyone actually compared employer-cost structure between two real offers before accepting? Curious how many people ask for this breakdown at offer stage vs. find out after the first payslip.
 >
 > #PersonalFinanceIndia #SalaryNegotiation #CTCvsInHand
 
-## Week 1, Post 2 (Wed) — personal profile — teardown — CTA: save
+## Week 1, Post 2 (Wed) — personal profile — teardown — CTA: save — NO LINK
 
 > Two candidates. Both signed offers for ₹20L CTC. Different companies.
 >
@@ -37,7 +35,7 @@ Per Phase 5's CTA policy: only 1 of every 3 posts strongly asks for a click — 
 >
 > #OfferLetter #CTCBreakdown #SalaryStructure
 
-## Week 1, Post 3 (Fri) — personal profile — build/accuracy insight — CTA: click
+## Week 1, Post 3 (Fri) — personal profile — build/accuracy insight — CTA: click — LINK: reverse salary calculator
 
 > Built a reverse salary calculator — you enter your target monthly in-hand, it tells you the required CTC.
 >
@@ -47,17 +45,17 @@ Per Phase 5's CTA policy: only 1 of every 3 posts strongly asks for a click — 
 >
 > A single number here would have been more satisfying to look at and less honest.
 >
-> Try it: [link to reverse salary calculator]
+> Try it: https://www.salaryexit.in/reverse-salary-calculator?utm_source=linkedin&utm_medium=organic-social&utm_campaign=required-ctc-report-2026&utm_content=personal-profile-week1-post3
 >
 > #BuildInPublic #SalaryCalculator #FinTech
 
-## Week 1 — Company page — evergreen archive — CTA: discuss (no link, per the pilot's 4-link cap — see pilot-four-weeks.csv)
+## Week 1 — Company page — evergreen archive — CTA: click — LINK: flagship report
 
 > SalaryExit India In-Hand Salary Model 2026 is live.
 >
 > A modeled dataset — not a survey — showing how ₹5L-₹50L CTC converts to real monthly in-hand across employer-cost structures and PF choices. Generated from the same engine that powers our public calculators.
 >
-> Free CSV/JSON download, full methodology, citable with attribution.
+> Free CSV/JSON download, full methodology, citable with attribution: https://www.salaryexit.in/reports/india-in-hand-salary-model-2026?utm_source=linkedin-page&utm_medium=organic-social&utm_campaign=required-ctc-report-2026&utm_content=company-page-week1
 >
 > What's the one number from a salary breakdown that would've changed how you negotiated your first offer?
 >
@@ -65,7 +63,7 @@ Per Phase 5's CTA policy: only 1 of every 3 posts strongly asks for a click — 
 
 ---
 
-## Week 2, Post 1 (Mon) — personal profile — native data — CTA: discuss
+## Week 2, Post 1 (Mon) — personal profile — native data — CTA: discuss — NO LINK
 
 > At ₹20L CTC, choosing full-Basic PF over the statutory-ceiling default costs roughly ₹6,000/month in take-home — about ₹72,000/year — for a meaningfully larger retirement corpus.
 >
@@ -75,25 +73,25 @@ Per Phase 5's CTA policy: only 1 of every 3 posts strongly asks for a click — 
 >
 > #EPF #RetirementPlanning #PersonalFinanceIndia
 
-## Week 2, Post 2 (Wed) — personal profile — teardown — CTA: save
+## Week 2, Post 2 (Wed) — personal profile — teardown — CTA: save — NO LINK
 
-> There's a ₹70,587-wide band of taxable income where the new tax regime takes 100% of every extra rupee you earn.
+> There's a ₹70,587-wide band of taxable income where a raise barely moves your take-home at all.
 >
-> Not a typo. From ₹12,00,000 to ₹12,70,587 taxable income, Section 87A's marginal relief caps your tax at exactly (income − ₹12L) — which means every rupee you cross the threshold by, you pay a rupee in tax. Zero net gain, rupee for rupee, until you clear ₹12.7L.
+> Not a typo. From ₹12,00,000 to ₹12,70,587 taxable income, Section 87A's marginal relief caps income tax (before cess) at exactly (income − ₹12L) — every rupee you cross the threshold by, you pay a rupee of income tax. Add the 4% health & education cess on top and your total tax liability actually rises slightly faster than your income in this band — about ₹1.04 in extra tax for every extra ₹1 earned.
 >
-> It's not a cliff — you don't suddenly owe tax on your whole income. But inside that band, a raise genuinely doesn't move your take-home at all.
+> It's not a cliff — you don't suddenly owe tax on your whole income. But inside that band, a raise genuinely doesn't grow your take-home, and can even shave a few paise off it.
 >
-> Modeled precisely, not a rule of thumb: [link]
+> Modeled precisely against the real FY 2026-27 tax engine — not a rule of thumb.
 >
 > #Section87A #NewTaxRegime #SalaryNegotiation
 
-## Week 2, Post 3 (Fri) — personal profile — founder/build — CTA: click
+## Week 2, Post 3 (Fri) — personal profile — founder/build — CTA: click — LINK: reverse salary calculator
 
 > Why build a reverse salary calculator when a CTC-to-in-hand calculator already exists?
 >
 > Because most people don't think in CTC. They think "I need ₹1L/month to make this move worth it" — and then have to reverse-engineer what CTC that actually requires, usually by guessing or asking a friend who may have a very different employer-cost structure.
 >
-> [link to reverse salary calculator]
+> https://www.salaryexit.in/reverse-salary-calculator?utm_source=linkedin&utm_medium=organic-social&utm_campaign=required-ctc-report-2026&utm_content=personal-profile-week2-post3
 >
 > #CareerMove #SalaryPlanning #BuildInPublic
 

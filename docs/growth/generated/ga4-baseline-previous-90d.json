@@ -1,0 +1,12 @@
+{
+  "source": "GA4 MCP (mcp__ga4-mcp__runReport), property auto-selected by connector — same property as the current-period file",
+  "retrievedAtIso": "2026-08-02",
+  "period": { "startDate": "2026-02-04", "endDate": "2026-05-03", "label": "preceding 90 days (directly before the current 90-day window)" },
+  "totals": {
+    "sessions": 65,
+    "totalUsers": 44,
+    "engagedSessions": 25,
+    "averageSessionDurationSeconds": 187.29,
+    "eventCount": 345
+  }
+}

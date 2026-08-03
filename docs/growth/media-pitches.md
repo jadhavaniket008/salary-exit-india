@@ -4,12 +4,12 @@ Three pitches, one per journalist type, drafted for manual review. Not sent. Eac
 
 ## Pitch 1 — Career/employment journalist
 
-**Subject:** Data: a ₹70,587-wide band where the new tax regime taxes every extra rupee at 100%
+**Subject:** Data: a ₹70,587-wide band where a raise doesn't grow take-home pay
 
 ```text
 Hi {{name}},
 
-One finding from a salary model I've just published that might interest your coverage of job-switch/negotiation trends: between ₹12,00,000 and ₹12,70,587 of taxable income, Section 87A's new-regime marginal relief caps tax at exactly (income minus ₹12L) — meaning every additional rupee earned in that band is taxed away in full. It's not a hard cliff (you don't suddenly owe tax on your whole income), but inside that specific band, a raise genuinely produces zero net take-home gain. At CTC level, moving from ₹12L to ₹15L CTC (13% employer-cost structure) raises monthly in-hand by only ₹19,150 for a ₹3L/year jump in CTC — a meaningful part of why is this zone.
+One finding from a salary model I've just published that might interest your coverage of job-switch/negotiation trends: between ₹12,00,000 and ₹12,70,587 of taxable income, Section 87A's new-regime marginal relief caps income tax before cess at exactly (income minus ₹12L) — a 100% marginal rate on income tax alone. Add the 4% health & education cess and the marginal rate on total tax liability in that band is 104%, meaning a raise genuinely produces no net take-home gain (and can very slightly reduce it). It's not a hard cliff — you don't suddenly owe tax on your whole income once you cross ₹12L. At CTC level, moving from ₹12L to ₹15L CTC (13% employer-cost structure) raises monthly in-hand by only ₹19,150 for a ₹3L/year jump in CTC — this transition band is a meaningful part of why.
 
 Methodology: modeled from SalaryExit India's own FY 2026-27 tax/PF calculation engine (same engine behind our public calculators), not a survey. The zone boundaries are computed directly from the tax-slab and rebate formulas, not estimated.
 

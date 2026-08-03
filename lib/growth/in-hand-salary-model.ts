@@ -205,10 +205,16 @@ function formatInr(value: number): string {
  * Finds where Section 87A's new-regime marginal relief (income-tax.ts,
  * rebate87ANewRegime) stops applying — i.e. where tax-after-rebate first
  * equals tax-before-rebate again, so normal slab progression resumes.
- * Below this point (and above the rebate threshold), every extra rupee of
- * taxable income is taxed at exactly 100% — verified numerically against
- * lib/calculators/income-tax.ts before this was written into report copy;
- * see docs/growth/report-claim-audit.md.
+ * Below this point (and above the rebate threshold), income tax *before
+ * cess* rises at exactly 100% marginal rate (rebate = max(0, slabTax -
+ * excess), so tax-after-rebate = excess = taxable - limit) — matching
+ * lib/calculators/FORMULAS.md's own pre-existing description of this same
+ * mechanism ("tax before cess is capped at (taxable income - limit)").
+ * Once the 4% health & education cess (income-tax.ts's addCess) is added on
+ * top, the marginal rate on TOTAL tax liability in this zone is 104%, not
+ * 100% — a materially different, more precise claim, verified numerically
+ * before being written into report copy; see docs/growth/
+ * final-tax-wording-audit.md.
  */
 function findMarginalReliefZoneEndTaxableIncome(): number {
   const fy = DEFAULT_FINANCIAL_YEAR;
@@ -281,12 +287,18 @@ function buildKeyFindings(
 
   const zoneEnd = findMarginalReliefZoneEndTaxableIncome();
   const zoneWidth = zoneEnd - DEFAULT_FINANCIAL_YEAR.rebate87ANewRegimeIncomeLimit;
+  const cessMultiplier = 1 + DEFAULT_FINANCIAL_YEAR.cessRate;
+  const totalMarginalRatePct = Math.round(cessMultiplier * 100);
   findings.push(
-    `Section 87A's new-regime marginal relief is not a hard cliff — crossing ₹12L taxable income doesn't jump straight to full slab tax. But for the next ${formatInr(
+    `Under the configured new-regime rules, marginal relief limits income tax immediately above ₹12,00,000 taxable income — this is not a hard cliff; crossing the threshold doesn't jump straight to full slab tax. In this ${formatInr(
       zoneWidth
-    )} of taxable income (₹12,00,000 to ${formatInr(
+    )}-wide transition band (₹12,00,000 to ${formatInr(
       zoneEnd
-    )}), the marginal tax rate is exactly 100%: every additional rupee earned is taxed away in full, before normal slab progression resumes.`
+    )} taxable income), income tax before cess broadly tracks the amount by which taxable income exceeds ₹12,00,000 — an effective 100% marginal rate on income tax alone. Health and education cess is applied separately on top: including the ${Math.round(
+      DEFAULT_FINANCIAL_YEAR.cessRate * 100
+    )}% cess, the marginal rate on total tax liability in this band is ${totalMarginalRatePct}%, meaning take-home pay can fall slightly for a marginal rupee earned in this exact range. SalaryExit calculates this boundary from its configured ${
+      MODEL_ASSUMPTIONS.financialYearLabel
+    } tax engine — it is a model result, not a separately published statutory threshold.`
   );
 
   const spreadAt10L = levelRows.filter((r) => r.annualCtc === 10_00_000 && r.pfScenario === "statutory-ceiling");

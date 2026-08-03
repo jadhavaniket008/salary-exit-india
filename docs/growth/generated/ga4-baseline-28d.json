@@ -1,0 +1,20 @@
+{
+  "source": "GA4 MCP (mcp__ga4-mcp__runReport), property auto-selected by connector — INR currency / Asia/Calcutta timezone confirmed consistent with the known site, no explicit property ID exposed by the tool",
+  "retrievedAtIso": "2026-08-02",
+  "period": { "startDate": "2026-07-05", "endDate": "2026-08-01", "label": "trailing 28 days" },
+  "totals": {
+    "sessions": 70,
+    "totalUsers": 45,
+    "engagedSessions": 50,
+    "averageSessionDurationSeconds": 237.01,
+    "eventCount": 419
+  },
+  "channelGroup": [
+    { "channel": "Direct", "sessions": 35, "engagedSessions": 24 },
+    { "channel": "Organic Social", "sessions": 21, "engagedSessions": 16 },
+    { "channel": "Unassigned", "sessions": 7, "engagedSessions": 6 },
+    { "channel": "Organic Search", "sessions": 4, "engagedSessions": 3 },
+    { "channel": "AI Assistant", "sessions": 2, "engagedSessions": 0 },
+    { "channel": "Referral", "sessions": 1, "engagedSessions": 1 }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAtIso": "2026-08-02T09:43:55.716Z",
+  "generatedAtIso": "2026-08-02T14:54:50.327Z",
   "assumptions": {
     "regime": "new",
     "basicDaShareOfGross": 0.45,
@@ -1159,7 +1159,7 @@
     "At ₹20L CTC (13% employer-cost structure), choosing full-Basic PF instead of the statutory-ceiling default reduces monthly in-hand by ₹6,030 — ₹72,360 a year — for a larger retirement corpus instead.",
     "To land ₹1,00,000/month in-hand, the required CTC ranges from ₹13,30,583 to ₹14,92,849 a year depending only on how much of the offer is employer-side cost (8%–18% of CTC) — a spread of ₹1,62,266 for the identical take-home.",
     "At a 13% employer-cost structure, moving from ₹12L to ₹15L CTC (a ₹3L/year increase) raises monthly in-hand by only ₹19,150. Taxable income moves from ₹9,69,000 (below the ₹12L nil-tax threshold, so ₹0 tax) to ₹12,30,000 (inside Section 87A's new-regime marginal-relief zone, where tax is genuinely payable) — the CTC figures and the ₹12L taxable-income threshold are on different bases, not the same number.",
-    "Section 87A's new-regime marginal relief is not a hard cliff — crossing ₹12L taxable income doesn't jump straight to full slab tax. But for the next ₹70,587 of taxable income (₹12,00,000 to ₹12,70,587), the marginal tax rate is exactly 100%: every additional rupee earned is taxed away in full, before normal slab progression resumes.",
+    "Under the configured new-regime rules, marginal relief limits income tax immediately above ₹12,00,000 taxable income — this is not a hard cliff; crossing the threshold doesn't jump straight to full slab tax. In this ₹70,587-wide transition band (₹12,00,000 to ₹12,70,587 taxable income), income tax before cess broadly tracks the amount by which taxable income exceeds ₹12,00,000 — an effective 100% marginal rate on income tax alone. Health and education cess is applied separately on top: including the 4% cess, the marginal rate on total tax liability in this band is 104%, meaning take-home pay can fall slightly for a marginal rupee earned in this exact range. SalaryExit calculates this boundary from its configured Financial Year 2026-27 (AY 2027-28) tax engine — it is a model result, not a separately published statutory threshold.",
     "Two offers with the identical ₹10L CTC can differ by ₹8,333/month in-hand purely because of how much of the CTC is employer-side cost (PF, gratuity, insurance) versus fixed cash gross."
   ]
 }

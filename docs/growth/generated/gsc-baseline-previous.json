@@ -1,0 +1,19 @@
+{
+  "source": "GSC MCP (mcp__gsc__search_analytics), siteUrl sc-domain:salaryexit.in",
+  "retrievedAtIso": "2026-08-02",
+  "period": { "startDate": "2026-02-04", "endDate": "2026-05-04", "label": "preceding ~3-month window (directly before the current period)" },
+  "totals": {
+    "clicks": 36,
+    "impressions": 7274,
+    "ctr": 0.004949133901567226,
+    "averagePosition": 7.502749518834204
+  },
+  "topPages": [
+    { "page": "https://www.salaryexit.in/salary-reality-check", "clicks": 8, "impressions": 80, "ctr": 0.1, "position": 4.69 },
+    { "page": "https://salaryexit.in/", "clicks": 6, "impressions": 17, "ctr": 0.353, "position": 2.53 },
+    { "page": "https://www.salaryexit.in/salary-enough/is-15-lpa-good-in-bangalore", "clicks": 5, "impressions": 162, "ctr": 0.0309, "position": 6.10 },
+    { "page": "https://salaryexit.in/lpa/12-lpa-in-hand-salary", "clicks": 3, "impressions": 1134, "ctr": 0.00265, "position": 8.23 },
+    { "page": "https://salaryexit.in/salary-enough/is-12-lpa-good-in-bangalore", "clicks": 3, "impressions": 383, "ctr": 0.00783, "position": 4.74 }
+  ],
+  "note": "Both apex (salaryexit.in) and www (www.salaryexit.in) URL forms appear as distinct rows under the sc-domain: property, consistent with the site's documented apex-to-www redirect — Google is crawling/indexing both host forms even though they resolve to one canonical destination."
+}

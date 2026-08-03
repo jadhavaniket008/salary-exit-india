@@ -1,0 +1,73 @@
+{
+  "source": "GA4 MCP (mcp__ga4-mcp__runReport), property auto-selected by connector — INR currency / Asia/Calcutta timezone confirmed consistent with the known site, no explicit property ID exposed by the tool",
+  "retrievedAtIso": "2026-08-02",
+  "period": { "startDate": "2026-05-04", "endDate": "2026-08-01", "label": "trailing 90 days" },
+  "totals": {
+    "sessions": 118,
+    "totalUsers": 65,
+    "engagedSessions": 91,
+    "averageSessionDurationSeconds": 251.99,
+    "eventCount": 723
+  },
+  "channelGroupNote": "Default channel grouping was not separately queried at 90d — the sourceMedium breakdown below is more granular and was used instead for all 90-day channel analysis.",
+  "sourceMedium": [
+    { "sourceMedium": "(direct) / (none)", "sessions": 47, "engagedSessions": 34 },
+    { "sourceMedium": "vercel.com / referral", "sessions": 21, "engagedSessions": 21, "note": "not attributable to any marketing channel — likely Vercel platform/preview toolbar traffic, not external referral. Excluded from channel-attribution claims." },
+    { "sourceMedium": "google / organic", "sessions": 13, "engagedSessions": 9 },
+    { "sourceMedium": "reddit / comment", "sessions": 13, "engagedSessions": 12 },
+    { "sourceMedium": "linkedin.com / referral", "sessions": 7, "engagedSessions": 3 },
+    { "sourceMedium": "linkedin_post_link / (not set)", "sessions": 7, "engagedSessions": 6 },
+    { "sourceMedium": "chatgpt.com / ai-assistant", "sessions": 6, "engagedSessions": 3 },
+    { "sourceMedium": "reddit.com / referral", "sessions": 2, "engagedSessions": 2 },
+    { "sourceMedium": "duckduckgo / organic", "sessions": 1, "engagedSessions": 1 },
+    { "sourceMedium": "perplexity / (not set)", "sessions": 1, "engagedSessions": 0 }
+  ],
+  "campaignName": {
+    "note": "Every session's campaign dimension resolves to a generic bucket — (direct), (referral), (not set), (organic), (ai-assistant). No session in the 90-day window carries a real UTM campaign name. Confirms the forensics report's finding of non-existent/broken campaign tagging prior to this system's utm-standard.md."
+  },
+  "eventTotals90d": [
+    { "eventName": "page_view", "eventCount": 310 },
+    { "eventName": "session_start", "eventCount": 118 },
+    { "eventName": "user_engagement", "eventCount": 75 },
+    { "eventName": "calculator_use", "eventCount": 65 },
+    { "eventName": "first_visit", "eventCount": 64 },
+    { "eventName": "scroll", "eventCount": 49 },
+    { "eventName": "form_start", "eventCount": 27 },
+    { "eventName": "click", "eventCount": 8 },
+    { "eventName": "salary_reality_check_use", "eventCount": 3 },
+    { "eventName": "support_link_click", "eventCount": 3 },
+    { "eventName": "calculator_started", "eventCount": 1 }
+  ],
+  "eventsNotObserved90d": [
+    "share_summary",
+    "next_tool_clicked"
+  ],
+  "country": [
+    { "country": "India", "sessions": 118, "share": 1.0 }
+  ],
+  "deviceCategory": [
+    { "device": "mobile", "sessions": 69 },
+    { "device": "desktop", "sessions": 50 }
+  ],
+  "landingPages": [
+    { "path": "/", "sessions": 65, "engagedSessions": 56 },
+    { "path": "/ctc-to-in-hand-calculator", "sessions": 22, "engagedSessions": 15 },
+    { "path": "/for-businesses", "sessions": 3, "engagedSessions": 3 },
+    { "path": "/salary-guides/pf-withdrawal-rules-explained", "sessions": 3, "engagedSessions": 1 },
+    { "path": "/salary-guides/salary-structure-in-india", "sessions": 3, "engagedSessions": 2 },
+    { "path": "/job-switch-guides/how-notice-period-buyout-works", "sessions": 2, "engagedSessions": 2 },
+    { "path": "/offer-comparison-calculator", "sessions": 2, "engagedSessions": 2 },
+    { "path": "/salary-enough/is-15-lpa-good-in-bangalore", "sessions": 2, "engagedSessions": 1 },
+    { "path": "/salary-enough/is-15-lpa-good-in-hyderabad", "sessions": 2, "engagedSessions": 1 },
+    { "path": "/tax-guides", "sessions": 2, "engagedSessions": 2 }
+  ],
+  "landingPagesBelowThreshold": {
+    "note": "11 additional distinct landing-page paths each recorded exactly 1 session in the 90-day window (5 of the 11 engaged) — includes /lpa/12-lpa-in-hand-salary, /lpa/15-lpa-in-hand-salary, /notice-period-buyout-calculator, /old-vs-new-tax-regime-calculator, /salary-reality-check, and 6 others. Not shown as individual rows since each is a single-session data point.",
+    "totalSessions": 11,
+    "totalEngagedSessions": 5
+  },
+  "notableAbsence": {
+    "path": "/reports/india-in-hand-salary-model-2026",
+    "finding": "Zero landing-page sessions in the 90-day window. The flagship report (this campaign's core linkable asset) has not yet driven a single recorded GA4 session as a landing page."
+  }
+}

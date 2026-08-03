@@ -1,0 +1,66 @@
+{
+  "source": "GSC MCP (mcp__gsc__search_analytics, mcp__gsc__detect_quick_wins, mcp__gsc__index_inspect, mcp__gsc__list_sitemaps), siteUrl sc-domain:salaryexit.in (the only property returned by mcp__gsc__list_sites)",
+  "retrievedAtIso": "2026-08-02",
+  "period": { "startDate": "2026-05-05", "endDate": "2026-08-01", "label": "latest complete ~3-month window the connector returned data for" },
+  "totals": {
+    "clicks": 50,
+    "impressions": 17917,
+    "ctr": 0.002790645755427806,
+    "averagePosition": 12.960540269018251
+  },
+  "device": [
+    { "device": "MOBILE", "clicks": 35, "impressions": 12573, "ctr": 0.002783742941223256, "averagePosition": 8.722580132028952 },
+    { "device": "DESKTOP", "clicks": 15, "impressions": 5236, "ctr": 0.0028647822765469825, "averagePosition": 23.16042780748663 },
+    { "device": "TABLET", "clicks": 0, "impressions": 108, "ctr": 0, "averagePosition": 11.824074074074074 }
+  ],
+  "queryDimensionNote": "GSC's query-dimension report returned 658 distinct query rows summing to only 3 clicks and 6,016 impressions — far below the property-level totals above. This is expected: Google omits individual query rows below its privacy/anonymization threshold, so the query-level breakdown undercounts and must never be treated as the true total. Property-level totals (top of this file) are authoritative.",
+  "queryFindings": {
+    "brandedQueryRowsFound": 0,
+    "note": "No query in the 658-row breakdown contains 'salaryexit' or 'salary exit'. Zero observable branded search demand in this window.",
+    "topZeroClickHighImpressionQueries": [
+      { "query": "12lpa meaning", "impressions": 1072, "position": 8.6, "clicks": 0 },
+      { "query": "12 lpa ka matlab kya hota hai", "impressions": 527, "position": 7.2, "clicks": 0 },
+      { "query": "12 lpa ka matlab", "impressions": 360, "position": 9.6, "clicks": 0 },
+      { "query": "35lpa how much per month", "impressions": 277, "position": 9.6, "clicks": 0 },
+      { "query": "35 lpa means", "impressions": 269, "position": 9.6, "clicks": 0 },
+      { "query": "ctc to in hand salary calculator", "impressions": 137, "position": 86.3, "clicks": 0 },
+      { "query": "12 lpa kitna hota hai", "impressions": 136, "position": 4.4, "clicks": 0 }
+    ],
+    "classification": "Every high-impression query observed is Definitional/informational ('what does X LPA mean', 'X lpa kitna hota hai') or a bare number-plus-unit lookup — none are Branded, and none show clear transactional/decision intent (e.g. 'salary calculator for my offer', 'compare job offers'). This matches the forensics report's prior finding that the site ranks for definitional queries, not decision-intent ones."
+  },
+  "topPages": [
+    { "page": "https://www.salaryexit.in/salary-enough/is-15-lpa-good-in-bangalore", "clicks": 6, "impressions": 597, "ctr": 0.01005, "position": 7.31 },
+    { "page": "https://www.salaryexit.in/salary-enough/is-20-lpa-good-in-mumbai", "clicks": 6, "impressions": 330, "ctr": 0.01818, "position": 8.25 },
+    { "page": "https://www.salaryexit.in/lpa/12-lpa-in-hand-salary", "clicks": 4, "impressions": 4523, "ctr": 0.00088, "position": 8.94 },
+    { "page": "https://www.salaryexit.in/notice-period-buyout-calculator", "clicks": 4, "impressions": 375, "ctr": 0.01067, "position": 6.20 },
+    { "page": "https://www.salaryexit.in/", "clicks": 3, "impressions": 73, "ctr": 0.04110, "position": 7.88 },
+    { "page": "https://www.salaryexit.in/salary-enough/is-12-lpa-good-in-bangalore", "clicks": 3, "impressions": 305, "ctr": 0.00984, "position": 8.65 },
+    { "page": "https://www.salaryexit.in/salary-guides/how-to-judge-if-a-salary-is-good-in-india", "clicks": 3, "impressions": 614, "ctr": 0.00489, "position": 12.08 },
+    { "page": "https://www.salaryexit.in/salary-reality-check", "clicks": 2, "impressions": 165, "ctr": 0.01212, "position": 6.39 }
+  ],
+  "quickWins": {
+    "thresholds": { "minImpressions": 50, "maxCtrPercent": 2, "positionRangeMin": 4, "positionRangeMax": 10 },
+    "totalOpportunities": 14,
+    "estimatedAdditionalClicksFromTop7": 127,
+    "dominantPages": [
+      { "page": "https://www.salaryexit.in/lpa/12-lpa-in-hand-salary", "opportunityCount": 8, "estimatedAdditionalClicks": 114 },
+      { "page": "https://www.salaryexit.in/lpa/35-lpa-in-hand-salary", "opportunityCount": 5, "estimatedAdditionalClicks": 38 },
+      { "page": "https://www.salaryexit.in/salary-enough/is-15-lpa-good-in-bangalore", "opportunityCount": 1, "estimatedAdditionalClicks": 4 }
+    ],
+    "finding": "All 14 detected quick-wins are zero-click, position-4-to-10 rankings for Hindi-transliteration definitional queries ('X lpa ka matlab', 'X lpa kitna hota hai', 'X lpa meaning') on the two highest-impression LPA pages. Title/meta-description rewrites that directly answer 'what does X LPA mean per month' are the single highest-leverage, zero-cost SEO action available."
+  },
+  "indexingChecks": {
+    "sitemap": { "path": "https://www.salaryexit.in/sitemap.xml", "urlsSubmitted": 47, "urlsMarkedIndexedByThisField": 0, "reliabilityNote": "GSC's list_sitemaps/get_sitemap 'indexed' count is a known-unreliable rollup field that frequently reads 0 regardless of true index status — contradicted here by real search-performance data across dozens of URLs. Not treated as evidence of a real indexing failure by itself." },
+    "flagshipReportIndexInspect": {
+      "url": "https://www.salaryexit.in/reports/india-in-hand-salary-model-2026",
+      "verdict": "NEUTRAL",
+      "coverageState": "URL is unknown to Google",
+      "finding": "Unlike the sitemap-level field above, this is a specific, reliable, page-level signal: Google has not indexed or even discovered the flagship report page. Combined with zero GA4 landing-page sessions for the same URL, the flagship report currently has no measurable organic presence at all."
+    }
+  },
+  "linksReport": {
+    "available": false,
+    "statement": "GSC MCP does not expose external-link reporting.",
+    "toolsChecked": ["search_analytics", "enhanced_search_analytics", "get_sitemap", "list_sitemaps", "list_sites", "submit_sitemap", "detect_quick_wins", "index_inspect"]
+  }
+}
