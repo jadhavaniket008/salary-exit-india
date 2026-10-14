@@ -1,4 +1,4 @@
-﻿import type { ReactNode } from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Container, Section } from "@/components/ui";
 import type { BreadcrumbItem } from "@/lib/seo/breadcrumbs";
@@ -159,7 +159,7 @@ export function GuideArticleShell({
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-foreground-secondary">{clusterSpec.intro}</p>
               <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-foreground-muted">
-                "Is this salary enough?" scenarios
+                &quot;Is this salary enough?&quot; scenarios
               </p>
               <ul className="mt-2 space-y-2 text-sm text-foreground-secondary">
                 {clusterEnough.map((item) => (

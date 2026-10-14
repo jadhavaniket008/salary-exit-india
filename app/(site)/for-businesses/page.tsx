@@ -1,3 +1,4 @@
+import { PfModelNotice } from "@/components/content/PfModelNotice";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container, Section } from "@/components/ui";
@@ -101,13 +102,14 @@ export default function ForBusinessesPage() {
               It is an educational model, not payroll software or a salary survey. The free embed keeps
               SalaryExit branding. <Link href={ROUTES.inHandSalaryModelReport} className="underline">Read the methodology and download the data</Link>.
             </p>
+            <PfModelNotice />
             <iframe src={ROUTES.inHandSalaryTableEmbed} title="SalaryExit in-hand salary model demo"
               loading="lazy" className="h-[760px] w-full rounded-xl border border-border" />
             <CopyIframeSnippet snippet={embedCode} trackCopy />
           </section>
 
           <section className="space-y-4 rounded-2xl border border-border bg-surface-subtle p-6">
-            <h2 className="text-xl font-semibold text-foreground">What's under the hood</h2>
+            <h2 className="text-xl font-semibold text-foreground">What&apos;s under the hood</h2>
             <p className="text-sm leading-relaxed text-foreground-secondary">
               The calculation engine is written in TypeScript, unit-tested against worked examples from
               Finance Act publications, and covers: CTC → in-hand conversion, old vs new tax regime
@@ -147,7 +149,7 @@ export default function ForBusinessesPage() {
           </section>
 
           <section className="rounded-2xl border border-accent-solid bg-accent-solid p-7 text-white">
-            <h2 className="text-xl font-semibold">Interested? Let's talk.</h2>
+            <h2 className="text-xl font-semibold">Interested? Let&apos;s talk.</h2>
             <p className="mt-2 text-sm leading-relaxed text-white/80">
               Email your company name, website and use case to request a scoped quote.
               The button opens your email app; send the message there to complete your inquiry.

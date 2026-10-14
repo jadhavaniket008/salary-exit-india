@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+import { PfModelNotice } from "@/components/content/PfModelNotice";
+import Link from "next/link";
 import { Container, Section } from "@/components/ui";
 import { BreadcrumbNav } from "@/components/content/BreadcrumbNav";
 import { JsonLd } from "@/components/content/JsonLd";
@@ -82,6 +83,7 @@ export function LpaLandingTemplate({ config }: Props) {
         <Container className="max-w-3xl space-y-8">
           <BreadcrumbNav items={breadcrumbs} />
 
+          <PfModelNotice />
           <header className="space-y-3">
             <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               ₹{config.lpa} LPA meaning, monthly salary and in-hand estimate
@@ -156,7 +158,7 @@ export function LpaLandingTemplate({ config }: Props) {
                     <td className="px-4 py-3 tabular-nums">{formatInr(result.grossMonthly, { decimals: true })}</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-foreground">Employee PF (₹15,000 wage ceiling)</td>
+                    <td className="px-4 py-3 text-foreground">Employee PF (historical ₹15,000 wage cap)</td>
                     <td className="px-4 py-3 tabular-nums">
                       {formatInr(result.employeePfMonthly, { decimals: true })}
                     </td>
@@ -220,7 +222,7 @@ export function LpaLandingTemplate({ config }: Props) {
                 — replace with your state.
               </li>
               <li>
-                Employee PF: 12% of the lower of monthly Basic+DA and ₹15,000.
+                Historical employee PF assumption: 12% of the lower of monthly Basic+DA and ₹15,000.
                 Basic+DA is assumed to be 45% of gross, giving {formatInr(result.employeePfMonthly)}/month PF here.
                 Full-Basic PF can be higher; enter your actual deduction in the calculator.
               </li>
@@ -271,7 +273,7 @@ export function LpaLandingTemplate({ config }: Props) {
               </li>
               <li>
                 <Link className="font-medium underline" href={`${ROUTES.salaryGuides}#enough-heading`}>
-                  "Is this salary enough?" city pages
+                  &quot;Is this salary enough?&quot; city pages
                 </Link>{" "}
                 — decision-intent examples (Bengaluru, Pune, Hyderabad) with embedded checks.
               </li>
@@ -279,13 +281,13 @@ export function LpaLandingTemplate({ config }: Props) {
                 <Link className="font-medium underline" href={ROUTES.offerComparisonCalculator}>
                   Compare two offers
                 </Link>{" "}
-                — when you're choosing between employers, not just cities.
+                — when you&apos;re choosing between employers, not just cities.
               </li>
             </ul>
             {salaryEnoughSpotlight.length > 0 ? (
               <div className="mt-4 border-t border-border pt-4">
                 <h3 className="text-sm font-semibold text-foreground">
-                  City "enough salary?" checks near ₹{config.lpa} LPA
+                  City &quot;enough salary?&quot; checks near ₹{config.lpa} LPA
                 </h3>
                 <ul className="mt-2 space-y-2 text-sm text-foreground-secondary">
                   {salaryEnoughSpotlight.map((p) => (
@@ -335,7 +337,7 @@ export function LpaLandingTemplate({ config }: Props) {
               Guides that match ₹{config.lpa}L offers
             </h2>
             <p className="mt-1 text-xs text-foreground-secondary">
-              Picked by band so similar LPA pages don't all push the exact same reading order.
+              Picked by band so similar LPA pages don&apos;t all push the exact same reading order.
             </p>
             <ul className="mt-3 space-y-3 text-sm text-foreground-secondary">
               {bandGuides.map((g) => (

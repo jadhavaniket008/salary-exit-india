@@ -8,7 +8,8 @@ import {
 
 describe("sanitizeNumber", () => {
   it("parses strings and rejects NaN", () => {
-    expect(sanitizeNumber("12.5").ok && sanitizeNumber("12.5").value).toBe(12.5);
+    const parsed = sanitizeNumber("12.5");
+    expect(parsed.ok && parsed.value).toBe(12.5);
     expect(sanitizeNumber("").ok).toBe(false);
     expect(sanitizeNumber("nan").ok).toBe(false);
     expect(sanitizeNumber(Number.NaN).ok).toBe(false);

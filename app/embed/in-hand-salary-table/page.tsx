@@ -6,6 +6,7 @@ import { ROUTES } from "@/lib/routes";
 import { generateInHandSalaryModel } from "@/lib/growth/in-hand-salary-model";
 import { InHandModelTable } from "@/components/growth/InHandModelTable";
 import { CopyIframeSnippet } from "@/components/growth/CopyIframeSnippet";
+import { PfModelNotice } from "@/components/content/PfModelNotice";
 
 /**
  * Publisher-ready, chrome-free embed of the flagship report's table.
@@ -62,6 +63,7 @@ export default function InHandSalaryTableEmbedPage() {
         </p>
       </header>
 
+      <PfModelNotice />
       <InHandModelTable
         rows={model.salaryLevelRows}
         employerCostShareScenarios={model.assumptions.employerCostShareScenarios}

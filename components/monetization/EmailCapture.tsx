@@ -39,9 +39,9 @@ export function EmailCapture() {
   if (status === "success") {
     return (
       <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 dark:border-emerald-900/50 dark:bg-emerald-950/30">
-        <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-300">You're in.</p>
+        <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-300">You&apos;re in.</p>
         <p className="mt-0.5 text-sm text-emerald-700 dark:text-emerald-400">
-          We'll send you salary and tax explainers — no spam, unsubscribe any time.
+          We&apos;ll send you salary and tax explainers — no spam, unsubscribe any time.
         </p>
       </div>
     );

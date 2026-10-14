@@ -1,3 +1,4 @@
+import { PfModelNotice } from "@/components/content/PfModelNotice";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Container } from "@/components/ui";
@@ -91,6 +92,7 @@ export default function Home() {
         <section className="border-b border-border bg-surface py-10 sm:py-14" aria-label="Hero">
           <Container>
             <HomeHeroSection />
+            <div className="mt-6"><PfModelNotice /></div>
           </Container>
         </section>
 

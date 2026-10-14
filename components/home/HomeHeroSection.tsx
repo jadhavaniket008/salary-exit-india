@@ -6,7 +6,7 @@ import { ROUTES } from "@/lib/routes";
 
 const deductions = [
   { label: "Monthly gross", value: "₹1,00,000", type: "base" as const },
-  { label: "PF (12% on ₹15k ceiling)", value: "−₹1,800", type: "deduct" as const },
+  { label: "PF (historical ₹15k wage cap)", value: "−₹1,800", type: "deduct" as const },
   { label: "Professional tax", value: "−₹200", type: "deduct" as const },
   { label: "Income tax (87A rebate)", value: "₹0", type: "zero" as const },
 ];
@@ -60,7 +60,7 @@ function SalaryPreviewCard() {
       </div>
 
       <p className="mt-4 text-[10px] leading-relaxed text-foreground-muted">
-        Estimate only · PT ₹200/month · PF on ₹15k wage ceiling · Resident individual with only ordinary salary income; rebate eligibility assumed
+        Estimate only · PT ₹200/month · Historical PF assumption: ₹15k wage cap · Resident individual with only ordinary salary income; rebate eligibility assumed
       </p>
     </div>
   );

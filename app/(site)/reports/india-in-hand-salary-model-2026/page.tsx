@@ -1,3 +1,4 @@
+import { PfModelNotice } from "@/components/content/PfModelNotice";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container, Section } from "@/components/ui";
@@ -74,6 +75,8 @@ export default function InHandSalaryModelReportPage() {
             </p>
           </header>
 
+          <PfModelNotice />
+
           <section aria-labelledby="exec-summary-heading" className="space-y-4">
             <h2 id="exec-summary-heading" className="text-xl font-semibold text-foreground">
               Executive summary
@@ -81,7 +84,7 @@ export default function InHandSalaryModelReportPage() {
             <p className="text-sm leading-relaxed text-foreground-secondary">
               This report models {model.assumptions.salaryLevelsAnnualCtc.length} CTC levels from{" "}
               ₹5L to ₹50L across {model.assumptions.employerCostShareScenarios.length} employer-cost
-              structures (8%, 13%, 18% of CTC) and 2 PF-wage bases (statutory ₹15,000/month ceiling
+              structures (8%, 13%, 18% of CTC) and 2 PF-wage bases (historical ₹15,000/month cap
               vs. full Basic+DA), producing {model.salaryLevelRows.length} distinct scenarios. It also
               reverse-solves the CTC range required to reach five common take-home targets: ₹50k,
               ₹75k, ₹1L, ₹1.5L, and ₹2L per month. Every number is computed live by the same engine
@@ -249,7 +252,7 @@ export default function InHandSalaryModelReportPage() {
                 {ROUTES.inHandSalaryTableEmbed}
               </Link>
               . No exclusivity or followed-link requirement — use whatever `rel` attribute your
-              publication's policy requires.
+              publication&apos;s policy requires.
             </p>
           </section>
 

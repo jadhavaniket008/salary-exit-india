@@ -57,7 +57,7 @@ Client-side helpers live in `lib/analytics/client.ts`. They **no-op** until `win
 | `calculator_use` | Successful **Calculate** on a calculator with a submit button. Param: `calculator_slug` (matches `CalculatorSlug` in `lib/routes.ts`). |
 | `salary_reality_check_use` | First time inputs yield a valid modeled result in a session (full page or embed). Param: `embed` = `true`/`false`. |
 | `offer_compare_submit` | Successful compare on **Offer comparison** calculator. |
-| `offer_compare_click` | CTA click toward offer comparison (e.g. from Salary Reality Check “Next steps”). Param: `source`. |
+| `offer_compare_click` | CTA click toward offer comparison (e.g. from Salary Reality Check “Next steps”). Param: `cta_placement` (replaces the ambiguous `source` parameter). |
 | `share_summary` | Copy or native share on Salary Reality Check share card. Param: `action` = `copy` \| `share_native`. |
 
 ### Plausible: custom goals
@@ -71,3 +71,34 @@ Register interest in `calculator_use`, `salary_reality_check_use`, etc. in GA4 *
 ## Privacy
 
 When you enable analytics, update your **privacy policy** to describe what data is collected and how users can opt out (especially if `NEXT_PUBLIC_ENABLE_CONSENT_BANNER` is `true`).
+
+
+## October 2026 intent instrumentation
+
+All custom event helpers re-check analytics consent on each call. Loaded GA/Plausible functions
+are insufficient when analytics consent has been withdrawn. This change does not claim to
+unload vendor scripts or disable their automatic pageview collection.
+
+| Event | Trigger | Parameters | Meaning |
+|---|---|---|---|
+| `affiliate_link_click` | Existing Zerodha/Groww referral link click | `partner_name`, `affiliate_context` | Referral intent, not earnings; Quicko direct links excluded |
+| `business_inquiry_click` | Business mailto click | `cta_placement`, `offer_id` | Email intent, not a submitted lead |
+| `resource_download_click` | Report CSV/JSON link click | `resource_id`, `file_format` | Download intent, not confirmed completion |
+| `embed_code_copy` | Clipboard write succeeds on business page | `resource_id` | Successful copy; embedded table remains untracked |
+| `sign_up` | Newsletter endpoint returns success | `method=newsletter` | Provider accepted request; not proof of a new unique subscriber |
+| `offer_compare_click` | Existing offer comparison CTA | `cta_placement` | Navigation intent; no custom `source` parameter |
+
+GA4 Admin → Custom definitions → Create custom dimension → **Event** scope:
+`calculator_slug`, `cta_placement`, `partner_name`, `affiliate_context`, `offer_id`,
+`resource_id`, `file_format`. Register only dimensions used in your reports; registration
+is a separate admin action, not performed by the code. Allow 24–48 hours for reporting.
+Do not assume historical parameter breakdowns are backfilled.
+
+Keep `calculator_use`, `salary_reality_check_use` and `offer_compare_submit` as useful-action
+measures. Do not divide event counts from different start/use definitions to infer funnel
+completion. Report users or sessions with the same event definition and denominator.
+
+No email, salary input, company name or inquiry body is sent in these custom events.
+No `purchase`, monetary value or `generate_lead` is emitted for these clicks. Reconcile
+paid invoices and partner payouts separately before reporting revenue. QA on a local
+build with analytics spies so production reporting is not contaminated.
