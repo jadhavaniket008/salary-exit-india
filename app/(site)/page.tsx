@@ -244,7 +244,7 @@ export default function Home() {
                 {
                   href: ROUTES.taxGuides,
                   label: "Tax guides",
-                  desc: "Old vs new regime, standard deduction, HRA, 87A rebate — educational only, not filing advice.",
+                  desc: "Old vs new regime, standard deduction, HRA, Section 156 rebate (earlier 87A) — educational only, not filing advice.",
                   icon: "📋",
                 },
                 {

@@ -12,7 +12,7 @@ This document explains what each calculator **estimates**, the **assumptions** b
 
 ## Salary breakdown (`salary-breakdown.ts`)
 
-- **Estimates** annual taxable income, tax after Section 87A (simplified), cess, and net after PF and PT.
+- **Estimates** annual taxable income, tax after Section 156 rebate / earlier 87A (simplified), cess, and net after PF and PT.
 - **Optional** `hraExemptionAnnual` for old regime only (pre-computed).
 - **Simplified**: New regime ignores 80C/HRA; old regime lumps eligible PF + other 80C into the ₹1.5L cap.
 
@@ -63,11 +63,11 @@ This document explains what each calculator **estimates**, the **assumptions** b
 ## Income tax & regime comparison (`income-tax.ts`, `annual-tax.ts`, `tax-regime-comparison.ts`)
 
 - **Slabs & cess**: Progressive slab tax plus **4% health and education cess** on tax after rebate (not on income).
-- **Section 87A**: **Simplified**:
-  - Old regime: rebate up to ₹12,500 when taxable income ≤ ₹5,00,000 (verify FY-specific rules).
-  - New regime: full rebate of tax when taxable income ≤ the FY's configured limit (₹12,00,000 for FY 2025-26 / FY 2026-27; verify FY-specific rules and conditions).
-  - New regime **marginal relief**: just above the limit, tax before cess is capped at (taxable income − limit), i.e. `rebate = max(0, slabTax − excess)`. Relief phases out once slab tax exceeds the excess (~₹12.71L taxable for FY 2026-27).
-- **Not modeled**: Surcharge and surcharge marginal relief (₹50L+ taxable), rebates beyond 87A, perquisites, capital gains, loss set-off, alternate minimum tax, etc.
+- **Section 156 rebate** (Income Tax Act, 2025; earlier Section 87A framework): **Simplified**:
+  - Old regime: rebate up to ₹12,500 when taxable income ≤ ₹5,00,000 (verify tax-year-specific rules).
+  - New regime: full rebate of tax when taxable income ≤ the FY's configured limit (₹12,00,000 for FY 2025-26 / Tax Year 2026–27; verify tax-year-specific rules and conditions).
+  - New regime **marginal relief**: just above the limit, tax before cess is capped at (taxable income − limit), i.e. `rebate = max(0, slabTax − excess)`. Relief phases out once slab tax exceeds the excess (~₹12.71L taxable for Tax Year 2026–27).
+- **Not modeled**: Surcharge and surcharge marginal relief (₹50L+ taxable), rebates beyond Section 156 / earlier 87A, perquisites, capital gains, loss set-off, alternate minimum tax, etc.
 
 ## EPF (`epf.ts`)
 

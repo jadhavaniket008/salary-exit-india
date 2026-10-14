@@ -12,6 +12,6 @@ export default async function Image() {
   return buildOgImageResponse({
     category: "Guides",
     title: "Income Tax Guides for Salaried Employees",
-    subtitle: "Old vs new regime, Form 16, and Section 87A",
+    subtitle: "Old vs new regime, Form 16, and Section 156 rebate (earlier 87A)",
   });
 }

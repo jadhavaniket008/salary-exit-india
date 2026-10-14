@@ -13,7 +13,8 @@ export function DisclaimerBlock() {
       </p>
       <ul className="mt-3 list-inside list-disc space-y-1 text-foreground-secondary">
         <li>
-          Tax math uses configured FY slabs and Section 87A with marginal relief — <strong>no surcharge</strong>{" "}
+          Tax math uses configured FY slabs and Section 156 rebate (earlier Section 87A) with
+          marginal relief — <strong>no surcharge</strong>{" "}
           (₹50L+ taxable) and limited Chapter VI-A detail depending on the tool.
         </li>
         <li>

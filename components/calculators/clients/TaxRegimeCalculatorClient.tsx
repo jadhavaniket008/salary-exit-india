@@ -41,7 +41,7 @@ export function TaxRegimeCalculatorClient() {
   const assumptionBullets = useMemo(
     () => [
       `Uses ${fy.label} slab tables configured in code.`,
-      `Section 87A rebates are simplified (old: up to ₹${formatInrPlain(fy.rebate87AOldRegimeMax)} when taxable ≤ ₹${formatInrPlain(fy.rebate87AOldRegimeIncomeLimit)}; new: full rebate when taxable ≤ ₹${formatInrPlain(fy.rebate87ANewRegimeIncomeLimit)}, with marginal relief just above it).`,
+      `Section 156 rebates (Income Tax Act, 2025; earlier Section 87A) are simplified (old: up to ₹${formatInrPlain(fy.rebate87AOldRegimeMax)} when taxable ≤ ₹${formatInrPlain(fy.rebate87AOldRegimeIncomeLimit)}; new: full rebate when taxable ≤ ₹${formatInrPlain(fy.rebate87ANewRegimeIncomeLimit)}, with marginal relief just above it).`,
       `Surcharge, perquisites, and alternate minimum tax are not modeled.`,
     ],
     []

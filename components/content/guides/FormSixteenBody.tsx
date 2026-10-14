@@ -74,7 +74,8 @@ export function FormSixteenBody() {
             on the applicable slab (old or new, whichever your employer used for TDS).
           </li>
           <li>
-            <strong>Rebate under Section 87A</strong> — brings tax to nil if your taxable income is at or
+            <strong>Rebate under Section 156</strong> (Income Tax Act, 2025; earlier Section 87A
+            framework) — brings tax to nil if your taxable income is at or
             below the rebate threshold for the regime and year in question.
           </li>
           <li>

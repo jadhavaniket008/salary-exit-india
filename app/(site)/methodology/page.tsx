@@ -31,7 +31,8 @@ export default function MethodologyPage() {
 
       <h2>Financial year and tax engine</h2>
       <p>
-        Income tax slabs, standard deductions, and Section 87A rebates (including new-regime marginal relief just above
+        Income tax slabs, standard deductions, and Section 156 rebates under the Income Tax Act, 2025
+        (earlier Section 87A framework), including new-regime marginal relief just above
         the rebate threshold) follow the configured financial year ({ENGINE_FY_LABEL}). Values are defined in code and
         should be reviewed after each Union Budget. <strong>Surcharge</strong> (₹50L+ taxable) and its marginal relief
         are not modeled.
@@ -53,7 +54,7 @@ export default function MethodologyPage() {
           <strong>TDS smoothing</strong> — annual tax is often spread ÷ 12 for monthly in-hand; real payslips vary by month.
         </li>
         <li>
-          <strong>Section 87A</strong> — implemented as a simplified model; verify against the Finance Act for your AY.
+          <strong>Section 156 rebate</strong> (earlier Section 87A) — implemented as a simplified model; verify against the Income Tax Act, 2025 / Finance Act for your tax year.
         </li>
         <li>
           <strong>Bonus, arrears, perquisites, stock</strong> — not modeled unless you fold them into gross consistently.

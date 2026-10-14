@@ -25,8 +25,8 @@ export function OldVsNewRegimeBody() {
         framework) offers lower progressive slab rates but disallows most exemptions and many itemised
         deductions. In Tax Year 2026–27 (FY 2026–27), it includes a standard deduction of ₹75,000 for
         salaried employees under Section 19(1) and a rebate that makes tax nil for those whose taxable
-        income is ₹12 lakh or less after the standard deduction (familiarly still called the Section 87A
-        rebate in many payroll and filing tools).
+        income is ₹12 lakh or less after the standard deduction — the Section 156 rebate under the
+        Income Tax Act, 2025 (earlier Section 87A framework).
       </p>
       <p>
         The <strong>old regime</strong> has a higher base slab rate but allows you to reduce taxable income
@@ -86,12 +86,12 @@ export function OldVsNewRegimeBody() {
         </li>
       </ul>
 
-      <h2 id="87a-rebate">The new-regime rebate: zero tax for many at lower-mid incomes</h2>
+      <h2 id="87a-rebate">The Section 156 rebate: zero tax for many at lower-mid incomes</h2>
       <p>
-        For Tax Year 2026–27 (FY 2026–27), the new regime&apos;s rebate (still widely labelled Section 87A
-        in payroll/Form 16 language) provides a full rebate on income tax when taxable income (after the
-        ₹75,000 standard deduction under Section 19(1)) is ₹12 lakh or less. This means: if your gross
-        salary is approximately ₹12.75 LPA or below (₹75,000 standard deduction + ₹12L rebate limit),
+        For Tax Year 2026–27 (FY 2026–27), the new regime&apos;s Section 156 rebate under the Income Tax
+        Act, 2025 (earlier Section 87A framework) provides a full rebate on income tax when taxable income
+        (after the ₹75,000 standard deduction under Section 19(1)) is ₹12 lakh or less. This means: if your
+        gross salary is approximately ₹12.75 LPA or below (₹75,000 standard deduction + ₹12L rebate limit),
         your income tax under the new regime is effectively zero. Current salary TDS under Section 392(1)
         should be nil or near-nil. If your employer is deducting significant TDS at this income level under
         the new regime, verify that your regime declaration has been processed correctly by payroll.

@@ -14,11 +14,13 @@ export function Section87AMarginalReliefBody() {
 
       <h2 id="the-cliff-fear">Why people worry about a cliff at ₹12 lakh</h2>
       <p>
-        Under the new tax regime (FY 2025-26 and FY 2026-27), Section 87A gives a full rebate on tax when
-        <strong> taxable income</strong> (gross salary minus the ₹75,000 standard deduction) is at or below
-        ₹12,00,000 — meaning zero tax. Without any special rule, someone earning taxable income of exactly
-        ₹12,00,000 pays ₹0, while someone at ₹12,00,001 would owe tax on the entire amount under the normal
-        slab structure — over ₹60,000 for one extra rupee of income. That would be a genuine cliff.
+        Under the new tax regime for Tax Year 2026–27 (FY 2026–27), Section 156 of the Income Tax Act,
+        2025 (earlier Section 87A framework; FY 2025–26 still used Section 87A under the repealed 1961
+        Act) gives a full rebate on tax when <strong> taxable income</strong> (gross salary minus the
+        ₹75,000 standard deduction) is at or below ₹12,00,000 — meaning zero tax. Without any special
+        rule, someone earning taxable income of exactly ₹12,00,000 pays ₹0, while someone at ₹12,00,001
+        would owe tax on the entire amount under the normal slab structure — over ₹60,000 for one extra
+        rupee of income. That would be a genuine cliff.
       </p>
 
       <h2 id="how-relief-works">What marginal relief actually does</h2>
@@ -65,10 +67,11 @@ export function Section87AMarginalReliefBody() {
 
       <h2 id="old-regime">Does this apply under the old regime?</h2>
       <p>
-        The old regime has its own, separate Section 87A rebate — full tax rebate up to ₹5,00,000 taxable
-        income, capped at ₹12,500. It does not use the same marginal-relief mechanism described above; the
-        old-regime rebate is a flat threshold check, not a sliding cap. Compare both regimes explicitly with
-        the <Link href={ROUTES.oldVsNewTaxRegimeCalculator}>old vs new regime calculator</Link> rather than
+        The old regime has its own, separate Section 156 rebate under the Income Tax Act, 2025 (earlier
+        Section 87A framework) — full tax rebate up to ₹5,00,000 taxable income, capped at ₹12,500. It does
+        not use the same marginal-relief mechanism described above; the old-regime rebate is a flat
+        threshold check, not a sliding cap. Compare both regimes explicitly with the{" "}
+        <Link href={ROUTES.oldVsNewTaxRegimeCalculator}>old vs new regime calculator</Link> rather than
         assuming one rule applies to both.
       </p>
 

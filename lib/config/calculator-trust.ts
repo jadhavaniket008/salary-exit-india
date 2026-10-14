@@ -56,12 +56,12 @@ export const CALCULATOR_TRUST: Record<CalculatorSlug, CalculatorTrustProfile> = 
       "Standard deduction and slab application follow code rules for the selected regime.",
     ],
     estimated: [
-      "Annual tax after simplified Section 87A handling; TDS shown as annual tax ÷ 12.",
+      "Annual tax after simplified Section 156 (earlier 87A) handling; TDS shown as annual tax ÷ 12.",
       "Combined 80C bucket and caps as modeled (not full ITR).",
     ],
     assumptions: [
       "Single salary head; limited old-regime deductions vs a dedicated HRA flow.",
-      "No surcharge (₹50L+ taxable) or perquisite valuation; 87A marginal relief is modeled.",
+      "No surcharge (₹50L+ taxable) or perquisite valuation; Section 156 / earlier-87A marginal relief is modeled.",
     ],
     realWorldFactors: [
       "Bonuses, arrears, FBP, and one-off pay.",
@@ -111,7 +111,7 @@ export const CALCULATOR_TRUST: Record<CalculatorSlug, CalculatorTrustProfile> = 
       "Comparison of total tax + cess outputs from the same engine snapshot.",
     ],
     estimated: [
-      "Section 87A rebate simplification.",
+      "Section 156 rebate simplification (earlier Section 87A framework).",
       "Old-regime 80C/HRA as annual numbers you type — not full schedule.",
     ],
     assumptions: [

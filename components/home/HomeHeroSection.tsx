@@ -12,7 +12,7 @@ const deductions = [
   { label: "Monthly gross", value: "₹1,00,000", type: "base" as const },
   { label: "PF (current ₹25k wage cap)", value: `−${formatInr(example.employeePfMonthly)}`, type: "deduct" as const },
   { label: "Professional tax", value: "−₹200", type: "deduct" as const },
-  { label: "Income tax (87A rebate)", value: "₹0", type: "zero" as const },
+  { label: "Income tax (Section 156 rebate)", value: "₹0", type: "zero" as const },
 ];
 
 function SalaryPreviewCard() {

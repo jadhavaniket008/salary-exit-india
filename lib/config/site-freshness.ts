@@ -18,7 +18,7 @@ export const ENGINE_FY_LABEL = "Tax Year 2026–27 (FY 2026–27) tax slabs in e
  * What government/Budget rules the coded slabs intentionally follow (for transparency).
  */
 export const TAX_RULESET_SOURCE_LABEL =
-  "Union Budget 2026 — no slab changes; Income Tax Act, 2025 Tax Year 2026–27; new regime (Section 202, earlier 115BAC) slabs from Budget 2025 continue; new-regime rebate ≤₹12L taxable; std. deduction ₹75,000 (Section 19(1)); cess 4%";
+  "Union Budget 2026 — no slab changes; Income Tax Act, 2025 Tax Year 2026–27; new regime (Section 202, earlier 115BAC) slabs from Budget 2025 continue; Section 156 rebate (earlier 87A) ≤₹12L taxable; std. deduction ₹75,000 (Section 19(1)); cess 4%";
 
 /**
  * Longer reassurance line for methodology / trust components.

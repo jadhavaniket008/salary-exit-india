@@ -36,7 +36,7 @@ export default function SalaryHikeCalculatorPage() {
           </p>
           <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
-              <strong>Around ₹12 LPA:</strong> The Section 87A rebate creates a sharp transition.
+              <strong>Around ₹12 LPA:</strong> The Section 156 rebate (earlier Section 87A) creates a sharp transition.
               Income below ₹12 lakh (after standard deduction) attracts zero tax. Income ₹1 above
               that starts accumulating tax. A hike that moves you just past this threshold can feel
               like you got nothing — your in-hand may not increase at all initially.
@@ -65,8 +65,8 @@ export default function SalaryHikeCalculatorPage() {
           <p className="text-foreground-secondary">
             Old in-hand (approximate, new regime, no PT, basic PF): ₹85,000/month. New in-hand
             (approximate): ₹1,02,000/month. That is a 20% in-hand increase — less than the 25% CTC
-            hike, because the additional ₹3 LPA falls partly in the 10–15% slabs and the 87A rebate
-            no longer applies in full.
+            hike, because the additional ₹3 LPA falls partly in the 10–15% slabs and the Section 156
+            rebate (earlier 87A) no longer applies in full.
           </p>
           <p className="text-foreground-secondary">
             The gap is not a mistake or unfairness — it is how progressive taxation works. But it is

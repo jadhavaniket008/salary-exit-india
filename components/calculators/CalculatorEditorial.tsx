@@ -99,10 +99,11 @@ function TaxRegimeEditorial() {
         The new regime (Section 202 of the Income Tax Act, 2025 — earlier Section 115BAC
         framework) offers lower marginal rates and a higher basic exemption structure. For
         Tax Year 2026–27 (FY 2026–27), the new regime includes a ₹75,000 standard deduction
-        under Section 19(1) and a rebate that makes taxable income up to ₹12 lakh effectively
-        tax-free (still widely labelled Section 87A in payroll tools). This makes the new
-        regime the default choice for most employees with taxable income below ₹12 lakh after
-        standard deduction — and increasingly competitive even above that threshold.
+        under Section 19(1) and a Section 156 rebate under the Income Tax Act, 2025 (earlier
+        Section 87A framework) that makes taxable income up to ₹12 lakh effectively tax-free.
+        This makes the new regime the default choice for most employees with taxable income
+        below ₹12 lakh after standard deduction — and increasingly competitive even above that
+        threshold.
       </P>
       <P>
         The old regime uses lower slab rates only after you subtract significant
@@ -127,9 +128,9 @@ function TaxRegimeEditorial() {
       <UL>
         <li>New regime (Section 202): ₹75,000 standard deduction (Section 19(1)), lower slab rates, no itemized deductions beyond standard.</li>
         <li>Old regime: ₹50,000 standard deduction, higher rates, full deduction menu (Section 123 / earlier 80C, HRA, home-loan interest, etc.).</li>
-        <li>The new-regime rebate eliminates tax for taxable income ≤ ₹12 lakh (Tax Year 2026–27 / FY 2026–27).</li>
+        <li>Section 156 rebate (earlier 87A) eliminates tax for taxable income ≤ ₹12 lakh (Tax Year 2026–27 / FY 2026–27).</li>
         <li>Regime must be selected before the tax year begins for TDS under Section 392(1) — you can change at filing time.</li>
-        <li>Surcharge (and its own marginal relief) applies above ₹50 lakh taxable income — this calculator does not model surcharge. New-regime rebate / marginal relief near the ₹12 lakh threshold is modeled separately and is not affected by this.</li>
+        <li>Surcharge (and its own marginal relief) applies above ₹50 lakh taxable income — this calculator does not model surcharge. Section 156 / earlier-87A marginal relief near the ₹12 lakh threshold is modeled separately and is not affected by this.</li>
       </UL>
     </Section>
   );

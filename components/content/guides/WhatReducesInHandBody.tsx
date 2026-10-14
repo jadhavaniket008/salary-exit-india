@@ -20,7 +20,7 @@ export function WhatReducesInHandBody() {
       <ul>
         <li>
           At ₹10 LPA gross: after the ₹75,000 standard deduction, taxable income is ~₹9.25L. The Section
-          87A rebate (available when taxable income is ≤ ₹12L) makes annual tax approximately nil — TDS
+          Section 156 rebate (earlier Section 87A; available when taxable income is ≤ ₹12L) makes annual tax approximately nil — TDS
           should be close to zero if your employer has declared you under the new regime.
         </li>
         <li>

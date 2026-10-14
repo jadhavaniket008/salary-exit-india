@@ -34,7 +34,8 @@ export default function TaxRegimeCalculatorPage() {
           <p className="text-foreground-secondary">
             Income up to ₹4 lakh: nil. ₹4–8 lakh: 5%. ₹8–12 lakh: 10%. ₹12–16 lakh: 15%.
             ₹16–20 lakh: 20%. ₹20–24 lakh: 25%. Above ₹24 lakh: 30%. A standard deduction of
-            ₹75,000 is available. The Section 87A rebate means zero tax for income up to ₹12 lakh
+            ₹75,000 is available. The Section 156 rebate under the Income Tax Act, 2025 (earlier
+            Section 87A framework) means zero tax for income up to ₹12 lakh
             (before cess) under the new regime.
           </p>
           <p className="text-foreground-secondary">

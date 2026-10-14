@@ -235,11 +235,13 @@ export const GUIDE_ARTICLES: readonly GuideArticleMeta[] = [
   {
     hub: "tax",
     segment: "section-87a-marginal-relief-explained",
-    title: "Section 87A marginal relief explained (the ₹12 lakh cliff, worked out)",
+    title:
+      "Section 156 rebate marginal relief explained (earlier Section 87A; the ₹12 lakh cliff, worked out)",
     description:
-      "Why earning ₹1 more than ₹12 lakh doesn't cost you ₹60,000 extra tax — how marginal relief caps the damage, with the exact worked math.",
+      "Why earning ₹1 more than ₹12 lakh doesn't cost you ₹60,000 extra tax — how Section 156 (earlier 87A) marginal relief caps the damage, with the exact worked math.",
     keywords: [
       "section 87a marginal relief",
+      "section 156 rebate",
       "12 lakh tax cliff",
       "87a rebate new regime",
       "tax on 12 lakh 1 rupee",

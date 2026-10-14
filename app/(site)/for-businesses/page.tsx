@@ -114,7 +114,7 @@ export default function ForBusinessesPage() {
               The calculation engine is written in TypeScript, unit-tested against worked examples from
               Finance Act publications, and covers: CTC → in-hand conversion, old vs new tax regime
               comparison (FY 2026-27 slabs), PF (statutory ceiling and actual Basic+DA modes), HRA
-              exemption under Section 10(13A), professional tax, Section 87A rebate, and payslip line
+              exemption under Section 10(13A), professional tax, Section 156 rebate (earlier 87A), and payslip line
               breakdown. Tax slabs and thresholds are version-controlled and updated with each Budget.
             </p>
             <p className="text-sm leading-relaxed text-foreground-secondary">

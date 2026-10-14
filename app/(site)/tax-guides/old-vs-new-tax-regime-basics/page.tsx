@@ -19,7 +19,7 @@ const toc = [
   { id: "what-the-regimes-mean", label: "What old vs new actually means" },
   { id: "when-old-wins", label: "When the old regime typically produces lower tax" },
   { id: "when-new-wins", label: "When the new regime typically produces lower tax" },
-  { id: "87a-rebate", label: "The Section 87A rebate: zero tax for many at lower-mid incomes" },
+  { id: "87a-rebate", label: "The Section 156 rebate (earlier 87A): zero tax for many at lower-mid incomes" },
   { id: "worked-example", label: "A worked example: ₹18 LPA gross" },
   { id: "telling-employer", label: "How to tell your employer your regime choice" },
   { id: "what-you-cannot-do", label: "What is not available in the new regime" },

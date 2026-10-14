@@ -43,10 +43,10 @@ export function SalaryCalculatorClient() {
 
   const assumptionBullets = useMemo(
     () => [
-      `Income tax slabs, standard deductions, and simplified Section 87A match the configured FY (${fy.label}).`,
+      `Income tax slabs, standard deductions, and simplified Section 156 rebate (earlier 87A) match the configured FY (${fy.label}).`,
       `Standard deduction: old ₹${formatInrPlain(fy.standardDeductionOldRegime)}, new ₹${formatInrPlain(fy.standardDeductionNewRegime)}.`,
       `Old regime: employee PF + other 80C combined are capped at ₹${formatInrPlain(DEFAULT_TAX_SETTINGS.section80CCap)} for this estimate.`,
-      `Surcharge, perquisites, and bonus timing are not modeled; new-regime 87A marginal relief is.`,
+      `Surcharge, perquisites, and bonus timing are not modeled; new-regime Section 156 / earlier-87A marginal relief is.`,
     ],
     []
   );
@@ -360,7 +360,7 @@ export function SalaryCalculatorClient() {
           Engine snapshot: gross {formatInr(SALARY_WORKED_EXAMPLE_INPUT.annualGrossSalary)}/year, new regime, PT{" "}
           {formatInr(SALARY_WORKED_EXAMPLE_INPUT.professionalTaxAnnual)}/year, employee PF{" "}
           {formatInr(SALARY_WORKED_EXAMPLE_INPUT.employeePfAnnual ?? 0)}/year → estimated monthly in-hand{" "}
-          {formatInr(salaryWorkedExample.estimatedInHandMonthly, { decimals: true })} (FY slabs + 87A model in code).
+          {formatInr(salaryWorkedExample.estimatedInHandMonthly, { decimals: true })} (FY slabs + Section 156 / earlier-87A model in code).
         </p>
       </WorkedExample>
 

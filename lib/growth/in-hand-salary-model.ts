@@ -63,7 +63,7 @@ export type SalaryLevelRow = {
   employeePfAnnual: number;
   employeePfFy2026Annual: number;
   fy2026AverageMonthlyInHand: number;
-  /** Gross minus the new-regime standard deduction — the actual Section 87A comparison basis. */
+  /** Gross minus the new-regime standard deduction — the actual Section 156 / earlier-87A comparison basis. */
   taxableIncomeAnnual: number;
   monthlyInHand: number;
   annualTaxEstimate: number;
@@ -218,7 +218,7 @@ function formatInr(value: number): string {
 }
 
 /**
- * Finds where Section 87A's new-regime marginal relief (income-tax.ts,
+ * Finds where Section 156 / earlier-87A new-regime marginal relief (income-tax.ts,
  * rebate87ANewRegime) stops applying — i.e. where tax-after-rebate first
  * equals tax-before-rebate again, so normal slab progression resumes.
  * Below this point (and above the rebate threshold), income tax *before
@@ -297,7 +297,7 @@ function buildKeyFindings(
         monthlyGap
       )}. Taxable income moves from ${formatInr(ctc12LMid.taxableIncomeAnnual)} (below the ₹12L nil-tax threshold, so ₹0 tax) to ${formatInr(
         ctc15LMid.taxableIncomeAnnual
-      )} (inside Section 87A's new-regime marginal-relief zone, where tax is genuinely payable) — the CTC figures and the ₹12L taxable-income threshold are on different bases, not the same number.`
+      )} (inside Section 156's new-regime marginal-relief zone — earlier Section 87A framework — where tax is genuinely payable) — the CTC figures and the ₹12L taxable-income threshold are on different bases, not the same number.`
     );
   }
 
