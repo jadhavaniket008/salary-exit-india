@@ -43,9 +43,11 @@ export default function CtcToInHandCalculatorPage() {
               ₹7 LPA.
             </li>
             <li>
-              <strong>Employee PF (provident fund):</strong> Mandatory at 12% of your PF wage (which is
-              Basic+DA or ₹25,000 ceiling, whichever your employer uses). On a ₹12 LPA gross with Basic at
-              50%, full-Basic PF is ₹6,000/month; statutory-capped PF is ₹3,000/month.
+              <strong>Employee PF (provident fund):</strong> Mandatory at 12% of PF wage. SalaryExit models
+              either statutory-capped PF using the current ₹25,000 ceiling, or actual/full Basic+DA PF where
+              applicable to the member&apos;s contribution arrangement. Actual treatment depends on applicable
+              EPFO rules and payroll arrangement. On a ₹12 LPA gross with Basic at 50%, full-Basic PF is
+              ₹6,000/month; statutory-capped PF is ₹3,000/month.
             </li>
             <li>
               <strong>Professional tax:</strong> A state levy, typically ₹200–250/month in most states.
@@ -83,9 +85,10 @@ export default function CtcToInHandCalculatorPage() {
           </p>
           <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
-              <strong>PF wage definition:</strong> Some employers use a flat ₹25,000 wage ceiling for PF
-              (lower deduction). Others use actual Basic+DA without capping (higher deduction). This single
-              difference can change monthly in-hand by ₹1,000–3,000.
+              <strong>PF wage definition:</strong> SalaryExit models either statutory-capped PF at the
+              current ₹25,000 ceiling (lower deduction) or actual/full Basic+DA PF where that arrangement
+              applies (higher deduction). Actual treatment depends on applicable EPFO rules and payroll
+              arrangement. This single difference can change monthly in-hand by ₹1,000–3,000.
             </li>
             <li>
               <strong>TDS timing:</strong> Employers smooth TDS over the year but often recalibrate in

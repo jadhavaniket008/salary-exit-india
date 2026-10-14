@@ -14,7 +14,7 @@ const faq: FaqItem[] = [
   {
     question: "Can I choose whether my PF is capped or uncapped?",
     answer:
-      "Generally no — this is an employer payroll policy decision, not an individual employee election. You can ask HR which model applies to you, but you typically can't switch it unilaterally.",
+      "Generally no — contribution treatment depends on the member's existing contribution arrangement and applicable EPFO scheme/rules and payroll implementation; it is not simply an arbitrary employer choice. You can ask HR which arrangement applies to you, but you typically can't switch it unilaterally.",
   },
   {
     question: "Is capped PF always better for take-home pay?",
