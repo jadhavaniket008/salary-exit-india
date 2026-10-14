@@ -1,3 +1,5 @@
+> Historical July 2026 material: figures below retain the original ₹15,000 PF ceiling. Do not reuse as current payroll guidance. Current report/data were revised on 14 October 2026; see `pf-ceiling-release-2026-10-14.md`.
+
 # Report claim audit — /reports/india-in-hand-salary-model-2026
 
 Audited 2026-07-31, against the live `lib/growth/in-hand-salary-model.ts` output and the underlying engine (`lib/calculators/ctc-to-inhand.ts`, `lib/calculators/income-tax.ts`, `lib/calculators/annual-tax.ts`, `lib/calculators/reverse-salary.ts`, `lib/calculators/pf.ts`). Every numeric claim on the page comes from `model.keyFindings`, `model.salaryLevelRows`, `model.pfComparisonRows`, or `model.requiredCtcRows` — the page itself (`app/reports/india-in-hand-salary-model-2026/page.tsx`) contains **zero hardcoded numeric claims** (verified via grep — no figures found outside the model-driven sections).

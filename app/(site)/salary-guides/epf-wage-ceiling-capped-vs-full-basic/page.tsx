@@ -24,7 +24,7 @@ const faq: FaqItem[] = [
   {
     question: "Does the statutory ceiling ever change?",
     answer:
-      "It has changed historically via EPFO notification (it was ₹6,500/month before being raised to ₹15,000/month). Verify the current figure on the EPFO website before relying on it for a major decision.",
+      "The ceiling was ₹15,000/month from September 2014, and rose to ₹25,000/month from 17 September 2026. Current monthly examples use the new ceiling; FY 2026–27 contributions must split the periods, including prorated September.",
   },
 ];
 

@@ -1,3 +1,7 @@
+> Prior checkpoint retained for history. Its PF release blocker is resolved by the continuation documented in [PF release](pf-ceiling-release-2026-10-14.md); the historical figures below are not current estimates.
+
+> Historical July 2026 material: figures below retain the original ₹15,000 PF ceiling. Do not reuse as current payroll guidance. Current report/data were revised on 14 October 2026; see `pf-ceiling-release-2026-10-14.md`.
+
 # October financial trust and conversion changes
 
 Starting commit: `abaf2126a811ad4bd4e7061d15302a40cf0e087e`.
@@ -21,7 +25,7 @@ of dependent outputs remain a release blocker; they are not silently folded into
 
 ## Financial verification
 
-- [Ministry of Labour/PIB implementation notice, 23 September 2026](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2313790&lang=2&reg=48):
+- [Ministry of Labour/PIB implementation notice, 23 September 2026](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2314111):
   ceiling ₹25,000 from 17 September; employers must update payroll. At 12%, the capped
   employee contribution can be ₹3,000/month, not ₹1,800.
 - [Income Tax Department — tax computation](https://www.incometaxindia.gov.in/w/tax-rates-and-computation):

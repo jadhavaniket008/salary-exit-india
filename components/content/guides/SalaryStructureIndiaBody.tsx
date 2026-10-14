@@ -100,8 +100,8 @@ export function SalaryStructureIndiaBody() {
           insurance, gratuity — is a separate line.
         </li>
         <li>
-          <strong>Check the PF wage definition:</strong> Some companies cap PF wage at ₹15,000/month (the
-          statutory ceiling), meaning employee PF is only ₹1,800/month regardless of Basic. Others apply full
+          <strong>Check the PF wage definition:</strong> Some companies cap PF wage at ₹25,000/month (the
+          statutory ceiling), meaning employee PF is only ₹3,000/month regardless of Basic. Others apply full
           Basic as PF wage. This single policy difference can change your in-hand by ₹3,000–₹4,000/month at
           higher basics.
         </li>
@@ -121,7 +121,7 @@ export function SalaryStructureIndiaBody() {
       <p>
         Consider two ₹18 LPA offers: Company A has Basic at 40% (₹60,000/month) with full PF wage, so
         employee PF works out to ₹7,200/month. Company B has Basic at 50% (₹75,000/month) but caps PF wage
-        at the statutory ₹15,000/month ceiling, so employee PF is only ₹1,800/month. Company B&apos;s fixed
+        at the statutory ₹25,000/month ceiling, so employee PF is only ₹3,000/month. Company B&apos;s fixed
         monthly in-hand will be higher thanks to the capped PF deduction, and its higher Basic also
         strengthens gratuity accrual. Company A trades monthly liquidity for a larger EPF corpus. The
         &quot;better&quot; offer depends on your tax situation, savings goals, and how long you plan to stay.

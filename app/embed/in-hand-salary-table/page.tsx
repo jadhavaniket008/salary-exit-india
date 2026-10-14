@@ -40,11 +40,11 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
-const REPORT_PUBLISHED_ISO = "2026-07-31";
+
 const RECOMMENDED_IFRAME_HEIGHT = 640;
 
 export default function InHandSalaryTableEmbedPage() {
-  const model = generateInHandSalaryModel(REPORT_PUBLISHED_ISO + "T00:00:00.000Z");
+  const model = generateInHandSalaryModel();
   const embedUrl = absoluteUrl(ROUTES.inHandSalaryTableEmbed);
   const iframeSnippet = `<iframe src="${embedUrl}" title="SalaryExit India — In-Hand Salary Table" width="100%" height="${RECOMMENDED_IFRAME_HEIGHT}" style="border:0;max-width:720px" loading="lazy"></iframe>`;
 

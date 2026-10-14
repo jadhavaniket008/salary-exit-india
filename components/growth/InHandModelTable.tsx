@@ -92,7 +92,7 @@ export function InHandModelTable({ rows, employerCostShareScenarios }: Props) {
                 Annual gross
               </th>
               <th scope="col" className="px-4 py-3 font-medium">
-                Employee PF (annual)
+                Employee PF (current ×12)
               </th>
               <th scope="col" className="px-4 py-3 font-medium">
                 Monthly in-hand

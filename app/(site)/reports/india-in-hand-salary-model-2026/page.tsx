@@ -32,7 +32,7 @@ export const metadata: Metadata = buildPageMetadata(
 );
 
 export default function InHandSalaryModelReportPage() {
-  const model = generateInHandSalaryModel(REPORT_PUBLISHED_ISO + "T00:00:00.000Z");
+  const model = generateInHandSalaryModel();
 
   const article = articleJsonLd({
     // Matches the visible <h1> text exactly (see the header below) — Article
@@ -42,7 +42,7 @@ export default function InHandSalaryModelReportPage() {
       "Modeled dataset: how CTC converts to monthly in-hand across employer-cost structures and PF choices, generated from SalaryExit's live tax and PF engine.",
     urlPath: ROUTES.inHandSalaryModelReport,
     datePublished: REPORT_PUBLISHED_ISO,
-    dateModified: REPORT_PUBLISHED_ISO,
+    dateModified: "2026-10-14",
   });
 
   const breadcrumb = breadcrumbJsonLd([
@@ -76,6 +76,16 @@ export default function InHandSalaryModelReportPage() {
           </header>
 
           <PfModelNotice />
+          <p className="text-sm text-foreground-secondary">
+            Originally published 31 July 2026 using the then-current ₹15,000 PF wage ceiling.
+            Revised 14 October 2026 for the 17 September rule. Current tables and images use
+            the new monthly run rate. Downloads also include separate FY 2026–27 PF totals
+            and average monthly net for existing members at constant wages. Tax assumes ordinary
+            salary only; employer-cost shares are held fixed, not a forecast of payroll restructuring.
+            The original July data is preserved unchanged:{" "}
+            <a className="underline" href="/data/salaryexit-in-hand-model-2026-07-31.csv">July CSV</a>,{" "}
+            <a className="underline" href="/data/salaryexit-in-hand-model-2026-07-31.json">July JSON</a>.
+          </p>
 
           <section aria-labelledby="exec-summary-heading" className="space-y-4">
             <h2 id="exec-summary-heading" className="text-xl font-semibold text-foreground">
@@ -84,7 +94,7 @@ export default function InHandSalaryModelReportPage() {
             <p className="text-sm leading-relaxed text-foreground-secondary">
               This report models {model.assumptions.salaryLevelsAnnualCtc.length} CTC levels from{" "}
               ₹5L to ₹50L across {model.assumptions.employerCostShareScenarios.length} employer-cost
-              structures (8%, 13%, 18% of CTC) and 2 PF-wage bases (historical ₹15,000/month cap
+              structures (8%, 13%, 18% of CTC) and 2 PF-wage bases (current ₹25,000/month cap
               vs. full Basic+DA), producing {model.salaryLevelRows.length} distinct scenarios. It also
               reverse-solves the CTC range required to reach five common take-home targets: ₹50k,
               ₹75k, ₹1L, ₹1.5L, and ₹2L per month. Every number is computed live by the same engine
@@ -201,7 +211,7 @@ export default function InHandSalaryModelReportPage() {
                 and 18% — gross = CTC × (1 − employer-cost share).
               </li>
               <li>
-                PF: employee contribution is 12% of PF wage, either capped at the ₹15,000/month
+                PF: employee contribution is 12% of PF wage, either capped at the ₹25,000/month
                 statutory ceiling or applied to full Basic+DA, per scenario.
               </li>
               <li>

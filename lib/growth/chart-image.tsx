@@ -63,7 +63,7 @@ function ChartFrame({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        padding: vertical ? 72 : 64,
+        padding: vertical ? 72 : 32,
         background: COLOR.background,
         fontFamily: "sans-serif",
       }}
@@ -72,7 +72,7 @@ function ChartFrame({
         <div
           style={{
             display: "flex",
-            fontSize: vertical ? 26 : 22,
+            fontSize: vertical ? 26 : 16,
             fontWeight: 700,
             color: COLOR.accent,
             textTransform: "uppercase",
@@ -84,10 +84,10 @@ function ChartFrame({
         <div
           style={{
             display: "flex",
-            fontSize: vertical ? 44 : 38,
+            fontSize: vertical ? 44 : 30,
             fontWeight: 700,
             color: COLOR.text,
-            marginTop: 14,
+            marginTop: vertical ? 14 : 8,
             lineHeight: 1.15,
           }}
         >
@@ -96,16 +96,16 @@ function ChartFrame({
         <div
           style={{
             display: "flex",
-            fontSize: vertical ? 26 : 22,
+            fontSize: vertical ? 26 : 16,
             color: COLOR.textSecondary,
-            marginTop: 14,
+            marginTop: vertical ? 14 : 8,
           }}
         >
           {subtitle}
         </div>
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", flex: 1, marginTop: 40, marginBottom: 40 }}>
+      <div style={{ display: "flex", flexDirection: "column", flex: 1, marginTop: vertical ? 40 : 16, marginBottom: vertical ? 40 : 12 }}>
         {children}
       </div>
 
@@ -114,16 +114,16 @@ function ChartFrame({
           display: "flex",
           flexDirection: "column",
           borderTop: `1px solid ${COLOR.border}`,
-          paddingTop: 20,
+          paddingTop: vertical ? 20 : 10,
         }}
       >
-        <div style={{ display: "flex", fontSize: vertical ? 22 : 18, color: COLOR.textMuted }}>
+        <div style={{ display: "flex", fontSize: vertical ? 22 : 13, color: COLOR.textMuted }}>
           {footer}
         </div>
         <div
           style={{
             display: "flex",
-            fontSize: vertical ? 24 : 20,
+            fontSize: vertical ? 24 : 14,
             fontWeight: 700,
             color: COLOR.accent,
             marginTop: 6,
@@ -139,14 +139,14 @@ function ChartFrame({
 function BarRow({ bar, maxValue, vertical }: { bar: Bar; maxValue: number; vertical: boolean }): ReactElement {
   const pct = Math.max(2, (bar.value / maxValue) * 100);
   return (
-    <div style={{ display: "flex", flexDirection: "column", marginBottom: vertical ? 22 : 14 }}>
+    <div style={{ display: "flex", flexDirection: "column", marginBottom: vertical ? 22 : 5 }}>
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
-          fontSize: vertical ? 24 : 19,
+          fontSize: vertical ? 24 : 14,
           color: COLOR.text,
-          marginBottom: 6,
+          marginBottom: vertical ? 6 : 2,
         }}
       >
         <div style={{ display: "flex", fontWeight: 600 }}>{bar.label}</div>
@@ -156,7 +156,7 @@ function BarRow({ bar, maxValue, vertical }: { bar: Bar; maxValue: number; verti
         style={{
           display: "flex",
           width: "100%",
-          height: vertical ? 20 : 14,
+          height: vertical ? 20 : 7,
           background: COLOR.border,
           borderRadius: 8,
         }}
@@ -254,7 +254,7 @@ function family5Segments(model: InHandSalaryModel): { label: string; value: numb
   const monthlyDeductions = monthlyGross - row.monthlyInHand;
   return [
     { label: "Employer costs", value: monthlyEmployerCosts, color: "#B8B6AE" },
-    { label: "PF + tax deductions", value: monthlyDeductions, color: "#8FA893" },
+    { label: "PF + PT + tax deductions", value: monthlyDeductions, color: "#8FA893" },
     { label: "Monthly in-hand", value: row.monthlyInHand, color: "#1A6B45" },
   ];
 }
@@ -292,7 +292,7 @@ function WaterfallChart({
         {segments.map((s) => (
           <div
             key={s.label}
-            style={{ display: "flex", alignItems: "center", marginBottom: 14, fontSize: vertical ? 24 : 19 }}
+            style={{ display: "flex", alignItems: "center", marginBottom: 14, fontSize: vertical ? 24 : 14 }}
           >
             <div style={{ display: "flex", width: 18, height: 18, borderRadius: 4, background: s.color, marginRight: 12 }} />
             <div style={{ display: "flex", color: COLOR.text, fontWeight: 600 }}>{s.label}</div>
@@ -368,7 +368,7 @@ function buildChartElement(id: ChartFamilyId, model: InHandSalaryModel, vertical
       eyebrow={meta.eyebrow}
       title={meta.title}
       subtitle={meta.subtitle}
-      footer={meta.footer}
+      footer={`${meta.footer} PF: current rates from 17 Sep 2026; reviewed 14 Oct.`}
       vertical={vertical}
     >
       {body}
@@ -377,7 +377,7 @@ function buildChartElement(id: ChartFamilyId, model: InHandSalaryModel, vertical
 }
 
 export function buildChartImageResponse(id: ChartFamilyId, vertical: boolean): ImageResponse {
-  const model = generateInHandSalaryModel("2026-07-31T00:00:00.000Z");
+  const model = generateInHandSalaryModel();
   const size = vertical ? VERTICAL_SIZE : SOCIAL_SIZE;
   return new ImageResponse(buildChartElement(id, model, vertical), { ...size });
 }

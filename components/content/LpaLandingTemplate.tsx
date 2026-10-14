@@ -158,7 +158,7 @@ export function LpaLandingTemplate({ config }: Props) {
                     <td className="px-4 py-3 tabular-nums">{formatInr(result.grossMonthly, { decimals: true })}</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-foreground">Employee PF (historical ₹15,000 wage cap)</td>
+                    <td className="px-4 py-3 text-foreground">Employee PF (current ₹25,000 wage cap)</td>
                     <td className="px-4 py-3 tabular-nums">
                       {formatInr(result.employeePfMonthly, { decimals: true })}
                     </td>
@@ -222,7 +222,7 @@ export function LpaLandingTemplate({ config }: Props) {
                 — replace with your state.
               </li>
               <li>
-                Historical employee PF assumption: 12% of the lower of monthly Basic+DA and ₹15,000.
+                Current monthly employee PF assumption: 12% of the lower of monthly Basic+DA and ₹25,000.
                 Basic+DA is assumed to be 45% of gross, giving {formatInr(result.employeePfMonthly)}/month PF here.
                 Full-Basic PF can be higher; enter your actual deduction in the calculator.
               </li>

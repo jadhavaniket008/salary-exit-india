@@ -45,6 +45,8 @@ export type SalaryOutput = {
 };
 
 export type CtcToInHandInput = {
+  /** Default is current monthly run rate. FY basis returns a monthly average, not current payroll. */
+  pfProjectionBasis?: import("@/lib/config/pf").PfProjectionBasis;
   /** Annual gross (or interpreted gross after CTC adjustments) */
   annualGrossSalary: number;
   /** Employee PF annual; if omitted, derived from PF wage base */

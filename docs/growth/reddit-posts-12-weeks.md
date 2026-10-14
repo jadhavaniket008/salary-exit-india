@@ -1,3 +1,5 @@
+> Historical July 2026 material: figures below retain the original ₹15,000 PF ceiling. Do not reuse as current payroll guidance. Current report/data were revised on 14 October 2026; see `pf-ceiling-release-2026-10-14.md`.
+
 # Reddit — 12-week native post drafts
 
 Maximum 1 major native post every 2-3 weeks (per the task's explicit cadence rule) — these are the 5 post concepts specified, drafted for manual review. **None have been posted.** Verify current subreddit rules (`reddit-community-rules.md`) immediately before each one goes out, and do not post the same content to more than one subreddit — that repetition is exactly what got 5 of 9 prior posts removed or held (see `docs/salaryexit-distribution-forensics.md` §6).

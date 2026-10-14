@@ -56,13 +56,13 @@ const realQuestions = [
   {
     question: "Is ₹12 LPA enough in Mumbai?",
     answer:
-      "At ₹12L annual gross, this salary-only new-regime example gives about ₹98,000/month after capped employee PF and ₹200/month PT. That assumes resident rebate eligibility and no other income. Enter your actual Mumbai rent and household costs to see what remains.",
+      "At ₹12L annual gross, this salary-only new-regime example gives about ₹96,800/month after capped employee PF and ₹200/month PT. That assumes resident rebate eligibility and no other income. Enter your actual Mumbai rent and household costs to see what remains.",
     cta: { href: ROUTES.salaryRealityCheck, label: "Run Salary Reality Check" },
   },
   {
     question: "How much will I take home from a ₹15 LPA offer?",
     answer:
-      `If ₹15L is annual gross: taxable income is ₹14.25L after the ₹75,000 standard deduction. New-regime tax including cess is ${formatInr(HOME_SALARY_EXAMPLE.estimatedTotalTaxAnnual)}/year; estimated in-hand is ${formatInr(HOME_SALARY_EXAMPLE.inHandMonthly)}/month with capped PF ₹1,800 and PT ₹200. A ₹15L CTC offer needs employer costs removed first.`,
+      `If ₹15L is annual gross: taxable income is ₹14.25L after the ₹75,000 standard deduction. New-regime tax including cess is ${formatInr(HOME_SALARY_EXAMPLE.estimatedTotalTaxAnnual)}/year; estimated in-hand is ${formatInr(HOME_SALARY_EXAMPLE.inHandMonthly)}/month with capped PF ${formatInr(HOME_SALARY_EXAMPLE.employeePfMonthly)} and PT ₹200. A ₹15L CTC offer needs employer costs removed first.`,
     cta: { href: ROUTES.ctcToInHandCalculator, label: "Calculate ₹15L in-hand" },
   },
   {

@@ -44,8 +44,8 @@ export default function CtcToInHandCalculatorPage() {
             </li>
             <li>
               <strong>Employee PF (provident fund):</strong> Mandatory at 12% of your PF wage (which is
-              Basic+DA or ₹15,000 ceiling, whichever your employer uses). On a ₹12 LPA gross with Basic at
-              50%, this is roughly ₹6,000/month.
+              Basic+DA or ₹25,000 ceiling, whichever your employer uses). On a ₹12 LPA gross with Basic at
+              50%, full-Basic PF is ₹6,000/month; statutory-capped PF is ₹3,000/month.
             </li>
             <li>
               <strong>Professional tax:</strong> A state levy, typically ₹200–250/month in most states.
@@ -83,7 +83,7 @@ export default function CtcToInHandCalculatorPage() {
           </p>
           <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
-              <strong>PF wage definition:</strong> Some employers use a flat ₹15,000 wage ceiling for PF
+              <strong>PF wage definition:</strong> Some employers use a flat ₹25,000 wage ceiling for PF
               (lower deduction). Others use actual Basic+DA without capping (higher deduction). This single
               difference can change monthly in-hand by ₹1,000–3,000.
             </li>

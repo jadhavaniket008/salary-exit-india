@@ -15,7 +15,7 @@ export type PfAssumptions = {
    */
   employerEpfRateOnPfWage: number;
   /**
-   * Many employers cap PF wage at ₹15,000/month for statutory EPS — optional cap
+   * Current statutory PF wage ceiling from 17 September 2026 — optional cap
    * for *employee* contribution estimate when `applyStatutoryWageCeiling` is true.
    */
   statutoryWageCeilingMonthly: number;
@@ -26,7 +26,17 @@ export type PfAssumptions = {
 export const DEFAULT_PF_ASSUMPTIONS: PfAssumptions = {
   employeeContributionRate: 0.12,
   employerEpfRateOnPfWage: 0.12,
-  statutoryWageCeilingMonthly: 15_000,
+  statutoryWageCeilingMonthly: 25_000,
   /** Conservative default for "typical" IT sector statutory PF */
   applyStatutoryWageCeiling: true,
 };
+
+/** Explicit versions: a generation timestamp never selects a historical rule implicitly. */
+export const PF_MODEL_VERSION = "2026-09-17";
+export const PF_REVIEWED_ISO = "2026-10-14";
+export const HISTORICAL_PF_ASSUMPTIONS: PfAssumptions = {
+  ...DEFAULT_PF_ASSUMPTIONS,
+  statutoryWageCeilingMonthly: 15_000,
+};
+export const PF_OFFICIAL_SOURCE = "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2314111";
+export type PfProjectionBasis = "current-annualized" | "fy-2026-27";

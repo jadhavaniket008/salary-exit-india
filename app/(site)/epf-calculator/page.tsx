@@ -34,12 +34,12 @@ export default function EpfCalculatorPage() {
           <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
               <strong>8.33% to EPS (Employees&apos; Pension Scheme):</strong> This funds your pension on
-              retirement and is capped at ₹1,250/month (8.33% of the ₹15,000 statutory wage ceiling).
+              retirement and is capped at about ₹2,083/month where EPS applies (8.33% of the ₹25,000 statutory wage ceiling).
               EPS money is not in your individual PF account — it goes to a pension pool. You cannot
               withdraw EPS on resignation before 10 years of service (you get a scheme certificate instead).
             </li>
             <li>
-              <strong>3.67% to your EPF account</strong> (plus any excess over the ₹15,000 ceiling if
+              <strong>3.67% to your EPF account</strong> (plus any excess over the ₹25,000 ceiling if
               the employer uses a higher wage base). This amount is yours and accumulates interest.
             </li>
             <li>
@@ -52,12 +52,12 @@ export default function EpfCalculatorPage() {
 
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
-            The ₹15,000 statutory wage ceiling and why it matters
+            The ₹25,000 ceiling from 17 September 2026
           </h2>
           <p className="text-foreground-secondary">
-            By law, employers must contribute PF only on the first ₹15,000 of monthly Basic+DA. If your
-            Basic is ₹40,000/month, employer&apos;s statutory minimum PF contribution is 12% × ₹15,000 =
-            ₹1,800/month — not 12% × ₹40,000.
+            For covered members on the statutory-capped basis, contributions now use up to ₹25,000 of monthly PF wages (modeled here as Basic+DA). If your
+            Basic is ₹40,000/month, employer&apos;s statutory minimum PF contribution is 12% × ₹25,000 =
+            ₹3,000/month — not 12% × ₹40,000.
           </p>
           <p className="text-foreground-secondary">
             However, many employers choose to contribute on the actual Basic+DA without the ceiling,

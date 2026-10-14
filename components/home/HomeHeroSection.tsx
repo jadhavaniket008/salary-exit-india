@@ -2,11 +2,15 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import { grossSalaryExample } from "@/lib/content/salary-examples";
+import { formatInr } from "@/lib/format-inr";
 import { ROUTES } from "@/lib/routes";
+
+const example = grossSalaryExample(12, 2_400);
 
 const deductions = [
   { label: "Monthly gross", value: "₹1,00,000", type: "base" as const },
-  { label: "PF (historical ₹15k wage cap)", value: "−₹1,800", type: "deduct" as const },
+  { label: "PF (current ₹25k wage cap)", value: `−${formatInr(example.employeePfMonthly)}`, type: "deduct" as const },
   { label: "Professional tax", value: "−₹200", type: "deduct" as const },
   { label: "Income tax (87A rebate)", value: "₹0", type: "zero" as const },
 ];
@@ -30,9 +34,9 @@ function SalaryPreviewCard() {
       <div className="mb-5 border-b border-border pb-5">
         <p className="text-xs text-foreground-muted">Monthly in-hand</p>
         <p className="mt-0.5 font-mono text-5xl font-bold tracking-tight text-accent">
-          ₹98,000
+          {formatInr(example.inHandMonthly)}
         </p>
-        <p className="mt-1 text-xs text-foreground-muted">₹11,76,000 per year</p>
+        <p className="mt-1 text-xs text-foreground-muted">{formatInr(example.inHandMonthly * 12)} annualized at current PF</p>
       </div>
 
       {/* Breakdown */}
@@ -55,12 +59,12 @@ function SalaryPreviewCard() {
         ))}
         <div className="flex items-center justify-between border-t border-border pt-2">
           <span className="text-sm font-bold text-foreground">Monthly in-hand</span>
-          <span className="font-mono text-sm font-bold text-positive">₹98,000</span>
+          <span className="font-mono text-sm font-bold text-positive">{formatInr(example.inHandMonthly)}</span>
         </div>
       </div>
 
       <p className="mt-4 text-[10px] leading-relaxed text-foreground-muted">
-        Estimate only · PT ₹200/month · Historical PF assumption: ₹15k wage cap · Resident individual with only ordinary salary income; rebate eligibility assumed
+        Estimate only · PT ₹200/month · Current PF: ₹25k wage cap from 17 Sep 2026 · Resident individual with only ordinary salary income; rebate eligibility assumed
       </p>
     </div>
   );

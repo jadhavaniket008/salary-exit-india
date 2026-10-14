@@ -1,3 +1,5 @@
+> Historical July 2026 material: figures below retain the original ₹15,000 PF ceiling. Do not reuse as current payroll guidance. Current report/data were revised on 14 October 2026; see `pf-ceiling-release-2026-10-14.md`.
+
 # LinkedIn — Weeks 1-4 drafted posts
 
 Per Phase 5's CTA policy: only 1 of every 3 posts strongly asks for a click — the other two use save/discuss framing. None of these have been published. Every link uses the campaign URL generator (`utm_campaign=required-ctc-report-2026`).

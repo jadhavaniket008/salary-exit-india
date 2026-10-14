@@ -15,15 +15,19 @@
  */
 
 import { DEFAULT_FINANCIAL_YEAR } from "@/lib/config/financial-year";
-import { DEFAULT_PF_ASSUMPTIONS, type PfAssumptions } from "@/lib/config/pf";
+import { DEFAULT_PF_ASSUMPTIONS, PF_MODEL_VERSION, PF_REVIEWED_ISO, type PfAssumptions } from "@/lib/config/pf";
 import { computeCtcToInHand } from "@/lib/calculators/ctc-to-inhand";
-import { computeEmployeePfAnnual } from "@/lib/calculators/pf";
+import { computeEmployeePfAnnual, computeEmployeePfFy2026Annual } from "@/lib/calculators/pf";
 import { computeRequiredCtcForInHand } from "@/lib/calculators/reverse-salary";
 import { progressiveTax, rebate87ANewRegime } from "@/lib/calculators/income-tax";
 import type { TaxRegime } from "@/types/salary";
 
 /** Model-wide assumptions, stated once so the report and CSV can cite the same numbers. */
 export const MODEL_ASSUMPTIONS = {
+  pfModelVersion: PF_MODEL_VERSION,
+  projectionBasis: "current-annualized",
+  pfWageCeilingMonthly: DEFAULT_PF_ASSUMPTIONS.statutoryWageCeilingMonthly,
+  fyPfBasis: "FY 2026-27; existing member, constant wages; September 16/30 old + 14/30 new",
   regime: "new" as TaxRegime,
   /** Matches the CTC-to-in-hand calculator's own worked example (₹18L CTC / ₹9L Basic+DA = 50%)
    *  and reverse-salary.ts's documented default (0.45) — we use reverse-salary's own default so
@@ -55,7 +59,10 @@ export type SalaryLevelRow = {
   employerCostSharePct: number;
   annualGross: number;
   pfScenario: "statutory-ceiling" | "full-basic";
+  /** Current monthly contribution × 12, not transition-year actual. */
   employeePfAnnual: number;
+  employeePfFy2026Annual: number;
+  fy2026AverageMonthlyInHand: number;
   /** Gross minus the new-regime standard deduction — the actual Section 87A comparison basis. */
   taxableIncomeAnnual: number;
   monthlyInHand: number;
@@ -95,7 +102,10 @@ function computeInHandForCtc(
   pf: PfAssumptions
 ): {
   annualGross: number;
+  /** Current monthly contribution × 12, not transition-year actual. */
   employeePfAnnual: number;
+  employeePfFy2026Annual: number;
+  fy2026AverageMonthlyInHand: number;
   taxableIncomeAnnual: number;
   monthlyInHand: number;
   annualTax: number;
@@ -115,6 +125,8 @@ function computeInHandForCtc(
   return {
     annualGross,
     employeePfAnnual,
+    employeePfFy2026Annual: computeEmployeePfFy2026Annual(basicAndDaAnnual / 12, pf).annual,
+    fy2026AverageMonthlyInHand: out.inHandMonthly + (employeePfAnnual - computeEmployeePfFy2026Annual(basicAndDaAnnual / 12, pf).annual) / 12,
     // Matches estimateAnnualIncomeTax's new-regime formula exactly (annual-tax.ts):
     // taxableIncomeAnnual = max(0, gross - standardDeductionNewRegime).
     taxableIncomeAnnual: Math.max(0, annualGross - DEFAULT_FINANCIAL_YEAR.standardDeductionNewRegime),
@@ -124,7 +136,7 @@ function computeInHandForCtc(
 }
 
 /** Builds the full model. Pure function — same inputs always produce the same output. */
-export function generateInHandSalaryModel(generatedAtIso: string = new Date().toISOString()): InHandSalaryModel {
+export function generateInHandSalaryModel(generatedAtIso: string = PF_REVIEWED_ISO + "T00:00:00.000Z"): InHandSalaryModel {
   const salaryLevelRows: SalaryLevelRow[] = [];
   const pfComparisonRows: PfComparisonRow[] = [];
 
@@ -139,6 +151,8 @@ export function generateInHandSalaryModel(generatedAtIso: string = new Date().to
         annualGross: capped.annualGross,
         pfScenario: "statutory-ceiling",
         employeePfAnnual: capped.employeePfAnnual,
+        employeePfFy2026Annual: capped.employeePfFy2026Annual,
+        fy2026AverageMonthlyInHand: capped.fy2026AverageMonthlyInHand,
         taxableIncomeAnnual: capped.taxableIncomeAnnual,
         monthlyInHand: capped.monthlyInHand,
         annualTaxEstimate: capped.annualTax,
@@ -150,6 +164,8 @@ export function generateInHandSalaryModel(generatedAtIso: string = new Date().to
         annualGross: full.annualGross,
         pfScenario: "full-basic",
         employeePfAnnual: full.employeePfAnnual,
+        employeePfFy2026Annual: full.employeePfFy2026Annual,
+        fy2026AverageMonthlyInHand: full.fy2026AverageMonthlyInHand,
         taxableIncomeAnnual: full.taxableIncomeAnnual,
         monthlyInHand: full.monthlyInHand,
         annualTaxEstimate: full.annualTax,

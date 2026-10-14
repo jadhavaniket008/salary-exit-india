@@ -13,7 +13,7 @@ import type {
 } from "@/types/salary";
 import { clampNonNegative } from "@/lib/validation/sanitize";
 import { estimateAnnualIncomeTax } from "./annual-tax";
-import { computeEmployeePfAnnual } from "./pf";
+import { computeEmployeePfProjectionAnnual } from "./pf";
 
 /**
  * Decompose an offer-letter CTC into its taxable gross basis by removing
@@ -52,13 +52,19 @@ export function computeCtcToInHand(
     "The monthly TDS line is annual tax ÷ 12 for planning — not a payslip TDS schedule.",
   ];
 
+  warnings.push(input.employeePfAnnual !== undefined
+    ? "Using your supplied annual employee PF; monthly PF is that amount divided by 12. No automatic ceiling or transition adjustment is applied."
+    : input.pfProjectionBasis === "fy-2026-27"
+    ? "FY 2026–27 average: PF uses the September 17 ceiling transition for an existing member at constant wages. Monthly PF is the annual average."
+    : "Current monthly PF from 17 September 2026, annualized ×12 for planning; this is not the full FY 2026–27 PF total. Actual annual PF can be entered explicitly.");
+
   const gross = clampNonNegative(input.annualGrossSalary);
   const ptAnnual = clampNonNegative(input.professionalTaxAnnual);
 
   const employeePfAnnual = clampNonNegative(
     input.employeePfAnnual ??
       (input.basicAndDaAnnual !== undefined
-        ? computeEmployeePfAnnual(input.basicAndDaAnnual / 12, DEFAULT_PF_ASSUMPTIONS)
+        ? computeEmployeePfProjectionAnnual(input.basicAndDaAnnual / 12, input.pfProjectionBasis, DEFAULT_PF_ASSUMPTIONS)
         : 0)
   );
 

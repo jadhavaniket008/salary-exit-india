@@ -24,7 +24,7 @@ export function CityBudgetAssumptions() {
     <PfModelNotice />
     <p>
       All examples below use the same FY 2026–27 engine: resident individual, new regime,
-      ordinary salary only, 45% Basic+DA, employee PF at 12% with a historical ₹15,000/month wage ceiling,
+      ordinary salary only, 45% Basic+DA, employee PF at 12% with a current ₹25,000/month wage ceiling,
       and ₹2,500/year professional tax as a planning placeholder. Check the PT that actually
       applies to you. Employer costs must be removed from CTC first. Rent and other spending
       are scenario assumptions; replace them with your own quotes and bills.

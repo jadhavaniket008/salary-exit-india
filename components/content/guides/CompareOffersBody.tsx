@@ -22,7 +22,7 @@ export function CompareOffersBody() {
       <ul>
         <li>Fixed monthly components (Basic, HRA, Special Allowance, LTA monthly equivalent).</li>
         <li>Variable pay: amount, frequency, target definition, and typical payout percentage.</li>
-        <li>PF wage definition: does the company cap PF contributions at ₹15,000/month or apply
+        <li>PF wage definition: does the company cap PF contributions at ₹25,000/month or apply
           full Basic?</li>
         <li>Any employer contributions included in CTC but not cash (employer PF, group insurance).</li>
       </ul>

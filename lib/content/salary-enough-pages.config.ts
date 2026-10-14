@@ -133,9 +133,9 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     lifestyle: "moderate",
     answerKind: "depends",
     seo: {
-      title: "Is ₹12 LPA Good in Bangalore? ₹98K in-hand vs ₹27k rent — real numbers",
+      title: "Is ₹12 LPA Good in Bangalore? ₹96.8K in-hand vs ₹27k rent — real numbers",
       description:
-        "12 LPA Bangalore reality: ₹98,000/month in-hand, ₹27k rent, moderate lifestyle — exact savings breakdown. Pre-filled Salary Reality Check you can edit for your lease.",
+        "12 LPA Bangalore reality: ₹96,800/month in-hand, ₹27k rent, moderate lifestyle — exact savings breakdown. Pre-filled Salary Reality Check you can edit for your lease.",
       keywords: [
         "is 12 lpa good in bangalore",
         "12 lakh salary bangalore enough",
@@ -412,7 +412,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is ₹12 LPA good in Hyderabad? In-hand salary, rent & savings check",
       description:
-        "₹12 LPA in Hyderabad: ~₹98,000/month in-hand (FY 2026-27, ₹200/month PT). Kondapur/Madhapur rent reality (₹22k/month) and whether ₹12 lakh is enough in Cyberabad.",
+        "₹12 LPA in Hyderabad: ~₹96,800/month in-hand (FY 2026-27, ₹200/month PT). Kondapur/Madhapur rent reality (₹22k/month) and whether ₹12 lakh is enough in Cyberabad.",
       keywords: [
         "is 12 lpa good in hyderabad",
         "12 lakh salary hyderabad",
@@ -692,7 +692,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is 15 LPA Good in Bangalore? ₹1.14L In-Hand vs ₹30K Rent",
       description:
-        "15 LPA in Bangalore: ₹1,14,900/month in-hand, ₹30k rent, ~₹44k savings/month (moderate lifestyle). Edit the model for your actual rent and spend — see if it's enough.",
+        "15 LPA in Bangalore: ₹1,13,700/month in-hand, ₹30k rent, ~₹42.8k savings/month (moderate lifestyle). Edit the model for your actual rent and spend — see if it's enough.",
       keywords: [
         "is 15 lpa enough in bangalore",
         "is 15 lpa good in bangalore",
@@ -834,7 +834,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is ₹20 LPA Good in Mumbai? ₹1.4L in-hand vs ₹42k rent — honest check",
       description:
-        "20 LPA Mumbai reality: ₹1,48,600/month in-hand, ₹42k rent, ~₹66k savings/month (moderate lifestyle). Fully editable Salary Reality Check with actual Mumbai rent bands.",
+        "20 LPA Mumbai reality: ₹1,47,633/month in-hand, ₹42k rent, ~₹66k savings/month (moderate lifestyle). Fully editable Salary Reality Check with actual Mumbai rent bands.",
       keywords: [
         "is 20 lpa enough in mumbai",
         "is 20 lpa good in mumbai",
@@ -1605,7 +1605,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is 20 LPA Enough for a Family in Bangalore? One Income",
       description:
-        "20 LPA for a family in Bangalore: ₹1,48,600/month in-hand, ₹38k rent, premium budget. Real savings model — school fees, EMIs, food all included.",
+        "20 LPA for a family in Bangalore: ₹1,47,633/month in-hand, ₹38k rent, premium budget. Real savings model — school fees, EMIs, food all included.",
       keywords: [
         "is 20 lpa enough for family in bangalore",
         "20 lakh salary family bangalore",
@@ -1729,12 +1729,12 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is ₹12 LPA enough in Delhi? In-hand salary, rent & savings check",
       description:
-        "12 LPA in Delhi: ~₹98,000/month in-hand, zero income tax (FY 2026-27), no professional tax. Real breakdown of rent (₹28k/month), commute, and savings in Delhi NCR.",
+        "12 LPA in Delhi: ~₹97,000/month in-hand, zero income tax (FY 2026-27), no professional tax. Real breakdown of rent (₹28k/month), commute, and savings in Delhi NCR.",
       keywords: ["is 12 lpa good in delhi", "12 lpa delhi salary", "12 lakh salary delhi", "is 12 lpa enough delhi ncr"],
     },
     answerHeadline: "Yes — comfortable for a single earner if rent is ₹25–30k and lifestyle stays moderate.",
     leadParagraph:
-      "Twelve LPA in Delhi gives you ~₹98,000/month in-hand (new regime, zero PT) — a comfortable base for solo living in most of Delhi NCR. With income tax at zero (87A rebate covers full liability at ₹12L gross) and no professional tax, the gross-to-in-hand conversion is clean: only PF reduces your paycheck.",
+      "Twelve LPA in Delhi gives you ~₹97,000/month in-hand (new regime, zero PT) — a comfortable base for solo living in most of Delhi NCR. With income tax at zero (87A rebate covers full liability at ₹12L gross) and no professional tax, the gross-to-in-hand conversion is clean: only PF reduces your paycheck.",
     whyParagraph:
       "We anchor rent at ₹28,000/month — a reasonable 1BHK in South Delhi extensions, Dwarka Sector 10–12, or a decent 2BHK shared in Hauz Khas. On that assumption, monthly surplus after all modeled spend is positive and gives room for SIPs or emergency buffer building. The zero-PT Delhi advantage adds ~₹2,500/year vs Bengaluru.",
     typicalSpendNotes: [
@@ -1763,7 +1763,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "How much in-hand do I get on ₹12 LPA in Delhi (FY 2026-27)?",
         answer:
-          "~₹98,000/month under the new regime. Income tax is zero (Section 87A rebate). Delhi has no professional tax. Deductions: only employee PF ~₹1,800/month.",
+          "~₹97,000/month under the new regime. Income tax is zero (Section 87A rebate). Delhi has no professional tax. Deductions: only employee PF ~₹3,000/month.",
       },
       {
         question: "Is ₹12 LPA in Delhi better than ₹12 LPA in Bangalore?",
@@ -1842,12 +1842,12 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is ₹20 LPA good in Delhi? In-hand salary, rent & lifestyle check",
       description:
-        "20 LPA in Delhi: ~₹1,48,600/month in-hand (FY 2026-27, no PT). Honest breakdown of rent (₹38k/month), savings, and what ₹20 lakh salary feels like in Delhi NCR.",
+        "20 LPA in Delhi: ~₹1,47,633/month in-hand (FY 2026-27, no PT). Honest breakdown of rent (₹38k/month), savings, and what ₹20 lakh salary feels like in Delhi NCR.",
       keywords: ["is 20 lpa good in delhi", "20 lpa delhi salary", "20 lakh salary delhi", "is 20 lpa enough in delhi"],
     },
     answerHeadline: "Good — comfortable for solo or couple with real savings capacity in most of Delhi.",
     leadParagraph:
-      "Twenty LPA in Delhi gives ~₹1,48,600/month in-hand (new regime, zero PT). At this gross, tax is real (~₹27,000/month TDS) but manageable, and Delhi's zero professional tax adds a small yearly advantage over Bengaluru or Mumbai. Most professionals at ₹20 LPA can choose between a premium 1BHK in central Delhi and a very comfortable 2BHK in outer areas.",
+      "Twenty LPA in Delhi gives ~₹1,47,633/month in-hand (new regime, zero PT). At this gross, tax is real (~₹16,033/month TDS) but manageable, and Delhi's zero professional tax adds a small yearly advantage over Bengaluru or Mumbai. Most professionals at ₹20 LPA can choose between a premium 1BHK in central Delhi and a very comfortable 2BHK in outer areas.",
     whyParagraph:
       "We use ₹38,000/month rent — a realistic premium 1BHK in Saket/Vasant Kunj or a large 2BHK in Janakpuri/Rajouri Garden. After rent, commute, and moderate lifestyle, the surplus is meaningful — enough for SIPs, emergency fund, and occasional travel without financial stress.",
     typicalSpendNotes: [
@@ -1876,12 +1876,12 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "Is ₹20 LPA a good salary in Delhi in 2026?",
         answer:
-          "Yes — ₹20 LPA (₹1,48,600/month in-hand in Delhi, new regime, zero PT) provides comfortable living with meaningful savings capacity for a single earner. For a couple or a family with one child, it works with rent discipline but has less margin.",
+          "Yes — ₹20 LPA (₹1,47,633/month in-hand in Delhi, new regime, zero PT) provides comfortable living with meaningful savings capacity for a single earner. For a couple or a family with one child, it works with rent discipline but has less margin.",
       },
       {
         question: "How much in-hand do I get on ₹20 LPA in Delhi?",
         answer:
-          "~₹1,48,600/month under the new tax regime. Delhi has no professional tax, so deductions are employee PF (~₹1,800/month) and income tax TDS (~₹26,900/month). Total monthly deductions ~₹28,700.",
+          "~₹1,47,633/month under the new tax regime. Delhi has no professional tax, so deductions are employee PF (~₹3,000/month) and income tax TDS (~₹16,033/month). Total monthly deductions ~₹19,033.",
       },
       {
         question: "₹20 LPA in Delhi vs ₹20 LPA in Bangalore — which is better?",
@@ -1901,7 +1901,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is ₹12 LPA good in Gurgaon? Rent, commute & savings reality check",
       description:
-        "12 LPA in Gurgaon: ~₹98,000/month in-hand (zero PT, FY 2026-27). Honest take on DLF Phase rent (₹26k/month), commute, and whether ₹12 lakh is enough in Gurgaon NCR.",
+        "12 LPA in Gurgaon: ~₹97,000/month in-hand (zero PT, FY 2026-27). Honest take on DLF Phase rent (₹26k/month), commute, and whether ₹12 lakh is enough in Gurgaon NCR.",
       keywords: ["is 12 lpa good in gurgaon", "12 lpa gurgaon salary", "12 lakh salary gurgaon", "is 12 lpa enough in gurugram"],
     },
     answerHeadline: "Workable in outer Gurgaon — tight near DLF corridors where rent is aggressive.",
@@ -1940,7 +1940,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "Is ₹12 LPA a good salary in Gurgaon in 2026?",
         answer:
-          "It's viable but not comfortable near prime office clusters. ₹12 LPA gives ~₹98,000/month in-hand. After ₹26k rent and ₹5–8k in commute/cab, you have ~₹64–67k for living expenses and savings — manageable but tight if rent or commute climbs.",
+          "It's viable but not comfortable near prime office clusters. ₹12 LPA gives ~₹97,000/month in-hand. After ₹26k rent and ₹5–8k in commute/cab, you have ~₹64–67k for living expenses and savings — manageable but tight if rent or commute climbs.",
       },
     ],
   },
@@ -1955,12 +1955,12 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is ₹20 LPA good in Gurgaon? Salary, rent & savings reality check",
       description:
-        "20 LPA in Gurgaon: ~₹1,48,600/month in-hand (zero PT, FY 2026-27). Honest breakdown of DLF/Golf Course rent (₹38k/month), commute costs, and monthly savings in Gurugram.",
+        "20 LPA in Gurgaon: ~₹1,47,633/month in-hand (zero PT, FY 2026-27). Honest breakdown of DLF/Golf Course rent (₹38k/month), commute costs, and monthly savings in Gurugram.",
       keywords: ["is 20 lpa good in gurgaon", "20 lpa gurgaon salary", "20 lakh salary gurgaon", "is 20 lpa enough in gurugram"],
     },
     answerHeadline: "Yes — comfortable for solo or couple; workable for a small family with managed rent.",
     leadParagraph:
-      "Twenty LPA in Gurgaon delivers ~₹1,48,600/month in-hand (new regime, zero PT). This is one of the most common senior-IC compensation points in Gurgaon's BFSI, consulting, and tech sectors. At this level, rent in a premium DLF or Golf Course corridor is feasible without wiping savings.",
+      "Twenty LPA in Gurgaon delivers ~₹1,47,633/month in-hand (new regime, zero PT). This is one of the most common senior-IC compensation points in Gurgaon's BFSI, consulting, and tech sectors. At this level, rent in a premium DLF or Golf Course corridor is feasible without wiping savings.",
     whyParagraph:
       "We use ₹38,000/month rent — a good 1BHK in DLF Phase 1–3 or a 2BHK in Sector 57 or Sohna Road. After rent, cab costs (Gurgaon has higher cab dependency than Delhi), and moderate spend, surplus is solid for SIPs and occasional international travel once a year.",
     typicalSpendNotes: [
@@ -1989,7 +1989,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "Is ₹20 LPA a good salary in Gurgaon in 2026?",
         answer:
-          "Yes. ₹20 LPA in Gurgaon (Haryana, zero PT) gives ~₹1,48,600/month in-hand. It provides comfortable solo or couple living with real savings capacity. For families, it's workable with rent discipline and modest school choice.",
+          "Yes. ₹20 LPA in Gurgaon (Haryana, zero PT) gives ~₹1,47,633/month in-hand. It provides comfortable solo or couple living with real savings capacity. For families, it's workable with rent discipline and modest school choice.",
       },
       {
         question: "How does ₹20 LPA Gurgaon compare to ₹20 LPA Bangalore?",
@@ -2009,7 +2009,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is ₹20 LPA good in Hyderabad? Salary, rent & savings reality check",
       description:
-        "20 LPA in Hyderabad: ~₹1,48,400/month in-hand (FY 2026-27, ₹200/month PT). Honest breakdown of Kondapur/Madhapur rent (₹32k/month) and savings in Cyberabad.",
+        "20 LPA in Hyderabad: ~₹1,47,433/month in-hand (FY 2026-27, ₹200/month PT). Honest breakdown of Kondapur/Madhapur rent (₹32k/month) and savings in Cyberabad.",
       keywords: ["is 20 lpa good in hyderabad", "20 lpa hyderabad salary", "20 lakh salary hyderabad", "is 20 lpa enough in hyderabad"],
     },
     answerHeadline: "Yes — excellent value for money; one of the best cities at ₹20 LPA in India.",
@@ -2043,12 +2043,12 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "Is ₹20 LPA a good salary in Hyderabad in 2026?",
         answer:
-          "Excellent — one of the best cities at this comp level. ₹20 LPA in Hyderabad gives ~₹1,48,400/month in-hand. With rent 20–30% lower than Bengaluru for equivalent space, the quality-of-life per rupee is hard to beat in Indian tech hubs.",
+          "Excellent — one of the best cities at this comp level. ₹20 LPA in Hyderabad gives ~₹1,47,433/month in-hand. With rent 20–30% lower than Bengaluru for equivalent space, the quality-of-life per rupee is hard to beat in Indian tech hubs.",
       },
       {
         question: "How much in-hand is ₹20 LPA in Hyderabad?",
         answer:
-          "~₹1,48,400/month (new tax regime, Telangana PT ₹200/month). Deductions: employee PF ~₹1,800/month, PT ~₹200/month, TDS ~₹26,900/month.",
+          "~₹1,47,433/month (new tax regime, Telangana PT ₹200/month). Deductions: employee PF ~₹3,000/month, PT ~₹200/month, TDS ~₹16,033/month.",
       },
     ],
   },
@@ -2102,7 +2102,7 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "How much in-hand salary is ₹25 LPA in Mumbai?",
         answer:
-          "~₹1,80,000/month (new tax regime, Maharashtra PT ~₹208/month). Deductions: PF ~₹1,800/month, PT ~₹208/month, TDS ~₹37,400/month. Total deductions ~₹39,400/month from gross of ₹2,08,333.",
+          "~₹1,78,475/month (new tax regime, Maharashtra PT ~₹208/month). Deductions: PF ~₹3,000/month, PT ~₹208/month, TDS ~₹26,650/month. Total deductions ~₹29,858/month from gross of ₹2,08,333.",
       },
       {
         question: "Is ₹25 LPA in Mumbai better than ₹20 LPA in Bengaluru?",
@@ -2122,12 +2122,12 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is ₹25 LPA good in Delhi? In-hand salary, rent & savings check",
       description:
-        "25 LPA in Delhi: ~₹1,80,000/month in-hand (FY 2026-27, zero PT). Honest breakdown of rent (₹42k/month), commute, and savings for ₹25 lakh salary in Delhi NCR.",
+        "25 LPA in Delhi: ~₹1,78,683/month in-hand (FY 2026-27, zero PT). Honest breakdown of rent (₹42k/month), commute, and savings for ₹25 lakh salary in Delhi NCR.",
       keywords: ["is 25 lpa good in delhi", "25 lpa delhi salary", "25 lakh salary delhi", "is 25 lpa enough in delhi"],
     },
     answerHeadline: "Yes — very comfortable for solo; solid foundation for a young family in Delhi.",
     leadParagraph:
-      "Twenty-five LPA in Delhi gives ~₹1,80,000/month in-hand (new regime, zero PT) — one of the cleanest gross-to-in-hand conversions in any Indian metro. Delhi's lack of professional tax and the absence of Mumbai-level rent pressure means ₹25 LPA stretches considerably further here than in comparable cities.",
+      "Twenty-five LPA in Delhi gives ~₹1,78,683/month in-hand (new regime, zero PT) — one of the cleanest gross-to-in-hand conversions in any Indian metro. Delhi's lack of professional tax and the absence of Mumbai-level rent pressure means ₹25 LPA stretches considerably further here than in comparable cities.",
     whyParagraph:
       "We anchor rent at ₹42,000/month — a well-furnished 2BHK in Saket, Vasant Kunj, or Rajouri Garden, or a premium 1BHK in central South Delhi. After rent, Metro commute, and moderate lifestyle spend, the monthly surplus is substantial — enough for SIPs, an EMI, and emergency buffer simultaneously.",
     typicalSpendNotes: [
@@ -2156,12 +2156,12 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "How much in-hand is ₹25 LPA in Delhi?",
         answer:
-          "~₹1,80,000/month in Delhi (new regime, zero PT). Gross monthly: ₹2,08,333. Deductions: PF ~₹1,800/month, TDS ~₹26,542/month. Delhi has no professional tax.",
+          "~₹1,78,683/month in Delhi (new regime, zero PT). Gross monthly: ₹2,08,333. Deductions: PF ~₹3,000/month, TDS ~₹26,650/month. Delhi has no professional tax.",
       },
       {
         question: "Is ₹25 LPA a good salary in Delhi NCR in 2026?",
         answer:
-          "Yes — very good. ₹25 LPA (₹1,80,000/month in-hand) allows quality housing, real savings, and investment capacity in most of Delhi. In outer NCR (Noida/Gurgaon), the same gross typically comes from stronger tech employers with better career ladders.",
+          "Yes — very good. ₹25 LPA (₹1,78,683/month in-hand) allows quality housing, real savings, and investment capacity in most of Delhi. In outer NCR (Noida/Gurgaon), the same gross typically comes from stronger tech employers with better career ladders.",
       },
     ],
   },
@@ -2230,12 +2230,12 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is ₹30 LPA good in Delhi? In-hand salary, rent & lifestyle check",
       description:
-        "30 LPA in Delhi: ~₹2,08,600/month in-hand (FY 2026-27, zero PT). Honest breakdown of South Delhi rent (₹48k/month), savings, and what ₹30 lakh salary feels like in Delhi NCR.",
+        "30 LPA in Delhi: ~₹2,07,350/month in-hand (FY 2026-27, zero PT). Honest breakdown of South Delhi rent (₹48k/month), savings, and what ₹30 lakh salary feels like in Delhi NCR.",
       keywords: ["is 30 lpa good in delhi", "30 lpa delhi salary", "30 lakh salary delhi", "is 30 lpa enough in delhi"],
     },
     answerHeadline: "Yes — financially very comfortable; opens home loan + savings + lifestyle simultaneously.",
     leadParagraph:
-      "Thirty LPA in Delhi delivers ~₹2,08,600/month in-hand (new regime, zero PT). At this level, the financial calculus shifts from 'can I afford rent' to 'should I buy vs rent' — EMI on a ₹1–1.5Cr flat becomes a real option alongside comfortable rental living.",
+      "Thirty LPA in Delhi delivers ~₹2,07,350/month in-hand (new regime, zero PT). At this level, the financial calculus shifts from 'can I afford rent' to 'should I buy vs rent' — EMI on a ₹1–1.5Cr flat becomes a real option alongside comfortable rental living.",
     whyParagraph:
       "We use ₹48,000/month rent — a premium 2BHK in South Delhi (Saket, GK, Vasant Kunj) or a large 3BHK in outer-central areas. After rent and moderate lifestyle, monthly surplus is substantial — enough for active investment alongside discretionary spend without financial stress.",
     typicalSpendNotes: [
@@ -2264,12 +2264,12 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "Is ₹30 LPA a good salary in Delhi in 2026?",
         answer:
-          "Yes — ₹30 LPA (₹2,08,600/month in-hand, zero PT) is excellent in Delhi. It provides premium housing, real savings, and investment capacity. It is above the threshold where financial stress is largely absent for most lifestyle choices.",
+          "Yes — ₹30 LPA (₹2,07,350/month in-hand, zero PT) is excellent in Delhi. It provides premium housing, real savings, and investment capacity. It is above the threshold where financial stress is largely absent for most lifestyle choices.",
       },
       {
         question: "How much in-hand is ₹30 LPA in Delhi?",
         answer:
-          "~₹2,08,600/month (new regime, Delhi zero PT). Gross monthly: ₹2,50,000. Deductions: PF ~₹1,800/month, TDS ~₹39,650/month. Total deductions ~₹41,450/month.",
+          "~₹2,07,350/month (new regime, Delhi zero PT). Gross monthly: ₹2,50,000. Deductions: PF ~₹3,000/month, TDS ~₹39,650/month. Total deductions ~₹42,650/month.",
       },
     ],
   },
@@ -2338,12 +2338,12 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is ₹35 LPA good in Bangalore? Salary, lifestyle & savings check",
       description:
-        "35 LPA in Bengaluru: ~₹2,37,000/month in-hand (FY 2026-27). Premium Indiranagar/Koramangala rent (₹55k/month), savings, and what ₹35 lakh salary means for your lifestyle in Bangalore.",
+        "35 LPA in Bengaluru: ~₹2,35,800/month in-hand (FY 2026-27). Premium Indiranagar/Koramangala rent (₹55k/month), savings, and what ₹35 lakh salary means for your lifestyle in Bangalore.",
       keywords: ["is 35 lpa good in bangalore", "35 lpa bangalore salary", "35 lakh salary bangalore", "is 35 lpa enough in bengaluru"],
     },
     answerHeadline: "Excellent — senior-IC or lead-level comp that removes financial stress entirely for most Bengaluru lifestyles.",
     leadParagraph:
-      "Thirty-five LPA in Bengaluru gives ~₹2,37,000/month in-hand (new regime, Karnataka PT ₹200/month). This is the compensation band where financial trade-offs in Bengaluru — rent vs location, cab vs own car, public school vs premium school — become choices rather than constraints. It is firmly senior-IC or engineering-lead territory in the Bengaluru tech ecosystem.",
+      "Thirty-five LPA in Bengaluru gives ~₹2,35,800/month in-hand (new regime, Karnataka PT ₹200/month). This is the compensation band where financial trade-offs in Bengaluru — rent vs location, cab vs own car, public school vs premium school — become choices rather than constraints. It is firmly senior-IC or engineering-lead territory in the Bengaluru tech ecosystem.",
     whyParagraph:
       "We use ₹55,000/month rent — a premium 2BHK in Indiranagar or Koramangala, or a large 3BHK in a gated community in Whitefield or Sarjapur. After rent and moderate lifestyle, monthly surplus is ~₹90–1,00,000 — enough for active investment, EMI on a quality car, and annual international travel without budget stress.",
     typicalSpendNotes: [
@@ -2372,17 +2372,17 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "Is ₹35 LPA a good salary in Bangalore in 2026?",
         answer:
-          "Excellent — ₹35 LPA (₹2,37,000/month in-hand, new regime) is firmly in the top 5% of salaried earners in Bengaluru. It removes most financial constraints, allows premium-area living, and provides investment capacity beyond routine SIPs. For a single earner, it is highly comfortable.",
+          "Excellent — ₹35 LPA (₹2,35,800/month in-hand, new regime) is firmly in the top 5% of salaried earners in Bengaluru. It removes most financial constraints, allows premium-area living, and provides investment capacity beyond routine SIPs. For a single earner, it is highly comfortable.",
       },
       {
         question: "How much in-hand is ₹35 LPA in Bangalore?",
         answer:
-          "~₹2,37,000/month (new tax regime, Karnataka PT ₹200/month). Gross monthly: ₹2,91,667. Deductions: PF ~₹1,800/month, PT ₹200/month, TDS ~₹52,650/month. Total deductions ~₹54,650/month.",
+          "~₹2,35,800/month (new tax regime, Karnataka PT ₹200/month). Gross monthly: ₹2,91,667. Deductions: PF ~₹3,000/month, PT ₹200/month, TDS ~₹52,650/month. Total deductions ~₹55,850/month.",
       },
       {
         question: "Can I afford a flat in Bangalore on ₹35 LPA?",
         answer:
-          "Feasible with conditions. At ₹2,37,000/month in-hand, a 40% EMI cap suggests ~₹95,000/month affordable EMI. That covers a ₹1.5–2Cr home loan at current rates — enough for a 2BHK in East Bengaluru (Whitefield, Sarjapur) or a 1BHK in premium central areas. Simultaneously paying rent is not advisable; most ₹35 LPA buyers use this income to build a down payment for 2–3 years first.",
+          "Feasible with conditions. At ₹2,35,800/month in-hand, a 40% EMI cap suggests ~₹95,000/month affordable EMI. That covers a ₹1.5–2Cr home loan at current rates — enough for a 2BHK in East Bengaluru (Whitefield, Sarjapur) or a 1BHK in premium central areas. Simultaneously paying rent is not advisable; most ₹35 LPA buyers use this income to build a down payment for 2–3 years first.",
       },
       {
         question: "₹35 LPA in Bangalore vs ₹35 LPA in Hyderabad — where is better?",
@@ -2402,12 +2402,12 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
     seo: {
       title: "Is ₹30 LPA good in Bangalore? Salary, rent & lifestyle reality check",
       description:
-        "30 LPA in Bengaluru: ~₹2,03,000/month in-hand (FY 2026-27). Honest breakdown of Indiranagar/Koramangala rent (₹50k/month), commute, and savings at ₹30 lakh salary in Bangalore.",
+        "30 LPA in Bengaluru: ~₹2,07,150/month in-hand (FY 2026-27). Honest breakdown of Indiranagar/Koramangala rent (₹50k/month), commute, and savings at ₹30 lakh salary in Bangalore.",
       keywords: ["is 30 lpa good in bangalore", "30 lpa bangalore salary", "30 lakh salary bangalore", "is 30 lpa enough in bengaluru"],
     },
     answerHeadline: "Yes — very comfortable for solo or couple; workable for a family with one school-going child.",
     leadParagraph:
-      "Thirty LPA in Bengaluru is a senior IC or lead-level compensation that provides genuine financial comfort. At ~₹2,03,000/month in-hand (new regime), you can afford premium-area rents, save meaningfully, and build wealth — this is the tier where financial stress largely exits the picture for most lifestyle choices in Bengaluru.",
+      "Thirty LPA in Bengaluru is a senior IC or lead-level compensation that provides genuine financial comfort. At ~₹2,07,150/month in-hand (new regime), you can afford premium-area rents, save meaningfully, and build wealth — this is the tier where financial stress largely exits the picture for most lifestyle choices in Bengaluru.",
     whyParagraph:
       "We use ₹50,000/month rent — a quality 2BHK in Indiranagar, Koramangala, or JP Nagar, or a premium 1BHK in a gated community in Whitefield. After rent and moderate lifestyle spend, monthly surplus is substantial enough for active investment — SIPs, NPS, or a home loan EMI — alongside discretionary flexibility.",
     typicalSpendNotes: [
@@ -2436,17 +2436,17 @@ export const SALARY_ENOUGH_PAGES: readonly SalaryEnoughPageConfig[] = [
       {
         question: "Is ₹30 LPA a good salary in Bengaluru in 2026?",
         answer:
-          "Yes — ₹30 LPA (₹2,03,000/month in-hand, new regime) is a comfortable senior-level salary in Bengaluru. It provides premium-area living, meaningful investment capacity, and financial flexibility for most lifestyle choices.",
+          "Yes — ₹30 LPA (₹2,07,150/month in-hand, new regime) is a comfortable senior-level salary in Bengaluru. It provides premium-area living, meaningful investment capacity, and financial flexibility for most lifestyle choices.",
       },
       {
         question: "How much in-hand is ₹30 LPA in Bangalore?",
         answer:
-          "~₹2,03,000/month under the new tax regime. Deductions: PF ~₹1,800/month, Karnataka PT ~₹200/month, TDS ~₹45,000/month. Gross monthly: ₹2,50,000.",
+          "~₹2,07,150/month under the new tax regime. Deductions: PF ~₹3,000/month, Karnataka PT ~₹200/month, TDS ~₹39,650/month. Gross monthly: ₹2,50,000.",
       },
       {
         question: "Can I afford a home loan EMI at ₹30 LPA in Bangalore?",
         answer:
-          "Feasible but requires careful planning. At ~₹2,03,000/month in-hand, a 30–35% EMI guideline suggests ₹60,000–₹70,000/month affordable EMI. That supports a ₹1.2–1.5Cr home loan at current rates. In Bengaluru's market, that buys a 2BHK in outer areas or a 1BHK in near-core. Rent + EMI simultaneously is not advised — pick one.",
+          "Feasible but requires careful planning. At ~₹2,07,150/month in-hand, a 30–35% EMI guideline suggests ₹60,000–₹70,000/month affordable EMI. That supports a ₹1.2–1.5Cr home loan at current rates. In Bengaluru's market, that buys a 2BHK in outer areas or a 1BHK in near-core. Rent + EMI simultaneously is not advised — pick one.",
       },
     ],
   },

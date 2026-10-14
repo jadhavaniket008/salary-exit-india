@@ -29,16 +29,16 @@ export function WhatAffectsInHandBody() {
       <h2 id="pf-wage">2. PF wage: the single most overlooked driver of monthly cash</h2>
       <p>
         Employee PF is computed as 12% of PF wage, which most employers define as Basic + DA. The difference
-        between a company that caps PF wage at ₹15,000/month (statutory ceiling) versus one that uses full
+        between a company that caps PF wage at ₹25,000/month (statutory ceiling) versus one that uses full
         Basic can be dramatic:
       </p>
       <ul>
         <li>At Basic = ₹20,000/month: PF deduction = ₹2,400/month (same regardless of cap at this level).</li>
-        <li>At Basic = ₹40,000/month with statutory cap: PF deduction = ₹1,800/month.</li>
+        <li>At Basic = ₹40,000/month with statutory cap: PF deduction = ₹3,000/month.</li>
         <li>At Basic = ₹40,000/month without cap: PF deduction = ₹4,800/month.</li>
       </ul>
       <p>
-        The ₹3,000/month difference at this Basic level compounds over a year to ₹36,000. Some employees
+        The ₹1,800/month difference at this Basic level is ₹21,600 on an annualized current-rate basis. Some employees
         prefer the capped arrangement because it leaves more monthly cash; others prefer the uncapped one
         because it builds a larger EPF corpus. Neither is universally correct — it depends on your other
         savings and liquidity goals. Use the{" "}

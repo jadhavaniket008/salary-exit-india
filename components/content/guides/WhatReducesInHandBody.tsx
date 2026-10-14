@@ -43,17 +43,17 @@ export function WhatReducesInHandBody() {
 
       <h2 id="epf">2. Employee PF — a forced saving, but it reduces monthly cash</h2>
       <p>
-        Employee PF is 12% of PF wage (usually Basic + DA, sometimes capped at ₹15,000/month). At common
+        Employee PF is 12% of PF wage (usually Basic + DA, sometimes capped at ₹25,000/month). At common
         salary structures:
       </p>
       <ul>
         <li>Basic = ₹18,000/month: employee PF = ₹2,160/month.</li>
         <li>Basic = ₹35,000/month (uncapped PF wage): employee PF = ₹4,200/month.</li>
-        <li>Basic = ₹35,000/month (capped at ₹15,000): employee PF = ₹1,800/month.</li>
+        <li>Basic = ₹35,000/month (capped at ₹25,000): employee PF = ₹3,000/month.</li>
       </ul>
       <p>
         It is not lost money — it accumulates in your EPF account with interest — but it is not available for
-        rent or groceries this month. Companies that cap PF wage at ₹15,000/month often do so to give employees
+        rent or groceries this month. Companies that cap PF wage at ₹25,000/month often do so to give employees
         higher monthly cash; companies with uncapped PF wage provide stronger retirement savings but lower
         take-home. The{" "}
         <Link href={ROUTES.epfCalculator}>EPF calculator</Link> helps you model both.
@@ -110,7 +110,7 @@ export function WhatReducesInHandBody() {
         </li>
         <li>
           <strong>PF:</strong> Understand your employer&apos;s PF wage cap policy. If it is capped at
-          ₹15,000/month and you want higher EPF contributions, you can opt for Voluntary PF (VPF) which is
+          ₹25,000/month and you want higher EPF contributions, you can opt for Voluntary PF (VPF) which is
           also deductible under 80C.
         </li>
         <li>

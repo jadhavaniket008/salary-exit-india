@@ -4,9 +4,9 @@ import { computeEpfEstimate, EPF_WORKED_EXAMPLE_INPUT } from "@/lib/calculators/
 describe("computeEpfEstimate", () => {
   it("sums employee and employer on PF wage", () => {
     const out = computeEpfEstimate(EPF_WORKED_EXAMPLE_INPUT);
-    expect(out.employeeContributionMonthly).toBeCloseTo(1800, 5);
-    expect(out.employerContributionMonthly).toBeCloseTo(1800, 5);
-    expect(out.totalEpfMonthly).toBeCloseTo(3600, 5);
+    expect(out.employeeContributionMonthly).toBeCloseTo(3000, 5);
+    expect(out.employerContributionMonthly).toBeCloseTo(3000, 5);
+    expect(out.totalEpfMonthly).toBeCloseTo(6000, 5);
   });
 
   it("respects EPS ceiling override", () => {

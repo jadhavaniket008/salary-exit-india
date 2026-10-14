@@ -18,7 +18,7 @@ This document explains what each calculator **estimates**, the **assumptions** b
 
 ## Employee PF (`pf.ts`)
 
-- **Formula**: Monthly employee PF ≈ `employeeContributionRate × PF wage`, with optional `min(PF wage, ₹15,000)` when statutory ceiling is enabled.
+- **Formula**: Monthly employee PF ≈ `employeeContributionRate × PF wage`, with optional `min(PF wage, ₹25,000) from 17 September 2026` when statutory ceiling is enabled.
 - **Simplified**: Does not model EPS diversion, EDLI, or voluntary PF above statutory norms.
 
 ## HRA exemption (`hra.ts`)
@@ -89,3 +89,15 @@ This document explains what each calculator **estimates**, the **assumptions** b
 ## Maintenance
 
 Update `lib/config/financial-year.ts` after each Union Budget when slabs, standard deductions, or rebate thresholds change. Cross-check with the **Income Tax Act** and **Finance Act** for the relevant assessment year.
+
+
+PF revision reviewed 2026-10-14: `computeEmployeePfAnnual` is the current monthly
+run rate ×12. `computeEmployeePfFy2026Annual` separately totals FY 2026–27 for
+constant wages and existing membership (or explicitly newly covered from 17 September).
+At PF wage ≥₹25,000: current ₹3,000/month; annualized ₹36,000; September ₹2,360;
+full-FY ₹29,360. Full-Basic contributions have no wage cap. Explicit annual PF overrides
+remain authoritative for actual employee deductions; no automatic membership inference.
+Sources: PIB releases [2311968](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2311968)
+and [2314111](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2314111);
+[EPFO employer portal](https://unifiedportal-emp.epfindia.gov.in/epfo/), wage-ceiling FAQ Q7–9.
+See `docs/growth/pf-ceiling-release-2026-10-14.md` for archive and rounding context.

@@ -2,19 +2,19 @@
 
 exports[`worked example ↔ engine contract > CTC → in-hand (CTC_WORKED_EXAMPLE_INPUT) 1`] = `
 {
-  "employeePfMonthly": 1800,
+  "employeePfMonthly": 3000,
   "estimatedTotalTaxAnnual": 150800,
   "grossMonthly": 150000,
-  "inHandMonthly": 135425,
+  "inHandMonthly": 134225,
   "tdsMonthly": 12566.666666666666,
 }
 `;
 
 exports[`worked example ↔ engine contract > EPF (EPF_WORKED_EXAMPLE_INPUT) with default ceiling 1`] = `
 {
-  "employeeContributionMonthly": 1800,
-  "employerContributionMonthly": 1800,
-  "totalEpfMonthly": 3600,
+  "employeeContributionMonthly": 3000,
+  "employerContributionMonthly": 3000,
+  "totalEpfMonthly": 6000,
 }
 `;
 

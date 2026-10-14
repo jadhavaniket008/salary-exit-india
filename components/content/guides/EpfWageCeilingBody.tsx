@@ -22,34 +22,34 @@ export function EpfWageCeilingBody() {
 
       <h2 id="the-statutory-ceiling">The statutory wage ceiling — where the real split happens</h2>
       <p>
-        The EPFO's statutory wage ceiling is ₹15,000/month. Employers can choose one of two approaches:
+        The EPFO&apos;s statutory wage ceiling is ₹25,000/month from 17 September 2026. Employers can choose one of two approaches:
       </p>
       <ul>
         <li>
-          <strong>Capped at the ceiling:</strong> PF wage is treated as min(Basic+DA, ₹15,000/month),
+          <strong>Capped at the ceiling:</strong> PF wage is treated as min(Basic+DA, ₹25,000/month),
           regardless of how much higher your actual Basic+DA is. Employee PF contribution is capped at 12% ×
-          ₹15,000 = <strong>₹1,800/month</strong>, no matter how high your salary goes.
+          ₹25,000 = <strong>₹3,000/month</strong>, no matter how high your salary goes.
         </li>
         <li>
           <strong>Full Basic+DA (uncapped):</strong> PF wage is your actual monthly Basic+DA with no ceiling
           applied. On a Basic+DA of ₹60,000/month, employee PF is 12% × ₹60,000 ={" "}
-          <strong>₹7,200/month</strong> — four times higher than the capped scenario, even at identical
+          <strong>₹7,200/month</strong> — 2.4 times the capped contribution, even at identical
           gross salary.
         </li>
       </ul>
       <p>
         Neither approach is illegal or unusual — both are common in practice, and the choice is the
-        employer's, not yours to elect individually in most cases. The gap this creates is real: at the same
-        gross salary, a capped-PF employer can leave you with roughly ₹5,400/month more in-hand than an
+        employer&apos;s, not yours to elect individually in most cases. The gap this creates is real: at the same
+        gross salary, a capped-PF employer can leave you with roughly ₹4,200/month more in-hand than an
         uncapped one, purely from this one policy difference.
       </p>
 
-      <h2 id="why-it-isnt-free-money">Why the capped option isn't simply "better"</h2>
+      <h2 id="why-it-isnt-free-money">Why the capped option isn&apos;t simply &quot;better&quot;</h2>
       <p>
         Higher monthly in-hand from a capped PF wage comes at a cost: a smaller EPF corpus at retirement, and
         — since gratuity is also calculated from Basic+DA — a smaller gratuity accrual if your Basic is kept
         artificially low relative to gross. An uncapped, higher-Basic structure trades monthly liquidity for
-        larger locked-in, tax-advantaged long-term savings. Which is "better" depends on how much you value
+        larger locked-in, tax-advantaged long-term savings. Which is &quot;better&quot; depends on how much you value
         cash now versus a larger retirement corpus later — not a simple ranking.
       </p>
 
@@ -62,8 +62,8 @@ export function EpfWageCeilingBody() {
         {" "}to see the in-hand difference directly.
       </p>
       <p>
-        When comparing two job offers at similar CTC, this is one of the details that "same CTC, different
-        take-home" complaints usually trace back to — see{" "}
+        When comparing two job offers at similar CTC, this is one of the details that &quot;same CTC, different
+        take-home&quot; complaints usually trace back to — see{" "}
         <Link href={`${ROUTES.jobSwitchGuides}/compare-job-offers-beyond-ctc`}>
           comparing job offers beyond CTC
         </Link>{" "}

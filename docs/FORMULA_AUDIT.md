@@ -21,7 +21,7 @@ Reference for QA and finance review. Implementation lives in `lib/calculators/` 
 | **CTC → in-hand** (`ctc-to-inhand.ts`) | `inHandMonthly = gross/12 − PF/12 − PT/12 − totalTax/12` | Arithmetic once tax and PF known | Tax from `estimateAnnualIncomeTax`; TDS spread flat | PF from explicit annual or from Basic+DA via `computeEmployeePfAnnual`; old regime: only PF in 80C here | Gross, regime, PT, PF or Basic+DA | Bonus/perq/surcharge not modeled; old regime 80C limitation on this screen |
 | **Salary breakdown** (`salary-breakdown.ts`) | Same tax path + line items | Consistent with annual-tax | Same limits as above | Full old-regime: other 80C + HRA fields | All salary inputs | Same as CTC + richer disclosure in UI |
 | **Tax regime comparison** (`tax-regime-comparison.ts`) | Taxable old = gross − std − min(PF+other,1.5L) − HRA; taxable new = gross − std | Side-by-side totals | No surcharge | Same FY | Gross, PF, other 80C, HRA exempt | Simplified 87A |
-| **PF employee** (`pf.ts`) | `min(wage, ceiling) × 12%` (defaults) | Rate × wage math | Ceiling on/off | Statutory ₹15k ceiling when enabled | Monthly PF wage | Employer EPS split not shown |
+| **PF employee** (`pf.ts`) | `min(wage, ceiling) × 12%` (defaults) | Rate × wage math | Ceiling on/off | Current ₹25k ceiling from 17 Sep 2026; FY transition uses five old months, September 16/30 old + 14/30 new, six new months | Monthly PF wage | Employer EPS split not shown |
 | **EPF** (`epf.ts`) | Employee + employer monthly on PF wage | Same | Employer rate is total-EPF-style approximation | Same ceiling model | PF wage, optional ceiling override | EPS/EDLI not split |
 | **HRA** (`hra.ts`) | Exemption = min(actual HRA, rent−10%(B+DA), 50%/40% of B+DA) | Three-way min | Annual only; old-regime context | Metro flag | Basic, DA, HRA, rent, metro | Proofs, partial year, regime choice |
 | **Gratuity** (`gratuity.ts`) | `(15/26) × monthly × years` | Formula | Exempt = min(gratuity, ₹20L) if “covered” is naive | 5-year warning in config | Last salary, years, covered flag | Tax on gratuity is not final |
@@ -37,3 +37,15 @@ Reference for QA and finance review. Implementation lives in `lib/calculators/` 
 
 - Update `lib/config/financial-year.ts` after Budget changes.
 - Keep `*_WORKED_EXAMPLE_INPUT` constants in calculator modules aligned with UI worked examples and `tests/scenario-vectors.test.ts`.
+
+
+PF revision reviewed 2026-10-14: `computeEmployeePfAnnual` is the current monthly
+run rate ×12. `computeEmployeePfFy2026Annual` separately totals FY 2026–27 for
+constant wages and existing membership (or explicitly newly covered from 17 September).
+At PF wage ≥₹25,000: current ₹3,000/month; annualized ₹36,000; September ₹2,360;
+full-FY ₹29,360. Full-Basic contributions have no wage cap. Explicit annual PF overrides
+remain authoritative for actual employee deductions; no automatic membership inference.
+Sources: PIB releases [2311968](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2311968)
+and [2314111](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2314111);
+[EPFO employer portal](https://unifiedportal-emp.epfindia.gov.in/epfo/), wage-ceiling FAQ Q7–9.
+See `docs/growth/pf-ceiling-release-2026-10-14.md` for archive and rounding context.

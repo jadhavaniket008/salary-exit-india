@@ -11,7 +11,7 @@ import { clampNonNegative } from "@/lib/validation/sanitize";
 
 /** PF wage at statutory ceiling — matches EPF calculator worked example (12% + 12% under defaults). */
 export const EPF_WORKED_EXAMPLE_INPUT: EpfInput = {
-  pfWageMonthly: 15_000,
+  pfWageMonthly: 25_000,
 };
 
 export function computeEpfEstimate(
