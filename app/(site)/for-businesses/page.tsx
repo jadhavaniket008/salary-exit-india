@@ -1,19 +1,21 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Container, Section } from "@/components/ui";
-import { buildPageMetadata } from "@/lib/seo/metadata";
+import { BusinessInquiryLink } from "@/components/monetization/BusinessInquiryLink";
+import { CopyIframeSnippet } from "@/components/growth/CopyIframeSnippet";
+import { buildPageMetadata, absoluteUrl } from "@/lib/seo/metadata";
 import { ROUTES } from "@/lib/routes";
 
 export const metadata: Metadata = buildPageMetadata(
   {
-    title: "Embed salary calculators on your platform — SalaryExit for Businesses",
+    title: "Salary Calculator Embeds for Businesses",
     description:
-      "License the SalaryExit salary and tax calculator engine for your HR tech product, job board, or payroll software. Iframe embed, API, or white-label options available.",
+      "Try SalaryExit’s free salary-model table embed. Discuss a paid setup and support pilot for your job board, careers resource or HR product.",
     keywords: [
-      "salary calculator API India",
+      "salary table embed India",
       "embed salary calculator",
       "HR tech salary tool India",
-      "payroll calculator API India",
+      "salary calculator integration India",
     ],
   },
   { canonicalPath: ROUTES.forBusinesses }
@@ -23,7 +25,7 @@ const USE_CASES = [
   {
     role: "Job boards & recruitment platforms",
     description:
-      "Show candidates their estimated in-hand salary alongside a CTC figure in the JD. Reduces 'in-hand shock' after offer acceptance and increases applicant trust.",
+      "Show candidates their estimated in-hand salary alongside a CTC figure in the JD. Make the assumptions visible before a candidate compares offers.",
     examples: "Job postings, offer letter preview screens, salary range widgets.",
   },
   {
@@ -35,7 +37,7 @@ const USE_CASES = [
   {
     role: "Payroll software vendors",
     description:
-      "Let employees cross-check their payslip against an independent estimate — reduces support tickets and builds product trust.",
+      "Let employees cross-check their payslip against an independent estimate — with the model’s limitations clearly stated.",
     examples: "Employee self-service portals, payslip explanations, TDS reconciliation screens.",
   },
   {
@@ -46,27 +48,11 @@ const USE_CASES = [
   },
 ];
 
-const WHAT_YOU_GET = [
-  {
-    title: "Iframe embed",
-    body: "Drop a single <iframe> tag on your page. Calculator renders fully, no maintenance on your side. We handle tax slab updates with each Budget.",
-  },
-  {
-    title: "White-label option",
-    body: "Your branding, your domain. We can strip SalaryExit branding and style the calculator to match your design system.",
-  },
-  {
-    title: "API access",
-    body: "POST a salary input, receive a structured JSON response: in-hand, tax breakdown, regime comparison, PF lines. Integrate into your own UI.",
-  },
-  {
-    title: "Budget-cycle maintenance",
-    body: "Tax slabs, standard deductions, and rebate thresholds are updated with each Union Budget. You don't need to track CBDT notifications.",
-  },
-];
-
 export default function ForBusinessesPage() {
   const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@salaryexit.in";
+
+  const embedUrl = absoluteUrl(ROUTES.inHandSalaryTableEmbed);
+  const embedCode = `<iframe src="${embedUrl}" title="SalaryExit India in-hand salary model" width="100%" height="760" loading="lazy" style="border:0"></iframe>`;
 
   return (
     <div>
@@ -78,20 +64,18 @@ export default function ForBusinessesPage() {
               For businesses
             </span>
             <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              Embed India's salary calculator engine on your platform
+              Help your audience understand what CTC becomes
             </h1>
             <p className="text-lg leading-relaxed text-foreground-secondary">
-              SalaryExit's calculator engine handles CTC → in-hand conversion, old vs new tax regime
-              comparison, PF, HRA, gratuity, and settlement math for Indian salaried employees —
-              maintained against each Union Budget. License it for your product instead of building
-              and maintaining tax logic yourself.
+              Add a transparent salary example to a careers resource, job board or HR product.
+              Try the free model-table embed below. If you need help integrating it, discuss a paid
+              setup and support pilot with a written scope and quote before any work starts.
             </p>
-            <a
-              href={`mailto:${contactEmail}?subject=B2B calculator embed inquiry`}
+            <BusinessInquiryLink email={contactEmail} placement="business_hero"
               className="inline-flex items-center justify-center rounded-lg bg-accent-solid px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
             >
-              Contact us to discuss →
-            </a>
+              Discuss a paid embed pilot →
+            </BusinessInquiryLink>
           </header>
 
           <section className="space-y-6">
@@ -110,16 +94,16 @@ export default function ForBusinessesPage() {
             </div>
           </section>
 
-          <section className="space-y-6">
-            <h2 className="text-xl font-semibold text-foreground">What you get</h2>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {WHAT_YOU_GET.map((item) => (
-                <div key={item.title} className="space-y-1.5">
-                  <h3 className="font-semibold text-foreground">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-foreground-secondary">{item.body}</p>
-                </div>
-              ))}
-            </div>
+          <section aria-labelledby="embed-demo-heading" className="space-y-4">
+            <h2 id="embed-demo-heading" className="text-xl font-semibold text-foreground">Try the free embed</h2>
+            <p className="text-sm text-foreground-secondary">
+              This is the existing 72-scenario model table: CTC, employer-cost assumptions and PF modes.
+              It is an educational model, not payroll software or a salary survey. The free embed keeps
+              SalaryExit branding. <Link href={ROUTES.inHandSalaryModelReport} className="underline">Read the methodology and download the data</Link>.
+            </p>
+            <iframe src={ROUTES.inHandSalaryTableEmbed} title="SalaryExit in-hand salary model demo"
+              loading="lazy" className="h-[760px] w-full rounded-xl border border-border" />
+            <CopyIframeSnippet snippet={embedCode} trackCopy />
           </section>
 
           <section className="space-y-4 rounded-2xl border border-border bg-surface-subtle p-6">
@@ -140,43 +124,39 @@ export default function ForBusinessesPage() {
               <Link href={ROUTES.oldVsNewTaxRegimeCalculator} className="font-medium underline">
                 old vs new tax regime
               </Link>{" "}
-              — the same engine powers the API.
+              — the public tools demonstrate the calculation model. There is no self-service hosted API offered on this page.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-semibold text-foreground">Pricing</h2>
+            <h2 className="text-xl font-semibold text-foreground">Paid pilot: setup and support</h2>
             <p className="text-sm leading-relaxed text-foreground-secondary">
-              Pricing is based on use case, integration type, and request volume. We offer:
+              The public table embed is free. A paid pilot is for a team that needs an integration review,
+              installation help and an agreed support scope. Start with one page and one use case.
             </p>
             <ul className="list-inside list-disc space-y-2 text-sm text-foreground-secondary">
-              <li>
-                <strong>Iframe embed (light branding):</strong> Flat monthly fee, unlimited usage on your domain.
-              </li>
-              <li>
-                <strong>White-label:</strong> Custom branding and domain, annual license.
-              </li>
-              <li>
-                <strong>API access:</strong> Per-request pricing or monthly flat rate by volume tier.
-              </li>
+              <li>A review of your page and the salary assumptions your audience needs.</li>
+              <li>Embed installation guidance and checks on mobile and desktop.</li>
+              <li>A written scope for support, update responsibilities, price and renewal terms.</li>
             </ul>
             <p className="text-sm text-foreground-secondary">
-              Reach out with your use case and approximate monthly usage and we'll respond within 2 business days.
+              Share your website, audience, approximate monthly visitors and integration needs to request
+              a quote. Custom branding or API delivery requires separate scoping; neither is available
+              through an instant checkout. We agree deliverables before accepting payment.
             </p>
           </section>
 
           <section className="rounded-2xl border border-accent-solid bg-accent-solid p-7 text-white">
             <h2 className="text-xl font-semibold">Interested? Let's talk.</h2>
             <p className="mt-2 text-sm leading-relaxed text-white/80">
-              Email us with your company name, product type, and the integration you're exploring.
-              We'll send back a demo and pricing within 2 business days.
+              Email your company name, website and use case to request a scoped quote.
+              The button opens your email app; send the message there to complete your inquiry.
             </p>
-            <a
-              href={`mailto:${contactEmail}?subject=B2B calculator embed inquiry`}
+            <BusinessInquiryLink email={contactEmail} placement="business_footer"
               className="mt-5 inline-flex items-center justify-center rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-accent transition hover:bg-white/90"
             >
               {contactEmail}
-            </a>
+            </BusinessInquiryLink>
           </section>
 
         </Container>

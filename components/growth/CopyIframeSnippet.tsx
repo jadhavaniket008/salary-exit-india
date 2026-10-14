@@ -1,19 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { trackEmbedCodeCopied } from "@/lib/analytics/client";
 
 type Props = {
   snippet: string;
+  trackCopy?: boolean;
 };
 
-/** Small, non-tracking copy-to-clipboard button for the embed page's iframe snippet. */
-export function CopyIframeSnippet({ snippet }: Props) {
+/** Tracking is opt-in on the business page; the public embed remains untracked. */
+export function CopyIframeSnippet({ snippet, trackCopy = false }: Props) {
   const [copied, setCopied] = useState(false);
 
   async function handleCopy() {
     try {
       await navigator.clipboard.writeText(snippet);
       setCopied(true);
+      if (trackCopy) trackEmbedCodeCopied();
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // Clipboard API unavailable (older browser, insecure context) — the

@@ -9,29 +9,32 @@ export interface AffiliateLink {
   cta: string;
   url: string;
   badge?: string;
+  referral: boolean;
 }
 
 export const AFFILIATE_LINKS: Record<AffiliateContext, AffiliateLink[]> = {
   investing: [
     {
       name: "Zerodha",
-      tagline: "₹0 brokerage on equity delivery. India's most trusted broker — used by 1.3 crore investors.",
-      cta: "Open free account",
+      referral: true,
+      tagline: "Stockbroking platform. Review brokerage, account charges and current terms before opening an account.",
+      cta: "View account details",
       url: "https://zerodha.com/open-account?c=QJ6306",
-      badge: "Free account",
     },
     {
       name: "Groww",
-      tagline: "Mutual funds, stocks and FD in one place — simple app, good for first-time investors.",
-      cta: "Start investing",
+      referral: true,
+      tagline: "Investing platform. Compare current fees, products and eligibility on Groww before deciding.",
+      cta: "View platform details",
       url: "https://app.groww.in/v3cO/mb8yjgr7",
     },
   ],
   "tax-filing": [
     {
       name: "Quicko",
-      tagline: "Smart ITR filing for salaried employees — handles both old and new regime in one step.",
-      cta: "Try free plan",
+      referral: false,
+      tagline: "Tax-filing service. Check current plans and whether they cover your income sources. This is a direct link, not a configured referral.",
+      cta: "Check filing options",
       // Add ClearTax here once partnership@cleartax.in confirms your affiliate link
       url: "https://quicko.com/",
     },

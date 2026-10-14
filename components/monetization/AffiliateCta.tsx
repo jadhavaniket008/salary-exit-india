@@ -10,7 +10,7 @@ const HEADING: Record<AffiliateContext, string> = {
 
 const SUBTEXT: Record<AffiliateContext, string> = {
   investing: "Services worth exploring once you know your in-hand number.",
-  "tax-filing": "File using the regime the calculator just recommended.",
+  "tax-filing": "Compare filing options after checking your income sources and regime eligibility.",
 };
 
 interface Props {
@@ -37,7 +37,7 @@ export function AffiliateCta({ context }: Props) {
           <p className="mt-0.5 text-sm text-foreground-secondary">{SUBTEXT[context]}</p>
         </div>
         <span className="shrink-0 rounded-full border border-border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-foreground-muted">
-          Partner links
+          Service links
         </span>
       </div>
 
@@ -47,8 +47,8 @@ export function AffiliateCta({ context }: Props) {
             key={link.name}
             href={link.url}
             target="_blank"
-            rel="nofollow sponsored noopener noreferrer"
-            onClick={() => trackAffiliateClick(link.name, context)}
+            rel={link.referral ? "nofollow sponsored noopener noreferrer" : "noopener noreferrer"}
+            onClick={() => { if (link.referral) trackAffiliateClick(link.name, context); }}
             className="group flex flex-col justify-between gap-3 rounded-xl border border-border bg-surface p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md"
           >
             <div className="space-y-1.5">
@@ -70,8 +70,9 @@ export function AffiliateCta({ context }: Props) {
       </div>
 
       <p className="text-[11px] leading-relaxed text-foreground-muted">
-        These are partner links. Clicking them may earn SalaryExit a small referral fee at no cost to you.
-        We only link to services we can stand behind. This is not financial advice — verify suitability yourself.
+        Zerodha and Groww links are referral links. SalaryExit may receive rewards for qualifying activity
+        under the provider’s current terms; clicking alone does not generate a sale. Service fees may apply.
+        Quicko is a direct resource link. These links do not affect calculator results or imply suitability for you.
       </p>
     </aside>
   );

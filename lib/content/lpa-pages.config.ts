@@ -365,15 +365,15 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "11-lpa-in-hand-salary",
     lpa: 11,
     seo: {
-      title: "11 LPA In-Hand: ₹89,600/Month — Last Zero-Tax LPA Band",
+      title: "11 LPA In-Hand Salary: PF & Tax Estimate",
       description:
-        "11 LPA का मतलब ₹89,600/month in-hand (FY 2026-27, zero tax). Above ₹12L the Section 87A rebate ends — compare your band before your next offer. PF + PT breakdown included.",
+        "11 LPA means ₹11 lakh annually. See a gross-to-in-hand example with capped PF, professional tax and the new-regime salary-only rebate assumptions.",
       keywords: ["11 LPA in hand", "11 lakh salary in hand", "11 LPA monthly salary India", "CTC 11 LPA take home"],
     },
     scenario: baseScenario(11),
     scenarioNotes: ["₹11 LPA = ₹11,00,000 gross per year. Taxable income after standard deduction = ₹10.25L — below the 87A threshold for full rebate."],
     angleParagraph:
-      "₹11 LPA is the last full LPA band before income crosses the ₹12L mark where Section 87A rebate no longer fully covers tax. At ₹11L gross, effective income tax is still nil — which is why ₹11–12 LPA is a particularly attractive band: you cross a meaningful salary milestone without entering a tax bracket.",
+      "₹11L gross is below the new-regime rebate limit in this resident, salary-only example. ₹12L gross also qualifies: the ₹12L threshold is taxable income after the standard deduction, not gross salary.",
     bandInsights: [
       "Zero income tax: taxable income = ₹10.25L after standard deduction — still within 87A full coverage (new regime).",
       "The jump from ₹11 to ₹13 LPA triggers progressive tax — see the 13 LPA page for how this changes in-hand.",
@@ -397,9 +397,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "12-lpa-in-hand-salary",
     lpa: 12,
     seo: {
-      title: "12 LPA In-Hand Salary Calculator — Exact Monthly Breakdown",
+      title: "12 LPA Meaning & Monthly In-Hand Salary",
       description:
-        "12 LPA pays zero income tax (FY 2026-27 new regime) — but your in-hand isn't ₹1L/month. PF and state PT decide the real number. Free calculator, takes 10 seconds.",
+        "12 LPA means ₹12 lakh a year or ₹1 lakh a month before deductions. See a gross-to-in-hand example, PF and tax assumptions, or calculate from your CTC.",
       keywords: ["12 LPA in hand salary calculator", "12 lpa ka matlab", "12 lpa salary structure", "12 lakh CTC take home", "12 LPA monthly salary hand"],
     },
     scenario: baseScenario(12),
@@ -414,19 +414,19 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     ],
     realityCheckParagraphs: [
       "Twelve LPA is where many professionals make their first significant job switch, often moving from services to product companies or from tier-2 cities to metros. The in-hand illustration above uses the new regime and a 45% Basic+DA assumption. At this gross level, income tax under the new regime is zero (Section 87A rebate covers the full liability for FY 2026-27), meaning all your deductions are PF and professional tax.",
-      "If you are comparing a ₹12 LPA offer at two companies, check whether both have similar PF wage definitions. A company with Basic at 35% of gross has employee PF of roughly ₹5,040/month; a company with Basic at 50% has employee PF of roughly ₹7,200/month. The same headline gross produces nearly ₹2,000/month difference in monthly cash — which adds up to ₹24,000 over a year.",
+      "Compare PF policies as well as gross pay. At ₹12L annual gross, full-Basic PF with 35% Basic is ₹4,200/month; with 50% Basic it is ₹6,000/month. Both differ from this page’s capped ₹1,800/month example. A higher Basic split does not increase PF when the same ₹15,000 wage ceiling is applied.",
       "At ₹12 LPA, the regime comparison (old vs new) may start to become relevant if you pay significant rent and can claim a substantial HRA exemption, or if you make maximum 80C investments. Use the tax regime calculator with your actual inputs before instructing your employer on TDS treatment.",
     ],
     faq: [
       {
         question: "At ₹12 LPA, which tax regime is better — old or new?",
         answer:
-          "At ₹12L gross under the new regime, income tax is zero (Section 87A rebate). The old regime can beat the new regime only if your deductions (HRA + 80C + NPS) are large enough — but since new-regime tax is already nil here, the old regime rarely helps unless you have significant exemptions that reduce taxable income below ₹5L.",
+          "For a resident individual with only ordinary salary income of ₹12L gross, the new-regime rebate makes tax zero. The old regime cannot improve on zero tax, though it may also produce zero with sufficient eligible deductions. Other income or special-rate income changes the comparison.",
       },
       {
         question: "Why does Basic+DA split matter for my ₹12 LPA take-home?",
         answer:
-          "Employee PF is 12% of Basic+DA. A company setting Basic at 50% of gross deducts roughly ₹7,200/month in PF; one at 35% deducts roughly ₹5,040/month. On the same ₹12L CTC, that is a ₹2,160/month difference in cash in-hand. Enter your actual Basic in the CTC calculator for a number specific to your payslip.",
+          "If your employer contributes on full Basic+DA, employee PF is 12% of that amount: at ₹12L annual gross, 50% Basic gives ₹6,000/month PF and 35% Basic gives ₹4,200/month. This page instead caps PF wages at ₹15,000/month, so employee PF is ₹1,800. Check your payslip and enter the actual deduction.",
       },
       {
         question: "Can I afford a car loan EMI on a ₹12 LPA salary?",
@@ -789,7 +789,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     angleParagraph:
       "At thirty LPA gross, real-world tax can include surcharge and perquisites that this simplified engine does not model. Use the output as a directional split of gross into PF, PT, TDS spread, and cash in-hand — then validate with a professional for filing.",
     bandInsights: [
-      "₹30L gross usually triggers additional tax considerations (surcharge, marginal relief) not in SalaryExit’s engine — treat this page as illustrative.",
+      "₹30L salary-only gross does not trigger surcharge: taxable income after the standard deduction is ₹29.25L. Surcharge starts above ₹50L total taxable income.",
       "RSU/ESOP and large bonuses can dominate effective tax rate — annualize carefully before comparing to “LPA”.",
       "Metro housing and schooling may dominate cash flow; use this in-hand as one input to a full budget, not the whole story.",
       "For filing and advance tax, rely on Form 16, AIS, and a qualified professional — not long-tail LPA pages.",
@@ -821,9 +821,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "35-lpa-in-hand-salary",
     lpa: 35,
     seo: {
-      title: "35 LPA Means ₹2.37L/Month — See Deductions & Regime Impact",
+      title: "35 LPA Monthly Salary: Gross vs In-Hand",
       description:
-        "35 LPA = ₹2,37,000/month in-hand (FY 2026-27, new regime). Regime switch and deductions can change this. See exact PF, TDS, PT split — free calculator.",
+        "35 LPA means ₹35 lakh a year or ₹2,91,667 a month before deductions. See estimated in-hand from gross, capped PF and tax, or enter your actual CTC.",
       keywords: ["35 LPA in hand", "35 lpa means", "35 lpa how much per month", "35 lakh salary take home India", "35 LPA monthly net"],
     },
     scenario: baseScenario(35),
@@ -832,15 +832,15 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "Surcharge and high-income nuances are not modeled in the engine used here.",
     ],
     angleParagraph:
-      "At thirty-five LPA gross, surcharge and perquisite taxation are real considerations that SalaryExit’s simplified engine does not capture. Use this page to understand the shape of your deductions (PF, PT, TDS spread) as directional context, not a payslip prediction.",
+      "If ₹35 lakh is CTC, first remove employer PF, gratuity accrual and other employer costs to find gross pay. The breakdown here assumes ₹35 lakh gross, all paid as salary. Bonuses, benefits and a different employee PF deduction can change the result.",
     bandInsights: [
-      "₹35L gross is well into surcharge territory for many taxpayers — this model may meaningfully understate actual tax vs Form 16.",
+      "No surcharge applies in this salary-only example: ₹35L gross less ₹75,000 standard deduction gives ₹34.25L taxable income. Surcharge starts above ₹50L total taxable income.",
       "RSU vesting, large annual bonuses, and joining pay can push effective tax rate further — annualise carefully before comparing to “LPA”.",
       "At this band, PF wage definition and structure (Basic vs allowances) can shift in-hand by several thousand rupees monthly — ask HR for a pay breakdown.",
       "For advance tax planning and filing, rely on Form 16, AIS, and a CA — not long-tail LPA pages.",
     ],
     realityCheckParagraphs: [
-      "Thirty-five LPA is firmly senior-leadership or senior-specialist territory. At this income level, the simplification in SalaryExit's engine — no surcharge modeling, no perquisite valuation — means the actual monthly in-hand on your payslip will likely differ from the illustration above. The difference is not arbitrary; it reflects the real complexity of high-income taxation in India, which requires Form 16 and a qualified CA to resolve accurately.",
+      "The annual-to-monthly conversion is ₹35,00,000 ÷ 12, or about ₹2,91,667 before deductions. The in-hand example is lower because it subtracts employee PF, professional tax and estimated income tax spread over 12 months. It is not a promise about the monthly bank credit from a ₹35L CTC offer.",
       "A key planning issue at ₹35 LPA: whether to use old or new regime is not a simple comparison at this income level. The old regime's deduction menu (home loan interest, HRA, NPS, 80C) can reduce taxable income substantially. But the new regime's lower slab rates and absence of documentation requirements have their own appeal, especially if your deductions are limited. The regime calculator cannot model your entire financial situation — use it alongside professional advice.",
       "For most employees at ₹35 LPA, the monthly cash-flow question is less urgent than the wealth-accumulation question: how much EPF, NPS, ESOP, or real estate equity are you building? Monthly in-hand tells you what is available for spending and liquid savings. The rest of the wealth picture requires a separate analysis. Use this page for the salary mechanics and engage a financial planner for the broader picture.",
     ],
@@ -848,7 +848,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       {
         question: 'How far off is the ₹35 LPA estimate from my real payslip?',
         answer:
-          'Potentially by ₹1L–₹2.5L annually if surcharge applies, your package includes large RSU vests or bonuses, or your employer uses a different salary structure. This page gives you the shape of deductions — not a filing-accurate number. Validate with Form 16 and a CA before advance tax or ITR.',
+          'There is no fixed error range. Differences depend on whether ₹35L is CTC or gross, variable-pay timing, PF policy, other income and benefits. Compare those inputs with this page’s assumptions before using the result. Surcharge is not due on this salary-only example.',
       },
       {
         question: 'Should I file ITR under old or new regime at ₹35 LPA?',
@@ -858,7 +858,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       {
         question: 'Is ₹35 LPA a good salary in India in 2026?',
         answer:
-          '₹35 LPA puts you in the top 1–2% of salaried earners in India by gross income. In most cities, ₹2,37,000/month in-hand provides genuine financial comfort — quality housing, real savings capacity, and investment headroom. Whether it feels "good" depends on your city, family size, and lifestyle expectations. In Bengaluru or Hyderabad, ₹35 LPA is excellent. In Mumbai or Delhi with premium rent, it is comfortable but not lavish.',
+          'Start with the estimated monthly cash and subtract your rent, household spending, EMIs and savings goal. The result depends on your actual salary structure and commitments. This page does not establish an income percentile or a city-wide comfort benchmark.',
       },
       {
         question: 'Is ₹35 LPA a good salary in Bangalore?',
@@ -957,7 +957,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       {
         question: "Does surcharge apply at ₹45 LPA under the new regime?",
         answer:
-          "No surcharge at ₹45L gross for salary-only income under the new regime. The surcharge threshold triggers when taxable income (after standard deduction) exceeds ₹50L. At ₹45L gross, taxable income is approximately ₹44.25L — below the ₹50L surcharge trigger. However, if you receive a large bonus or RSU vest in the same year pushing total income above ₹50L, surcharge applies on that increment.",
+          "No surcharge at ₹45L gross for salary-only income under the new regime. The surcharge threshold triggers when taxable income (after standard deduction) exceeds ₹50L. At ₹45L gross, taxable income is approximately ₹44.25L — below the ₹50L surcharge trigger. If other income takes total taxable income above ₹50L, surcharge applies to income tax, subject to marginal relief; it is not a tax only on the income above the threshold.",
       },
     ],
   },
@@ -980,7 +980,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "Fifty LPA is a senior leadership or deep-specialist level that places you in approximately the top 0.5–1% of salaried earners in India's formal economy. The illustrated in-hand of ~₹3,23,000/month is after new-regime tax of roughly ₹11L annually — old regime with significant deductions may materially change this picture.",
     bandInsights: [
       "Annual tax under new regime: ~₹10,99,800 (including 4% cess). Monthly TDS spread: ~₹91,650.",
-      "Surcharge boundary: taxable income of ₹49.25L sits just below the ₹50L surcharge trigger. A small bonus or interest income can push total income over ₹50L and add 10% surcharge on the full tax — this creates a marginal rate cliff that professional tax planning specifically addresses.",
+      "Surcharge boundary: taxable income of ₹49.25L sits just below the ₹50L surcharge trigger. Additional income can take total taxable income above ₹50L. The first surcharge tier is 10% of income tax, with marginal relief near the threshold; this engine does not model either surcharge or its marginal relief.",
       "At ₹50 LPA, the salary structure negotiation (Basic+DA split, allowances, NPS employer contribution) has meaningful tax consequences — unlike lower bands where structure mainly affects PF, not tax.",
       "Old regime evaluation: home loan deductions, NPS (employer 80CCD and Section 80CCD(1B) both available under old regime), and HRA can reduce taxable income significantly. With ₹5–10L of legitimate deductions, old regime can save ₹2–3.5L vs new regime annually.",
     ],
@@ -1003,7 +1003,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       {
         question: "Does surcharge apply at ₹50 LPA?",
         answer:
-          "At ₹50L gross, taxable income (after ₹75,000 standard deduction) is ~₹49.25L — just below the ₹50L surcharge trigger. Salary-only income at this gross typically avoids surcharge. However, if you receive any interest income, rental income, capital gains, or RSU vests in the same year pushing total income above ₹50L, 10% surcharge applies on income tax for that portion. Track all income sources, not just salary.",
+          "At ₹50L gross, taxable income (after ₹75,000 standard deduction) is ~₹49.25L — just below the ₹50L surcharge trigger. Salary-only income at this gross typically avoids surcharge. However, if you receive any interest income, rental income, capital gains, or RSU vests in the same year pushing total income above ₹50L, 10% surcharge applies to income tax, subject to marginal relief near the threshold. Track all income sources, not just salary.",
       },
       {
         question: "Old regime vs new regime at ₹50 LPA — which is better?",

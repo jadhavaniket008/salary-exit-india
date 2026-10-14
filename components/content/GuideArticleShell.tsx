@@ -34,6 +34,7 @@ type Props = {
   lastUpdated?: string;
   /** ISO date for <time> when lastUpdated is set */
   lastUpdatedIso?: string;
+  publishedIso?: string;
   /** Set to false to hide methodology link */
   methodologyHref?: string | false;
   /** Enables contextual links to salary-enough pages + one calculator (internal linking cluster). */
@@ -57,6 +58,7 @@ export function GuideArticleShell({
   showMidAd = true,
   lastUpdated,
   lastUpdatedIso,
+  publishedIso,
   methodologyHref,
   guideCluster,
   toc,
@@ -82,7 +84,7 @@ export function GuideArticleShell({
           headline: title,
           description,
           urlPath,
-          datePublished: lastUpdatedIso,
+          datePublished: publishedIso ?? lastUpdatedIso,
           dateModified: lastUpdatedIso,
         })}
       />

@@ -16,10 +16,12 @@ import { lpaLandingPath } from "@/lib/routes/landing-routes";
 import { SiteSearchClient } from "@/components/home/SiteSearchClient";
 import { FeaturedCalcVideoPreview } from "@/components/home/FeaturedCalcVideoPreview";
 import { EmailCapture } from "@/components/monetization/EmailCapture";
+import { HOME_SALARY_EXAMPLE } from "@/lib/content/salary-examples";
+import { formatInr } from "@/lib/format-inr";
 
 export const metadata: Metadata = buildPageMetadata(
   {
-    title: "SalaryExit India — real in-hand salary calculator (FY 2026–27)",
+    title: "India Salary, Tax & Exit Calculators",
     description:
       "Know your actual take-home salary before accepting or switching jobs. Free calculators for Indian salaried employees: CTC to in-hand, tax regime comparison, offer analysis, HRA, PF, gratuity, and exit calculations — with transparent assumptions.",
     keywords: [
@@ -53,26 +55,28 @@ const realQuestions = [
   {
     question: "Is ₹12 LPA enough in Mumbai?",
     answer:
-      "After new-regime tax (₹0 at ₹12L with Section 87A rebate), PF, and PT, monthly in-hand is around ₹98,000. Mumbai rents for a 1BHK typically start at ₹25,000–₹45,000. So the answer depends heavily on rent and lifestyle.",
+      "At ₹12L annual gross, this salary-only new-regime example gives about ₹98,000/month after capped employee PF and ₹200/month PT. That assumes resident rebate eligibility and no other income. Enter your actual Mumbai rent and household costs to see what remains.",
     cta: { href: ROUTES.salaryRealityCheck, label: "Run Salary Reality Check" },
   },
   {
     question: "How much will I take home from a ₹15 LPA offer?",
     answer:
-      "Under the new regime: taxable income ₹13.75L (after ₹75k std. deduction) → estimated tax ~₹1,01,400/yr. Monthly in-hand ≈ ₹1,10,000 after PF ₹1,800 and PT ₹200.",
+      `If ₹15L is annual gross: taxable income is ₹14.25L after the ₹75,000 standard deduction. New-regime tax including cess is ${formatInr(HOME_SALARY_EXAMPLE.estimatedTotalTaxAnnual)}/year; estimated in-hand is ${formatInr(HOME_SALARY_EXAMPLE.inHandMonthly)}/month with capped PF ₹1,800 and PT ₹200. A ₹15L CTC offer needs employer costs removed first.`,
     cta: { href: ROUTES.ctcToInHandCalculator, label: "Calculate ₹15L in-hand" },
   },
   {
     question: "Old or new tax regime — which saves more?",
     answer:
-      "Below ₹15L, the new regime almost always wins unless you have significant HRA + 80C + home loan interest. Run the comparison with your actual deductions to be sure.",
+      "Compare annual tax using your gross, eligible HRA exemption and deductions. Salary alone does not decide the answer. Where new-regime tax is already zero, the old regime cannot reduce it further.",
     cta: { href: ROUTES.oldVsNewTaxRegimeCalculator, label: "Compare regimes" },
   },
 ] as const;
 
 export default function Home() {
   const primaryCalc = CALCULATOR_REGISTRY["ctcToInHand"];
-  const popularLpa = LPA_LANDING_PAGES.slice(0, 8);
+  const popularLpa = [12, 35, 8, 18, 15, 20, 11, 45].map(
+    (lpa) => LPA_LANDING_PAGES.find((page) => page.lpa === lpa)!
+  );
 
   return (
     <div className="flex flex-1 flex-col">
@@ -280,7 +284,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="mb-4 text-sm text-foreground-secondary">
-              Each salary band has estimated in-hand, city cost breakdowns, regime comparison, and tax impact.
+              See what each annual salary means per month, with an illustrative PF and tax breakdown.
             </p>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
               {popularLpa.map((p) => (

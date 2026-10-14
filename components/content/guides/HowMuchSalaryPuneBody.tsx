@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CityBudgetAssumptions, CityBudgetExample } from "@/components/content/CityBudgetExample";
 import { ArticleProse } from "@/components/content/ArticleProse";
 import { ROUTES } from "@/lib/routes";
 import { salaryEnoughPath } from "@/lib/routes/landing-routes";
@@ -18,42 +19,21 @@ export function HowMuchSalaryPuneBody() {
       </p>
 
       <h2 id="translate-ctc">Step 1: Translate CTC to monthly cash before anything else</h2>
-      <p>
-        A ₹15 LPA offer in Pune does not produce ₹1,25,000/month — it produces roughly ₹1,10,000–₹1,18,000
-        in monthly in-hand after employee PF and TDS under the new regime (FY 2026-27). The gap depends on
-        your PF wage structure and professional tax (Maharashtra levies PT on salaried employees). Run your
-        specific offer structure through the{" "}
-        <Link href={ROUTES.ctcToInHandCalculator}>CTC to in-hand calculator</Link> before comparing
-        options.
-      </p>
+      <p>A ₹15 LPA CTC offer is not ₹1,25,000 in monthly cash. First identify annual gross after
+        employer PF, gratuity accrual and other employer costs. Then use the{" "}
+        <Link href={ROUTES.ctcToInHandCalculator}>CTC to in-hand calculator</Link> with your actual
+        PF deduction and tax regime. The gross-salary examples below show the next step.</p>
+      <CityBudgetAssumptions />
 
-      <h2 id="pune-corridors">Pune&apos;s rent corridors: what each looks like in 2025</h2>
-      <p>
-        Approximate 1BHK rent ranges in Pune for a reasonably maintained furnished flat (2025 market):
-      </p>
+      <h2 id="pune-corridors">Pune&apos;s rent corridors: compare real quotes</h2>
+      <p>Collect current quotes near your office before choosing a salary target. Compare these
+        corridors on the same basis: sharing or solo, furnishing, deposit, maintenance and commute.</p>
       <ul>
-        <li>
-          <strong>Hinjewadi Phase 1 and 2 (IT hub west):</strong> ₹10,000–₹16,000. Close to many
-          tech parks; convenient but limited social infrastructure nearby. Long commutes to east Pune
-          offices.
-        </li>
-        <li>
-          <strong>Baner, Balewadi, Wakad (near Hinjewadi):</strong> ₹14,000–₹22,000. Better amenities
-          than deep Hinjewadi; popular with mid-level tech employees. Good connectivity to Hinjewadi.
-        </li>
-        <li>
-          <strong>Kharadi, Viman Nagar (east Pune IT corridor):</strong> ₹15,000–₹24,000. Opposite
-          direction from Hinjewadi; appropriate for Magarpatta, EON IT Park, and east-side offices.
-        </li>
-        <li>
-          <strong>Koregaon Park, Kalyani Nagar (central/upmarket):</strong> ₹22,000–₹38,000.
-          Premium lifestyle location; popular with senior professionals and expats. Significant rent
-          premium for the address.
-        </li>
-        <li>
-          <strong>Pimple Saudagar, Pimple Nilakh (northwest):</strong> ₹10,000–₹18,000. Budget-friendly
-          with reasonable connectivity to Hinjewadi via Baner road.
-        </li>
+        <li><strong>Hinjewadi Phase 1–3:</strong> check travel time to your specific tech park.</li>
+        <li><strong>Baner, Balewadi and Wakad:</strong> compare the total cost with west-side office routes.</li>
+        <li><strong>Kharadi and Viman Nagar:</strong> compare with Magarpatta and east-side offices.</li>
+        <li><strong>Koregaon Park and Kalyani Nagar:</strong> price the amenities you would actually use.</li>
+        <li><strong>Pimple Saudagar and Pimple Nilakh:</strong> include the commute in your quote comparison.</li>
       </ul>
       <p>
         Corridor selection is the single biggest budget decision you make when moving to Pune. A ₹8,000/month
@@ -61,15 +41,9 @@ export function HowMuchSalaryPuneBody() {
       </p>
 
       <h2 id="at-10-lpa">What ₹10 LPA looks like in Pune</h2>
+      <CityBudgetExample lpa={10} rent={12_000} otherSpend={30_000} />
       <p>
-        Monthly in-hand at ₹10 LPA gross: roughly ₹78,000–₹84,000. At ₹12,000 Hinjewadi rent:
-        approximately ₹66,000–₹72,000 left for food, transport, utilities, and savings. For a single
-        professional with basic lifestyle spend (~₹25,000–₹30,000 for groceries, commute, phone,
-        utilities), savings potential is ₹36,000–₹47,000/month. Comparable to Bangalore at lower
-        rent ranges.
-      </p>
-      <p>
-        For a family with school fees or a second rent contributor, the math tightens considerably.
+        For a family, add school fees and other dependants’ costs; include a second income only if it is reliable.
         See:{" "}
         <Link href={enough("is-10-lpa-enough-for-family-in-pune")}>
           Is ₹10 LPA enough for a family in Pune?
@@ -77,25 +51,14 @@ export function HowMuchSalaryPuneBody() {
       </p>
 
       <h2 id="at-15-lpa">What ₹15 LPA looks like in Pune</h2>
-      <p>
-        Monthly in-hand at ₹15 LPA: roughly ₹1,10,000–₹1,18,000. At ₹18,000 Baner/Wakad rent:
-        approximately ₹92,000–₹100,000 left. Mid-tier lifestyle (groceries + transport + utilities
-        + discretionary ~₹30,000–₹35,000): savings potential ₹57,000–₹70,000/month. This is
-        genuinely comfortable solo living in Pune at this gross — and significantly better than
-        Mumbai or central Bangalore on the same CTC.
-      </p>
+      <CityBudgetExample lpa={15} rent={18_000} otherSpend={35_000} />
       <p>
         Explore: <Link href={enough("is-15-lpa-good-in-pune")}>Is ₹15 LPA good in Pune?</Link>
       </p>
 
       <h2 id="at-18-20-lpa">What ₹18–20 LPA looks like in Pune</h2>
-      <p>
-        Monthly in-hand at ₹18 LPA: roughly ₹1,30,000–₹1,38,000. At ₹20,000 rent: leaves
-        ₹1,10,000–₹1,18,000 for everything else. High savings potential (₹70,000–₹80,000/month)
-        if lifestyle is kept moderate. At ₹20 LPA, in-hand ~₹1,45,000–₹1,52,000, and the budget
-        picture is similar to Bangalore at 20 LPA but with ₹4,000–₹8,000 lower rent in equivalent
-        corridors.
-      </p>
+      <CityBudgetExample lpa={18} rent={20_000} otherSpend={35_000} />
+      <CityBudgetExample lpa={20} rent={20_000} otherSpend={35_000} />
       <p>
         Explore:{" "}
         <Link href={enough("is-18-lpa-good-in-pune")}>Is ₹18 LPA good in Pune?</Link> ·{" "}
@@ -103,13 +66,10 @@ export function HowMuchSalaryPuneBody() {
       </p>
 
       <h2 id="pune-vs-mumbai">Pune vs Mumbai: the real comparison</h2>
-      <p>
-        For most IT professionals, the same gross buys significantly more financial room in Pune than
-        in Mumbai — primarily because rent is 30–50% lower for equivalent quality. A ₹18 LPA gross
-        in Pune (in-hand ~₹1,30,000) with ₹18,000 rent leaves ~₹1,12,000 for other spend. The same
-        ₹18 LPA in Mumbai (in-hand ~₹1,30,000) with ₹35,000 rent leaves only ~₹95,000. That is a
-        meaningful quality-of-life and savings difference on identical gross.
-      </p>
+      <p>Hold gross salary and deductions constant, then compare your actual rent quotes.
+        If one home costs ₹18,000 and another ₹35,000, the difference is ₹17,000/month or
+        ₹2,04,000/year before differences in commute and other costs. Those are example quotes,
+        not a claim about average Pune or Mumbai rents.</p>
       <p>
         When evaluating a Pune vs Mumbai offer at similar CTC, don&apos;t just compare CTC — compare
         in-hand minus realistic rent in each city. See:{" "}
@@ -118,14 +78,9 @@ export function HowMuchSalaryPuneBody() {
       </p>
 
       <h2 id="pune-vs-bangalore">Pune vs Bangalore: closer than most think</h2>
-      <p>
-        Pune is not dramatically cheaper than Bangalore across the board. Baner and Balewadi rents
-        are comparable to Whitefield and Marathahalli. What differs is traffic: Bangalore&apos;s
-        commute times and costs are typically higher, and the city&apos;s social and food costs have
-        risen to Bangalore-like levels in popular areas. For the same gross, Pune and outer Bangalore
-        corridors produce similar monthly savings — the city choice should factor in office location,
-        career ecosystem, and personal preference.
-      </p>
+      <p>Compare specific homes and office routes instead of assigning a fixed discount to either city.
+        A lower rent can be offset by a longer commute, deposits, moving expenses or travel home.
+        Include career prospects and family needs alongside the monthly cash comparison.</p>
       <p>
         Use the <Link href={ROUTES.salaryRealityCheck}>Salary Reality Check</Link> with your actual
         city and rent for a personalized comparison — the tool does not hardcode city benchmarks.

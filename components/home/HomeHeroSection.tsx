@@ -18,7 +18,7 @@ function SalaryPreviewCard() {
       <div className="mb-4 flex items-start justify-between gap-3">
         <div>
           <p className="text-[11px] font-medium uppercase tracking-wider text-foreground-muted">
-            Example · ₹12 LPA · New regime · FY 2026–27
+            Example · ₹12L annual gross · New regime · FY 2026–27
           </p>
         </div>
         <span className="shrink-0 rounded-full bg-accent-solid px-2.5 py-0.5 text-[11px] font-bold text-white">
@@ -60,7 +60,7 @@ function SalaryPreviewCard() {
       </div>
 
       <p className="mt-4 text-[10px] leading-relaxed text-foreground-muted">
-        Estimate only · New regime · PF on ₹15k statutory ceiling · Section 87A rebate eliminates tax at ₹12L gross
+        Estimate only · PT ₹200/month · PF on ₹15k wage ceiling · Resident individual with only ordinary salary income; rebate eligibility assumed
       </p>
     </div>
   );

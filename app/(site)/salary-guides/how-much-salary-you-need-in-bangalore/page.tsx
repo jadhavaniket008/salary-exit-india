@@ -5,7 +5,6 @@ import { guideArticleMetadata } from "@/lib/content/guide-metadata";
 import {
   getGuideArticleByHubSegment,
   guideArticlePath,
-  GUIDE_CONTENT_AS_OF_DATE,
   GUIDE_CONTENT_AS_OF_ISO,
 } from "@/lib/content/guides-registry";
 import { ROUTES } from "@/lib/routes";
@@ -52,8 +51,9 @@ export default function HowMuchSalaryBangalorePage() {
       description={meta.description}
       faq={faq}
       toc={toc}
-      lastUpdated={GUIDE_CONTENT_AS_OF_DATE}
-      lastUpdatedIso={GUIDE_CONTENT_AS_OF_ISO}
+      lastUpdated="13 October 2026"
+      lastUpdatedIso="2026-10-13"
+      publishedIso={GUIDE_CONTENT_AS_OF_ISO}
       guideCluster={{ hub: "salary", segment: "how-much-salary-you-need-in-bangalore" }}
     >
       <HowMuchSalaryBangaloreBody />

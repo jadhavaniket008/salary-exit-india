@@ -8,6 +8,7 @@ import { breadcrumbJsonLd } from "@/lib/seo/structured-data";
 import { ROUTES } from "@/lib/routes";
 import { ENGINE_FY_LABEL, TAX_RULESET_SOURCE_LABEL } from "@/lib/config/site-freshness";
 import { generateInHandSalaryModel } from "@/lib/growth/in-hand-salary-model";
+import { ResourceDownloadLink } from "@/components/growth/ResourceDownloadLink";
 import { InHandModelTable } from "@/components/growth/InHandModelTable";
 
 const REPORT_PUBLISHED_ISO = "2026-07-31";
@@ -15,7 +16,7 @@ const REPORT_TITLE = "SalaryExit India In-Hand Salary Model 2026";
 
 export const metadata: Metadata = buildPageMetadata(
   {
-    title: `${REPORT_TITLE}: CTC to In-Hand, Modeled (FY 2026-27)`,
+    title: "India CTC to In-Hand Model: 72 Scenarios",
     description:
       "A modeled dataset showing how ₹5L-₹50L CTC converts to real monthly in-hand across employer-cost structures and PF choices, generated from SalaryExit's live FY 2026-27 engine. Free CSV/JSON download, citable methodology.",
     keywords: [
@@ -112,9 +113,9 @@ export default function InHandSalaryModelReportPage() {
             <p className="text-sm text-foreground-secondary">
               Filter by employer-cost share and PF wage basis. All {model.salaryLevelRows.length} rows
               are in the{" "}
-              <a href="/data/salaryexit-in-hand-model-2026.csv" className="font-medium underline">
+              <ResourceDownloadLink format="csv" className="font-medium underline">
                 CSV download
-              </a>{" "}
+              </ResourceDownloadLink>{" "}
               below.
             </p>
             <InHandModelTable
@@ -257,19 +258,25 @@ export default function InHandSalaryModelReportPage() {
               Downloads
             </h2>
             <div className="flex flex-wrap gap-3">
-              <a
-                href="/data/salaryexit-in-hand-model-2026.csv"
+              <ResourceDownloadLink
+                format="csv"
                 className="inline-flex items-center rounded-lg border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground hover:bg-surface-subtle"
               >
                 Download CSV ({model.salaryLevelRows.length} rows) →
-              </a>
-              <a
-                href="/data/salaryexit-in-hand-model-2026.json"
+              </ResourceDownloadLink>
+              <ResourceDownloadLink
+                format="json"
                 className="inline-flex items-center rounded-lg border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground hover:bg-surface-subtle"
               >
                 Download JSON →
-              </a>
+              </ResourceDownloadLink>
             </div>
+          </section>
+
+          <section className="space-y-2 rounded-xl border border-border p-5">
+            <h2 className="text-lg font-semibold">Use this model with your audience</h2>
+            <p className="text-sm text-foreground-secondary">Add the free table to a careers resource, or discuss setup and support for your team.</p>
+            <Link href={ROUTES.forBusinesses} className="text-sm font-medium underline">Preview the embed and discuss a supported pilot →</Link>
           </section>
 
           <section aria-labelledby="related-heading" className="space-y-3">

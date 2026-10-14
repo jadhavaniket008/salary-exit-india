@@ -41,7 +41,7 @@ export function LpaLandingTemplate({ config }: Props) {
   const genericFaq: FaqItem[] = [
     {
       question: `${config.lpa} LPA का मतलब क्या होता है? In-hand salary कितनी होगी?`,
-      answer: `${config.lpa} LPA यानी ₹${config.lpa} लाख (${formatInr(config.lpa * 1_00_000)}) सालाना gross salary (CTC नहीं)। FY 2026-27 में नई tax regime के अनुसार, अनुमानित in-hand salary लगभग ${formatInr(result.inHandMonthly)} प्रति माह होती है — employee PF (Basic+DA का 12%) और professional tax काटने के बाद। यह एक estimate है; actual payslip आपके employer की salary structure पर depend करती है।`,
+      answer: `${config.lpa} LPA यानी ${formatInr(config.lpa * 1_00_000)} सालाना, या deductions से पहले ${formatInr(result.grossMonthly)} प्रति माह। LPA रकम की इकाई है; offer में यह CTC है या gross, पहले देखें। इस पेज के gross salary example में नई regime, capped employee PF और ₹2,500/year PT के बाद in-hand लगभग ${formatInr(result.inHandMonthly)} प्रति माह है। यह estimate है, payslip नहीं।`,
     },
     {
       question: `${config.lpa} LPA in numbers — kitna hota hai in rupees?`,
@@ -84,13 +84,15 @@ export function LpaLandingTemplate({ config }: Props) {
 
           <header className="space-y-3">
             <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              ₹{config.lpa} LPA in India: estimated monthly in-hand salary
+              ₹{config.lpa} LPA meaning, monthly salary and in-hand estimate
             </h1>
             <p className="text-base leading-relaxed text-foreground-secondary">
-              Quick answer: under SalaryExit's default scenario for this page (new regime, state PT placeholder,
-              PF derived from an assumed Basic+DA split), estimated monthly in-hand is roughly{" "}
-              <strong>{formatInr(result.inHandMonthly, { decimals: true })}</strong> before any additional payroll
-              items not modeled here.
+              <strong>{config.lpa} LPA means {formatInr(config.scenario.annualGrossSalary)} per year,
+              or {formatInr(result.grossMonthly)} per month before deductions.</strong>{" "}
+              LPA means lakh per annum; your offer determines whether that amount is CTC or gross salary.
+              If it is annual gross, our new-regime example estimates{" "}
+              <strong>{formatInr(result.inHandMonthly)} per month in-hand</strong> after capped employee PF,
+              tax and a ₹2,500/year professional-tax placeholder. CTC can include employer costs and variable pay.
             </p>
             <p className="text-base leading-relaxed text-foreground-secondary">{config.angleParagraph}</p>
             {/* Hindi-language answer for Hindi search queries (12 lpa ka matlab, kitna hota hai, etc.) */}
@@ -103,12 +105,15 @@ export function LpaLandingTemplate({ config }: Props) {
               </p>
               <p className="leading-relaxed text-amber-950/90 dark:text-amber-100/85">
                 <strong>{config.lpa} LPA का मतलब</strong> है {formatInr(config.lpa * 1_00_000)} सालाना
-                gross salary (CTC नहीं) — यानी {formatInr(result.grossMonthly)} प्रति माह। FY 2026-27 में नई tax
-                regime के अनुसार, अनुमानित{" "}
+                — यानी deductions से पहले {formatInr(result.grossMonthly)} प्रति माह। Offer में रकम CTC है या gross,
+                पहले देखें। इस gross salary example में FY 2026-27 की नई tax regime के अनुसार अनुमानित{" "}
                 <strong>in-hand salary लगभग {formatInr(result.inHandMonthly)} प्रति माह</strong> होती
-                है — employee PF और professional tax काटने के बाद।
+                है — capped employee PF, income tax और professional tax काटने के बाद।
               </p>
             </div>
+            <Link href={ROUTES.ctcToInHandCalculator} className="inline-flex rounded-lg bg-accent-solid px-4 py-2 text-sm font-semibold text-white">
+              Calculate using my actual CTC or gross →
+            </Link>
             <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <FreshnessBadges />
               <MethodologyLink />
@@ -151,7 +156,7 @@ export function LpaLandingTemplate({ config }: Props) {
                     <td className="px-4 py-3 tabular-nums">{formatInr(result.grossMonthly, { decimals: true })}</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-foreground">Employee PF (estimate)</td>
+                    <td className="px-4 py-3 text-foreground">Employee PF (₹15,000 wage ceiling)</td>
                     <td className="px-4 py-3 tabular-nums">
                       {formatInr(result.employeePfMonthly, { decimals: true })}
                     </td>
@@ -209,15 +214,15 @@ export function LpaLandingTemplate({ config }: Props) {
             <h2 className="text-base font-semibold">Assumptions used on this page</h2>
             <ul className="mt-2 list-inside list-disc space-y-1">
               <li>Gross salary: ₹{config.lpa.toLocaleString("en-IN")},00,000 per year.</li>
-              <li>Tax regime: new (115BAC-style modeling as configured in SalaryExit).</li>
+              <li>New regime; resident individual with only ordinary salary income, eligible for the rebate where applicable. Special-rate and other income are excluded.</li>
               <li>
                 Professional tax: ₹{config.scenario.professionalTaxAnnual.toLocaleString("en-IN")}/year placeholder
                 — replace with your state.
               </li>
               <li>
-                PF: derived from assumed Basic+DA annual of ₹
-                {(config.scenario.basicAndDaAnnual ?? 0).toLocaleString("en-IN")} (45% of gross) unless your
-                employer uses a different PF wage.
+                Employee PF: 12% of the lower of monthly Basic+DA and ₹15,000.
+                Basic+DA is assumed to be 45% of gross, giving {formatInr(result.employeePfMonthly)}/month PF here.
+                Full-Basic PF can be higher; enter your actual deduction in the calculator.
               </li>
               {config.scenarioNotes.map((n) => (
                 <li key={n}>{n}</li>

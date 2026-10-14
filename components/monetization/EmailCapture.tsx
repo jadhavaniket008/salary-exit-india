@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
+import { trackNewsletterSignup } from "@/lib/analytics/client";
 
 export function EmailCapture() {
   const id = useId();
@@ -27,6 +28,7 @@ export function EmailCapture() {
       } else {
         setStatus("success");
         setEmail("");
+        trackNewsletterSignup();
       }
     } catch {
       setErrorMsg("Network error. Please try again.");
