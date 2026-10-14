@@ -45,11 +45,15 @@ export type SalaryOutput = {
 };
 
 export type CtcToInHandInput = {
-  /** Default is current monthly run rate. FY basis returns a monthly average, not current payroll. */
+  /**
+   * Default (`current-annualized`): take-home uses current monthly PF cash;
+   * old-regime tax uses Tax Year / FY 2026–27 projected PF when Basic+DA is supplied.
+   * `fy-2026-27`: monthly line is the Tax Year average, not current payroll.
+   */
   pfProjectionBasis?: import("@/lib/config/pf").PfProjectionBasis;
   /** Annual gross (or interpreted gross after CTC adjustments) */
   annualGrossSalary: number;
-  /** Employee PF annual; if omitted, derived from PF wage base */
+  /** Explicit annual employee PF override (wins for both cash monthly ÷12 and old-regime tax) */
   employeePfAnnual?: number;
   /** Basic + DA annual for PF wage base (optional) */
   basicAndDaAnnual?: number;

@@ -182,7 +182,7 @@ export const GUIDE_ARTICLES: readonly GuideArticleMeta[] = [
     segment: "epf-wage-ceiling-capped-vs-full-basic",
     title: "EPF wage ceiling: capped PF vs full Basic (why your PF deduction varies)",
     description:
-      "Why two employees at the same gross salary can have PF deductions ₹5,000+/month apart — the statutory ₹25,000 wage ceiling, and what each choice trades off.",
+      "Why two employees at the same gross salary can have PF deductions ₹5,000+/month apart — the statutory ₹25,000 wage ceiling, membership/arrangement differences, and what each pattern trades off.",
     keywords: [
       "EPF wage ceiling",
       "PF capped at 15000",

@@ -28,9 +28,9 @@ export function WhatAffectsInHandBody() {
 
       <h2 id="pf-wage">2. PF wage: the single most overlooked driver of monthly cash</h2>
       <p>
-        Employee PF is computed as 12% of PF wage, which most employers define as Basic + DA. The difference
-        between a company that caps PF wage at ₹25,000/month (statutory ceiling) versus one that uses full
-        Basic can be dramatic:
+        Employee PF is computed as 12% of PF wage. SalaryExit models that wage from Basic + DA; actual
+        EPFO/payroll treatment can differ. The difference between a capped arrangement at the ₹25,000/month
+        statutory ceiling versus contribution on full Basic can be dramatic:
       </p>
       <ul>
         <li>At Basic = ₹20,000/month: PF deduction = ₹2,400/month (same regardless of cap at this level).</li>
@@ -122,8 +122,10 @@ export function WhatAffectsInHandBody() {
           the financial year tells your employer which regime to apply for TDS.
         </li>
         <li>
-          <strong>PF wage:</strong> In some companies, you can opt for a higher or lower PF contribution
-          (Voluntary PF). Understand your employer&apos;s policy before assuming the default is optimal.
+          <strong>PF / VPF:</strong> Voluntary Provident Fund (VPF) can raise your employee contribution
+          above the statutory amount where your payroll allows it. That is separate from whether your
+          PF wages sit at the statutory ceiling or on a fuller Basic+DA base under applicable EPFO
+          rules — check your payslip before assuming the default is optimal.
         </li>
         <li>
           <strong>Investment proofs:</strong> Submit on time. Late submissions cause rushed TDS adjustments

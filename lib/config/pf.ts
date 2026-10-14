@@ -1,9 +1,11 @@
 /**
  * Provident Fund (EPF) assumptions for employee contribution estimates.
  *
- * **Important:** Actual PF can depend on company policy, Basic+DA definition,
- * and whether contribution is on capped or full wages. EPS ceiling affects
- * employer split, not necessarily employee rate.
+ * **Important:** SalaryExit models PF wages from the Basic+DA input. Actual
+ * statutory wages and payroll treatment can depend on applicable EPFO rules,
+ * the member's existing contribution arrangement, and payroll circumstances.
+ * Treatment above the statutory wage ceiling is not an arbitrary employer choice.
+ * EPS ceiling affects employer split, not necessarily employee rate.
  */
 
 export type PfAssumptions = {

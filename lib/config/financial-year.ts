@@ -94,15 +94,17 @@ export const FY2025_26: FinancialYearConfig = {
 };
 
 /**
- * FY 2026-27 (AY 2027-28) — Union Budget 2026 (1 Feb 2026) made no changes to
- * new-regime slabs, standard deduction, or Section 87A rebate.
- * All figures carry forward from FY 2025-26 unchanged.
- * Source: BankBazaar / Axis Max Life summary of Budget 2026 (verified June 2026).
+ * Tax Year 2026–27 (FY 2026–27) — governed by the Income Tax Act, 2025
+ * (in force from 1 April 2026). Union Budget 2026 (1 Feb 2026) made no changes to
+ * new-regime slabs, standard deduction, or the new-regime rebate band carried from
+ * Budget 2025. All figures carry forward from FY 2025-26 unchanged.
+ * Source: BankBazaar / Axis Max Life summary of Budget 2026 (verified June 2026);
+ * Income Tax Department materials on the Income Tax Act, 2025.
  */
 export const FY2026_27: FinancialYearConfig = {
   ...FY2025_26,
   id: "FY2026_27",
-  label: "Financial Year 2026-27 (AY 2027-28)",
+  label: "Tax Year 2026–27 (FY 2026–27)",
 };
 
 /** Default FY used by all calculators and tax estimates. */

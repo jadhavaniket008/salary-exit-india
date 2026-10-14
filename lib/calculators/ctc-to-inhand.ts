@@ -2,6 +2,11 @@
  * CTC / gross to in-hand: monthly cash after PF, professional tax, and TDS spread.
  *
  * Uses annual gross as payroll base; does not model perquisites or flex pay.
+ *
+ * PF has three distinct concepts after the 17 Sep 2026 mid-year ceiling change:
+ * A. current monthly employee PF cash deduction
+ * B. annualized current PF run-rate (A × 12)
+ * C. Tax Year / FY 2026–27 projected PF used for old-regime deduction modelling
  */
 
 import { DEFAULT_PF_ASSUMPTIONS, DEFAULT_TAX_SETTINGS } from "@/lib/config";
@@ -13,7 +18,11 @@ import type {
 } from "@/types/salary";
 import { clampNonNegative } from "@/lib/validation/sanitize";
 import { estimateAnnualIncomeTax } from "./annual-tax";
-import { computeEmployeePfProjectionAnnual } from "./pf";
+import {
+  computeEmployeePfAnnual,
+  computeEmployeePfFy2026Annual,
+  computeEmployeePfMonthly,
+} from "./pf";
 
 /**
  * Decompose an offer-letter CTC into its taxable gross basis by removing
@@ -52,23 +61,52 @@ export function computeCtcToInHand(
     "The monthly TDS line is annual tax ÷ 12 for planning — not a payslip TDS schedule.",
   ];
 
-  warnings.push(input.employeePfAnnual !== undefined
-    ? "Using your supplied annual employee PF; monthly PF is that amount divided by 12. No automatic ceiling or transition adjustment is applied."
-    : input.pfProjectionBasis === "fy-2026-27"
-    ? "FY 2026–27 average: PF uses the September 17 ceiling transition for an existing member at constant wages. Monthly PF is the annual average."
-    : "Current monthly PF from 17 September 2026, annualized ×12 for planning; this is not the full FY 2026–27 PF total. Actual annual PF can be entered explicitly.");
-
   const gross = clampNonNegative(input.annualGrossSalary);
   const ptAnnual = clampNonNegative(input.professionalTaxAnnual);
 
-  const employeePfAnnual = clampNonNegative(
-    input.employeePfAnnual ??
-      (input.basicAndDaAnnual !== undefined
-        ? computeEmployeePfProjectionAnnual(input.basicAndDaAnnual / 12, input.pfProjectionBasis, DEFAULT_PF_ASSUMPTIONS)
-        : 0)
-  );
+  /** A — current monthly cash PF; B — annualized current run-rate; C — Tax Year PF for old-regime tax. */
+  let employeePfMonthlyCash: number;
+  let employeePfAnnualizedCurrent: number;
+  let employeePfTaxYearAnnual: number;
 
-  if (input.employeePfAnnual === undefined && input.basicAndDaAnnual === undefined) {
+  if (input.employeePfAnnual !== undefined) {
+    const override = clampNonNegative(input.employeePfAnnual);
+    employeePfMonthlyCash = override / 12;
+    employeePfAnnualizedCurrent = override;
+    employeePfTaxYearAnnual = override;
+    warnings.push(
+      "Using your supplied annual employee PF; monthly PF is that amount divided by 12. No automatic ceiling or transition adjustment is applied."
+    );
+  } else if (input.basicAndDaAnnual !== undefined) {
+    const pfWageMonthly = clampNonNegative(input.basicAndDaAnnual) / 12;
+    const currentMonthly = computeEmployeePfMonthly(pfWageMonthly, DEFAULT_PF_ASSUMPTIONS);
+    const annualizedCurrent = computeEmployeePfAnnual(pfWageMonthly, DEFAULT_PF_ASSUMPTIONS);
+    const taxYearAnnual = computeEmployeePfFy2026Annual(
+      pfWageMonthly,
+      DEFAULT_PF_ASSUMPTIONS
+    ).annual;
+
+    if (input.pfProjectionBasis === "fy-2026-27") {
+      // Explicit FY average view: monthly line is Tax Year total ÷ 12, not current payroll.
+      employeePfMonthlyCash = taxYearAnnual / 12;
+      employeePfAnnualizedCurrent = annualizedCurrent;
+      employeePfTaxYearAnnual = taxYearAnnual;
+      warnings.push(
+        "Tax Year / FY 2026–27 average: PF uses the September 17 ceiling transition for an existing member at constant wages. Monthly PF is the annual average."
+      );
+    } else {
+      employeePfMonthlyCash = currentMonthly;
+      employeePfAnnualizedCurrent = annualizedCurrent;
+      // Old-regime tax must use the Tax Year contribution, not the October run-rate × 12.
+      employeePfTaxYearAnnual = taxYearAnnual;
+      warnings.push(
+        `Current monthly PF from 17 September 2026 (about ₹${Math.round(currentMonthly)}/month; annualized current run-rate ₹${Math.round(employeePfAnnualizedCurrent)}). This is not the full Tax Year / FY 2026–27 PF total (about ₹${Math.round(taxYearAnnual)} for the constant-wage existing-member model). Old-regime tax uses the Tax Year PF estimate when Basic+DA is supplied. Actual annual PF can be entered explicitly.`
+      );
+    }
+  } else {
+    employeePfMonthlyCash = 0;
+    employeePfAnnualizedCurrent = 0;
+    employeePfTaxYearAnnual = 0;
     warnings.push(
       "Employee PF was not provided and Basic+DA was missing — PF treated as zero for tax/in-hand."
     );
@@ -76,20 +114,21 @@ export function computeCtcToInHand(
 
   if (input.regime === "old") {
     warnings.push(
-      "Old regime on this screen: only employee PF is included in the Section 80C bucket. Other 80C items and HRA are not captured — use the salary breakdown calculator for a fuller old-regime estimate."
+      "Old regime on this screen: only employee PF is included in the Section 123 deduction bucket (corresponding to the earlier Section 80C framework). Other Section 123 items and HRA are not captured — use the salary breakdown calculator for a fuller old-regime estimate."
     );
   }
 
   const { totalTaxAnnual } = estimateAnnualIncomeTax(
     input.regime,
     gross,
-    employeePfAnnual,
+    // New regime ignores PF for tax; old regime uses Tax Year PF (C), not annualized current (B).
+    employeePfTaxYearAnnual,
     fy,
     {}
   );
 
   const grossMonthly = gross / 12;
-  const employeePfMonthly = employeePfAnnual / 12;
+  const employeePfMonthly = employeePfMonthlyCash;
   const professionalTaxMonthly = ptAnnual / 12;
   const tdsMonthly = totalTaxAnnual / 12;
   const inHandMonthly =

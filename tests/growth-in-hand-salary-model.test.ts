@@ -116,6 +116,6 @@ describe("generateInHandSalaryModel", () => {
   });
 
   it("financial year label matches the site's configured default (no stale/hardcoded FY string)", () => {
-    expect(model.assumptions.financialYearLabel).toBe("Financial Year 2026-27 (AY 2027-28)");
+    expect(model.assumptions.financialYearLabel).toBe("Tax Year 2026–27 (FY 2026–27)");
   });
 });

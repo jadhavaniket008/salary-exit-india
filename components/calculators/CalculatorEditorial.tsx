@@ -48,18 +48,19 @@ function SalaryEditorial() {
         your income level, state of employment, and payroll structure.
       </P>
       <P>
-        Taxable income under both regimes is gross salary minus the standard deduction —
-        ₹75,000 under the new regime and ₹50,000 under the old regime for FY 2026-27.
-        The old regime allows additional deductions on top: HRA exemption for those paying
-        rent, Section 80C investments up to ₹1.5 lakh, NPS contributions under Section
-        80CCD, and others. Whether the old or new regime produces a lower tax bill depends
+        Taxable income under both regimes is gross salary minus the standard deduction under
+        Section 19(1) — ₹75,000 under the new regime and ₹50,000 under the old regime for
+        Tax Year 2026–27 (FY 2026–27). The old regime allows additional deductions on top:
+        HRA exemption for those paying rent, Section 123 deductions (corresponding to the
+        earlier Section 80C framework) up to ₹1.5 lakh, NPS-style contributions where still
+        available, and others. Whether the old or new regime produces a lower tax bill depends
         entirely on the scale of these deductions relative to gross salary.
       </P>
       <P>
-        TDS (Tax Deducted at Source) is how employers collect income tax in advance. Your
-        employer estimates your full-year tax liability in April, divides it roughly by 12,
-        and deducts that amount each month. If your income varies — bonus in one month,
-        perquisites in another — TDS adjustments happen mid-year. This is why your monthly
+        TDS (Tax Deducted at Source) under Section 392(1) is how employers collect income tax
+        in advance. Your employer estimates your full-year tax liability in April, divides it
+        roughly by 12, and deducts that amount each month. If your income varies — bonus in one
+        month, perquisites in another — TDS adjustments happen mid-year. This is why your monthly
         payslip deduction for tax can look different from{" "}
         <em>annual tax liability ÷ 12</em> in some months. The calculator spreads the
         estimated annual tax evenly, which is a simplified but useful approximation for
@@ -95,38 +96,40 @@ function TaxRegimeEditorial() {
         has a meaningful impact on how much monthly cash you keep.
       </P>
       <P>
-        The new regime (under Section 115BAC) offers lower marginal rates and a higher
-        basic exemption structure. For FY 2026-27, the new regime includes a ₹75,000
-        standard deduction and a Section 87A rebate that makes taxable income up to
-        ₹12 lakh effectively tax-free. This makes the new regime the default choice for
-        most employees with taxable income below ₹12 lakh after standard deduction — and
-        increasingly competitive even above that threshold.
+        The new regime (Section 202 of the Income Tax Act, 2025 — earlier Section 115BAC
+        framework) offers lower marginal rates and a higher basic exemption structure. For
+        Tax Year 2026–27 (FY 2026–27), the new regime includes a ₹75,000 standard deduction
+        under Section 19(1) and a rebate that makes taxable income up to ₹12 lakh effectively
+        tax-free (still widely labelled Section 87A in payroll tools). This makes the new
+        regime the default choice for most employees with taxable income below ₹12 lakh after
+        standard deduction — and increasingly competitive even above that threshold.
       </P>
       <P>
         The old regime uses lower slab rates only after you subtract significant
-        deductions. The ₹50,000 standard deduction applies, plus: Section 80C investments
-        up to ₹1.5 lakh (PF, ELSS, PPF, LIC premiums, home loan principal, children's
-        tuition fees), HRA exemption under Section 10(13A) if you pay rent, NPS deductions
-        under Section 80CCD, and home loan interest under Section 24. An employee with
-        high rent, maximum 80C use, and NPS contributions can reduce taxable income by
-        ₹3–4 lakh or more, which may make the old regime more beneficial. Use the comparison
-        calculator to run your specific numbers — the crossover point varies significantly
-        by income level.
+        deductions. The ₹50,000 standard deduction under Section 19(1) applies, plus:
+        Section 123 deductions read with Schedule XV (corresponding to the earlier Section 80C
+        framework — up to ₹1.5 lakh for PF, ELSS, PPF, LIC premiums, home loan principal,
+        children&apos;s tuition fees), HRA exemption if you pay rent and claim under the old
+        regime, NPS-style deductions where still available, and home-loan interest where
+        applicable. An employee with high rent, maximum Section 123 / earlier-80C use, and
+        NPS contributions can reduce taxable income by ₹3–4 lakh or more, which may make the
+        old regime more beneficial. Use the comparison calculator to run your specific
+        numbers — the crossover point varies significantly by income level.
       </P>
       <P>
         A common misconception: the new regime is always better for low incomes, always
         worse for high earners with deductions. Reality is more nuanced. At gross salaries
-        where income tax is zero in the new regime (due to 87A), the old regime is unlikely
-        to produce a lower liability regardless of deductions. At higher gross levels, the
-        regime with more beneficial rates and effective deductions should be compared
-        explicitly — which is exactly what this calculator does.
+        where income tax is zero in the new regime (due to the rebate), the old regime is
+        unlikely to produce a lower liability regardless of deductions. At higher gross
+        levels, the regime with more beneficial rates and effective deductions should be
+        compared explicitly — which is exactly what this calculator does.
       </P>
       <UL>
-        <li>New regime: ₹75,000 standard deduction, lower slab rates, no itemized deductions beyond standard.</li>
-        <li>Old regime: ₹50,000 standard deduction, higher rates, full deduction menu (80C, HRA, 24(b), etc.).</li>
-        <li>The 87A rebate in the new regime eliminates tax for taxable income ≤ ₹12 lakh (FY 2026-27).</li>
-        <li>Regime must be selected before the FY begins for TDS — you can change at filing time.</li>
-        <li>Surcharge (and its own marginal relief) applies above ₹50 lakh taxable income — this calculator does not model surcharge. Section 87A marginal relief near the ₹12 lakh new-regime threshold is modeled separately and is not affected by this.</li>
+        <li>New regime (Section 202): ₹75,000 standard deduction (Section 19(1)), lower slab rates, no itemized deductions beyond standard.</li>
+        <li>Old regime: ₹50,000 standard deduction, higher rates, full deduction menu (Section 123 / earlier 80C, HRA, home-loan interest, etc.).</li>
+        <li>The new-regime rebate eliminates tax for taxable income ≤ ₹12 lakh (Tax Year 2026–27 / FY 2026–27).</li>
+        <li>Regime must be selected before the tax year begins for TDS under Section 392(1) — you can change at filing time.</li>
+        <li>Surcharge (and its own marginal relief) applies above ₹50 lakh taxable income — this calculator does not model surcharge. New-regime rebate / marginal relief near the ₹12 lakh threshold is modeled separately and is not affected by this.</li>
       </UL>
     </Section>
   );
@@ -146,11 +149,12 @@ function EpfEditorial() {
       </P>
       <P>
         The contribution rate for both employee and employer is 12% of the PF wage.
-        PF wage is defined as Basic salary plus Dearness Allowance (DA). Critically,
-        this is not gross salary and not CTC — it is specifically Basic + DA. Many
-        employers keep Basic salary at 40–50% of gross to manage their EPF contribution
-        cost. The result: two employees with the same gross salary at different employers
-        may have different PF deductions if their Basic+DA splits differ.
+        SalaryExit models PF wages using the Basic + Dearness Allowance (DA) input —
+        not gross salary and not CTC. Actual statutory wages and payroll treatment can
+        depend on applicable EPFO rules and payroll circumstances. Many employers keep
+        Basic salary at 40–50% of gross, which changes the modelled PF base. The result:
+        two employees with the same gross salary at different employers may have different
+        PF deductions if their Basic+DA splits or contribution arrangements differ.
       </P>
       <P>
         Of the employer's 12% contribution, 8.33% goes to the Employees' Pension Scheme
@@ -165,12 +169,12 @@ function EpfEditorial() {
         Employees can contribute beyond the statutory 12% through Voluntary Provident Fund
         (VPF) — up to 100% of Basic+DA. VPF has the same interest rate as EPF and the same
         tax treatment. If you are looking to increase tax-efficient long-term savings beyond
-        80C (which EPF counts toward), VPF is one mechanism — but it further reduces your
-        monthly in-hand. Use this calculator to see how different PF wage levels and
-        voluntary contributions change your monthly cash balance.
+        Section 123 / earlier-80C (which EPF counts toward), VPF is one mechanism — but it
+        further reduces your monthly in-hand. Use this calculator to see how different PF
+        wage levels and voluntary contributions change your monthly cash balance.
       </P>
       <UL>
-        <li>PF wage = Basic + DA (not gross, not CTC).</li>
+        <li>SalaryExit models PF wage from Basic + DA (not gross, not CTC); actual EPFO/payroll treatment can differ.</li>
         <li>Employee contribution: 12% of PF wage, deducted monthly from your gross.</li>
         <li>Employer contribution: 12% of PF wage — split between EPF and EPS.</li>
         <li>EPS contribution is not withdrawable as a lump sum the same way EPF is.</li>

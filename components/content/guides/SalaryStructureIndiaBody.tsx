@@ -100,10 +100,12 @@ export function SalaryStructureIndiaBody() {
           insurance, gratuity — is a separate line.
         </li>
         <li>
-          <strong>Check the PF wage definition:</strong> Some companies cap PF wage at ₹25,000/month (the
-          statutory ceiling), meaning employee PF is only ₹3,000/month regardless of Basic. Others apply full
-          Basic as PF wage. This single policy difference can change your in-hand by ₹3,000–₹4,000/month at
-          higher basics.
+          <strong>Check the PF wage definition:</strong> The statutory EPFO wage ceiling is ₹25,000/month
+          from 17 September 2026. Treatment above that ceiling depends on the member&apos;s existing
+          contribution arrangement and applicable EPFO rules — not an arbitrary employer choice. Where
+          wages are treated at the ceiling, employee PF is ₹3,000/month; where full Basic+DA is used,
+          PF is 12% of that amount. This single difference can change your in-hand by ₹3,000–₹4,000/month
+          at higher basics.
         </li>
         <li>
           <strong>Understand variable pay conditions:</strong> &quot;15% variable pay&quot; in a CTC breakdown

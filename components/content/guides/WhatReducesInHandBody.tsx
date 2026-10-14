@@ -43,8 +43,8 @@ export function WhatReducesInHandBody() {
 
       <h2 id="epf">2. Employee PF — a forced saving, but it reduces monthly cash</h2>
       <p>
-        Employee PF is 12% of PF wage (usually Basic + DA, sometimes capped at ₹25,000/month). At common
-        salary structures:
+        Employee PF is 12% of PF wage. SalaryExit models PF wages using the Basic + DA input; actual
+        statutory wages can depend on EPFO rules and payroll circumstances. At common structures:
       </p>
       <ul>
         <li>Basic = ₹18,000/month: employee PF = ₹2,160/month.</li>
@@ -53,9 +53,10 @@ export function WhatReducesInHandBody() {
       </ul>
       <p>
         It is not lost money — it accumulates in your EPF account with interest — but it is not available for
-        rent or groceries this month. Companies that cap PF wage at ₹25,000/month often do so to give employees
-        higher monthly cash; companies with uncapped PF wage provide stronger retirement savings but lower
-        take-home. The{" "}
+        rent or groceries this month. Where PF wages sit at the ₹25,000 statutory ceiling, monthly cash is
+        higher; where contribution runs on fuller Basic+DA under the member&apos;s arrangement and EPFO
+        rules, retirement savings are stronger but take-home is lower. That pattern is arrangement- and
+        rule-driven — not an arbitrary employer switch. The{" "}
         <Link href={ROUTES.epfCalculator}>EPF calculator</Link> helps you model both.
       </p>
 

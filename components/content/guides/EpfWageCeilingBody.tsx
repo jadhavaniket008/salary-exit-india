@@ -7,22 +7,25 @@ export function EpfWageCeilingBody() {
     <ArticleProse>
       <p>
         Two employees on the exact same gross salary can have PF deductions that differ by ₹5,000/month or
-        more — not because either one is wrong, but because their employers made a different policy choice
-        about one number: the <strong>PF wage</strong>. Here is what that choice actually means for your
-        in-hand pay.
+        more — not because either one is wrong, but because their PF wage treatment and Basic+DA structure
+        differ. Here is what that actually means for your in-hand pay.
       </p>
 
       <h2 id="what-is-pf-wage">PF wage is not your gross salary</h2>
       <p>
-        Employee Provident Fund contributions are calculated as 12% of your <strong>PF wage</strong>, and PF
-        wage is defined as Basic + Dearness Allowance (DA) — not gross salary, and not CTC. Two people with
-        the same ₹18 LPA gross can have very different PF wages if one company sets Basic at 40% of gross and
-        another sets it at 55%.
+        Employee Provident Fund contributions are calculated as 12% of your <strong>PF wage</strong>.
+        SalaryExit models PF wages using the Basic + Dearness Allowance (DA) input — not gross salary, and
+        not CTC. Actual statutory wages and payroll treatment can depend on applicable EPFO rules and
+        payroll circumstances. Two people with the same ₹18 LPA gross can still have very different PF
+        deductions if one company&apos;s Basic is 40% of gross and another&apos;s is 55%.
       </p>
 
       <h2 id="the-statutory-ceiling">The statutory wage ceiling — where the real split happens</h2>
       <p>
-        The EPFO&apos;s statutory wage ceiling is ₹25,000/month from 17 September 2026. Employers can choose one of two approaches:
+        The EPFO statutory wage ceiling is ₹25,000/month from 17 September 2026. Treatment above that
+        ceiling depends on the member&apos;s existing contribution arrangement and applicable EPFO
+        provisions / scheme rules — it is not an arbitrary employer choice. In practice, payslips often
+        fall into one of two common patterns SalaryExit can model:
       </p>
       <ul>
         <li>
@@ -38,10 +41,10 @@ export function EpfWageCeilingBody() {
         </li>
       </ul>
       <p>
-        Neither approach is illegal or unusual — both are common in practice, and the choice is the
-        employer&apos;s, not yours to elect individually in most cases. The gap this creates is real: at the same
-        gross salary, a capped-PF employer can leave you with roughly ₹4,200/month more in-hand than an
-        uncapped one, purely from this one policy difference.
+        Neither pattern is unusual. Which one applies to you depends on your membership / contribution
+        arrangement and how payroll implements EPFO rules — not a personal election you make each month.
+        The gap this creates is real: at the same gross salary, a capped-PF arrangement can leave you with
+        roughly ₹4,200/month more in-hand than an uncapped one, purely from this one difference.
       </p>
 
       <h2 id="why-it-isnt-free-money">Why the capped option isn&apos;t simply &quot;better&quot;</h2>

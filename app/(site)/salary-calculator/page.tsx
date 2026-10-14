@@ -56,17 +56,19 @@ export default function SalaryCalculatorPage() {
 
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
-            Why Section 80C is the first deduction to maximize under old regime
+            Why Section 123 (earlier 80C) is the first deduction to maximize under old regime
           </h2>
           <p className="text-foreground-secondary">
-            Section 80C allows a deduction of up to ₹1,50,000 per year from taxable income. Most
-            salaried employees&apos; employee PF contribution already counts towards 80C — meaning if you
-            contribute ₹72,000/year to EPF, you only have ₹78,000 of 80C space left to fill with
-            other investments like ELSS, PPF, or life insurance premiums.
+            Section 123 of the Income Tax Act, 2025, read with Schedule XV (corresponding to the
+            earlier Section 80C framework), allows a deduction of up to ₹1,50,000 per year from
+            taxable income. Most salaried employees&apos; employee PF contribution already counts
+            towards this bucket — meaning if you contribute ₹72,000/year to EPF, you only have
+            ₹78,000 of Section 123 / earlier-80C space left to fill with other investments like
+            ELSS, PPF, or life insurance premiums.
           </p>
           <p className="text-foreground-secondary">
-            At the 30% slab, fully utilizing ₹1.5 lakh of 80C saves approximately ₹46,800 in annual
-            tax (including cess). At the 20% slab, the saving is about ₹31,200/year.
+            At the 30% slab, fully utilizing ₹1.5 lakh of this deduction saves approximately ₹46,800
+            in annual tax (including cess). At the 20% slab, the saving is about ₹31,200/year.
           </p>
         </section>
 

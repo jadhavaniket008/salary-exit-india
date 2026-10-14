@@ -88,15 +88,17 @@ This document explains what each calculator **estimates**, the **assumptions** b
 
 ## Maintenance
 
-Update `lib/config/financial-year.ts` after each Union Budget when slabs, standard deductions, or rebate thresholds change. Cross-check with the **Income Tax Act** and **Finance Act** for the relevant assessment year.
+Update `lib/config/financial-year.ts` after each Union Budget when slabs, standard deductions, or rebate thresholds change. Cross-check with the **Income Tax Act, 2025** (Tax Year terminology from 1 April 2026) and **Finance Act** for the relevant tax year.
 
 
 PF revision reviewed 2026-10-14: `computeEmployeePfAnnual` is the current monthly
-run rate ×12. `computeEmployeePfFy2026Annual` separately totals FY 2026–27 for
+run rate ×12. `computeEmployeePfFy2026Annual` separately totals Tax Year / FY 2026–27 for
 constant wages and existing membership (or explicitly newly covered from 17 September).
 At PF wage ≥₹25,000: current ₹3,000/month; annualized ₹36,000; September ₹2,360;
 full-FY ₹29,360. Full-Basic contributions have no wage cap. Explicit annual PF overrides
 remain authoritative for actual employee deductions; no automatic membership inference.
+`computeCtcToInHand` uses current monthly cash for take-home, and the Tax Year PF total for
+old-regime deduction modelling when Basic+DA is supplied (not the annualized October run-rate).
 Sources: PIB releases [2311968](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2311968)
 and [2314111](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2314111);
 [EPFO employer portal](https://unifiedportal-emp.epfindia.gov.in/epfo/), wage-ceiling FAQ Q7–9.

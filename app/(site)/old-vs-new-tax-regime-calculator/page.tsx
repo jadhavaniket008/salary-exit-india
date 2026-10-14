@@ -56,12 +56,14 @@ export default function TaxRegimeCalculatorPage() {
           </p>
           <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
-              <strong>Section 80C (up to ₹1.5 lakh):</strong> EPF contribution, ELSS funds, PPF, life
-              insurance premiums, NSC, home loan principal repayment, children&apos;s tuition fees.
+              <strong>Section 123 / Schedule XV (earlier Section 80C, up to ₹1.5 lakh):</strong> EPF
+              contribution, ELSS funds, PPF, life insurance premiums, NSC, home loan principal
+              repayment, children&apos;s tuition fees.
             </li>
             <li>
-              <strong>HRA exemption (Section 10(13A)):</strong> Significant for employees paying rent,
-              especially in metros (up to 50% of Basic+DA can be exempt).
+              <strong>HRA exemption (old regime):</strong> Significant for employees paying rent,
+              especially in metros (up to 50% of Basic+DA can be exempt). Familiar payroll tools may
+              still label this under the earlier Section 10(13A) framework.
             </li>
             <li>
               <strong>Section 80D:</strong> Health insurance premiums (up to ₹25,000 self + family;

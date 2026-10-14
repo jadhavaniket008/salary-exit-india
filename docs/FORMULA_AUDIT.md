@@ -40,11 +40,13 @@ Reference for QA and finance review. Implementation lives in `lib/calculators/` 
 
 
 PF revision reviewed 2026-10-14: `computeEmployeePfAnnual` is the current monthly
-run rate ×12. `computeEmployeePfFy2026Annual` separately totals FY 2026–27 for
+run rate ×12. `computeEmployeePfFy2026Annual` separately totals Tax Year / FY 2026–27 for
 constant wages and existing membership (or explicitly newly covered from 17 September).
 At PF wage ≥₹25,000: current ₹3,000/month; annualized ₹36,000; September ₹2,360;
 full-FY ₹29,360. Full-Basic contributions have no wage cap. Explicit annual PF overrides
 remain authoritative for actual employee deductions; no automatic membership inference.
+`computeCtcToInHand` uses current monthly cash for take-home and the Tax Year PF total for
+old-regime deduction modelling when Basic+DA is supplied.
 Sources: PIB releases [2311968](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2311968)
 and [2314111](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2314111);
 [EPFO employer portal](https://unifiedportal-emp.epfindia.gov.in/epfo/), wage-ceiling FAQ Q7–9.
