@@ -514,7 +514,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "15-lpa-in-hand-salary",
     lpa: 15,
     seo: {
-      title: "15 LPA In-Hand: ₹1.15L/Month — Tax Kicks In, See Breakdown",
+      title: "15 LPA In-Hand: ₹1.14L/Month — Tax Kicks In, See Breakdown",
       description:
         `15 LPA = ${monthlyNet(15)}/month in-hand (FY 2026-27, new regime). Income tax starts here — the ₹12L rebate is crossed. Old vs new regime comparison + exact PF, TDS, PT split.`,
       keywords: ["15 LPA in hand", "15 lakh salary monthly", "15 LPA net salary India"],
@@ -620,7 +620,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "18-lpa-in-hand-salary",
     lpa: 18,
     seo: {
-      title: "18 LPA Meaning: ₹1.35L/Month + Tax & Deduction Breakdown",
+      title: "18 LPA Meaning: ₹1.34L/Month + Tax & Deduction Breakdown",
       description:
         `18 LPA का मतलब ${monthlyNet(18)}/month in-hand (FY 2026-27, new regime). Regime switch and Basic+DA split can change this. Free calculator — see your exact figure.`,
       keywords: [
@@ -699,7 +699,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "20-lpa-in-hand-salary",
     lpa: 20,
     seo: {
-      title: "20 LPA Means ₹1.49L/Month — What Hits Your Account?",
+      title: "20 LPA Means ₹1.47L/Month — What Hits Your Account?",
       description:
         `20 LPA = ${monthlyNet(20)}/month in-hand (FY 2026-27, new regime). PF, TDS, and PT reduce this — your actual cut depends on your city and Basic split. Free calculator.`,
       keywords: ["20 LPA in hand", "20 lakh salary take home", "20 LPA net pay India"],
@@ -928,7 +928,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "45-lpa-in-hand-salary",
     lpa: 45,
     seo: {
-      title: "45 LPA Meaning: ₹2.94L/Month In-Hand + Tax Breakdown 2026",
+      title: "45 LPA Meaning: ₹2.93L/Month In-Hand + Tax Breakdown 2026",
       description:
         `45 LPA = ~${monthlyNet(45)}/month in-hand (FY 2026-27, new regime). Tax at this band: ~₹78,650/month TDS. Old vs new regime comparison with full PF and PT deduction detail.`,
       keywords: ["45 LPA in hand", "45lpa means", "45lpa meaning", "45 lakh salary take home India", "45 LPA monthly net"],
