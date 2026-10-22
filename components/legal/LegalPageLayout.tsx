@@ -11,9 +11,11 @@ type Props = {
   intro?: string;
   breadcrumbs: BreadcrumbItem[];
   children: ReactNode;
+  /** Optional actual revision date of this page, distinct from global editorial review. */
+  contentUpdatedAt?: string;
 };
 
-export function LegalPageLayout({ title, intro, breadcrumbs, children }: Props) {
+export function LegalPageLayout({ title, intro, breadcrumbs, children, contentUpdatedAt }: Props) {
   return (
     <Section className="pt-8 sm:pt-12">
       <Container className="max-w-3xl space-y-8">
@@ -30,7 +32,7 @@ export function LegalPageLayout({ title, intro, breadcrumbs, children }: Props) 
           {children}
         </div>
         <p className="text-xs text-foreground-muted">
-          Page content last reviewed: {SITE_CONTENT_LAST_UPDATED}. For calculation scope and FY assumptions, see{" "}
+          {contentUpdatedAt ? `Page content updated: ${contentUpdatedAt}.` : `Page content last reviewed: ${SITE_CONTENT_LAST_UPDATED}.`} For calculation scope and FY assumptions, see{" "}
           <Link href={ROUTES.methodology} className="underline">
             methodology
           </Link>
