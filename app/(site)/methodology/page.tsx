@@ -6,6 +6,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import {
   CALCULATIONS_POLICY_SYNC_LINE,
   ENGINE_FY_LABEL,
+  PF_MODEL_LAST_UPDATED,
   SITE_CONTENT_LAST_UPDATED,
 } from "@/lib/config/site-freshness";
 import { ROUTES } from "@/lib/routes";
@@ -38,8 +39,11 @@ export default function MethodologyPage() {
         are not modeled.
       </p>
       <p className="rounded-lg border border-emerald-200/80 bg-emerald-50/70 p-3 text-sm text-emerald-950 dark:border-emerald-900/40 dark:bg-emerald-950/30 dark:text-emerald-50">
-        <strong className="font-semibold">Policy sync for visitors:</strong> {CALCULATIONS_POLICY_SYNC_LINE} Content and
-        methodology copy last reviewed: <strong>{SITE_CONTENT_LAST_UPDATED}</strong>.
+        <strong className="font-semibold">Policy sync for visitors:</strong> {CALCULATIONS_POLICY_SYNC_LINE}{" "}
+        Editorial methodology copy last reviewed: <strong>{SITE_CONTENT_LAST_UPDATED}</strong>. Separately, the
+        employee PF wage-ceiling model was revised on <strong>{PF_MODEL_LAST_UPDATED}</strong> for the 17 September
+        2026 statutory ceiling (documented PF release notes) — that date is a{" "}
+        <em>model update</em>, not a claim that every page of site prose was re-reviewed then.
       </p>
 
       <h2>What is "exact" in math terms</h2>
@@ -60,7 +64,9 @@ export default function MethodologyPage() {
           <strong>Bonus, arrears, perquisites, stock</strong> — not modeled unless you fold them into gross consistently.
         </li>
         <li>
-          <strong>PF</strong> — employee contribution is rate × PF wage (with optional ceiling); employer EPS/EDLI splits are not shown.
+          <strong>PF</strong> — employee contribution is rate × PF wage (with optional statutory ceiling). Current
+          monthly examples use the ₹25,000 ceiling effective 17 September 2026; Tax Year / FY 2026–27 totals for
+          existing capped members use the documented mid-year transition. Employer EPS/EDLI splits are not shown.
         </li>
         <li>
           <strong>Professional tax</strong> — you supply a placeholder or realistic annual amount; we do not ship state-wise tables.
@@ -85,8 +91,11 @@ export default function MethodologyPage() {
 
       <h2>Updates</h2>
       <p>
-        Content and methodology copy last reviewed: <strong>{SITE_CONTENT_LAST_UPDATED}</strong>. Engine FY label:{" "}
-        <strong>{ENGINE_FY_LABEL}</strong>.
+        Two dates matter, and they are not the same:{" "}
+        <strong>content / methodology copy</strong> was last reviewed in{" "}
+        <strong>{SITE_CONTENT_LAST_UPDATED}</strong>; the <strong>PF calculation model</strong> was last revised on{" "}
+        <strong>{PF_MODEL_LAST_UPDATED}</strong> for the 17 September 2026 wage-ceiling change. Engine FY label:{" "}
+        <strong>{ENGINE_FY_LABEL}</strong>. We do not backdate a full editorial review to the PF model revision date.
       </p>
 
       <p className="mt-6 text-sm text-foreground-secondary">

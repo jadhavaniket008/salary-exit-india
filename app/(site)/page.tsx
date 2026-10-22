@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Container } from "@/components/ui";
 import { HomeHeroSection } from "@/components/home/HomeHeroSection";
+import { InHandModelReportPromo } from "@/components/home/InHandModelReportPromo";
 import { SalaryRealityCheckPromo } from "@/components/home/SalaryRealityCheckPromo";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { JsonLd } from "@/components/content/JsonLd";
@@ -119,6 +120,9 @@ export default function Home() {
         </section>
 
         <Container className="space-y-14 py-10 sm:py-14">
+
+          {/* ── Flagship modeled dataset (content value; not survey data) ─ */}
+          <InHandModelReportPromo />
 
           {/* ── Calculator grid — featured primary + secondary grid ─── */}
           <section aria-labelledby="calculators-heading">

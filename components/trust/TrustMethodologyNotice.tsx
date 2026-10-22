@@ -3,6 +3,7 @@ import { ROUTES } from "@/lib/routes";
 import {
   CALCULATIONS_POLICY_SYNC_LINE,
   ENGINE_FY_LABEL,
+  PF_MODEL_LAST_UPDATED,
   SITE_CONTENT_LAST_UPDATED,
 } from "@/lib/config/site-freshness";
 
@@ -14,12 +15,13 @@ type Props = {
 
 /**
  * Reusable editorial + methodology statement for launch trust — no badges, no fake credentials.
- * Update {@link SITE_CONTENT_LAST_UPDATED} / {@link ENGINE_FY_LABEL} in site-freshness when copy or FY scope changes.
+ * Content-review and PF model dates are distinct; do not conflate them.
  */
 export function TrustMethodologyNotice({ variant = "default", className = "" }: Props) {
   const meta = (
     <span className="text-foreground-muted">
-      {ENGINE_FY_LABEL}. Site content last reviewed: {SITE_CONTENT_LAST_UPDATED}. {CALCULATIONS_POLICY_SYNC_LINE}
+      {ENGINE_FY_LABEL}. Content last reviewed: {SITE_CONTENT_LAST_UPDATED}. PF model updated:{" "}
+      {PF_MODEL_LAST_UPDATED}. {CALCULATIONS_POLICY_SYNC_LINE}
     </span>
   );
 

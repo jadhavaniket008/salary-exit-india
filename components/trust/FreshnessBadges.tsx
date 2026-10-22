@@ -1,5 +1,6 @@
 import {
   ENGINE_FY_LABEL,
+  PF_MODEL_LAST_UPDATED,
   SITE_CONTENT_LAST_UPDATED,
   TAX_RULESET_SOURCE_LABEL,
 } from "@/lib/config/site-freshness";
@@ -7,8 +8,17 @@ import {
 export function FreshnessBadges({ className = "" }: { className?: string }) {
   return (
     <div className={`flex flex-wrap gap-2 text-xs ${className}`}>
-      <span className="rounded-full border border-border bg-surface px-2.5 py-1 font-medium text-foreground-secondary">
-        Reviewed: {SITE_CONTENT_LAST_UPDATED}
+      <span
+        className="rounded-full border border-border bg-surface px-2.5 py-1 font-medium text-foreground-secondary"
+        title="Date of the last documented editorial / methodology copy review — not the PF model revision date."
+      >
+        Content reviewed: {SITE_CONTENT_LAST_UPDATED}
+      </span>
+      <span
+        className="rounded-full border border-border bg-surface px-2.5 py-1 font-medium text-foreground-secondary"
+        title="Documented PF wage-ceiling model revision (engine). Not a claim that all site prose was re-reviewed on this date."
+      >
+        PF model updated: {PF_MODEL_LAST_UPDATED}
       </span>
       <span className="rounded-full border border-warning-bg bg-warning-bg px-2.5 py-1 font-medium text-warning">
         {ENGINE_FY_LABEL}
