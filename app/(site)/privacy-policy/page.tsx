@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
 
       <h2>Newsletter subscriptions and email</h2>
       <p>
-        If you submit an email address to our salary and tax updates form, SalaryExit sends that address
+        If your subscription through our salary and tax updates form succeeds, SalaryExit sends your address
         to Brevo, our email-list service provider, to manage the subscription. We use subscribed addresses
         to send the updates requested. To ask us to unsubscribe your address or delete it from our mailing
         list, email <a href="mailto:salaryexitindia@gmail.com">salaryexitindia@gmail.com</a>.
