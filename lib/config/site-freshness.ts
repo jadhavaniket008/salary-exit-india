@@ -1,7 +1,12 @@
 /**
  * Trust / freshness copy shown next to calculators and methodology.
  * Update when FY config, slab source, or editorial review changes meaningfully.
+ *
+ * Keep content-review dates separate from PF model revision dates — never claim
+ * a full site content review on a date when only the PF engine was updated.
  */
+
+import { PF_REVIEWED_ISO } from "@/lib/config/pf";
 
 /** When site copy and policy alignment were last reviewed (human-readable). */
 export const SITE_CONTENT_LAST_UPDATED = "July 2026";
@@ -9,6 +14,16 @@ export const SITE_CONTENT_LAST_UPDATED = "July 2026";
 /** Stable machine-readable date for sitemap lastModified (YYYY-MM-DD). */
 export const SITE_CONTENT_LAST_UPDATED_ISO = "2026-07-01";
 
+/**
+ * Human-readable date of the documented PF wage-ceiling model revision
+ * (17 Sep 2026 ceiling; engine reviewed {@link PF_REVIEWED_ISO}).
+ * This is a model update date — not a claim that all site prose was re-reviewed then.
+ */
+export const PF_MODEL_LAST_UPDATED =
+  PF_REVIEWED_ISO === "2026-10-14" ? "14 October 2026" : PF_REVIEWED_ISO;
+
+/** Machine-readable PF model revision date — keep aligned with {@link PF_REVIEWED_ISO}. */
+export const PF_MODEL_LAST_UPDATED_ISO = PF_REVIEWED_ISO;
 /**
  * Short label for badges — keep in sync with {@link DEFAULT_FINANCIAL_YEAR} in financial-year.ts.
  */
