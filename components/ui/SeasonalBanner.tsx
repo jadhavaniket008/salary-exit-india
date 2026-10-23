@@ -37,7 +37,7 @@ function getSeasonalBanner(): BannerConfig | null {
       label: "Appraisal Season",
       message: "Got a hike? Know what your revised CTC actually means in-hand before accepting.",
       cta: "Calculate new in-hand →",
-      href: "/calculators/ctc-to-in-hand",
+      href: "/ctc-to-in-hand-calculator",
       urgency: "medium",
     };
   }
