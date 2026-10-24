@@ -43,7 +43,16 @@ function apexToWwwProduction(): {
 
 const nextConfig: NextConfig = {
   async redirects() {
-    return [...legacyLandingRedirects(), ...apexToWwwProduction()];
+    return [
+      // Preserve existing campaign and internal links to the former calculator path.
+      {
+        source: "/calculators/ctc-to-in-hand",
+        destination: "/ctc-to-in-hand-calculator",
+        permanent: true,
+      },
+      ...legacyLandingRedirects(),
+      ...apexToWwwProduction(),
+    ];
   },
 };
 
