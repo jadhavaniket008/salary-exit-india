@@ -1,4 +1,5 @@
-﻿import { SalaryHikeCalculatorClient } from "@/components/calculators/clients/SalaryHikeCalculatorClient";
+﻿import Link from "next/link";
+import { SalaryHikeCalculatorClient } from "@/components/calculators/clients/SalaryHikeCalculatorClient";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
 export const metadata = calculatorMetadata("salaryHike");
@@ -10,98 +11,88 @@ export default function SalaryHikeCalculatorPage() {
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-10 sm:px-6">
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
-            How salary hike percentage is calculated (and why it can mislead)
+            What a salary hike percentage does — and does not — tell you
           </h2>
           <p className="text-foreground-secondary">
-            A salary hike percentage is simple math: (New CTC − Old CTC) ÷ Old CTC × 100. HR
-            communications, benchmark reports, and LinkedIn discussions all use this figure. But the
-            percentage hike on CTC and the actual change in your monthly in-hand salary are often
-            meaningfully different, and the gap tends to widen at higher salary levels.
+            This calculator measures the difference between two annual amounts: (new − old) ÷
+            old × 100 for the percentage, and new − old for the annual rupee increase.
+            Enter CTC in both fields or gross salary in both fields. Mixing the two
+            makes the comparison misleading.
           </p>
           <p className="text-foreground-secondary">
-            Why: as your income crosses tax slab thresholds, each additional rupee of gross salary
-            is partly absorbed by higher marginal tax. A 15% CTC hike from ₹15 LPA to ₹17.25 LPA
-            moves more income into the 15–20% new regime slab (or 20–30% old regime slab), making
-            the in-hand increase smaller than 15%.
+            A percentage increase is not a take-home-pay forecast. CTC can include
+            employer PF, gratuity, insurance and variable compensation; gross pay
+            is different again from cash received after employee PF, professional
+            tax and income tax. None of those components is calculated here.
           </p>
         </section>
 
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
-            The tax bracket effect: where increments feel smallest
+            Worked example: ₹12 LPA to ₹15 LPA annual gross
           </h2>
           <p className="text-foreground-secondary">
-            Income tax in India is progressive, but the slab transitions create zones where a salary
-            increment has a disproportionately low in-hand impact. Under the new regime for FY 2026-27:
+            Suppose both amounts are annual <strong>gross salary</strong>, not CTC.
+            Increasing gross from ₹12,00,000 to ₹15,00,000 gives an exact
+            ₹3,00,000 annual increase, or a 25% hike. The monthly gross
+            equivalent changes from ₹1,00,000 to ₹1,25,000: an increase of
+            ₹25,000 before deductions.
           </p>
+          <p className="text-foreground-secondary">
+            Those figures do <strong>not</strong> establish a monthly in-hand
+            increase. To estimate it, run the{" "}
+            <Link href="/ctc-to-in-hand-calculator" className="underline underline-offset-2">
+              CTC-to-in-hand calculator
+            </Link>{" "}
+            twice in <strong>gross salary mode</strong>, once for each annual
+            amount, using comparable PF, professional-tax and tax-regime inputs.
+            Your employer&apos;s actual payroll deductions may differ.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-foreground">
+            Why take-home can change differently from the headline hike
+          </h2>
           <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
-              <strong>Around ₹12 LPA:</strong> The Section 156 rebate (earlier Section 87A) creates a sharp transition.
-              Income below ₹12 lakh (after standard deduction) attracts zero tax. Income ₹1 above
-              that starts accumulating tax. A hike that moves you just past this threshold can feel
-              like you got nothing — your in-hand may not increase at all initially.
+              <strong>Salary definition:</strong> An increase in CTC can include
+              higher employer-side costs; it is not necessarily the same increase
+              in annual gross or fixed cash salary.
             </li>
             <li>
-              <strong>Around ₹15–20 LPA (old regime):</strong> Moving into the 30% slab means 31.2%
-              of each incremental rupee (including cess) goes to tax. A ₹1 lakh annual increment
-              adds roughly ₹6,800/month gross but only ₹4,690/month in-hand.
+              <strong>Taxable income:</strong> Income-tax calculations depend on
+              taxable income, regime and eligibility — not the hike percentage.
+              In the FY 2026–27 new regime, the ₹12 lakh rebate benchmark is
+              based on eligible <em>taxable income</em>, not ₹12 lakh CTC.
+              Marginal relief can apply just above that threshold; it is not
+              an automatic jump to full slab tax.
             </li>
             <li>
-              <strong>At very high salaries (₹50 LPA+):</strong> Surcharges of 10–15% on top of the
-              base tax apply, meaning effective marginal rates of 35–42.7%. This is why senior
-              employees in large firms often feel increments are &quot;disappearing to tax.&quot;
+              <strong>Payroll components:</strong> Employee PF, state
+              professional tax, variable pay and the fixed-versus-variable
+              split can make two otherwise similar offers produce different
+              monthly payouts.
             </li>
           </ul>
         </section>
 
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
-            CTC hike vs in-hand hike: worked example
+            What to confirm before accepting an appraisal or joining offer
           </h2>
-          <p className="text-foreground-secondary">
-            Employee currently earning ₹12 LPA gross, new regime. After-hike: ₹15 LPA gross.
-            CTC hike: 25%.
-          </p>
-          <p className="text-foreground-secondary">
-            Old in-hand (approximate, new regime, no PT, basic PF): ₹85,000/month. New in-hand
-            (approximate): ₹1,02,000/month. That is a 20% in-hand increase — less than the 25% CTC
-            hike, because the additional ₹3 LPA falls partly in the 10–15% slabs and the Section 156
-            rebate (earlier 87A) no longer applies in full.
-          </p>
-          <p className="text-foreground-secondary">
-            The gap is not a mistake or unfairness — it is how progressive taxation works. But it is
-            important to know this before entering a salary negotiation or comparing net pay from
-            your new offer to your current payslip.
-          </p>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-foreground">
-            What to negotiate beyond the CTC number
-          </h2>
-          <p className="text-foreground-secondary">
-            If you are approaching a performance review or a job switch negotiation, the CTC number
-            is only part of the story. Components that affect your in-hand without changing your
-            nominal CTC significantly:
-          </p>
           <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
-            <li>
-              <strong>LTA (Leave Travel Allowance):</strong> Exempt from tax if actual travel bills
-              are submitted under the old regime. Adding LTA to your structure shifts some gross to
-              an exempt component.
-            </li>
-            <li>
-              <strong>Food coupons / meal allowance:</strong> Up to ₹50 per meal (2 meals per
-              working day) is exempt from tax. This is limited but tax-efficient for components
-              below ₹12,000/year.
-            </li>
-            <li>
-              <strong>NPS employer contribution (Section 80CCD(2)):</strong> Employer NPS contributions
-              up to 10% of Basic+DA are deductible even under the new regime — one of the few
-              deductions available in the new regime. This can be negotiated as part of the CTC
-              structure.
-            </li>
+            <li>Request the current and revised annual fixed gross amounts, separately from headline CTC.</li>
+            <li>Ask which employer-side contributions are counted inside the CTC figure.</li>
+            <li>Confirm the employee PF calculation basis and expected professional-tax deduction.</li>
+            <li>Separate guaranteed fixed cash from conditional bonus, incentives and other variable pay.</li>
+            <li>Compare estimated monthly in-hand using the same tax and payroll assumptions for both cases.</li>
           </ul>
+          <p className="text-foreground-secondary">
+            Use the hike percentage here for an apples-to-apples arithmetic
+            comparison, then check actual take-home using the dedicated salary
+            calculator and your written salary breakup.
+          </p>
         </section>
       </div>
     </>
