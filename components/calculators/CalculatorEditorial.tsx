@@ -426,45 +426,34 @@ function OfferComparisonEditorial() {
 function SalaryHikeEditorial() {
   return (
     <Section>
-      <H2>Salary hike in India: how to read the percentage and what it really means</H2>
+      <H2>Salary hike in India: annual increase is not monthly in-hand</H2>
       <P>
-        A salary hike in India is usually expressed as a percentage of your current CTC
-        or gross — but what that percentage actually delivers in monthly cash depends on
-        several factors that the headline number obscures. Understanding the arithmetic
-        helps you evaluate whether a quoted hike genuinely moves your financial situation
-        or is partly cosmetic.
+        A quoted salary hike normally compares two annual amounts. The same percentage
+        means very different rupee increases depending on the starting amount: a 30%
+        increase on ₹6 LPA is ₹1.8 lakh a year (₹15,000 a month before deductions),
+        while a 30% increase on ₹15 LPA is ₹4.5 lakh a year (₹37,500 a month
+        before deductions). Both are arithmetic differences, not predicted take-home.
       </P>
       <P>
-        The base matters enormously. A 30% hike on ₹6 LPA adds ₹1.8 lakh to CTC and
-        roughly ₹12,000–15,000 to monthly in-hand. The same 30% on ₹15 LPA adds ₹4.5
-        lakh to CTC and significantly more to monthly cash — but also shifts your tax
-        bracket and PF contributions. This calculator converts the percentage change into
-        absolute figures so you can see both the CTC delta and the approximate monthly
-        in-hand effect.
+        This tool returns the annual rupee change and percentage change only.
+        It does not calculate revised income tax, employee PF, professional
+        tax or net salary. To compare take-home, enter your before-and-after
+        pay separately into the CTC-to-in-hand calculator with comparable
+        assumptions. Keep CTC versus gross salary definitions consistent.
       </P>
       <P>
-        Hikes from appraisals (increments) versus hikes from job switches (joining offers)
-        behave differently in negotiation. An appraisal increment is typically applied to
-        your existing salary structure, preserving all components. A joining offer may
-        restructure your salary entirely — which can change your Basic+DA ratio, your PF
-        deductions, and your effective take-home even at the same gross. A 20% jump in
-        CTC that comes with a significant drop in Basic might produce less monthly in-hand
-        than you expect.
-      </P>
-      <P>
-        Industry benchmarking: average increments in India vary by sector and performance
-        band. IT services companies typically offer 8–15% for standard performers; product
-        companies can be higher or lower depending on the year. Switching jobs remains the
-        fastest way to get a step-function increase rather than incremental gains. When
-        negotiating a joining offer, anchor on the fixed in-hand number you want, not the
-        CTC percentage — then work backward from there.
+        An appraisal may change fixed pay within an existing salary structure,
+        while a new employer may include different employer-side contributions
+        or a different fixed-versus-variable split in its CTC. Request both
+        written breakups before assuming that a larger percentage increase
+        produces a proportionate increase in monthly cash.
       </P>
       <UL>
-        <li>Hike % × current CTC = absolute CTC addition (before tax/PF changes).</li>
-        <li>The effective monthly in-hand gain is lower than CTC gain due to progressive tax and PF.</li>
-        <li>A restructured salary on a switch may have different Basic+DA ratios than a simple increment.</li>
-        <li>Always verify what "CTC" means in a revised letter: same components, or restructured?</li>
-        <li>Negotiate on fixed monthly in-hand, not CTC, when the structure is uncertain.</li>
+        <li>Annual rupee increase = new annual amount minus old annual amount.</li>
+        <li>Hike percentage = annual increase ÷ old annual amount × 100, when the old amount is above zero.</li>
+        <li>Compare gross with gross, or CTC with CTC; do not mix definitions.</li>
+        <li>Ask which parts of revised CTC are fixed, variable and employer-side costs.</li>
+        <li>Use a separate take-home estimate to factor in tax, employee PF and professional tax.</li>
       </UL>
     </Section>
   );
