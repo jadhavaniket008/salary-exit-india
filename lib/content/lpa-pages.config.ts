@@ -728,7 +728,7 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       {
         question: 'Does an NPS contribution improve my ₹20 LPA in-hand under the new regime?',
         answer:
-          'Under the new regime, an employee's own NPS deposits generally do not qualify under Sections 80CCD(1) or 80CCD(1B). An eligible employer contribution can be deducted under Section 80CCD(2), up to 14% of salary as defined for that section in the new regime. This can reduce taxable income; the impact on monthly bank credit depends on whether the employer contribution is included inside your quoted CTC. This page's simple salary engine does not model employer NPS. Confirm the actual contribution and CTC breakup with HR.',
+          'Under the new regime, an employee's own NPS deposits generally do not qualify under Sections 80CCD(1) or 80CCD(1B). An eligible employer contribution can be deducted under Section 80CCD(2), up to 14% of salary as defined for that section in the new regime. This can reduce taxable income; the impact on monthly bank credit depends on whether the employer contribution is included inside your quoted CTC. The simplified salary engine on this page does not model employer NPS. Confirm the actual contribution and CTC breakup with HR.',
       },
       {
         question: "Do I need to pay advance tax at ₹20 LPA?",
