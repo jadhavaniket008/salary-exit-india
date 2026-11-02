@@ -15,7 +15,8 @@ import {
   ValidationSummary,
   WorkedExample,
 } from "@/components/calculators";
-import { trackCalculatorStarted, trackCalculatorUse, trackInputModeSelected } from "@/lib/analytics/client";
+import { trackCalculatorStarted, trackCalculatorUse, trackInputModeSelected, trackLpa12ExampleCompleted } from "@/lib/analytics/client";
+import type { SalaryExamplePrefill } from "@/lib/growth/lpa12-entry";
 import {
   computeCtcToInHand,
   CTC_WORKED_EXAMPLE_INPUT,
@@ -33,17 +34,17 @@ const fy = DEFAULT_TAX_SETTINGS.financialYear;
 
 type InputMode = "ctc" | "gross";
 
-export function CtcToInHandCalculatorClient() {
+export function CtcToInHandCalculatorClient({ initialPrefill = null }: { initialPrefill?: SalaryExamplePrefill | null } = {}) {
   const ctcWorkedExample = useMemo(() => computeCtcToInHand(CTC_WORKED_EXAMPLE_INPUT), []);
-  const [mode, setMode] = useState<InputMode>("ctc");
+  const [mode, setMode] = useState<InputMode>(initialPrefill ? "gross" : "ctc");
   const [ctcAnnual, setCtcAnnual] = useState("");
   const [employerPfAnnual, setEmployerPfAnnual] = useState("");
   const [gratuityAnnual, setGratuityAnnual] = useState("");
   const [insuranceAnnual, setInsuranceAnnual] = useState("");
-  const [gross, setGross] = useState("");
+  const [gross, setGross] = useState(initialPrefill?.annualGross ?? "");
   const [regime, setRegime] = useState<"old" | "new">("new");
   const [pt, setPt] = useState(String(DEFAULT_PROFESSIONAL_TAX_ANNUAL_ESTIMATE));
-  const [basicDaAnnual, setBasicDaAnnual] = useState("");
+  const [basicDaAnnual, setBasicDaAnnual] = useState(initialPrefill?.annualBasicDa ?? "");
   const [pfAnnual, setPfAnnual] = useState("");
 
   const [errors, setErrors] = useState<string[]>([]);
@@ -56,6 +57,8 @@ export function CtcToInHandCalculatorClient() {
   const [compareError, setCompareError] = useState<string | null>(null);
 
   const hasTrackedStart = useRef(false);
+  const hasTrackedExampleCompletion = useRef(false);
+  const [showExampleHint, setShowExampleHint] = useState(Boolean(initialPrefill));
   function markStarted() {
     if (hasTrackedStart.current) return;
     hasTrackedStart.current = true;
@@ -79,6 +82,7 @@ export function CtcToInHandCalculatorClient() {
   );
 
   function reset() {
+    setShowExampleHint(false);
     setMode("ctc");
     setCtcAnnual("");
     setEmployerPfAnnual("");
@@ -297,6 +301,10 @@ export function CtcToInHandCalculatorClient() {
     setDerivedGross(nextDerivedGross);
     setShowResult(true);
     trackCalculatorUse("ctcToInHand");
+    if (initialPrefill && !hasTrackedExampleCompletion.current) {
+      hasTrackedExampleCompletion.current = true;
+      trackLpa12ExampleCompleted();
+    }
 
     if (compareGross.trim() === "") {
       setCompareResult(null);
@@ -329,6 +337,14 @@ export function CtcToInHandCalculatorClient() {
         Output is a <strong>modeled estimate</strong> from FY slabs + PF rules in code — not your employer's payroll
         system. Ambiguous inputs are blocked with an explicit message (see accuracy card).
       </p>
+
+      {showExampleHint ? (
+        <p className="rounded-lg border border-sky-200 bg-sky-50 p-3 text-sm text-sky-950 dark:border-sky-900 dark:bg-sky-950/30 dark:text-sky-100">
+          Prefilled from the ₹12 LPA guide: <strong>₹12,00,000 annual gross</strong>,
+          not ₹12,00,000 CTC. Edit Basic+DA and professional tax to match your
+          payslip, then select Calculate. No calculation is counted on arrival.
+        </p>
+      ) : null}
 
       <RequiredInputsCallout
         items={
