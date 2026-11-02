@@ -102,3 +102,19 @@ describe("12 LPA high-impression search intent entry", () => {
     expect(resolveSalaryExamplePrefill(undefined)).toBeNull();
   });
 });
+
+describe("45 LPA content-quality claims (AdSense review preparation)", () => {
+  it("does not promise tax savings or a planner ROI without evidence", () => {
+    const page = LPA_LANDING_PAGES.find((p) => p.lpa === 45);
+    expect(page).toBeDefined();
+    const visibleText = [
+      page!.angleParagraph,
+      ...page!.bandInsights,
+      ...(page!.realityCheckParagraphs ?? []),
+    ].join(" ");
+    expect(visibleText).not.toMatch(/pays for itself|₹1\.5–3L|₹2–3L annually|add ₹1–2L/);
+    expect(visibleText).toContain("no guaranteed tax saving");
+    expect(visibleText).toContain("actual Form 16");
+    expect(visibleText).toContain("salary-only model cannot predict either");
+  });
+});
