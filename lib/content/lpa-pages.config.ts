@@ -939,16 +939,16 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
       "No surcharge at this gross (taxable income below ₹50L threshold).",
     ],
     angleParagraph:
-      "₹45 LPA is a common destination for senior engineers (L6/L7 equivalents), directors, and principals in tech. Tax at this gross is ~₹9.44L annually under the new regime — the monthly TDS bite of ~₹78,650 is significant enough that regime optimization and deduction planning can add ₹1–2L back into your year.",
+      "At ₹45 LPA annual gross, the illustrated new-regime tax is roughly ₹9.44 lakh annually, or ₹78,650/month of averaged TDS. A different tax regime or eligible deductions could change the result, but there is no guaranteed tax saving from planning alone. Compare your own verified deductions and salary structure before deciding.",
     bandInsights: [
       "Annual tax under new regime: ~₹9,43,800 (including 4% cess). Monthly TDS spread: ~₹78,650.",
-      "Old regime at ₹45L: with full 80C + substantial HRA + home loan interest, deductions can reduce taxable income by ₹5–10L — potentially saving ₹2–3L annually vs new regime.",
+      "Old-regime comparison: Section 80C, eligible HRA, home-loan interest and other deductions depend on your actual circumstances and applicable limits. Enter your verified deductions in the tax-regime comparison tool rather than assuming the old regime always saves money.",
       "At ₹45 LPA in metro cities, equity compensation (ESOPs, RSUs) often represents a large fraction of total CTC — this page models only the fixed salary gross.",
       "VPF as a tax strategy: under the new regime, VPF saves zero income tax but builds a tax-free EPF corpus. Under old regime, VPF counts toward 80C only up to ₹1.5L ceiling already filled by PPF/ELSS/insurance.",
     ],
     realityCheckParagraphs: [
       `At ₹45 LPA, the monthly in-hand of ~${monthlyNet(45)} is above what most household expenses require in even high-cost metro living — which means the real question is about savings rate and wealth allocation, not sufficiency. This page shows statutory deductions only; your actual wealth build depends on EPF balance, equity vesting, and investment decisions that happen outside the payslip.`,
-      "Tax planning at this income level rewards investment in professional advice. The difference between an optimized and an unoptimized tax declaration at ₹45L can be ₹1.5–3L annually — one fee-only financial planner session typically pays for itself many times over at this income.",
+      "Check your actual Form 16, employer payroll breakup, eligible exemptions and deductions before comparing tax regimes. A qualified tax professional may help with complex income or equity compensation, but any fee and possible savings depend on your situation; this salary-only model cannot predict either.",
     ],
     faq: [
       {
