@@ -23,6 +23,7 @@ import {
   getHeuristicMonthlyExpenses,
   lifestyleDescription,
 } from "@/lib/config/salary-reality-heuristics";
+import { shouldTrackRealityCheckUsage } from "@/lib/analytics/salary-reality-usage";
 import {
   trackCalculatorStarted,
   trackInputModeSelected,
@@ -210,6 +211,7 @@ export function SalaryRealityCheckCalculatorClient({
     if (next === mode) return;
     trackInputModeSelected("salaryRealityCheck", mode, next);
     setMode(next);
+    setHasInteractedWithInputs(true);
     markStarted();
   }
 
@@ -260,11 +262,19 @@ export function SalaryRealityCheckCalculatorClient({
   const canShowResult = parsed.ok && result;
 
   const srcUsageTracked = useRef(false);
+  const [hasInteractedWithInputs, setHasInteractedWithInputs] = useState(false);
   useEffect(() => {
-    if (!canShowResult || srcUsageTracked.current) return;
+    // Pre-filled embeds render a valid example on mount: that is a page view,
+    // not a completed user calculation. Count only after intentional edits.
+    if (!shouldTrackRealityCheckUsage({
+      hasResult: Boolean(canShowResult),
+      alreadyTracked: srcUsageTracked.current,
+      embed,
+      hasInteractedWithInputs,
+    })) return;
     srcUsageTracked.current = true;
     trackSalaryRealityCheckUse({ embed });
-  }, [canShowResult, embed]);
+  }, [canShowResult, embed, hasInteractedWithInputs]);
 
   const main = (
     <>
@@ -320,6 +330,7 @@ export function SalaryRealityCheckCalculatorClient({
         <form
           id="salary-reality-form"
           className="space-y-5"
+          onChangeCapture={() => setHasInteractedWithInputs(true)}
           onSubmit={(e) => e.preventDefault()}
           noValidate
         >
