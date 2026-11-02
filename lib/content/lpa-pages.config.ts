@@ -404,9 +404,9 @@ export const LPA_LANDING_PAGES: readonly LpaLandingPageConfig[] = [
     slug: "12-lpa-in-hand-salary",
     lpa: 12,
     seo: {
-      title: "12 LPA Meaning & Monthly In-Hand Salary",
+      title: "12 LPA Means ₹1 Lakh/Month Before Deductions",
       description:
-        "12 LPA means ₹12 lakh a year or ₹1 lakh a month before deductions. See a gross-to-in-hand example, PF and tax assumptions, or calculate from your CTC.",
+        "12 LPA is ₹12 lakh/year or ₹1 lakh/month before deductions. In our gross-salary example, in-hand is about ₹96,792/month after PF and PT; CTC can differ.",
       keywords: ["12 LPA in hand salary calculator", "12 lpa ka matlab", "12 lpa salary structure", "12 lakh CTC take home", "12 LPA monthly salary hand"],
     },
     scenario: baseScenario(12),
