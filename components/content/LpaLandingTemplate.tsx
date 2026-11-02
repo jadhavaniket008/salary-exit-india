@@ -1,4 +1,5 @@
 import { PfModelNotice } from "@/components/content/PfModelNotice";
+import { Lpa12CalculatorLink } from "@/components/content/Lpa12CalculatorLink";
 import Link from "next/link";
 import { Container, Section } from "@/components/ui";
 import { BreadcrumbNav } from "@/components/content/BreadcrumbNav";
@@ -113,9 +114,13 @@ export function LpaLandingTemplate({ config }: Props) {
                 है — capped employee PF, income tax और professional tax काटने के बाद।
               </p>
             </div>
-            <Link href={ROUTES.ctcToInHandCalculator} className="inline-flex rounded-lg bg-accent-solid px-4 py-2 text-sm font-semibold text-white">
-              Calculate using my actual CTC or gross →
-            </Link>
+            {config.lpa === 12 ? (
+              <Lpa12CalculatorLink />
+            ) : (
+              <Link href={ROUTES.ctcToInHandCalculator} className="inline-flex rounded-lg bg-accent-solid px-4 py-2 text-sm font-semibold text-white">
+                Calculate using my actual CTC or gross →
+              </Link>
+            )}
             <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <FreshnessBadges />
               <MethodologyLink />
