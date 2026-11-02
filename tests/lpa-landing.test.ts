@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { computeCtcToInHand } from "@/lib/calculators/ctc-to-inhand";
 import { getAdjacentLpa, LPA_LANDING_PAGES } from "@/lib/content/lpa-pages.config";
+import { resolveSalaryExamplePrefill, LPA_12_GROSS_EXAMPLE_HREF } from "@/lib/growth/lpa12-entry";
 
 describe("LPA landing page scenarios", () => {
   it("each config runs through computeCtcToInHand with consistent in-hand identity", () => {
@@ -79,5 +80,25 @@ describe("LPA editorial claims ↔ scenario contract (November 2026 corrections)
     expect(npsAnswer).toContain("80CCD(2)");
     expect(npsAnswer).toContain("14% of salary");
     expect(npsAnswer).not.toContain("10% of Basic+DA");
+  });
+});
+
+describe("12 LPA high-impression search intent entry", () => {
+  it("answers LPA meaning accurately without conflating gross and CTC", () => {
+    const p = LPA_LANDING_PAGES.find((p) => p.lpa === 12)!;
+    const result = computeCtcToInHand(p.scenario);
+    expect(p.seo.title).toContain("₹1 Lakh/Month Before Deductions");
+    expect(p.seo.description).toContain("CTC can differ");
+    expect(result.grossMonthly).toBe(100_000);
+    expect(Math.round(result.inHandMonthly)).toBe(96_792);
+  });
+  it("only accepts the explicit gross example key and preserves 45% Basic+DA", () => {
+    expect(LPA_12_GROSS_EXAMPLE_HREF).toContain("?example=12l-gross");
+    expect(resolveSalaryExamplePrefill("12l-gross")).toEqual({
+      annualGross: "1200000", annualBasicDa: "540000",
+    });
+    expect(resolveSalaryExamplePrefill("1200000")).toBeNull();
+    expect(resolveSalaryExamplePrefill(["12l-gross"])).toBeNull();
+    expect(resolveSalaryExamplePrefill(undefined)).toBeNull();
   });
 });

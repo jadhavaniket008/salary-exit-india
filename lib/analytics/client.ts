@@ -44,6 +44,18 @@ export function trackCalculatorUse(slug: CalculatorSlug): void {
   });
 }
 
+/** User explicitly chose the prefilled 12 LPA gross calculator example. */
+export function trackLpa12CalculatorEntry(): void {
+  gtagEvent("lpa12_example_cta_click", { cta_placement: "lpa_12_hero" });
+  plausibleEvent("lpa12_example_cta_click", { cta_placement: "lpa_12_hero" });
+}
+
+/** First valid calculation after opening from the 12 LPA example (once per mount). */
+export function trackLpa12ExampleCompleted(): void {
+  gtagEvent("lpa12_example_calculation_complete");
+  plausibleEvent("lpa12_example_calculation_complete");
+}
+
 /** First meaningful input change in a session — fires once per mount, before a result exists. */
 export function trackCalculatorStarted(slug: CalculatorSlug): void {
   const params = { calculator_slug: slug };

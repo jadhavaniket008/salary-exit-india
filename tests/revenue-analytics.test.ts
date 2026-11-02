@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { trackAffiliateClick, trackBusinessInquiry, trackEmbedCodeCopied,
-  trackNewsletterSignup, trackOfferCompareClick, trackResourceDownload } from "@/lib/analytics/client";
+  trackNewsletterSignup, trackOfferCompareClick, trackResourceDownload,
+  trackLpa12CalculatorEntry, trackLpa12ExampleCompleted } from "@/lib/analytics/client";
 
 describe("consented intent measurement", () => {
   let consent: boolean;
@@ -29,6 +30,15 @@ describe("consented intent measurement", () => {
     trackResourceDownload("csv"); trackEmbedCodeCopied(); trackNewsletterSignup(); trackAffiliateClick("Zerodha", "investing");
     expect(gtag.mock.calls.map((c) => c[1])).toEqual(["resource_download_click", "embed_code_copy", "sign_up", "affiliate_link_click"]);
     expect(JSON.stringify(gtag.mock.calls)).not.toMatch(/email|salary_amount|purchase|generate_lead/);
+  });
+  it("measures only categorical 12 LPA guide-to-calculator intent and completion", () => {
+    trackLpa12CalculatorEntry();
+    trackLpa12ExampleCompleted();
+    expect(gtag.mock.calls).toEqual([
+      ["event", "lpa12_example_cta_click", { cta_placement: "lpa_12_hero" }],
+      ["event", "lpa12_example_calculation_complete", undefined],
+    ]);
+    expect(JSON.stringify(gtag.mock.calls)).not.toMatch(/salary_amount|gross_amount|income_value/);
   });
   it("stops custom events after withdrawal even when the loaded functions remain", () => {
     consent = false;

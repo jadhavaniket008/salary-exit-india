@@ -2,13 +2,20 @@
 import { AffiliateCta } from "@/components/monetization/AffiliateCta";
 import { CollapsibleArticleSection } from "@/components/content/CollapsibleArticleSection";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
+import { resolveSalaryExamplePrefill } from "@/lib/growth/lpa12-entry";
 
 export const metadata = calculatorMetadata("ctcToInHand");
 
-export default function CtcToInHandCalculatorPage() {
+export default async function CtcToInHandCalculatorPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ example?: string | string[] }>;
+}) {
+  const { example } = await searchParams;
+  const initialPrefill = resolveSalaryExamplePrefill(example);
   return (
     <>
-      <CtcToInHandCalculatorClient />
+      <CtcToInHandCalculatorClient initialPrefill={initialPrefill} />
       <div className="mx-auto max-w-3xl px-4 pt-6 sm:px-6">
         <AffiliateCta context="investing" />
       </div>
