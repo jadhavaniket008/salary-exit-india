@@ -43,7 +43,8 @@ export function GratuityCalculatorClient() {
     () => [
       `Formula: (${DEFAULT_GRATUITY_ASSUMPTIONS.gratuityDaysPerYear}/${DEFAULT_GRATUITY_ASSUMPTIONS.daysInMonthBasis}) × last drawn monthly salary × years of service.`,
       `Tax-exempt slice for covered employers is capped at ₹${formatInr(DEFAULT_GRATUITY_ASSUMPTIONS.taxExemptCapCoveredEmployer)} in this model.`,
-      `Eligibility under the Act generally requires ${DEFAULT_GRATUITY_ASSUMPTIONS.minimumYearsForEligibility}+ years (exceptions exist).`,
+      `Five years is the usual threshold; qualifying fixed-term employment, death and disablement have different rules.`,
+      `Enter last-drawn statutory wages after verifying the 50% allowance add-back; this calculator does not derive the wage base.`,
     ],
     []
   );
@@ -63,7 +64,7 @@ export function GratuityCalculatorClient() {
     const nextErrors: string[] = [];
     const nextFieldErrors: Record<string, string> = {};
 
-    const m = sanitizeNumber(monthly, { label: "Last drawn monthly salary (Basic+DA)" });
+    const m = sanitizeNumber(monthly, { label: "Last drawn monthly statutory wages" });
     if (!m.ok) {
       nextErrors.push(m.error);
       nextFieldErrors.monthly = m.error;
@@ -118,18 +119,18 @@ export function GratuityCalculatorClient() {
 
       <RequiredInputsCallout
         items={[
-          "Last drawn monthly salary (Basic + DA, ₹)",
+          "Last drawn monthly statutory wages (₹)",
           "Years of service (can be fractional for rough estimates)",
-          "Whether covered under Payment of Gratuity Act (affects exempt cap modeling)",
+          "Whether covered by statutory gratuity provisions (affects rough exemption model)",
         ]}
       />
 
       <Card className="space-y-6 p-6">
         <form className="space-y-5" onSubmit={onSubmit} noValidate>
           <FormField
-            label="Last drawn monthly salary (Basic + DA, ₹)"
+            label="Last drawn monthly statutory wages (₹)"
             id="monthly"
-            hint="Use the definition consistent with your employer's gratuity policy."
+            hint="Confirm Basic, DA, retaining allowance and any applicable 50% allowance add-back with payroll; this tool does not compute it."
             error={fieldErrors.monthly}
           >
             <Input id="monthly" inputMode="decimal" value={monthly} onChange={(e) => setMonthly(e.target.value)} />
@@ -145,10 +146,10 @@ export function GratuityCalculatorClient() {
             </legend>
             <label className="flex items-center gap-2 text-sm">
               <input type="checkbox" checked={covered} onChange={(e) => setCovered(e.target.checked)} />
-              Covered under Payment of Gratuity Act (model ₹20L exempt cap)
+              Covered by statutory gratuity provisions (rough ₹20L exemption model)
             </label>
             <p className="text-xs text-foreground-muted">
-              If you uncheck this, we do not assume the statutory exempt cap.
+              Employer coverage and income-tax exemption are separate; this checkbox is only a modeling assumption.
             </p>
           </fieldset>
 
