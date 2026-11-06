@@ -31,8 +31,8 @@ export default function AboutPage() {
       <p>
         <strong>Aniket is not a chartered accountant, employment lawyer, or SEBI-registered adviser.</strong>{" "}
         Tax slabs, PF rules, and gratuity/leave-encashment formulas are sourced from Finance Act
-        publications, CBDT notifications, the EPF &amp; Miscellaneous Provisions Act, and the Payment of
-        Gratuity Act — cited on the <Link href={ROUTES.methodology}>methodology</Link> page — but the
+        publications, CBDT notifications, the applicable provident-fund framework and the Code on
+        Social Security, 2020 — cited on the <Link href={ROUTES.methodology}>methodology</Link> page — but the
         calculator engine itself has not been reviewed by an external CA or lawyer. Treat every output as
         an estimate to verify, not a professional opinion.
       </p>
@@ -82,7 +82,7 @@ export default function AboutPage() {
       <p>
         Each tool runs on the same core calculation layer (TypeScript, with unit tests): you supply inputs,
         the engine applies published formulas and config — tax slabs for the configured financial year, PF
-        rules under the Employees&apos; Provident Funds Act, Payment of Gratuity Act calculations, HRA exemption
+        rules under the Employees&apos; Provident Funds Act, gratuity estimates under the current social-security wage framework, HRA exemption
         under Section 10(13A). Results are labeled as estimates where the real world introduces variation
         (TDS timing, state professional tax tables, employer-specific PF wage definitions, bonuses).
       </p>
@@ -113,8 +113,8 @@ export default function AboutPage() {
       </p>
       <p>
         Tax slab data is sourced from Finance Act publications and CBDT notifications. PF rules reference
-        the Employees&apos; Provident Funds and Miscellaneous Provisions Act, 1952. Gratuity calculations follow
-        the Payment of Gratuity Act, 1972. Where rules are complex, we document the simplification we made
+        the Employees&apos; Provident Funds and Miscellaneous Provisions Act, 1952. Gratuity content references
+        the Code on Social Security, 2020, effective 21 November 2025; the calculator is a simplified estimate. Where rules are complex, we document the simplification we made
         and why.
       </p>
       <p>
