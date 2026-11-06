@@ -1,4 +1,4 @@
-﻿import { GratuityCalculatorClient } from "@/components/calculators/clients/GratuityCalculatorClient";
+import { GratuityCalculatorClient } from "@/components/calculators/clients/GratuityCalculatorClient";
 import { calculatorMetadata } from "@/lib/calculator-metadata";
 
 export const metadata = calculatorMetadata("gratuity");
@@ -10,81 +10,73 @@ export default function GratuityCalculatorPage() {
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-10 sm:px-6">
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
-            What gratuity is and when you are entitled to it
+            Gratuity eligibility under the current labour codes
           </h2>
           <p className="text-foreground-secondary">
-            Gratuity is a statutory payment mandated by the Payment of Gratuity Act, 1972. It is a
-            lump sum paid by an employer to an employee as a token of gratitude for continuous
-            service. Unlike provident fund, gratuity is entirely funded by the employer — no amount
-            is deducted from your salary.
+            Gratuity is an employer-funded statutory benefit governed by the Code on Social
+            Security, 2020, in force from 21 November 2025. The earlier Payment of Gratuity
+            Act, 1972 is historical legislation, not the governing present-law reference.
+            Coverage depends on the establishment and applicable provisions.
           </p>
           <p className="text-foreground-secondary">
-            The Act applies to establishments with 10 or more employees. Eligibility requires
-            <strong> continuous service of at least five years</strong> with the same employer.
-            However, the five-year rule has an important exception: if an employee dies or becomes
-            permanently disabled, gratuity is payable regardless of years of service. Similarly,
-            the Supreme Court has held that even 4 years and 240 days qualifies as &quot;five years&quot;
-            in certain interpretations, though this varies by employer and jurisdiction.
+            Five years of continuous service is the usual threshold, but it is not universal.
+            Death and disablement are exceptions, and qualifying fixed-term employees have
+            a separate rule: Ministry of Labour guidance specifies eligibility after one year
+            of service under the fixed-term contract. Do not assume a blanket rule that
+            &quot;four years and 240 days always counts as five years&quot;.
           </p>
         </section>
 
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
-            How the gratuity formula works: the 15/26 rule explained
+            How the 15/26 estimate works
           </h2>
-          <p className="text-foreground-secondary">
-            The formula under the Payment of Gratuity Act is:
-          </p>
           <p className="rounded-lg border border-border bg-surface-subtle p-4 font-mono text-sm text-foreground">
-            Gratuity = (15 × Last Drawn Monthly Salary × Years of Service) ÷ 26
+            Illustrative gratuity = (15 × Last Drawn Monthly Statutory Wages × Years Used) ÷ 26
           </p>
           <p className="text-foreground-secondary">
-            The &quot;15&quot; represents 15 days&apos; pay per year of service. The &quot;26&quot; represents the number of
-            working days in a month (a 6-day work week with 4 Sundays subtracted from 30 days).
-            <strong> Last drawn salary</strong> means Basic + Dearness Allowance only — HRA, special
-            allowance, and other components are excluded.
+            The 15/26 method estimates 15 days&apos; wages for a year of service.
+            Actual service-year rounding and special categories, including certain
+            fixed-term and seasonal arrangements, require separate verification.
+            The calculator accepts the monthly wage basis you supply; it does not
+            derive your statutory wage base from a full salary breakup.
           </p>
           <p className="text-foreground-secondary">
-            Example: 8 years of service, last Basic+DA ₹50,000/month. Gratuity = (15 × 50,000 × 8) ÷ 26
-            = ₹2,30,769. The maximum gratuity payable under the Act is ₹20 lakh — above this, the excess
-            is at the employer&apos;s discretion (some companies pay higher voluntarily).
+            For the current Code on Social Security wage definition, Basic, dearness
+            allowance and retaining allowance (if any) generally form the starting point.
+            When specified excluded allowances or payments exceed 50% of relevant remuneration,
+            the excess may have to be added back to statutory wages. So &quot;Basic + DA
+            only&quot; is not universally correct. Confirm the wage base with payroll before
+            entering it here.
           </p>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-foreground">
-            Tax treatment of gratuity
-          </h2>
           <p className="text-foreground-secondary">
-            For government employees, the entire gratuity is tax-exempt. For private sector employees
-            covered under the Payment of Gratuity Act, the exemption is the <em>least</em> of:
-          </p>
-          <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
-            <li>The actual gratuity received</li>
-            <li>₹20,00,000 (the statutory maximum)</li>
-            <li>15 days&apos; salary × years of service (using the formula above)</li>
-          </ul>
-          <p className="text-foreground-secondary">
-            For most employees receiving gratuity within the statutory ceiling, the full amount is
-            effectively tax-free. If your employer voluntarily pays gratuity beyond the statutory limit,
-            the excess is taxable as salary income in the year of receipt.
+            Example: if the applicable last-drawn monthly statutory wage base is ₹50,000 and
+            eight years are counted, this simplified model returns approximately ₹2,30,769
+            before any legally applicable ceiling, rounding, entitlement and tax checks.
           </p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-foreground">
-            Gratuity in your CTC and what that means
-          </h2>
+          <h2 className="text-xl font-semibold text-foreground">Tax exemption and CTC</h2>
           <p className="text-foreground-secondary">
-            Many employers include gratuity accrual in CTC — typically 4.81% of Basic+DA (which is
-            (15/26) ÷ 12 months, or approximately 1/12 of 15 days&apos; pay per year). This means your
-            &quot;CTC&quot; includes money that is not available to you until you complete five years of service
-            and then exit.
+            The calculator shows a <strong>rough</strong> tax-exempt split using its configured
+            ₹20 lakh cap for the covered-employer model. This is not an assessment of your
+            actual income-tax exemption: employer category, applicable tax law, prior
+            gratuity receipts, salary history and entitlement can change the result.
+            A statutory benefit ceiling and an income-tax exemption limit are not the same claim.
           </p>
           <p className="text-foreground-secondary">
-            If you leave before five years, this portion of your CTC is forfeited — it is not paid
-            out, and it was never in your take-home salary. This is one reason why short-tenure employees
-            often find that their effective compensation is lower than their CTC implied.
+            Employers may include an estimated gratuity accrual in CTC. That provision is not
+            monthly take-home cash, and leaving before five years does not invariably
+            eliminate entitlement because legal exceptions exist. Check the contract,
+            employment category and current wage definition rather than relying on a CTC
+            percentage alone.
+          </p>
+          <p className="text-sm text-foreground-secondary">
+            Official sources:{" "}
+            <a className="underline" href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2192463" target="_blank" rel="noopener noreferrer">labour-code commencement</a>,
+            {" "}<a className="underline" href="https://www.labour.gov.in/static/uploads/2026/01/de4758d5bfeffc456d7de97a801891b0.pdf" target="_blank" rel="noopener noreferrer">Ministry FAQ on wages and gratuity</a>,
+            {" "}and{" "}<a className="underline" href="https://www.labour.gov.in/static/uploads/2026/03/a4ccf4c6d97c4f1f36a6d83f8c64213d.pdf" target="_blank" rel="noopener noreferrer">March 2026 clarifications</a>.
           </p>
         </section>
       </div>
