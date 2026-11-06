@@ -188,47 +188,32 @@ function EpfEditorial() {
 function GratuityEditorial() {
   return (
     <Section>
-      <H2>How gratuity works in India: eligibility, formula, and tax treatment</H2>
+      <H2>Gratuity: current wage definition, service eligibility and tax limits</H2>
       <P>
-        Gratuity is a statutory lump-sum benefit paid by employers to employees as a token
-        of appreciation for long service, governed by the Payment of Gratuity Act, 1972.
-        It applies to establishments with 10 or more employees. For most private-sector
-        salaried employees in India, gratuity becomes payable after completing five years
-        of continuous service — though the exact minimum-service rule has court
-        interpretations worth verifying with your employer's HR.
+        Gratuity for covered employees is governed by the Code on Social Security, 2020,
+        in force since 21 November 2025. Five years of service is the ordinary eligibility
+        threshold, but death, disablement and qualifying fixed-term employment have exceptions.
+        For fixed-term employees, current Ministry guidance identifies a one-year service rule.
       </P>
       <P>
-        The formula used by most covered employers is: <em>Monthly basic salary × 15 × years
-        of service ÷ 26</em>. The "26" represents a standard working-month denominator; the
-        "15" represents 15 days' salary per year of service. Monthly basic salary here means
-        the last drawn Basic + DA, not gross. This means the gratuity quantum is directly
-        sensitive to your Basic+DA — a low Basic salary at a high-CTC company will produce a
-        lower gratuity than the same gross at a company with a higher Basic structure.
+        The common illustrative method is 15 days of <em>last-drawn statutory wages</em> per
+        counted year, often shown as monthly wage × 15 × years ÷ 26. Basic, DA and any
+        retaining allowance are the starting components; an excess of specified excluded
+        payments beyond the 50% threshold may need to be added back. Basic+DA alone is
+        therefore not a universal statutory base.
       </P>
       <P>
-        Tax treatment depends on your employer's coverage status. For employees covered
-        under the Payment of Gratuity Act (10+ employees), gratuity received is exempt
-        from income tax up to a statutory ceiling. Beyond that ceiling, the excess is
-        taxable as salary income. For employers not covered by the Act (fewer than 10
-        employees), the exemption formula is different and lower. The specific rupee
-        ceiling is set by the government and has been revised over time — verify the
-        current limit on the Income Tax Department website or with a qualified CA before
-        filing. {/* needs manual legal verification: exact current ₹ ceiling for PGA-covered employers */}
-      </P>
-      <P>
-        Gratuity is part of your final settlement when you resign, are terminated, or
-        retire. Employers typically compute it on the last drawn Basic+DA. Disputes
-        often arise around service year rounding (is 4 years 8 months counted as 5 years?)
-        — check your employment contract and the prevailing interpretation under the
-        Gratuity Act. The calculator here estimates the gross gratuity amount; consult
-        your HR policy for the exact eligible amount in your situation.
+        SalaryExit does not calculate the wage add-back or determine eligibility. Enter the
+        wage basis verified with payroll; the result is a mathematical estimate. Rounding,
+        employment category, service length, contractual enhancements and tax exemptions
+        require separate checks. The tool&apos;s ₹20 lakh exempt-cap approximation is not
+        an individual tax assessment.
       </P>
       <UL>
-        <li>Applicable after 5 years of continuous service at establishments with 10+ employees.</li>
-        <li>Formula: (Monthly Basic+DA × 15 × completed years) ÷ 26.</li>
-        <li>Tax exemption exists up to a statutory ceiling for covered employers — verify current cap.</li>
-        <li>Not paid on resignation before completing 5 years (with limited exceptions for death/disability).</li>
-        <li>Part of your final settlement — appears in FnF alongside leave encashment and any notice recovery.</li>
+        <li>Check employer coverage and employment category before applying the estimate.</li>
+        <li>Confirm the last-drawn statutory wages and any 50% allowance add-back.</li>
+        <li>Check exceptions for death, disablement and qualifying fixed-term service.</li>
+        <li>Request the employer&apos;s written gratuity calculation and verify tax separately.</li>
       </UL>
     </Section>
   );
@@ -332,46 +317,35 @@ function LeaveEncashmentEditorial() {
 function FinalSettlementEditorial() {
   return (
     <Section>
-      <H2>Final settlement (FnF) in India: components, timeline, and what to verify</H2>
+      <H2>Final settlement (FnF): check each component, recovery and deadline</H2>
       <P>
-        Full and final settlement (FnF) is the net payment (or recovery) between you
-        and your employer at the end of employment. It is calculated by summing everything
-        the employer owes you, then subtracting anything you owe the employer. The result
-        can be positive (a payment to you) or negative (a recovery from you, sometimes
-        through adjustment against accrued salary or gratuity).
+        A final-settlement statement may list salary due, eligible leave encashment,
+        gratuity, bonus or reimbursements, as well as employer-claimed recoveries.
+        This calculator only totals credit and deduction lines entered by the user;
+        it does not establish statutory entitlement, legal enforceability or final tax.
       </P>
       <P>
-        Typical FnF credit components include: last month's salary (for days worked),
-        leave encashment of accumulated earned leave (subject to company policy and
-        tax rules), gratuity if eligible (5+ years, covered employer), bonus arrears
-        if applicable and unpaid, and notice pay received from employer if asked to leave
-        early. Typical deductions include: notice period recovery if you left short
-        (unserved notice days × per-day salary), salary advances or loan recoveries,
-        and any asset recovery.
+        Under section 17(2) of the Code on Wages, 2019, wages payable on resignation and
+        certain other separations are generally due within two working days, subject to
+        applicable exceptions or other-law deadlines. This is not a universal two-day
+        deadline for gratuity, reimbursements, bonuses or the whole FnF package.
       </P>
       <P>
-        Timeline: the Payment of Wages Act and some state-specific shops and establishments
-        acts prescribe timelines for final settlement — often within 30–60 days of
-        separation. In practice, larger companies with payroll software can complete FnF
-        faster; smaller companies sometimes delay. Form 16 Part A for the year of
-        separation should reflect the FnF components, which matters when you file your
-        ITR — particularly if gratuity, leave encashment, or unusually large FnF amounts
-        are involved.
+        Under section 18, deductions from wages must be authorised by law. A claimed
+        notice-period recovery is not automatically valid just because HR lists it or
+        a contract mentions it. Ask for the written settlement breakup, notice-days
+        calculation, salary basis, contract terms and legal basis for the claim.
       </P>
       <P>
-        Verifying your FnF: ask HR for a detailed line-item breakup before signing any
-        settlement letter. Common errors include: wrong number of leave days encashed,
-        incorrect gratuity base (uses old salary rather than last drawn), wrong notice
-        period recovery calculation (using working days instead of calendar days), and
-        missing bonus arrears. Use this calculator to sanity-check the arithmetic before
-        accepting the final figure.
+        Do not automatically net a disputed recovery against protected wages. Keep
+        payment records and check gratuity under the Code on Social Security, 2020,
+        including its revised statutory wage definition and any service exceptions.
       </P>
       <UL>
-        <li>Credits: last salary + leave encashment + gratuity + bonus arrears + notice pay received.</li>
-        <li>Debits: notice recovery + loan/advance recovery + asset recovery.</li>
-        <li>Ask for a detailed breakup before signing any settlement letter.</li>
-        <li>Verify gratuity base: it should be last drawn Basic+DA, not older salary.</li>
-        <li>FnF components appear in Form 16 Part A for the separation year — keep records for ITR.</li>
+        <li>List every credit and proposed recovery separately.</li>
+        <li>Verify any notice claim rather than treating it as settled.</li>
+        <li>Separate wage payment deadlines from other component deadlines.</li>
+        <li>Use the result as arithmetic, not a guaranteed bank credit.</li>
       </UL>
     </Section>
   );
