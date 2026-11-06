@@ -156,7 +156,7 @@ export const CALCULATOR_TRUST: Record<CalculatorSlug, CalculatorTrustProfile> = 
   gratuity: {
     confidence: "medium",
     headline:
-      "Statutory-style (15/26) formula on last drawn Basic+DA with a rough exempt cap for covered employers — legal/tax finality needs a professional.",
+      "Statutory-style (15/26) arithmetic on user-entered last-drawn wages; 50% allowance add-back, eligibility and final tax need separate verification.",
     direct: [
       "Formula output from salary × years × (15/26) under configured day basis.",
     ],
@@ -164,7 +164,7 @@ export const CALCULATOR_TRUST: Record<CalculatorSlug, CalculatorTrustProfile> = 
       "Rough split between exempt (capped) vs taxable gratuity in the model.",
     ],
     assumptions: [
-      "Eligibility and coverage checkbox; not every employer rule.",
+      "Employer coverage and eligibility are not established by this tool; qualifying fixed-term employment and death/disablement can be exceptions to the usual five years.",
     ],
     realWorldFactors: [
       "Non-covered schemes, gratuity policy caps, and payment timing.",
@@ -172,7 +172,7 @@ export const CALCULATOR_TRUST: Record<CalculatorSlug, CalculatorTrustProfile> = 
     ],
     caveatsTitle: "Why gratuity in real life may differ",
     caveatsBullets: [
-      "Service years rounding and salary definition per policy.",
+      "Service-year rounding and statutory wage definition, including any 50% allowance add-back, are not inferred.",
       "Statutory vs contractual gratuity schemes.",
     ],
   },
@@ -236,12 +236,12 @@ export const CALCULATOR_TRUST: Record<CalculatorSlug, CalculatorTrustProfile> = 
       "All figures are gross as entered; no tax withholding line unless you add it.",
     ],
     realWorldFactors: [
-      "Recoveries, advances, and pending approvals.",
-      "Employer-specific settlement schedules and holds.",
+      "Claimed recoveries require contractual and legal checks; listing a wage deduction does not automatically authorise it.",
+      "Wages due on separation under Code on Wages section 17(2) have distinct deadlines from other FnF components.",
     ],
     caveatsTitle: "Gaps to watch",
     caveatsBullets: [
-      "Missing a line means missing money — this tool never guesses components.",
+      "The arithmetic covers only user-entered lines and does not verify entitlements, notice recovery or lawful wage deductions.",
       "Net tax after FnF is outside this screen.",
     ],
   },

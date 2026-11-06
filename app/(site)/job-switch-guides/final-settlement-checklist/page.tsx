@@ -14,7 +14,7 @@ const faq: FaqItem[] = [
   {
     question: "How long does a full and final settlement take in India?",
     answer:
-      "It varies by state — several states mandate somewhere between 7 and 45 days from your last working day under their Shops and Establishments Act rules. Check your company's HR policy for their committed timeline.",
+      "Under Code on Wages section 17(2), wages due on resignation and certain other separations are generally payable within two working days, subject to applicable exceptions and other-law deadlines. Other full-and-final components, including gratuity and reimbursements, can follow different rules; ask HR for component-wise payment dates.",
   },
   {
     question: "Should I sign the no-dues certificate before checking the settlement amount?",
@@ -41,8 +41,8 @@ export default function FinalSettlementChecklistPage() {
       urlPath={guideArticlePath(meta)}
       description={meta.description}
       faq={faq}
-      lastUpdated="20 July 2026"
-      lastUpdatedIso="2026-07-20"
+      lastUpdated="6 November 2026"
+      lastUpdatedIso="2026-11-06"
       guideCluster={{ hub: "jobSwitch", segment: "final-settlement-checklist" }}
     >
       <FinalSettlementChecklistBody />

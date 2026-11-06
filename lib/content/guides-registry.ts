@@ -285,7 +285,7 @@ export const GUIDE_ARTICLES: readonly GuideArticleMeta[] = [
     segment: "final-settlement-checklist",
     title: "Final settlement checklist: what your employer owes you when you resign",
     description:
-      "Every line item a full and final settlement should include, the statutory timeline, and what to verify before you sign the no-dues certificate.",
+      "Check final-settlement credits, proposed recoveries and component-specific wage deadlines before signing a no-dues certificate.",
     keywords: [
       "full and final settlement",
       "final settlement checklist",
