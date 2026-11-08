@@ -64,48 +64,71 @@ export default function LeaveEncashmentCalculatorPage() {
             Tax treatment: retirement vs resignation matters significantly
           </h2>
           <p className="text-foreground-secondary">
-            The tax treatment of leave encashment differs sharply depending on how you leave the organization:
+            Tax treatment depends on when the payment is received, your employment category and
+            the applicable income-tax provisions. This calculator estimates gross encashment only:
+            it does not determine your individual tax exemption.
           </p>
           <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
-              <strong>On retirement or death in service:</strong> Government employees get full exemption.
-              Private sector employees can claim exemption up to ₹25,00,000 (₹25 lakh) — this limit
-              was revised significantly upward in 2023 from the earlier ₹3 lakh limit. The exemption
-              applies to Earned/Privilege Leave encashment only.
+              <strong>On retirement or death in service:</strong> Special exemption rules apply.
+              Eligible government employees generally receive full exemption on retirement; amounts
+              paid after death are subject to their own treatment. For eligible non-government
+              employees, ₹25,00,000 (₹25 lakh) is a maximum lifetime exemption ceiling, not an
+              automatic tax-free payout. The statutory four-way calculation and prior exemptions matter.
             </li>
             <li>
               <strong>During employment (in-service encashment):</strong> Fully taxable as salary income
               in the year of receipt. No exemption available.
             </li>
             <li>
-              <strong>On resignation:</strong> Fully taxable as salary in the year of receipt. The
-              ₹25 lakh exemption only applies at retirement. This is a significant financial difference
-              and often not well understood by employees planning exits.
+              <strong>On resignation:</strong> Eligible earned-leave encashment paid upon cessation of
+              employment may qualify for the applicable leave-encashment exemption, subject to the
+              statutory conditions and limits. Indian court decisions have interpreted retirement
+              &quot;or otherwise&quot; to include resignation for this purpose. Do not assume either
+              complete taxation or complete exemption without checking the circumstances and
+              applicable current-year income-tax law.
             </li>
           </ul>
         </section>
+
+        <p className="text-sm text-foreground-secondary">
+          Sources:{" "}
+          <a className="underline" href="https://www.incometaxindia.gov.in/income-from-salary" target="_blank" rel="noopener noreferrer">
+            Income Tax Department salary guide
+          </a>
+          {" "}and{" "}
+          <a className="underline" href="https://incometaxindia.gov.in/Lists/Press%20Releases/Attachments/1139/PressRelease-Increased-limit-for-tax-exemption-on-leave-encashment-for-non-government-salaried-employees-notified-25-5-23.pdf" target="_blank" rel="noopener noreferrer">
+            CBDT ₹25 lakh ceiling notification
+          </a>.
+          These sources explain the historical exemption framework; verify the
+          corresponding provisions under current income-tax law for your tax year.
+        </p>
 
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
             Leave encashment vs using the leave before quitting
           </h2>
           <p className="text-foreground-secondary">
-            Many employees face a choice near resignation: take the remaining earned leave before the
-            last day, or receive encashment. The financial math often favors using leave before quitting:
+            Some employees can choose to use eligible earned leave during a notice period or
+            receive an encashment payment. Approval, notice rules, salary basis, timing and taxes
+            vary; neither option is universally financially better:
           </p>
           <ul className="list-inside list-disc space-y-2 text-foreground-secondary">
             <li>
-              Using earned leave as paid time off means your full gross salary (including all
-              allowances) continues to be paid — encashment is computed only on Basic+DA.
+              Approved paid leave is generally paid using the employer&apos;s applicable
+              leave-pay rules. Encashment may use a narrower wage basis, but do not
+              presume every allowance or type of leave is treated identically.
             </li>
             <li>
-              Using leave extends your effective last date, which can help with notice period
-              compliance and PF/gratuity calculation in some cases.
+              Leave taken during notice might count toward service or require notice adjustment,
+              depending on employment terms, approval and applicable law. Do not assume
+              it automatically extends or shortens your last working date.
             </li>
             <li>
-              Encashment on resignation is taxable as salary with no exemption — whereas simply
-              receiving your normal salary while on earned leave is taxed the same way but uses
-              the full gross computation.
+              Eligible leave encashment on resignation may receive tax exemption within
+              applicable limits. Compare the actual leave-pay amount, permissible encashment
+              and tax treatment using payroll and qualified tax advice; this tool does not
+              calculate the exemption.
             </li>
           </ul>
         </section>
