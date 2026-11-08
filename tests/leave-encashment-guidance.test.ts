@@ -14,7 +14,7 @@ const editorial = readFileSync(
 
 describe("leave encashment on resignation: current-site trust guard", () => {
   it("does not falsely assert that resignation always voids the exemption", () => {
-    expect(page).not.toMatch(/On resignation:\s*<\\/strong> Fully taxable as salary/i);
+    expect(page).not.toContain("Fully taxable as salary in the year of receipt. The");
     expect(page).not.toMatch(/Encashment on resignation is taxable as salary with no exemption/i);
     expect(page).not.toMatch(/₹25 lakh exemption only applies at retirement/i);
   });
