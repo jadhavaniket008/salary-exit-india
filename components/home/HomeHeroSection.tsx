@@ -102,7 +102,7 @@ export function HomeHeroSection() {
         <div className="space-y-3">
           <Link
             href={ROUTES.ctcToInHandCalculator}
-              onClick={() => trackHomeHeroToolClick("ctcToInHand")}
+            onClick={() => trackHomeHeroToolClick("ctcToInHand")}
             className="inline-flex w-full items-center justify-center rounded-xl bg-accent-solid px-6 py-3.5 text-base font-bold text-white shadow-md transition-all hover:bg-accent-solid-hover hover:shadow-lg sm:w-auto"
           >
             Calculate my in-hand salary →
