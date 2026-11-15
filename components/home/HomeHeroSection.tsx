@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { grossSalaryExample } from "@/lib/content/salary-examples";
 import { formatInr } from "@/lib/format-inr";
 import { ROUTES } from "@/lib/routes";
+import { trackHomeHeroToolClick } from "@/lib/analytics/client";
 
 const example = grossSalaryExample(12, 2_400);
 
@@ -101,6 +102,7 @@ export function HomeHeroSection() {
         <div className="space-y-3">
           <Link
             href={ROUTES.ctcToInHandCalculator}
+            onClick={() => trackHomeHeroToolClick("ctcToInHand")}
             className="inline-flex w-full items-center justify-center rounded-xl bg-accent-solid px-6 py-3.5 text-base font-bold text-white shadow-md transition-all hover:bg-accent-solid-hover hover:shadow-lg sm:w-auto"
           >
             Calculate my in-hand salary →
@@ -108,24 +110,28 @@ export function HomeHeroSection() {
           <div className="flex flex-wrap gap-2">
             <Link
               href={ROUTES.reverseSalaryCalculator}
+              onClick={() => trackHomeHeroToolClick("reverseSalary")}
               className="inline-flex items-center justify-center rounded-lg border border-border-strong bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-subtle"
             >
               What CTC do I need?
             </Link>
             <Link
               href={ROUTES.salaryRealityCheck}
+              onClick={() => trackHomeHeroToolClick("salaryRealityCheck")}
               className="inline-flex items-center justify-center rounded-lg border border-border-strong bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-subtle"
             >
               Salary Reality Check
             </Link>
             <Link
               href={ROUTES.offerComparisonCalculator}
+              onClick={() => trackHomeHeroToolClick("offerComparison")}
               className="inline-flex items-center justify-center rounded-lg border border-border-strong bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-subtle"
             >
               Compare offers
             </Link>
             <Link
               href={ROUTES.oldVsNewTaxRegimeCalculator}
+              onClick={() => trackHomeHeroToolClick("taxRegime")}
               className="inline-flex items-center justify-center rounded-lg border border-border-strong bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-subtle"
             >
               Old vs new regime

@@ -85,6 +85,13 @@ export function trackNextToolClicked(sourceTool: CalculatorSlug, destinationTool
   plausibleEvent("next_tool_clicked", { source_tool: sourceTool, destination_tool: destinationTool });
 }
 
+/** Homepage hero navigation intent; GA4 session attribution is captured separately. A click is NOT a calculator use. */
+export function trackHomeHeroToolClick(destinationTool: CalculatorSlug): void {
+  const params = { cta_placement: "home_hero", destination_tool: destinationTool };
+  gtagEvent("home_hero_tool_click", params);
+  plausibleEvent("home_hero_tool_click", params);
+}
+
 /** First time inputs produce a valid modeled result in a session (live-updated tool). */
 export function trackSalaryRealityCheckUse(options: { embed: boolean }): void {
   const params = { embed: options.embed ? "true" : "false" };

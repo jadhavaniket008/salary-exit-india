@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { trackAffiliateClick, trackBusinessInquiry, trackEmbedCodeCopied,
   trackNewsletterSignup, trackOfferCompareClick, trackResourceDownload,
-  trackLpa12CalculatorEntry, trackLpa12ExampleCompleted } from "@/lib/analytics/client";
+  trackLpa12CalculatorEntry, trackLpa12ExampleCompleted, trackHomeHeroToolClick } from "@/lib/analytics/client";
 
 describe("consented intent measurement", () => {
   let consent: boolean;
@@ -40,6 +40,29 @@ describe("consented intent measurement", () => {
     ]);
     expect(JSON.stringify(gtag.mock.calls)).not.toMatch(/salary_amount|gross_amount|income_value/);
   });
+  it("records home-hero route selection as intent, not calculator usage", () => {
+    trackHomeHeroToolClick("ctcToInHand");
+    trackHomeHeroToolClick("offerComparison");
+    expect(gtag.mock.calls).toEqual([
+      ["event", "home_hero_tool_click", {
+        cta_placement: "home_hero", destination_tool: "ctcToInHand",
+      }],
+      ["event", "home_hero_tool_click", {
+        cta_placement: "home_hero", destination_tool: "offerComparison",
+      }],
+    ]);
+    expect(plausible.mock.calls.map((c) => c[0])).toEqual([
+      "home_hero_tool_click", "home_hero_tool_click",
+    ]);
+    expect(JSON.stringify(gtag.mock.calls)).not.toMatch(/income|salary_amount|email|purchase|generate_lead|utm_/);
+  });
+  it("does not record a home hero click when analytics consent is withdrawn", () => {
+    consent = false;
+    trackHomeHeroToolClick("ctcToInHand");
+    expect(gtag).not.toHaveBeenCalled();
+    expect(plausible).not.toHaveBeenCalled();
+  });
+
   it("stops custom events after withdrawal even when the loaded functions remain", () => {
     consent = false;
     trackBusinessInquiry("business_footer"); trackResourceDownload("json"); trackOfferCompareClick("result");
