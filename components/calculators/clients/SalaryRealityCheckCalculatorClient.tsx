@@ -322,7 +322,7 @@ export function SalaryRealityCheckCalculatorClient({
         </>
       ) : (
         <p className="text-sm text-foreground-secondary">
-          Edit the scenario below — CTC, rent, and lifestyle update estimated savings and the verdict instantly.
+          Edit the scenario below — {mode === "ctc" ? "CTC" : "gross salary"}, rent, and lifestyle update estimated savings and the verdict instantly.
         </p>
       )}
 
@@ -616,7 +616,7 @@ export function SalaryRealityCheckCalculatorClient({
       <section aria-live="polite" className="space-y-4">
         {!canShowResult ? (
           <div className="rounded-xl border border-dashed border-border bg-surface-subtle p-6 text-sm text-foreground-secondary">
-            Enter valid annual CTC and monthly rent to see estimated in-hand, modeled spend, savings, and a verdict.
+            Enter valid {mode === "ctc" ? "annual CTC" : "annual gross salary"} and monthly rent to see estimated in-hand, modeled spend, savings, and a verdict.
             Change tax regime, Basic+DA %, or any expense line — numbers update as you type.
           </div>
         ) : (
@@ -682,6 +682,7 @@ export function SalaryRealityCheckCalculatorClient({
             {parsed.ok ? (
               <SalaryRealityShareBlock
                 annualCtc={parsed.annualCtc}
+                inputMode={mode}
                 inHandMonthly={result.inHandMonthly}
                 monthlySavings={result.monthlySavings}
                 verdictTitle={result.verdictTitle}

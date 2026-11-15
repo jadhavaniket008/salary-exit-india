@@ -7,23 +7,50 @@ import {
 } from "@/lib/share/salary-reality-share-summary";
 
 describe("formatSalaryRealityShareSummaryOneLine", () => {
+  it("labels a prefilled Mumbai gross-salary scenario accurately", () => {
+    const line = formatSalaryRealityShareSummaryOneLine({
+      annualCtc: 20_00_000,
+      inputMode: "gross",
+      inHandMonthly: 1_47_425,
+      monthlySavings: 64_425,
+    });
+    expect(line).toContain("₹20L gross/year");
+    expect(line).toContain("₹1.47L est. in-hand/month");
+    expect(line).toContain("₹64k modeled surplus/month");
+    expect(line).not.toContain("CTC");
+  });
+
+  it("keeps the Bengaluru gross-salary scenario distinct from CTC", () => {
+    const line = formatSalaryRealityShareSummaryOneLine({
+      annualCtc: 15_00_000,
+      inputMode: "gross",
+      inHandMonthly: 1_13_667,
+      monthlySavings: 42_667,
+    });
+    expect(line).toContain("₹15L gross/year");
+    expect(line).toContain("₹43k modeled surplus/month");
+    expect(line).not.toContain("CTC");
+  });
+
   it("matches compact L / k style", () => {
     const line = formatSalaryRealityShareSummaryOneLine({
       annualCtc: 20_00_000,
+      inputMode: "ctc",
       inHandMonthly: 1_25_000,
       monthlySavings: 52_000,
     });
     expect(line).toContain("₹20L");
     expect(line).toContain("₹1.25L");
     expect(line).toContain("₹52k");
-    expect(line).toContain("CTC →");
-    expect(line).toContain("in-hand →");
-    expect(line).toContain("savings/month");
+    expect(line).toContain("CTC/year →");
+    expect(line).toContain("est. in-hand/month →");
+    expect(line).toContain("modeled surplus/month");
   });
 
   it("handles crore CTC", () => {
     const line = formatSalaryRealityShareSummaryOneLine({
       annualCtc: 45_00_000,
+      inputMode: "ctc",
       inHandMonthly: 2_10_000,
       monthlySavings: 40_000,
     });
@@ -33,6 +60,7 @@ describe("formatSalaryRealityShareSummaryOneLine", () => {
   it("handles negative savings", () => {
     const line = formatSalaryRealityShareSummaryOneLine({
       annualCtc: 6_00_000,
+      inputMode: "ctc",
       inHandMonthly: 45_000,
       monthlySavings: -12_000,
     });
@@ -51,6 +79,8 @@ describe("buildSalaryRealityShareText", () => {
     expect(t).toContain("SalaryExit India");
     expect(t).toContain("Takeaway: Balanced but limited growth");
     expect(t).toContain("Estimates only");
+    expect(t).toContain("Tax Year 2026–27");
+    expect(t).toContain("editable rent/lifestyle expenses");
     expect(t).toContain("https://example.com/salary-reality-check");
   });
 });

@@ -12,6 +12,7 @@ import { ROUTES } from "@/lib/routes";
 
 type Props = {
   annualCtc: number;
+  inputMode: "ctc" | "gross";
   inHandMonthly: number;
   monthlySavings: number;
   verdictTitle: string;
@@ -19,6 +20,7 @@ type Props = {
 
 export function SalaryRealityShareBlock({
   annualCtc,
+  inputMode,
   inHandMonthly,
   monthlySavings,
   verdictTitle,
@@ -37,10 +39,11 @@ export function SalaryRealityShareBlock({
     () =>
       formatSalaryRealityShareSummaryOneLine({
         annualCtc,
+        inputMode,
         inHandMonthly,
         monthlySavings,
       }),
-    [annualCtc, inHandMonthly, monthlySavings]
+    [annualCtc, inputMode, inHandMonthly, monthlySavings]
   );
 
   const fullShareText = useMemo(

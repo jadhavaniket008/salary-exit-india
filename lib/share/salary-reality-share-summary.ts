@@ -10,7 +10,7 @@ function formatLakhsUnit(n: number): string {
   return n.toFixed(2).replace(/\.?0+$/, "");
 }
 
-/** Annual CTC: ₹20L or ₹2.5Cr */
+/** Annual income amount: ₹20L or ₹2.5Cr (CTC/gross specified separately). */
 export function formatAnnualCtcCompact(annual: number): string {
   const a = Math.abs(annual);
   if (a >= 1_00_00_000) {
@@ -37,17 +37,21 @@ export function formatMonthlyMoneyCompact(amount: number): string {
 }
 
 /**
- * One-line summary, e.g. "₹20L CTC → ₹1.25L in-hand → ₹52k savings/month"
+ * One-line modeled summary, explicit about gross versus CTC and estimated savings.
  */
+export type SalaryRealityShareIncomeMode = "ctc" | "gross";
+
 export function formatSalaryRealityShareSummaryOneLine(params: {
   annualCtc: number;
+  inputMode: SalaryRealityShareIncomeMode;
   inHandMonthly: number;
   monthlySavings: number;
 }): string {
   const c = formatAnnualCtcCompact(params.annualCtc);
   const h = formatMonthlyMoneyCompact(params.inHandMonthly);
   const s = formatMonthlyMoneyCompact(params.monthlySavings);
-  return `${c} CTC → ${h} in-hand → ${s} savings/month`;
+  const basis = params.inputMode === "gross" ? "gross/year" : "CTC/year";
+  return `${c} ${basis} → ${h} est. in-hand/month → ${s} modeled surplus/month`;
 }
 
 export const SALARY_REALITY_SHARE_BRAND = "SalaryExit India";
@@ -63,6 +67,8 @@ export function buildSalaryRealityShareText(params: {
     params.oneLine,
     `Takeaway: ${params.verdictTitle}`,
     "",
+    "Tax Year 2026–27 (FY 2026–27).",
+    "Illustrative after-tax/PF and editable rent/lifestyle expenses; actual results may differ.",
     "Estimates only — not tax advice.",
   ];
   const url = params.pageUrl?.trim();
