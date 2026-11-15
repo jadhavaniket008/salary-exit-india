@@ -87,9 +87,10 @@ unload vendor scripts or disable their automatic pageview collection.
 | `embed_code_copy` | Clipboard write succeeds on business page | `resource_id` | Successful copy; embedded table remains untracked |
 | `sign_up` | Newsletter endpoint returns success | `method=newsletter` | Provider accepted request; not proof of a new unique subscriber |
 | `offer_compare_click` | Existing offer comparison CTA | `cta_placement` | Navigation intent; no custom `source` parameter |
+| `home_hero_tool_click` | Click on one of the five existing homepage hero calculator links | `cta_placement=home_hero`, `destination_tool` | Navigation **intent only**; not proof that a person started/completed the tool; GA4 session campaign handled separately |
 
 GA4 Admin → Custom definitions → Create custom dimension → **Event** scope:
-`calculator_slug`, `cta_placement`, `partner_name`, `affiliate_context`, `offer_id`,
+`calculator_slug`, `cta_placement`, `destination_tool`, `partner_name`, `affiliate_context`, `offer_id`,
 `resource_id`, `file_format`. Register only dimensions used in your reports; registration
 is a separate admin action, not performed by the code. Allow 24–48 hours for reporting.
 Do not assume historical parameter breakdowns are backfilled.
@@ -102,3 +103,15 @@ No email, salary input, company name or inquiry body is sent in these custom eve
 No `purchase`, monetary value or `generate_lead` is emitted for these clicks. Reconcile
 paid invoices and partner payouts separately before reporting revenue. QA on a local
 build with analytics spies so production reporting is not contaminated.
+
+## Homepage acquisition funnel hypothesis (15 Nov 2026)
+
+First-party GA4 (Nov 1–14): 8 Instagram-attributed sessions, of which 5 were from the historical `instagram_pilot_oct2026` campaign to homepage, 2 to EPF and 1 to CTC. The single CTC visit includes an `mcp_token` query parameter and may be QA/automated. Data is too sparse for performance claims. The homepage already has a primary CTC calculator CTA plus 4 alternatives; **do not duplicate CTAs or build an unvalidated landing page**.
+
+This PR adds **only** consent-gated `home_hero_tool_click` intent (one event per existing hero link click). After production release and event propagation:
+
+1. In GA4 Explore compare `session_source / medium` and `session_campaign` to `home_hero_tool_click` users; use event `destination_tool` once registered as an event-scoped custom dimension (not retroactive).
+2. Separately measure the destination's `calculator_started` / `calculator_use` or `offer_compare_submit` events. They are not interchangeable; an event count is not distinct people.
+3. Exclude identifiable operator, preview and automated `mcp_token` sessions; consent gaps mean a missing event does not prove that no visitor clicked.
+4. This instrumentation **does not change Instagram bio links**. First confirm an authorized bio link points to a valid tagged deep tool link; such an external account update requires explicit owner approval.
+5. A diagnostic target of 20 genuine tagged sessions and 5 distinct tool users is pre-registered as an exploratory gate, not evidence of an achieved result. Do not promote the result to a purchase event.
